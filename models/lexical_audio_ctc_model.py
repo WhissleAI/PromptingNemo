@@ -51,7 +51,7 @@ def update_model_config_to_support_adapter(model_cfg):
     return model_cfg
 
 
-class PunctuationCapitalizationLexicalAudioModel(PunctuationCapitalizationModel):
+class PunctuationCapitalizationLexicalAudioModel():
     """
         A model for restoring punctuation and capitalization in text using lexical and audio features.
 
