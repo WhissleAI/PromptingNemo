@@ -126,7 +126,7 @@ os.system('mkdir -p ' + TEST_DATA_WAV)
 TEST_DATA_WAV = Path(TEST_DATA_WAV)
 
 
-allpath = [TRAIN_DATA, DEV_DATA, TEST_DATA]
+allpath = [DEV_DATA, TEST_DATA]
 
 def normalize(text):
 
