@@ -3,6 +3,7 @@
 import os
 import json
 import re
+import itertools
 from pathlib import Path
 
 from pathlib import PurePath
@@ -35,7 +36,7 @@ audio_synth = Path("/n/disk1/audio_datasets/slurp/audio/slurp_synth/")
 
 
 ### SLURP tag aligner
-def convert_entity_format(text):
+def convert_entity_format(text, taglist):
     # Regular expression to find any entity type pattern
     pattern = r'\[([a-zA-Z_]+) : ([^\]]+)\]'
 
@@ -44,32 +45,97 @@ def convert_entity_format(text):
         entity_type = match.group(1).strip().upper()  # Convert entity type to uppercase
         entity_value = match.group(2).strip()
 
-        return f"B-{entity_type} {entity_value} E-{entity_type}"
+        begin_tag = "ENTITY-"+f"{entity_type}".upper()
+        end_tag =  f"END"
+
+        if begin_tag not in taglist:
+
+            taglist.append(begin_tag)
+
+        if end_tag not in taglist:
+            taglist.append(end_tag)
+
+        return f"{begin_tag} {entity_value} {end_tag}"
 
     # Replace all occurrences of the pattern in the text
     converted_text = re.sub(pattern, replace_pattern, text)
 
-    return converted_text
+    return converted_text, taglist
 
-def add_entity_tags(input1, input2):
-    # Find all entities in input2
-    entities = re.findall(r'B-([A-Z_]+) (.*?) E-\1', input2)
+# def merge_text_and_tags(text_clean, text_tagged):
+#     # Regular expression pattern to match words (including contractions), tags, and punctuation
+#     pattern = r"ENTITY-\d+|END|\w+(?:'\w+)?|[.,!?;]"
 
-    # Function to handle punctuation and casing
-    def replace_entity(match):
-        before, entity, after = match.groups()
-        # Use the original entity text from Input1 for replacement
-        original_entity = input1[match.start(2):match.end(2)]
-        return f"{before}B-{entity_type} {original_entity} E-{entity_type}{after}"
+#     # Split the tagged text and clean text into their respective components
+#     tagged_parts = re.findall(pattern, text_tagged)
+#     clean_parts = re.findall(r"\w+(?:'\w+)?|[.,!?;]", text_clean)
 
-    # Replace the text in input1 with tagged text from input2
-    for entity in entities:
-        entity_type, entity_value = entity
-        # Pattern to include possible punctuation around the entity
-        pattern = r'(\W?)(\b' + re.escape(entity_value) + r'\b)(\W?)'
-        input1 = re.sub(pattern, replace_entity, input1, flags=re.IGNORECASE)
+#     merged_text = []
+#     clean_iter = iter(clean_parts)
 
-    return input1
+#     for part in tagged_parts:
+#         if 'ENTITY-' in part or part == 'END':
+#             merged_text.append(part)
+#             # Check if next clean part is punctuation and append it if so
+#             next_clean = next(clean_iter, None)
+#             if next_clean and re.match(r"[.,!?;]", next_clean):
+#                 merged_text.append(next_clean)
+#         elif re.match(r"\w+(?:'\w+)?", part):
+#             # Append the corresponding word from the clean text
+#             word = next(clean_iter, '')
+#             merged_text.append(word)
+#             # Check if next clean part is punctuation and append it if so
+#             next_clean = next(clean_iter, None)
+#             if next_clean and re.match(r"[.,!?;]", next_clean):
+#                 merged_text.append(next_clean)
+
+#     return ' '.join(merged_text)
+
+def merge_text_and_tags(text_clean, text_tagged):
+    # Regular expression pattern to match words (including contractions), tags, and punctuation
+    pattern = r"ENTITY-\d+|END|\w+(?:'\w+)?|[.,!?;]"
+
+    # Split the tagged text and clean text into their respective components
+    tagged_parts = re.findall(pattern, text_tagged)
+    clean_parts = re.findall(r"\w+(?:'\w+)?|[.,!?;]", text_clean)
+
+    merged_text = []
+    clean_iter = iter(clean_parts)
+    last_tag_was_end = False
+
+    for part in tagged_parts:
+        if part.startswith('ENTITY-'):
+            # Append entity tags
+            merged_text.append(part)
+            last_tag_was_end = False
+        elif part == 'END':
+            # Append 'END' tag and peek next for punctuation
+            merged_text.append(part)
+            next_clean = next(clean_iter, None)
+            if next_clean and re.match(r"[.,!?;]", next_clean):
+                merged_text.append(next_clean)
+            last_tag_was_end = True
+        elif part.isalpha():
+            if not last_tag_was_end:
+                # Append the corresponding word from the clean text
+                word = next(clean_iter, '')
+                merged_text.append(word)
+            last_tag_was_end = False
+        else:
+            # Append punctuation
+            if not last_tag_was_end:
+                merged_text.append(part)
+
+    # Check if any unprocessed clean parts are left and append them
+    while True:
+        next_clean = next(clean_iter, None)
+        if next_clean is None:
+            break
+        merged_text.append(next_clean)
+
+    # Join the parts with a space but avoid double spacing
+    return ' '.join(merged_text).replace(' .', '.').replace(' ,', ',').replace(' !', '!').replace(' ?', '?')
+
 
 
 ### Get emotion labels using HUBERT audio classification
@@ -142,16 +208,16 @@ ALL_ENTITIES = {}
 
 def jsonl_process(jsonlfile, audiofolder, manifestfolder):
 
-    print(jsonlfile)
-
     wavfolder = str(audiofolder) + "-wav"
     os.system("mkdir -p "+wavfolder)
     wavfolder = Path(wavfolder)
 
     jsonlfileread = open(str(jsonlfile),'r').readlines()
 
-    manifest = open(manifestfolder + "/" + jsonlfile.name.replace(jsonlfile.suffix, "") + "-slurp.json",'w')
+    manifest = open(manifestfolder + "/" + jsonlfile.name.replace(jsonlfile.suffix, "") + "-slurp-tagged.json",'w')
 
+
+    taglist = json.load(open(manifestfolder+"/taglistfile.json",'r'))
 
     for line in jsonlfileread:
 
@@ -159,11 +225,24 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
         #print(line)
         annotation = line['sentence_annotation']
         text = line['sentence']
-        text_clean = normalize(text)
-        text_tagged = convert_entity_format(line['sentence_annotation'])
-        text_clean_tagged = add_entity_tags(text_clean, text_tagged)
+        #text_clean = normalize(text)
+        text_clean = text + "."
+        text_tagged, taglist = convert_entity_format(line['sentence_annotation'], taglist)
+        text_tagged = text_tagged + "."
+        #text_clean_tagged = merge_text_and_tags(text_clean, text_tagged)
+        text_clean_tagged = text_tagged
         
+        print("text", text_clean)
+        print("text_tagged", text_tagged)
+        print("text clean tagged", text_clean_tagged)
+
         intent = line['intent'].upper()
+        intent = "INTENT-"+intent
+
+        if intent not in taglist:
+            
+            taglist.append(intent) 
+        
 
         recordings = line['recordings']
 
@@ -176,8 +255,8 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
             audiofile = PurePath(audiofile)
             filekey = audiofile.name.replace(audiofile.suffix, "")
             wavfilepath = str(wavfolder) + "/" + filekey + ".wav"
-            flac_tmp_audio_data = AudioSegment.from_file(audiofilepath, audiofilepath.suffix[1:])
-            flac_tmp_audio_data.export(wavfilepath, format="wav")
+            #flac_tmp_audio_data = AudioSegment.from_file(audiofilepath, audiofilepath.suffix[1:])
+            #flac_tmp_audio_data.export(wavfilepath, format="wav")
             
             
             print(audiofilepath)
@@ -187,8 +266,8 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
             sample_dict['text'] = text_clean
             sample_dict['tagged_text'] = text_clean
 
-            flac_tmp_audio_data = AudioSegment.from_file(audiofilepath, audiofilepath.suffix[1:])
-            flac_tmp_audio_data.export(wavfilepath, format="wav")
+            #flac_tmp_audio_data = AudioSegment.from_file(audiofilepath, audiofilepath.suffix[1:])
+            #flac_tmp_audio_data.export(wavfilepath, format="wav")
             sample_dict['instruction'] = "transcribe speech"
 
             json.dump(sample_dict, manifest)
@@ -201,7 +280,15 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
 
 
             emotion_labels = get_emotion_labels(audio_file=wavfilepath, sampling_rate=16000)
+            
+            for label in emotion_labels:
+
+                if label not in taglist:
+                    taglist.append(label)
+            
             emotion_labels = ' '.join(emotion_labels)
+
+
 
             final_transcription = text_clean_tagged + " " + emotion_labels
 
@@ -220,7 +307,11 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
             json.dump(sample_dict, manifest)
             manifest.write("\n")        
     
-    manifest.close() 
+    manifest.close()
+    taglistfile = open(manifestfolder+"/taglistfile.json",'w')
+    json.dump(taglist,taglistfile)
+    taglistfile.close()
+
 
 
 manifestfolder = "/n/disk1/audio_datasets/manifests"

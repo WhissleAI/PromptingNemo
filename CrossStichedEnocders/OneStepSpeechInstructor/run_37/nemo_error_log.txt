@@ -1,0 +1,77 @@
+[NeMo W 2023-11-17 01:27:22 nemo_logging:349] /usr/local/lib/python3.10/dist-packages/lightning_fabric/connector.py:554: UserWarning: 16 is supported for historical reasons but its usage is discouraged. Please set your precision to 16-mixed instead!
+      rank_zero_warn(
+    
+[NeMo W 2023-11-17 01:27:22 exp_manager:677] Exp_manager is logging to OneStepSpeechInstructor, but it already exists.
+[NeMo W 2023-11-17 01:27:24 modelPT:161] If you intend to do training or fine-tuning, please call the ModelPT.setup_training_data() method and provide a valid configuration file to setup the train data loader.
+    Train config : 
+    manifest_filepath:
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket1/tarred_audio_manifest.json
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket2/tarred_audio_manifest.json
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket3/tarred_audio_manifest.json
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket4/tarred_audio_manifest.json
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket5/tarred_audio_manifest.json
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket6/tarred_audio_manifest.json
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket7/tarred_audio_manifest.json
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket8/tarred_audio_manifest.json
+    sample_rate: 16000
+    batch_size: 1
+    shuffle: true
+    num_workers: 4
+    pin_memory: true
+    use_start_end_token: false
+    trim_silence: false
+    max_duration: 20.0
+    min_duration: 0.1
+    is_tarred: true
+    tarred_audio_filepaths:
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket1/audio__OP_0..8191_CL_.tar
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket2/audio__OP_0..8191_CL_.tar
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket3/audio__OP_0..8191_CL_.tar
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket4/audio__OP_0..8191_CL_.tar
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket5/audio__OP_0..8191_CL_.tar
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket6/audio__OP_0..8191_CL_.tar
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket7/audio__OP_0..8191_CL_.tar
+    - - /data2/nemo_asr/nemo_asr_set_3.0/bucket8/audio__OP_0..8191_CL_.tar
+    shuffle_n: 2048
+    bucketing_strategy: synced_randomized
+    bucketing_batch_size:
+    - 34
+    - 30
+    - 26
+    - 22
+    - 18
+    - 16
+    - 12
+    - 8
+    
+[NeMo W 2023-11-17 01:27:24 modelPT:168] If you intend to do validation, please call the ModelPT.setup_validation_data() or ModelPT.setup_multiple_validation_data() method and provide a valid configuration file to setup the validation data loader(s). 
+    Validation config : 
+    manifest_filepath:
+    - /manifests/librispeech/librivox-dev-other.json
+    - /manifests/librispeech/librivox-dev-clean.json
+    - /manifests/librispeech/librivox-test-other.json
+    - /manifests/librispeech/librivox-test-clean.json
+    sample_rate: 16000
+    batch_size: 32
+    shuffle: false
+    num_workers: 8
+    pin_memory: true
+    use_start_end_token: false
+    
+[NeMo W 2023-11-17 01:27:24 modelPT:174] Please call the ModelPT.setup_test_data() or ModelPT.setup_multiple_test_data() method and provide a valid configuration file to setup the test data loader(s).
+    Test config : 
+    manifest_filepath:
+    - /manifests/librispeech/librivox-dev-other.json
+    - /manifests/librispeech/librivox-dev-clean.json
+    - /manifests/librispeech/librivox-test-other.json
+    - /manifests/librispeech/librivox-test-clean.json
+    sample_rate: 16000
+    batch_size: 32
+    shuffle: false
+    num_workers: 8
+    pin_memory: true
+    use_start_end_token: false
+    
+[NeMo W 2023-11-17 01:27:27 nemo_logging:349] /usr/local/lib/python3.10/dist-packages/pytorch_lightning/trainer/configuration_validator.py:71: PossibleUserWarning: You defined a `validation_step` but have no `val_dataloader`. Skipping val loop.
+      rank_zero_warn(
+    
