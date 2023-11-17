@@ -1,0 +1,63 @@
+[NeMo W 2023-11-15 21:15:44 nemo_logging:349] /usr/local/lib/python3.10/dist-packages/lightning_fabric/connector.py:554: UserWarning: 16 is supported for historical reasons but its usage is discouraged. Please set your precision to 16-mixed instead!
+      rank_zero_warn(
+    
+[NeMo W 2023-11-15 21:15:44 exp_manager:677] Exp_manager is logging to OneStepSpeechInstructor, but it already exists.
+[NeMo I 2023-11-15 21:15:44 exp_manager:384] Experiments will be logged at OneStepSpeechInstructor
+[NeMo I 2023-11-15 21:15:44 exp_manager:823] TensorboardLogger has been set up
+[NeMo I 2023-11-15 21:15:45 cloud:58] Found existing object /root/.cache/torch/NeMo/NeMo_1.21.0rc0/stt_en_conformer_ctc_small/5d2d8e5b2b5adb8f5091363c6ba19c55/stt_en_conformer_ctc_small.nemo.
+[NeMo I 2023-11-15 21:15:45 cloud:64] Re-using file from: /root/.cache/torch/NeMo/NeMo_1.21.0rc0/stt_en_conformer_ctc_small/5d2d8e5b2b5adb8f5091363c6ba19c55/stt_en_conformer_ctc_small.nemo
+[NeMo I 2023-11-15 21:15:45 common:913] Instantiating model from pre-trained checkpoint
+[NeMo I 2023-11-15 21:15:46 cloud:58] Found existing object /root/.cache/torch/NeMo/NeMo_1.21.0rc0/stt_en_conformer_ctc_small/5d2d8e5b2b5adb8f5091363c6ba19c55/stt_en_conformer_ctc_small.nemo.
+[NeMo I 2023-11-15 21:15:46 cloud:64] Re-using file from: /root/.cache/torch/NeMo/NeMo_1.21.0rc0/stt_en_conformer_ctc_small/5d2d8e5b2b5adb8f5091363c6ba19c55/stt_en_conformer_ctc_small.nemo
+[NeMo I 2023-11-15 21:15:46 common:913] Instantiating model from pre-trained checkpoint
+[NeMo I 2023-11-15 21:15:47 mixins:170] Tokenizer SentencePieceTokenizer initialized with 1024 tokens
+[NeMo W 2023-11-15 21:15:47 modelPT:161] If you intend to do training or fine-tuning, please call the ModelPT.setup_training_data() method and provide a valid configuration file to setup the train data loader.
+    Train config : 
+    manifest_filepath: /data/NeMo_ASR_SET/English/v2.0/train/tarred_audio_manifest.json
+    sample_rate: 16000
+    batch_size: 64
+    shuffle: true
+    num_workers: 8
+    pin_memory: true
+    use_start_end_token: false
+    trim_silence: false
+    max_duration: 20.0
+    min_duration: 0.1
+    shuffle_n: 2048
+    is_tarred: true
+    tarred_audio_filepaths: /data/NeMo_ASR_SET/English/v2.0/train/audio__OP_0..4095_CL_.tar
+    
+[NeMo W 2023-11-15 21:15:47 modelPT:168] If you intend to do validation, please call the ModelPT.setup_validation_data() or ModelPT.setup_multiple_validation_data() method and provide a valid configuration file to setup the validation data loader(s). 
+    Validation config : 
+    manifest_filepath:
+    - /data/ASR/LibriSpeech/librispeech_withsp2/manifests/librivox-dev-other.json
+    - /data/ASR/LibriSpeech/librispeech_withsp2/manifests/librivox-dev-clean.json
+    - /data/ASR/LibriSpeech/librispeech_withsp2/manifests/librivox-test-other.json
+    - /data/ASR/LibriSpeech/librispeech_withsp2/manifests/librivox-test-clean.json
+    sample_rate: 16000
+    batch_size: 64
+    shuffle: false
+    num_workers: 8
+    pin_memory: true
+    use_start_end_token: false
+    is_tarred: false
+    tarred_audio_filepaths: na
+    
+[NeMo W 2023-11-15 21:15:47 modelPT:174] Please call the ModelPT.setup_test_data() or ModelPT.setup_multiple_test_data() method and provide a valid configuration file to setup the test data loader(s).
+    Test config : 
+    manifest_filepath:
+    - /data/ASR/LibriSpeech/librispeech_withsp2/manifests/librivox-test-other.json
+    - /data/ASR/LibriSpeech/librispeech_withsp2/manifests/librivox-dev-clean.json
+    - /data/ASR/LibriSpeech/librispeech_withsp2/manifests/librivox-dev-other.json
+    - /data/ASR/LibriSpeech/librispeech_withsp2/manifests/librivox-test-clean.json
+    sample_rate: 16000
+    batch_size: 64
+    shuffle: false
+    num_workers: 8
+    pin_memory: true
+    use_start_end_token: false
+    is_tarred: false
+    tarred_audio_filepaths: na
+    
+[NeMo I 2023-11-15 21:15:47 features:289] PADDING: 0
+[NeMo I 2023-11-15 21:15:48 save_restore_connector:249] Model EncDecCTCModelBPE was successfully restored from /root/.cache/torch/NeMo/NeMo_1.21.0rc0/stt_en_conformer_ctc_small/5d2d8e5b2b5adb8f5091363c6ba19c55/stt_en_conformer_ctc_small.nemo.

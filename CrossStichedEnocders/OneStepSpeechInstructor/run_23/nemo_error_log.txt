@@ -1,0 +1,4 @@
+[NeMo W 2023-11-16 16:53:34 nemo_logging:349] /usr/local/lib/python3.10/dist-packages/lightning_fabric/connector.py:554: UserWarning: 16 is supported for historical reasons but its usage is discouraged. Please set your precision to 16-mixed instead!
+      rank_zero_warn(
+    
+[NeMo W 2023-11-16 16:53:34 exp_manager:677] Exp_manager is logging to OneStepSpeechInstructor, but it already exists.
