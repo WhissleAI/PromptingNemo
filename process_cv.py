@@ -12,6 +12,15 @@ from pydub import AudioSegment
 from nemo_text_processing.text_normalization.normalize import Normalizer
 from nemo.collections import nlp as nemo_nlp
 
+from transformers import AutoTokenizer, AutoModelForTokenClassification, TokenClassificationPipeline
+from transformers import pipeline
+
+from flair.data import Sentence
+from flair.models import SequenceTagger
+import pprint
+import string
+
+
 def convert_mp3_to_wav(mp3_file_path, wav_file_path):
     # Load the MP3 file
     audio = AudioSegment.from_mp3(mp3_file_path)
@@ -23,6 +32,7 @@ def convert_mp3_to_wav(mp3_file_path, wav_file_path):
 normalizer = Normalizer(input_case='lower_cased', lang="en")
 punctuator = nemo_nlp.models.PunctuationCapitalizationModel.from_pretrained("punctuation_en_distilbert")
 
+
 def normalize(text):
 
     text = text.lower()
@@ -32,26 +42,23 @@ def normalize(text):
     return norm_punctuated
 
 ### Define all data path (SLURP here)
-cv_english = PurePath("/n/disk1/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/")
+cv_english = PurePath("/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/")
 train_annotations = cv_english / PurePath("train.tsv")
 dev_annotations = cv_english / PurePath("dev.tsv")
 test_annotations = cv_english / PurePath("test.tsv")
 
-audioclips = PurePath("/n/disk1/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/clips")
+audioclips = PurePath("/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/clips")
 audioclipswav = PurePath(str(audioclips) + "-wav")
 os.system("mkdir -p " + str(audioclipswav))
 print(audioclipswav)
 
-from transformers import AutoTokenizer, AutoModelForTokenClassification
-from transformers import pipeline
 
+### Named entity tagger
 entity_tokenizer = AutoTokenizer.from_pretrained("Babelscape/wikineural-multilingual-ner")
 entity_model = AutoModelForTokenClassification.from_pretrained("Babelscape/wikineural-multilingual-ner")
-
 hf_nlp = pipeline("ner", model=entity_model, tokenizer=entity_tokenizer, grouped_entities=True)
 
-
-def tag_entities(text):
+def tag_entities(text, lowercase=True):
 
     ner_results = hf_nlp(text)
     print(ner_results)
@@ -59,17 +66,44 @@ def tag_entities(text):
     # example: [{'entity_group': 'PER', 'score': 0.8913538, 'word': 'Min', 'start': 0, 'end': 3}, {'entity_group': 'LOC', 'score': 0.9983326, 'word': 'West Van Buren Street', 'start': 93, 'end': 114}]
     for ner_dict in ner_results:
 
-        entity_group = ner_dict['entity_group']
+        entity_group = ner_dict['entity_group'].upper()
         start = ner_dict['start']
         end = ner_dict['end']
         word = ner_dict['word']
 
-        text = text.replace(word, "B-"+entity_group+" "+word+" E-"+entity_group)
+        if lowercase:
+            word = word.lower()
+
+        text = text.replace(word, "ENTITY-"+entity_group+" "+word+" END")
 
     print("ner tagged text", text)
-
-
     return text
+
+### Part of Speech Tagger
+# load tagger
+pos_tagger = SequenceTagger.load("flair/pos-english")
+
+
+def tag_pos(text):
+    sentence = Sentence(text)
+    pos_tagger.predict(sentence)
+
+    tagged = []
+    for entity in sentence.labels:
+
+        word = entity.data_point.text
+        tag = entity.value
+
+        if tag not in string.punctuation:
+            tagged.append(tag)
+            tagged.append(word)
+            tagged.append("END")
+        else:
+            tagged.append(word)
+
+    text = " ".join(tagged)
+    return text
+
 
 ### Start pretrained Emotion Classification system
 import torch
@@ -143,39 +177,62 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile):
     #print(data_top)
     for index, row in tsvfile.iterrows():
         audiofile = audioclips / row['path']
-        audiofilewav = audioclipswav / PurePath(row['path'].split(".")[0]+".wav")
+        wavfilepath = audioclipswav / PurePath(row['path'].split(".")[0]+".wav")
         
-        convert_mp3_to_wav(audiofile, audiofilewav)
+        convert_mp3_to_wav(audiofile, wavfilepath)
         
         text = row['sentence']
+        print(text)
+        text_pos = tag_pos(text)
+        print(text_pos)
         text_tagged = tag_entities(text)
-        emotion_labels = get_emotion_labels(audio_file=audiofilewav, sampling_rate=16000)
+        emotion_labels = get_emotion_labels(audio_file=wavfilepath, sampling_rate=16000)
         text_tagged_emotion = text_tagged + " " + " ".join(emotion_labels)
 
+        wavfilepath = str(wavfilepath)
+
+
         sample_dict = {}
-        sample_dict['audiofilepath'] = str(audiofilewav)
+        sample_dict['audio_filepath'] = wavfilepath
         sample_dict['text'] = text
-        sample_dict['tagged_text'] = text
-        sample_dict['instruction'] = "transcribe speech"
-        print(sample_dict)
+        sample_dict['tasks'] = ["transcription"]
+        sample_dict['instruction'] = "Transcribe what is begin spoken"
+        pprint.pprint(sample_dict)
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
-        sample_dict['tagged_text'] = text_tagged
-        sample_dict['instruction'] = "transcribe and mark named entities"
+        emotion_labels = get_emotion_labels(audio_file=wavfilepath, sampling_rate=16000)
+        for label in emotion_labels:
+            if label not in taglist:
+                taglist.append(label)
+        emotion_labels = ' '.join(emotion_labels)
+        sample_dict['text'] = text + " " + emotion_labels
+        sample_dict['tasks'] = ["transcription", "emotion"]
+        sample_dict['instruction'] = "Transcribe and track speaker emotion"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
-        sample_dict['tagged_text'] = text_tagged_emotion
-        sample_dict['instruction'] = "transcribe, mark named entitites and track speaker emotion"
+        sample_dict['text'] = text_tagged
+        sample_dict['tasks'] = ["transcription", "entity-named"]
+        sample_dict['instruction'] = "Transcribe, mark named entities"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
-           
+
+        sample_dict['text'] = text_clean_tagged + " " + intent + " " + emotion_labels
+        sample_dict['tasks'] = ["transcription", "entity-named", "emotion"]
+        sample_dict['instruction'] = "Transcribe and mark named entities and emotion"
+        json.dump(sample_dict, manifest)
+
+        sample_dict['text'] = text_clean_tagged + " " + intent + " " + emotion_labels
+        sample_dict['tasks'] = ["transcription", "emotion", "entity-named"]
+        sample_dict['instruction'] = "Transcribe, track speaker emotion and mark named entities"
+        json.dump(sample_dict, manifest)
+
+        manifest.write("\n")
         print(text_tagged, audiofilewav)
-    
     manifest.close()
 
-manifestfolder = "/n/disk1/audio_datasets/manifests"
+manifestfolder = "/audio_datasets/manifests"
 process_tsv(tsvfile=dev_annotations, audioclips=audioclips, audioclipswav=audioclipswav, manifestfile=manifestfolder+"/dev_cv_en.json")
 process_tsv(tsvfile=train_annotations, audioclips=audioclips, audioclipswav=audioclipswav, manifestfile=manifestfolder+"/train_cv_en.json")
 process_tsv(tsvfile=test_annotations, audioclips=audioclips, audioclipswav=audioclipswav, manifestfile=manifestfolder+"/test_cv_en.json")
