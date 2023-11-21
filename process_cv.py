@@ -16,15 +16,19 @@ from transformers import (AutoTokenizer, AutoModelForTokenClassification,
                           TokenClassificationPipeline, pipeline, AutoConfig, 
                           Wav2Vec2FeatureExtractor)
 from nemo_text_processing.text_normalization.normalize import Normalizer
-import nemo.collections as nemo_nlp
+import nemo.collections.nlp as nemo_nlp
 from flair.data import Sentence
 from flair.models import SequenceTagger
 from AudioEmotionClassification.models import (Wav2Vec2ForSpeechClassification, 
                                                HubertForSpeechClassification)
 
+from johnsnowlabs import nlp
+dependency_parser = nlp.load('ner')
+from sparknlp.pretrained import PretrainedPipeline
+
 ### Intitiate text normalizer and puctuator
-#normalizer = Normalizer(input_case='lower_cased', lang="en")
-#punctuator = nemo_nlp.models.PunctuationCapitalizationModel.from_pretrained("punctuation_en_distilbert")
+normalizer = Normalizer(input_case='lower_cased', lang="en")
+punctuator = nemo_nlp.models.PunctuationCapitalizationModel.from_pretrained("punctuation_en_distilbert")
 
 ### Define all data path (SLURP here)
 cv_english = PurePath("/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/")
@@ -39,9 +43,9 @@ print(audioclipswav)
 
 
 ### Named entity tagger
-entity_tokenizer = AutoTokenizer.from_pretrained("Babelscape/wikineural-multilingual-ner")
-entity_model = AutoModelForTokenClassification.from_pretrained("Babelscape/wikineural-multilingual-ner")
-hf_nlp = pipeline("ner", model=entity_model, tokenizer=entity_tokenizer, grouped_entities=True)
+dependency_parser = PretrainedPipeline("dependency_parse")
+entity_tagger = PretrainedPipeline("onto_recognize_entities_sm")
+
 
 # Audio Emotion Classification
 emotion_model = HubertForSpeechClassification.from_pretrained("Rajaram1996/Hubert_emotion")
@@ -71,61 +75,116 @@ def normalize(text):
 
 
 
-def tag_entities(text, lowercase=True):
+def tag_ner(text):
+    """
+    Wraps each token with its corresponding BIO tag and returns the wrapped text and a list of unique tags used.
 
-    ner_results = hf_nlp(text)
+    Parameters:
+    text (str): The original text to be annotated.
 
-    taglist = []
-    # example: [{'entity_group': 'PER', 'score': 0.8913538, 'word': 'Min', 'start': 0, 'end': 3}, {'entity_group': 'LOC', 'score': 0.9983326, 'word': 'West Van Buren Street', 'start': 93, 'end': 114}]
-    for ner_dict in ner_results:
+    Returns:
+    tuple: A tuple containing the wrapped text and a list of unique tags used.
+    """
+    entities = entity_tagger.annotate(text)
 
-        entity_group = ner_dict['entity_group'].upper()
-        start = ner_dict['start']
-        end = ner_dict['end']
-        word = ner_dict['word']
+    tokens = entities['token']
+    tags = entities['ner']
 
-        if lowercase:
-            word = word.lower()
-        
-        begin_tag = "ENTITY-"+entity_group
-        end_tag = "END"
+    wrapped_text = ""
+    current_entity = ""
+    current_tag = ""
+    used_tags = set()
 
-        text = text.replace(word, begin_tag+" "+word+" "+end_tag)
+    for token, tag in zip(tokens, tags):
+        # Standardize tag format
+        formatted_tag = f"NER_{tag[2:]}" if tag != 'O' else tag
 
-    return text, taglist
+        if tag.startswith('B-'):
+            # Close previous entity if any
+            if current_entity:
+                wrapped_text += f"{current_tag} {current_entity} END "
+                used_tags.add(current_tag)
+                used_tags.add("END")
+                current_entity = ""
+
+            # Start a new entity
+            current_entity = token
+            current_tag = formatted_tag
+        elif tag.startswith('I-') and "NER_" + tag[2:] == current_tag:
+            # Continue current entity
+            current_entity += " " + token
+        else:
+            # Close previous entity if any
+            if current_entity:
+                wrapped_text += f"{current_tag} {current_entity} END "
+                used_tags.add(current_tag)
+                used_tags.add("END")
+                current_entity = ""
+
+            # Add non-entity tokens as is
+            wrapped_text += token + " "
+    
+    # Close the last entity if any
+    if current_entity:
+        wrapped_text += f"{current_tag} {current_entity} END"
+        used_tags.add(current_tag)
+        used_tags.add("END")
+
+    return wrapped_text.strip(), list(used_tags)
 
 ### Part of Speech Tagger
 # load tagger
-pos_tagger = SequenceTagger.load("flair/pos-english")
 
+def tag_pos(text):
+    """
+    Wraps each token with its corresponding tag. Assigns unique tags to different punctuation marks.
 
-def tag_pos(text, taglist):
-    sentence = Sentence(text)
-    pos_tagger.predict(sentence)
+    Parameters:
+    tokens (list of str): Tokens to be wrapped.
+    tags (list of str): Corresponding tags for each token.
 
-    tagged = []
-    for entity in sentence.labels:
+    Returns:
+    list of str: List of tokens wrapped with their tags.
+    """
+    dp = dependency_parser.annotate(text)
 
-        word = entity.data_point.text
-        tag = entity.value
+    tags = dp['pos']
+    tokens = dp['token']
 
+    punctuation_tags = {
+        '.': 'PUNCT_DOT',
+        ',': 'PUNCT_COMMA',
+        ';': 'PUNCT_SEMICOLON',
+        ':': 'PUNCT_COLON',
+        '!': 'PUNCT_EXCLAMATION',
+        '?': 'PUNCT_QUESTION',
+        '-': 'PUNCT_HYPHEN',
+        '(': 'PUNCT_LPAREN',
+        ')': 'PUNCT_RPAREN',
+        '[': 'PUNCT_LBRACKET',
+        ']': 'PUNCT_RBRACKET',
+        '{': 'PUNCT_LCURLY',
+        '}': 'PUNCT_RCURLY',
+        '\'\'': 'PUNCT_DOUBLEQUOTE',
+        '``': 'PUNCT_BACKTICK'
+    }
 
-        if tag not in string.punctuation:
-
-            if tag not in taglist:
-                taglist.append(tag)
-            if "END" not in taglist:
-                taglist.append("END")
-            
-            tagged.append(tag)
-            tagged.append(word)
-            tagged.append("END")
+    wrapped_tokens = []
+    used_tags = set()
+    for token, tag in zip(tokens, tags):
+        # Use a specific tag for each type of punctuation
+        if token in punctuation_tags:
+            tag = punctuation_tags[token]
+            used_tags.add(tag)
         else:
-            tagged.append(word)
-
-    text = " ".join(tagged)
-    return text, taglist
-
+            used_tags.add("POS_"+tag)
+       
+        used_tags.add("END")
+        tag = f"POS_{tag}"
+        wrapped_token = f"{tag} {token} END"
+        wrapped_tokens.append(wrapped_token)
+    
+    return " ".join(wrapped_tokens), list(used_tags)
 
 
 def speech_file_to_array_fn(path, sampling_rate):
@@ -147,7 +206,7 @@ def predict(path, sampling_rate):
                enumerate(scores)]
     return outputs
 
-def get_emotion_labels(audio_file, taglist, sampling_rate=16000, score=50.0):
+def get_emotion_labels(audio_file, sampling_rate=16000, score=50.0):
     sound_array = speech_file_to_array_fn(audio_file, sampling_rate)
     
     inputs = feature_extractor(sound_array, sampling_rate=sampling_rate, return_tensors="pt", padding=True)
@@ -167,19 +226,16 @@ def get_emotion_labels(audio_file, taglist, sampling_rate=16000, score=50.0):
     #[{'emo': 'female_neutral', 'score': 73.9}, {'emo': 'female_happy', 'score': 24.8}]
     emotion_labels = [row for row in sorted(outputs, key=lambda x:x["score"], reverse=True) if row['score'] != '0.0%'][:2]
 
-    all_labels = []
+    final_label  = "EMOTION_DONTKNOW"
     for emotion_dict in emotion_labels:
 
-        label = "EMOTION-"+emotion_dict['emo'].split("_")[1].upper()
+        label = "EMOTION_"+emotion_dict['emo'].split("_")[1].upper()
         score = emotion_dict['score']
 
         if score > 50.0:
-            all_labels.append(label)
-
-        if label not in taglist:
-            taglist.append(label)
+            final_label = label
         
-    return all_labels, taglist
+    return final_label
 
 def write_taglist(taglist,filename):
 
@@ -221,14 +277,23 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         audiofile = audioclips / Path(row['path'])
         wavfilepath = audioclipswav / PurePath(row['path'].split(".")[0]+".wav")
         
-        convert_mp3_to_wav(audiofile, wavfilepath)
+        #convert_mp3_to_wav(audiofile, wavfilepath)
         
         text = row['sentence']
-        text_pos, taglist = tag_pos(text, taglist)
-        text_tagged, taglist = tag_entities(text, taglist)
-        emotion_labels, taglist = get_emotion_labels(audio_file=wavfilepath, taglist=taglist, sampling_rate=16000)
-        text_tagged_emotion = text_tagged + " " + " ".join(emotion_labels)
+        text = normalize(text)
 
+        text_pos, used_pos = tag_pos(text)
+        taglist = taglist + used_pos
+
+        text_ner, used_ner = tag_ner(text)
+        taglist = taglist + used_ner
+
+        emotion_label = get_emotion_labels(audio_file=wavfilepath, sampling_rate=16000)
+        emotion_labels = [emotion_label]
+        taglist = taglist + emotion_labels
+        taglist = list(set(taglist)) # remove duplicates
+        
+        
         wavfilepath = str(wavfilepath)
 
         sample_dict = {}
@@ -240,51 +305,33 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         manifest.write("\n")
 
         emotion_labels = ' '.join(emotion_labels)
-        sample_dict['text'] = text_tagged_emotion
+        sample_dict['text'] = text + " " + emotion_label
         sample_dict['tasks'] = ["transcription", "emotion"]
         sample_dict['instruction'] = "Transcribe and track speaker emotion"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
-        sample_dict['text'] = text_tagged
-        sample_dict['tasks'] = ["transcription", "entity-named"]
+        sample_dict['text'] = text_ner
+        sample_dict['tasks'] = ["transcription", "ner"]
         sample_dict['instruction'] = "Transcribe and mark named entities"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
-        sample_dict['text'] = text_tagged + " " + emotion_labels
-        sample_dict['tasks'] = ["transcription", "entity-named", "emotion"]
-        sample_dict['instruction'] = "Transcribe, mark named entities and speaker emotion"
+        sample_dict['text'] = text_ner + " " + emotion_label
+        sample_dict['tasks'] = ["transcription", "ner", "emotion"]
+        sample_dict['instruction'] = "Transcribe, mark named entities and track speaker emotion"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
-        sample_dict['text'] = text_tagged + " " + emotion_labels
-        sample_dict['tasks'] = ["transcription", "entity-named", "emotion"]
-        sample_dict['instruction'] = "Transcribe, track speaker emotion and mark named entities"
-        json.dump(sample_dict, manifest)
-        manifest.write("\n")
-
-        sample_dict['text'] = text_tagged + " " + emotion_labels
-        sample_dict['tasks'] = ["transcription", "entity-named", "emotion"]
-        sample_dict['instruction'] = "Transcribe, track speaker emotion and mark named entities"
-        json.dump(sample_dict, manifest)
-        manifest.write("\n")
-
-        sample_dict['text'] = text_tagged + " " + emotion_labels
-        sample_dict['tasks'] = ["transcription", "entity-named", "emotion"]
-        sample_dict['instruction'] = "Transcribe, track speaker emotion and mark named entities"
+        sample_dict['text'] = text_pos
+        sample_dict['tasks'] = ["transcription", "pos"]
+        sample_dict['instruction'] = "Transcribe and tag parts of speech of each word"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
         sample_dict['text'] = text_pos + " " + emotion_labels
-        sample_dict['tasks'] = ["transcription", "parts-of-speech", "emotion"]
-        sample_dict['instruction'] = "Transcribe, tag parts-of-speech and track speaker emotion"
-        json.dump(sample_dict, manifest)
-        manifest.write("\n")
-
-        sample_dict['text'] = text_pos + " " + emotion_labels
-        sample_dict['tasks'] = ["transcription", "parts-of-speech"]
-        sample_dict['instruction'] = "Transcribe and tag parts-of-speech"
+        sample_dict['tasks'] = ["transcription", "pos", "emotion"]
+        sample_dict['instruction'] = "Transcribe, tag parts of speech of each word and track speaker information"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
@@ -308,14 +355,6 @@ datasets = {
         "manifestfile": os.path.join(manifestfolder, "dev_cv_en.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_dev_en.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_dev.txt")
-    },
-    "train": {
-        "tsvfile": train_annotations,
-        "audioclips": Path(audioclips),
-        "audioclipswav": audioclipswav,
-        "manifestfile": os.path.join(manifestfolder, "train_cv_en.json"),
-        "taglistfile": os.path.join(manifestfolder, "taglist_train_en.txt"),
-        "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_train.txt")
     },
     "test": {
         "tsvfile": test_annotations,
