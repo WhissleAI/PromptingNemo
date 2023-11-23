@@ -26,6 +26,12 @@ from johnsnowlabs import nlp
 dependency_parser = nlp.load('ner')
 from sparknlp.pretrained import PretrainedPipeline
 
+'''
+TODO:
+1. all labels used are written properly to the taglist file
+2. Multiprocessing for the tsv files
+'''
+
 ### Intitiate text normalizer and puctuator
 normalizer = Normalizer(input_case='lower_cased', lang="en")
 punctuator = nemo_nlp.models.PunctuationCapitalizationModel.from_pretrained("punctuation_en_distilbert")
@@ -58,10 +64,13 @@ emotion_config = AutoConfig.from_pretrained("Rajaram1996/Hubert_emotion")
 def convert_mp3_to_wav(mp3_file_path, wav_file_path):
     # Load the MP3 file
     audio = AudioSegment.from_mp3(mp3_file_path)
+    duration_ms = len(audio)
+    duration_seconds = duration_ms / 1000.0
 
     # Export as WAV
     audio.export(wav_file_path, format="wav")
 
+    return duration_seconds
 
 
 def normalize(text):
@@ -277,7 +286,7 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         audiofile = audioclips / Path(row['path'])
         wavfilepath = audioclipswav / PurePath(row['path'].split(".")[0]+".wav")
         
-        #convert_mp3_to_wav(audiofile, wavfilepath)
+        duration = convert_mp3_to_wav(audiofile, wavfilepath)
         
         text = row['sentence']
         text = normalize(text)
@@ -297,6 +306,7 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         wavfilepath = str(wavfilepath)
 
         sample_dict = {}
+        sample_dict['duration'] = duration
         sample_dict['audio_filepath'] = wavfilepath
         sample_dict['text'] = text
         sample_dict['tasks'] = ["transcription"]
