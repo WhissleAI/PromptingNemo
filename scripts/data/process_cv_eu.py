@@ -9,6 +9,10 @@ import concurrent.futures
 import torch
 from transformers import (AutoTokenizer, AutoModelForTokenClassification, 
                           XLMRobertaForSequenceClassification, pipeline)
+
+import concurrent.futures
+import threading
+
 '''
 TODO:
 1. all labels used are written properly to the taglist file
@@ -16,7 +20,7 @@ TODO:
 '''
 
 ### Define all data path (SLURP here)
-common_voice = PurePath("/working_dir/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/")
+common_voice = PurePath("~/working_dir/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/")
 cv_italian = common_voice / PurePath("it/")
 it_train_annotations = cv_italian / PurePath("train.tsv")
 it_dev_annotations = cv_italian / PurePath("dev.tsv")
@@ -37,11 +41,6 @@ fr_train_annotations = cv_french / PurePath("train.tsv")
 fr_dev_annotations = cv_french / PurePath("dev.tsv")
 fr_test_annotations = cv_french / PurePath("test.tsv")
 
-
-audioclips = PurePath("/working_dir/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/it/clips")
-audioclipswav = PurePath(str(audioclips) + "-wav")
-os.system("mkdir -p " + str(audioclipswav))
-print(audioclipswav)
 
 
 ### Named entity tagger
@@ -119,7 +118,10 @@ def write_taglist(taglist,filename):
         f.write("\n")
     f.close()
 
-def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, checkpoint_file):
+def process_tsv(langid, tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, checkpoint_file):
+    
+    langid_orig = langid
+    langid = "LANGUAGEID_"+langid.upper()
     
     tsvfile = pd.read_csv(tsvfile, sep="\t")
 
@@ -140,6 +142,9 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
 
     #print(data_top)
     taglist = []
+    if langid not in taglist:
+        taglist.append(langid) 
+    
     for index, row in tqdm(enumerate(tsvfile.iterrows()), total=len(tsvfile), initial=last_processed_row):
         
         # Skip rows that have already been processed
@@ -151,6 +156,8 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         wavfilepath = audioclipswav / PurePath(row['path'].split(".")[0]+".wav")
         
         duration = convert_mp3_to_wav(audiofile, wavfilepath)
+        
+        wavfilepath =  PurePath("/working_dir/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/" + langid_orig + "/clips-wav/") / PurePath(row['path'].split(".")[0]+".wav")
         
         text = row['sentence']
         text = unidecode(text)
@@ -169,26 +176,26 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         sample_dict = {}
         sample_dict['duration'] = duration
         sample_dict['audio_filepath'] = wavfilepath
-        sample_dict['text'] = text
+        sample_dict['text'] = langid + " " + text
         sample_dict['tasks'] = ["transcription"]
         sample_dict['instruction'] = "Transcribe what is begin spoken"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
         emotion_labels = ' '.join(emotion_labels)
-        sample_dict['text'] = text + " " + emotion_label
+        sample_dict['text'] = langid + " " + text + " " + emotion_label
         sample_dict['tasks'] = ["transcription", "emotion"]
         sample_dict['instruction'] = "Transcribe and track speaker emotion"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
-        sample_dict['text'] = text_ner
+        sample_dict['text'] = langid + " " + text_ner
         sample_dict['tasks'] = ["transcription", "ner"]
         sample_dict['instruction'] = "Transcribe and mark named entities"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
-        sample_dict['text'] = text_ner + " " + emotion_label
+        sample_dict['text'] = langid + " " + text_ner + " " + emotion_label
         sample_dict['tasks'] = ["transcription", "ner", "emotion"]
         sample_dict['instruction'] = "Transcribe, mark named entities and track speaker emotion"
         json.dump(sample_dict, manifest)
@@ -202,119 +209,153 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
     write_taglist(taglist,taglistfile)
 
 
-manifestfolder = "/working_dir/audio_datasets/manifests_euro"
+manifestfolder = "/home/ubuntu/working_dir/audio_datasets/manifests_euro"
+
+audioclips_base = "/home/ubuntu/working_dir/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/"
+
+language_paths = {
+    "it": f"{audioclips_base}it/clips",
+    "de": f"{audioclips_base}de/clips",
+    "es": f"{audioclips_base}es/clips",
+    "fr": f"{audioclips_base}fr/clips"
+}
+
+language_paths_wav = {
+    "it": f"{audioclips_base}it/clips-wav",
+    "de": f"{audioclips_base}de/clips-wav",
+    "es": f"{audioclips_base}es/clips-wav",
+    "fr": f"{audioclips_base}fr/clips-wav"
+}
+
+# Create directories if they don't exist
+for path in language_paths_wav.values():
+    os.makedirs(path, exist_ok=True)
 
 
 # Define the file paths and parameters for each dataset
 datasets = {
     "it_dev": {
+        "langid": "it",
         "tsvfile": it_dev_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['it'],
+        "audioclipswav": language_paths_wav['it'],
         "manifestfile": os.path.join(manifestfolder, "dev_cv_it.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_dev_it.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_it_dev.txt")
     },
     "it_test": {
+        "langid": "it",
         "tsvfile": it_test_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['it'],
+        "audioclipswav": language_paths_wav['it'],
         "manifestfile": os.path.join(manifestfolder, "test_cv_it.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_test_it.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_it_test.txt")
     },
     "it_train": {
+        "langid": "it",
         "tsvfile": it_train_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['it'],
+        "audioclipswav": language_paths_wav['it'],
         "manifestfile": os.path.join(manifestfolder, "train_cv_it.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_train_it.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_it_train.txt")
     },
     "de_dev": {
+        "langid": "de",
         "tsvfile": de_dev_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['de'],
+        "audioclipswav": language_paths_wav['de'],
         "manifestfile": os.path.join(manifestfolder, "dev_cv_de.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_dev_de.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_de_dev.txt")
     },
     "de_test": {
+        "langid": "de",
         "tsvfile": de_test_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['de'],
+        "audioclipswav": language_paths_wav['de'],
         "manifestfile": os.path.join(manifestfolder, "test_cv_de.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_test_de.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_de_test.txt")
     },
     "de_train": {
+        "langid": "de",
         "tsvfile": de_train_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['de'],
+        "audioclipswav": language_paths_wav['de'],
         "manifestfile": os.path.join(manifestfolder, "train_cv_de.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_train_de.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_de_train.txt")
     },
     "es_dev": {
+        "langid": "es",
         "tsvfile": es_dev_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['es'],
+        "audioclipswav": language_paths_wav['es'],
         "manifestfile": os.path.join(manifestfolder, "dev_cv_es.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_dev_es.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_es_dev.txt")
     },
     "es_test": {
+        "langid": "es",
         "tsvfile": es_test_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['es'],
+        "audioclipswav": language_paths_wav['es'],
         "manifestfile": os.path.join(manifestfolder, "test_cv_es.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_test_es.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_es_test.txt")
     },
     "es_train": {
+        "langid": "es",
         "tsvfile": es_train_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['es'],
+        "audioclipswav": language_paths_wav['es'],
         "manifestfile": os.path.join(manifestfolder, "train_cv_es.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_train_es.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_es_train.txt")
     },
     "fr_dev": {
+        "langid": "fr",
         "tsvfile": fr_dev_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['fr'],
+        "audioclipswav": language_paths_wav['fr'],
         "manifestfile": os.path.join(manifestfolder, "dev_cv_fr.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_dev_fr.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_fr_dev.txt")
     },
     "fr_test": {
+        "langid": "fr",
         "tsvfile": fr_test_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['fr'],
+        "audioclipswav": language_paths_wav['fr'],
         "manifestfile": os.path.join(manifestfolder, "test_cv_fr.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_test_fr.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_fr_test.txt")
     },
     "fr_train": {
+        "langid": "fr",
         "tsvfile": fr_train_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
+        "audioclips": language_paths['fr'],
+        "audioclipswav": language_paths_wav['fr'],
         "manifestfile": os.path.join(manifestfolder, "train_cv_fr.json"),
         "taglistfile": os.path.join(manifestfolder, "taglist_train_fr.txt"),
         "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_fr_train.txt")
     },
 }
 
-# Run process_tsv in parallel for each dataset
-with concurrent.futures.ThreadPoolExecutor() as executor:
-    futures = []
-    for dataset in datasets.values():
-        future = executor.submit(process_tsv, **dataset)
-        futures.append(future)
+
+max_concurrent_jobs = 8
+
+def run_jobs(semaphore, dataset):
+    with semaphore:
+        process_tsv(**dataset)
+
+# Use threading.Semaphore instead of concurrent.futures.Semaphore
+with concurrent.futures.ThreadPoolExecutor(max_workers=max_concurrent_jobs) as executor:
+    semaphore = threading.Semaphore(max_concurrent_jobs)
+    futures = [executor.submit(run_jobs, semaphore, dataset) for dataset in list(datasets.values())[:max_concurrent_jobs]]
 
     # Wait for all futures to complete
     for future in concurrent.futures.as_completed(futures):
-        # try:
         future.result()
-        # except Exception as exc:
-        #     print(f'Generated an exception: {exc}')
