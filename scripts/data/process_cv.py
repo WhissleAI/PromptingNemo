@@ -49,7 +49,6 @@ print(audioclipswav)
 
 
 ### Named entity tagger
-dependency_parser = PretrainedPipeline("dependency_parse")
 entity_tagger = PretrainedPipeline("onto_recognize_entities_sm")
 
 
@@ -61,13 +60,15 @@ emotion_config = AutoConfig.from_pretrained("Rajaram1996/Hubert_emotion")
 
 
 
-def convert_mp3_to_wav(mp3_file_path, wav_file_path):
+def convert_mp3_to_wav(mp3_file_path, wav_file_path, sample_rate=16000):
     # Load the MP3 file
     audio = AudioSegment.from_mp3(mp3_file_path)
     duration_ms = len(audio)
     duration_seconds = duration_ms / 1000.0
 
     # Export as WAV
+    audio = audio.set_frame_rate(sample_rate)
+    
     audio.export(wav_file_path, format="wav")
 
     return duration_seconds
@@ -291,9 +292,6 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         text = row['sentence']
         text = normalize(text)
 
-        text_pos, used_pos = tag_pos(text)
-        taglist = taglist + used_pos
-
         text_ner, used_ner = tag_ner(text)
         taglist = taglist + used_ner
 
@@ -308,20 +306,13 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         sample_dict = {}
         sample_dict['duration'] = duration
         sample_dict['audio_filepath'] = wavfilepath
-        sample_dict['text'] = text
+        sample_dict['text'] = "LANGUAGEID_EN " + text
         sample_dict['tasks'] = ["transcription"]
         sample_dict['instruction'] = "Transcribe what is begin spoken"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
-        emotion_labels = ' '.join(emotion_labels)
-        sample_dict['text'] = text + " " + emotion_label
-        sample_dict['tasks'] = ["transcription", "emotion"]
-        sample_dict['instruction'] = "Transcribe and track speaker emotion"
-        json.dump(sample_dict, manifest)
-        manifest.write("\n")
-
-        sample_dict['text'] = text_ner
+        sample_dict['text'] = "LANGUAGEID_EN " + text_ner
         sample_dict['tasks'] = ["transcription", "ner"]
         sample_dict['instruction'] = "Transcribe and mark named entities"
         json.dump(sample_dict, manifest)
@@ -330,18 +321,6 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         sample_dict['text'] = text_ner + " " + emotion_label
         sample_dict['tasks'] = ["transcription", "ner", "emotion"]
         sample_dict['instruction'] = "Transcribe, mark named entities and track speaker emotion"
-        json.dump(sample_dict, manifest)
-        manifest.write("\n")
-
-        sample_dict['text'] = text_pos
-        sample_dict['tasks'] = ["transcription", "pos"]
-        sample_dict['instruction'] = "Transcribe and tag parts of speech of each word"
-        json.dump(sample_dict, manifest)
-        manifest.write("\n")
-
-        sample_dict['text'] = text_pos + " " + emotion_labels
-        sample_dict['tasks'] = ["transcription", "pos", "emotion"]
-        sample_dict['instruction'] = "Transcribe, tag parts of speech of each word and track speaker information"
         json.dump(sample_dict, manifest)
         manifest.write("\n")
 
@@ -358,22 +337,14 @@ manifestfolder = "/audio_datasets/manifests"
 
 # Define the file paths and parameters for each dataset
 datasets = {
-    "dev": {
-        "tsvfile": dev_annotations,
+    "train": {
+        "tsvfile": train_annotations,
         "audioclips": audioclips,
         "audioclipswav": audioclipswav,
-        "manifestfile": os.path.join(manifestfolder, "dev_cv_en.json"),
-        "taglistfile": os.path.join(manifestfolder, "taglist_dev_en.txt"),
-        "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_dev.txt")
+        "manifestfile": os.path.join(manifestfolder, "train_cv_en.json"),
+        "taglistfile": os.path.join(manifestfolder, "taglist_train_en.txt"),
+        "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_train.txt")
     },
-    "test": {
-        "tsvfile": test_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
-        "manifestfile": os.path.join(manifestfolder, "test_cv_en.json"),
-        "taglistfile": os.path.join(manifestfolder, "taglist_test_en.txt"),
-        "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_test.txt")
-    }
 }
 
 # Run process_tsv in parallel for each dataset
