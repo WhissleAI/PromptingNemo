@@ -452,9 +452,9 @@ def parse_config(file_path):
             current_dict[keys[-1]] = value.strip()
     return config_dict
 
-def create_ort_session(model_name="EN_ner_emotion_commonvoice"):
+def create_ort_session(model_shelf, model_name="EN_ner_emotion_commonvoice"):
     
-    model_shelf = Path("/home/ubuntu/advanced-speech-LLM-demo/artifacts/model_shelf")
+    model_shelf = Path(model_shelf)
     name = Path(model_name)
     model_path = model_shelf / name
     
