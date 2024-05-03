@@ -32,32 +32,6 @@ TODO:
 2. Multiprocessing for the tsv files
 '''
 
-### Intitiate text normalizer and puctuator
-normalizer = Normalizer(input_case='lower_cased', lang="en")
-punctuator = nemo_nlp.models.PunctuationCapitalizationModel.from_pretrained("punctuation_en_distilbert")
-
-### Define all data path (SLURP here)
-cv_english = PurePath("/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/")
-train_annotations = cv_english / PurePath("train.tsv")
-dev_annotations = cv_english / PurePath("dev.tsv")
-test_annotations = cv_english / PurePath("test.tsv")
-
-audioclips = PurePath("/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/clips")
-audioclipswav = PurePath(str(audioclips) + "-wav")
-os.system("mkdir -p " + str(audioclipswav))
-print(audioclipswav)
-
-
-### Named entity tagger
-entity_tagger = PretrainedPipeline("onto_recognize_entities_sm")
-
-
-# Audio Emotion Classification
-emotion_model = HubertForSpeechClassification.from_pretrained("Rajaram1996/Hubert_emotion")
-feature_extractor = Wav2Vec2FeatureExtractor.from_pretrained("facebook/hubert-base-ls960")
-sampling_rate=16000 # defined by the model; must convert mp3 to this rate.
-emotion_config = AutoConfig.from_pretrained("Rajaram1996/Hubert_emotion")
-
 
 
 def convert_mp3_to_wav(mp3_file_path, wav_file_path, sample_rate=16000):
@@ -332,7 +306,7 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
     write_taglist(taglist,taglistfile)
 
 
-if __name__ == "MAIN":
+if __name__ == "__main__":
     
     
     ### Intitiate text normalizer and puctuator
