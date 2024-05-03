@@ -19,8 +19,8 @@ from nemo_text_processing.text_normalization.normalize import Normalizer
 import nemo.collections.nlp as nemo_nlp
 from flair.data import Sentence
 from flair.models import SequenceTagger
-from AudioEmotionClassification.models import (Wav2Vec2ForSpeechClassification, 
-                                               HubertForSpeechClassification)
+#from AudioEmotionClassification.models import (Wav2Vec2ForSpeechClassification, 
+#                                              HubertForSpeechClassification)
 
 from johnsnowlabs import nlp
 dependency_parser = nlp.load('ner')
@@ -332,34 +332,64 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
     write_taglist(taglist,taglistfile)
 
 
-manifestfolder = "/audio_datasets/manifests"
+if __name__ == "MAIN":
+    
+    
+    ### Intitiate text normalizer and puctuator
+    normalizer = Normalizer(input_case='lower_cased', lang="en")
+    punctuator = nemo_nlp.models.PunctuationCapitalizationModel.from_pretrained("punctuation_en_distilbert")
+
+    ### Define all data path (SLURP here)
+    cv_english = PurePath("/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/")
+    train_annotations = cv_english / PurePath("train.tsv")
+    dev_annotations = cv_english / PurePath("dev.tsv")
+    test_annotations = cv_english / PurePath("test.tsv")
+
+    audioclips = PurePath("/audio_datasets/CommonVoice/datasets/cv-corpus-15.0-2023-09-08/en/clips")
+    audioclipswav = PurePath(str(audioclips) + "-wav")
+    os.system("mkdir -p " + str(audioclipswav))
+    print(audioclipswav)
 
 
-# Define the file paths and parameters for each dataset
-datasets = {
-    "train": {
-        "tsvfile": train_annotations,
-        "audioclips": audioclips,
-        "audioclipswav": audioclipswav,
-        "manifestfile": os.path.join(manifestfolder, "train_cv_en.json"),
-        "taglistfile": os.path.join(manifestfolder, "taglist_train_en.txt"),
-        "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_train.txt")
-    },
-}
+    ### Named entity tagger
+    entity_tagger = PretrainedPipeline("onto_recognize_entities_sm")
 
-# Run process_tsv in parallel for each dataset
-with concurrent.futures.ThreadPoolExecutor() as executor:
-    futures = []
-    for dataset in datasets.values():
-        future = executor.submit(process_tsv, **dataset)
-        futures.append(future)
 
-    # Wait for all futures to complete
-    for future in concurrent.futures.as_completed(futures):
-        try:
-            future.result()
-        except Exception as exc:
-            print(f'Generated an exception: {exc}')
+    # Audio Emotion Classification
+    emotion_model = HubertForSpeechClassification.from_pretrained("Rajaram1996/Hubert_emotion")
+    feature_extractor = Wav2Vec2FeatureExtractor.from_pretrained("facebook/hubert-base-ls960")
+    sampling_rate=16000 # defined by the model; must convert mp3 to this rate.
+    emotion_config = AutoConfig.from_pretrained("Rajaram1996/Hubert_emotion")
+
+
+    manifestfolder = "/audio_datasets/manifests"
+
+
+    # Define the file paths and parameters for each dataset
+    datasets = {
+        "train": {
+            "tsvfile": train_annotations,
+            "audioclips": audioclips,
+            "audioclipswav": audioclipswav,
+            "manifestfile": os.path.join(manifestfolder, "train_cv_en.json"),
+            "taglistfile": os.path.join(manifestfolder, "taglist_train_en.txt"),
+            "checkpoint_file": os.path.join(manifestfolder,"checkpoint_cv_train.txt")
+        },
+    }
+
+    # Run process_tsv in parallel for each dataset
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = []
+        for dataset in datasets.values():
+            future = executor.submit(process_tsv, **dataset)
+            futures.append(future)
+
+        # Wait for all futures to complete
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                future.result()
+            except Exception as exc:
+                print(f'Generated an exception: {exc}')
 
 
 # # Define the file paths and parameters
