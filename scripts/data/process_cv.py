@@ -60,7 +60,7 @@ def normalize(text):
 
 
 
-def tag_ner(text):
+def tag_ner(entity_tagger,text):
     """
     Wraps each token with its corresponding BIO tag and returns the wrapped text and a list of unique tags used.
 
@@ -252,7 +252,7 @@ def get_classification_labels_hf(model, audio_file, sampling_rate=16000, score=5
     #convert logits to probability
     probabilities = torch.nn.functional.softmax(pred, dim=1)
     
-    return [id2label, probabilities]
+    return id2label, probabilities
 
 
 def write_taglist(taglist,filename):
@@ -339,7 +339,11 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
     manifest.close()
     write_taglist(taglist,taglistfile)
 
+#def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, checkpoint_file):
+    
+    
 
+    
 if __name__ == "__main__":
     
     
