@@ -17,8 +17,6 @@ from transformers import (AutoTokenizer, AutoModelForTokenClassification,
                           Wav2Vec2FeatureExtractor)
 from nemo_text_processing.text_normalization.normalize import Normalizer
 import nemo.collections.nlp as nemo_nlp
-from flair.data import Sentence
-from flair.models import SequenceTagger
 #from AudioEmotionClassification.models import (Wav2Vec2ForSpeechClassification, 
 #                                              HubertForSpeechClassification)
 
@@ -222,7 +220,7 @@ def get_emotion_labels(audio_file, sampling_rate=16000, score=50.0):
         
     return final_label
 
-def get_emotion_labels_hf(audio_file, sampling_rate=16000, score=50.0):
+def get_emotion_labels_hf(emotion_model, audio_file, sampling_rate=16000, score=50.0):
     
     raw_wav, _ = librosa.load(audio_file, sr=model.config.sampling_rate)
 
