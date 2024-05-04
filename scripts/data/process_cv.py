@@ -24,6 +24,8 @@ from johnsnowlabs import nlp
 dependency_parser = nlp.load('ner')
 from sparknlp.pretrained import PretrainedPipeline
 
+import librosa
+
 '''
 TODO:
 1. all labels used are written properly to the taglist file
