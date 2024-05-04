@@ -222,9 +222,7 @@ def get_emotion_labels(audio_file, sampling_rate=16000, score=50.0):
         
     return final_label
 
-def get_classification_labels_hf(model, audio_file, sampling_rate=16000, score=50.0):
-    
-    raw_wav, _ = librosa.load(audio_file, sr=model.config.sampling_rate)
+def get_classification_labels_hf(model, raw_wav, sampling_rate=16000, score=50.0):
 
     #get mean/std
     mean = model.config.mean
