@@ -229,10 +229,12 @@ def get_classification_labels_hf(model, raw_wav, sampling_rate=16000, score=50.0
     std = model.config.std
 
     #normalize the audio by mean/std
-    norm_wav = (raw_wav - mean) / (std+0.000001)
+    raw_wav_tensor = torch.tensor(raw_wav).float().to(model.device)
+    norm_wav = (raw_wav_tensor - mean) / (std+0.000001)
 
     #generate the mask
     mask = torch.ones(1, len(norm_wav))
+    mask.to(model.device)
 
     #batch it (add dim)
     wavs = torch.tensor(norm_wav).unsqueeze(0)
