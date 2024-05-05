@@ -25,6 +25,8 @@ from sparknlp.pretrained import PretrainedPipeline
 
 import librosa
 
+print("HELLO HELLO")
+
 '''
 TODO:
 1. all labels used are written properly to the taglist file
@@ -262,6 +264,7 @@ class HFAudioClassificationModel:
         self.device = device
         self.mean = model.config.mean
         self.std = model.config.std
+        print("HELLO HELLO")
 
     def read_audio(self, audio_path):
         
