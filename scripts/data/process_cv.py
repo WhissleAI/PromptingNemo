@@ -258,24 +258,24 @@ def get_classification_labels_hf(model, raw_wav, sampling_rate=16000, score=50.0
 
 class HFAudioClassificationModel:
     
-    def __init__(self, model_name, device):
-        
-        self.model = AutoModelForAudioClassification.from_pretrained(model_name, trust_remote_code=True, device=device)
-        self.device = device
-        self.mean = model.config.mean
-        self.std = model.config.std
-        print("HELLO HELLO")
+    def __init__(self, model_name):
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print("Device used: ", self.device)
+        self.model = AutoModelForAudioClassification.from_pretrained(model_name, trust_remote_code=True)
+        self.model.to(self.device)
+        # print("HELLO HELLO")
+        self.mean = self.model.config.mean
+        self.std = self.model.config.std
+        # print("HELLO HELLO")
 
-    def read_audio(self, audio_path):
-        
-        raw_wav, _ = librosa.load(audio_path, sr=emotion_model.config.sampling_rate)
+    def read_audio(self, audio_path):  
+        raw_wav, _ = librosa.load(audio_path, sr=self.model.config.sampling_rate)
         raw_wav_tensor = torch.tensor(raw_wav).float().to(self.device)
         norm_wav = (raw_wav_tensor - self.mean) / (self.std + 0.000001)
         mask = torch.ones(1, len(norm_wav)).to(self.device)
         return norm_wav, mask
 
     def get_prediction(self, norm_wav, mask):
-        
         with torch.no_grad():
             pred = self.model(norm_wav.unsqueeze(0), mask)
 
