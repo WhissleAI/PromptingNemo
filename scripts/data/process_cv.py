@@ -15,6 +15,8 @@ import torchaudio
 from transformers import (AutoTokenizer, AutoModelForTokenClassification, 
                           TokenClassificationPipeline, pipeline, AutoConfig, 
                           Wav2Vec2FeatureExtractor)
+from transformers import AutoModelForAudioClassification
+
 from nemo_text_processing.text_normalization.normalize import Normalizer
 import nemo.collections.nlp as nemo_nlp
 #from AudioEmotionClassification.models import (Wav2Vec2ForSpeechClassification, 
