@@ -1,0 +1,9 @@
+datasets
+pyspark==3.3.0
+spark-nlp==3.2.0
+pandas
+pydub
+spark-nlp-display
+johnsnowlabs
+pydantic
+gliner

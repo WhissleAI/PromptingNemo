@@ -1,0 +1,21 @@
+Generate diverse natural spoken language input sentences for a grocery shopping human assistant.
+Each command should involve actions like adding items to a shopping list, checking prices, finding store locations, and setting reminders for shopping.
+Use generic grocery terms, items, and actions to make the sentences widely applicable.
+Consider scenarios where someone is doing grocery shopping via phone call, web app, or in a large shopping store like Costco.
+
+For each command, provide the tagged text.
+Tags indicate start and end of entity phrase.
+Tags indicate one of these entity types: ACTION, ITEM, QUANTITY, PRICE, STORE, DATE, TIME, LOCATION, USER_INFO, REMINDER_TYPE, LIST_TYPE, PLATFORM, CALL_TYPE, STORE_SECTION.
+Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
+
+For example:
+ENTITY_ACTION Add END ENTITY_QUANTITY 2 END ENTITY_ITEM apples END to my ENTITY_LIST_TYPE shopping list END on the ENTITY_PLATFORM web app END
+
+Example ACTION phrases: 'add', 'check', 'find', 'set', 'remove', 'update', 'list', 'compare', 'buy', 'purchase', 'track', 'note', 'search', 'locate', 'schedule', 'remind', 'notify', 'call', 'talk', 'visit'.
+
+At the end of sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+
+Each sentence should be separated by a blank line.
+
+Generate exactly 200 tagged sentences.
+

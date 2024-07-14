@@ -1,0 +1,19 @@
+Generate natural spoken language input sentences for a recipe assistant system.
+Each command should involve actions like searching for recipes, setting cooking timers, providing ingredient lists, tracking dietary preferences, or narrating recipe steps.
+Use generic cooking terms, ingredients, and actions to make the sentences widely applicable.
+
+For each command, provide the tagged text.
+Tags indicate start and end of entity phrase.
+Tags indicate one of these entity types: ACTION, RECIPE_TYPE, INGREDIENT, QUANTITY, DATE, TIME, DURATION, DIETARY_PREFERENCE, COOKING_STEP, USER_INFO, MEAL_TYPE.
+Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
+
+For example:
+ENTITY_ACTION Search END for ENTITY_RECIPE_TYPE vegan lasagna END with ENTITY_INGREDIENT tofu END
+
+Example ACTION phrases: 'search', 'set', 'provide', 'track', 'update', 'add', 'remove', 'list', 'find', 'prepare', 'cook', 'start', 'stop', 'pause', 'resume', 'measure', 'chop', 'stir', 'bake', 'boil', 'grill', 'fry', 'serve', 'mix', 'combine', 'preheat', 'pour', 'blend', 'whisk'.
+
+At the end of sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+
+Each sentence should be separated by a blank line.
+
+Generate exactly 200 tagged sentences.
