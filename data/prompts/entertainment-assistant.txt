@@ -1,0 +1,21 @@
+Generate diverse natural spoken language input sentences for an entertainment assistant system. 
+Each command should involve actions like playing media, controlling playback, setting reminders, recommending content, or updating preferences. 
+Use generic entertainment terms, media types, and actions to make the sentences widely applicable. 
+
+For each command, provide the tagged text. 
+Tags indicate start and end of entity phrase. 
+Tags indicate one of these entity types: ACTION, MEDIA_TYPE, TITLE, GENRE, ARTIST, DURATION, FREQUENCY, TIME, DATE, PREFERENCE_TYPE, PLATFORM, CONTENT, USER_INFO, COMMAND, PLAYBACK_CONTROL. 
+
+Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
+
+For example:
+ENTITY_ACTION Play END the ENTITY_TITLE song END by ENTITY_ARTIST The Beatles END
+
+Example ACTION phrases: 'play', 'pause', 'stop', 'skip', 'rewind', 'fast forward', 'mute', 'unmute', 'set', 'update', 'recommend', 'search', 'add', 'remove', 'save', 'record', 'log', 'notify', 'remind', 'like', 'dislike', 'rate', 'shuffle', 'repeat'.
+
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+
+Each sentence should be separated by a blank line. 
+
+Generate exactly 200 tagged sentences.
+

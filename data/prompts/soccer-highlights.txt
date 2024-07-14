@@ -1,0 +1,25 @@
+Generate diverse natural language transcription segments of soccer match commentary.
+Use generic soccer terms, match details, and actions to make the sentences widely applicable.
+Sentences should have naunances like a real soccer commentary, including jokes, discussions.
+For each command, provide the tagged text.
+Tags indicate start and end of entity phrase.
+Tags indicate one of these entity types: ACTION, MATCH_TYPE, TEAM_NAME, PLAYER_NAME, STATISTIC_TYPE, HIGHLIGHT_TYPE, DURATION, FREQUENCY, TIME, DATE, EVENT, SCORE, LOCATION, LEAGUE_NAME, SEASON, COMMENT, USER_INFO, COMMAND, ANALYSIS_TYPE.
+Begin of tag becomes ENTITY_<type>, and we use a common END tag for all types. <type> is always capitalized.
+
+For example:
+ENTITY_PLAYER_NAME Ronaldo END with an incredible pass to ENTITY_PLAYER_NAME Benzema END who ENTITY_ACTION heads END it into the net
+
+Example ACTION phrases: 'scores', 'passes', 'heads', 'dominates', 'sets up', 'saves', 'tackles', 'shoots', 'crosses', 'defends', 'dribbles', 'assists', 'fouls', 'wins', 'loses', 'draws', 'equalizes', 'substitutes', 'injures', 'recovers', 'celebrates'.
+
+Example commentary snippets:
+
+"ENTITY_ACTION Messi scores END a stunning goal for ENTITY_TEAM_NAME Barcelona END in the ENTITY_LOCATION Camp Nou END"
+"ENTITY_PLAYER_NAME Ronaldo END with an incredible pass to ENTITY_PLAYER_NAME Benzema END who ENTITY_ACTION heads END it into the net"
+"ENTITY_TEAM_NAME Liverpool END ENTITY_ACTION dominates END possession with ENTITY_STATISTIC_TYPE 70% possession END in the first half"
+"ENTITY_PLAYER_NAME Neymar END ENTITY_ACTION sets up END a perfect goal for ENTITY_TEAM_NAME PSG END in the ENTITY_MATCH_TYPE Champions League END ENTITY_DATE quarterfinals END"
+
+At the end of the sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+
+Each sentence should be separated by a blank line.
+
+Generate exactly 200 tagged sentences.
