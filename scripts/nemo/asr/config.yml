@@ -1,0 +1,29 @@
+model:
+  model_root: "/external2/models/hf/stt_en_conformer_ctc_large/"
+  model_name: "stt_en_conformer_ctc_large.nemo"
+  tokenizer_folder: "tokenizer"
+  new_tokenizer_folder: "new_tokenizer"
+  proto_file: "proto/file"
+  proto_dir: "proto/dir"
+
+training:
+  data_dir: "/home/ksingla/workspace/medical-ner/data/"
+  train_manifest: "text_train_cleaned_manifest_v2.json"
+  test_manifest: "text_valid_cleaned_manifest_v2.json"
+  batch_size: 16
+  max_steps: 60000
+
+adapter:
+  name: "AN4"
+  dim: 32
+  activation: "swish"
+  norm_position: "pre"
+
+experiment:
+  exp_dir: "experiments/"
+  exp_name: "encoder:fixed-adapter32-decode:tune-multidomain-v2"
+  monitor: "val_wer"
+  mode: "min"
+  always_save_nemo: true
+  save_best_model: true
+
