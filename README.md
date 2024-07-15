@@ -1,6 +1,15 @@
 # PromptingNemo
 E2E ASR paired with a language model fine-tuned using CTC model
 
+## Audio-visual Models
+Works for audio-visual applications
+
+- Noise aware audio-visual ASR
+- Scene aware audio-visual ASR
+
+## Speech-only Models
+For applications, which are speech only
+
 ### Tagging Real audio data
 
 - Using pretrained tagger and standard ASR datasets [Scripts](./scripts/data/real)
