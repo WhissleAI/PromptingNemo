@@ -1,0 +1,11 @@
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Other possible ignores
+.env
+*.env
+.DS_Store
+node_modules/
