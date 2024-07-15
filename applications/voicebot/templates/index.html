@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SpeechMaster Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Update the styles for the logo container */
+        .logo-container {
+            display: flex;
+            justify-content: flex-start;
+            /* Align items to the start of the flex container (left) */
+            align-items: center;
+            width: 100%;
+            /* Make container take full width */
+            max-width: 1800px;
+            /* Limit container's maximum width */
+            margin-bottom: 20px;
+            /* Space between logo and other content */
+            margin-left: 20px;
+            /* Adjust left margin */
+            margin-top: 20px;
+            /* Adjust top margin */
+        }
+
+        .logo {
+            width: 100%;
+            /* Modify the logo width for better fitting */
+            max-width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin: 0;
+            text-align: left;
+            /* Align the text to the left */
+            font-size: 28px;
+            margin-top: 10px;
+            margin-left: 20px;
+            /* Adjust left margin */
+        }
+
+        /* Additional CSS for the file upload button */
+        .custom-upload-button {
+            background-color: #3389C9;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+
+        #transcribeBtn {
+            background-color: #3389C9;
+            /* Set your desired background color */
+            color: #fff;
+            /* Set the text color */
+            margin-top: 10px;
+            width: 120px;
+            margin-right: 10px;
+            /* Add any other styles as needed */
+        }
+
+        .custom-upload-button:hover {
+            background-color: #2980b9;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        button {
+            margin-top: 40px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2DB45F;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        .loader {
+            position: relative;
+            width: 80px;
+            /* Increased size */
+            height: 80px;
+            /* Increased size */
+            animation: spin 2.8s linear infinite;
+            display: none;
+        }
+
+        .loader::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+            width: 4px;
+            /* Increased width */
+            height: 24px;
+            /* Increased height */
+            background-color: #EC1E31;
+            border-radius: 2px;
+            animation: ray-spin 0.2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes ray-spin {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-50%, -50%) rotate(20deg);
+            }
+
+            20% {
+                transform: translate(-50%, -50%) rotate(36deg);
+            }
+
+            30% {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            40% {
+                transform: translate(-50%, -50%) rotate(72deg);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+
+            60% {
+                transform: translate(-50%, -50%) rotate(108deg);
+            }
+
+            70% {
+                transform: translate(-50%, -50%) rotate(120deg);
+            }
+
+            80% {
+                transform: translate(-50%, -50%) rotate(144deg);
+            }
+
+            90% {
+                transform: translate(-50%, -50%) rotate(162deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+        }
+
+        /* Add more spokes by continuing the pattern */
+        /* Additional CSS for transcription output */
+        #transcription {
+            max-width: 80%;
+            width: 1300px;
+            text-align: left;
+            margin-top: 20px;
+            max-width: 100%;
+            padding: 10px;
+            /* Adjust padding for better appearance */
+            background-color: #f9f9f9d6;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+            align-items: center;
+            margin-top: 50px;
+            border: 4px solid #333;
+            border-radius: 6px;
+            overflow-wrap: break-word;
+            height: 200px;
+            /* Set a fixed height */
+            overflow-y: auto;
+        }
+
+        #transcription p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        #transcription .transcription-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Change the color of the audio progress bar */
+        audio::-webkit-media-controls-panel {
+            background-color: #f9f9f9d6;
+            /* Background color of the controls */
+            border: 4px solid #333;
+        }
+
+        /* Adjust the size of other controls if needed */
+
+        /* Increase the size of the media control buttons */
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-volume-slider {
+            transform: scale(1.4);
+            /* Adjust the scale of the control buttons */
+        }
+
+        audio::-webkit-media-controls-time-remaining-display {
+            font-size: 20px;
+            /* Adjust the font size as needed */
+            color: #333;
+            /* Adjust the color as needed */
+        }
+
+        /* Adjust the '/' separator between current time and time remaining */
+        audio::-webkit-media-controls-current-time-display {
+            font-size: 20px;
+            /* Adjust the font size as needed */
+            color: #333;
+            /* Adjust the color as needed */
+        }
+
+        /* Adjust the '/' separator between current time and time remaining */
+        audio::-webkit-media-controls-current-time-display::after {
+            content: '/';
+            margin: 0 5px;
+            /* Adjust spacing around the separator */
+        }
+
+        #audioForm {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            gap: 20px;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+
+        #transcription .time-taken {
+            color: #555;
+        }
+
+        label[for="audioFile"] {
+            font-size: 20px;
+            /* Adjust the font size as needed */
+        }
+
+        /* Additional CSS for the audio player */
+        audio {
+            margin-left: 100px;
+            margin-top: 20px;
+            width: 300%;
+            max-width: 450px;
+            align-items: center;
+            text-align: center;
+            height: 60px;
+        }
+
+        label[for="modelName"] {
+            margin-left: 100px;
+            margin-top: 10px;
+            font-size: 20px;
+            /* Adjust the font size as needed */
+        }
+
+        label[for="computetype"] {
+            margin-left: 100px;
+            margin-top: 10px;
+            font-size: 20px;
+            /* Adjust the font size as needed */
+        }
+
+        label[for="languageId"] {
+            margin-left: 100px;
+            margin-top: 10px;
+            font-size: 20px;
+            /* Adjust the font size as needed */
+
+        }
+
+        label[for="audioFiles"] {
+            font-size: 20px;
+            /* Adjust the font size as needed */
+            margin-top: 30px;
+        }
+
+        #audioFiles {
+            margin-left: 100px;
+            font-size: 18px;
+            /* Adjust the font size as needed */
+            border: 4px solid #333;
+            width: 100%;
+            /* Make the audio file dropdown full width */
+        }
+
+        #modelName {
+            width: 150px;
+            /* Adjust the width as needed */
+            margin-left: 100px;
+            margin-top: 10px;
+            font-size: 20px;
+            /* Adjust the font size as needed */
+            border: 4px solid #333;
+        }
+
+        #languageId {
+            margin-left: 100px;
+            margin-top: 10px;
+            font-size: 20px;
+            /* Adjust the font size as needed */
+            border: 4px solid #333;
+
+        }
+
+        #computetype {
+            width: 150px;
+            /* Adjust the width as needed */
+            margin-left: 100px;
+            margin-top: 10px;
+            font-size: 20px;
+            /* Adjust the font size as needed */
+            border: 4px solid #333;
+        }
+
+        .highlight-ner {
+            color: #2DB55F;
+            /* Red */
+            font-weight: bold;
+        }
+
+        .highlight-emotion {
+            color: #9D44B5;
+            /* Steel Blue */
+            font-weight: bold;
+        }
+
+        .highlight-end {
+            color: #2DB55F;
+            /* Same as NER_* */
+            font-weight: bold;
+        }
+
+        .audio-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 550px;
+            width: 100%;
+            max-width: 400px;
+            /* Adjust the max-width for audio file selection */
+        }
+
+        .transcribe-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 250px;
+            margin-top: 20px;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+        }
+
+        .select-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 10px;
+            /* Adjust the margin for spacing */
+
+        }
+
+        .model-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        select#audioFiles option:checked {
+            background-color: #2980b9;
+            color: #ffffff;
+        }
+
+        #llmOutput {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        #llmOutput table {
+            width: 100%;
+            border: 2px solid #333;
+        }
+
+        #llmOutput th,
+        #llmOutput td {
+            border: 2px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #llmOutput th {
+            background-color: #f2f2f2;
+        }
+
+        #llmOutputSection {
+            width: 80%;
+            /* Make the output section full width */
+            width: 1300px;
+            text-align: left;
+            margin-top: 20px;
+            margin-left: 100px;
+            margin-right: 50px;
+            padding: 10px;
+            background-color: #f9f9f9d6;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            margin-top: 50px;
+            border: 4px solid #333;
+            overflow-wrap: break-word;
+            height: 200px;
+            /* Set a fixed height */
+            overflow-y: auto;
+        }
+
+        #llmOutputSection p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        #llmOutputSection .transcription-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .in-progress {
+            text-align: left;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            /* Adjust the width here */
+            max-width: 3500px;
+            /* Maximum width for the block */
+            margin-left: 50px;
+            margin-right: auto;
+        }
+
+        .in-progress h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .in-progress p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+    </style>
+
+
+    <script>
+
+        function displayLlmOutput(output) {
+            const llmOutputDiv = document.getElementById('llmOutput');
+            llmOutputDiv.innerHTML = ''; // Clear previous content
+            llmOutputDiv.innerHTML = `<p><strong>JSON Output</strong></p><div>${output}</div>`;
+        }
+
+        function handleProcessLlmOutput(outputFromFlask) {
+            displayLlmOutput(outputFromFlask);
+        }
+
+        function fetchLlmOutput(transcriptionText, token_timestamps, modelName) {
+
+            const formattedTimestamps = token_timestamps.map(tuple => tuple.join(',')).join(';');
+
+            fetch('/process_transcript', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `text=${encodeURIComponent(transcriptionText)}&model_name=${modelName}&timestamps=${encodeURIComponent(formattedTimestamps)}` // Include the model_name in the request body
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const processedOutput = data.processed_output;
+                    displayLlmOutput(processedOutput);
+                })
+                .catch(error => console.error('Error fetching LLM output:', error));
+        }
+
+        function fetchFiles() {
+            fetch('/get_files')
+                .then(response => response.json())
+                .then(data => {
+                    const fileSelect = document.getElementById('audioFiles');
+                    data.files.forEach(file => {
+                        const option = document.createElement('option');
+                        option.value = file;
+                        option.textContent = file;
+                        fileSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching files:', error));
+        }
+
+        function updateAudioPlayer(selectedFile) {
+            if (selectedFile) {
+                const audioPlayer = document.getElementById('audioPlayer');
+                audioPlayer.src = `/demo_audio/${selectedFile}`; // Update with correct path
+            }
+        }
+
+        // Call fetchFiles when the page loads
+        window.onload = fetchFiles;
+
+        function handleFileSelect(event) {
+            const input = event.target;
+            const fileName = input.files[0].name;
+            const label = document.getElementById('selectedFileName');
+            label.innerText = fileName;
+
+            // Audio player setup
+            const audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = URL.createObjectURL(input.files[0]);
+        }
+
+        function transcribeAudio() {
+            const audioFilesSelect = document.getElementById('audioFiles');
+            const selectedIndex = audioFilesSelect.selectedIndex;
+
+            if (selectedIndex === 0) {
+                alert('Please select an audio file.');
+                return;
+            }
+
+            const selectedFileName = audioFilesSelect.options[selectedIndex].value;
+            const selectedModel = document.getElementById('modelName').value; // Fetch the selected model name
+            const selectedLanguageId = document.getElementById('languageId').value; // Fetch the selected language ID
+            const loader = document.getElementById('loader');
+            const transcriptionDiv = document.getElementById('transcription');
+            const transcribeButton = document.getElementById('transcribeBtn');
+
+            loader.style.display = 'inline-block';
+            transcriptionDiv.innerHTML = '<p class="transcription-label"></p><p>Loading...</p>';
+
+            transcribeButton.disabled = true;
+
+            fetch(`/get_audio_content/${selectedFileName}`)
+                .then(response => response.blob())
+                .then(blob => {
+                    const formData = new FormData();
+                    formData.append('audio', blob, selectedFileName);
+                    formData.append('model_name', selectedModel); // Append the selected model name to the form data
+                    formData.append('language_id', selectedLanguageId);
+                    const startTime = performance.now(); // Record start time
+                    fetch('/transcribe', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            const endTime = performance.now();
+                            const timeTaken = (endTime - startTime) / 1000;
+                            const highlightedTranscript = highlightTagsInTranscript(data.transcript, selectedModel);
+                            transcriptionDiv.innerHTML = `<p class="transcription-label">Generated Output:</p><br>${highlightedTranscript}<p class="time-taken"><br>Time taken: ${timeTaken.toFixed(2)} seconds</p>`;
+
+                            fetchLlmOutput(data.transcript, data.token_timestamps, selectedModel);
+                        })
+                        .catch(error => console.error('Error:', error))
+                        .finally(() => {
+                            loader.style.display = 'none';
+                            transcribeButton.disabled = false;
+                        });
+                })
+                .catch(error => console.error('Error fetching audio content:', error));
+        }
+        function highlightTagsInTranscript(transcript, model) {
+            if (model === 'ner_emotion_commonvoice') {
+                // Handle highlighting for this model
+                return transcript.replace(/\b((NER_[A-Z]+)|(LANGUAGEID_[A-Z]+)|(EMOTION_[A-Z]+)|END)\b/g, function (match) {
+                    if (match.startsWith('NER_')) {
+                        return `<span class="highlight-ner">${match}</span>`;
+                    } else if (match.startsWith('EMOTION_')) {
+                        return `<span class="highlight-emotion">${match}</span>`;
+                    } else if (match === 'END') {
+                        return `<span class="highlight-end">${match}</span>`;
+                    } else if (match.startsWith('LANGUAGEID_')) {
+                        return `<span class="highlight-emotion">${match}</span>`;
+                    }
+                    return match; // If the match doesn't fall into any condition, return the original match
+                });
+            } else if (model === 'pos_emotion_commonvoice') {
+                // Handle highlighting for this model
+                return transcript.replace(/\b((POS_[A-Z]+)|(POS_PUNCT_[A-Z]+)|(EMOTION_[A-Z]+)|END)\b/g, function (match) {
+                    if (match.startsWith('POS_')) {
+                        return `<span class="highlight-ner">${match}</span>`;
+                    } else if (match.startsWith('POS_PUNCT_')) {
+                        return `<span class="highlight-ner">${match}</span>`;
+                    } else if (match.startsWith('EMOTION_')) {
+                        return `<span class="highlight-emotion">${match}</span>`;
+                    } else if (match === 'END') {
+                        return `<span class="highlight-end">${match}</span>`;
+                    }
+                    return match; // If the match doesn't fall into any condition, return the original match
+                });
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="logo-container">
+        <!-- Logo image wrapped with a link -->
+        <a href="https://whissle.ai/" target="_blank" rel="noopener noreferrer">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        </a>
+    </div>
+    <!-- Title -->
+    <h1>SpeechMaster βeta</h1>
+    </div>
+
+    <p>SpeechMaster βeta introduces a revolutionary advancement in automatic speech recognition technology, designed to
+        capture the full spectrum of human communication with unparalleled accuracy. Unlike traditional systems that
+        often miss intricate language patterns and emotional cues, SpeechMaster Pro excels by recognizing named entities
+        and leveraging unique placeholder symbols to understand speaker changes, emotional tones, and intents. This
+        integration allows for richer, more detailed transcriptions, making it an ideal solution for businesses aiming
+        to enhance customer interactions and individuals who require precise meeting transcriptions. With SpeechMaster
+        Pro, experience a new level of comprehension where every voice is heard and every word is significant.</p>
+
+    <div class="rectangle-window">
+        <!-- Reorganized form sections -->
+        <form id="audioForm" enctype="multipart/form-data">
+            <!-- Audio file selection and player -->
+            <div class="audio-section">
+                <!-- Select audio file dropdown -->
+                <label for="audioFiles">Select an audio file:</label>
+                <select id="audioFiles" name="audioFiles" onchange="updateAudioPlayer(this.value)" size="6">
+                    <!-- Options will be dynamically added here -->
+                </select>
+                <!-- Audio player -->
+            </div>
+
+            <!-- Model and language selection -->
+            <div class="model-info">
+                <!-- Language selection dropdown -->
+                <div class="select-wrapper">
+                    <label for="languageId">Language</label>
+                    <select id="languageId" name="languageId">
+                        <option value="EN">English</option>
+                        <option value="EURO">European</option>
+                        <!-- <option value="INDOARYAN">Indo-aryan</option>
+                        <option value="DRAVIDIAN">Dravidian</option> -->
+                        <!-- Add more language options as needed -->
+                    </select>
+                </div>
+
+                <!-- Model selection dropdown -->
+                <div class="select-wrapper">
+                    <label for="modelName">Select a model:</label>
+                    <select id="modelName" name="modelName">
+                        <option value="ner_emotion_commonvoice">ner_emotion</option>
+                        <option value="pos_emotion_commonvoice">pos_emotion</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+
+                <div class="select-wrapper">
+                    <label for="computetype">Compute</label>
+                    <select id="computetype" name="computetype">
+                        <option value="english">CPU</option>
+                        <option value="english">GPU</option>
+                        <!-- Add more language options as needed -->
+                    </select>
+                </div>
+
+            </div>
+
+            <audio controls id="audioPlayer">
+                Your browser does not support the audio element.
+            </audio>
+            <p><br></p>
+            <!-- Transcription button and loader -->
+            <div class="transcribe-section">
+                <button id="transcribeBtn" type="button" onclick="transcribeAudio()">Process</button>
+                <div class="loader" id="loader"></div>
+            </div>
+        </form>
+
+        <!-- Transcription result display -->
+        <div id="transcription">
+            <p><strong>Generated Output</strong></p>
+            <!-- Content will be dynamically added here -->
+        </div>
+
+        <!-- Process_llm output section -->
+        <div id="llmOutputSection">
+            <p><strong>JSON Output</strong></p>
+            <div id="llmOutput"></div>
+        </div>
+    </div>
+    <div class="logo-container">
+        <!-- Logo image -->
+        <!-- "In Progress" message aligned with the logo -->
+        <footer className="text-xs text-gray-600 text-center mt-2 md:mt-4">
+            Whissle LLC © 2023. All rights reserved.
+        </footer>
+    </div>
+</body>
+
+</html>

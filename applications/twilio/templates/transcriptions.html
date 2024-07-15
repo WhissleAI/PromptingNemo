@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Transcriptions</title>
+    <script>
+        var eventSource = new EventSource("/stream");
+        eventSource.onmessage = function(event) {
+            var transcriptContainer = document.getElementById('transcript-container');
+            transcriptContainer.innerHTML += '<p>' + event.data + '</p>';  // Append new data as paragraphs
+        };
+    </script>
+</head>
+<body>
+    <h1>Live Transcriptions</h1>
+    <div id="transcript-container"></div>
+</body>
+</html>

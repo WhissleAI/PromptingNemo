@@ -1,0 +1,16 @@
+--2023-12-01 00:51:11--  https://www.dropbox.com/scl/fi/n9i6f7yma4tepadvetoaa/Artboard-2-3x-line-lighter-red.png?rlkey=d7gwxwp1hkspssgn2q9s9mq1w
+Resolving www.dropbox.com (www.dropbox.com)... 162.125.6.18, 2620:100:601c:18::a27d:612
+Connecting to www.dropbox.com (www.dropbox.com)|162.125.6.18|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://uc305fd73ddbf586cb85101b48fd.dl.dropboxusercontent.com/cd/0/inline/CIga3aTtmqqP-6pHgJvqzJoW04t2V-7pdPIrt_d7cMYMCcOtvwmqDHGQkCUbcgI89HC9g_TvVQMIqa4C21gHlHQgfk1c14BZcTwJGSPfATkKiYH4iw8JdBNo566YHV_lmafc1UQMNCr9KF9fD7v8_Gfo/file# [following]
+--2023-12-01 00:51:12--  https://uc305fd73ddbf586cb85101b48fd.dl.dropboxusercontent.com/cd/0/inline/CIga3aTtmqqP-6pHgJvqzJoW04t2V-7pdPIrt_d7cMYMCcOtvwmqDHGQkCUbcgI89HC9g_TvVQMIqa4C21gHlHQgfk1c14BZcTwJGSPfATkKiYH4iw8JdBNo566YHV_lmafc1UQMNCr9KF9fD7v8_Gfo/file
+Resolving uc305fd73ddbf586cb85101b48fd.dl.dropboxusercontent.com (uc305fd73ddbf586cb85101b48fd.dl.dropboxusercontent.com)... 162.125.6.15, 2620:100:601c:15::a27d:60f
+Connecting to uc305fd73ddbf586cb85101b48fd.dl.dropboxusercontent.com (uc305fd73ddbf586cb85101b48fd.dl.dropboxusercontent.com)|162.125.6.15|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 472085 (461K) [image/png]
+Saving to: ‘Artboard-2-3x-line-lighter-red.png?rlkey=d7gwxwp1hkspssgn2q9s9mq1w’
+
+               Artboard-2-3x-   0%[                                               ]       0  --.-KB/s               Artboard-2-3x-line-lighter-re 100%[==============================================>] 461.02K  --.-KB/s    in 0.004s  
+
+2023-12-01 00:51:13 (117 MB/s) - ‘Artboard-2-3x-line-lighter-red.png?rlkey=d7gwxwp1hkspssgn2q9s9mq1w’ saved [472085/472085]
+
