@@ -4,8 +4,11 @@ E2E ASR paired with a language model fine-tuned using CTC model
 ## Audio-visual Models
 Works for audio-visual applications
 
-- Noise aware audio-visual ASR
-- Scene aware audio-visual ASR
+### Noise aware audio-visual ASR
+- Data prep [Repo](https://github.com/WhissleAI/visual_speech_recognition)
+- Model fine-tuning 
+
+### Scene aware audio-visual ASR
 
 ## Speech-only Models
 For applications, which are speech only
