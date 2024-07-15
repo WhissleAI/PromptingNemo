@@ -59,20 +59,21 @@ def clean_file(input_file, text_file, text_tagged_file, tags_file):
     all_tags = set()
     valid_sents = []
     
-    with open(input_file, 'r') as infile, open(text_file, 'w') as outfile:
-        for line in infile:
-
+    infile = open(input_file, 'r').readlines()
+    outfile = open(text_file, 'w')
+    for line in infile:
+        if len(line.strip().split()) < 200:
             line = clean_noisy_line(line)
             valid = check_noisy(line)
-            if valid == "NOISY_LINE":
-                continue
-            else:
+            if valid != "NOISY_LINE":
+                #print("uncleaned line: ", line)
                 cleaned_line, tags = clean_data(line)
+                #print(cleaned_line)
                 all_tags.update(tags)
                 outfile.write(cleaned_line + "\n")
                 valid_sents.append(line)
 
-    
+    print("Valid sentences: ", len(valid_sents))
     tag_dict = {}
     special_tags = ["END", "ENTITY", "INTENT", "DOMAIN"]
     tagfile = open(tags_file, "w")
@@ -193,16 +194,16 @@ def clean_file_valid(input_file, text_file, text_tagged_file, tags_file):
             
      
             
-output_folder = Path("/home/ksingla/workspace/medical-ner/data/")
+output_folder = Path("/home/ksingla/workspace/PromptingNemo/data/synthetic/")
 
-# input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path
-# text_tagged_file = str(output_folder / "text_tagged_train_cleaned_v2.txt")  # replace with your desired output file path
-# text_file = str(output_folder / "text_train_v2.txt")  # replace with your desired output file path
-# tags_file = str(output_folder / "alltags_v2.txt")  # replace with your desired output file path
-# clean_file(input_file, text_file, text_tagged_file, tags_file)
+input_file = str(output_folder / "text_tagged_train_v3.txt")  # replace with your input file path
+text_tagged_file = str(output_folder / "text_tagged_train_cleaned_v3.txt")  # replace with your desired output file path
+text_file = str(output_folder / "text_train_v3.txt")  # replace with your desired output file path
+tags_file = str(output_folder / "alltags_v3.txt")  # replace with your desired output file path
+clean_file(input_file, text_file, text_tagged_file, tags_file)
 
 input_file = str(output_folder / "text_tagged_valid_v2.txt")  # replace with your input file path
-text_tagged_file = str(output_folder / "text_tagged_valid_cleaned_v2.txt")  # replace with your desired output file path
-text_file = str(output_folder / "text_valid_v2.txt")  # replace with your desired output file path
-tags_file = str(output_folder / "alltags_v2.txt")  # replace with your desired output file path
+text_tagged_file = str(output_folder / "text_tagged_valid_cleaned_v3.txt")  # replace with your desired output file path
+text_file = str(output_folder / "text_valid_v3.txt")  # replace with your desired output file path
+tags_file = str(output_folder / "alltags_v3.txt")  # replace with your desired output file path
 clean_file_valid(input_file, text_file, text_tagged_file, tags_file)
