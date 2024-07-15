@@ -26,11 +26,11 @@ class ASRModelTrainer:
             self.config = yaml.safe_load(f)
         self.model_root = Path(self.config['model']['model_root'])
         self.model_path = self.model_root / self.config['model']['model_name']
-        self.input_folder = self.model_root / self.config['model']['tokenizer_folder']
-        self.output_folder = self.model_root / self.config['model']['new_tokenizer_folder']
-        self.input_file = self.input_folder / 'tokenizer.model'
-        self.vocab_file = self.input_folder / 'tokenizer.vocab'
-        self.vocab_txt_file = self.input_folder / 'vocab.txt'
+        self.tokenizer_dir = self.model_root / self.config['model']['tokenizer_folder']
+        self.extended_tokenizer_dir = self.model_root / self.config['model']['new_tokenizer_folder']
+        self.tokenizer_model_file = self.tokenizer_dir / 'tokenizer.model'
+        self.vocab_file = self.tokenizer_dir / 'tokenizer.vocab'
+        self.vocab_txt_file = self.tokenizer_dir / 'vocab.txt'
         self.proto_file = self.config['model']['proto_file']
         self.proto_dir = self.config['model']['proto_dir']
         self.data_dir = Path(self.config['training']['data_dir'])
@@ -75,8 +75,8 @@ class ASRModelTrainer:
         tokens = taglist + [str(i) for i in range(10)] + punctuations
         is_userdefined = True
 
-        self.edit_spt_model(self.input_file, self.output_folder, tokens, self.vocab_file, self.vocab_txt_file, is_userdefined)
-        self.model.change_vocabulary(self.output_folder, "bpe")
+        self.edit_spt_model(self.tokenizer_model_file, self.extended_tokenizer_dir, tokens, self.vocab_file, self.vocab_txt_file, is_userdefined)
+        self.model.change_vocabulary(self.extended_tokenizer_dir, "bpe")
     
     def configure_trainer(self):
         accelerator = 'gpu' if torch.cuda.is_available() else 'cpu'
@@ -186,18 +186,18 @@ class ASRModelTrainer:
             sys.exit(1)
 
     @staticmethod
-    def edit_spt_model(input_file, output_folder, tokens, vocab_file, vocab_txt_file, is_userdefined=False):
+    def edit_spt_model(tokenizer_model_file, extended_tokenizer_dir, tokens, vocab_file, vocab_txt_file, is_userdefined=False):
         from sentencepiece_model_pb2 import ModelProto  # Ensure this import is after the proto generation
-        if not os.path.exists(output_folder):
-            os.makedirs(output_folder)
+        if not os.path.exists(extended_tokenizer_dir):
+            os.makedirs(extended_tokenizer_dir)
         
-        output_model_file = os.path.join(output_folder, 'tokenizer.model')
-        output_vocab_file = os.path.join(output_folder, 'tokenizer.vocab')
-        output_vocab_txt_file = os.path.join(output_folder, 'vocab.txt')
+        output_model_file = os.path.join(extended_tokenizer_dir, 'tokenizer.model')
+        output_vocab_file = os.path.join(extended_tokenizer_dir, 'tokenizer.vocab')
+        output_vocab_txt_file = os.path.join(extended_tokenizer_dir, 'vocab.txt')
         token_type = 3 if not is_userdefined else 4
 
         model = ModelProto()
-        model.ParseFromString(open(input_file, 'rb').read())
+        model.ParseFromString(open(tokenizer_model_file, 'rb').read())
         existing_tokens = {piece.piece for piece in model.pieces}
         new_tokens = []
 
@@ -254,4 +254,4 @@ model_trainer.configure_optimization()
 model_trainer.setup_adapters()
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
-model_trainer.train()
+#model_trainer.train()
