@@ -77,7 +77,7 @@ Run the VoiceBot application using Docker.
 We welcome contributions to PromptingNemo! Please read our [contribution guidelines](CONTRIBUTING.md) to get started.
 
 ## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](./LICENCE) file for details.
 
 ## 🙏 Acknowledgements
 Special thanks to all contributors and the open-source community for their invaluable support.
