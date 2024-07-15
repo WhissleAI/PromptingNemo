@@ -1,36 +1,390 @@
-T3-T771-T605 T1_T285_T640 Suarez T0 T1_T365 scores T0 a phenomenal goal for T1_T379_T640 Atletico Madrid T0 in the T1_T674 Wanda Metropolitano T0 T2_T569
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am experiencing T0 T1_T483 shortness of breath T0 T1_T48 lately T0 T2_T483_T706
+T3-T344-T287 T1_T287_T472 My wife T0 T1_T365 was prescribed T0 T1_T603 metformin T0 for T1_T735 her diabetes T0 T2_T603_T1055
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a colonoscopy T0 T1_T245 a week ago T0 T2_T540_T706
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 had T0 T1_T735 chickenpox T0 T1_T245 last month T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 My husband T0 T1_T365 has a history of T0 T1_T735 high cholesterol T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 hypothyroidism T0 T1_T245 six months ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was instructed to T0 T1_T365 take T0 T1_T603 Aspirin T0 T1_T496 daily T0 T2_T603_T1055
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 need to schedule T0 a T1_T437_T47 follow-up appointment T0 T1_T245 in two weeks T0 T2_T373_T313
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 had T1_T735 a heart attack T0 T1_T245 two years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was prescribed T0 T1_T603 Lipitor T0 for T1_T735 my high cholesterol T0 T2_T603_T1055
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 a T1_T540 colonoscopy T0 T1_T245 next week T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 was diagnosed with T0 T1_T735 seasonal allergies T0 T1_T245 last spring T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a hip replacement surgery T0 T1_T245 three months ago T0 T2_T540_T706
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 takes T0 T1_T603 albuterol T0 for T1_T735 his asthma T0 T2_T603_T1055
+T3-T344-T287 T1_T287_T472 My husband T0 T1_T365 has a history of T0 T1_T344_T475 heart disease T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 rheumatoid arthritis T0 T1_T245 two years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 had T0 T1_T735 the flu T0 T1_T245 last winter T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 need to schedule T0 a T1_T437_T47 follow-up appointment T0 T1_T245 in one week T0 T2_T373_T313
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 osteoporosis T0 T1_T245 last year T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a knee replacement surgery T0 T1_T245 six months ago T0 T2_T540_T706
+T3-T344-T287 T1_T287_T472 My wife T0 T1_T365 has a history of T0 T1_T735 breast cancer T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was prescribed T0 T1_T603 Metoprolol T0 for T1_T735 my high blood pressure T0 T2_T603_T1055
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 was diagnosed with T0 T1_T735 ADHD T0 T1_T245 last year T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 a T1_T540 hip replacement surgery T0 T1_T245 next month T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 need to schedule T0 a T1_T437_T47 follow-up appointment T0 T1_T245 in three weeks T0 T2_T373_T313
+T3-T344-T287 T1_T287_T472 My husband T0 T1_T365 has a history of T0 T1_T344_T475 kidney stones T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 fibromyalgia T0 T1_T245 three years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 an endoscopy T0 T1_T245 a month ago T0 T2_T540_T706
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 takes T0 T1_T603 Adderall T0 for T1_T735 his ADHD T0 T2_T603_T1055
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 a T1_T540 tonsillectomy T0 T1_T245 next week T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 was diagnosed with T0 T1_T735 juvenile diabetes T0 T1_T245 two years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was prescribed T0 T1_T603 Prednisone T0 for T1_T735 my rheumatoid arthritis T0 T2_T603_T1055
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 had T0 T1_T735 measles T0 T1_T245 last year T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 need to schedule T0 a T1_T437_T47 follow-up appointment T0 T1_T245 in four weeks T0 T2_T373_T313
+T3-T344-T287 T1_T287_T472 My husband T0 T1_T365 has a history of T0 T1_T735 stroke T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 COPD T0 T1_T245 five years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a gallbladder removal surgery T0 T1_T245 four months ago T0 T2_T540_T706
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 a T1_T540 cataract surgery T0 T1_T245 next month T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been advised to T0 T1_T365 monitor T0 my T1_T483 weight T0 T1_T496 weekly T0 T2_T199_T611
+T3-T344-T554-T123 T1_T365 Conduct T0 a T1_T172_T702 blood test T0 for T1_T287_T472 patient 123 T0 in the T1_T674 lab 1 T0 T2_T172_T540
+T3-T344-T554-T123 T1_T365 Set T0 the T1_T218 lab microscope T0 to T1_T424_T278 high magnification T0 in T1_T674 lab 3 T0 T2_T424_T27
+T3-T344-T554-T123 T1_T365 Stop T0 the T1_T218 autoclave T0 in T1_T674 lab 4 T0 after T1_T48 15 minutes T0 T2_T218_T182
+T3-T344-T554-T123 T1_T365 Resume T0 the T1_T172_T702 tissue culture T0 in T1_T674 lab 5 T0 T2_T172_T540
+T3-T344-T554-T123 T1_T365 Collect T0 the T1_T482_T702 stool sample T0 of T1_T287_T472 patient 444 T0 in T1_T674 lab 8 T0 T2_T482_T693
+T3-T344-T554-T123 T1_T365 Set T0 the T1_T218 incubator T0 to T1_T424_T278 37 degrees Celsius T0 in T1_T674 lab 11 T0 T2_T424_T27
+T3-T344-T554-T123 T1_T365 Stop T0 the T1_T218 shaking water bath T0 in T1_T674 lab 12 T0 after T1_T48 30 minutes T0 T2_T218_T182
+T3-T344-T554-T123 T1_T365 Pause T0 the T1_T172_T702 HbA1c test T0 for T1_T287_T472 patient 500 T0 and resume after T1_T48 2 hours T0 T2_T172_T540
+T3-T344-T554-T123 T1_T365 Resume T0 the T1_T172_T702 cell culture T0 in T1_T674 lab 13 T0 T2_T172_T540
+T3-T344-T554-T123 T1_T365 Collect T0 the T1_T482_T702 bone marrow sample T0 of T1_T287_T472 patient 900 T0 in T1_T674 lab 16 T0 T2_T482_T693
+T3-T344-T554-T123 T1_T365 Set T0 the T1_T218 spectrophotometer T0 to T1_T424_T278 540 nm T0 in T1_T674 lab 19 T0 T2_T424_T27
+T3-T344-T554-T123 T1_T365 Stop T0 the T1_T218 heating mantle T0 in T1_T674 lab 20 T0 after T1_T48 45 minutes T0 T2_T218_T182
+T3-T344-T554-T123 T1_T365 Resume T0 the T1_T172_T702 protein electrophoresis T0 in T1_T674 lab 21 T0 T2_T172_T540
+T3-T344-T554-T123 T1_T365 Collect T0 the T1_T482_T702 sweat sample T0 of T1_T287_T472 patient 520 T0 in T1_T674 lab 24 T0 T2_T482_T693
+T3-T84-T123 T1_T365 Check T0 the T1_T204_T702 flight T0 status for T1_T280_T567 Flight 654 T0 to T1_T17 Los Angeles T0 T2_T700_T762
+T3-T84-T123 T1_T365 Set T0 a T1_T84_T376 price alert T0 for T1_T204_T702 flights T0 to T1_T17 Tokyo T0 T2_T105_T376
+T3-T84-T123 T1_T365 Update T0 the T1_T280_T567 hotel booking T0 for T1_T687 Mr. John Smith T0 to T1_T245 April 10th T0 T2_T293_T280
+T3-T84-T123 T1_T365 View T0 the T1_T280_T567 itinerary T0 for my T1_T204_T702 train T0 trip to T1_T17 Berlin T0 T2_T224_T280
+T3-T84-T123 T1_T365 Cancel T0 my T1_T280_T567 hotel reservation T0 in T1_T17 Istanbul T0 T2_T103_T212
+T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 flight T0 booking to T1_T17 Paris T0 for T1_T245 July 10th T0 T2_T607_T528
+T3-T84-T123 T1_T365 Recommend T0 some T1_T790_T702 budget hotels T0 in T1_T17 London T0 for T1_T245 September T0 T2_T138
+T3-T84-T123 T1_T365 Plan T0 a T1_T280_T567 week-long trip T0 to T1_T17 Singapore T0 with a T1_T327 budget of $2000 T0 T2_T597_T92
+T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 flight T0 options to T1_T17 Rio de Janeiro T0 for T1_T245 December 25th T0 T2_T252_T615
+T3-T84-T123 T1_T365 Compare T0 T1_T204_T702 flight T0 prices to T1_T17 Athens T0 on T1_T682 different travel sites T0 T2_T555_T784
+T3-T84-T123 T1_T365 Add T0 a T1_T280_T567 car rental T0 to my T1_T280_T567 travel itinerary T0 for T1_T17 Miami T0 T2_T293_T280
+T3-T84-T123 T1_T365 Remove T0 the T1_T280_T567 museum visit T0 from my T1_T280_T567 itinerary T0 for T1_T17 Amsterdam T0 T2_T293_T280
+T3-T84-T123 T1_T365 Schedule T0 a T1_T204_T702 train T0 trip to T1_T17 Vienna T0 for T1_T245 October 31st T0 T2_T623_T84
+T3-T84-T123 T1_T365 Check T0 the T1_T537 baggage allowance T0 for my T1_T204_T702 flight T0 to T1_T17 Zurich T0 T2_T762_T472
+T3-T84-T123 T1_T365 Update T0 my T1_T115_T472 passport details T0 in the T1_T682 travel system T0 T2_T293_T469
+T3-T84-T123 T1_T365 View T0 the T1_T280_T567 itinerary T0 for my T1_T204_T702 cruise T0 trip to T1_T17 Caribbean T0 T2_T224_T280
+T3-T84-T123 T1_T365 Monitor T0 T1_T84_T376 flight prices T0 to T1_T17 Bangkok T0 and notify me when they go below T1_T327 $800 T0 T2_T727_T784
+T3-T84-T123 T1_T365 Cancel T0 my T1_T280_T567 car rental T0 in T1_T17 Las Vegas T0 T2_T103_T212
+T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 train T0 ticket to T1_T17 Brussels T0 for T1_T245 March 5th T0 T2_T607_T528
+T3-T84-T123 T1_T365 Notify T0 T1_T687 Mr. James T0 about his T1_T204_T702 flight T0 status to T1_T17 Toronto T0 T2_T700_T497
+T3-T84-T123 T1_T365 Recommend T0 some T1_T790_T702 luxury hotels T0 in T1_T17 Rome T0 for T1_T245 June T0 T2_T138
+T3-T84-T123 T1_T365 Plan T0 a T1_T280_T567 three-day trip T0 to T1_T17 Buenos Aires T0 with a T1_T327 budget of $1500 T0 T2_T597_T92
+T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 flight T0 options to T1_T17 New Delhi T0 for T1_T245 January 1st T0 T2_T252_T615
+T3-T84-T123 T1_T365 Compare T0 T1_T204_T702 train T0 prices to T1_T17 Munich T0 on T1_T682 various travel platforms T0 T2_T555_T784
+T3-T84-T123 T1_T365 Add T0 a T1_T280_T567 hotel booking T0 to my T1_T280_T567 itinerary T0 for T1_T17 Melbourne T0 T2_T293_T280
+T3-T84-T123 T1_T365 Remove T0 the T1_T280_T567 city tour T0 from my T1_T280_T567 itinerary T0 for T1_T17 Seoul T0 T2_T293_T280
+T3-T84-T123 T1_T365 Schedule T0 a T1_T204_T702 bus T0 trip to T1_T17 Venice T0 for T1_T245 February 14th T0 T2_T623_T84
+T3-T84-T123 T1_T365 Check T0 the T1_T537 baggage weight limit T0 for my T1_T204_T702 flight T0 to T1_T17 Cairo T0 T2_T762_T472
+T3-T84-T123 T1_T365 Update T0 my T1_T115_T472 contact details T0 in the T1_T682 travel system T0 T2_T293_T469
+T3-T84-T123 T1_T365 Monitor T0 T1_T84_T376 flight prices T0 to T1_T17 Havana T0 and notify me when they go below T1_T327 $600 T0 T2_T727_T784
+T3-T84-T123 T1_T365 Cancel T0 my T1_T280_T567 hotel reservation T0 in T1_T17 Marrakech T0 T2_T103_T212
+T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 cruise T0 booking to T1_T17 Alaska T0 for T1_T245 July 20th T0 T2_T607_T528
+T3-T84-T123 T1_T365 Notify T0 T1_T687 Mrs. Mary T0 about her T1_T204_T702 train T0 status to T1_T17 Berlin T0 T2_T700_T497
+T3-T84-T123 T1_T365 Recommend T0 some T1_T790_T702 hostels T0 in T1_T17 Dublin T0 for T1_T245 May T0 T2_T138
+T3-T84-T123 T1_T365 Plan T0 a T1_T280_T567 two-week trip T0 to T1_T17 Tokyo T0 with a T1_T327 budget of $3000 T0 T2_T597_T92
+T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 flight T0 options to T1_T17 Istanbul T0 for T1_T245 September 1st T0 T2_T252_T615
+T3-T84-T123 T1_T365 Compare T0 T1_T204_T702 flight T0 prices to T1_T17 Athens T0 on T1_T682 different travel websites T0 T2_T555_T784
+T3-T84-T123 T1_T365 Add T0 a T1_T280_T567 sightseeing tour T0 to my T1_T280_T567 itinerary T0 for T1_T17 Rome T0 T2_T293_T280
+T3-T84-T123 T1_T365 Remove T0 the T1_T280_T567 city walk T0 from my T1_T280_T567 itinerary T0 for T1_T17 Paris T0 T2_T293_T280
+T3-T84-T123 T1_T365 Schedule T0 a T1_T204_T702 train T0 trip to T1_T17 Amsterdam T0 for T1_T245 November 30th T0 T2_T623_T84
+T3-T113-T123 T1_T365 Check T0 the T1_T366_T702 balance T0 of my T1_T366_T702 checking account T0 T2_T586_T762
+T3-T113-T123 T1_T365 Transfer T0 T1_T219 $200 T0 from T1_T366_T702 savings account T0 to T1_T366_T702 checking account T0 T2_T76
+T3-T113-T123 T1_T365 Pay T0 the T1_T687 electricity bill T0 of T1_T219 $60 T0 from my T1_T366_T702 checking account T0 T2_T198_T314
+T3-T113-T123 T1_T365 Update T0 my T1_T532 contact information T0 on T1_T682 online banking profile T0 T2_T469_T293
+T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 monthly expenses T0 for T1_T245 July T0 T2_T489_T431
+T3-T113-T123 T1_T365 Generate T0 a T1_T598_T702 transaction report T0 for T1_T245 last month T0 T2_T598_T274
+T3-T113-T123 T1_T365 Cancel T0 the T1_T376_T702 overdraft alert T0 for my T1_T366_T702 checking account T0 T2_T376_T103
+T3-T113-T123 T1_T365 Report T0 a T1_T532 suspicious transaction T0 on my T1_T366_T702 credit card T0 T2_T724_T577_T598
+T3-T113-T123 T1_T365 Alert T0 me when T1_T219 $1000 T0 or more is T1_T365 withdrawn T0 from my T1_T366_T702 savings account T0 T2_T347_T376
+T3-T113-T123 T1_T365 Budget T0 T1_T219 $500 T0 for T1_T532 groceries T0 this T1_T245 month T0 T2_T327_T424
+T3-T113-T123 T1_T365 Deposit T0 T1_T219 $300 T0 into my T1_T366_T702 checking account T0 T2_T473
+T3-T113-T123 T1_T365 Withdraw T0 T1_T219 $50 T0 from my T1_T366_T702 savings account T0 T2_T787
+T3-T113-T123 T1_T365 Invest T0 T1_T219 $1000 T0 into T1_T532 mutual funds T0 from my T1_T366_T702 brokerage account T0 T2_T343
+T3-T113-T123 T1_T365 Save T0 T1_T219 $200 T0 every T1_T496 month T0 for T1_T48 1 year T0 in my T1_T366_T702 savings account T0 T2_T770
+T3-T113-T123 T1_T365 Spend T0 less than T1_T219 $100 T0 on T1_T532 dining out T0 this T1_T245 month T0 T2_T621_T130
+T3-T113-T123 T1_T365 Monitor T0 my T1_T366_T702 credit card T0 for T1_T532 unauthorized transactions T0 T2_T611
+T3-T113-T123 T1_T365 View T0 my T1_T366_T702 credit card T0 T1_T365 payment T0 history for T1_T245 last year T0 T2_T314_T475
+T3-T771-T605 T1_T379_T640 Juventus T0 T1_T365 equalizes T0 in the last minute with a goal from T1_T285_T640 Dybala T0 T2_T451_T383
+T3-T771-T605 T1_T285_T640 Modric T0 T1_T365 sets up T0 a goal for T1_T379_T640 Real Madrid T0 in the T1_T466_T702 La Liga T0 T1_T245 match T0 T2_T413
+T3-T771-T605 T1_T379_T640 Manchester United T0 T1_T365 equalizes T0 in the last minute with a goal from T1_T285_T640 Pogba T0 T2_T451_T383
+T3-T97-T123 T1_T365 Set T0 the T1_T218 thermostat T0 to T1_T424_T278 72 degrees T0 in the T1_T674 living room T0 T2_T417
+T3-T97-T123 T1_T365 Turn off T0 the T1_T218 television T0 in the T1_T674 bedroom T0 T2_T1122
+T3-T97-T123 T1_T365 Play T0 the T1_T532 'Classical Melodies' T0 on T1_T218 music system T0 in the T1_T674 study room T0 T2_T612
+T3-T97-T123 T1_T365 Send T0 a T1_T532 'Happy Birthday' T0 message to T1_T687 John T0 on T1_T682 WhatsApp T0 T2_T201
+T3-T97-T123 T1_T365 Set T0 a T1_T40 reminder T0 for T1_T245 tomorrow T0 at T1_T144 9 AM T0 to T1_T532 'Buy groceries' T0 T2_T29
+T3-T97-T123 T1_T365 Mute T0 the T1_T218 speakers T0 in the T1_T674 office room T0 T2_T1122
+T3-T97-T123 T1_T365 Activate T0 the T1_T218 alarm system T0 at T1_T144 10 PM T0 every T1_T496 day T0 T2_T558
+T3-T97-T123 T1_T365 Open T0 the T1_T218 garage door T0 T2_T175_T986
+T3-T97-T123 T1_T365 Close T0 the T1_T218 blinds T0 in the T1_T674 bedroom T0 at T1_T144 sunset T0 T2_T175_T986
+T3-T97-T123 T1_T365 Lock T0 the T1_T218 front door T0 when T1_T144 everyone is asleep T0 T2_T558
+T3-T97-T123 T1_T365 Unmute T0 the T1_T218 computer T0 in the T1_T674 study room T0 T2_T1122
+T3-T97-T123 T1_T365 Turn on T0 the T1_T218 coffee maker T0 at T1_T144 7 AM T0 every T1_T496 morning T0 T2_T331
+T3-T97-T123 T1_T365 Pause T0 the T1_T218 dishwasher T0 T2_T331
+T3-T97-T123 T1_T365 Skip T0 the T1_T532 next song T0 on the T1_T218 music player T0 in the T1_T674 living room T0 T2_T612
+T3-T97-T123 T1_T365 Stop T0 the T1_T218 washing machine T0 T2_T331
+T3-T97-T123 T1_T365 Deactivate T0 the T1_T218 alarm system T0 when T1_T687 I T0 am T1_T674 home T0 T2_T558
+T3-T97-T123 T1_T365 Call T0 T1_T687 Alexa T0 to T1_T532 play the news T0 T2_T201
+T3-T97-T123 T1_T365 Set T0 the T1_T218 AC T0 to T1_T424_T278 24 degrees T0 in the T1_T674 children's room T0 T2_T417
+T3-T97-T123 T1_T365 Turn off T0 the T1_T218 lights T0 in the T1_T674 garage T0 at T1_T144 11 PM T0 every T1_T496 night T0 T2_T264
+T3-T97-T123 T1_T365 Play T0 T1_T532 'Morning Alarm' T0 on T1_T218 alarm clock T0 at T1_T144 6 AM T0 every T1_T496 weekday T0 T2_T725
+T3-T97-T123 T1_T365 Set T0 a T1_T40 reminder T0 for T1_T245 today T0 at T1_T144 8 PM T0 to T1_T532 'Take medication' T0 T2_T29
+T3-T97-T123 T1_T365 Mute T0 the T1_T218 notifications T0 on the T1_T218 smartphone T0 T2_T1122
+T3-T97-T123 T1_T365 Activate T0 the T1_T218 sprinkler system T0 at T1_T144 6 AM T0 every T1_T496 day T0 T2_T910
+T3-T97-T123 T1_T365 Open T0 the T1_T218 windows T0 in the T1_T674 kitchen T0 at T1_T144 8 AM T0 every T1_T496 morning T0 T2_T175_T986
+T3-T97-T123 T1_T365 Lock T0 the T1_T218 back door T0 when T1_T144 everyone leaves the house T0 T2_T558
+T3-T97-T123 T1_T365 Unmute T0 the T1_T218 notifications T0 on T1_T218 smartphone T0 T2_T1122
+T3-T97-T123 T1_T365 Turn on T0 the T1_T218 oven T0 at T1_T144 5 PM T0 every T1_T245 Sunday T0 for T1_T48 an hour T0 T2_T331
+T3-T97-T123 T1_T365 Pause T0 the T1_T218 music T0 on T1_T218 speakers T0 in the T1_T674 bathroom T0 T2_T612
+T3-T97-T123 T1_T365 Skip T0 the T1_T532 next episode T0 on the T1_T218 Netflix T0 in the T1_T674 living room T0 T2_T122
+T3-T97-T123 T1_T365 Stop T0 the T1_T218 dryer T0 T2_T331
+T3-T97-T123 T1_T365 Deactivate T0 the T1_T218 motion sensors T0 when T1_T687 guests T0 are T1_T674 home T0 T2_T558
+T3-T97-T123 T1_T365 Call T0 T1_T687 Mom T0 to T1_T532 say goodnight T0 T2_T201
+T3-T97-T123 T1_T365 Set T0 the T1_T218 humidifier T0 to T1_T424_T278 30% T0 in the T1_T674 baby's room T0 T2_T417
+T3-T97-T123 T1_T365 Turn off T0 the T1_T218 lights T0 in the T1_T674 basement T0 when T1_T144 not in use T0 T2_T264
+T3-T97-T123 T1_T365 Set T0 a T1_T40 reminder T0 for T1_T245 next Friday T0 at T1_T144 5 PM T0 to T1_T532 'Dinner with friends' T0 T2_T29
+T3-T97-T123 T1_T365 Change T0 the T1_T424_T702 temperature T0 of the T1_T218 refrigerator T0 to T1_T424_T278 4 degrees Celsius T0 T2_T331
+T3-T97-T123 T1_T365 Mute T0 the T1_T218 notifications T0 on the T1_T218 smartwatch T0 T2_T1122
+T3-T97-T123 T1_T365 Activate T0 the T1_T218 pet feeder T0 at T1_T144 8 AM T0 and T1_T144 6 PM T0 every T1_T496 day T0 T2_T921_T1096
+T3-T97-T123 T1_T365 Close T0 the T1_T218 roof window T0 in the T1_T674 attic T0 when T1_T144 it starts to rain T0 T2_T175_T986
+T3-T97-T123 T1_T365 Lock T0 the T1_T218 car T0 when T1_T144 I am not near it T0 T2_T558
+T3-T97-T123 T1_T365 Unmute T0 the T1_T218 calls T0 on the T1_T218 phone T0 T2_T1122
+T3-T97-T123 T1_T365 Turn on T0 the T1_T218 water heater T0 at T1_T144 7 AM T0 every T1_T496 morning T0 for T1_T48 30 minutes T0 T2_T331
+T3-T97-T123 T1_T365 Pause T0 the T1_T532 audiobook T0 on the T1_T218 smart speaker T0 in the T1_T674 bedroom T0 T2_T122
+T3-T97-T123 T1_T365 Skip T0 the T1_T532 next track T0 on the T1_T218 Spotify T0 in the T1_T674 gym room T0 T2_T612
+T3-T97-T123 T1_T365 Stop T0 the T1_T218 robotic vacuum cleaner T0 T2_T459
+T3-T97-T123 T1_T365 Deactivate T0 the T1_T218 CCTV cameras T0 when T1_T687 I T0 am T1_T674 home T0 T2_T558
+T3-T97-T123 T1_T365 Call T0 T1_T687 Siri T0 to T1_T532 set an alarm for 7 AM T0 T2_T201
+T3-T97-T123 T1_T365 Set T0 the T1_T218 air purifier T0 to T1_T424_T278 low T0 in the T1_T674 living room T0 T2_T585_T420
+T3-T97-T123 T1_T365 Turn off T0 the T1_T218 lights T0 in the T1_T674 garden T0 at T1_T144 midnight T0 every T1_T496 night T0 T2_T264
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 had T0 T1_T540 a colonoscopy T0 T1_T245 two years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 metformin T0 for T1_T735 my diabetes T0 T2_T603_T649
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 high blood pressure T0 T1_T245 last month T0 T2_T735_T475
+T3-T344-T287 T1_T287_T472 My sister T0 T1_T365 has been experiencing T0 T1_T483 migraines T0 T1_T496 frequently T0 T2_T483_T1048
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a gallbladder removal surgery T0 T1_T245 three years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 will have T0 T1_T540 a cataract surgery T0 T1_T245 next month T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 had T0 T1_T540 an appendectomy T0 T1_T245 last year T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 My wife T0 T1_T365 takes T0 T1_T603 inhaler T0 for T1_T735 her asthma T0 T2_T603_T649
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 arthritis T0 T1_T245 two years ago T0 T2_T735_T475
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 had T0 T1_T540 a tonsillectomy T0 T1_T245 last month T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 a mammogram T0 T1_T245 next week T0 T2_T172_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 had T0 T1_T540 a hip replacement surgery T0 T1_T245 three years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 has a history of T0 T1_T344_T475 recurrent ear infections T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 will be undergoing T0 T1_T540 a knee replacement surgery T0 T1_T245 next month T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 osteoporosis T0 T1_T245 last year T0 T2_T735_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 beta blockers T0 for T1_T735 my heart condition T0 T2_T603_T649
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 had T0 T1_T540 an adenoidectomy T0 T1_T245 last year T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 a colonoscopy T0 T1_T245 next week T0 T2_T172_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 had T0 T1_T540 a pacemaker implantation T0 T1_T245 two years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 has a history of T0 T1_T344_T475 eczema T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 will be undergoing T0 T1_T540 a bypass surgery T0 T1_T245 next month T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 glaucoma T0 T1_T245 last year T0 T2_T735_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 antihistamines T0 for T1_T735 my allergies T0 T2_T603_T649
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 had T0 T1_T540 a cochlear implant T0 T1_T245 last year T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 an ultrasound T0 T1_T245 next week T0 T2_T172_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 had T0 T1_T540 a lung transplant T0 T1_T245 two years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 has a history of T0 T1_T344_T475 iron deficiency anemia T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 will be undergoing T0 T1_T540 a liver transplant T0 T1_T245 next month T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 lupus T0 T1_T245 last year T0 T2_T735_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 calcium supplements T0 for T1_T735 my osteoporosis T0 T2_T603_T649
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 had T0 T1_T540 a kidney transplant T0 T1_T245 last year T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 a CT scan T0 T1_T245 next week T0 T2_T172_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 had T0 T1_T540 a prostate surgery T0 T1_T245 two years ago T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 has a history of T0 T1_T344_T475 celiac disease T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 will be undergoing T0 T1_T540 a heart valve repair surgery T0 T1_T245 next month T0 T2_T540_T623
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 chronic kidney disease T0 T1_T245 last year T0 T2_T735_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 statins T0 for T1_T735 my high cholesterol T0 T2_T603_T649
+T3-T344-T287 T1_T287_T472 My son T0 T1_T365 had T0 T1_T540 a bone marrow transplant T0 T1_T245 last year T0 T2_T344_T475
+T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 a PET scan T0 T1_T245 next week T0 T2_T172_T623
+T3-T344-T554-T123 T1_T365 Schedule T0 a T1_T172_T702 blood test T0 for T1_T287_T472 John Doe T0 on T1_T245 June 20th T0 T2_T373_T623
+T3-T344-T554-T123 T1_T365 Update T0 the T1_T287_T472 patient's medical history T0 with the new T1_T532 allergy information T0 T2_T293_T287_T472
+T3-T344-T554-T123 T1_T365 Set T0 the T1_T218 PCR machine T0 to T1_T424_T278 95 degrees Celsius T0 for T1_T48 5 minutes T0 T2_T105_T218
+T3-T344-T554-T123 T1_T365 Stop T0 the T1_T218 autoclave T0 after T1_T48 15 minutes T0 T2_T409_T218
+T3-T344-T554-T123 T1_T365 Pause T0 the T1_T218 microscope T0 calibration for T1_T48 10 minutes T0 T2_T132_T218
+T3-T344-T554-T123 T1_T365 Resume T0 the T1_T218 spectrophotometer T0 operation after T1_T48 5 minutes T0 T2_T471_T218
+T3-T344-T554-T123 T1_T365 Test T0 the T1_T482_T702 blood sample T0 of T1_T287_T472 John Doe T0 for T1_T172_T702 glucose levels T0 T2_T524_T172
+T3-T344-T554-T123 T1_T365 Store T0 the T1_T482_T702 tissue sample T0 of T1_T287_T472 Jane Doe T0 in the T1_T674 sample storage T0 T2_T594_T482
+T3-T344-T554-T123 T1_T365 Prepare T0 the T1_T218 microscope T0 for the T1_T172_T702 cell analysis T0 of T1_T287_T472 Alice Smith T0 T2_T112_T218
+T3-T344-T554-T123 T1_T365 Review T0 the T1_T598_T702 lab report T0 of T1_T287_T472 Bob Lee T0 before T1_T40 sign-off T0 T2_T444_T598
+T3-T344-T554-T123 T1_T365 Sign off T0 on the T1_T598_T702 lab report T0 of T1_T287_T472 Jane Doe T0 T2_T270_T179_T598
+T3-T344-T554-T123 T1_T365 Approve T0 the T1_T598_T702 lab report T0 of T1_T287_T472 John Doe T0 T2_T168_T598
+T3-T344-T554-T123 T1_T365 Schedule T0 a T1_T172_T702 liver function test T0 for T1_T287_T472 Alice Smith T0 on T1_T245 July 1st T0 T2_T373_T623
+T3-T344-T554-T123 T1_T365 Update T0 the T1_T287_T472 patient's contact details T0 with the new T1_T532 phone number T0 T2_T293_T287_T472
+T3-T344-T554-T123 T1_T365 Conduct T0 an T1_T172_T702 MRI T0 for T1_T287_T472 Jane Doe T0 in the T1_T674 radiology department T0 T2_T172_T540
+T3-T344-T554-T123 T1_T365 Change T0 the T1_T424_T702 time T0 of the T1_T218 incubator T0 to T1_T424_T278 24 hours T0 T2_T446_T424
+T3-T344-T554-T123 T1_T365 Set T0 the T1_T218 biochemistry analyzer T0 to T1_T424_T278 37 degrees Celsius T0 for T1_T48 30 minutes T0 T2_T105_T218
+T3-T344-T554-T123 T1_T365 Start T0 the T1_T218 DNA sequencer T0 for T1_T287_T472 John Doe END's T1_T172_T702 genetic test T0 T2_T524_T172
+T3-T344-T554-T123 T1_T365 Stop T0 the T1_T218 blood gas analyzer T0 after T1_T48 10 minutes T0 T2_T409_T218
+T3-T344-T554-T123 T1_T365 Pause T0 the T1_T218 ELISA reader T0 calibration for T1_T48 5 minutes T0 T2_T132_T218
+T3-T344-T554-T123 T1_T365 Resume T0 the T1_T218 microtome T0 operation after T1_T48 10 minutes T0 T2_T471_T218
+T3-T344-T554-T123 T1_T365 Test T0 the T1_T482_T702 saliva sample T0 of T1_T287_T472 Bob Lee T0 for T1_T172_T702 cortisol levels T0 T2_T524_T172
+T3-T344-T554-T123 T1_T365 Retrieve T0 the T1_T287_T472 patient records T0 of T1_T287_T472 Bob Lee T0 from the T1_T682 database T0 T2_T651_T60
+T3-T344-T554-T123 T1_T365 Prepare T0 the T1_T218 flow cytometer T0 for the T1_T172_T702 lymphocyte count T0 of T1_T287_T472 Jane Doe T0 T2_T112_T218
+T3-T344-T554-T123 T1_T365 Review T0 the T1_T598_T702 lab report T0 of T1_T287_T472 John Doe T0 before T1_T40 sign-off T0 T2_T444_T598
+T3-T344-T554-T123 T1_T365 Sign off T0 on the T1_T598_T702 lab report T0 of T1_T287_T472 Alice Smith T0 T2_T270_T179_T598
+T3-T344-T554-T123 T1_T365 Approve T0 the T1_T598_T702 lab report T0 of T1_T287_T472 Bob Lee T0 T2_T168_T598
+T3-T344-T554-T123 T1_T365 Schedule T0 a T1_T172_T702 kidney function test T0 for T1_T287_T472 Jane Doe T0 on T1_T245 August 2nd T0 T2_T373_T623
+T3-T344-T554-T123 T1_T365 Update T0 the T1_T287_T472 patient's medication list T0 with the new T1_T532 drug name T0 T2_T293_T287_T472
+T3-T344-T554-T123 T1_T365 Change T0 the T1_T424_T702 speed T0 of the T1_T218 centrifuge T0 to T1_T424_T278 5000 rpm T0 T2_T446_T424
+T3-T344-T554-T123 T1_T365 Set T0 the T1_T218 gel electrophoresis system T0 to T1_T424_T278 100 volts T0 for T1_T48 1 hour T0 T2_T105_T218
+T3-T344-T554-T123 T1_T365 Stop T0 the T1_T218 sterilizer T0 after T1_T48 30 minutes T0 T2_T409_T218
+T3-T344-T554-T123 T1_T365 Pause T0 the T1_T218 fluorescence microscope T0 calibration for T1_T48 10 minutes T0 T2_T132_T218
+T3-T344-T554-T123 T1_T365 Resume T0 the T1_T218 mass spectrometer T0 operation after T1_T48 15 minutes T0 T2_T471_T218
+T3-T344-T554-T123 T1_T365 Report T0 the T1_T537 platelet count T0 of T1_T287_T472 Jane Doe T0 to T1_T687 Dr. Baker T0 T2_T598_T537
+T3-T344-T554-T123 T1_T365 Test T0 the T1_T482_T702 hair sample T0 of T1_T287_T472 John Doe T0 for T1_T172_T702 drug levels T0 T2_T524_T172
+T3-T344-T554-T123 T1_T365 Review T0 the T1_T598_T702 lab report T0 of T1_T287_T472 Bob Lee T0 before T1_T40 sign-off T0 T2_T444_T598
+T3-T344-T554-T123 T1_T365 Sign off T0 on the T1_T598_T702 lab report T0 of T1_T287_T472 Jane Doe T0 T2_T270_T179_T598
+T3-T344-T554-T123 T1_T365 Approve T0 the T1_T598_T702 lab report T0 of T1_T287_T472 John Doe T0 T2_T168_T598
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 would like to schedule T0 a T1_T186_T702 therapy session T0 on T1_T245 July 15th T0 T2_T373_T64
+T3-T380-T123 T1_T287_T472 Let's T1_T365 set T0 a T1_T383_T702 goal T0 for T1_T48 the next month T0 T2_T383_T424
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 would like to T1_T365 record T0 my T1_T149 feelings T0 T1_T496 daily T0 T2_T149_T273
+T3-T380-T123 T1_T287_T472 Please T1_T365 notify T0 me about T1_T281_T702 support group meetings T0 T1_T496 weekly T0 T2_T963_T742_T293
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 want to T1_T365 explore T0 some T1_T507_T702 cognitive-behavioral therapies T0 T2_T507_T622
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 need to T1_T365 update T0 my T1_T287_T472 contact information T0 T2_T518_T293
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 want to T1_T365 track T0 my T1_T188_T266 progress T0 T1_T496 weekly T0 T2_T188_T355
+T3-T380-T123 T1_T287_T472 Please T1_T365 log T0 my T1_T577 daily journaling T0 T2_T577_T273
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 feel better T0 when I T1_T365 engage T0 in T1_T577 physical activities T0 T2_T577_T138
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 feel T0 T1_T149 anxious T0 T1_T144 in the mornings T0 T2_T149_T598
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 would like to T1_T365 document T0 my T1_T483 recent mood swings T0 T2_T483_T273
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 would like to T1_T365 record T0 my T1_T149 feelings T0 T1_T496 daily T0 T2_T149_T273
+T3-T380-T123 T1_T287_T472 Please T1_T365 notify T0 me about T1_T281_T702 support group meetings T0 T1_T496 weekly T0 T2_T963_T742_T293
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 want to T1_T365 explore T0 some T1_T507_T702 cognitive-behavioral therapies T0 T2_T507_T622
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 need to T1_T365 update T0 my T1_T287_T472 contact information T0 T2_T518_T293
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 want to T1_T365 track T0 my T1_T188_T266 progress T0 T1_T496 weekly T0 T2_T188_T355
+T3-T380-T123 T1_T287_T472 Please T1_T365 log T0 my T1_T577 daily journaling T0 T2_T577_T273
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 feel better T0 when I T1_T365 engage T0 in T1_T577 physical activities T0 T2_T577_T138
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 feel T0 T1_T149 anxious T0 T1_T144 in the mornings T0 T2_T149_T598
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 would like to T1_T365 document T0 my T1_T483 recent mood swings T0 T2_T483_T273
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 would like to T1_T365 record T0 my T1_T149 feelings T0 T1_T496 daily T0 T2_T149_T273
+T3-T380-T123 T1_T287_T472 Please T1_T365 notify T0 me about T1_T281_T702 support group meetings T0 T1_T496 weekly T0 T2_T963_T742_T293
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 want to T1_T365 explore T0 some T1_T507_T702 cognitive-behavioral therapies T0 T2_T507_T622
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 need to T1_T365 update T0 my T1_T287_T472 contact information T0 T2_T518_T293
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 want to T1_T365 track T0 my T1_T188_T266 progress T0 T1_T496 weekly T0 T2_T188_T355
+T3-T380-T123 T1_T287_T472 Please T1_T365 log T0 my T1_T577 daily journaling T0 T2_T577_T273
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 feel better T0 when I T1_T365 engage T0 in T1_T577 physical activities T0 T2_T577_T138
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 feel T0 T1_T149 anxious T0 T1_T144 in the mornings T0 T2_T149_T598
+T3-T380-T123 T1_T287_T472 I T0 T1_T365 would like to T1_T365 document T0 my T1_T483 recent mood swings T0 T2_T483_T273
+T3-T84-T123 T1_T365 Book T0 a T1_T204_T702 flight T0 to T1_T17 New York T0 on T1_T245 May 25th T0 T2_T528
+T3-T84-T123 T1_T365 Check T0 the T1_T204_T702 flight T0 status for T1_T280_T567 AA 123 T0 T2_T562_T700
+T3-T84-T123 T1_T365 Reserve T0 a T1_T790_T702 hotel room T0 in T1_T17 Rome T0 for T1_T245 June 10th T0 T2_T212
+T3-T84-T123 T1_T365 Set T0 a T1_T84_T376 flight delay alert T0 for T1_T280_T567 UA 456 T0 T2_T105_T376
+T3-T84-T123 T1_T365 Update T0 T1_T280_T567 my return flight T0 to T1_T245 July 30th T0 T2_T293_T280
+T3-T84-T123 T1_T365 View T0 the T1_T280_T567 itinerary T0 for T1_T687 John Doe T0 T2_T224_T280
+T3-T84-T123 T1_T365 Generate T0 a T1_T280_T567 travel itinerary T0 for T1_T17 Tokyo T0 T2_T684_T280
+T3-T84-T123 T1_T365 Monitor T0 T1_T204_T702 flight T0 prices for T1_T17 London T0 on T1_T682 Skyscanner T0 T2_T553_T727
+T3-T84-T123 T1_T365 Cancel T0 my T1_T790_T702 hotel reservation T0 in T1_T17 Madrid T0 T2_T103_T528
+T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 train T0 booking to T1_T17 Berlin T0 T2_T607_T528
+T3-T84-T123 T1_T365 Notify T0 T1_T687 Jane Doe T0 about the T1_T84_T376 gate change T0 for T1_T280_T567 DL 789 T0 T2_T581_T376
+T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 bus T0 routes from T1_T17 Amsterdam T0 to T1_T17 Brussels T0 T2_T252_T535
+T3-T84-T123 T1_T365 Compare T0 T1_T790_T702 hotel T0 prices in T1_T17 Dubai T0 on T1_T682 Booking.com T0 T2_T555_T784
+T3-T84-T123 T1_T365 Remove T0 T1_T280_T567 the museum visit T0 from my T1_T280_T567 itinerary T0 T2_T593_T280_T567
+T3-T84-T123 T1_T365 Change T0 my T1_T204_T702 flight T0 to T1_T17 San Francisco T0 to T1_T245 September 20th T0 T2_T446_T562
+T3-T84-T123 T1_T365 Book T0 a T1_T204_T702 flight T0 to T1_T17 Prague T0 for T1_T245 October 15th T0 T2_T80_T562
+T3-T84-T123 T1_T365 Check T0 the T1_T204_T702 flight T0 status for T1_T280_T567 BA 321 T0 T2_T762_T562_T700
+T3-T84-T123 T1_T365 Reserve T0 a T1_T790_T702 hotel room T0 in T1_T17 Venice T0 for T1_T245 November 5th T0 T2_T63_T676
+T3-T84-T123 T1_T365 Set T0 a T1_T84_T376 baggage delay alert T0 for T1_T280_T567 LH 654 T0 T2_T105_T944_T376
+T3-T84-T123 T1_T365 Update T0 T1_T280_T567 my departure flight T0 to T1_T245 December 15th T0 T2_T293_T968_T562
+T3-T84-T123 T1_T365 View T0 the T1_T280_T567 travel itinerary T0 for T1_T687 Michael Smith T0 T2_T224_T84_T280
+T3-T84-T123 T1_T365 Generate T0 a T1_T280_T567 vacation itinerary T0 for T1_T17 Barcelona T0 T2_T684_T883_T280
+T3-T84-T123 T1_T365 Monitor T0 T1_T204_T702 flight T0 prices for T1_T17 Athens T0 on T1_T682 Expedia T0 T2_T727_T784
+T3-T84-T123 T1_T365 Cancel T0 my T1_T790_T702 apartment booking T0 in T1_T17 Vienna T0 T2_T103_T308_T528
+T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 ferry T0 booking to T1_T17 Santorini T0 T2_T607_T106_T528
+T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 train T0 routes from T1_T17 Munich T0 to T1_T17 Zurich T0 T2_T252_T325_T535
+T3-T84-T123 T1_T365 Compare T0 T1_T790_T702 hostel T0 prices in T1_T17 Lisbon T0 on T1_T682 Hostelworld T0 T2_T555_T455_T784
+T3-T84-T123 T1_T365 Remove T0 T1_T280_T567 the city walk T0 from my T1_T280_T567 itinerary T0 T2_T593_T775_T1036
+T3-T84-T123 T1_T365 Change T0 my T1_T204_T702 flight T0 to T1_T17 Istanbul T0 to T1_T245 April 5th T0 T2_T446_T562_T245
+T3-T84-T123 T1_T365 Book T0 a T1_T204_T702 flight T0 to T1_T17 Copenhagen T0 for T1_T245 May 10th T0 T2_T80_T562_T464
+T3-T84-T123 T1_T365 Check T0 the T1_T204_T702 flight T0 status for T1_T280_T567 AF 567 T0 T2_T762_T917_T700
+T3-T84-T123 T1_T365 Set T0 a T1_T84_T376 flight delay alert T0 for T1_T280_T567 KL 234 T0 T2_T105_T562_T99_T376
+T3-T84-T123 T1_T365 Update T0 T1_T280_T567 my hotel check-out date T0 to T1_T245 July 15th T0 T2_T293_T928_T245
+T3-T84-T123 T1_T365 View T0 the T1_T280_T567 itinerary T0 for T1_T687 George Brown T0 T2_T224_T280_T529
+T3-T84-T123 T1_T365 Generate T0 a T1_T280_T567 trip itinerary T0 for T1_T17 Budapest T0 T2_T684_T92_T597
+T3-T84-T123 T1_T365 Monitor T0 T1_T204_T702 flight T0 prices for T1_T17 Seoul T0 on T1_T682 Kayak T0 T2_T727_T562_T784
+T3-T84-T123 T1_T365 Cancel T0 my T1_T790_T702 resort booking T0 in T1_T17 Cancun T0 T2_T103_T773_T212
+T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 bus T0 booking to T1_T17 Berlin T0 T2_T607_T566_T528
+T3-T84-T123 T1_T365 Notify T0 T1_T687 Laura Davis T0 about the T1_T84_T376 flight time change T0 for T1_T280_T567 QR 345 T0 T2_T581_T562_T446
+T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 bike T0 routes in T1_T17 Copenhagen T0 T2_T252_T390_T535
+T3-T84-T123 T1_T365 Compare T0 T1_T790_T702 motel T0 prices in T1_T17 Las Vegas T0 on T1_T682 Hotels.com T0 T2_T555_T694_T784
+T3-T84-T123 T1_T365 Remove T0 T1_T280_T567 the sightseeing tour T0 from my T1_T280_T567 itinerary T0 T2_T593_T235_T301
+T3-T84-T123 T1_T365 Change T0 my T1_T204_T702 flight T0 to T1_T17 Rio de Janeiro T0 to T1_T245 October 20th T0 T2_T446_T562_T528
+T3-T113-T123 T1_T365 Check T0 the balance of my T1_T366_T702 checking account T0 T2_T586_T760
+T3-T113-T123 T1_T365 Transfer T0 T1_T219 $1000 T0 from T1_T366_T702 savings account T0 to T1_T366_T702 checking account T0 T2_T388_T76
+T3-T113-T123 T1_T365 Pay T0 T1_T219 $200 T0 towards T1_T687 credit card T0 from T1_T366_T702 checking account T0 T2_T198_T314
+T3-T113-T123 T1_T365 Set up T0 an T1_T376_T702 alert T0 for T1_T219 $5000 T0 withdrawal from T1_T366_T702 savings account T0 T2_T376_T225
+T3-T113-T123 T1_T365 Update T0 my T1_T532 address T0 in T1_T366_T702 savings account T0 T2_T366_T293
+T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 expenses T0 for the last T1_T48 month T0 T2_T489_T431
+T3-T113-T123 T1_T365 View T0 the T1_T598_T702 statement T0 of T1_T366_T702 credit card T0 for T1_T245 last month T0 T2_T399_T224
+T3-T113-T123 T1_T365 Report T0 the T1_T532 unauthorized transaction T0 of T1_T219 $500 T0 on my T1_T366_T702 credit card T0 T2_T290_T598
+T3-T113-T123 T1_T365 Alert T0 me when T1_T366_T702 savings account T0 balance goes below T1_T219 $1000 T0 T2_T604_T586_T376
+T3-T113-T123 T1_T365 Deposit T0 T1_T219 $1500 T0 into T1_T366_T702 savings account T0 T2_T473_T251
+T3-T113-T123 T1_T365 Withdraw T0 T1_T219 $200 T0 from T1_T366_T702 checking account T0 T2_T787_T251
+T3-T113-T123 T1_T365 Invest T0 T1_T219 $5000 T0 into T1_T532 mutual funds T0 from T1_T366_T702 savings account T0 T2_T43_T251
+T3-T113-T123 T1_T365 Save T0 T1_T219 $200 T0 per T1_T496 month T0 into T1_T366_T702 savings account T0 T2_T770_T597
+T3-T113-T123 T1_T365 Spend T0 T1_T219 $100 T0 on T1_T532 entertainment T0 from T1_T366_T702 checking account T0 this T1_T245 week T0 T2_T668_T251
+T3-T113-T123 T1_T365 Monitor T0 my T1_T366_T702 credit card T0 for T1_T532 fraudulent activity T0 T2_T290_T611
+T3-T113-T123 T1_T365 Notify T0 me when my T1_T366_T702 checking account T0 balance reaches T1_T219 $5000 T0 T2_T586_T497
+T3-T113-T123 T1_T365 Check T0 my T1_T366_T702 retirement account T0 balance on T1_T682 mobile app T0 T2_T586_T760
+T3-T113-T123 T1_T365 Transfer T0 T1_T219 $300 T0 to T1_T687 John's savings account T0 from my T1_T366_T702 checking account T0 T2_T388_T76
+T3-T113-T123 T1_T365 Pay T0 T1_T219 $75 T0 towards T1_T687 phone bill T0 from my T1_T366_T702 checking account T0 T2_T198_T314
+T3-T113-T123 T1_T365 Set up T0 T1_T376_T702 low balance alert T0 for my T1_T366_T702 checking account T0 T2_T376_T225
+T3-T113-T123 T1_T365 Update T0 my T1_T532 email address T0 in my T1_T366_T702 savings account T0 T2_T366_T293
+T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 spending habits T0 for the past T1_T48 year T0 T2_T621_T431
+T3-T113-T123 T1_T365 View T0 my T1_T366_T702 checking account T0 T1_T598_T702 statement T0 for T1_T245 this month T0 T2_T399_T224
+T3-T113-T123 T1_T365 Generate T0 a T1_T598_T702 spending report T0 for my T1_T366_T702 checking account T0 T2_T598_T274
+T3-T113-T123 T1_T365 Cancel T0 the T1_T332_T702 automatic transfer T0 of T1_T219 $200 T0 to T1_T687 savings account T0 T2_T25
+T3-T113-T123 T1_T365 Report T0 an T1_T532 unauthorized charge T0 of T1_T219 $250 T0 on my T1_T366_T702 credit card T0 T2_T290_T598
+T3-T113-T123 T1_T365 Alert T0 me when my T1_T366_T702 credit card T0 balance exceeds T1_T219 $2000 T0 T2_T670_T586_T376
+T3-T113-T123 T1_T365 Budget T0 T1_T219 $200 T0 for T1_T532 dining out T0 every T1_T496 month T0 T2_T327_T424
+T3-T113-T123 T1_T365 Deposit T0 T1_T219 $1000 T0 into my T1_T366_T702 investment account T0 T2_T473_T251
+T3-T113-T123 T1_T365 Withdraw T0 T1_T219 $500 T0 from my T1_T366_T702 ATM T0 T2_T787_T251
+T3-T113-T123 T1_T365 Invest T0 T1_T219 $10000 T0 in T1_T532 stocks T0 from my T1_T366_T702 brokerage account T0 T2_T43_T251
+T3-T113-T123 T1_T365 Save T0 T1_T219 $300 T0 per T1_T496 month T0 for T1_T532 vacation T0 T2_T770_T597
+T3-T113-T123 T1_T365 Spend T0 T1_T219 $50 T0 on T1_T532 books T0 this T1_T245 month T0 T2_T621_T597
+T3-T113-T123 T1_T365 Monitor T0 my T1_T366_T702 bank accounts T0 for T1_T532 unusual activity T0 T2_T290_T611
+T3-T113-T123 T1_T365 Notify T0 me when my T1_T366_T702 savings account T0 reaches T1_T219 $10000 T0 T2_T586_T497
+T3-T113-T123 T1_T365 Check T0 the T1_T366_T702 student loan T0 balance on T1_T682 online banking T0 T2_T586_T760
+T3-T113-T123 T1_T365 Transfer T0 T1_T219 $150 T0 to T1_T687 Mom's checking account T0 from my T1_T366_T702 savings account T0 T2_T388_T76
+T3-T113-T123 T1_T365 Pay T0 T1_T219 $120 T0 towards T1_T687 internet bill T0 from my T1_T366_T702 checking account T0 T2_T198_T314
+T3-T113-T123 T1_T365 Set up T0 T1_T376_T702 high balance alert T0 for my T1_T366_T702 investment account T0 T2_T376_T225
+T3-T113-T123 T1_T365 Update T0 my T1_T532 phone number T0 in my T1_T366_T702 credit card account T0 T2_T366_T293
+T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 income and expenses T0 for the past T1_T48 six months T0 T2_T467_T431
+T3-T113-T123 T1_T365 View T0 my T1_T366_T702 mortgage account T0 T1_T598_T702 statement T0 for T1_T245 last month T0 T2_T399_T224
+T3-T113-T123 T1_T365 Generate T0 a T1_T598_T702 income report T0 for my T1_T366_T702 checking account T0 T2_T598_T274
+T3-T113-T123 T1_T365 Cancel T0 the T1_T332_T702 automatic deposit T0 of T1_T219 $500 T0 to T1_T687 brokerage account T0 T2_T25
+T3-T113-T123 T1_T365 Report T0 an T1_T532 unauthorized withdrawal T0 of T1_T219 $300 T0 from my T1_T366_T702 checking account T0 T2_T290_T598
+T3-T113-T123 T1_T365 Alert T0 me when my T1_T366_T702 checking account T0 balance drops below T1_T219 $500 T0 T2_T604_T586_T376
+T3-T113-T123 T1_T365 Budget T0 T1_T219 $150 T0 for T1_T532 clothes shopping T0 every T1_T496 month T0 T2_T327_T424
+T3-T113-T123 T1_T365 Deposit T0 T1_T219 $2000 T0 into my T1_T366_T702 retirement account T0 T2_T473_T251
+T3-T113-T123 T1_T365 Withdraw T0 T1_T219 $100 T0 from my T1_T366_T702 savings account T0 at the T1_T532 ATM T0 T2_T787_T251
+T3-T113-T123 T1_T365 Invest T0 T1_T219 $5000 T0 in T1_T532 mutual funds T0 from my T1_T366_T702 investment account T0 T2_T43_T251
+T3-T113-T123 T1_T365 Save T0 T1_T219 $250 T0 per T1_T496 month T0 for T1_T532 emergency fund T0 T2_T770_T597
+T3-T113-T123 T1_T365 Spend T0 T1_T219 $30 T0 on T1_T532 coffee T0 this T1_T245 week T0 T2_T621_T597
+T3-T113-T123 T1_T365 Monitor T0 my T1_T366_T702 credit cards T0 for T1_T532 suspicious charges T0 T2_T290_T611
+T3-T113-T123 T1_T365 Notify T0 me when my T1_T366_T702 investment account T0 reaches T1_T219 $20000 T0 T2_T586_T497
+T3-T113-T123 T1_T365 Check T0 the T1_T366_T702 car loan T0 balance on T1_T682 mobile app T0 T2_T586_T760
+T3-T113-T123 T1_T365 Transfer T0 T1_T219 $200 T0 to T1_T687 Dad's savings account T0 from my T1_T366_T702 checking account T0 T2_T388_T76
+T3-T113-T123 T1_T365 Pay T0 T1_T219 $80 T0 towards T1_T687 gas bill T0 from my T1_T366_T702 checking account T0 T2_T198_T314
+T3-T113-T123 T1_T365 Set up T0 T1_T376_T702 transaction alert T0 for my T1_T366_T702 credit card account T0 T2_T376_T225
+T3-T113-T123 T1_T365 Update T0 my T1_T532 mailing address T0 in my T1_T366_T702 checking account T0 T2_T366_T293
+T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 saving habits T0 for the past T1_T48 year T0 T2_T770_T431
+T3-T113-T123 T1_T365 View T0 my T1_T366_T702 credit card T0 T1_T598_T702 statement T0 for T1_T245 this month T0 T2_T399_T224
+T3-T113-T123 T1_T365 Generate T0 a T1_T598_T702 expense report T0 for my T1_T366_T702 savings account T0 T2_T598_T274
 T3-T771-T605 T1_T285_T640 Mane T0 T1_T365 dribbles T0 past the defenders and T1_T365 shoots T0 a powerful strike for T1_T379_T640 Liverpool T0 T2_T365
-T3-T771-T605 T1_T285_T640 Ronaldo T0 T1_T365 scores T0 the T1_T40 winning goal T0 in the T1_T144 90th minute END, securing a victory for T1_T379_T640 Juventus T0 T2_T569
-T3-T771-T605 T1_T285_T640 Messi T0 T1_T365 assists T0 T1_T285_T640 Griezmann T0 who T1_T365 heads T0 it into the net for T1_T379_T640 Barcelona T0 T2_T365
 T3-T771-T605 T1_T379_T640 Chelsea T0 T1_T365 wins T0 the T1_T552_T640 Premier League T0 title for the T1_T722 2020-2021 season T0 T2_T118
 T3-T771-T605 T1_T285_T640 Hazard T0 T1_T365 recovers T0 from his injury and T1_T365 scores T0 a stunning goal for T1_T379_T640 Real Madrid T0 T2_T569
 T3-T771-T605 T1_T285_T640 Mbappe T0 T1_T365 dribbles T0 past the defenders and T1_T365 shoots T0 a powerful strike for T1_T379_T640 PSG T0 T2_T365
-T3-T771-T605 T1_T285_T640 Salah T0 T1_T365 scores T0 the T1_T40 winning goal T0 in the T1_T144 85th minute END, securing a victory for T1_T379_T640 Liverpool T0 T2_T569
-T3-T771-T605 T1_T285_T640 De Bruyne T0 T1_T365 assists T0 T1_T285_T640 Sterling T0 who T1_T365 heads T0 it into the net for T1_T379_T640 Manchester City T0 T2_T365
 T3-T771-T605 T1_T379_T640 Bayern Munich T0 T1_T365 wins T0 the T1_T552_T640 Bundesliga T0 title for the T1_T722 2020-2021 season T0 T2_T118
 T3-T771-T605 T1_T285_T640 Firmino T0 T1_T365 recovers T0 from his injury and T1_T365 scores T0 a stunning goal for T1_T379_T640 Liverpool T0 T2_T569
-T3-T771-T605 T1_T285_T640 Aguero T0 T1_T365 dribbles T0 past the defenders and T1_T365 shoots T0 a powerful strike for T1_T379_T640 Manchester City T0 T2_T365
-T3-T771-T605 T1_T285_T640 Aubameyang T0 T1_T365 scores T0 the T1_T40 winning goal T0 in the T1_T144 90th minute END, securing a victory for T1_T379_T640 Arsenal T0 T2_T569
-T3-T771-T605 T1_T285_T640 Son T0 T1_T365 assists T0 T1_T285_T640 Alli T0 who T1_T365 heads T0 it into the net for T1_T379_T640 Tottenham T0 T2_T365
 T3-T771-T605 T1_T379_T640 PSG T0 T1_T365 wins T0 the T1_T552_T640 Ligue 1 T0 title for the T1_T722 2020-2021 season T0 T2_T118
 T3-T771-T605 T1_T285_T640 Griezmann T0 T1_T365 recovers T0 from his injury and T1_T365 scores T0 a stunning goal for T1_T379_T640 Barcelona T0 T2_T569
-T3-T771-T605 T1_T285_T640 Sterling T0 T1_T365 dribbles T0 past the defenders and T1_T365 shoots T0 a powerful strike for T1_T379_T640 Manchester City T0 T2_T365
-T3-T771-T605 T1_T285_T640 Benzema T0 T1_T365 scores T0 the T1_T40 winning goal T0 in the T1_T144 88th minute END, securing a victory for T1_T379_T640 Real Madrid T0 T2_T569
-T3-T771-T605 T1_T285_T640 Muller T0 T1_T365 assists T0 T1_T285_T640 Lewandowski T0 who T1_T365 heads T0 it into the net for T1_T379_T640 Bayern Munich T0 T2_T365
 T3-T771-T605 T1_T379_T640 Manchester United T0 T1_T365 wins T0 the T1_T552_T640 Premier League T0 title for the T1_T722 2020-2021 season T0 T2_T118
-T3-T771-T605 T1_T285_T640 Rashford T0 T1_T365 recovers T0 from his injury and T1_T365 scores T0 a stunning goal for T1_T379_T640 Manchester United T0 T2_T569
-T3-T771-T605 T1_T285_T640 Fernandes T0 T1_T365 dribbles T0 past the defenders and T1_T365 shoots T0 a powerful strike for T1_T379_T640 Manchester United T0 T2_T365
-T3-T771-T605 T1_T285_T640 Messi T0 T1_T365 scores T0 the T1_T40 winning goal T0 in the T1_T144 90th minute END, securing a victory for T1_T379_T640 Barcelona T0 T2_T569
-T3-T771-T605 T1_T285_T640 Dybala T0 T1_T365 assists T0 T1_T285_T640 Ronaldo T0 who T1_T365 heads T0 it into the net for T1_T379_T640 Juventus T0 T2_T365
 T3-T771-T605 T1_T379_T640 PSG T0 T1_T365 wins T0 the T1_T552_T640 Ligue 1 T0 title for the T1_T722 2020-2021 season T0 T2_T118
 T3-T771-T605 T1_T285_T640 Neymar T0 T1_T365 recovers T0 from his injury and T1_T365 scores T0 a stunning goal for T1_T379_T640 PSG T0 T2_T569
 T3-T771-T605 T1_T285_T640 Mbappe T0 T1_T365 dribbles T0 past the defenders and T1_T365 shoots T0 a powerful strike for T1_T379_T640 PSG T0 T2_T365
-T3-T771-T605 T1_T285_T640 Ronaldo T0 T1_T365 scores T0 the T1_T40 winning goal T0 in the T1_T144 88th minute END, securing a victory for T1_T379_T640 Juventus T0 T2_T569
-T3-T771-T605 T1_T285_T640 Kane T0 T1_T365 assists T0 T1_T285_T640 Son T0 who T1_T365 heads T0 it into the net for T1_T379_T640 Tottenham T0 T2_T365
 T3-T771-T605 T1_T379_T640 Bayern Munich T0 T1_T365 wins T0 the T1_T552_T640 Bundesliga T0 title for the T1_T722 2020-2021 season T0 T2_T118
-T3-T771-T605 T1_T285_T640 Lewandowski T0 T1_T365 recovers T0 from his injury and T1_T365 scores T0 a stunning goal for T1_T379_T640 Bayern Munich T0 T2_T569
-T3-T771-T605 T1_T285_T640 Gnabry T0 T1_T365 dribbles T0 past the defenders and T1_T365 shoots T0 a powerful strike for T1_T379_T640 Bayern Munich T0 T2_T365
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been experiencing T0 T1_T483 shortness of breath T0 T1_T496 intermittently T0 for T1_T48 the past two weeks T0 T2_T483_T706
 T3-T344-T287 T1_T287_T472 My mother T0 T1_T365 has been complaining of T0 T1_T483 fatigue T0 T1_T496 daily T0 T2_T483_T706
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 was diagnosed with T0 T1_T735 hypertension T0 T1_T245 two years ago T0 T2_T344_T475
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 took T0 T1_T603 paracetamol T0 for T1_T483 my fever T0 T1_T144 yesterday night T0 T2_T603_T649
@@ -40,8 +394,6 @@ T3-T344-T287 T1_T287_T472 My son T0 T1_T365 has a history of T0 T1_T344_T475 epi
 T3-T344-T287 T1_T287_T472 I've been T1_T365 feeling T0 T1_T483 lightheaded T0 T1_T496 every afternoon T0 T2_T483_T706
 T3-T344-T287 T1_T287_T472 My grandmother T0 T1_T365 had T0 T1_T540 cataract surgery T0 T1_T245 last year T0 T2_T540_T475
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 need T0 a T1_T437_T47 follow-up appointment T0 T1_T245 next month T0 T2_T734_T528
-T3-T344-T287 T1_T287_T472 I've been T1_T365 experiencing T0 T1_T483 joint pain T0 T1_T496 occasionally T0 for T1_T48 the last two months T0 T2_T483_T706
-T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 was prescribed T0 T1_T603 prednisone T0 for T1_T483 her skin rash T0 T1_T245 last week T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 felt T0 T1_T483 abdominal pain T0 T1_T144 this afternoon T0 T2_T483_T706
 T3-T344-T287 T1_T287_T472 My son T0 T1_T365 had T0 T1_T540 a appendectomy T0 T1_T245 last month T0 T2_T540_T475
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a CT scan T0 T1_T245 last Tuesday T0 T2_T172_T475
@@ -58,7 +410,6 @@ T3-T122-T123 T1_T365 Rewind T0 the T1_T337_T702 video T0 by T1_T48 15 minutes T0
 T3-T122-T123 T1_T365 Fast forward T0 the T1_T764 The Crown T0 T1_T337_T702 show T0 by T1_T48 30 seconds T0 T2_T578_T102
 T3-T122-T123 T1_T365 Mute T0 the T1_T337_T702 audio T0 T2_T578_T102
 T3-T122-T123 T1_T365 Unmute T0 the T1_T337_T702 podcast T0 T2_T578_T102
-T3-T122-T123 T1_T365 Set T0 a reminder to watch the T1_T764 The Mandalorian T0 T1_T337_T702 series T0 every T1_T496 Friday T0 at T1_T144 8 PM T0 T2_T29
 T3-T122-T123 T1_T365 Update T0 my T1_T398_T702 genre T0 preference to T1_T317 horror T0 T2_T398_T293
 T3-T122-T123 T1_T365 Search T0 for T1_T764 The Dark Knight T0 T1_T337_T702 movie T0 T2_T609
 T3-T122-T123 T1_T365 Record T0 the T1_T764 The Big Bang Theory T0 T1_T337_T702 show T0 T2_T60
@@ -108,64 +459,38 @@ T3-T122-T123 T1_T365 Play T0 T1_T764 The Queen's Gambit T0 T1_T337_T702 series T
 T3-T122-T123 T1_T365 Pause T0 the T1_T764 The Umbrella Academy T0 T1_T337_T702 series T0 on T1_T682 Netflix T0 T2_T578_T102
 T3-T122-T123 T1_T365 Stop T0 the T1_T764 The Witcher T0 T1_T337_T702 series T0 on T1_T682 Netflix T0 T2_T578_T102
 T3-T122-T123 T1_T365 Skip T0 to the next T1_T764 The Crown T0 T1_T337_T702 episode T0 on T1_T682 Netflix T0 T2_T578_T102
-T3-T122-T123 T1_T365 Rewind T0 the T1_T764 Money Heist T0 T1_T337_T702 series T0 by T1_T48 15 minutes T0 on T1_T682 Netflix T0 T2_T578_T102
-T3-T122-T123 T1_T365 Fast forward T0 the T1_T764 Stranger Things T0 T1_T337_T702 series T0 by T1_T48 30 seconds T0 on T1_T682 Netflix T0 T2_T578_T102
 T3-T122-T123 T1_T365 Mute T0 the T1_T764 Breaking Bad T0 T1_T337_T702 series T0 on T1_T682 Netflix T0 T2_T578_T102
 T3-T122-T123 T1_T365 Unmute T0 the T1_T764 Dark T0 T1_T337_T702 series T0 on T1_T682 Netflix T0 T2_T578_T102
-T3-T122-T123 T1_T365 Set T0 a reminder to watch the T1_T764 The Mandalorian T0 T1_T337_T702 series T0 every T1_T496 Friday T0 at T1_T144 8 PM T0 on T1_T682 Disney+ T0 T2_T29
 T3-T122-T123 T1_T365 Update T0 my T1_T398_T702 genre T0 preference to T1_T317 horror T0 on T1_T682 Amazon Prime T0 T2_T398_T293
 T3-T344-T554-T123 T1_T365 Conduct T0 a T1_T172_T702 blood test T0 on T1_T287_T472 patient 234 T0 in the T1_T674 lab 3 T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Change T0 the T1_T424_T702 temperature T0 of the T1_T218 incubator T0 to T1_T424_T278 37 degrees Celsius T0 T2_T424_T729
-T3-T344-T554-T123 T1_T365 Send T0 the T1_T598_T702 test results T0 of T1_T287_T472 patient 456 T0 to T1_T687 Dr. Smith T0 via T1_T682 email T0 T2_T598_T579
-T3-T344-T554-T123 T1_T365 Schedule T0 an T1_T40 appointment T0 for T1_T287_T472 patient 789 T0 on T1_T245 March 15th T0 at T1_T144 10:00 AM T0 T2_T373_T424
-T3-T344-T554-T123 T1_T365 Update T0 the T1_T287_T472 address T0 of T1_T287_T472 patient 123 T0 to T1_T424_T278 123 Main St, Anytown T0 T2_T287_T472_T293
-T3-T344-T554-T123 T1_T365 Set T0 the T1_T424_T702 alarm T0 on the T1_T218 blood analysis machine T0 for T1_T144 8:00 AM T0 every T1_T496 day T0 T2_T424_T729
 T3-T344-T554-T123 T1_T365 Start T0 the T1_T172_T702 urinalysis T0 for T1_T287_T472 patient 567 T0 in the T1_T674 lab 1 T0 T2_T172_T540
 T3-T344-T554-T123 T1_T365 Stop T0 the T1_T537 calibration T0 on the T1_T218 centrifuge T0 T2_T218_T182
 T3-T344-T554-T123 T1_T365 Pause T0 the T1_T172_T702 DNA sequencing T0 on T1_T482_T702 sample 789 T0 T2_T172_T540
 T3-T344-T554-T123 T1_T365 Resume T0 the T1_T172_T702 glucose test T0 on T1_T482_T702 sample 345 T0 in T1_T674 lab 2 T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Report T0 the T1_T532 findings T0 of T1_T172_T702 biopsy T0 on T1_T287_T472 patient 678 T0 to T1_T687 Dr. Johnson T0 T2_T598_T579
-T3-T344-T554-T123 T1_T365 Test T0 the T1_T482_T702 blood sample T0 of T1_T287_T472 patient 901 T0 for T1_T172_T702 cholesterol levels T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Analyze T0 the T1_T482_T702 urine sample T0 of T1_T287_T472 patient 234 T0 for T1_T172_T702 kidney function T0 in T1_T674 lab 4 T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Collect T0 T1_T482_T702 stool samples T0 from T1_T287_T472 patient 567 T0 for T1_T172_T702 parasite testing T0 T2_T482_T693
 T3-T344-T554-T123 T1_T365 Store T0 the T1_T482_T702 tissue samples T0 of T1_T287_T472 patient 890 T0 in T1_T674 freezer 1 T0 T2_T482_T690
-T3-T344-T554-T123 T1_T365 Retrieve T0 the T1_T287_T472 medical history T0 of T1_T287_T472 patient 123 T0 from the T1_T682 database T0 T2_T287_T472_T665
 T3-T344-T554-T123 T1_T365 Prepare T0 the T1_T554_T162 histology section T0 for T1_T287_T472 patient 456 END's T1_T172_T702 biopsy T0 T2_T172_T35
 T3-T344-T554-T123 T1_T365 Review T0 the T1_T598_T702 lab results T0 of T1_T287_T472 patient 789 T0 before T1_T144 5:00 PM T0 T2_T598_T444
 T3-T344-T554-T123 T1_T365 Sign off T0 on the T1_T598_T702 pathology report T0 of T1_T287_T472 patient 123 T0 T2_T598_T93
 T3-T344-T554-T123 T1_T365 Approve T0 the T1_T386 lab order T0 for T1_T287_T472 patient 456 END's T1_T172_T702 MRI T0 T2_T172_T93
-T3-T344-T554-T123 T1_T365 Schedule T0 T1_T287_T472 patient 789 T0 for a T1_T172_T702 CT scan T0 on T1_T245 April 20th T0 at T1_T144 1:00 PM T0 T2_T373_T424
-T3-T344-T554-T123 T1_T365 Update T0 the T1_T287_T472 emergency contact T0 of T1_T287_T472 patient 123 T0 to T1_T424_T278 Jane Doe, 555-1234 T0 T2_T287_T472_T293
 T3-T344-T554-T123 T1_T365 Change T0 the T1_T424_T702 humidity level T0 in the T1_T674 lab 2 T0 to T1_T424_T278 45% T0 T2_T424_T729
-T3-T344-T554-T123 T1_T365 Send T0 T1_T287_T472 patient 456 END's T1_T598_T702 blood test results T0 to T1_T687 Dr. Brown T0 via T1_T682 fax T0 T2_T598_T579
 T3-T344-T554-T123 T1_T365 Set T0 the T1_T424_T702 timer T0 on the T1_T218 autoclave T0 for T1_T48 30 minutes T0 T2_T424_T729
 T3-T344-T554-T123 T1_T365 Start T0 the T1_T172_T702 allergy test T0 for T1_T287_T472 patient 789 T0 in the T1_T674 lab 3 T0 T2_T172_T540
 T3-T344-T554-T123 T1_T365 Stop T0 the T1_T537 titration T0 on the T1_T218 pH meter T0 T2_T218_T182
 T3-T344-T554-T123 T1_T365 Pause T0 the T1_T172_T702 cell count T0 on T1_T482_T702 sample 123 T0 T2_T172_T540
 T3-T344-T554-T123 T1_T365 Resume T0 the T1_T172_T702 hormone test T0 on T1_T482_T702 sample 456 T0 in T1_T674 lab 1 T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Report T0 the T1_T532 observations T0 of T1_T172_T702 tissue culture T0 on T1_T287_T472 patient 789 T0 to T1_T687 Dr. Green T0 T2_T598_T579
 T3-T344-T554-T123 T1_T365 Test T0 the T1_T482_T702 saliva sample T0 of T1_T287_T472 patient 123 T0 for T1_T172_T702 cortisol levels T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Analyze T0 the T1_T482_T702 spinal fluid sample T0 of T1_T287_T472 patient 456 T0 for T1_T172_T702 meningitis T0 in T1_T674 lab 2 T0 T2_T172_T540
 T3-T344-T554-T123 T1_T365 Collect T0 T1_T482_T702 hair samples T0 from T1_T287_T472 patient 789 T0 for T1_T172_T702 drug testing T0 T2_T482_T693
 T3-T344-T554-T123 T1_T365 Store T0 the T1_T482_T702 bone marrow samples T0 of T1_T287_T472 patient 123 T0 in T1_T674 freezer 2 T0 T2_T482_T690
-T3-T344-T554-T123 T1_T365 Retrieve T0 the T1_T287_T472 vaccination records T0 of T1_T287_T472 patient 456 T0 from the T1_T682 database T0 T2_T287_T472_T665
-T3-T344-T554-T123 T1_T365 Prepare T0 the T1_T554_T162 microbiology section T0 for T1_T287_T472 patient 789 END's T1_T172_T702 bacterial culture T0 T2_T172_T35
 T3-T344-T554-T123 T1_T365 Review T0 the T1_T598_T702 imaging results T0 of T1_T287_T472 patient 123 T0 before T1_T144 6:00 PM T0 T2_T598_T444
 T3-T344-T554-T123 T1_T365 Sign off T0 on the T1_T598_T702 cytology report T0 of T1_T287_T472 patient 456 T0 T2_T598_T93
 T3-T344-T554-T123 T1_T365 Approve T0 the T1_T386 lab order T0 for T1_T287_T472 patient 789 END's T1_T172_T702 ultrasound T0 T2_T172_T93
-T3-T344-T554-T123 T1_T365 Schedule T0 T1_T287_T472 patient 123 T0 for a T1_T172_T702 mammogram T0 on T1_T245 May 25th T0 at T1_T144 2:00 PM T0 T2_T373_T424
-T3-T344-T554-T123 T1_T365 Update T0 the T1_T287_T472 insurance details T0 of T1_T287_T472 patient 456 T0 to T1_T424_T278 Blue Cross Blue Shield, policy 789 T0 T2_T287_T472_T293
 T3-T344-T554-T123 T1_T365 Change T0 the T1_T424_T702 light intensity T0 in the T1_T674 lab 1 T0 to T1_T424_T278 500 lux T0 T2_T424_T729
-T3-T344-T554-T123 T1_T365 Send T0 T1_T287_T472 patient 789 END's T1_T598_T702 urine test results T0 to T1_T687 Dr. White T0 via T1_T682 email T0 T2_T598_T579
 T3-T344-T554-T123 T1_T365 Set T0 the T1_T424_T702 volume T0 on the T1_T218 spectrophotometer T0 to T1_T424_T278 100 mL T0 T2_T424_T729
 T3-T344-T554-T123 T1_T365 Start T0 the T1_T172_T702 liver function test T0 for T1_T287_T472 patient 123 T0 in the T1_T674 lab 4 T0 T2_T172_T540
 T3-T344-T554-T123 T1_T365 Stop T0 the T1_T537 dilution T0 on the T1_T218 pipette T0 T2_T218_T182
 T3-T344-T554-T123 T1_T365 Pause T0 the T1_T172_T702 genetic test T0 on T1_T482_T702 sample 789 T0 T2_T172_T540
 T3-T344-T554-T123 T1_T365 Resume T0 the T1_T172_T702 thyroid test T0 on T1_T482_T702 sample 123 T0 in T1_T674 lab 3 T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Report T0 the T1_T532 findings T0 of T1_T172_T702 skin biopsy T0 on T1_T287_T472 patient 456 T0 to T1_T687 Dr. Black T0 T2_T598_T579
 T3-T344-T554-T123 T1_T365 Test T0 the T1_T482_T702 blood sample T0 of T1_T287_T472 patient 789 T0 for T1_T172_T702 HIV T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Analyze T0 the T1_T482_T702 cerebrospinal fluid sample T0 of T1_T287_T472 patient 123 T0 for T1_T172_T702 multiple sclerosis T0 in T1_T674 lab 2 T0 T2_T172_T540
-T3-T344-T554-T123 T1_T365 Collect T0 T1_T482_T702 skin samples T0 from T1_T287_T472 patient 456 T0 for T1_T172_T702 melanoma testing T0 T2_T482_T693
 T3-T344-T554-T123 T1_T365 Store T0 the T1_T482_T702 lung tissue samples T0 of T1_T287_T472 patient 789 T0 in T1_T674 freezer 3 T0 T2_T482_T690
 T3-T380-T123 T1_T287_T472 I T0 T1_T365 need to schedule T0 a T1_T186_T702 therapy session T0 T1_T245 next Tuesday T0 T2_T623_T373
 T3-T380-T123 T1_T287_T472 I T0 T1_T365 want to track T0 my T1_T188_T266 progress T0 T1_T496 weekly T0 T2_T751_T188
@@ -178,8 +503,6 @@ T3-T380-T123 T1_T287_T472 Please T1_T365 log T0 my T1_T577 daily journaling T0 T
 T3-T380-T123 T1_T287_T472 I T0 T1_T365 feel better T0 when I T1_T365 engage T0 in T1_T577 physical activities T0 T2_T598_T577
 T3-T380-T123 T1_T287_T472 I T0 T1_T365 need T1_T281_T702 relaxation techniques T0 to help with T1_T483 my anxiety T0 T2_T281_T313
 T3-T380-T123 T1_T287_T472 Please T1_T365 notify T0 me about T1_T281_T702 support group meetings T0 T1_T496 weekly T0 T2_T497_T313
-T3-T380-T123 T1_T287_T472 I T0 T1_T365 would like to T1_T365 measure T0 my T1_T188_T266 stress levels T0 T1_T48 over the next few weeks T0 T2_T352_T188
-T3-T380-T123 T1_T287_T472 I T0 T1_T365 want to T1_T365 review T0 my T1_T507_T702 therapy progress T0 T1_T48 over the past three months T0 T2_T444_T188
 T3-T97-T123 T1_T365 Set T0 the T1_T218 thermostat T0 to T1_T424_T278 72 degrees T0 in the T1_T674 living room T0 T2_T417
 T3-T97-T123 T1_T365 Turn off T0 the T1_T218 lights T0 in the T1_T674 garage T0 T2_T163
 T3-T97-T123 T1_T365 Increase T0 the T1_T424_T702 volume T0 of the T1_T218 TV T0 in the T1_T674 bedroom T0 to T1_T424_T278 30 T0 T2_T667
@@ -187,8 +510,6 @@ T3-T97-T123 T1_T365 Play T0 the T1_T532 song 'Imagine' T0 on the T1_T218 smart s
 T3-T97-T123 T1_T365 Send T0 a T1_T532 message 'I'll be home late' T0 to T1_T687 John T0 on T1_T682 WhatsApp T0 T2_T498
 T3-T97-T123 T1_T365 Set T0 a T1_T40 reminder T0 to T1_T365 call T0 T1_T687 Mom T0 at T1_T144 5 pm T0 T2_T29
 T3-T97-T123 T1_T365 Create T0 an T1_T40 event 'Dinner with friends' T0 on T1_T245 June 12 T0 at T1_T144 7 pm T0 T2_T40
-T3-T97-T123 T1_T365 Change T0 the T1_T424_T702 color temperature T0 of the T1_T218 lights T0 in the T1_T674 living room T0 to T1_T424_T278 warm white T0 T2_T163_T458
-T3-T97-T123 T1_T365 Decrease T0 the T1_T424_T702 brightness T0 of the T1_T218 screen T0 on the T1_T218 laptop T0 to T1_T424_T278 50% T0 T2_T304
 T3-T97-T123 T1_T365 Mute T0 the T1_T218 television T0 in the T1_T674 bedroom T0 T2_T414
 T3-T97-T123 T1_T365 Unmute T0 the T1_T218 music system T0 in the T1_T674 kitchen T0 T2_T680
 T3-T97-T123 T1_T365 Skip T0 the T1_T532 current song T0 on the T1_T218 Spotify player T0 T2_T463
@@ -203,15 +524,11 @@ T3-T97-T123 T1_T365 Set T0 the T1_T218 fan T0 to T1_T424_T278 high speed T0 in t
 T3-T97-T123 T1_T365 Turn on T0 the T1_T218 coffee maker T0 at T1_T144 7 am T0 every T1_T496 day T0 T2_T623
 T3-T97-T123 T1_T365 Send T0 an T1_T532 email 'Meeting notes' T0 to T1_T687 team T0 on T1_T682 Gmail T0 T2_T289
 T3-T97-T123 T1_T365 Create T0 a T1_T40 meeting 'Project discussion' T0 on T1_T245 July 1 T0 at T1_T144 2 pm T0 T2_T345
-T3-T97-T123 T1_T365 Change T0 the T1_T424_T702 color T0 of the T1_T218 smart bulb T0 in the T1_T674 study room T0 to T1_T424_T278 blue T0 T2_T163_T458
 T3-T97-T123 T1_T365 Set T0 the T1_T218 air purifier T0 to T1_T424_T278 medium T0 in the T1_T674 living room T0 T2_T585_T744
-T3-T97-T123 T1_T365 Increase T0 the T1_T424_T702 humidity T0 of the T1_T218 humidifier T0 in the T1_T674 bedroom T0 to T1_T424_T278 60% T0 T2_T342
 T3-T97-T123 T1_T365 Play T0 the T1_T532 podcast 'Daily News' T0 on the T1_T218 smart speaker T0 at T1_T144 8 am T0 T2_T228
 T3-T97-T123 T1_T365 Send T0 a T1_T532 message 'Happy Birthday' T0 to T1_T687 Lisa T0 on T1_T682 Facebook T0 at T1_T144 12 am T0 T2_T498
 T3-T97-T123 T1_T365 Set T0 a T1_T40 reminder T0 to T1_T365 buy T0 T1_T532 groceries T0 at T1_T144 5 pm T0 T2_T29
 T3-T97-T123 T1_T365 Create T0 an T1_T40 event 'Yoga class' T0 on T1_T245 June 20 T0 at T1_T144 6 pm T0 T2_T40
-T3-T97-T123 T1_T365 Change T0 the T1_T424_T702 color temperature T0 of the T1_T218 lights T0 in the T1_T674 kitchen T0 to T1_T424_T278 cool white T0 T2_T163_T458
-T3-T97-T123 T1_T365 Decrease T0 the T1_T424_T702 brightness T0 of the T1_T218 screen T0 on the T1_T218 tablet T0 to T1_T424_T278 40% T0 T2_T304
 T3-T97-T123 T1_T365 Mute T0 the T1_T218 radio T0 in the T1_T674 kitchen T0 T2_T414
 T3-T97-T123 T1_T365 Unmute T0 the T1_T218 sound system T0 in the T1_T674 living room T0 T2_T680
 T3-T97-T123 T1_T365 Skip T0 the T1_T532 current episode T0 on the T1_T218 Netflix player T0 T2_T463
@@ -226,15 +543,10 @@ T3-T97-T123 T1_T365 Set T0 the T1_T218 AC T0 to T1_T424_T278 68 degrees T0 in th
 T3-T97-T123 T1_T365 Turn on T0 the T1_T218 oven T0 at T1_T144 6 pm T0 T2_T623
 T3-T97-T123 T1_T365 Send T0 an T1_T532 email 'Invoice details' T0 to T1_T687 client T0 on T1_T682 Outlook T0 T2_T289
 T3-T97-T123 T1_T365 Create T0 a T1_T40 meeting 'Budget planning' T0 on T1_T245 July 15 T0 at T1_T144 11 am T0 T2_T345
-T3-T97-T123 T1_T365 Change T0 the T1_T424_T702 color T0 of the T1_T218 LED strip T0 in the T1_T674 game room T0 to T1_T424_T278 red T0 T2_T163_T458
 T3-T97-T123 T1_T365 Set T0 the T1_T218 dehumidifier T0 to T1_T424_T278 low T0 in the T1_T674 basement T0 T2_T79
-T3-T97-T123 T1_T365 Increase T0 the T1_T424_T702 fan speed T0 of the T1_T218 air conditioner T0 in the T1_T674 office T0 to T1_T424_T278 maximum T0 T2_T698_T28
 T3-T97-T123 T1_T365 Play T0 the T1_T532 audiobook '1984' T0 on the T1_T218 smart speaker T0 at T1_T144 10 pm T0 T2_T336
 T3-T97-T123 T1_T365 Send T0 a T1_T532 message 'Good night' T0 to T1_T687 family T0 on T1_T682 Messenger T0 at T1_T144 10 pm T0 T2_T498
-T3-T97-T123 T1_T365 Set T0 a T1_T40 reminder T0 to T1_T365 water T0 T1_T532 plants T0 at T1_T144 9 am T0 every T1_T496 day T0 T2_T29
 T3-T97-T123 T1_T365 Create T0 an T1_T40 event 'Movie night' T0 on T1_T245 June 25 T0 at T1_T144 8 pm T0 T2_T40
-T3-T97-T123 T1_T365 Change T0 the T1_T424_T702 color temperature T0 of the T1_T218 lights T0 in the T1_T674 bathroom T0 to T1_T424_T278 daylight T0 T2_T163_T458
-T3-T97-T123 T1_T365 Decrease T0 the T1_T424_T702 brightness T0 of the T1_T218 screen T0 on the T1_T218 phone T0 to T1_T424_T278 30% T0 T2_T304
 T3-T97-T123 T1_T365 Mute T0 the T1_T218 alarm T0 in the T1_T674 bedroom T0 T2_T414
 T3-T97-T123 T1_T365 Unmute T0 the T1_T218 TV T0 in the T1_T674 living room T0 T2_T680
 T3-T97-T123 T1_T365 Skip T0 the T1_T532 current track T0 on the T1_T218 music player T0 T2_T463
@@ -249,7 +561,6 @@ T3-T97-T123 T1_T365 Set T0 the T1_T218 heater T0 to T1_T424_T278 75 degrees T0 i
 T3-T97-T123 T1_T365 Turn on T0 the T1_T218 microwave T0 at T1_T144 7 pm T0 T2_T623
 T3-T97-T123 T1_T365 Send T0 an T1_T532 email 'Holiday plans' T0 to T1_T687 friends T0 on T1_T682 Yahoo Mail T0 T2_T289
 T3-T97-T123 T1_T365 Create T0 a T1_T40 meeting 'Team building' T0 on T1_T245 July 20 T0 at T1_T144 3 pm T0 T2_T345
-T3-T97-T123 T1_T365 Change T0 the T1_T424_T702 color T0 of the T1_T218 mood light T0 in the T1_T674 bedroom T0 to T1_T424_T278 purple T0 T2_T163_T458
 T3-T97-T123 T1_T365 Set T0 the T1_T218 vacuum cleaner T0 to T1_T424_T278 high T0 in the T1_T674 living room T0 T2_T275_T312
 T3-T97-T123 T1_T365 Increase T0 the T1_T424_T702 volume T0 of the T1_T218 radio T0 in the T1_T674 kitchen T0 to T1_T424_T278 20 T0 T2_T667
 T3-T97-T123 T1_T365 Play T0 the T1_T532 playlist 'Workout Mix' T0 on the T1_T218 smart speaker T0 at T1_T144 7 am T0 T2_T612
@@ -307,7 +618,6 @@ T3-T113-T123 T1_T365 Set up T0 an T1_T376_T702 alert T0 when my T1_T366_T702 cre
 T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 expenses T0 for the last T1_T48 month T0 T2_T654_T56
 T3-T113-T123 T1_T365 View T0 the T1_T598_T702 transaction history T0 of my T1_T366_T702 checking account T0 for the past T1_T48 week T0 T2_T224_T475
 T3-T113-T123 T1_T365 Generate T0 a T1_T598_T702 financial report T0 for the last T1_T48 quarter T0 T2_T684_T598
-T3-T113-T123 T1_T365 Schedule T0 a T1_T332_T702 recurring transfer T0 of T1_T219 $500 T0 from my T1_T366_T702 checking account T0 to my T1_T366_T702 savings account T0 every T1_T496 month T0 T2_T623_T332
 T3-T113-T123 T1_T365 Cancel T0 the T1_T376_T702 low balance alert T0 for my T1_T366_T702 checking account T0 T2_T103_T376
 T3-T113-T123 T1_T365 Report T0 any T1_T332_T702 suspicious transactions T0 on my T1_T366_T702 credit card T0 T2_T598_T290
 T3-T113-T123 T1_T365 Alert T0 me when my T1_T366_T702 checking account T0 balance goes below T1_T219 $500 T0 T2_T105_T376
@@ -318,15 +628,12 @@ T3-T113-T123 T1_T365 Invest T0 T1_T219 $5000 T0 in T1_T532 mutual funds T0 T2_T4
 T3-T113-T123 T1_T365 Save T0 T1_T219 $10000 T0 for T1_T532 vacation T0 by the end of T1_T245 year T0 T2_T316_T639
 T3-T113-T123 T1_T365 Spend T0 less than T1_T219 $100 T0 on T1_T532 dining out T0 this T1_T245 week T0 T2_T668_T639
 T3-T113-T123 T1_T365 Monitor T0 my T1_T366_T702 credit card T0 for T1_T332_T702 unusual activity T0 T2_T727_T577
-T3-T113-T123 T1_T365 Notify T0 me when a T1_T332_T702 deposit T0 of over T1_T219 $1000 T0 is made into my T1_T366_T702 checking account T0 T2_T105_T497
 T3-T113-T123 T1_T365 Check T0 the T1_T366_T702 balance T0 of my T1_T366_T702 credit card T0 T2_T586_T762
-T3-T113-T123 T1_T365 Transfer T0 T1_T219 $300 T0 from my T1_T366_T702 checking account T0 to T1_T687 John's T0 T1_T366_T702 savings account T0 T2_T76_T251
 T3-T113-T123 T1_T365 Pay T0 the T1_T687 internet bill T0 of T1_T219 $50 T0 from my T1_T366_T702 savings account T0 T2_T753_T198
 T3-T113-T123 T1_T365 Set up T0 an T1_T376_T702 alert T0 when my T1_T366_T702 savings account T0 balance goes below T1_T219 $1000 T0 T2_T105_T376
 T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 spending habits T0 for the last T1_T48 year T0 T2_T654_T621
 T3-T113-T123 T1_T365 View T0 the T1_T598_T702 transaction history T0 of my T1_T366_T702 savings account T0 for the past T1_T48 month T0 T2_T224_T475
 T3-T113-T123 T1_T365 Generate T0 a T1_T598_T702 financial report T0 for the last T1_T48 year T0 T2_T684_T598
-T3-T113-T123 T1_T365 Schedule T0 a T1_T332_T702 recurring transfer T0 of T1_T219 $100 T0 from my T1_T366_T702 savings account T0 to my T1_T366_T702 checking account T0 every T1_T496 week T0 T2_T623_T332
 T3-T113-T123 T1_T365 Cancel T0 the T1_T376_T702 fraud alert T0 for my T1_T366_T702 credit card T0 T2_T103_T376
 T3-T113-T123 T1_T365 Report T0 any T1_T332_T702 unauthorized transactions T0 on my T1_T366_T702 debit card T0 T2_T598_T290
 T3-T113-T123 T1_T365 Alert T0 me when my T1_T366_T702 savings account T0 balance goes above T1_T219 $10000 T0 T2_T105_T376
@@ -337,15 +644,12 @@ T3-T113-T123 T1_T365 Invest T0 T1_T219 $10000 T0 in T1_T532 stocks T0 T2_T43_T63
 T3-T113-T123 T1_T365 Save T0 T1_T219 $5000 T0 for T1_T532 home renovation T0 by the end of T1_T245 year T0 T2_T316_T639
 T3-T113-T123 T1_T365 Spend T0 less than T1_T219 $50 T0 on T1_T532 entertainment T0 this T1_T245 week T0 T2_T668_T639
 T3-T113-T123 T1_T365 Monitor T0 my T1_T366_T702 debit card T0 for T1_T332_T702 fraudulent activity T0 T2_T727_T577
-T3-T113-T123 T1_T365 Notify T0 me when a T1_T332_T702 withdrawal T0 of over T1_T219 $500 T0 is made from my T1_T366_T702 savings account T0 T2_T105_T497
 T3-T113-T123 T1_T365 Check T0 the T1_T366_T702 balance T0 of my T1_T366_T702 debit card T0 T2_T586_T762
-T3-T113-T123 T1_T365 Transfer T0 T1_T219 $400 T0 from my T1_T366_T702 savings account T0 to T1_T687 Jane's T0 T1_T366_T702 checking account T0 T2_T76_T251
 T3-T113-T123 T1_T365 Pay T0 the T1_T687 water bill T0 of T1_T219 $70 T0 from my T1_T366_T702 checking account T0 T2_T753_T198
 T3-T113-T123 T1_T365 Set up T0 an T1_T376_T702 alert T0 when my T1_T366_T702 checking account T0 balance goes above T1_T219 $5000 T0 T2_T105_T376
 T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 income T0 for the last T1_T48 six months T0 T2_T654_T564
 T3-T113-T123 T1_T365 View T0 the T1_T598_T702 transaction history T0 of my T1_T366_T702 credit card T0 for the past T1_T48 week T0 T2_T224_T475
 T3-T113-T123 T1_T365 Generate T0 a T1_T598_T702 financial report T0 for the last T1_T48 six months T0 T2_T684_T598
-T3-T113-T123 T1_T365 Schedule T0 a T1_T332_T702 recurring transfer T0 of T1_T219 $200 T0 from my T1_T366_T702 checking account T0 to my T1_T366_T702 savings account T0 every T1_T496 fortnight T0 T2_T623_T332
 T3-T113-T123 T1_T365 Cancel T0 the T1_T376_T702 overdraft alert T0 for my T1_T366_T702 checking account T0 T2_T103_T376
 T3-T113-T123 T1_T365 Report T0 any T1_T332_T702 suspicious transactions T0 on my T1_T366_T702 savings account T0 T2_T598_T290
 T3-T113-T123 T1_T365 Alert T0 me when my T1_T366_T702 checking account T0 balance goes below T1_T219 $100 T0 T2_T105_T376
@@ -356,15 +660,12 @@ T3-T113-T123 T1_T365 Invest T0 T1_T219 $2000 T0 in T1_T532 bonds T0 T2_T43_T639
 T3-T113-T123 T1_T365 Save T0 T1_T219 $3000 T0 for T1_T532 car purchase T0 by the end of T1_T245 year T0 T2_T316_T639
 T3-T113-T123 T1_T365 Spend T0 less than T1_T219 $30 T0 on T1_T532 shopping T0 this T1_T245 week T0 T2_T668_T639
 T3-T113-T123 T1_T365 Monitor T0 my T1_T366_T702 checking account T0 for T1_T332_T702 unusual activity T0 T2_T727_T577
-T3-T113-T123 T1_T365 Notify T0 me when a T1_T332_T702 deposit T0 of over T1_T219 $2000 T0 is made into my T1_T366_T702 savings account T0 T2_T105_T497
 T3-T113-T123 T1_T365 Check T0 the T1_T366_T702 balance T0 of my T1_T366_T702 savings account T0 T2_T586_T762
-T3-T113-T123 T1_T365 Transfer T0 T1_T219 $500 T0 from my T1_T366_T702 checking account T0 to T1_T687 Mike's T0 T1_T366_T702 savings account T0 T2_T76_T251
 T3-T113-T123 T1_T365 Pay T0 the T1_T687 gas bill T0 of T1_T219 $80 T0 from my T1_T366_T702 savings account T0 T2_T753_T198
 T3-T113-T123 T1_T365 Set up T0 an T1_T376_T702 alert T0 when my T1_T366_T702 savings account T0 balance goes below T1_T219 $500 T0 T2_T105_T376
 T3-T113-T123 T1_T365 Analyze T0 my T1_T431_T702 expenses T0 for the last T1_T48 year T0 T2_T654_T56
 T3-T113-T123 T1_T365 View T0 the T1_T598_T702 transaction history T0 of my T1_T366_T702 savings account T0 for the past T1_T48 month T0 T2_T224_T475
 T3-T113-T123 T1_T365 Generate T0 a T1_T598_T702 financial report T0 for the last T1_T48 year T0 T2_T684_T598
-T3-T113-T123 T1_T365 Schedule T0 a T1_T332_T702 recurring transfer T0 of T1_T219 $300 T0 from my T1_T366_T702 savings account T0 to my T1_T366_T702 checking account T0 every T1_T496 month T0 T2_T623_T332
 T3-T84-T123 T1_T365 Book T0 a T1_T204_T702 flight T0 to T1_T17 New York T0 leaving on T1_T245 June 5th T0 T2_T528
 T3-T84-T123 T1_T365 Check T0 the T1_T204_T702 flight T0 status for T1_T17 Los Angeles T0 departing on T1_T245 July 10th T0 T2_T700_T762
 T3-T84-T123 T1_T365 Reserve T0 a T1_T790_T702 hotel room T0 in T1_T17 Rome T0 for T1_T245 August 20th T0 T2_T212
@@ -375,13 +676,11 @@ T3-T84-T123 T1_T365 Generate T0 a T1_T327 budget T0 for a trip to T1_T17 Sydney 
 T3-T84-T123 T1_T365 Monitor T0 T1_T204_T702 flight T0 prices for T1_T17 Dubai T0 for T1_T245 December 31st T0 T2_T553_T611
 T3-T84-T123 T1_T365 Cancel T0 my T1_T790_T702 hotel reservation T0 in T1_T17 Madrid T0 on T1_T245 January 1st T0 T2_T25
 T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 bus T0 booking to T1_T17 Amsterdam T0 on T1_T245 February 14th T0 T2_T545
-T3-T84-T123 T1_T365 Remind T0 T1_T687 me T0 to check in for my T1_T204_T702 flight T0 to T1_T17 London T0 on T1_T245 March 17th T0 T2_T29
 T3-T84-T123 T1_T365 Recommend T0 a T1_T790_T702 hotel T0 in T1_T17 Athens T0 for T1_T245 April 21st T0 T2_T138
 T3-T84-T123 T1_T365 Plan T0 a T1_T204_T702 cruise T0 to T1_T17 The Caribbean T0 for T1_T245 May 25th T0 T2_T92_T707
 T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 train T0 options to T1_T17 Vienna T0 for T1_T245 June 29th T0 T2_T661_T622
 T3-T84-T123 T1_T365 Compare T0 T1_T204_T702 flight T0 prices to T1_T17 Beijing T0 for T1_T245 July 4th T0 T2_T553_T371
 T3-T84-T123 T1_T365 Add T0 a T1_T280_T567 museum visit T0 to my itinerary for T1_T17 Moscow T0 on T1_T245 August 8th T0 T2_T280_T786
-T3-T84-T123 T1_T365 Remove T0 the T1_T280_T567 city tour T0 from my itinerary for T1_T17 Istanbul T0 on T1_T245 September 12th T0 T2_T280_T249
 T3-T84-T123 T1_T365 Schedule T0 a T1_T204_T702 taxi T0 pickup from T1_T17 The airport T0 on T1_T245 October 16th T0 T2_T741_T243
 T3-T84-T123 T1_T365 Change T0 my T1_T204_T702 flight T0 to T1_T17 Rio de Janeiro T0 to T1_T245 November 20th T0 T2_T562_T446
 T3-T84-T123 T1_T365 Book T0 a T1_T204_T702 flight T0 to T1_T17 Buenos Aires T0 leaving on T1_T245 December 25th T0 T2_T528
@@ -394,7 +693,6 @@ T3-T84-T123 T1_T365 Generate T0 a T1_T327 budget T0 for a trip to T1_T17 Lisbon 
 T3-T84-T123 T1_T365 Monitor T0 T1_T204_T702 flight T0 prices for T1_T17 Warsaw T0 for T1_T245 June 29th T0 T2_T553_T611
 T3-T84-T123 T1_T365 Cancel T0 my T1_T790_T702 hotel reservation T0 in T1_T17 Prague T0 on T1_T245 July 4th T0 T2_T25
 T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 bus T0 booking to T1_T17 Budapest T0 on T1_T245 August 8th T0 T2_T545
-T3-T84-T123 T1_T365 Remind T0 T1_T687 me T0 to check in for my T1_T204_T702 flight T0 to T1_T17 Zurich T0 on T1_T245 September 12th T0 T2_T29
 T3-T84-T123 T1_T365 Recommend T0 a T1_T790_T702 hotel T0 in T1_T17 Oslo T0 for T1_T245 October 16th T0 T2_T138
 T3-T84-T123 T1_T365 Plan T0 a T1_T204_T702 cruise T0 to T1_T17 The Mediterranean T0 for T1_T245 November 20th T0 T2_T92_T707
 T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 train T0 options to T1_T17 Dublin T0 for T1_T245 December 25th T0 T2_T661_T622
@@ -407,81 +705,51 @@ T3-T84-T123 T1_T365 Book T0 a T1_T204_T702 flight T0 to T1_T17 Perth T0 leaving 
 T3-T84-T123 T1_T365 Check T0 the T1_T204_T702 flight T0 status for T1_T17 Adelaide T0 departing on T1_T245 July 4th T0 T2_T700_T762
 T3-T84-T123 T1_T365 Reserve T0 a T1_T790_T702 hotel room T0 in T1_T17 Brisbane T0 for T1_T245 August 8th T0 T2_T212
 T3-T84-T123 T1_T365 Set T0 a T1_T84_T376 travel alert T0 for T1_T17 Melbourne T0 for T1_T245 September 12th T0 T2_T376_T424
-T3-T84-T123 T1_T365 Update T0 my T1_T280_T567 itinerary T0 with a visit to T1_T17 The Great Barrier Reef T0 on T1_T245 October 16th T0 T2_T280_T293
 T3-T84-T123 T1_T365 View T0 the T1_T204_T702 train T0 schedule for T1_T17 Canberra T0 on T1_T245 November 20th T0 T2_T623_T253
 T3-T84-T123 T1_T365 Generate T0 a T1_T327 budget T0 for a trip to T1_T17 Darwin T0 for T1_T48 three weeks T0 T2_T327_T274
 T3-T84-T123 T1_T365 Monitor T0 T1_T204_T702 flight T0 prices for T1_T17 Hobart T0 for T1_T245 December 25th T0 T2_T553_T611
 T3-T84-T123 T1_T365 Cancel T0 my T1_T790_T702 hotel reservation T0 in T1_T17 Auckland T0 on T1_T245 January 1st T0 T2_T25
 T3-T84-T123 T1_T365 Confirm T0 my T1_T204_T702 bus T0 booking to T1_T17 Wellington T0 on T1_T245 February 14th T0 T2_T545
-T3-T84-T123 T1_T365 Remind T0 T1_T687 me T0 to check in for my T1_T204_T702 flight T0 to T1_T17 Dunedin T0 on T1_T245 March 17th T0 T2_T29
 T3-T84-T123 T1_T365 Recommend T0 a T1_T790_T702 hotel T0 in T1_T17 Hamilton T0 for T1_T245 April 21st T0 T2_T138
 T3-T84-T123 T1_T365 Plan T0 a T1_T204_T702 cruise T0 to T1_T17 The Pacific Islands T0 for T1_T245 May 25th T0 T2_T92_T707
 T3-T84-T123 T1_T365 Explore T0 T1_T204_T702 train T0 options to T1_T17 Tauranga T0 for T1_T245 June 29th T0 T2_T661_T622
 T3-T84-T123 T1_T365 Compare T0 T1_T204_T702 flight T0 prices to T1_T17 Napier T0 for T1_T245 July 4th T0 T2_T553_T371
 T3-T84-T123 T1_T365 Add T0 a T1_T280_T567 wine tasting T0 to my itinerary for T1_T17 Nelson T0 on T1_T245 August 8th T0 T2_T280_T786
 T3-T771-T605 T1_T379_T640 Real Madrid T0 T1_T365 dominates T0 the match, T1_T538_T702 maintaining 80% possession T0 T2_T379_T635
-T3-T771-T605 T1_T285_T640 Salah T0 T1_T365 dribbles T0 past three defenders to T1_T365 score T0 a brilliant goal for T1_T379_T640 Liverpool T0 T2_T285_T569
-T3-T771-T605 T1_T285_T640 Messi T0 T1_T365 sets up T0 a beautiful assist for T1_T285_T640 Suarez T0 in the T1_T466_T702 Champions League T0 T2_T285_T635
 T3-T771-T605 T1_T379_T640 Juventus T0 T1_T365 loses T0 their T1_T552_T640 Serie A T0 match against T1_T379_T640 Inter Milan T0 T2_T466_T712
-T3-T771-T605 T1_T285_T640 Neymar T0 T1_T365 injures T0 himself in the T1_T466_T702 World Cup T0 semi-final, causing concern for T1_T379_T640 Brazil T0 T2_T285_T293
 T3-T771-T605 T1_T379_T640 AC Milan T0 T1_T365 substitutes T0 T1_T285_T640 Ibrahimovic T0 in the second half against T1_T379_T640 Roma T0 T2_T466_T293
 T3-T771-T605 T1_T379_T640 Barcelona T0 T1_T365 wins T0 the T1_T466_T702 El Clasico T0 match, T1_T340 beating Real Madrid 3-2 T0 T2_T466_T712
-T3-T771-T605 T1_T285_T640 Sterling T0 T1_T365 heads T0 the ball into the net, T1_T365 scoring T0 the opening goal for T1_T379_T640 Manchester City T0 T2_T285_T569
-T3-T771-T605 T1_T379_T640 Liverpool T0 T1_T365 dominates T0 the T1_T466_T702 Champions League T0 final, T1_T340 winning 4-0 T0 against T1_T379_T640 Roma T0 T2_T466_T712
-T3-T771-T605 T1_T285_T640 Modric T0 T1_T365 passes T0 the ball to T1_T285_T640 Benzema T0 who T1_T365 shoots T0 and T1_T365 scores T0 for T1_T379_T640 Real Madrid T0 T2_T285_T635
-T3-T771-T605 T1_T379_T640 PSG T0 T1_T365 draws T0 the T1_T466_T702 Ligue 1 T0 match against T1_T379_T640 Lyon END, T1_T340 ending the match 2-2 T0 T2_T466_T712
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been experiencing T0 T1_T483 frequent headaches T0 T1_T496 every day T0 for T1_T48 the past month T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 was diagnosed with T0 T1_T735 Type 1 diabetes T0 T1_T245 last month T0 T2_T735_T779
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 Metformin T0 T1_T496 twice a day T0 for T1_T735 my diabetes T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a colonoscopy T0 T1_T245 three weeks ago T0 T2_T540_T598
 T3-T344-T287 T1_T287_T472 My son T0 T1_T365 has a history of T0 T1_T344_T475 allergic reactions to penicillin T0 T2_T958_T598
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 a mammogram T0 T1_T245 next Tuesday T0 T2_T172_T623
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been feeling T0 T1_T483 fatigue T0 T1_T496 constantly T0 for T1_T48 the last two weeks T0 T2_T483_T598
-T3-T344-T287 T1_T287_T472 My wife T0 T1_T365 was prescribed T0 T1_T603 Prednisone T0 for T1_T735 her rheumatoid arthritis T0 T1_T245 two weeks ago T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 noticed T0 T1_T483 a lump T0 in my T1_T674 breast T0 T1_T245 last week T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My father T0 T1_T365 had T0 T1_T540 a hip replacement surgery T0 T1_T245 last year T0 T2_T540_T598
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 need T0 a T1_T437_T47 follow-up appointment T0 with T1_T674 Dr. Smith T0 T1_T245 next month T0 T2_T437_T47_T313
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been T1_T365 experiencing T0 T1_T483 shortness of breath T0 T1_T496 during exercise T0 for T1_T48 the past month T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 was diagnosed with T0 T1_T735 celiac disease T0 T1_T245 two years ago T0 T2_T735_T779
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 Lisinopril T0 T1_T496 once a day T0 for T1_T735 my high blood pressure T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a gallbladder removal surgery T0 T1_T245 six months ago T0 T2_T540_T598
 T3-T344-T287 T1_T287_T472 My son T0 T1_T365 has a history of T0 T1_T344_T475 severe peanut allergy T0 T2_T958_T598
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 a CT scan T0 T1_T245 next Friday T0 T2_T172_T623
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been feeling T0 T1_T483 numbness T0 in my T1_T674 right arm T0 T1_T496 occasionally T0 for T1_T48 the past week T0 T2_T483_T598
-T3-T344-T287 T1_T287_T472 My wife T0 T1_T365 was prescribed T0 T1_T603 Zoloft T0 for T1_T735 her depression T0 T1_T245 last month T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 noticed T0 T1_T483 a rash T0 on my T1_T674 back T0 T1_T245 yesterday T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My father T0 T1_T365 had T0 T1_T540 a coronary bypass surgery T0 T1_T245 two years ago T0 T2_T540_T598
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 need T0 a T1_T437_T47 follow-up appointment T0 with T1_T674 the dermatology clinic T0 T1_T245 in two weeks T0 T2_T437_T47_T313
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been T1_T365 experiencing T0 T1_T483 persistent cough T0 T1_T496 every night T0 for T1_T48 the last two weeks T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 was diagnosed with T0 T1_T735 juvenile arthritis T0 T1_T245 last year T0 T2_T735_T779
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 Warfarin T0 T1_T496 daily T0 for T1_T735 my blood clot T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 had T0 T1_T540 a dental implant T0 T1_T245 three months ago T0 T2_T540_T598
 T3-T344-T287 T1_T287_T472 My son T0 T1_T365 has a history of T0 T1_T344_T475 epilepsy T0 T2_T344_T475_T598
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 an ultrasound T0 T1_T245 next Wednesday T0 T2_T172_T623
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been feeling T0 T1_T483 abdominal pain T0 T1_T496 after meals T0 for T1_T48 the past few days T0 T2_T483_T598
-T3-T344-T287 T1_T287_T472 My wife T0 T1_T365 was prescribed T0 T1_T603 Levothyroxine T0 for T1_T735 her hypothyroidism T0 T1_T245 a week ago T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 noticed T0 T1_T483 blurred vision T0 T1_T496 occasionally T0 T1_T245 since last week T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My father T0 T1_T365 had T0 T1_T540 a cataract surgery T0 T1_T245 last month T0 T2_T540_T598
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 need T0 a T1_T437_T47 follow-up appointment T0 with T1_T674 Dr. Jones T0 T1_T245 in a month T0 T2_T437_T47_T313
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been T1_T365 experiencing T0 T1_T483 heart palpitations T0 T1_T496 occasionally T0 for T1_T48 the past month T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 was diagnosed with T0 T1_T735 anemia T0 T1_T245 last year T0 T2_T735_T779
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 Aspirin T0 T1_T496 daily T0 for T1_T735 my heart condition T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a hip arthroscopy T0 T1_T245 six months ago T0 T2_T540_T598
 T3-T344-T287 T1_T287_T472 My son T0 T1_T365 has a history of T0 T1_T344_T475 chronic bronchitis T0 T2_T344_T475_T598
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 a bone density test T0 T1_T245 next Monday T0 T2_T172_T623
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been feeling T0 T1_T483 joint pain T0 T1_T496 in the morning T0 for T1_T48 the past week T0 T2_T483_T598
-T3-T344-T287 T1_T287_T472 My wife T0 T1_T365 was prescribed T0 T1_T603 Albuterol T0 for T1_T735 her asthma T0 T1_T245 two weeks ago T0 T2_T603_T649
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 noticed T0 T1_T483 a mole T0 on my T1_T674 arm T0 that T1_T365 has changed color T0 T1_T245 recently T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My father T0 T1_T365 had T0 T1_T540 a pacemaker implantation T0 T1_T245 two years ago T0 T2_T540_T598
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 need T0 a T1_T437_T47 follow-up appointment T0 with T1_T674 the endocrinology clinic T0 T1_T245 in three weeks T0 T2_T437_T47_T313
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been T1_T365 experiencing T0 T1_T483 insomnia T0 T1_T496 nightly T0 for T1_T48 the last month T0 T2_T483_T598
 T3-T344-T287 T1_T287_T472 My daughter T0 T1_T365 was diagnosed with T0 T1_T735 multiple sclerosis T0 T1_T245 two years ago T0 T2_T735_T779
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 take T0 T1_T603 Prozac T0 T1_T496 daily T0 for T1_T735 my depression T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 underwent T0 T1_T540 a lumpectomy T0 T1_T245 one year ago T0 T2_T540_T598
 T3-T344-T287 T1_T287_T472 My son T0 T1_T365 has a history of T0 T1_T344_T475 cystic fibrosis T0 T2_T344_T475_T598
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 am scheduled for T0 T1_T172_T702 an echocardiogram T0 T1_T245 next Thursday T0 T2_T172_T623
-T3-T344-T287 T1_T287_T472 I T0 T1_T365 have been feeling T0 T1_T483 nausea T0 T1_T496 in the morning T0 for T1_T48 the past few days T0 T2_T483_T598
-T3-T344-T287 T1_T287_T472 My wife T0 T1_T365 was prescribed T0 T1_T603 Tamoxifen T0 for T1_T735 her breast cancer T0 T1_T245 last month T0 T2_T603_T649
 T3-T344-T287 T1_T287_T472 I T0 T1_T365 noticed T0 T1_T483 unexplained weight loss T0 T1_T496 over the past few months T0 T2_T483_T598
 T3-T122-T123 T1_T365 Play T0 the T1_T337_T702 movie T0 titled T1_T764 The Godfather T0 T2_T578_T102
 T3-T122-T123 T1_T365 Skip T0 to the next T1_T337_T702 song T0 T2_T578_T102
@@ -529,7 +797,6 @@ T3-T122-T123 T1_T365 Play T0 the T1_T764 album T0 T1_T764 Divide T0 by T1_T277 E
 T3-T122-T123 T1_T365 Stop T0 the T1_T337_T702 music T0 after T1_T48 1 hour T0 T2_T578_T102
 T3-T122-T123 T1_T365 Rewind T0 the T1_T337_T702 podcast T0 by T1_T48 2 minutes T0 T2_T578_T102
 T3-T122-T123 T1_T365 Set T0 a reminder to listen to T1_T764 TED Talks Daily T0 every T1_T496 weekday T0 at T1_T144 7 AM T0 T2_T29
-T3-T122-T123 T1_T365 Update T0 my T1_T398_T702 preferred T0 T1_T337_T702 podcast genres T0 to T1_T317 science and technology T0 T2_T53_T293
 T3-T122-T123 T1_T365 Play T0 T1_T277 The Beatles' T0 T1_T764 Hey Jude T0 T2_T578_T102
 T3-T122-T123 T1_T365 Fast forward T0 the T1_T337_T702 radio T0 by T1_T48 10 minutes T0 T2_T578_T102
 T3-T122-T123 T1_T365 Mute T0 the T1_T337_T702 TV T0 T2_T578_T102

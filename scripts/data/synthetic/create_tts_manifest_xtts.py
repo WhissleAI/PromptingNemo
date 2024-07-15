@@ -117,7 +117,7 @@ def process_files(clean_text, tagged_text, audio_path, manifest_file, mode="trai
     
     os.system(f"mkdir -p {audio_path}")
     
-    manifest_file = open(manifest_file, 'a', encoding='utf-8')
+    manifest_file = open(manifest_file, 'w', encoding='utf-8')
 
     first_entry = True
 
@@ -134,39 +134,48 @@ def process_files(clean_text, tagged_text, audio_path, manifest_file, mode="trai
         for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
             #audio_content = synthesize_speech(line.strip(), voice_name)
             line_len = len(line.strip().split())
-            
-            if n == 0 and i < 4557:
-                RUN = False
-            else:
-                RUN = True
-            
-            if RUN == True:    
-                if line_len <= max_len:
-                    audio_content = generate_audio(line.strip(), mode=mode)
-                    audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")
-                    
-                    
-                    noise_level = random.uniform(-30, -10)  # Random noise level between -30 dB and -10 dB
-                    save_audio_to_file(audio_content, audio_file, noise_level)
-                    duration = get_audio_duration(audio_file)
-                    
-                    entry = {
-                        "audio_filepath": audio_file,
-                        "text": tagged_line.strip(),
-                        "duration": duration
-                    }
-                    
-                    if not first_entry:
-                        manifest_file.write('\n')  # Add a comma before each entry except the first one
-                    else:
-                        first_entry = False
-                    
-                    manifest_file.write(json.dumps(entry, ensure_ascii=False))
+              
+            if line_len <= max_len:
+                audio_content = generate_audio(line.strip(), mode=mode)
+                audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")
+                
+                
+                noise_level = random.uniform(-30, -10)  # Random noise level between -30 dB and -10 dB
+                save_audio_to_file(audio_content, audio_file, noise_level)
+                duration = get_audio_duration(audio_file)
+                
+                entry = {
+                    "audio_filepath": audio_file,
+                    "text": tagged_line.strip(),
+                    "duration": duration
+                }
+                
+                if not first_entry:
+                    manifest_file.write('\n')  # Add a comma before each entry except the first one
+                else:
+                    first_entry = False
+                
+                manifest_file.write(json.dumps(entry, ensure_ascii=False))
 
     manifest_file.write('\n')  # End of JSON array
     manifest_file.close()
     
     print(f"Manifest file written to {manifest_file}")
+
+def validate_json(json_file):
+    try:
+        with open(json_file, 'r') as file:
+            data = file.read()
+        parsed_json = json.loads(data)
+        print("JSON is valid and parsed successfully")
+        return parsed_json
+    except json.JSONDecodeError as e:
+        print(f"JSONDecodeError: {e}")
+        # Print offending part for debugging
+        start = max(e.pos - 50, 0)
+        end = min(e.pos + 50, len(data))
+        print(f"Error near: {data[start:end]}")
+        return None
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -181,3 +190,5 @@ if __name__ == "__main__":
     runs = sys.argv[6]
     
     process_files(clean_text, tagged_text, audio_path, manifest_file, mode=mode, runs=runs)
+
+    #validate_json(manifest_file)
