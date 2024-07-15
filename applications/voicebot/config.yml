@@ -1,0 +1,13 @@
+OPENAI:
+  API_KEY: "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"
+MODEL_SHELF_PATH: "/external2/artifacts/whissle/model_shelf"
+DEEPGRAM_API_KEY: "72d2b4e02072dfb42ad630571a889ecda06e3239"
+HF_TOKEN: "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"
+TENSORRT_LLM:
+  max_output_len: 100
+  tokenizer_dir: "/external2/models/hf/Llama-2-7b-chat-hf/"
+  engine_dir: "/external2/models/engine/Llama-2-7b-chat-engine1_wq"
+MULTIMODAL_LLM:
+  hf_model_dir: "/external2/models/hf/opt-2.7b"
+  llm_engine_dir: "/external2/models/engine/opt-2.7b"
+  visual_engine_dir: "/external2/models/visual_engine/opt-2.7b/opt-2.7b"

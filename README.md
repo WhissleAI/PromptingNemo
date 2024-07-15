@@ -44,3 +44,16 @@ verify the files, now it's time to train a speech model.
 ### Fine-tuning ASR Systems
 
 
+
+
+
+
+### Exporting Nemo model to Model_shelf (onnx models)
+
+
+
+## Applications
+
+### VoiceBot: Speech-2-Speech AI Engine
+
+

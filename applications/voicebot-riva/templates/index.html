@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whistle ASR+NL Demo</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: flex-start; /* Aligns items to the start of the flex container (left) */
+            align-items: center;
+            width: 100%; /* Make container take full width */
+            max-width: 1700px; /* Limit container's maximum width */
+            margin-bottom: 20px; /* Space between logo and other content */
+            margin-left: 100px;
+        }
+
+        .logo {
+            width: 170px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin: 0;
+            text-align: center; /* Center the heading text */
+            flex-grow: 1; /* Allow heading to grow and take remaining space */
+        }
+
+
+        /* Additional CSS for the file upload button */
+        .custom-upload-button {
+            background-color: #3389C9;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+        #transcribeBtn {
+    background-color: #3389C9; /* Set your desired background color */
+    color: #fff; /* Set the text color */
+    margin-top: 25px;
+    /* Add any other styles as needed */
+}
+
+        .custom-upload-button:hover {
+            background-color: #2980b9;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        button {
+            margin-top: 40px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2DB45F;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+.loader {
+    position: relative;
+    width: 80px; /* Increased size */
+    height: 80px; /* Increased size */
+    animation: spin 2.8s linear infinite;
+    display: none;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 4px; /* Increased width */
+    height: 24px; /* Increased height */
+    background-color: #EC1E31;
+    border-radius: 2px;
+    animation: ray-spin 0.2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes ray-spin {
+    0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+    10% { transform: translate(-50%, -50%) rotate(20deg); }
+    20% { transform: translate(-50%, -50%) rotate(36deg); }
+    30% { transform: translate(-50%, -50%) rotate(45deg); }
+    40% { transform: translate(-50%, -50%) rotate(72deg); }
+    50% { transform: translate(-50%, -50%) rotate(90deg); }
+    60% { transform: translate(-50%, -50%) rotate(108deg); }
+    70% { transform: translate(-50%, -50%) rotate(120deg); }
+    80% { transform: translate(-50%, -50%) rotate(144deg); }
+    90% { transform: translate(-50%, -50%) rotate(162deg); }
+    100% { transform: translate(-50%, -50%) rotate(180deg); }
+}
+
+
+/* Add more spokes by continuing the pattern */
+
+
+        /* Additional CSS for transcription output */
+        #transcription {
+            max-width: 1250px;
+            width: 100%;
+            text-align: left;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9d6;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            margin-top: 50px;
+        }
+
+        #transcription p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        #transcription .transcription-label {
+            font-weight: bold;
+            color: #333;
+        }
+/* Change the color of the audio progress bar */
+audio::-webkit-media-controls-panel {
+    background-color: #f9f9f9d6; /* Background color of the controls */
+    
+}
+/* Adjust the size of other controls if needed */
+
+/* Increase the size of the media control buttons */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider {
+    transform: scale(1.4); /* Adjust the scale of the control buttons */
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #333; /* Adjust the color as needed */
+}
+
+/* Adjust the '/' separator between current time and time remaining */
+audio::-webkit-media-controls-current-time-display {
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #333; /* Adjust the color as needed */
+}
+
+/* Adjust the '/' separator between current time and time remaining */
+audio::-webkit-media-controls-current-time-display::after {
+    content: '/';
+    margin: 0 5px; /* Adjust spacing around the separator */
+}
+
+
+        #audioForm {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        #transcription .time-taken {
+            color: #555;
+        }
+
+        label[for="audioFile"] {
+            font-size: 20px; /* Adjust the font size as needed */
+        }
+
+        /* Additional CSS for the audio player */
+        audio {
+            margin-top: 20px;
+            width: 300%;
+            max-width: 450px;
+            align-items: center;
+            text-align: center;
+            height: 60px;
+        }
+
+        label[for="modelName"] {
+            font-size: 20px; /* Adjust the font size as needed */
+        }
+
+        label[for="languageId"] {
+            font-size: 20px; /* Adjust the font size as needed */
+            
+        }
+
+        label[for="audioFiles"] {
+            font-size: 20px; /* Adjust the font size as needed */
+            margin-top: 30px;
+        }
+
+        #audioFiles {
+            font-size: 18px; /* Adjust the font size as needed */
+            border-width: 3px;
+        }
+
+        #modelName {
+            margin-left: 40px;
+            margin-top: 10px;
+            font-size: 18px; /* Adjust the font size as needed */
+            border-width: 3px;
+        }
+
+        #languageId {
+            margin-top: 10px;
+            font-size: 18px; /* Adjust the font size as needed */
+            border-width: 3px;
+        }
+
+        .highlight-ner {
+        color: #2DB55F; /* Red */
+        font-weight: bold;
+    }
+
+    .highlight-emotion {
+        color: #9D44B5; /* Steel Blue */
+        font-weight: bold;
+    }
+
+    .highlight-end {
+        color: #2DB55F; /* Same as NER_* */
+        font-weight: bold;
+    }
+
+    .audio-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 550px;
+            width: 100%;
+        }
+
+        .transcribe-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 250px;
+            width: 100%;
+        }
+        .select-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.model-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+select#audioFiles option:checked {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+    </style>
+
+
+    <script>
+
+function fetchFiles() {
+    fetch('/get_files')
+        .then(response => response.json())
+        .then(data => {
+            const fileSelect = document.getElementById('audioFiles');
+            data.files.forEach(file => {
+                const option = document.createElement('option');
+                option.value = file;
+                option.textContent = file;
+                fileSelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching files:', error));
+}
+
+function updateAudioPlayer(selectedFile) {
+    if (selectedFile) {
+        const audioPlayer = document.getElementById('audioPlayer');
+        audioPlayer.src = `/demo_audio/${selectedFile}`; // Update with correct path
+    }
+}
+
+// Call fetchFiles when the page loads
+window.onload = fetchFiles;
+
+    function handleFileSelect(event) {
+    const input = event.target;
+    const fileName = input.files[0].name;
+    const label = document.getElementById('selectedFileName');
+    label.innerText = fileName;
+
+    // Audio player setup
+    const audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.src = URL.createObjectURL(input.files[0]);
+}
+
+function transcribeAudio() {
+    const audioFilesSelect = document.getElementById('audioFiles');
+    const selectedIndex = audioFilesSelect.selectedIndex;
+
+    if (selectedIndex === 0) {
+        alert('Please select an audio file.');
+        return;
+    }
+
+    const selectedFileName = audioFilesSelect.options[selectedIndex].value;
+    const startTime = performance.now(); // Record start time
+
+    const loader = document.getElementById('loader');
+    const transcriptionDiv = document.getElementById('transcription');
+    const transcribeButton = document.getElementById('transcribeBtn');
+
+    loader.style.display = 'inline-block';
+    transcriptionDiv.innerHTML = '<p class="transcription-label">Generated Output:</p><p>Loading...</p>';
+
+    transcribeButton.disabled = true;
+    console.log("selectedFileName", selectedFileName);
+    fetch(`/get_audio_content/${selectedFileName}`) // Endpoint to get audio content based on file name
+        .then(response => response.blob())
+        .then(blob => {
+            const formData = new FormData();
+            formData.append('audio', blob, selectedFileName);
+            console.log("formData", formData);
+            fetch('/transcribe', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const endTime = performance.now(); // Record end time
+                    const timeTaken = (endTime - startTime) / 1000; // Calculate time taken in seconds
+                    const highlightedTranscript = highlightTagsInTranscript(data.transcript); // Highlight tags in the transcript
+                    transcriptionDiv.innerHTML = `<p class="transcription-label">Generated Output:</p><br>${highlightedTranscript}<p class="time-taken"><br>Time taken: ${timeTaken.toFixed(2)} seconds</p>`;
+                })
+                .catch(error => console.error('Error:', error))
+                .finally(() => {
+                    loader.style.display = 'none';
+                    transcribeButton.disabled = false;
+                });
+        })
+        .catch(error => console.error('Error fetching audio content:', error));
+}
+
+
+
+
+    function highlightTagsInTranscript(transcript) {
+        // Highlight tags and 'END' with specific classes
+        return transcript.replace(/\b((NER_[A-Z]+)|(EMOTION_[A-Z]+)|END)\b/g, function(match) {
+            if (match.startsWith('NER_')) {
+                return `<span class="highlight-ner">${match}</span>`;
+            } else if (match.startsWith('EMOTION_')) {
+                return `<span class="highlight-emotion">${match}</span>`;
+            } else if (match === 'END') {
+                return `<span class="highlight-end">${match}</span>`;
+            }
+        });
+    }
+    </script>
+</head>
+<body>
+    <div class="logo-container">
+        <!-- Logo image -->
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        
+
+    </div>
+            <!-- Title -->
+            <h1>1SPU: 1step Speech Processing Unit</h1>
+
+    <!-- Reorganized form sections -->
+    <form id="audioForm" enctype="multipart/form-data">
+        <!-- First Column -->
+
+        <!-- Update the dropdown list to display files -->
+<div class="audio-section">
+    <label for="audioFiles">Select an audio file:</label>
+    <select id="audioFiles" name="audioFiles" onchange="updateAudioPlayer(this.value)" size="6">
+    
+        <!-- Options will be dynamically added here -->
+    </select>
+    <!-- Audio player -->
+<audio controls id="audioPlayer">
+    Your browser does not support the audio element.
+</audio>
+</div>
+
+
+
+
+
+<div class="model-info">
+
+    <div class="select-wrapper">
+        <label for="languageId">Language</label>
+        <select id="languageId" name="languageId">
+            <option value="english">English</option>
+            <!-- Add more language options as needed -->
+        </select>
+    </div>
+
+    <div class="select-wrapper">
+        <label for="modelName">Select a model:</label>
+        <select id="modelName" name="modelName">
+            <option value="model1">Text, NER and Emotion</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+</div>
+
+        <!-- Third Column -->
+        <div class="transcribe-section">
+            <button id="transcribeBtn" type="button" onclick="transcribeAudio()">Process</button>
+            <div class="loader" id="loader"></div>
+        </div>
+    </form>
+
+    <!-- Transcription result display -->
+    <div id="transcription">
+        
+        <!-- Content will be dynamically added here -->
+    </div>
+</body>
+</html>
