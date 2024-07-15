@@ -1,36 +1,390 @@
-Suarez scores a phenomenal goal for Atletico Madrid in the Wanda Metropolitano
+I am experiencing shortness of breath lately
+My wife was prescribed metformin for her diabetes
+I underwent a colonoscopy a week ago
+My son had chickenpox last month
+My husband has a history of high cholesterol
+I was diagnosed with hypothyroidism six months ago
+I was instructed to take Aspirin daily
+I need to schedule a follow-up appointment in two weeks
+I had a heart attack two years ago
+I was prescribed Lipitor for my high cholesterol
+I am scheduled for a colonoscopy next week
+My daughter was diagnosed with seasonal allergies last spring
+I underwent a hip replacement surgery three months ago
+My son takes albuterol for his asthma
+My husband has a history of heart disease
+I was diagnosed with rheumatoid arthritis two years ago
+My daughter had the flu last winter
+I need to schedule a follow-up appointment in one week
+I was diagnosed with osteoporosis last year
+I underwent a knee replacement surgery six months ago
+My wife has a history of breast cancer
+I was prescribed Metoprolol for my high blood pressure
+My son was diagnosed with ADHD last year
+I am scheduled for a hip replacement surgery next month
+I need to schedule a follow-up appointment in three weeks
+My husband has a history of kidney stones
+I was diagnosed with fibromyalgia three years ago
+I underwent an endoscopy a month ago
+My son takes Adderall for his ADHD
+I am scheduled for a tonsillectomy next week
+My daughter was diagnosed with juvenile diabetes two years ago
+I was prescribed Prednisone for my rheumatoid arthritis
+My son had measles last year
+I need to schedule a follow-up appointment in four weeks
+My husband has a history of stroke
+I was diagnosed with COPD five years ago
+I underwent a gallbladder removal surgery four months ago
+I am scheduled for a cataract surgery next month
+I have been advised to monitor my weight weekly
+Conduct a blood test for patient 123 in the lab 1
+Set the lab microscope to high magnification in lab 3
+Stop the autoclave in lab 4 after 15 minutes
+Resume the tissue culture in lab 5
+Collect the stool sample of patient 444 in lab 8
+Set the incubator to 37 degrees Celsius in lab 11
+Stop the shaking water bath in lab 12 after 30 minutes
+Pause the HbA1c test for patient 500 and resume after 2 hours
+Resume the cell culture in lab 13
+Collect the bone marrow sample of patient 900 in lab 16
+Set the spectrophotometer to 540 nm in lab 19
+Stop the heating mantle in lab 20 after 45 minutes
+Resume the protein electrophoresis in lab 21
+Collect the sweat sample of patient 520 in lab 24
+Check the flight status for Flight 654 to Los Angeles
+Set a price alert for flights to Tokyo
+Update the hotel booking for Mr. John Smith to April 10th
+View the itinerary for my train trip to Berlin
+Cancel my hotel reservation in Istanbul
+Confirm my flight booking to Paris for July 10th
+Recommend some budget hotels in London for September
+Plan a week-long trip to Singapore with a budget of $2000
+Explore flight options to Rio de Janeiro for December 25th
+Compare flight prices to Athens on different travel sites
+Add a car rental to my travel itinerary for Miami
+Remove the museum visit from my itinerary for Amsterdam
+Schedule a train trip to Vienna for October 31st
+Check the baggage allowance for my flight to Zurich
+Update my passport details in the travel system
+View the itinerary for my cruise trip to Caribbean
+Monitor flight prices to Bangkok and notify me when they go below $800
+Cancel my car rental in Las Vegas
+Confirm my train ticket to Brussels for March 5th
+Notify Mr. James about his flight status to Toronto
+Recommend some luxury hotels in Rome for June
+Plan a three-day trip to Buenos Aires with a budget of $1500
+Explore flight options to New Delhi for January 1st
+Compare train prices to Munich on various travel platforms
+Add a hotel booking to my itinerary for Melbourne
+Remove the city tour from my itinerary for Seoul
+Schedule a bus trip to Venice for February 14th
+Check the baggage weight limit for my flight to Cairo
+Update my contact details in the travel system
+Monitor flight prices to Havana and notify me when they go below $600
+Cancel my hotel reservation in Marrakech
+Confirm my cruise booking to Alaska for July 20th
+Notify Mrs. Mary about her train status to Berlin
+Recommend some hostels in Dublin for May
+Plan a two-week trip to Tokyo with a budget of $3000
+Explore flight options to Istanbul for September 1st
+Compare flight prices to Athens on different travel websites
+Add a sightseeing tour to my itinerary for Rome
+Remove the city walk from my itinerary for Paris
+Schedule a train trip to Amsterdam for November 30th
+Check the balance of my checking account
+Transfer $200 from savings account to checking account
+Pay the electricity bill of $60 from my checking account
+Update my contact information on online banking profile
+Analyze my monthly expenses for July
+Generate a transaction report for last month
+Cancel the overdraft alert for my checking account
+Report a suspicious transaction on my credit card
+Alert me when $1000 or more is withdrawn from my savings account
+Budget $500 for groceries this month
+Deposit $300 into my checking account
+Withdraw $50 from my savings account
+Invest $1000 into mutual funds from my brokerage account
+Save $200 every month for 1 year in my savings account
+Spend less than $100 on dining out this month
+Monitor my credit card for unauthorized transactions
+View my credit card payment history for last year
+Juventus equalizes in the last minute with a goal from Dybala
+Modric sets up a goal for Real Madrid in the La Liga match
+Manchester United equalizes in the last minute with a goal from Pogba
+Set the thermostat to 72 degrees in the living room
+Turn off the television in the bedroom
+Play the 'Classical Melodies' on music system in the study room
+Send a 'Happy Birthday' message to John on WhatsApp
+Set a reminder for tomorrow at 9 AM to 'Buy groceries'
+Mute the speakers in the office room
+Activate the alarm system at 10 PM every day
+Open the garage door
+Close the blinds in the bedroom at sunset
+Lock the front door when everyone is asleep
+Unmute the computer in the study room
+Turn on the coffee maker at 7 AM every morning
+Pause the dishwasher
+Skip the next song on the music player in the living room
+Stop the washing machine
+Deactivate the alarm system when I am home
+Call Alexa to play the news
+Set the AC to 24 degrees in the children's room
+Turn off the lights in the garage at 11 PM every night
+Play 'Morning Alarm' on alarm clock at 6 AM every weekday
+Set a reminder for today at 8 PM to 'Take medication'
+Mute the notifications on the smartphone
+Activate the sprinkler system at 6 AM every day
+Open the windows in the kitchen at 8 AM every morning
+Lock the back door when everyone leaves the house
+Unmute the notifications on smartphone
+Turn on the oven at 5 PM every Sunday for an hour
+Pause the music on speakers in the bathroom
+Skip the next episode on the Netflix in the living room
+Stop the dryer
+Deactivate the motion sensors when guests are home
+Call Mom to say goodnight
+Set the humidifier to 30% in the baby's room
+Turn off the lights in the basement when not in use
+Set a reminder for next Friday at 5 PM to 'Dinner with friends'
+Change the temperature of the refrigerator to 4 degrees Celsius
+Mute the notifications on the smartwatch
+Activate the pet feeder at 8 AM and 6 PM every day
+Close the roof window in the attic when it starts to rain
+Lock the car when I am not near it
+Unmute the calls on the phone
+Turn on the water heater at 7 AM every morning for 30 minutes
+Pause the audiobook on the smart speaker in the bedroom
+Skip the next track on the Spotify in the gym room
+Stop the robotic vacuum cleaner
+Deactivate the CCTV cameras when I am home
+Call Siri to set an alarm for 7 AM
+Set the air purifier to low in the living room
+Turn off the lights in the garden at midnight every night
+I had a colonoscopy two years ago
+I take metformin for my diabetes
+I was diagnosed with high blood pressure last month
+My sister has been experiencing migraines frequently
+I underwent a gallbladder removal surgery three years ago
+I will have a cataract surgery next month
+My daughter had an appendectomy last year
+My wife takes inhaler for her asthma
+I was diagnosed with arthritis two years ago
+My son had a tonsillectomy last month
+I am scheduled for a mammogram next week
+I had a hip replacement surgery three years ago
+My daughter has a history of recurrent ear infections
+I will be undergoing a knee replacement surgery next month
+I was diagnosed with osteoporosis last year
+I take beta blockers for my heart condition
+My son had an adenoidectomy last year
+I am scheduled for a colonoscopy next week
+I had a pacemaker implantation two years ago
+My daughter has a history of eczema
+I will be undergoing a bypass surgery next month
+I was diagnosed with glaucoma last year
+I take antihistamines for my allergies
+My son had a cochlear implant last year
+I am scheduled for an ultrasound next week
+I had a lung transplant two years ago
+My daughter has a history of iron deficiency anemia
+I will be undergoing a liver transplant next month
+I was diagnosed with lupus last year
+I take calcium supplements for my osteoporosis
+My son had a kidney transplant last year
+I am scheduled for a CT scan next week
+I had a prostate surgery two years ago
+My daughter has a history of celiac disease
+I will be undergoing a heart valve repair surgery next month
+I was diagnosed with chronic kidney disease last year
+I take statins for my high cholesterol
+My son had a bone marrow transplant last year
+I am scheduled for a PET scan next week
+Schedule a blood test for John Doe on June 20th
+Update the patient's medical history with the new allergy information
+Set the PCR machine to 95 degrees Celsius for 5 minutes
+Stop the autoclave after 15 minutes
+Pause the microscope calibration for 10 minutes
+Resume the spectrophotometer operation after 5 minutes
+Test the blood sample of John Doe for glucose levels
+Store the tissue sample of Jane Doe in the sample storage
+Prepare the microscope for the cell analysis of Alice Smith
+Review the lab report of Bob Lee before sign-off
+Sign off on the lab report of Jane Doe
+Approve the lab report of John Doe
+Schedule a liver function test for Alice Smith on July 1st
+Update the patient's contact details with the new phone number
+Conduct an MRI for Jane Doe in the radiology department
+Change the time of the incubator to 24 hours
+Set the biochemistry analyzer to 37 degrees Celsius for 30 minutes
+Start the DNA sequencer for John Doe 's genetic test
+Stop the blood gas analyzer after 10 minutes
+Pause the ELISA reader calibration for 5 minutes
+Resume the microtome operation after 10 minutes
+Test the saliva sample of Bob Lee for cortisol levels
+Retrieve the patient records of Bob Lee from the database
+Prepare the flow cytometer for the lymphocyte count of Jane Doe
+Review the lab report of John Doe before sign-off
+Sign off on the lab report of Alice Smith
+Approve the lab report of Bob Lee
+Schedule a kidney function test for Jane Doe on August 2nd
+Update the patient's medication list with the new drug name
+Change the speed of the centrifuge to 5000 rpm
+Set the gel electrophoresis system to 100 volts for 1 hour
+Stop the sterilizer after 30 minutes
+Pause the fluorescence microscope calibration for 10 minutes
+Resume the mass spectrometer operation after 15 minutes
+Report the platelet count of Jane Doe to Dr. Baker
+Test the hair sample of John Doe for drug levels
+Review the lab report of Bob Lee before sign-off
+Sign off on the lab report of Jane Doe
+Approve the lab report of John Doe
+I would like to schedule a therapy session on July 15th
+Let's set a goal for the next month
+I would like to record my feelings daily
+Please notify me about support group meetings weekly
+I want to explore some cognitive-behavioral therapies
+I need to update my contact information
+I want to track my progress weekly
+Please log my daily journaling
+I feel better when I engage in physical activities
+I feel anxious in the mornings
+I would like to document my recent mood swings
+I would like to record my feelings daily
+Please notify me about support group meetings weekly
+I want to explore some cognitive-behavioral therapies
+I need to update my contact information
+I want to track my progress weekly
+Please log my daily journaling
+I feel better when I engage in physical activities
+I feel anxious in the mornings
+I would like to document my recent mood swings
+I would like to record my feelings daily
+Please notify me about support group meetings weekly
+I want to explore some cognitive-behavioral therapies
+I need to update my contact information
+I want to track my progress weekly
+Please log my daily journaling
+I feel better when I engage in physical activities
+I feel anxious in the mornings
+I would like to document my recent mood swings
+Book a flight to New York on May 25th
+Check the flight status for AA 123
+Reserve a hotel room in Rome for June 10th
+Set a flight delay alert for UA 456
+Update my return flight to July 30th
+View the itinerary for John Doe
+Generate a travel itinerary for Tokyo
+Monitor flight prices for London on Skyscanner
+Cancel my hotel reservation in Madrid
+Confirm my train booking to Berlin
+Notify Jane Doe about the gate change for DL 789
+Explore bus routes from Amsterdam to Brussels
+Compare hotel prices in Dubai on Booking.com
+Remove the museum visit from my itinerary
+Change my flight to San Francisco to September 20th
+Book a flight to Prague for October 15th
+Check the flight status for BA 321
+Reserve a hotel room in Venice for November 5th
+Set a baggage delay alert for LH 654
+Update my departure flight to December 15th
+View the travel itinerary for Michael Smith
+Generate a vacation itinerary for Barcelona
+Monitor flight prices for Athens on Expedia
+Cancel my apartment booking in Vienna
+Confirm my ferry booking to Santorini
+Explore train routes from Munich to Zurich
+Compare hostel prices in Lisbon on Hostelworld
+Remove the city walk from my itinerary
+Change my flight to Istanbul to April 5th
+Book a flight to Copenhagen for May 10th
+Check the flight status for AF 567
+Set a flight delay alert for KL 234
+Update my hotel check-out date to July 15th
+View the itinerary for George Brown
+Generate a trip itinerary for Budapest
+Monitor flight prices for Seoul on Kayak
+Cancel my resort booking in Cancun
+Confirm my bus booking to Berlin
+Notify Laura Davis about the flight time change for QR 345
+Explore bike routes in Copenhagen
+Compare motel prices in Las Vegas on Hotels.com
+Remove the sightseeing tour from my itinerary
+Change my flight to Rio de Janeiro to October 20th
+Check the balance of my checking account
+Transfer $1000 from savings account to checking account
+Pay $200 towards credit card from checking account
+Set up an alert for $5000 withdrawal from savings account
+Update my address in savings account
+Analyze my expenses for the last month
+View the statement of credit card for last month
+Report the unauthorized transaction of $500 on my credit card
+Alert me when savings account balance goes below $1000
+Deposit $1500 into savings account
+Withdraw $200 from checking account
+Invest $5000 into mutual funds from savings account
+Save $200 per month into savings account
+Spend $100 on entertainment from checking account this week
+Monitor my credit card for fraudulent activity
+Notify me when my checking account balance reaches $5000
+Check my retirement account balance on mobile app
+Transfer $300 to John's savings account from my checking account
+Pay $75 towards phone bill from my checking account
+Set up low balance alert for my checking account
+Update my email address in my savings account
+Analyze my spending habits for the past year
+View my checking account statement for this month
+Generate a spending report for my checking account
+Cancel the automatic transfer of $200 to savings account
+Report an unauthorized charge of $250 on my credit card
+Alert me when my credit card balance exceeds $2000
+Budget $200 for dining out every month
+Deposit $1000 into my investment account
+Withdraw $500 from my ATM
+Invest $10000 in stocks from my brokerage account
+Save $300 per month for vacation
+Spend $50 on books this month
+Monitor my bank accounts for unusual activity
+Notify me when my savings account reaches $10000
+Check the student loan balance on online banking
+Transfer $150 to Mom's checking account from my savings account
+Pay $120 towards internet bill from my checking account
+Set up high balance alert for my investment account
+Update my phone number in my credit card account
+Analyze my income and expenses for the past six months
+View my mortgage account statement for last month
+Generate a income report for my checking account
+Cancel the automatic deposit of $500 to brokerage account
+Report an unauthorized withdrawal of $300 from my checking account
+Alert me when my checking account balance drops below $500
+Budget $150 for clothes shopping every month
+Deposit $2000 into my retirement account
+Withdraw $100 from my savings account at the ATM
+Invest $5000 in mutual funds from my investment account
+Save $250 per month for emergency fund
+Spend $30 on coffee this week
+Monitor my credit cards for suspicious charges
+Notify me when my investment account reaches $20000
+Check the car loan balance on mobile app
+Transfer $200 to Dad's savings account from my checking account
+Pay $80 towards gas bill from my checking account
+Set up transaction alert for my credit card account
+Update my mailing address in my checking account
+Analyze my saving habits for the past year
+View my credit card statement for this month
+Generate a expense report for my savings account
 Mane dribbles past the defenders and shoots a powerful strike for Liverpool
-Ronaldo scores the winning goal in the 90th minute , securing a victory for Juventus
-Messi assists Griezmann who heads it into the net for Barcelona
 Chelsea wins the Premier League title for the 2020-2021 season
 Hazard recovers from his injury and scores a stunning goal for Real Madrid
 Mbappe dribbles past the defenders and shoots a powerful strike for PSG
-Salah scores the winning goal in the 85th minute , securing a victory for Liverpool
-De Bruyne assists Sterling who heads it into the net for Manchester City
 Bayern Munich wins the Bundesliga title for the 2020-2021 season
 Firmino recovers from his injury and scores a stunning goal for Liverpool
-Aguero dribbles past the defenders and shoots a powerful strike for Manchester City
-Aubameyang scores the winning goal in the 90th minute , securing a victory for Arsenal
-Son assists Alli who heads it into the net for Tottenham
 PSG wins the Ligue 1 title for the 2020-2021 season
 Griezmann recovers from his injury and scores a stunning goal for Barcelona
-Sterling dribbles past the defenders and shoots a powerful strike for Manchester City
-Benzema scores the winning goal in the 88th minute , securing a victory for Real Madrid
-Muller assists Lewandowski who heads it into the net for Bayern Munich
 Manchester United wins the Premier League title for the 2020-2021 season
-Rashford recovers from his injury and scores a stunning goal for Manchester United
-Fernandes dribbles past the defenders and shoots a powerful strike for Manchester United
-Messi scores the winning goal in the 90th minute , securing a victory for Barcelona
-Dybala assists Ronaldo who heads it into the net for Juventus
 PSG wins the Ligue 1 title for the 2020-2021 season
 Neymar recovers from his injury and scores a stunning goal for PSG
 Mbappe dribbles past the defenders and shoots a powerful strike for PSG
-Ronaldo scores the winning goal in the 88th minute , securing a victory for Juventus
-Kane assists Son who heads it into the net for Tottenham
 Bayern Munich wins the Bundesliga title for the 2020-2021 season
-Lewandowski recovers from his injury and scores a stunning goal for Bayern Munich
-Gnabry dribbles past the defenders and shoots a powerful strike for Bayern Munich
-I have been experiencing shortness of breath intermittently for the past two weeks
 My mother has been complaining of fatigue daily
 I was diagnosed with hypertension two years ago
 I took paracetamol for my fever yesterday night
@@ -40,8 +394,6 @@ My son has a history of epilepsy
 I've been feeling lightheaded every afternoon
 My grandmother had cataract surgery last year
 I need a follow-up appointment next month
-I've been experiencing joint pain occasionally for the last two months
-My daughter was prescribed prednisone for her skin rash last week
 I felt abdominal pain this afternoon
 My son had a appendectomy last month
 I underwent a CT scan last Tuesday
@@ -58,7 +410,6 @@ Rewind the video by 15 minutes
 Fast forward the The Crown show by 30 seconds
 Mute the audio
 Unmute the podcast
-Set a reminder to watch the The Mandalorian series every Friday at 8 PM
 Update my genre preference to horror
 Search for The Dark Knight movie
 Record the The Big Bang Theory show
@@ -108,64 +459,38 @@ Play The Queen's Gambit series on Netflix
 Pause the The Umbrella Academy series on Netflix
 Stop the The Witcher series on Netflix
 Skip to the next The Crown episode on Netflix
-Rewind the Money Heist series by 15 minutes on Netflix
-Fast forward the Stranger Things series by 30 seconds on Netflix
 Mute the Breaking Bad series on Netflix
 Unmute the Dark series on Netflix
-Set a reminder to watch the The Mandalorian series every Friday at 8 PM on Disney+
 Update my genre preference to horror on Amazon Prime
 Conduct a blood test on patient 234 in the lab 3
-Change the temperature of the incubator to 37 degrees Celsius
-Send the test results of patient 456 to Dr. Smith via email
-Schedule an appointment for patient 789 on March 15th at 10:00 AM
-Update the address of patient 123 to 123 Main St, Anytown
-Set the alarm on the blood analysis machine for 8:00 AM every day
 Start the urinalysis for patient 567 in the lab 1
 Stop the calibration on the centrifuge
 Pause the DNA sequencing on sample 789
 Resume the glucose test on sample 345 in lab 2
-Report the findings of biopsy on patient 678 to Dr. Johnson
-Test the blood sample of patient 901 for cholesterol levels
-Analyze the urine sample of patient 234 for kidney function in lab 4
-Collect stool samples from patient 567 for parasite testing
 Store the tissue samples of patient 890 in freezer 1
-Retrieve the medical history of patient 123 from the database
 Prepare the histology section for patient 456 's biopsy
 Review the lab results of patient 789 before 5:00 PM
 Sign off on the pathology report of patient 123
 Approve the lab order for patient 456 's MRI
-Schedule patient 789 for a CT scan on April 20th at 1:00 PM
-Update the emergency contact of patient 123 to Jane Doe, 555-1234
 Change the humidity level in the lab 2 to 45%
-Send patient 456 's blood test results to Dr. Brown via fax
 Set the timer on the autoclave for 30 minutes
 Start the allergy test for patient 789 in the lab 3
 Stop the titration on the pH meter
 Pause the cell count on sample 123
 Resume the hormone test on sample 456 in lab 1
-Report the observations of tissue culture on patient 789 to Dr. Green
 Test the saliva sample of patient 123 for cortisol levels
-Analyze the spinal fluid sample of patient 456 for meningitis in lab 2
 Collect hair samples from patient 789 for drug testing
 Store the bone marrow samples of patient 123 in freezer 2
-Retrieve the vaccination records of patient 456 from the database
-Prepare the microbiology section for patient 789 's bacterial culture
 Review the imaging results of patient 123 before 6:00 PM
 Sign off on the cytology report of patient 456
 Approve the lab order for patient 789 's ultrasound
-Schedule patient 123 for a mammogram on May 25th at 2:00 PM
-Update the insurance details of patient 456 to Blue Cross Blue Shield, policy 789
 Change the light intensity in the lab 1 to 500 lux
-Send patient 789 's urine test results to Dr. White via email
 Set the volume on the spectrophotometer to 100 mL
 Start the liver function test for patient 123 in the lab 4
 Stop the dilution on the pipette
 Pause the genetic test on sample 789
 Resume the thyroid test on sample 123 in lab 3
-Report the findings of skin biopsy on patient 456 to Dr. Black
 Test the blood sample of patient 789 for HIV
-Analyze the cerebrospinal fluid sample of patient 123 for multiple sclerosis in lab 2
-Collect skin samples from patient 456 for melanoma testing
 Store the lung tissue samples of patient 789 in freezer 3
 I need to schedule a therapy session next Tuesday
 I want to track my progress weekly
@@ -178,8 +503,6 @@ Please log my daily journaling
 I feel better when I engage in physical activities
 I need relaxation techniques to help with my anxiety
 Please notify me about support group meetings weekly
-I would like to measure my stress levels over the next few weeks
-I want to review my therapy progress over the past three months
 Set the thermostat to 72 degrees in the living room
 Turn off the lights in the garage
 Increase the volume of the TV in the bedroom to 30
@@ -187,8 +510,6 @@ Play the song 'Imagine' on the smart speaker
 Send a message 'I'll be home late' to John on WhatsApp
 Set a reminder to call Mom at 5 pm
 Create an event 'Dinner with friends' on June 12 at 7 pm
-Change the color temperature of the lights in the living room to warm white
-Decrease the brightness of the screen on the laptop to 50%
 Mute the television in the bedroom
 Unmute the music system in the kitchen
 Skip the current song on the Spotify player
@@ -203,15 +524,11 @@ Set the fan to high speed in the bedroom
 Turn on the coffee maker at 7 am every day
 Send an email 'Meeting notes' to team on Gmail
 Create a meeting 'Project discussion' on July 1 at 2 pm
-Change the color of the smart bulb in the study room to blue
 Set the air purifier to medium in the living room
-Increase the humidity of the humidifier in the bedroom to 60%
 Play the podcast 'Daily News' on the smart speaker at 8 am
 Send a message 'Happy Birthday' to Lisa on Facebook at 12 am
 Set a reminder to buy groceries at 5 pm
 Create an event 'Yoga class' on June 20 at 6 pm
-Change the color temperature of the lights in the kitchen to cool white
-Decrease the brightness of the screen on the tablet to 40%
 Mute the radio in the kitchen
 Unmute the sound system in the living room
 Skip the current episode on the Netflix player
@@ -226,15 +543,10 @@ Set the AC to 68 degrees in the bedroom
 Turn on the oven at 6 pm
 Send an email 'Invoice details' to client on Outlook
 Create a meeting 'Budget planning' on July 15 at 11 am
-Change the color of the LED strip in the game room to red
 Set the dehumidifier to low in the basement
-Increase the fan speed of the air conditioner in the office to maximum
 Play the audiobook '1984' on the smart speaker at 10 pm
 Send a message 'Good night' to family on Messenger at 10 pm
-Set a reminder to water plants at 9 am every day
 Create an event 'Movie night' on June 25 at 8 pm
-Change the color temperature of the lights in the bathroom to daylight
-Decrease the brightness of the screen on the phone to 30%
 Mute the alarm in the bedroom
 Unmute the TV in the living room
 Skip the current track on the music player
@@ -249,7 +561,6 @@ Set the heater to 75 degrees in the living room
 Turn on the microwave at 7 pm
 Send an email 'Holiday plans' to friends on Yahoo Mail
 Create a meeting 'Team building' on July 20 at 3 pm
-Change the color of the mood light in the bedroom to purple
 Set the vacuum cleaner to high in the living room
 Increase the volume of the radio in the kitchen to 20
 Play the playlist 'Workout Mix' on the smart speaker at 7 am
@@ -307,7 +618,6 @@ Set up an alert when my credit card balance goes above $5000
 Analyze my expenses for the last month
 View the transaction history of my checking account for the past week
 Generate a financial report for the last quarter
-Schedule a recurring transfer of $500 from my checking account to my savings account every month
 Cancel the low balance alert for my checking account
 Report any suspicious transactions on my credit card
 Alert me when my checking account balance goes below $500
@@ -318,15 +628,12 @@ Invest $5000 in mutual funds
 Save $10000 for vacation by the end of year
 Spend less than $100 on dining out this week
 Monitor my credit card for unusual activity
-Notify me when a deposit of over $1000 is made into my checking account
 Check the balance of my credit card
-Transfer $300 from my checking account to John's savings account
 Pay the internet bill of $50 from my savings account
 Set up an alert when my savings account balance goes below $1000
 Analyze my spending habits for the last year
 View the transaction history of my savings account for the past month
 Generate a financial report for the last year
-Schedule a recurring transfer of $100 from my savings account to my checking account every week
 Cancel the fraud alert for my credit card
 Report any unauthorized transactions on my debit card
 Alert me when my savings account balance goes above $10000
@@ -337,15 +644,12 @@ Invest $10000 in stocks
 Save $5000 for home renovation by the end of year
 Spend less than $50 on entertainment this week
 Monitor my debit card for fraudulent activity
-Notify me when a withdrawal of over $500 is made from my savings account
 Check the balance of my debit card
-Transfer $400 from my savings account to Jane's checking account
 Pay the water bill of $70 from my checking account
 Set up an alert when my checking account balance goes above $5000
 Analyze my income for the last six months
 View the transaction history of my credit card for the past week
 Generate a financial report for the last six months
-Schedule a recurring transfer of $200 from my checking account to my savings account every fortnight
 Cancel the overdraft alert for my checking account
 Report any suspicious transactions on my savings account
 Alert me when my checking account balance goes below $100
@@ -356,15 +660,12 @@ Invest $2000 in bonds
 Save $3000 for car purchase by the end of year
 Spend less than $30 on shopping this week
 Monitor my checking account for unusual activity
-Notify me when a deposit of over $2000 is made into my savings account
 Check the balance of my savings account
-Transfer $500 from my checking account to Mike's savings account
 Pay the gas bill of $80 from my savings account
 Set up an alert when my savings account balance goes below $500
 Analyze my expenses for the last year
 View the transaction history of my savings account for the past month
 Generate a financial report for the last year
-Schedule a recurring transfer of $300 from my savings account to my checking account every month
 Book a flight to New York leaving on June 5th
 Check the flight status for Los Angeles departing on July 10th
 Reserve a hotel room in Rome for August 20th
@@ -375,13 +676,11 @@ Generate a budget for a trip to Sydney for two weeks
 Monitor flight prices for Dubai for December 31st
 Cancel my hotel reservation in Madrid on January 1st
 Confirm my bus booking to Amsterdam on February 14th
-Remind me to check in for my flight to London on March 17th
 Recommend a hotel in Athens for April 21st
 Plan a cruise to The Caribbean for May 25th
 Explore train options to Vienna for June 29th
 Compare flight prices to Beijing for July 4th
 Add a museum visit to my itinerary for Moscow on August 8th
-Remove the city tour from my itinerary for Istanbul on September 12th
 Schedule a taxi pickup from The airport on October 16th
 Change my flight to Rio de Janeiro to November 20th
 Book a flight to Buenos Aires leaving on December 25th
@@ -394,7 +693,6 @@ Generate a budget for a trip to Lisbon for one week
 Monitor flight prices for Warsaw for June 29th
 Cancel my hotel reservation in Prague on July 4th
 Confirm my bus booking to Budapest on August 8th
-Remind me to check in for my flight to Zurich on September 12th
 Recommend a hotel in Oslo for October 16th
 Plan a cruise to The Mediterranean for November 20th
 Explore train options to Dublin for December 25th
@@ -407,81 +705,51 @@ Book a flight to Perth leaving on June 29th
 Check the flight status for Adelaide departing on July 4th
 Reserve a hotel room in Brisbane for August 8th
 Set a travel alert for Melbourne for September 12th
-Update my itinerary with a visit to The Great Barrier Reef on October 16th
 View the train schedule for Canberra on November 20th
 Generate a budget for a trip to Darwin for three weeks
 Monitor flight prices for Hobart for December 25th
 Cancel my hotel reservation in Auckland on January 1st
 Confirm my bus booking to Wellington on February 14th
-Remind me to check in for my flight to Dunedin on March 17th
 Recommend a hotel in Hamilton for April 21st
 Plan a cruise to The Pacific Islands for May 25th
 Explore train options to Tauranga for June 29th
 Compare flight prices to Napier for July 4th
 Add a wine tasting to my itinerary for Nelson on August 8th
 Real Madrid dominates the match, maintaining 80% possession
-Salah dribbles past three defenders to score a brilliant goal for Liverpool
-Messi sets up a beautiful assist for Suarez in the Champions League
 Juventus loses their Serie A match against Inter Milan
-Neymar injures himself in the World Cup semi-final, causing concern for Brazil
 AC Milan substitutes Ibrahimovic in the second half against Roma
 Barcelona wins the El Clasico match, beating Real Madrid 3-2
-Sterling heads the ball into the net, scoring the opening goal for Manchester City
-Liverpool dominates the Champions League final, winning 4-0 against Roma
-Modric passes the ball to Benzema who shoots and scores for Real Madrid
-PSG draws the Ligue 1 match against Lyon , ending the match 2-2
-I have been experiencing frequent headaches every day for the past month
 My daughter was diagnosed with Type 1 diabetes last month
 I take Metformin twice a day for my diabetes
 I underwent a colonoscopy three weeks ago
 My son has a history of allergic reactions to penicillin
 I am scheduled for a mammogram next Tuesday
-I have been feeling fatigue constantly for the last two weeks
-My wife was prescribed Prednisone for her rheumatoid arthritis two weeks ago
 I noticed a lump in my breast last week
 My father had a hip replacement surgery last year
-I need a follow-up appointment with Dr. Smith next month
-I have been experiencing shortness of breath during exercise for the past month
 My daughter was diagnosed with celiac disease two years ago
-I take Lisinopril once a day for my high blood pressure
 I underwent a gallbladder removal surgery six months ago
 My son has a history of severe peanut allergy
 I am scheduled for a CT scan next Friday
-I have been feeling numbness in my right arm occasionally for the past week
-My wife was prescribed Zoloft for her depression last month
 I noticed a rash on my back yesterday
 My father had a coronary bypass surgery two years ago
-I need a follow-up appointment with the dermatology clinic in two weeks
-I have been experiencing persistent cough every night for the last two weeks
 My daughter was diagnosed with juvenile arthritis last year
 I take Warfarin daily for my blood clot
 I had a dental implant three months ago
 My son has a history of epilepsy
 I am scheduled for an ultrasound next Wednesday
-I have been feeling abdominal pain after meals for the past few days
-My wife was prescribed Levothyroxine for her hypothyroidism a week ago
 I noticed blurred vision occasionally since last week
 My father had a cataract surgery last month
-I need a follow-up appointment with Dr. Jones in a month
-I have been experiencing heart palpitations occasionally for the past month
 My daughter was diagnosed with anemia last year
 I take Aspirin daily for my heart condition
 I underwent a hip arthroscopy six months ago
 My son has a history of chronic bronchitis
 I am scheduled for a bone density test next Monday
-I have been feeling joint pain in the morning for the past week
-My wife was prescribed Albuterol for her asthma two weeks ago
-I noticed a mole on my arm that has changed color recently
 My father had a pacemaker implantation two years ago
-I need a follow-up appointment with the endocrinology clinic in three weeks
-I have been experiencing insomnia nightly for the last month
 My daughter was diagnosed with multiple sclerosis two years ago
 I take Prozac daily for my depression
 I underwent a lumpectomy one year ago
 My son has a history of cystic fibrosis
 I am scheduled for an echocardiogram next Thursday
-I have been feeling nausea in the morning for the past few days
-My wife was prescribed Tamoxifen for her breast cancer last month
 I noticed unexplained weight loss over the past few months
 Play the movie titled The Godfather
 Skip to the next song
@@ -529,7 +797,6 @@ Play the album Divide by Ed Sheeran
 Stop the music after 1 hour
 Rewind the podcast by 2 minutes
 Set a reminder to listen to TED Talks Daily every weekday at 7 AM
-Update my preferred podcast genres to science and technology
 Play The Beatles' Hey Jude
 Fast forward the radio by 10 minutes
 Mute the TV
