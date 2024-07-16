@@ -100,7 +100,7 @@ random.shuffle(prompt_files)
 output_file = output_folder / "text_tagged_train11.txt"
 os.system(f"mkdir -p {output_folder}")
 os.system(f"touch {output_file}")
-create_data_n_times(prompt_files, output_file, n=3)
+create_data_n_times(prompt_files, output_file, n=20)
 
 
 # input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path

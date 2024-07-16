@@ -204,15 +204,15 @@ output_folder = Path("/home/ksingla/workspace/PromptingNemo/data/synthetic/")
 # tags_file = str(output_folder / "alltags_v4.txt")  # replace with your desired output file path
 # clean_file(input_file, text_file, text_tagged_file, tags_file)
 
-# input_file = str(output_folder / "text_tagged_train_v3.txt")  # replace with your input file path
-# text_tagged_file = str(output_folder / "text_tagged_train_cleaned_v3.txt")  # replace with your desired output file path
-# text_file = str(output_folder / "text_train_v3.txt")  # replace with your desired output file path
+input_file = str(output_folder / "text_tagged_train11.txt")  # replace with your input file path
+text_tagged_file = str(output_folder / "text_tagged_train_cleaned_gpt3.txt")  # replace with your desired output file path
+text_file = str(output_folder / "text_train_gpt3.txt")  # replace with your desired output file path
+tags_file = str(output_folder / "alltags_gpt3.txt")  # replace with your desired output file path
+clean_file_valid(input_file, text_file, text_tagged_file, tags_file)
+
+
+# input_file = str(output_folder / "text_tagged_valid_v2.txt")  # replace with your input file path
+# text_tagged_file = str(output_folder / "text_tagged_valid_cleaned_v4.txt")  # replace with your desired output file path
+# text_file = str(output_folder / "text_valid_v4.txt")  # replace with your desired output file path
 # tags_file = str(output_folder / "alltags_v4.txt")  # replace with your desired output file path
 # clean_file_valid(input_file, text_file, text_tagged_file, tags_file)
-
-
-input_file = str(output_folder / "text_tagged_valid_v2.txt")  # replace with your input file path
-text_tagged_file = str(output_folder / "text_tagged_valid_cleaned_v4.txt")  # replace with your desired output file path
-text_file = str(output_folder / "text_valid_v4.txt")  # replace with your desired output file path
-tags_file = str(output_folder / "alltags_v4.txt")  # replace with your desired output file path
-clean_file_valid(input_file, text_file, text_tagged_file, tags_file)

@@ -137,12 +137,12 @@ def process_files(clean_text, tagged_text, audio_path, manifest_file, mode="trai
             
             
             if line_len <= max_len:
-                #audio_content = generate_audio(line.strip(), mode=mode)
+                audio_content = generate_audio(line.strip(), mode=mode)
                 audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")
                 
                 
-                #noise_level = random.uniform(-30, -10)  # Random noise level between -30 dB and -10 dB
-                #save_audio_to_file(audio_content, audio_file, noise_level)
+                noise_level = random.uniform(-30, -10)  # Random noise level between -30 dB and -10 dB
+                save_audio_to_file(audio_content, audio_file, noise_level)
                 duration = get_audio_duration(audio_file)
                 
                 entry = {
