@@ -7,34 +7,16 @@ Tags indicate one of these entity types: ACTION, THERAPY_TYPE, SESSION_TYPE, DUR
 Begin of tag becomes ENTITY_<type>, and we use a common END tag for all types. <type> is always capitalized.
 
 For example:
-ENTITY_PATIENT_INFO I END ENTITY_ACTION would like to schedule END a ENTITY_SESSION_TYPE therapy session END on ENTITY_DATE July 15th END
+ENTITY_PATIENT_INFO I END ENTITY_ACTION would like to ENTITY_ACTION document END my ENTITY_SYMPTOM recent mood swings END . INTENT_DOCUMENT_SYMPTOM
+ENTITY_PATIENT_INFO Can we ENTITY_ACTION set END a new ENTITY_GOAL_TYPE goal END for ENTITY_ACTIVITY mindfulness practice END ENTITY_FREQUENCY daily END ? INTENT_SET_GOAL
+ENTITY_PATIENT_INFO I END ENTITY_ACTION want to ENTITY_ACTION review END my ENTITY_THERAPY_TYPE therapy progress END ENTITY_DURATION over the past three months END . INTENT_REVIEW_PROGRESS
 
 Example ACTION phrases: 'schedule', 'provide', 'track', 'set', 'update', 'analyze', 'view', 'generate', 'monitor', 'complete', 'pause', 'resume', 'cancel', 'record', 'log', 'measure', 'notify', 'remind', 'recommend', 'assess', 'document', 'explore', 'support', 'review'.
 
-Example conversation snippets:
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
 
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION need to schedule END a ENTITY_SESSION_TYPE therapy session END ENTITY_DATE next Tuesday END"
-"ENTITY_PATIENT_INFO Can you ENTITY_ACTION provide END me with some ENTITY_RESOURCE_TYPE mental health resources END?"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION want to track END my ENTITY_PROGRESS_METRIC progress END ENTITY_FREQUENCY weekly END"
-"ENTITY_PATIENT_INFO Let's ENTITY_ACTION set END a new ENTITY_GOAL_TYPE goal END for ENTITY_DURATION the next month END"
-"ENTITY_PATIENT_INFO Can you ENTITY_ACTION update END my ENTITY_PATIENT_INFO contact information END?"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION feel END ENTITY_MOOD anxious END ENTITY_TIME in the mornings END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION need to ENTITY_ACTION cancel END my ENTITY_SESSION_TYPE therapy session END ENTITY_DATE tomorrow END"
-"ENTITY_PATIENT_INFO Can we ENTITY_ACTION reschedule END our ENTITY_SESSION_TYPE meeting END for ENTITY_DATE next Friday END?"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION would like to ENTITY_ACTION document END my ENTITY_SYMPTOM recent mood swings END"
-"ENTITY_PATIENT_INFO Can you ENTITY_ACTION remind END me of my ENTITY_SESSION_TYPE next session END ENTITY_DATE next Monday END?"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION want to ENTITY_ACTION explore END some ENTITY_THERAPY_TYPE cognitive-behavioral therapies END"
-"ENTITY_PATIENT_INFO Please ENTITY_ACTION log END my ENTITY_ACTIVITY daily journaling END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION feel better END when I ENTITY_ACTION engage END in ENTITY_ACTIVITY physical activities END"
-"ENTITY_PATIENT_INFO Can we ENTITY_ACTION analyze END my ENTITY_MOOD mood swings END ENTITY_DURATION over the last six months END?"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION need ENTITY_RESOURCE_TYPE relaxation techniques END to help with ENTITY_SYMPTOM my anxiety END"
-"ENTITY_PATIENT_INFO Please ENTITY_ACTION notify END me about ENTITY_RESOURCE_TYPE support group meetings END ENTITY_FREQUENCY weekly END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION would like to ENTITY_ACTION measure END my ENTITY_PROGRESS_METRIC stress levels END ENTITY_DURATION over the next few weeks END"
-"ENTITY_PATIENT_INFO Can we ENTITY_ACTION set END a new ENTITY_GOAL_TYPE goal END for ENTITY_ACTIVITY mindfulness practice END ENTITY_FREQUENCY daily END?"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION want to ENTITY_ACTION review END my ENTITY_THERAPY_TYPE therapy progress END ENTITY_DURATION over the past three months END"
-"ENTITY_PATIENT_INFO Can you ENTITY_ACTION support END me with ENTITY_RESOURCE_TYPE online resources END for ENTITY_SYMPTOM managing stress END?"
-At the end of the sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
 
-Generate exactly 200 tagged sentences.
+Generate exactly 200 tagged sentences. No numbering of sentences.

@@ -7,35 +7,18 @@ Tags indicate one of these entity types: ACTION, SYMPTOM, MEDICATION, DIAGNOSIS,
 Begin of tag becomes ENTITY_<type>, and we use a common END tag for all types. <type> is always capitalized.
 
 For example:
-ENTITY_PATIENT_INFO I END ENTITY_ACTION have been experiencing END ENTITY_SYMPTOM chest pain END for ENTITY_DURATION two hours END
+ENTITY_PATIENT_INFO I END ENTITY_ACTION have been experiencing END ENTITY_SYMPTOM shortness of breath END ENTITY_FREQUENCY occasionally END for ENTITY_DURATION the past month END INTENT_SYMPTOM_REPORT
+ENTITY_PATIENT_INFO My sister END ENTITY_ACTION was diagnosed with END ENTITY_DIAGNOSIS hypertension END ENTITY_DATE a year ago END INTENT_MEDICAL_HISTORY
+ENTITY_PATIENT_INFO I END ENTITY_ACTION took END ENTITY_MEDICATION paracetamol END for ENTITY_SYMPTOM my fever END ENTITY_TIME yesterday evening END INTENT_MEDICATION_REPORT
+ENTITY_PATIENT_INFO I END ENTITY_ACTION had ENTITY_PROCEDURE cataract surgery END ENTITY_DATE two weeks ago END INTENT_PROCEDURE_REPORT
 
 Example ACTION phrases: 'report', 'describe', 'complain of', 'mention', 'experience', 'undergo', 'take', 'prescribe', 'diagnose', 'advise', 'monitor', 'suggest', 'refer', 'test', 'examine', 'perform', 'recommend', 'check', 'observe', 'note', 'confirm', 'review', 'administer', 'prepare', 'instruct'.
 
-Example conversation snippets:
 
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION have been feeling END ENTITY_SYMPTOM dizzy END ENTITY_FREQUENCY every morning END for ENTITY_DURATION the past week END"
-"ENTITY_PATIENT_INFO My son END ENTITY_ACTION has been complaining of END ENTITY_SYMPTOM stomach ache END ENTITY_FREQUENCY daily END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION was diagnosed with END ENTITY_DIAGNOSIS diabetes END ENTITY_DATE last year END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION took END ENTITY_MEDICATION ibuprofen END for ENTITY_SYMPTOM my headache END ENTITY_TIME last night END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION had END ENTITY_PROCEDURE knee surgery END ENTITY_DATE two months ago END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION am scheduled for END a ENTITY_TEST_TYPE blood test END ENTITY_DATE next week END"
-"ENTITY_PATIENT_INFO My daughter END ENTITY_ACTION has a history of END ENTITY_MEDICAL_HISTORY asthma END"
-"ENTITY_PATIENT_INFO I've been ENTITY_ACTION feeling END ENTITY_SYMPTOM nauseous END ENTITY_FREQUENCY every evening END"
-"ENTITY_PATIENT_INFO My father END ENTITY_ACTION had END ENTITY_PROCEDURE heart surgery END ENTITY_DATE last year END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION need END a ENTITY_FOLLOW_UP follow-up appointment END ENTITY_DATE next month END"
-"ENTITY_PATIENT_INFO I've been ENTITY_ACTION experiencing END ENTITY_SYMPTOM back pain END ENTITY_FREQUENCY on and off END for ENTITY_DURATION the last three months END"
-"ENTITY_PATIENT_INFO My daughter END ENTITY_ACTION was prescribed END ENTITY_MEDICATION amoxicillin END for ENTITY_SYMPTOM her throat infection END ENTITY_DATE last week END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION felt END ENTITY_SYMPTOM chest tightness END ENTITY_TIME this morning END"
-"ENTITY_PATIENT_INFO My son END ENTITY_ACTION had END ENTITY_PROCEDURE a tonsillectomy END ENTITY_DATE last month END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION underwent END ENTITY_PROCEDURE an MRI scan END ENTITY_DATE last Friday END"
-"ENTITY_PATIENT_INFO My wife END ENTITY_ACTION is experiencing END ENTITY_SYMPTOM severe migraines END ENTITY_FREQUENCY weekly END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION noticed END ENTITY_SYMPTOM swelling END in my ENTITY_LOCATION left ankle END ENTITY_DATE yesterday END"
-"ENTITY_PATIENT_INFO My husband END ENTITY_ACTION takes END ENTITY_MEDICATION insulin END for ENTITY_DIAGNOSIS his diabetes END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION was referred to END ENTITY_LAB_SECTION the cardiology department END for ENTITY_PROCEDURE further tests END"
-"ENTITY_PATIENT_INFO I END ENTITY_ACTION will need END ENTITY_PROCEDURE a follow-up surgery END ENTITY_DATE next month END"
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
 
-At the end of the sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
 
-Generate exactly 200 tagged sentences.
+Generate exactly 200 tagged sentences. No numbering of sentences.

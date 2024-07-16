@@ -8,12 +8,16 @@ Tags indicate one of these entity types: ACTION, SETTING_TYPE, SETTING_VALUE, LO
 Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
 
 For example:
-ENTITY_ACTION Schedule END an ENTITY_TEST_TYPE MRI END for ENTITY_PATIENT_INFO John Doe END on ENTITY_DATE July 15th END
+ENTITY_ACTION Review END the ENTITY_REPORT_TYPE histology report END of ENTITY_PATIENT_INFO patient 789 END and ENTITY_ACTION sign off END. INTENT_REVIEW_REPORT
+ENTITY_ACTION Collect END ENTITY_SAMPLE_TYPE blood samples END from ENTITY_PATIENT_INFO patient 321 END. INTENT_COLLECT_SAMPLE
+ENTITY_ACTION Prepare END the ENTITY_LAB_SECTION chemistry lab END for ENTITY_EVENT tomorrow's tests END. INTENT_PREPARE_LAB
 
 Example ACTION phrases: 'conduct', 'schedule', 'send', 'update', 'change', 'set', 'start', 'stop', 'pause', 'resume', 'report', 'test', 'analyze', 'collect', 'store', 'retrieve', 'prepare', 'review', 'sign off', 'approve'.
 
-At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
 
-Generate exactly 200 tagged sentences.
+Generate exactly 200 tagged sentences. No numbering of sentences.

@@ -57,16 +57,15 @@ def create_data(prompt_files, output_file):
         filename = os.path.basename(prompt_file)  # Get the file name with extension
         name, ext = os.path.splitext(filename)  # Split the file name and extension
         domain = MAP_PROMPT_TO_DOMAIN[name]  # Get the domain from the file name
-        
         with open(prompt_file, 'r') as file:
             prompt = file.read()
             response = openai.ChatCompletion.create(
-                model="gpt-4",
+                model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=2048,
+                max_tokens=4096,
                 n=1,
                 stop=None,
                 temperature=0.4
@@ -94,11 +93,11 @@ Collect samples from GPT-4
 '''
 output_folder = Path("/home/ksingla/workspace/PromptingNemo/data/synthetic/")
 
-prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/data/prompts/")
+prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/data/prompts/EN/")
 prompt_files = list(prompt_folder.glob("*.txt"))
 random.shuffle(prompt_files)
 
-output_file = output_folder / "text_tagged_train7.txt"
+output_file = output_folder / "text_tagged_train11.txt"
 os.system(f"mkdir -p {output_folder}")
 os.system(f"touch {output_file}")
 create_data_n_times(prompt_files, output_file, n=3)
