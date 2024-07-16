@@ -12,7 +12,7 @@ ENTITY_ACTION Book END a ENTITY_TRANSPORT_TYPE flight END to ENTITY_DESTINATION 
 
 Example ACTION phrases: 'book', 'check', 'reserve', 'set', 'update', 'view', 'generate', 'monitor', 'cancel', 'confirm', 'notify', 'remind', 'recommend', 'plan', 'explore', 'compare', 'add', 'remove', 'schedule', 'change'.
 
-At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
 
 Each sentence should be separated by a blank line. 
 

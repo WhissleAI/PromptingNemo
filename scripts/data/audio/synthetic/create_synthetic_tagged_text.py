@@ -92,16 +92,16 @@ def create_data_n_times(prompt_files, output_file, n=40):
 '''
 Collect samples from GPT-4
 '''
-output_folder = Path("/home/ksingla/workspace/medical-ner/data/")
+output_folder = Path("/home/ksingla/workspace/PromptingNemo/data/synthetic/")
 
-prompt_folder = Path("/home/ksingla/workspace/medical-ner/prompts/")
+prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/data/prompts/")
 prompt_files = list(prompt_folder.glob("*.txt"))
 random.shuffle(prompt_files)
 
-output_file = output_folder / "text_tagged_train3.txt"
+output_file = output_folder / "text_tagged_train4.txt"
 os.system(f"mkdir -p {output_folder}")
 os.system(f"touch {output_file}")
-create_data_n_times(prompt_files, output_file, n=30)
+create_data_n_times(prompt_files, output_file, n=10)
 
 
 # input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path
