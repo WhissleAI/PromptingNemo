@@ -5,6 +5,12 @@
 python app.py
 ```
 
+### Installation
+
+```
+chmod +X music_system.sh
+```
+
 ## Setup spotify requirements
 
 #### Download the latest release of spotifyd
@@ -24,3 +30,12 @@ tar xzf spotifyd.tar.gz
 sudo mv spotifyd /usr/local/bin/
 ```
 
+#### Configure spotifyd:
+
+Create a configuration file at ~/.config/spotifyd/spotifyd.conf:
+```
+username = "your_spotify_username"
+password = "your_spotify_password"
+backend = "pulseaudio"  # Or any other backend like alsa, portaudio
+device_name = "my_spotify_device"
+```
