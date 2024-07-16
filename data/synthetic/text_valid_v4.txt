@@ -1,0 +1,1094 @@
+I am experiencing shortness of breath lately
+I underwent a colonoscopy a week ago
+I was diagnosed with hypothyroidism six months ago
+I was instructed to take Aspirin daily
+I need to schedule a follow-up appointment in two weeks
+I had a heart attack two years ago
+I was prescribed Lipitor for my high cholesterol
+I am scheduled for a colonoscopy next week
+I underwent a hip replacement surgery three months ago
+I was diagnosed with rheumatoid arthritis two years ago
+I need to schedule a follow-up appointment in one week
+I was diagnosed with osteoporosis last year
+I underwent a knee replacement surgery six months ago
+I was prescribed Metoprolol for my high blood pressure
+I am scheduled for a hip replacement surgery next month
+I need to schedule a follow-up appointment in three weeks
+I was diagnosed with fibromyalgia three years ago
+I underwent an endoscopy a month ago
+I am scheduled for a tonsillectomy next week
+I was prescribed Prednisone for my rheumatoid arthritis
+I need to schedule a follow-up appointment in four weeks
+I was diagnosed with COPD five years ago
+I underwent a gallbladder removal surgery four months ago
+I am scheduled for a cataract surgery next month
+I have been advised to monitor my weight weekly
+Conduct a blood test for patient 123 in the lab 1
+Set the lab microscope to high magnification in lab 3
+Start the urinalysis for patient 654 at 10 am tomorrow
+Stop the autoclave in lab 4 after 15 minutes
+Resume the tissue culture in lab 5
+Collect the stool sample of patient 444 in lab 8
+Set the incubator to 37 degrees Celsius in lab 11
+Start the PCR test for patient 400 at 11 am tomorrow
+Stop the shaking water bath in lab 12 after 30 minutes
+Pause the HbA1c test for patient 500 and resume after 2 hours
+Resume the cell culture in lab 13
+Collect the bone marrow sample of patient 900 in lab 16
+Set the spectrophotometer to 540 nm in lab 19
+Start the liver function test for patient 910 at 1 pm tomorrow
+Stop the heating mantle in lab 20 after 45 minutes
+Resume the protein electrophoresis in lab 21
+Collect the sweat sample of patient 520 in lab 24
+Check the flight status for Flight 654 to Los Angeles
+Set a price alert for flights to Tokyo
+Update the hotel booking for Mr. John Smith to April 10th
+View the itinerary for my train trip to Berlin
+Cancel my hotel reservation in Istanbul
+Confirm my flight booking to Paris for July 10th
+Remind me to check-in for my flight to Dubai 24 hours before departure
+Recommend some budget hotels in London for September
+Plan a week-long trip to Singapore with a budget of $2000
+Explore flight options to Rio de Janeiro for December 25th
+Compare flight prices to Athens on different travel sites
+Add a car rental to my travel itinerary for Miami
+Remove the museum visit from my itinerary for Amsterdam
+Schedule a train trip to Vienna for October 31st
+Check the baggage allowance for my flight to Zurich
+Update my passport details in the travel system
+View the itinerary for my cruise trip to Caribbean
+Monitor flight prices to Bangkok and notify me when they go below $800
+Cancel my car rental in Las Vegas
+Confirm my train ticket to Brussels for March 5th
+Notify Mr. James about his flight status to Toronto
+Remind me to check-in for my flight to Moscow 48 hours before departure
+Recommend some luxury hotels in Rome for June
+Plan a three-day trip to Buenos Aires with a budget of $1500
+Explore flight options to New Delhi for January 1st
+Compare train prices to Munich on various travel platforms
+Add a hotel booking to my itinerary for Melbourne
+Remove the city tour from my itinerary for Seoul
+Schedule a bus trip to Venice for February 14th
+Check the baggage weight limit for my flight to Cairo
+Update my contact details in the travel system
+Monitor flight prices to Havana and notify me when they go below $600
+Cancel my hotel reservation in Marrakech
+Confirm my cruise booking to Alaska for July 20th
+Notify Mrs. Mary about her train status to Berlin
+Recommend some hostels in Dublin for May
+Plan a two-week trip to Tokyo with a budget of $3000
+Explore flight options to Istanbul for September 1st
+Compare flight prices to Athens on different travel websites
+Add a sightseeing tour to my itinerary for Rome
+Remove the city walk from my itinerary for Paris
+Schedule a train trip to Amsterdam for November 30th
+Check the balance of my checking account
+Transfer $200 from savings account to checking account
+Pay the electricity bill of $60 from my checking account
+Update my contact information on online banking profile
+Analyze my monthly expenses for July
+Generate a transaction report for last month
+Cancel the overdraft alert for my checking account
+Report a suspicious transaction on my credit card
+Alert me when $1000 or more is withdrawn from my savings account
+Budget $500 for groceries this month
+Deposit $300 into my checking account
+Withdraw $50 from my savings account
+Invest $1000 into mutual funds from my brokerage account
+Save $200 every month for 1 year in my savings account
+Spend less than $100 on dining out this month
+Monitor my credit card for unauthorized transactions
+Notify me when my credit card payment is due
+View my credit card payment history for last year
+Ronaldo with a stellar pass to Dybala who shoots it into the net
+Salah crosses the ball to Mane who heads it into the net
+Juventus equalizes in the last minute with a goal from Dybala
+Neymar injures himself and is substituted in the 30th minute of the match
+Arsenal defends brilliantly with 10 clearances in the first half
+Modric sets up a goal for Real Madrid in the La Liga match
+Set the thermostat to 72 degrees in the living room
+Play the 'Classical Melodies' on music system in the study room
+Send a 'Happy Birthday' message to John on WhatsApp
+Set a reminder for tomorrow at 9 AM to 'Buy groceries'
+Mute the speakers in the office room
+Activate the alarm system at 10 PM every day
+Open the garage door
+Close the blinds in the bedroom at sunset
+Lock the front door when everyone is asleep
+Unmute the computer in the study room
+Pause the dishwasher
+Skip the next song on the music player in the living room
+Stop the washing machine
+Deactivate the alarm system when I am home
+Call Alexa to play the news
+Set the AC to 24 degrees in the children's room
+Play 'Morning Alarm' on alarm clock at 6 AM every weekday
+Set a reminder for today at 8 PM to 'Take medication'
+Mute the notifications on the smartphone
+Activate the sprinkler system at 6 AM every day
+Open the windows in the kitchen at 8 AM every morning
+Lock the back door when everyone leaves the house
+Unmute the notifications on smartphone
+Pause the music on speakers in the bathroom
+Skip the next episode on the Netflix in the living room
+Stop the dryer
+Deactivate the motion sensors when guests are home
+Call Mom to say goodnight
+Set the humidifier to 30% in the baby's room
+Set a reminder for next Friday at 5 PM to 'Dinner with friends'
+Change the temperature of the refrigerator to 4 degrees Celsius
+Mute the notifications on the smartwatch
+Activate the pet feeder at 8 AM and 6 PM every day
+Close the roof window in the attic when it starts to rain
+Lock the car when I am not near it
+Unmute the calls on the phone
+Pause the audiobook on the smart speaker in the bedroom
+Skip the next track on the Spotify in the gym room
+Stop the robotic vacuum cleaner
+Deactivate the CCTV cameras when I am home
+Call Siri to set an alarm for 7 AM
+Set the air purifier to low in the living room
+Start a running session for 30 minutes at the park .
+Track my distance covered during cycling .
+Schedule a yoga session for 7 AM tomorrow.
+Update my height to 170 cm .
+Analyze my heart rate during weight lifting .
+View my weekly workout plan .
+Generate a workout plan focusing on strength training .
+Monitor my calories burned during swimming .
+Complete my workout session for today.
+Pause my treadmill run .
+Resume my treadmill run .
+Stop my aerobics class now.
+Increase the intensity of my spin class .
+Decrease the weight on my barbell to 20 kg .
+Record 20 pushups in my workout log .
+Log 3 miles of running for today.
+Measure my body mass index .
+Notify me 30 minutes before my pilates class starts.
+Increase my running distance to 5 miles per day.
+Set 3 times a week yoga sessions.
+Update my current weight to 70 kg .
+Track the calories burned during my HIIT workout .
+Schedule an aerobics class at 6 PM every Friday .
+Record 2 liters of water intake for today.
+Generate a meal plan for muscle gain .
+Monitor my sleep duration and quality .
+Complete my leg day workout.
+Pause my cycling session.
+Resume my cycling session.
+Stop my strength training workout.
+Increase the speed of my treadmill run .
+Decrease the incline on the treadmill .
+Record 15 squats in my workout log .
+Log 30 minutes of yoga for today.
+Measure my body fat percentage .
+Notify me 1 hour before my spin class starts.
+Increase my swimming duration to 1 hour per session.
+Set 2 times a week strength training sessions.
+Update my age to 25 years .
+Track the calories burned during my Zumba class.
+Start a 10-minute cool-down session after running .
+Record 5 liters of water intake for today.
+Generate a meal plan for weight loss .
+Monitor my heart rate during cardio workouts.
+Complete my core workout.
+Pause my HIIT session.
+Resume my HIIT session.
+Stop my Zumba class.
+Increase the resistance on the elliptical .
+Decrease the speed on the spin bike .
+Record 20 lunges in my workout log .
+Log 45 minutes of Pilates for today.
+Measure my muscle mass .
+Notify me 15 minutes before my kettlebell workout starts.
+Increase my rowing duration to 30 minutes per session.
+Set 4 times a week cardio sessions.
+Update my current weight to 65 kg .
+Track the calories burned during my kickboxing class.
+Record 3 liters of water intake for today.
+Generate a meal plan for maintaining weight .
+Monitor my step count during walking .
+Complete my upper body workout.
+Pause my rowing session.
+Resume my rowing session.
+Set a 9:00pm reminder to watch the Game of Thrones finale.
+Play the latest album by Taylor Swift .
+Pause the movie .
+Recommend some comedy shows .
+Skip to the next song .
+Update my favorite genre to rock .
+Search for The Office episodes.
+Add Breaking Bad to my watchlist .
+Remove Friends from my watchlist .
+Save the latest episode of Stranger Things .
+Record the next football match .
+Log my watch history.
+Notify me when the new Avengers movie is available.
+Remind me to watch Rick and Morty every Friday at 8:00pm .
+Like the latest album by Billie Eilish .
+Dislike the latest episode of The Walking Dead .
+Rate the Star Wars movie 5 stars.
+Shuffle my playlist .
+Repeat the song Shape of You by Ed Sheeran .
+Rewind the song by 30 seconds .
+Mute the audio .
+Unmute the video .
+Stop the music .
+Play the new album by Ariana Grande on Spotify .
+Search for horror movies on Netflix .
+Set a reminder to watch the The Crown every Sunday at 8:00pm .
+Update my favorite artist to Ed Sheeran .
+Recommend some romantic movies .
+Pause the podcast .
+Play the latest episode of The Daily podcast.
+Skip to the next track .
+Add Money Heist to my watchlist .
+Remove Narcos from my watchlist .
+Save the latest episode of Grey's Anatomy .
+Record the next basketball game .
+Log my watch history.
+Notify me when the new James Bond movie is available.
+Remind me to watch The Big Bang Theory every Monday at 9:00pm .
+Like the latest album by Justin Bieber .
+Dislike the latest episode of The Handmaid's Tale .
+Rate the Harry Potter movie 4 stars.
+Shuffle my workout playlist .
+Repeat the song Bad Guy by Billie Eilish .
+Rewind the song by 1 minute .
+Mute the audio .
+Unmute the video .
+Stop the music .
+Play the new album by BTS on Apple Music .
+Search for drama series on Hulu .
+Set a reminder to watch the The Mandalorian every Friday at 7:00pm .
+Update my favorite band to Coldplay .
+Recommend some thriller movies .
+Pause the audiobook .
+Play the latest episode of Serial podcast.
+Skip to the next chapter .
+Add The Witcher to my watchlist .
+Remove Peaky Blinders from my watchlist .
+Save the latest episode of The Good Place .
+Record the next tennis match .
+Log my watch history.
+Notify me when the new Batman movie is available.
+Remind me to watch Friends every Wednesday at 8:30pm .
+Like the latest album by Rihanna .
+Dislike the latest episode of The 100 .
+Rate the Lord of the Rings movie 5 stars.
+Shuffle my chill playlist .
+Repeat the song Perfect by Ed Sheeran .
+Rewind the song by 45 seconds .
+Mute the audio .
+Unmute the video .
+Stop the music .
+Play the new album by Drake on Tidal .
+Search for action movies on Amazon Prime .
+Set a reminder to watch the The Simpsons every Sunday at 8:00pm .
+Update my favorite singer to Adele .
+Recommend some mystery shows .
+Pause the documentary .
+Play the latest episode of The Moth podcast.
+Skip to the next song .
+Add The Office to my watchlist .
+Remove How I Met Your Mother from my watchlist .
+Save the latest episode of The Flash .
+I had a colonoscopy two years ago
+I take metformin for my diabetes
+I was diagnosed with high blood pressure last month
+I underwent a gallbladder removal surgery three years ago
+I will have a cataract surgery next month
+I was diagnosed with arthritis two years ago
+I am scheduled for a mammogram next week
+I had a hip replacement surgery three years ago
+I will be undergoing a knee replacement surgery next month
+I was diagnosed with osteoporosis last year
+I take beta blockers for my heart condition
+I am scheduled for a colonoscopy next week
+I had a pacemaker implantation two years ago
+I will be undergoing a bypass surgery next month
+I was diagnosed with glaucoma last year
+I take antihistamines for my allergies
+I am scheduled for an ultrasound next week
+I had a lung transplant two years ago
+I will be undergoing a liver transplant next month
+I was diagnosed with lupus last year
+I take calcium supplements for my osteoporosis
+I am scheduled for a CT scan next week
+I had a prostate surgery two years ago
+I will be undergoing a heart valve repair surgery next month
+I was diagnosed with chronic kidney disease last year
+I take statins for my high cholesterol
+I am scheduled for a PET scan next week
+Schedule a blood test for John Doe on June 20th
+Update the patient's medical history with the new allergy information
+Set the PCR machine to 95 degrees Celsius for 5 minutes
+Stop the autoclave after 15 minutes
+Pause the microscope calibration for 10 minutes
+Resume the spectrophotometer operation after 5 minutes
+Test the blood sample of John Doe for glucose levels
+Collect blood samples from Bob Lee for lipid profile test
+Store the tissue sample of Jane Doe in the sample storage
+Prepare the microscope for the cell analysis of Alice Smith
+Review the lab report of Bob Lee before sign-off
+Approve the lab report of John Doe
+Schedule a liver function test for Alice Smith on July 1st
+Update the patient's contact details with the new phone number
+Conduct an MRI for Jane Doe in the radiology department
+Change the time of the incubator to 24 hours
+Set the biochemistry analyzer to 37 degrees Celsius for 30 minutes
+Start the DNA sequencer for John Doe 's genetic test
+Stop the blood gas analyzer after 10 minutes
+Pause the ELISA reader calibration for 5 minutes
+Resume the microtome operation after 10 minutes
+Test the saliva sample of Bob Lee for cortisol levels
+Retrieve the patient records of Bob Lee from the database
+Prepare the flow cytometer for the lymphocyte count of Jane Doe
+Review the lab report of John Doe before sign-off
+Approve the lab report of Bob Lee
+Schedule a kidney function test for Jane Doe on August 2nd
+Update the patient's medication list with the new drug name
+Change the speed of the centrifuge to 5000 rpm
+Set the gel electrophoresis system to 100 volts for 1 hour
+Start the coagulometer for Bob Lee 's clotting time test
+Stop the sterilizer after 30 minutes
+Pause the fluorescence microscope calibration for 10 minutes
+Resume the mass spectrometer operation after 15 minutes
+Report the platelet count of Jane Doe to Dr. Baker
+Test the hair sample of John Doe for drug levels
+Review the lab report of Bob Lee before sign-off
+Approve the lab report of John Doe
+I would like to schedule a therapy session on July 15th
+I would like to record my feelings daily
+I want to explore some cognitive-behavioral therapies
+I need to update my contact information
+I want to track my progress weekly
+I feel better when I engage in physical activities
+I feel anxious in the mornings
+I would like to document my recent mood swings
+I would like to record my feelings daily
+I want to explore some cognitive-behavioral therapies
+I need to update my contact information
+I want to track my progress weekly
+I feel better when I engage in physical activities
+I feel anxious in the mornings
+I would like to document my recent mood swings
+I would like to record my feelings daily
+I want to explore some cognitive-behavioral therapies
+I need to update my contact information
+I want to track my progress weekly
+I feel better when I engage in physical activities
+I feel anxious in the mornings
+I would like to document my recent mood swings
+Book a flight to New York on May 25th
+Check the flight status for AA 123
+Reserve a hotel room in Rome for June 10th
+Set a flight delay alert for UA 456
+Update my return flight to July 30th
+View the itinerary for John Doe
+Generate a travel itinerary for Tokyo
+Monitor flight prices for London on Skyscanner
+Cancel my hotel reservation in Madrid
+Confirm my train booking to Berlin
+Notify Jane Doe about the gate change for DL 789
+Remind me to check in for my flight 24 hours before departure
+Plan a 7 days trip to Sydney within a $2000 budget
+Explore bus routes from Amsterdam to Brussels
+Compare hotel prices in Dubai on Booking.com
+Add a city tour to my June 15th plans
+Remove the museum visit from my itinerary
+Change my flight to San Francisco to September 20th
+Book a flight to Prague for October 15th
+Check the flight status for BA 321
+Reserve a hotel room in Venice for November 5th
+Set a baggage delay alert for LH 654
+Update my departure flight to December 15th
+View the travel itinerary for Michael Smith
+Generate a vacation itinerary for Barcelona
+Monitor flight prices for Athens on Expedia
+Cancel my apartment booking in Vienna
+Confirm my ferry booking to Santorini
+Remind me to pack my passport for my January 15th trip
+Plan a 10 days trip to Bangkok within a $1500 budget
+Explore train routes from Munich to Zurich
+Compare hostel prices in Lisbon on Hostelworld
+Add a wine tasting event to my February 20th plans
+Remove the city walk from my itinerary
+Change my flight to Istanbul to April 5th
+Book a flight to Copenhagen for May 10th
+Check the flight status for AF 567
+Set a flight delay alert for KL 234
+Update my hotel check-out date to July 15th
+View the itinerary for George Brown
+Generate a trip itinerary for Budapest
+Monitor flight prices for Seoul on Kayak
+Cancel my resort booking in Cancun
+Confirm my bus booking to Berlin
+Notify Laura Davis about the flight time change for QR 345
+Remind me to print my boarding pass 2 hours before the flight
+Plan a 14 days trip to Maldives within a $4000 budget
+Explore bike routes in Copenhagen
+Compare motel prices in Las Vegas on Hotels.com
+Add a concert to my August 15th plans
+Remove the sightseeing tour from my itinerary
+Change my flight to Rio de Janeiro to October 20th
+Check the balance of my checking account
+Transfer $1000 from savings account to checking account
+Pay $200 towards credit card from checking account
+Update my address in savings account
+Analyze my expenses for the last month
+View the statement of credit card for last month
+Report the unauthorized transaction of $500 on my credit card
+Alert me when savings account balance goes below $1000
+Deposit $1500 into savings account
+Withdraw $200 from checking account
+Invest $5000 into mutual funds from savings account
+Save $200 per month into savings account
+Spend $100 on entertainment from checking account this week
+Monitor my credit card for fraudulent activity
+Notify me when my checking account balance reaches $5000
+Check my retirement account balance on mobile app
+Transfer $300 to John's savings account from my checking account
+Pay $75 towards phone bill from my checking account
+Update my email address in my savings account
+Analyze my spending habits for the past year
+View my checking account statement for this month
+Generate a spending report for my checking account
+Cancel the automatic transfer of $200 to savings account
+Report an unauthorized charge of $250 on my credit card
+Alert me when my credit card balance exceeds $2000
+Budget $200 for dining out every month
+Deposit $1000 into my investment account
+Withdraw $500 from my ATM
+Invest $10000 in stocks from my brokerage account
+Save $300 per month for vacation
+Spend $50 on books this month
+Monitor my bank accounts for unusual activity
+Notify me when my savings account reaches $10000
+Check the student loan balance on online banking
+Transfer $150 to Mom's checking account from my savings account
+Pay $120 towards internet bill from my checking account
+Update my phone number in my credit card account
+Analyze my income and expenses for the past six months
+View my mortgage account statement for last month
+Generate a income report for my checking account
+Cancel the automatic deposit of $500 to brokerage account
+Report an unauthorized withdrawal of $300 from my checking account
+Alert me when my checking account balance drops below $500
+Budget $150 for clothes shopping every month
+Deposit $2000 into my retirement account
+Withdraw $100 from my savings account at the ATM
+Invest $5000 in mutual funds from my investment account
+Save $250 per month for emergency fund
+Spend $30 on coffee this week
+Monitor my credit cards for suspicious charges
+Notify me when my investment account reaches $20000
+Check the car loan balance on mobile app
+Transfer $200 to Dad's savings account from my checking account
+Pay $80 towards gas bill from my checking account
+Update my mailing address in my checking account
+Analyze my saving habits for the past year
+View my credit card statement for this month
+Generate a expense report for my savings account
+Mane dribbles past the defenders and shoots a powerful strike for Liverpool
+Neymar fouls Messi in a crucial Champions League match
+Chelsea wins the Premier League title for the 2020-2021 season
+Hazard recovers from his injury and scores a stunning goal for Real Madrid
+Mbappe dribbles past the defenders and shoots a powerful strike for PSG
+Arsenal dominates possession with 60% possession in the first half
+Kane sets up a perfect goal for Tottenham in the Premier League match
+Dybala fouls Lukaku in a crucial Serie A match
+Firmino recovers from his injury and scores a stunning goal for Liverpool
+Barcelona dominates possession with 70% possession in the first half
+Juventus draws with Inter Milan with a 2-2 scoreline
+Insigne fouls Ronaldo in a crucial Serie A match
+PSG wins the Ligue 1 title for the 2020-2021 season
+Griezmann recovers from his injury and scores a stunning goal for Barcelona
+Liverpool dominates possession with 65% possession in the first half
+Lukaku sets up a perfect goal for Inter Milan in the Serie A match
+Pogba fouls Fernandes in a crucial Premier League match
+Modric sets up a perfect goal for Real Madrid in the La Liga match
+Chelsea draws with Manchester City with a 2-2 scoreline
+Silva fouls De Bruyne in a crucial Premier League match
+PSG wins the Ligue 1 title for the 2020-2021 season
+Neymar recovers from his injury and scores a stunning goal for PSG
+Mbappe dribbles past the defenders and shoots a powerful strike for PSG
+Barcelona dominates possession with 65% possession in the first half
+Dembele sets up a perfect goal for Barcelona in the La Liga match
+Liverpool draws with Manchester United with a 1-1 scoreline
+Henderson fouls Pogba in a crucial Premier League match
+I was diagnosed with hypertension two years ago
+I took paracetamol for my fever yesterday night
+I had hip replacement surgery three months ago
+I am scheduled for a mammogram next week
+I need a follow-up appointment next month
+I felt abdominal pain this afternoon
+I underwent a CT scan last Tuesday
+I noticed a lump in my right breast yesterday
+I was referred to the neurology department for further tests
+I will need a follow-up surgery next month
+Play the Star Wars: The Last Jedi movie
+Pause the music
+Stop the Game of Thrones series
+Skip to the next episode
+Rewind the video by 15 minutes
+Mute the audio
+Unmute the podcast
+Update my genre preference to horror
+Recommend movies in the comedy genre
+Search for The Dark Knight movie
+Add the Friends series to my watchlist
+Remove the Breaking Bad series from my watchlist
+Save the Taylor Swift album for offline listening
+Record the The Big Bang Theory show
+Log my username and password
+Notify me when the Stranger Things series is available on Netflix
+Remind me to watch the Avengers: Endgame movie on this Saturday
+Like the The Witcher series
+Dislike the The Walking Dead series
+Rate the Joker movie 5 stars
+Shuffle the Ariana Grande songs
+Repeat the Frozen II movie
+Play Ed Sheeran songs on Spotify
+Pause the The Good Place series
+Stop the BTS music
+Skip to the next Billie Eilish song
+Rewind the Money Heist series by 10 minutes
+Mute the The Office series
+Unmute the Drake music
+Set a reminder to listen to the Adele album at 7 PM
+Update my artist preference to Justin Bieber
+Recommend songs by Rihanna
+Search for Inception movie
+Add the Katy Perry songs to my playlist
+Remove the The Godfather movie from my watchlist
+Save the Peaky Blinders series for offline viewing
+Record the The Simpsons show
+Log my email and password
+Notify me when the Selena Gomez album is available on Apple Music
+Remind me to listen to the Bruno Mars songs on tomorrow
+Like the The Lion King movie
+Dislike the The Irishman movie
+Rate the The Shawshank Redemption movie 4 stars
+Shuffle the The Weeknd songs
+Repeat the The Handmaid's Tale series
+Play jazz music
+Pause the thriller movie
+Stop the drama series
+Skip to the next action movie
+Rewind the comedy show by 5 minutes
+Mute the pop music
+Unmute the rock music
+Set a reminder to watch the crime series at 9 PM
+Update my content preference to documentaries
+Recommend sci-fi movies
+Search for fantasy series
+Add the horror movie to my watchlist
+Remove the adventure series from my watchlist
+Save the mystery movie for offline viewing
+Record the reality show
+Log my username and password
+Notify me when the animated movie is available on Disney+
+Remind me to watch the documentary movie on this Sunday
+Like the musical movie
+Dislike the war movie
+Rate the western movie 3 stars
+Shuffle the country music
+Repeat the drama series
+Play The Queen's Gambit series on Netflix
+Pause the The Umbrella Academy series on Netflix
+Stop the The Witcher series on Netflix
+Skip to the next The Crown episode on Netflix
+Mute the Breaking Bad series on Netflix
+Unmute the Dark series on Netflix
+Update my genre preference to horror on Amazon Prime
+Conduct a blood test on patient 234 in the lab 3
+Start the urinalysis for patient 567 in the lab 1
+Stop the calibration on the centrifuge
+Pause the DNA sequencing on sample 789
+Resume the glucose test on sample 345 in lab 2
+Store the tissue samples of patient 890 in freezer 1
+Prepare the histology section for patient 456 's biopsy
+Review the lab results of patient 789 before 5:00 PM
+Approve the lab order for patient 456 's MRI
+Change the humidity level in the lab 2 to 45%
+Set the timer on the autoclave for 30 minutes
+Start the allergy test for patient 789 in the lab 3
+Stop the titration on the pH meter
+Pause the cell count on sample 123
+Resume the hormone test on sample 456 in lab 1
+Test the saliva sample of patient 123 for cortisol levels
+Collect hair samples from patient 789 for drug testing
+Store the bone marrow samples of patient 123 in freezer 2
+Review the imaging results of patient 123 before 6:00 PM
+Approve the lab order for patient 789 's ultrasound
+Change the light intensity in the lab 1 to 500 lux
+Set the volume on the spectrophotometer to 100 mL
+Start the liver function test for patient 123 in the lab 4
+Stop the dilution on the pipette
+Pause the genetic test on sample 789
+Resume the thyroid test on sample 123 in lab 3
+Test the blood sample of patient 789 for HIV
+Store the lung tissue samples of patient 789 in freezer 3
+I need to schedule a therapy session next Tuesday
+I want to track my progress weekly
+I feel anxious in the mornings
+I need to cancel my therapy session tomorrow
+I would like to document my recent mood swings
+I want to explore some cognitive-behavioral therapies
+I feel better when I engage in physical activities
+I need relaxation techniques to help with my anxiety
+Add 3 oranges to my shopping list on the mobile app .
+Check the price of bananas at Costco .
+Find the nearest grocery store .
+Add 2 loaves of bread to the shopping list .
+Check the price of organic eggs at Whole Foods .
+Find the dairy section in Costco .
+Check the price of almond milk at Trader Joe's .
+Find the produce section in Walmart .
+Check the price of canned tomatoes at Aldi .
+Find the bakery section in Costco .
+Check the price of brown rice at Walmart .
+Find the frozen foods section in Trader Joe's .
+Check the price of oatmeal at Whole Foods .
+Find the canned goods section in Aldi .
+Add 1 pack of bacon to the shopping list on the web app .
+Check the price of quinoa at Costco .
+Find the meat section in Walmart .
+Check the price of pasta at Trader Joe's .
+Find the condiments section in Aldi .
+Add 1 jar of mayonnaise to the shopping list on the web app .
+Check the price of salsa at Whole Foods .
+Find the snacks section in Costco .
+Check the price of pretzels at Walmart .
+Find the beverages section in Trader Joe's .
+Check the price of apple juice at Aldi .
+Find the cleaning supplies section in Whole Foods .
+Check the price of toilet paper at Costco .
+Find the personal care section in Walmart .
+Check the price of body wash at Trader Joe's .
+Find the pet supplies section in Aldi .
+Check the price of bird seed at Whole Foods .
+Find the baby products section in Costco .
+Check the price of baby formula at Walmart .
+Find the health products section in Trader Joe's .
+Check the price of cough syrup at Aldi .
+Find the electronics section in Whole Foods .
+Set the thermostat to 72 degrees in the living room
+Increase the volume of the TV in the bedroom to 30
+Play the song 'Imagine' on the smart speaker
+Send a message 'I'll be home late' to John on WhatsApp
+Set a reminder to call Mom at 5 pm
+Create an event 'Dinner with friends' on June 12 at 7 pm
+Mute the television in the bedroom
+Unmute the music system in the kitchen
+Skip the current song on the Spotify player
+Stop the washing machine in the laundry room
+Lock the front door
+Unlock the back door
+Activate the security system
+Deactivate the alarm
+Open the blinds in the living room
+Close the garage door
+Set the fan to high speed in the bedroom
+Send an email 'Meeting notes' to team on Gmail
+Create a meeting 'Project discussion' on July 1 at 2 pm
+Set the air purifier to medium in the living room
+Play the podcast 'Daily News' on the smart speaker at 8 am
+Send a message 'Happy Birthday' to Lisa on Facebook at 12 am
+Set a reminder to buy groceries at 5 pm
+Create an event 'Yoga class' on June 20 at 6 pm
+Mute the radio in the kitchen
+Unmute the sound system in the living room
+Skip the current episode on the Netflix player
+Stop the dishwasher in the kitchen
+Lock the bedroom door
+Unlock the bathroom door
+Activate the sprinkler system at 6 am every day
+Deactivate the heating system
+Open the curtains in the bedroom
+Close the windows in the living room
+Set the AC to 68 degrees in the bedroom
+Send an email 'Invoice details' to client on Outlook
+Create a meeting 'Budget planning' on July 15 at 11 am
+Set the dehumidifier to low in the basement
+Play the audiobook '1984' on the smart speaker at 10 pm
+Send a message 'Good night' to family on Messenger at 10 pm
+Create an event 'Movie night' on June 25 at 8 pm
+Mute the alarm in the bedroom
+Unmute the TV in the living room
+Skip the current track on the music player
+Stop the dryer in the laundry room
+Lock the car
+Unlock the safe
+Activate the pool cleaner at 10 am every day
+Deactivate the music system
+Open the garage door
+Close the blinds in the study room
+Set the heater to 75 degrees in the living room
+Send an email 'Holiday plans' to friends on Yahoo Mail
+Create a meeting 'Team building' on July 20 at 3 pm
+Set the vacuum cleaner to high in the living room
+Increase the volume of the radio in the kitchen to 20
+Play the playlist 'Workout Mix' on the smart speaker at 7 am
+Send a message 'See you soon' to friend on Viber at 6 pm
+Set a reminder to feed pets at 8 am every day
+Create an event 'Book club' on June 30 at 5 pm
+Search for gluten-free pizza recipes.
+Set a 15 minutes cooking timer for the pasta.
+Provide the ingredient list for chicken parmesan .
+Track my vegan dietary preferences.
+Update my profile to include lactose intolerance .
+Add garlic and onion to the shopping list.
+Remove eggs from the cake recipe.
+List all soup recipes that include lentils .
+Find a dessert recipe that requires less than 5 ingredients.
+Prepare the beef stew according to the recipe steps.
+Cook spaghetti bolognese for dinner .
+Start the sautéing process for onions .
+Stop the boiling process for potatoes .
+Pause the baking process for bread .
+Resume the frying process for chicken .
+Measure 1 cup of flour .
+Chop carrots into small pieces.
+Stir the soup every 5 minutes .
+Bake the cookies at 180 degrees.
+Boil pasta for 10 minutes .
+Grill the steaks to medium-rare.
+Fry the bacon until crispy.
+Serve the lasagna with salad .
+Mix flour , sugar , and eggs in a bowl.
+Combine butter and garlic for the garlic bread .
+Preheat the oven to 200 degrees for the roast chicken .
+Pour 1 cup of milk into the mixture.
+Blend strawberries and bananas for the smoothie .
+Whisk eggs until fluffy for the omelette .
+Search for low-carb recipes for breakfast .
+Set a 30-minute timer for the brownies .
+Provide the list of ingredients needed for sushi .
+Track my vegetarian diet preferences.
+Update my profile to reflect my nut allergy .
+Add spinach and feta to the shopping list.
+Remove butter from the mashed potatoes recipe.
+List all salad recipes that include avocado .
+Find a quick snack recipe that requires less than 10 minutes to prepare.
+Prepare the chicken curry according to the recipe steps.
+Cook vegetable stir fry for lunch .
+Start the grilling process for corn .
+Stop the roasting process for turkey .
+Pause the steaming process for broccoli .
+Resume the simmering process for soup .
+Measure 2 tablespoons of olive oil .
+Chop onions into thin slices.
+Stir the sauce every 2 minutes .
+Bake the apple pie at 350 degrees.
+Boil eggs for 12 minutes .
+Grill the fish until it's flaky.
+Fry the potatoes until golden brown.
+Serve the spaghetti with parmesan .
+Mix sugar , cocoa powder , and milk in a pot.
+Preheat the oven to 375 degrees for the lasagna .
+Pour 2 cups of chicken broth into the pot.
+Whisk cream until peaks form for the whipped cream .
+Search for high-protein recipes for dinner .
+Set a 20-minute timer for the rice .
+Provide the list of ingredients needed for guacamole .
+Track my dairy-free diet preferences.
+Update my profile to reflect my shellfish allergy .
+Add bread and cheese to the shopping list.
+Remove sugar from the coffee recipe.
+List all pasta recipes that include shrimp .
+Find a healthy snack recipe that requires less than 3 ingredients.
+Prepare the salmon fillet according to the recipe steps.
+Cook quinoa salad for lunch .
+Start the marinating process for chicken .
+Stop the baking process for cake .
+Start an interval training session for 45 minutes
+Track my heart rate during my cycling session
+Set a weight loss goal of 10 pounds
+Schedule a yoga session for 6 PM tomorrow
+Update my height to 6 feet
+Analyze my sleep pattern for the past week
+View my weekly workout plan
+Generate a workout plan focusing on strength training
+Monitor my calorie intake for today
+Complete a 5k run in 30 minutes
+Pause my treadmill run
+Resume my swimming session
+Stop my high-intensity interval training session
+Increase the intensity of my elliptical workout
+Decrease the intensity of my rowing workout
+Record my distance covered during my cycling session
+Log my calories burned during my jogging session
+Measure my body mass index
+Notify me 15 minutes before my Pilates class
+Start a strength training session with dumbbells
+Track my steps for today
+Set a muscle gain goal of 5 pounds
+Schedule a spin class for next Monday at 7 PM
+Update my weight to 180 pounds
+Analyze my hydration level for today
+View my monthly workout plan
+Generate a workout plan focusing on cardio
+Monitor my macronutrient intake for this week
+Complete a Zumba class in 60 minutes
+Pause my weightlifting session
+Resume my aerobics session
+Stop my CrossFit session
+Increase the intensity of my yoga session
+Decrease the intensity of my Pilates session
+Record my heart rate during my spinning session
+Log my calories consumed today
+Measure my body fat percentage
+Notify me 10 minutes before my personal training session
+Start a boxing session for 30 minutes
+Track my sleep hours for the past week
+Set a flexibility goal to touch my toes
+Schedule a kickboxing class for this Saturday at 9 AM
+Update my age to 35 years
+Analyze my blood pressure for the past month
+View my daily workout plan
+Generate a workout plan focusing on flexibility
+Monitor my protein intake for this week
+Complete a Tai Chi session in 45 minutes
+Pause my HIIT session
+Resume my dance class
+Stop my spinning session
+Increase the intensity of my bootcamp workout
+Decrease the intensity of my bodyweight workout
+Record my calories burned during my swimming session
+Log my steps for today
+Measure my waist circumference
+Notify me 20 minutes before my gym session
+Start a powerlifting session for 60 minutes
+Track my water intake for today
+Set a endurance goal to run 10 kilometers
+Schedule a personal training session for next Wednesday at 5 PM
+Update my weight to 200 pounds
+Analyze my blood glucose level for the past month
+View my weekly workout plan
+Generate a workout plan focusing on bodyweight exercises
+Monitor my carbohydrate intake for this week
+Complete a ballet class in 60 minutes
+Pause my martial arts session
+Resume my kickboxing class
+Stop my powerlifting session
+Increase the intensity of my Zumba session
+Decrease the intensity of my tai chi session
+Record my heart rate during my powerlifting session
+Log my calories consumed today
+Measure my body fat percentage
+Notify me 10 minutes before my yoga class
+Start a spinning session for 30 minutes
+Track my sleep hours for the past week
+Set a strength goal to lift 200 pounds
+Schedule a CrossFit class for this Friday at 6 PM
+Check the balance of my checking account
+Transfer $2000 from my savings account to my checking account
+Pay the electricity bill of $150 from my checking account
+Update my address in the savings account details
+Analyze my expenses for the last month
+View the transaction history of my checking account for the past week
+Generate a financial report for the last quarter
+Cancel the low balance alert for my checking account
+Report any suspicious transactions on my credit card
+Alert me when my checking account balance goes below $500
+Budget $2000 for groceries this month
+Deposit $1000 into my savings account
+Withdraw $500 from my checking account
+Invest $5000 in mutual funds
+Save $10000 for vacation by the end of year
+Spend less than $100 on dining out this week
+Monitor my credit card for unusual activity
+Check the balance of my credit card
+Pay the internet bill of $50 from my savings account
+Update my phone number in the checking account details
+Analyze my spending habits for the last year
+View the transaction history of my savings account for the past month
+Generate a financial report for the last year
+Cancel the fraud alert for my credit card
+Report any unauthorized transactions on my debit card
+Alert me when my savings account balance goes above $10000
+Budget $500 for transportation this month
+Deposit $2000 into my checking account
+Withdraw $100 from my savings account
+Invest $10000 in stocks
+Save $5000 for home renovation by the end of year
+Spend less than $50 on entertainment this week
+Monitor my debit card for fraudulent activity
+Check the balance of my debit card
+Pay the water bill of $70 from my checking account
+Update my email in the savings account details
+Analyze my income for the last six months
+View the transaction history of my credit card for the past week
+Generate a financial report for the last six months
+Cancel the overdraft alert for my checking account
+Report any suspicious transactions on my savings account
+Alert me when my checking account balance goes below $100
+Budget $1000 for rent this month
+Deposit $500 into my checking account
+Withdraw $200 from my savings account
+Invest $2000 in bonds
+Save $3000 for car purchase by the end of year
+Spend less than $30 on shopping this week
+Monitor my checking account for unusual activity
+Check the balance of my savings account
+Pay the gas bill of $80 from my savings account
+Update my address in the checking account details
+Analyze my expenses for the last year
+View the transaction history of my savings account for the past month
+Generate a financial report for the last year
+Book a flight to New York leaving on June 5th
+Check the flight status for Los Angeles departing on July 10th
+Reserve a hotel room in Rome for August 20th
+Set a travel alert for Tokyo for September 15th
+Update my itinerary with a visit to The Louvre on October 30th
+View the train schedule for Berlin on November 25th
+Generate a budget for a trip to Sydney for two weeks
+Monitor flight prices for Dubai for December 31st
+Cancel my hotel reservation in Madrid on January 1st
+Confirm my bus booking to Amsterdam on February 14th
+Notify me when flight prices to Paris drop
+Recommend a hotel in Athens for April 21st
+Plan a cruise to The Caribbean for May 25th
+Explore train options to Vienna for June 29th
+Compare flight prices to Beijing for July 4th
+Add a museum visit to my itinerary for Moscow on August 8th
+Schedule a taxi pickup from The airport on October 16th
+Change my flight to Rio de Janeiro to November 20th
+Book a flight to Buenos Aires leaving on December 25th
+Check the flight status for Seoul departing on January 1st
+Reserve a hotel room in Copenhagen for February 14th
+Set a travel alert for Helsinki for March 17th
+Update my itinerary with a visit to The Colosseum on April 21st
+View the train schedule for Stockholm on May 25th
+Generate a budget for a trip to Lisbon for one week
+Monitor flight prices for Warsaw for June 29th
+Cancel my hotel reservation in Prague on July 4th
+Confirm my bus booking to Budapest on August 8th
+Notify me when flight prices to Brussels drop
+Recommend a hotel in Oslo for October 16th
+Plan a cruise to The Mediterranean for November 20th
+Explore train options to Dublin for December 25th
+Compare flight prices to Edinburgh for January 1st
+Add a castle tour to my itinerary for Cardiff on February 14th
+Remove the pub crawl from my itinerary for Belfast on March 17th
+Schedule a taxi pickup from The train station on April 21st
+Change my flight to Glasgow to May 25th
+Book a flight to Perth leaving on June 29th
+Check the flight status for Adelaide departing on July 4th
+Reserve a hotel room in Brisbane for August 8th
+Set a travel alert for Melbourne for September 12th
+View the train schedule for Canberra on November 20th
+Generate a budget for a trip to Darwin for three weeks
+Monitor flight prices for Hobart for December 25th
+Cancel my hotel reservation in Auckland on January 1st
+Confirm my bus booking to Wellington on February 14th
+Notify me when flight prices to Christchurch drop
+Recommend a hotel in Hamilton for April 21st
+Plan a cruise to The Pacific Islands for May 25th
+Explore train options to Tauranga for June 29th
+Compare flight prices to Napier for July 4th
+Add a wine tasting to my itinerary for Nelson on August 8th
+Lewandowski scores a hat-trick, bringing Bayern Munich into a comfortable lead
+Arsenal draws the match despite Chelsea's early lead
+Juventus loses their Serie A match against Inter Milan
+Tottenham defends well, conceding only one shot on target in the first half
+Barcelona wins the El Clasico match, beating Real Madrid 3-2
+I take Metformin twice a day for my diabetes
+I underwent a colonoscopy three weeks ago
+I am scheduled for a mammogram next Tuesday
+I noticed a lump in my breast last week
+I underwent a gallbladder removal surgery six months ago
+I am scheduled for a CT scan next Friday
+I noticed a rash on my back yesterday
+I take Warfarin daily for my blood clot
+I had a dental implant three months ago
+I am scheduled for an ultrasound next Wednesday
+I noticed blurred vision occasionally since last week
+I take Aspirin daily for my heart condition
+I underwent a hip arthroscopy six months ago
+I am scheduled for a bone density test next Monday
+I take Prozac daily for my depression
+I underwent a lumpectomy one year ago
+I am scheduled for an echocardiogram next Thursday
+I noticed unexplained weight loss over the past few months
+Play the movie titled The Godfather
+Skip to the next song
+Pause the podcast
+Set a weekly reminder to watch Game of Thrones
+Recommend some comedy shows
+Update my favorite genres to rock and pop
+Play Mozart's Symphony No. 40
+Mute the music
+Unmute the TV
+Set the movie to repeat
+Add Friends to my Netflix watchlist
+Remove The Office from my Netflix watchlist
+Save the last episode of Breaking Bad
+Record the NBA Finals
+Log my viewing history
+Notify me when the new season of Stranger Things is available
+Remind me to watch The Mandalorian every Friday at 8 PM
+Like the Inception movie on Netflix
+Dislike the Twilight movie on Netflix
+Rate the The Crown with 5 stars on Netflix
+Shuffle my playlist on Spotify
+Repeat the song Rolling in the Deep by Adele
+Search for Coldplay's songs on Spotify
+Play the album Mylo Xyloto by Coldplay
+Stop the music after 30 minutes
+Rewind the movie by 10 minutes
+Set a reminder to watch The Simpsons every Sunday at 8 PM
+Recommend some thriller movies to watch on this weekend
+Update my preferred movie genres to horror and thriller
+Play Beethoven's Symphony No. 5
+Mute the radio
+Unmute the movie
+Set the TV show to repeat
+Add The Big Bang Theory to my Netflix watchlist
+Remove How I Met Your Mother from my Netflix watchlist
+Save the last episode of Friends
+Record the FIFA World Cup
+Log my listening history
+Notify me when the new album of Taylor Swift is available
+Remind me to listen to Reputation every Monday at 9 AM
+Like the song Bad Blood on Spotify
+Dislike the song Shake It Off on Spotify
+Rate the album 1989 with 4 stars on Spotify
+Shuffle my workout playlist on Spotify
+Repeat the song Blank Space by Taylor Swift
+Search for Ed Sheeran's songs on Spotify
+Play the album Divide by Ed Sheeran
+Stop the music after 1 hour
+Rewind the podcast by 2 minutes
+Set a reminder to listen to TED Talks Daily every weekday at 7 AM
+Recommend some mystery podcasts to listen to during my commute
+Play The Beatles' Hey Jude
+Mute the TV
+Unmute the radio
+Set the music to repeat
+Add The Walking Dead to my Netflix watchlist
+Remove Grey's Anatomy from my Netflix watchlist
+Save the last episode of The Crown
+Record the The Oscars
+Log my watching history
+Notify me when the new season of The Witcher is available
+Remind me to watch Money Heist every Wednesday at 10 PM
+Like the movie The Dark Knight on Netflix
+Dislike the movie The Notebook on Netflix
+Rate the series Breaking Bad with 5 stars on Netflix
+Shuffle my favorite songs playlist on Spotify
+Repeat the song Let It Be by The Beatles
+Search for Queen's songs on Spotify
+Play the album Bohemian Rhapsody by Queen
+Stop the music after 45 minutes
+Rewind the movie by 15 minutes
+Set a reminder to watch The Queen's Gambit every Friday at 9 PM
+Recommend some action movies to watch on tomorrow night
+Update my preferred movie genres to action and adventure
+Play Pink Floyd's Comfortably Numb
+Mute the radio
+Unmute the TV
+Set the movie to repeat
