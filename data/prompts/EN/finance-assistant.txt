@@ -15,8 +15,10 @@ ENTITY_NEWS_TYPE Economic reports END indicate a drop in ENTITY_ECONOMIC_INDICAT
 
 Example ACTION phrases: 'check', 'transfer', 'pay', 'set up', 'update', 'analyze', 'view', 'generate', 'schedule', 'cancel', 'report', 'alert', 'budget', 'deposit', 'withdraw', 'invest', 'save', 'spend', 'monitor', 'notify'.
 
-At the end of the sentence, add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line. The speaker can have different levels of language skills, therefore, grammar should reflect that.
 
-Generate exactly 200 tagged sentences.
+Generate exactly 200 tagged sentences. No numbering of sentences.

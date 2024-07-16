@@ -8,12 +8,18 @@ Tags indicate one of these entity types: ACTION, DESTINATION, DATE, TIME, DURATI
 Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
 
 For example:
-ENTITY_ACTION Book END a ENTITY_TRANSPORT_TYPE flight END to ENTITY_DESTINATION Paris END on ENTITY_DATE August 15th END
+ENTITY_ACTION Book END a ENTITY_TRANSPORT_TYPE flight END to ENTITY_DESTINATION Sydney END leaving ENTITY_DATE March 5th END
+ENTITY_ACTION Check END the ENTITY_ITINERARY_ITEM status END of my ENTITY_TRANSPORT_TYPE flight END to ENTITY_DESTINATION New York END
+ENTITY_ACTION Reserve END a ENTITY_ACCOMMODATION_TYPE hotel room END in ENTITY_DESTINATION Rome END for ENTITY_DATE July 10th END
 
 Example ACTION phrases: 'book', 'check', 'reserve', 'set', 'update', 'view', 'generate', 'monitor', 'cancel', 'confirm', 'notify', 'remind', 'recommend', 'plan', 'explore', 'compare', 'add', 'remove', 'schedule', 'change'.
 
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
 Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
+
+Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line. 
 
-Generate exactly 200 tagged sentences.
+Generate exactly 200 tagged sentences. No numbering of sentences.

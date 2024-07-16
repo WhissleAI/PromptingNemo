@@ -9,13 +9,17 @@ Tags indicate one of these entity types: ACTION, ITEM, QUANTITY, PRICE, STORE, D
 Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
 
 For example:
-ENTITY_ACTION Add END ENTITY_QUANTITY 2 END ENTITY_ITEM apples END to my ENTITY_LIST_TYPE shopping list END on the ENTITY_PLATFORM web app END
+ENTITY_ACTION Add END ENTITY_QUANTITY 1 END ENTITY_ITEM bag of chips END to my ENTITY_LIST_TYPE shopping list END INTENT_ADD_TO_LIST
+ENTITY_ACTION Call END ENTITY_STORE Walmart END and ENTITY_ACTION ask END about the ENTITY_PRICE price END of ENTITY_ITEM ham END INTENT_CALL_STORE
+ENTITY_ACTION Check END if ENTITY_STORE Costco END has ENTITY_ITEM cheddar cheese END in ENTITY_STORE_SECTION the dairy section END INTENT_ITEM_AVAILABILITY
 
 Example ACTION phrases: 'add', 'check', 'find', 'set', 'remove', 'update', 'list', 'compare', 'buy', 'purchase', 'track', 'note', 'search', 'locate', 'schedule', 'remind', 'notify', 'call', 'talk', 'visit'.
 
-At the end of sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
 
-Generate exactly 200 tagged sentences.
+Generate exactly 200 tagged sentences. No numbering of sentences.
 

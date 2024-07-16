@@ -29,3 +29,7 @@ python scripts/sysnthetic_audio_manifest.py {gtts,xtts,piper}
 <manifest_file>: Path to the output manifest file.
 
 verify the files, now it's time to train a speech model.
+
+
+TODO:
+

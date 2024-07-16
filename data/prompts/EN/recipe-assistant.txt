@@ -25,8 +25,10 @@ ENTITY_ACTION Remove END ENTITY_INGREDIENT onions END from the ENTITY_INGREDIENT
 
 Example ACTION phrases: 'search', 'set', 'provide', 'track', 'update', 'add', 'remove', 'list', 'find', 'prepare', 'cook', 'start', 'stop', 'pause', 'resume', 'measure', 'chop', 'stir', 'bake', 'boil', 'grill', 'fry', 'serve', 'mix', 'combine', 'preheat', 'pour', 'blend', 'whisk'.
 
-At the end of the sentence, add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line.
 
-Generate exactly 200 tagged sentences.
+Generate exactly 200 tagged sentences. No numbering of sentences.
