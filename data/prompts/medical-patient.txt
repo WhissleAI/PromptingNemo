@@ -36,6 +36,6 @@ Example conversation snippets:
 
 At the end of the sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
 
-Each sentence should be separated by a blank line.
+Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
 
 Generate exactly 200 tagged sentences.

@@ -20,6 +20,6 @@ Example commentary snippets:
 
 At the end of the sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
 
-Each sentence should be separated by a blank line.
+Each sentence should be separated by a blank line. Sentence show many different parts of a soccer match commentary, not just highlights
 
 Generate exactly 200 tagged sentences.
