@@ -1,0 +1,32 @@
+Generate natural spoken language input sentences for a recipe assistant system.
+Each command should involve actions like searching for recipes, setting cooking timers, providing ingredient lists, tracking dietary preferences, or narrating recipe steps.
+Use generic cooking terms, ingredients, and actions to make the sentences widely applicable.
+
+Mix the commands with natural, daily life sentences that make the interactions feel more human-like. Include casual conversations, questions, and incomplete phrases alongside direct commands. The speaker can have different levels of language skills, so grammar should reflect that.
+
+For each command, provide the tagged text.
+Tags indicate start and end of entity phrase.
+Tags indicate one of these entity types: ACTION, RECIPE_TYPE, INGREDIENT, QUANTITY, DATE, TIME, DURATION, DIETARY_PREFERENCE, COOKING_STEP, USER_INFO, MEAL_TYPE.
+Begin the tag with ENTITY_<type>, and use a common END tag for all types. <type> is always capitalized.
+
+For example:
+How about we ENTITY_ACTION search END for a ENTITY_RECIPE_TYPE gluten-free pancake END recipe? INTENT_SEARCH_RECIPE
+Let's ENTITY_ACTION set END a ENTITY_DURATION 10-minute END ENTITY_COOKING_STEP timer END for ENTITY_MEAL_TYPE dinner END. INTENT_SET_TIMER
+Could you ENTITY_ACTION provide END the ENTITY_INGREDIENT ingredient list END for ENTITY_RECIPE_TYPE chocolate cake END? INTENT_PROVIDE_INGREDIENTS
+Hey, can you ENTITY_ACTION track END ENTITY_DIETARY_PREFERENCE low-carb END recipes for me? INTENT_TRACK_DIET
+I think we need to ENTITY_ACTION add END ENTITY_INGREDIENT tomatoes END to the ENTITY_INGREDIENT shopping list END. INTENT_UPDATE_LIST
+Do you know how to ENTITY_ACTION find END a ENTITY_RECIPE_TYPE vegetarian pasta END recipe? INTENT_SEARCH_RECIPE
+Remember to ENTITY_ACTION preheat END the ENTITY_INGREDIENT oven END to ENTITY_QUANTITY 350 degrees END. INTENT_COOKING_STEP
+ENTITY_ACTION Whisk END ENTITY_INGREDIENT eggs END until ENTITY_INGREDIENT yolks END and ENTITY_INGREDIENT whites END are combined. INTENT_COOKING_STEP
+ENTITY_ACTION Pause END the ENTITY_COOKING_STEP cooking timer END. INTENT_CONTROL_TIMER
+ENTITY_ACTION Resume END the ENTITY_COOKING_STEP recipe narration END. INTENT_CONTROL_NARRATION
+ENTITY_ACTION Update END my ENTITY_DIETARY_PREFERENCE vegan END preferences. INTENT_UPDATE_PREFERENCES
+ENTITY_ACTION Remove END ENTITY_INGREDIENT onions END from the ENTITY_INGREDIENT ingredient list END. INTENT_UPDATE_LIST
+
+Example ACTION phrases: 'search', 'set', 'provide', 'track', 'update', 'add', 'remove', 'list', 'find', 'prepare', 'cook', 'start', 'stop', 'pause', 'resume', 'measure', 'chop', 'stir', 'bake', 'boil', 'grill', 'fry', 'serve', 'mix', 'combine', 'preheat', 'pour', 'blend', 'whisk'.
+
+At the end of the sentence, add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+
+Each sentence should be separated by a blank line.
+
+Generate exactly 200 tagged sentences.

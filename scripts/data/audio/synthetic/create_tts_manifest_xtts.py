@@ -134,14 +134,15 @@ def process_files(clean_text, tagged_text, audio_path, manifest_file, mode="trai
         for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
             #audio_content = synthesize_speech(line.strip(), voice_name)
             line_len = len(line.strip().split())
-              
+            
+            
             if line_len <= max_len:
-                audio_content = generate_audio(line.strip(), mode=mode)
+                #audio_content = generate_audio(line.strip(), mode=mode)
                 audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")
                 
                 
-                noise_level = random.uniform(-30, -10)  # Random noise level between -30 dB and -10 dB
-                save_audio_to_file(audio_content, audio_file, noise_level)
+                #noise_level = random.uniform(-30, -10)  # Random noise level between -30 dB and -10 dB
+                #save_audio_to_file(audio_content, audio_file, noise_level)
                 duration = get_audio_duration(audio_file)
                 
                 entry = {
@@ -189,6 +190,6 @@ if __name__ == "__main__":
     mode = sys.argv[5]
     runs = sys.argv[6]
     
-    process_files(clean_text, tagged_text, audio_path, manifest_file, mode=mode, runs=runs)
+    process_files(clean_text, tagged_text, audio_path, manifest_file, mode=mode, runs=2)
 
     #validate_json(manifest_file)

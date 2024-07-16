@@ -69,7 +69,7 @@ def create_data(prompt_files, output_file):
                 max_tokens=2048,
                 n=1,
                 stop=None,
-                temperature=0.5
+                temperature=0.4
             )
             
             tagged_output = response.choices[0].message['content'].strip()
@@ -98,10 +98,10 @@ prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/data/prompts/")
 prompt_files = list(prompt_folder.glob("*.txt"))
 random.shuffle(prompt_files)
 
-output_file = output_folder / "text_tagged_train4.txt"
+output_file = output_folder / "text_tagged_train7.txt"
 os.system(f"mkdir -p {output_folder}")
 os.system(f"touch {output_file}")
-create_data_n_times(prompt_files, output_file, n=10)
+create_data_n_times(prompt_files, output_file, n=3)
 
 
 # input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path
