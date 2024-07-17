@@ -6,15 +6,57 @@ import random
 from pydub import AudioSegment
 from pydub.effects import speedup
 from google.cloud import texttospeech
+
 import glob
 
 from TTS.api import TTS  # Correct import statement for TTS
 
 
-tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=True)
 
-sample_train_voices = glob.glob("/external2/datasets/LibriSpeech/converted-wav/*.wav")
-sample_valid_voices = glob.glob("/external2/datasets/LibriSpeech/test-converted-wav/*.wav")
+clone_train_voices = glob.glob("/external2/datasets/LibriSpeech/converted-wav/*.wav")
+clone_valid_voices = glob.glob("/external2/datasets/LibriSpeech/test-converted-wav/*.wav")
+
+
+english_voices = glob.glob("/external2/datasets/LibriSpeech/converted-wav/*.wav")
+spanish_voices = glob.glob("/external2/datasets/spanish/wav/*.wav")
+french_voices = glob.glob("/external2/datasets/french/wav/*.wav")
+german_voices = glob.glob("/external2/datasets/german/wav/*.wav")
+italian_voices = glob.glob("/external2/datasets/italian/wav/*.wav")
+hindi_voices = glob.glob("/external2/datasets/hindi/wav/*.wav")
+punjabi_voices = glob.glob("/external2/datasets/punjabi/corpus/clips_wav/*.wav")
+bengali_voices = glob.glob("/external2/datasets/bengali/wav/*.wav")
+marathi_voices = glob.glob("/external2/datasets/marathi/wav/*.wav")
+gujarati_voices = glob.glob("/external2/datasets/gujarati/wav/*.wav")
+telugu_voices = glob.glob("/external2/datasets/telugu/wav/*.wav")
+
+clone_voices = {
+                "EN": english_voices,
+                "ES": spanish_voices,
+                "FR": french_voices,
+                "DE": german_voices,
+                "IT": italian_voices,
+                "HI": hindi_voices,
+                "PA": punjabi_voices,
+                "BN": bengali_voices,
+                "MR": marathi_voices,
+                "GU": gujarati_voices,
+                "TE": telugu_voices,
+}
+
+tts_iso_codes = {
+    "EN": "eng",
+    "ES": "spa",
+    "FR": "fra",
+    "DE": "deu",
+    "IT": "it-IT",
+    "HI": "hin",
+    "PA": "pan",
+    "BN": "ben",
+    "MR": "mar",
+    "GU": "guj",
+    "TE": "tel",
+}
+
 
 def change_speed(audio, speed=1.0):
     if speed == 1.0:
@@ -25,32 +67,30 @@ def change_speed(audio, speed=1.0):
 def adjust_volume(audio, volume):
     return audio + volume
 
-def generate_audio(text, mode="train"):
+def generate_audio(text, mode="train", language="EN"):
     # Select the appropriate sample voices based on the mode
-    if mode == "train":
-        sample_voices = sample_train_voices
-    else:
-        sample_voices = sample_valid_voices
+
+    language_voices = clone_voices[language]
 
     # Choose a random sample voice
-    sample_voice = random.choice(sample_voices)
+    sample_voice = random.choice(language_voices)
 
     # Create an in-memory bytes buffer to store the audio
     buffer = io.BytesIO()
 
     # Generate speech and save it to the buffer
+    print("Speaker wav: ", sample_voice)
     tts.tts_to_file(
         text=text,
         file_path=buffer,
         speaker_wav=sample_voice,
-        language="en"
     )
 
     # Seek to the beginning of the buffer so it can be read
     buffer.seek(0)
     
-    speed = random.uniform(0.8, 1.3)
-    volume_adjustment = random.uniform(-8.0, 8.0)  # Adjust volume by -5dB to +5dB
+    speed = random.uniform(0.9, 1.2)
+    volume_adjustment = random.uniform(-14.0, 8.0)
     
     # Read the audio content and convert it to the desired sample rate
     audio = AudioSegment.from_file(buffer, format="wav")
@@ -70,6 +110,35 @@ def generate_audio(text, mode="train"):
 
 # Set up Google Cloud credentials
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/ksingla/workspace/medical-ner/keys/google-tts-key.json"
+
+def list_available_voices():
+    # Initialize the Text-to-Speech client
+    client = texttospeech.TextToSpeechClient()
+
+    # Performs the list voices request
+    response = client.list_voices()
+
+    # Initialize a dictionary to store voices by language code
+    voice_dict = {
+        'EN': [], 'ES': [], 'FR': [], 'DE': [], 'IT': [], 'PT': [], 'NL': [], 'SV': []
+    }
+
+    # Define the language code mapping
+    language_mapping = {
+        'EN': 'en', 'ES': 'es', 'FR': 'fr', 'DE': 'de',
+        'IT': 'it', 'PT': 'pt', 'NL': 'nl', 'SV': 'sv'
+    }
+
+    # Populate the dictionary with available voices
+    for voice in response.voices:
+        for language_code in voice.language_codes:
+            for key, value in language_mapping.items():
+                if language_code.startswith(value):
+                    voice_dict[key].append(voice.name)
+
+    return voice_dict
+
+google_voices = list_available_voices()
 
 def synthesize_speech(text, voice_name, language_code='en-US'):
     client = texttospeech.TextToSpeechClient()
@@ -111,37 +180,39 @@ def save_audio_to_file(audio_content, filename, noise_level):
     audio_with_noise.export(filename, format="wav")
     print(f'Audio content written to {filename} with noise level {noise_level} dB')
 
-def process_files(clean_text, tagged_text, audio_path, manifest_file, mode="train", runs=30, max_len=30):
+def process_files(clean_text_file, tagged_text_file, audio_path,
+                  manifest_file, mode="train",
+                  runs=30, max_len=30, language="EN"):
     
     runs = int(runs)
     
     os.system(f"mkdir -p {audio_path}")
     
     manifest_file = open(manifest_file, 'w', encoding='utf-8')
-
+    
     first_entry = True
 
-    with open(clean_text, 'r') as file:
+    with open(clean_text_file, 'r') as file:
         lines = file.readlines()
 
-    with open(tagged_text, 'r') as file:
+    with open(tagged_text_file, 'r') as file:
         tagged_lines = file.readlines()
 
-    RUN = True
-    
+
     for n in range(0,runs):
         
         for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
             #audio_content = synthesize_speech(line.strip(), voice_name)
             line_len = len(line.strip().split())
-            
-            
-            if line_len <= max_len:
-                audio_content = generate_audio(line.strip(), mode=mode)
-                audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")
+
+            if line_len <= max_len:                    
+
+                line = " ".join(line.split()[1:])
+                audio_content = generate_audio(line.strip(), mode=mode, language=language)
+
+                audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")                    
                 
-                
-                noise_level = random.uniform(-30, -10)  # Random noise level between -30 dB and -10 dB
+                noise_level = random.uniform(-20, 0)  # Random noise level between -30 dB and -10 dB
                 save_audio_to_file(audio_content, audio_file, noise_level)
                 duration = get_audio_duration(audio_file)
                 
@@ -157,6 +228,8 @@ def process_files(clean_text, tagged_text, audio_path, manifest_file, mode="trai
                     first_entry = False
                 
                 manifest_file.write(json.dumps(entry, ensure_ascii=False))
+                    
+                    
 
     manifest_file.write('\n')  # End of JSON array
     manifest_file.close()
@@ -189,7 +262,15 @@ if __name__ == "__main__":
     audio_path = sys.argv[4]
     mode = sys.argv[5]
     runs = sys.argv[6]
+    language = sys.argv[7]
     
-    process_files(clean_text, tagged_text, audio_path, manifest_file, mode=mode, runs=2)
+    language_iso_code = tts_iso_codes[language]
+    
+    if language == "IT":
+        tts = TTS(model_name="tts_models/multilingual/multi-dataset/your_tts", progress_bar=False).to("cuda")
+    else:
+        tts = TTS("tts_models/"+language_iso_code+"/fairseq/vits", gpu=True)
+
+    process_files(clean_text, tagged_text, audio_path, manifest_file, mode=mode, runs=2, language=language)
 
     #validate_json(manifest_file)
