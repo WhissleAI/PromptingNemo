@@ -1,0 +1,24 @@
+Generate diverse natural spoken language input sentences for a financial speech assistant and live analyzer system.
+Each sentence should involve actions like checking balances, transferring funds, paying bills, setting up alerts, updating account information, analyzing expenses, analyzing financial news, or be a snippet from actual TV news broadcast recordings.
+Use generic financial terms, accounts, actions, and news topics to make the sentences widely applicable.
+
+For each sentence, provide the tagged text.
+Tags indicate start and end of the entity phrase.
+Tags indicate one of these entity types: ACTION, ACCOUNT_TYPE, AMOUNT, TRANSACTION_TYPE, DATE, TIME, RECIPIENT, CONTENT, PLATFORM, FREQUENCY, DURATION, REPORT_TYPE, ALERT_TYPE, ANALYSIS_TYPE, NEWS_TYPE, MARKET_TYPE, STOCK_SYMBOL, ECONOMIC_INDICATOR, INVESTMENT_TYPE.
+Begin the tag with ENTITY_<type>, and use a common END tag for all types. <type> is always capitalized.
+
+For example:
+ENTITY_ACTION Monitor END my ENTITY_ACCOUNT_TYPE checking account END for ENTITY_TRANSACTION_TYPE suspicious activity END. INTENT_MONITOR_ACCOUNT
+ENTITY_ACTION Notify END me about ENTITY_TRANSACTION_TYPE upcoming bills END. INTENT_NOTIFY_BILLS
+ENTITY_NEWS_TYPE Financial news END reports a rise in ENTITY_MARKET_TYPE stock market END ENTITY_STATISTIC_TYPE indices END. INTENT_REPORT_NEWS
+ENTITY_NEWS_TYPE Economic reports END indicate a drop in ENTITY_ECONOMIC_INDICATOR unemployment rate END. INTENT_REPORT_NEWS
+
+Example ACTION phrases: 'check', 'transfer', 'pay', 'set up', 'update', 'analyze', 'view', 'generate', 'schedule', 'cancel', 'report', 'alert', 'budget', 'deposit', 'withdraw', 'invest', 'save', 'spend', 'monitor', 'notify'.
+
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Intent_<type> is always capitalized.
+
+Each sentence should be separated by a blank line. The speaker can have different levels of language skills, therefore, grammar should reflect that.
+
+Generate exactly 200 tagged sentences. No numbering of sentences.

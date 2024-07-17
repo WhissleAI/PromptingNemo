@@ -44,21 +44,23 @@ def validate_and_correct_annotations(conll_output):
         formatted_output.append("\n".join(temp_sentence))
     
     # Join all sentences with an extra newline
-    print(formatted_output)
+    #print(formatted_output)
     return formatted_output
 
 
-def create_data(prompt_files, output_file):
+def create_data(prompt_files, output_folder, lang_map):
     
-    output_file = open(output_file, 'a')
-
     for prompt_file in prompt_files:
         print("Processing file:", prompt_file)
         filename = os.path.basename(prompt_file)  # Get the file name with extension
         name, ext = os.path.splitext(filename)  # Split the file name and extension
-        domain = MAP_PROMPT_TO_DOMAIN[name]  # Get the domain from the file name
-        with open(prompt_file, 'r') as file:
-            prompt = file.read()
+            
+        for lang in lang_map.keys():
+            
+            output_file = open(output_folder / f"tagged_{lang_map[lang]}.txt", 'a')
+            prompt = open(prompt_file, 'r').read()
+            prompt = prompt.replace("{lang}", lang)
+            print("LANG:", lang)
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
@@ -74,16 +76,16 @@ def create_data(prompt_files, output_file):
             tagged_output = response.choices[0].message['content'].strip()
             tagged_output = validate_and_correct_annotations(tagged_output)
             for line in tagged_output:
-                line = domain + " " + line
+                line = "LANG_" + lang_map[lang] + " " + line
                 output_file.write(line)
                 output_file.write("\n")
-    
-    output_file.close()
+            
+            output_file.close()
 
 
-def create_data_n_times(prompt_files, output_file, n=40):
+def create_data_n_times(prompt_files, output_folder, lang_map, n=40):
     for i in range(n):
-        create_data(prompt_files, output_file)
+        create_data(prompt_files, output_folder, lang_map)
 
 
 
@@ -91,16 +93,22 @@ def create_data_n_times(prompt_files, output_file, n=40):
 '''
 Collect samples from GPT-4
 '''
-output_folder = Path("/home/ksingla/workspace/PromptingNemo/data/synthetic/EN/")
 
-prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/data/prompts/EN/")
-prompt_files = list(prompt_folder.glob("*.txt"))
-random.shuffle(prompt_files)
+if __name__ == "__main__":
 
-output_file = output_folder / "text_tagged_train_noisy_v6.txt"
-os.system(f"mkdir -p {output_folder}")
-#os.system(f"touch {output_file}")
-create_data_n_times(prompt_files, output_file, n=50)
+    output_folder = Path("/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/")
+    prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/data_v2/prompts/")
+    prompt_files = list(prompt_folder.glob("*.txt"))
+    random.shuffle(prompt_files)
+
+    EURO = {"English": "EN", "Spanish": "ES", "French": "FR", "German": "DE", "Italian" : "IT"}
+    INDIAN = {"Hindi": "HI", "Punjabi": "PA", "Bengali": "BN", "Marathi": "MR", "Gujrati": "GU", "Kannada": "KN", "Telugu": "TE"}
+
+    # lang_map = EURO.copy()  # Copy EURO dictionary to avoid modifying the original
+    # lang_map.update(INDIAN)  # Update with INDIAN dictionary
+
+    os.system(f"mkdir -p {output_folder}")
+    create_data_n_times(prompt_files, output_folder, EURO,  n=50)
 
 
 # input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path
