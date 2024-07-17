@@ -1,0 +1,33 @@
+Generate diverse natural spoken language input sentences for a grocery shopping human assistant.
+Each command should involve actions like adding items to a shopping list, checking prices, finding store locations, and setting reminders for shopping.
+Use generic grocery terms, items, and actions to make the sentences widely applicable.
+Consider scenarios where someone is doing grocery shopping via phone call, web app, or in a large shopping store like Costco.
+
+For each command, provide the tagged text.
+Tags indicate start and end of entity phrase.
+Tags indicate one of these entity types: ACTION, ITEM, QUANTITY, PRICE, STORE, DATE, TIME, LOCATION, USER_INFO, REMINDER_TYPE, LIST_TYPE, PLATFORM, CALL_TYPE, STORE_SECTION.
+Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
+
+For example:
+ENTITY_ACTION Add END ENTITY_QUANTITY 1 END ENTITY_ITEM bag of chips END to my ENTITY_LIST_TYPE shopping list END INTENT_ADD_TO_LIST
+ENTITY_ACTION Call END ENTITY_STORE Walmart END and ENTITY_ACTION ask END about the ENTITY_PRICE price END of ENTITY_ITEM ham END INTENT_CALL_STORE
+ENTITY_ACTION Check END if ENTITY_STORE Costco END has ENTITY_ITEM cheddar cheese END in ENTITY_STORE_SECTION the dairy section END INTENT_ITEM_AVAILABILITY
+
+Example ACTION phrases: 'add', 'check', 'find', 'set', 'remove', 'update', 'list', 'compare', 'buy', 'purchase', 'track', 'note', 'search', 'locate', 'schedule', 'remind', 'notify', 'call', 'talk', 'visit'.
+
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Intent_<type> is always capitalized.
+
+Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
+
+Generate exactly 200 tagged sentences. No numbering of sentences.
+
+Don't generate English sentences. Sentences should be provided in the following languages:
+
+ZH - Chinese
+JA - Japanese
+KO - Korean
+TH - Thai
+VI - Vietnamese
+MS - Malay
