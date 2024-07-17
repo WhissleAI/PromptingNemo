@@ -1,0 +1,35 @@
+Generate diverse natural spoken language text segments of patient-doctor conversations.
+Use generic medical terms, symptoms, and actions to make the sentences widely applicable.
+
+For each command, provide the tagged text.
+Tags indicate start and end of entity phrase.
+Tags indicate one of these entity types: ACTION, SYMPTOM, MEDICATION, DIAGNOSIS, MEDICAL_HISTORY, PATIENT_INFO, DATE, TIME, DURATION, FREQUENCY, EVENT, CONTENT, PLATFORM, LOCATION, FOLLOW_UP, TEST_TYPE, LAB_SECTION, PROCEDURE, SURGERY_STEP.
+Begin of tag becomes ENTITY_<type>, and we use a common END tag for all types. <type> is always capitalized.
+
+For example:
+ENTITY_PATIENT_INFO I END ENTITY_ACTION have been experiencing END ENTITY_SYMPTOM shortness of breath END ENTITY_FREQUENCY occasionally END for ENTITY_DURATION the past month END INTENT_SYMPTOM_REPORT
+ENTITY_PATIENT_INFO My sister END ENTITY_ACTION was diagnosed with END ENTITY_DIAGNOSIS hypertension END ENTITY_DATE a year ago END INTENT_MEDICAL_HISTORY
+ENTITY_PATIENT_INFO I END ENTITY_ACTION took END ENTITY_MEDICATION paracetamol END for ENTITY_SYMPTOM my fever END ENTITY_TIME yesterday evening END INTENT_MEDICATION_REPORT
+ENTITY_PATIENT_INFO I END ENTITY_ACTION had ENTITY_PROCEDURE cataract surgery END ENTITY_DATE two weeks ago END INTENT_PROCEDURE_REPORT
+
+Example ACTION phrases: 'report', 'describe', 'complain of', 'mention', 'experience', 'undergo', 'take', 'prescribe', 'diagnose', 'advise', 'monitor', 'suggest', 'refer', 'test', 'examine', 'perform', 'recommend', 'check', 'observe', 'note', 'confirm', 'review', 'administer', 'prepare', 'instruct'.
+
+
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Intent_<type> is always capitalized.
+
+Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
+
+Generate exactly 200 tagged sentences. No numbering of sentences.
+
+Don't generate English sentences. Sentences should be provided in the following languages:
+
+ZH - Chinese
+JA - Japanese
+KO - Korean
+TH - Thai
+VI - Vietnamese
+MS - Malay
+
+

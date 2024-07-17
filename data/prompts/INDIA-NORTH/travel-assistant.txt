@@ -1,0 +1,34 @@
+Generate diverse natural spoken language input sentences for a travel assistant system. 
+Each command should involve actions like booking a trip, checking flight status, reserving accommodations, setting travel alerts, or updating itinerary information. 
+Use generic travel terms, locations, and actions to make the sentences widely applicable. 
+
+For each command, provide the tagged text. 
+Tags indicate start and end of entity phrase. 
+Tags indicate one of these entity types: ACTION, DESTINATION, DATE, TIME, DURATION, TRANSPORT_TYPE, ACCOMMODATION_TYPE, TRAVEL_ALERT, ITINERARY_ITEM, RECIPIENT, PLATFORM, BUDGET, FREQUENCY, TRAVEL_DOCUMENT, MEASUREMENT, USER_INFO. 
+Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
+
+For example:
+ENTITY_ACTION Book END a ENTITY_TRANSPORT_TYPE flight END to ENTITY_DESTINATION Sydney END leaving ENTITY_DATE March 5th END
+ENTITY_ACTION Check END the ENTITY_ITINERARY_ITEM status END of my ENTITY_TRANSPORT_TYPE flight END to ENTITY_DESTINATION New York END
+ENTITY_ACTION Reserve END a ENTITY_ACCOMMODATION_TYPE hotel room END in ENTITY_DESTINATION Rome END for ENTITY_DATE July 10th END
+
+Example ACTION phrases: 'book', 'check', 'reserve', 'set', 'update', 'view', 'generate', 'monitor', 'cancel', 'confirm', 'notify', 'remind', 'recommend', 'plan', 'explore', 'compare', 'add', 'remove', 'schedule', 'change'.
+
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
+
+Intent_<type> is always capitalized.
+
+Each sentence should be separated by a blank line. 
+
+Generate exactly 200 tagged sentences. No numbering of sentences.
+
+Sentences should be provided in the following languages:
+HN - Hindi
+PB - Punjabi
+MR - Marathi
+GJ - Gujarati
+BN - Bengali
+
+USE LANG_<code> as first word in each sentence. you can randomly choose a language code

@@ -1,0 +1,1094 @@
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am experiencing T0 T1_T667 shortness of breath T0 T1_T54 lately T0 T2_T667_T47
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a colonoscopy T0 T1_T623 a week ago T0 T2_T225_T47
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 hypothyroidism T0 T1_T623 six months ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was instructed to T0 T1_T201 take T0 T1_T516 Aspirin T0 T1_T297 daily T0 T2_T516_T1306
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 need to schedule T0 a T1_T805_T690 follow-up appointment T0 T1_T623 in two weeks T0 T2_T176_T506
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 had T1_T12 a heart attack T0 T1_T623 two years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was prescribed T0 T1_T516 Lipitor T0 for T1_T12 my high cholesterol T0 T2_T516_T1306
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 a T1_T225 colonoscopy T0 T1_T623 next week T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a hip replacement surgery T0 T1_T623 three months ago T0 T2_T225_T47
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 rheumatoid arthritis T0 T1_T623 two years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 need to schedule T0 a T1_T805_T690 follow-up appointment T0 T1_T623 in one week T0 T2_T176_T506
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 osteoporosis T0 T1_T623 last year T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a knee replacement surgery T0 T1_T623 six months ago T0 T2_T225_T47
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was prescribed T0 T1_T516 Metoprolol T0 for T1_T12 my high blood pressure T0 T2_T516_T1306
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 a T1_T225 hip replacement surgery T0 T1_T623 next month T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 need to schedule T0 a T1_T805_T690 follow-up appointment T0 T1_T623 in three weeks T0 T2_T176_T506
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 fibromyalgia T0 T1_T623 three years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 an endoscopy T0 T1_T623 a month ago T0 T2_T225_T47
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 a T1_T225 tonsillectomy T0 T1_T623 next week T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was prescribed T0 T1_T516 Prednisone T0 for T1_T12 my rheumatoid arthritis T0 T2_T516_T1306
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 need to schedule T0 a T1_T805_T690 follow-up appointment T0 T1_T623 in four weeks T0 T2_T176_T506
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 COPD T0 T1_T623 five years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a gallbladder removal surgery T0 T1_T623 four months ago T0 T2_T225_T47
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 a T1_T225 cataract surgery T0 T1_T623 next month T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 have been advised to T0 T1_T201 monitor T0 my T1_T667 weight T0 T1_T297 weekly T0 T2_T208_T643
+T3-T826-T183-T511 T1_T201 Conduct T0 a T1_T983_T308 blood test T0 for T1_T248_T668 patient 123 T0 in the T1_T813 lab 1 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Set T0 the T1_T683 lab microscope T0 to T1_T365_T774 high magnification T0 in T1_T813 lab 3 T0 T2_T365_T762
+T3-T826-T183-T511 T1_T201 Start T0 the T1_T983_T308 urinalysis T0 for T1_T248_T668 patient 654 T0 at T1_T786 10 am T0 tomorrow T2_T983_T225
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T683 autoclave T0 in T1_T813 lab 4 T0 after T1_T54 15 minutes T0 T2_T683_T212
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T983_T308 tissue culture T0 in T1_T813 lab 5 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Collect T0 the T1_T163_T308 stool sample T0 of T1_T248_T668 patient 444 T0 in T1_T813 lab 8 T0 T2_T163_T338
+T3-T826-T183-T511 T1_T201 Set T0 the T1_T683 incubator T0 to T1_T365_T774 37 degrees Celsius T0 in T1_T813 lab 11 T0 T2_T365_T762
+T3-T826-T183-T511 T1_T201 Start T0 the T1_T983_T308 PCR test T0 for T1_T248_T668 patient 400 T0 at T1_T786 11 am T0 tomorrow T2_T983_T225
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T683 shaking water bath T0 in T1_T813 lab 12 T0 after T1_T54 30 minutes T0 T2_T683_T212
+T3-T826-T183-T511 T1_T201 Pause T0 the T1_T983_T308 HbA1c test T0 for T1_T248_T668 patient 500 T0 and resume after T1_T54 2 hours T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T983_T308 cell culture T0 in T1_T813 lab 13 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Collect T0 the T1_T163_T308 bone marrow sample T0 of T1_T248_T668 patient 900 T0 in T1_T813 lab 16 T0 T2_T163_T338
+T3-T826-T183-T511 T1_T201 Set T0 the T1_T683 spectrophotometer T0 to T1_T365_T774 540 nm T0 in T1_T813 lab 19 T0 T2_T365_T762
+T3-T826-T183-T511 T1_T201 Start T0 the T1_T983_T308 liver function test T0 for T1_T248_T668 patient 910 T0 at T1_T786 1 pm T0 tomorrow T2_T983_T225
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T683 heating mantle T0 in T1_T813 lab 20 T0 after T1_T54 45 minutes T0 T2_T683_T212
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T983_T308 protein electrophoresis T0 in T1_T813 lab 21 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Collect T0 the T1_T163_T308 sweat sample T0 of T1_T248_T668 patient 520 T0 in T1_T813 lab 24 T0 T2_T163_T338
+T3-T510-T511 T1_T201 Check T0 the T1_T627_T308 flight T0 status for T1_T988_T421 Flight 654 T0 to T1_T387 Los Angeles T0 T2_T915_T342
+T3-T510-T511 T1_T201 Set T0 a T1_T510_T1016 price alert T0 for T1_T627_T308 flights T0 to T1_T387 Tokyo T0 T2_T873_T1016
+T3-T510-T511 T1_T201 Update T0 the T1_T988_T421 hotel booking T0 for T1_T288 Mr. John Smith T0 to T1_T623 April 10th T0 T2_T335_T988
+T3-T510-T511 T1_T201 View T0 the T1_T988_T421 itinerary T0 for my T1_T627_T308 train T0 trip to T1_T387 Berlin T0 T2_T278_T988
+T3-T510-T511 T1_T201 Cancel T0 my T1_T988_T421 hotel reservation T0 in T1_T387 Istanbul T0 T2_T881_T961
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 flight T0 booking to T1_T387 Paris T0 for T1_T623 July 10th T0 T2_T111_T409
+T3-T510-T511 T1_T201 Remind T0 me to check-in for my T1_T627_T308 flight T0 to T1_T387 Dubai T0 T1_T786 24 hours T0 before departure T2_T873_T14
+T3-T510-T511 T1_T201 Recommend T0 some T1_T710_T308 budget hotels T0 in T1_T387 London T0 for T1_T623 September T0 T2_T899
+T3-T510-T511 T1_T201 Plan T0 a T1_T988_T421 week-long trip T0 to T1_T387 Singapore T0 with a T1_T251 budget of $2000 T0 T2_T485_T218
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 flight T0 options to T1_T387 Rio de Janeiro T0 for T1_T623 December 25th T0 T2_T458_T978
+T3-T510-T511 T1_T201 Compare T0 T1_T627_T308 flight T0 prices to T1_T387 Athens T0 on T1_T1017 different travel sites T0 T2_T410_T286
+T3-T510-T511 T1_T201 Add T0 a T1_T988_T421 car rental T0 to my T1_T988_T421 travel itinerary T0 for T1_T387 Miami T0 T2_T335_T988
+T3-T510-T511 T1_T201 Remove T0 the T1_T988_T421 museum visit T0 from my T1_T988_T421 itinerary T0 for T1_T387 Amsterdam T0 T2_T335_T988
+T3-T510-T511 T1_T201 Schedule T0 a T1_T627_T308 train T0 trip to T1_T387 Vienna T0 for T1_T623 October 31st T0 T2_T863_T510
+T3-T510-T511 T1_T201 Check T0 the T1_T343 baggage allowance T0 for my T1_T627_T308 flight T0 to T1_T387 Zurich T0 T2_T342_T668
+T3-T510-T511 T1_T201 Update T0 my T1_T80_T668 passport details T0 in the T1_T1017 travel system T0 T2_T335_T327
+T3-T510-T511 T1_T201 View T0 the T1_T988_T421 itinerary T0 for my T1_T627_T308 cruise T0 trip to T1_T387 Caribbean T0 T2_T278_T988
+T3-T510-T511 T1_T201 Monitor T0 T1_T510_T1016 flight prices T0 to T1_T387 Bangkok T0 and notify me when they go below T1_T251 $800 T0 T2_T404_T286
+T3-T510-T511 T1_T201 Cancel T0 my T1_T988_T421 car rental T0 in T1_T387 Las Vegas T0 T2_T881_T961
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 train T0 ticket to T1_T387 Brussels T0 for T1_T623 March 5th T0 T2_T111_T409
+T3-T510-T511 T1_T201 Notify T0 T1_T288 Mr. James T0 about his T1_T627_T308 flight T0 status to T1_T387 Toronto T0 T2_T915_T540
+T3-T510-T511 T1_T201 Remind T0 me to check-in for my T1_T627_T308 flight T0 to T1_T387 Moscow T0 T1_T786 48 hours T0 before departure T2_T873_T14
+T3-T510-T511 T1_T201 Recommend T0 some T1_T710_T308 luxury hotels T0 in T1_T387 Rome T0 for T1_T623 June T0 T2_T899
+T3-T510-T511 T1_T201 Plan T0 a T1_T988_T421 three-day trip T0 to T1_T387 Buenos Aires T0 with a T1_T251 budget of $1500 T0 T2_T485_T218
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 flight T0 options to T1_T387 New Delhi T0 for T1_T623 January 1st T0 T2_T458_T978
+T3-T510-T511 T1_T201 Compare T0 T1_T627_T308 train T0 prices to T1_T387 Munich T0 on T1_T1017 various travel platforms T0 T2_T410_T286
+T3-T510-T511 T1_T201 Add T0 a T1_T988_T421 hotel booking T0 to my T1_T988_T421 itinerary T0 for T1_T387 Melbourne T0 T2_T335_T988
+T3-T510-T511 T1_T201 Remove T0 the T1_T988_T421 city tour T0 from my T1_T988_T421 itinerary T0 for T1_T387 Seoul T0 T2_T335_T988
+T3-T510-T511 T1_T201 Schedule T0 a T1_T627_T308 bus T0 trip to T1_T387 Venice T0 for T1_T623 February 14th T0 T2_T863_T510
+T3-T510-T511 T1_T201 Check T0 the T1_T343 baggage weight limit T0 for my T1_T627_T308 flight T0 to T1_T387 Cairo T0 T2_T342_T668
+T3-T510-T511 T1_T201 Update T0 my T1_T80_T668 contact details T0 in the T1_T1017 travel system T0 T2_T335_T327
+T3-T510-T511 T1_T201 Monitor T0 T1_T510_T1016 flight prices T0 to T1_T387 Havana T0 and notify me when they go below T1_T251 $600 T0 T2_T404_T286
+T3-T510-T511 T1_T201 Cancel T0 my T1_T988_T421 hotel reservation T0 in T1_T387 Marrakech T0 T2_T881_T961
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 cruise T0 booking to T1_T387 Alaska T0 for T1_T623 July 20th T0 T2_T111_T409
+T3-T510-T511 T1_T201 Notify T0 T1_T288 Mrs. Mary T0 about her T1_T627_T308 train T0 status to T1_T387 Berlin T0 T2_T915_T540
+T3-T510-T511 T1_T201 Recommend T0 some T1_T710_T308 hostels T0 in T1_T387 Dublin T0 for T1_T623 May T0 T2_T899
+T3-T510-T511 T1_T201 Plan T0 a T1_T988_T421 two-week trip T0 to T1_T387 Tokyo T0 with a T1_T251 budget of $3000 T0 T2_T485_T218
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 flight T0 options to T1_T387 Istanbul T0 for T1_T623 September 1st T0 T2_T458_T978
+T3-T510-T511 T1_T201 Compare T0 T1_T627_T308 flight T0 prices to T1_T387 Athens T0 on T1_T1017 different travel websites T0 T2_T410_T286
+T3-T510-T511 T1_T201 Add T0 a T1_T988_T421 sightseeing tour T0 to my T1_T988_T421 itinerary T0 for T1_T387 Rome T0 T2_T335_T988
+T3-T510-T511 T1_T201 Remove T0 the T1_T988_T421 city walk T0 from my T1_T988_T421 itinerary T0 for T1_T387 Paris T0 T2_T335_T988
+T3-T510-T511 T1_T201 Schedule T0 a T1_T627_T308 train T0 trip to T1_T387 Amsterdam T0 for T1_T623 November 30th T0 T2_T863_T510
+T3-T26-T511 T1_T201 Check T0 the T1_T591_T308 balance T0 of my T1_T591_T308 checking account T0 T2_T932_T342
+T3-T26-T511 T1_T201 Transfer T0 T1_T46 $200 T0 from T1_T591_T308 savings account T0 to T1_T591_T308 checking account T0 T2_T1013
+T3-T26-T511 T1_T201 Pay T0 the T1_T288 electricity bill T0 of T1_T46 $60 T0 from my T1_T591_T308 checking account T0 T2_T741_T828
+T3-T26-T511 T1_T201 Update T0 my T1_T167 contact information T0 on T1_T1017 online banking profile T0 T2_T327_T335
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 monthly expenses T0 for T1_T623 July T0 T2_T239_T894
+T3-T26-T511 T1_T201 Generate T0 a T1_T50_T308 transaction report T0 for T1_T623 last month T0 T2_T50_T821
+T3-T26-T511 T1_T201 Cancel T0 the T1_T1016_T308 overdraft alert T0 for my T1_T591_T308 checking account T0 T2_T1016_T881
+T3-T26-T511 T1_T201 Report T0 a T1_T167 suspicious transaction T0 on my T1_T591_T308 credit card T0 T2_T776_T370_T50
+T3-T26-T511 T1_T201 Alert T0 me when T1_T46 $1000 T0 or more is T1_T201 withdrawn T0 from my T1_T591_T308 savings account T0 T2_T175_T1016
+T3-T26-T511 T1_T201 Budget T0 T1_T46 $500 T0 for T1_T167 groceries T0 this T1_T623 month T0 T2_T251_T365
+T3-T26-T511 T1_T201 Deposit T0 T1_T46 $300 T0 into my T1_T591_T308 checking account T0 T2_T559
+T3-T26-T511 T1_T201 Withdraw T0 T1_T46 $50 T0 from my T1_T591_T308 savings account T0 T2_T188
+T3-T26-T511 T1_T201 Invest T0 T1_T46 $1000 T0 into T1_T167 mutual funds T0 from my T1_T591_T308 brokerage account T0 T2_T581
+T3-T26-T511 T1_T201 Save T0 T1_T46 $200 T0 every T1_T297 month T0 for T1_T54 1 year T0 in my T1_T591_T308 savings account T0 T2_T723
+T3-T26-T511 T1_T201 Spend T0 less than T1_T46 $100 T0 on T1_T167 dining out T0 this T1_T623 month T0 T2_T216_T539
+T3-T26-T511 T1_T201 Monitor T0 my T1_T591_T308 credit card T0 for T1_T167 unauthorized transactions T0 T2_T643
+T3-T26-T511 T1_T201 Notify T0 me when my T1_T591_T308 credit card T0 T1_T201 payment T0 is due T2_T828_T812_T1016
+T3-T26-T511 T1_T201 View T0 my T1_T591_T308 credit card T0 T1_T201 payment T0 history for T1_T623 last year T0 T2_T828_T689
+T3-T887-T162 T1_T536_T472 Ronaldo T0 with a stellar pass to T1_T536_T472 Dybala T0 who T1_T201 shoots T0 it into the net T2_T686_T182_T681
+T3-T887-T162 T1_T536_T472 Salah T0 T1_T201 crosses T0 the ball to T1_T536_T472 Mane T0 who T1_T201 heads T0 it into the net T2_T1093_T283_T1286
+T3-T887-T162 T1_T697_T472 Juventus T0 T1_T201 equalizes T0 in the last minute with a goal from T1_T536_T472 Dybala T0 T2_T614_T681
+T3-T887-T162 T1_T536_T472 Neymar T0 T1_T201 injures T0 himself and is substituted in the T1_T786 30th minute T0 of the match T2_T744_T335
+T3-T887-T162 T1_T697_T472 Arsenal T0 T1_T201 defends T0 brilliantly with T1_T865_T308 10 clearances T0 in the first half T2_T1311_T865
+T3-T887-T162 T1_T536_T472 Modric T0 T1_T201 sets up T0 a goal for T1_T697_T472 Real Madrid T0 in the T1_T535_T308 La Liga T0 T1_T623 match T0 T2_T45
+T3-T968-T511 T1_T201 Set T0 the T1_T683 thermostat T0 to T1_T365_T774 72 degrees T0 in the T1_T813 living room T0 T2_T13
+T3-T968-T511 T1_T201 Play T0 the T1_T167 'Classical Melodies' T0 on T1_T683 music system T0 in the T1_T813 study room T0 T2_T925
+T3-T968-T511 T1_T201 Send T0 a T1_T167 'Happy Birthday' T0 message to T1_T288 John T0 on T1_T1017 WhatsApp T0 T2_T991
+T3-T968-T511 T1_T201 Set T0 a T1_T96 reminder T0 for T1_T623 tomorrow T0 at T1_T786 9 AM T0 to T1_T167 'Buy groceries' T0 T2_T14
+T3-T968-T511 T1_T201 Mute T0 the T1_T683 speakers T0 in the T1_T813 office room T0 T2_T1073
+T3-T968-T511 T1_T201 Activate T0 the T1_T683 alarm system T0 at T1_T786 10 PM T0 every T1_T297 day T0 T2_T598
+T3-T968-T511 T1_T201 Open T0 the T1_T683 garage door T0 T2_T766_T951
+T3-T968-T511 T1_T201 Close T0 the T1_T683 blinds T0 in the T1_T813 bedroom T0 at T1_T786 sunset T0 T2_T766_T951
+T3-T968-T511 T1_T201 Lock T0 the T1_T683 front door T0 when T1_T786 everyone is asleep T0 T2_T598
+T3-T968-T511 T1_T201 Unmute T0 the T1_T683 computer T0 in the T1_T813 study room T0 T2_T1073
+T3-T968-T511 T1_T201 Pause T0 the T1_T683 dishwasher T0 T2_T657
+T3-T968-T511 T1_T201 Skip T0 the T1_T167 next song T0 on the T1_T683 music player T0 in the T1_T813 living room T0 T2_T925
+T3-T968-T511 T1_T201 Stop T0 the T1_T683 washing machine T0 T2_T657
+T3-T968-T511 T1_T201 Deactivate T0 the T1_T683 alarm system T0 when T1_T288 I T0 am T1_T813 home T0 T2_T598
+T3-T968-T511 T1_T201 Call T0 T1_T288 Alexa T0 to T1_T167 play the news T0 T2_T991
+T3-T968-T511 T1_T201 Set T0 the T1_T683 AC T0 to T1_T365_T774 24 degrees T0 in the T1_T813 children's room T0 T2_T13
+T3-T968-T511 T1_T201 Play T0 T1_T167 'Morning Alarm' T0 on T1_T683 alarm clock T0 at T1_T786 6 AM T0 every T1_T297 weekday T0 T2_T999
+T3-T968-T511 T1_T201 Set T0 a T1_T96 reminder T0 for T1_T623 today T0 at T1_T786 8 PM T0 to T1_T167 'Take medication' T0 T2_T14
+T3-T968-T511 T1_T201 Mute T0 the T1_T683 notifications T0 on the T1_T683 smartphone T0 T2_T1073
+T3-T968-T511 T1_T201 Activate T0 the T1_T683 sprinkler system T0 at T1_T786 6 AM T0 every T1_T297 day T0 T2_T1285
+T3-T968-T511 T1_T201 Open T0 the T1_T683 windows T0 in the T1_T813 kitchen T0 at T1_T786 8 AM T0 every T1_T297 morning T0 T2_T766_T951
+T3-T968-T511 T1_T201 Lock T0 the T1_T683 back door T0 when T1_T786 everyone leaves the house T0 T2_T598
+T3-T968-T511 T1_T201 Unmute T0 the T1_T683 notifications T0 on T1_T683 smartphone T0 T2_T1073
+T3-T968-T511 T1_T201 Pause T0 the T1_T683 music T0 on T1_T683 speakers T0 in the T1_T813 bathroom T0 T2_T925
+T3-T968-T511 T1_T201 Skip T0 the T1_T167 next episode T0 on the T1_T683 Netflix T0 in the T1_T813 living room T0 T2_T993
+T3-T968-T511 T1_T201 Stop T0 the T1_T683 dryer T0 T2_T657
+T3-T968-T511 T1_T201 Deactivate T0 the T1_T683 motion sensors T0 when T1_T288 guests T0 are T1_T813 home T0 T2_T598
+T3-T968-T511 T1_T201 Call T0 T1_T288 Mom T0 to T1_T167 say goodnight T0 T2_T991
+T3-T968-T511 T1_T201 Set T0 the T1_T683 humidifier T0 to T1_T365_T774 30% T0 in the T1_T813 baby's room T0 T2_T13
+T3-T968-T511 T1_T201 Set T0 a T1_T96 reminder T0 for T1_T623 next Friday T0 at T1_T786 5 PM T0 to T1_T167 'Dinner with friends' T0 T2_T14
+T3-T968-T511 T1_T201 Change T0 the T1_T365_T308 temperature T0 of the T1_T683 refrigerator T0 to T1_T365_T774 4 degrees Celsius T0 T2_T657
+T3-T968-T511 T1_T201 Mute T0 the T1_T683 notifications T0 on the T1_T683 smartwatch T0 T2_T1073
+T3-T968-T511 T1_T201 Activate T0 the T1_T683 pet feeder T0 at T1_T786 8 AM T0 and T1_T786 6 PM T0 every T1_T297 day T0 T2_T1121_T1280
+T3-T968-T511 T1_T201 Close T0 the T1_T683 roof window T0 in the T1_T813 attic T0 when T1_T786 it starts to rain T0 T2_T766_T951
+T3-T968-T511 T1_T201 Lock T0 the T1_T683 car T0 when T1_T786 I am not near it T0 T2_T598
+T3-T968-T511 T1_T201 Unmute T0 the T1_T683 calls T0 on the T1_T683 phone T0 T2_T1073
+T3-T968-T511 T1_T201 Pause T0 the T1_T167 audiobook T0 on the T1_T683 smart speaker T0 in the T1_T813 bedroom T0 T2_T993
+T3-T968-T511 T1_T201 Skip T0 the T1_T167 next track T0 on the T1_T683 Spotify T0 in the T1_T813 gym room T0 T2_T925
+T3-T968-T511 T1_T201 Stop T0 the T1_T683 robotic vacuum cleaner T0 T2_T578
+T3-T968-T511 T1_T201 Deactivate T0 the T1_T683 CCTV cameras T0 when T1_T288 I T0 am T1_T813 home T0 T2_T598
+T3-T968-T511 T1_T201 Call T0 T1_T288 Siri T0 to T1_T167 set an alarm for 7 AM T0 T2_T991
+T3-T968-T511 T1_T201 Set T0 the T1_T683 air purifier T0 to T1_T365_T774 low T0 in the T1_T813 living room T0 T2_T205_T177
+T3-T33-T1023-T511 T1_T201 Start T0 a T1_T594_T308 running T0 session for T1_T54 30 minutes T0 at T1_T813 the park END. T2_T345_T631
+T3-T33-T1023-T511 T1_T201 Track T0 my T1_T282_T318 distance T0 covered during T1_T594_T308 cycling END. T2_T282_T1019
+T3-T33-T1023-T511 T1_T201 Schedule T0 a T1_T594_T308 yoga T0 session for T1_T786 7 AM T0 tomorrow. T2_T682_T844
+T3-T33-T1023-T511 T1_T201 Update T0 my T1_T80_T668 height T0 to T1_T343 170 cm END. T2_T80_T668_T335
+T3-T33-T1023-T511 T1_T201 Analyze T0 my T1_T246 heart rate T0 during T1_T594_T308 weight lifting END. T2_T1267
+T3-T33-T1023-T511 T1_T201 View T0 my T1_T345_T485 weekly workout plan END. T2_T271_T345_T485
+T3-T33-T1023-T511 T1_T201 Generate T0 a T1_T345_T485 workout plan T0 focusing on T1_T594_T308 strength training END. T2_T145_T345_T485
+T3-T33-T1023-T511 T1_T201 Monitor T0 my T1_T246 calories burned T0 during T1_T594_T308 swimming END. T2_T643
+T3-T33-T1023-T511 T1_T201 Complete T0 my T1_T682_T308 workout session T0 for today. T2_T682_T543
+T3-T33-T1023-T511 T1_T201 Pause T0 my T1_T594_T308 treadmill run END. T2_T150_T345
+T3-T33-T1023-T511 T1_T201 Resume T0 my T1_T594_T308 treadmill run END. T2_T727_T345
+T3-T33-T1023-T511 T1_T201 Stop T0 my T1_T594_T308 aerobics T0 class now. T2_T287_T345
+T3-T33-T1023-T511 T1_T201 Increase T0 the T1_T246 intensity T0 of my T1_T594_T308 spin class END. T2_T330_T246
+T3-T33-T1023-T511 T1_T201 Decrease T0 the T1_T246 weight T0 on my T1_T394 barbell T0 to T1_T343 20 kg END. T2_T984_T394_T439
+T3-T33-T1023-T511 T1_T201 Record T0 T1_T343 20 pushups T0 in my T1_T282_T318 workout log END. T2_T168_T345
+T3-T33-T1023-T511 T1_T201 Log T0 T1_T343 3 miles T0 of T1_T594_T308 running T0 for today. T2_T153_T345
+T3-T33-T1023-T511 T1_T201 Measure T0 my T1_T282_T318 body mass index END. T2_T109_T318
+T3-T33-T1023-T511 T1_T201 Notify T0 me T1_T786 30 minutes T0 before my T1_T594_T308 pilates T0 class starts. T2_T873_T14
+T3-T33-T1023-T511 T1_T201 Increase T0 my T1_T594_T308 running T0 distance to T1_T343 5 miles T0 per day. T2_T330_T345_T586
+T3-T33-T1023-T511 T1_T201 Set T0 T1_T297 3 times T0 a week T1_T594_T308 yoga T0 sessions. T2_T873_T345_T297
+T3-T33-T1023-T511 T1_T201 Update T0 my T1_T80_T668 current weight T0 to T1_T343 70 kg END. T2_T335_T80_T668
+T3-T33-T1023-T511 T1_T201 Track T0 the T1_T246 calories burned T0 during my T1_T594_T308 HIIT workout END. T2_T746_T704_T632
+T3-T33-T1023-T511 T1_T201 Schedule T0 an T1_T594_T308 aerobics T0 class at T1_T786 6 PM T0 every T1_T297 Friday END. T2_T863_T551
+T3-T33-T1023-T511 T1_T201 Record T0 T1_T343 2 liters T0 of T1_T246 water intake T0 for today. T2_T168_T38_T324
+T3-T33-T1023-T511 T1_T201 Generate T0 a T1_T345_T485 meal plan T0 for T1_T681_T308 muscle gain END. T2_T145_T512_T485
+T3-T33-T1023-T511 T1_T201 Monitor T0 my T1_T282_T318 sleep duration T0 and T1_T246 quality END. T2_T404_T571
+T3-T33-T1023-T511 T1_T201 Complete T0 my T1_T594_T308 leg day T0 workout. T2_T317_T345
+T3-T33-T1023-T511 T1_T201 Pause T0 my T1_T594_T308 cycling T0 session. T2_T150_T682
+T3-T33-T1023-T511 T1_T201 Resume T0 my T1_T594_T308 cycling T0 session. T2_T727_T682
+T3-T33-T1023-T511 T1_T201 Stop T0 my T1_T594_T308 strength training T0 workout. T2_T287_T345
+T3-T33-T1023-T511 T1_T201 Increase T0 the T1_T246 speed T0 of my T1_T594_T308 treadmill run END. T2_T330_T19
+T3-T33-T1023-T511 T1_T201 Decrease T0 the T1_T246 incline T0 on the T1_T394 treadmill END. T2_T984_T374
+T3-T33-T1023-T511 T1_T201 Record T0 T1_T343 15 squats T0 in my T1_T282_T318 workout log END. T2_T168_T345
+T3-T33-T1023-T511 T1_T201 Log T0 T1_T343 30 minutes T0 of T1_T594_T308 yoga T0 for today. T2_T153_T345
+T3-T33-T1023-T511 T1_T201 Measure T0 my T1_T282_T318 body fat percentage END. T2_T109_T902_T615
+T3-T33-T1023-T511 T1_T201 Notify T0 me T1_T786 1 hour T0 before my T1_T594_T308 spin class T0 starts. T2_T873_T14
+T3-T33-T1023-T511 T1_T201 Increase T0 my T1_T594_T308 swimming T0 duration to T1_T343 1 hour T0 per session. T2_T330_T345_T54
+T3-T33-T1023-T511 T1_T201 Set T0 T1_T297 2 times T0 a week T1_T594_T308 strength training T0 sessions. T2_T873_T345_T297
+T3-T33-T1023-T511 T1_T201 Update T0 my T1_T80_T668 age T0 to T1_T343 25 years END. T2_T335_T80_T668
+T3-T33-T1023-T511 T1_T201 Track T0 the T1_T246 calories burned T0 during my T1_T594_T308 Zumba T0 class. T2_T746_T704_T632
+T3-T33-T1023-T511 T1_T201 Start T0 a T1_T54 10-minute T0 T1_T594_T308 cool-down T0 session after T1_T594_T308 running END. T2_T631_T1039
+T3-T33-T1023-T511 T1_T201 Record T0 T1_T343 5 liters T0 of T1_T246 water intake T0 for today. T2_T168_T38_T324
+T3-T33-T1023-T511 T1_T201 Generate T0 a T1_T345_T485 meal plan T0 for T1_T681_T308 weight loss END. T2_T145_T512_T485
+T3-T33-T1023-T511 T1_T201 Monitor T0 my T1_T282_T318 heart rate T0 during T1_T594_T308 cardio T0 workouts. T2_T404_T307_T187
+T3-T33-T1023-T511 T1_T201 Complete T0 my T1_T594_T308 core T0 workout. T2_T317_T345
+T3-T33-T1023-T511 T1_T201 Pause T0 my T1_T594_T308 HIIT T0 session. T2_T150_T682
+T3-T33-T1023-T511 T1_T201 Resume T0 my T1_T594_T308 HIIT T0 session. T2_T727_T682
+T3-T33-T1023-T511 T1_T201 Stop T0 my T1_T594_T308 Zumba T0 class. T2_T287_T551
+T3-T33-T1023-T511 T1_T201 Increase T0 the T1_T246 resistance T0 on the T1_T394 elliptical END. T2_T330_T390
+T3-T33-T1023-T511 T1_T201 Decrease T0 the T1_T246 speed T0 on the T1_T394 spin bike END. T2_T984_T19
+T3-T33-T1023-T511 T1_T201 Record T0 T1_T343 20 lunges T0 in my T1_T282_T318 workout log END. T2_T168_T345
+T3-T33-T1023-T511 T1_T201 Log T0 T1_T343 45 minutes T0 of T1_T594_T308 Pilates T0 for today. T2_T153_T345
+T3-T33-T1023-T511 T1_T201 Measure T0 my T1_T282_T318 muscle mass END. T2_T109_T895_T518
+T3-T33-T1023-T511 T1_T201 Notify T0 me T1_T786 15 minutes T0 before my T1_T594_T308 kettlebell workout T0 starts. T2_T873_T14
+T3-T33-T1023-T511 T1_T201 Increase T0 my T1_T594_T308 rowing T0 duration to T1_T343 30 minutes T0 per session. T2_T330_T345_T54
+T3-T33-T1023-T511 T1_T201 Set T0 T1_T297 4 times T0 a week T1_T594_T308 cardio T0 sessions. T2_T873_T345_T297
+T3-T33-T1023-T511 T1_T201 Update T0 my T1_T80_T668 current weight T0 to T1_T343 65 kg END. T2_T335_T80_T668
+T3-T33-T1023-T511 T1_T201 Track T0 the T1_T246 calories burned T0 during my T1_T594_T308 kickboxing T0 class. T2_T746_T704_T632
+T3-T33-T1023-T511 T1_T201 Record T0 T1_T343 3 liters T0 of T1_T246 water intake T0 for today. T2_T168_T38_T324
+T3-T33-T1023-T511 T1_T201 Generate T0 a T1_T345_T485 meal plan T0 for T1_T681_T308 maintaining weight END. T2_T145_T512_T485
+T3-T33-T1023-T511 T1_T201 Monitor T0 my T1_T282_T318 step count T0 during T1_T594_T308 walking END. T2_T404_T142_T987
+T3-T33-T1023-T511 T1_T201 Complete T0 my T1_T594_T308 upper body T0 workout. T2_T317_T345
+T3-T33-T1023-T511 T1_T201 Pause T0 my T1_T594_T308 rowing T0 session. T2_T150_T682
+T3-T33-T1023-T511 T1_T201 Resume T0 my T1_T594_T308 rowing T0 session. T2_T1265
+T3-T993-T511 T1_T201 Set T0 a T1_T786 9:00pm T0 reminder to T1_T201 watch T0 the T1_T694 Game of Thrones T0 finale. T2_T14
+T3-T993-T511 T1_T201 Play T0 the T1_T694 latest album T0 by T1_T244 Taylor Swift END. T2_T925_T597
+T3-T993-T511 T1_T201 Pause T0 the T1_T644_T308 movie END. T2_T597_T874
+T3-T993-T511 T1_T201 Recommend T0 some T1_T217 comedy T0 T1_T644_T308 shows END. T2_T167_T899
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T644_T308 song END. T2_T597_T874
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 favorite T0 T1_T217 genre T0 to T1_T167 rock END. T2_T808_T335
+T3-T993-T511 T1_T201 Search T0 for T1_T694 The Office T0 episodes. T2_T167_T170
+T3-T993-T511 T1_T201 Add T0 T1_T694 Breaking Bad T0 to my T1_T808_T308 watchlist END. T2_T167_T449
+T3-T993-T511 T1_T201 Remove T0 T1_T694 Friends T0 from my T1_T808_T308 watchlist END. T2_T167_T301
+T3-T993-T511 T1_T201 Save T0 the T1_T694 latest episode T0 of T1_T694 Stranger Things END. T2_T167_T463
+T3-T993-T511 T1_T201 Record T0 the T1_T694 next football match END. T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T201 watch T0 history. T2_T153_T689
+T3-T993-T511 T1_T201 Notify T0 me when the new T1_T694 Avengers T0 T1_T644_T308 movie T0 is available. T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to T1_T201 watch T0 T1_T694 Rick and Morty T0 every T1_T623 Friday T0 at T1_T786 8:00pm END. T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T694 latest album T0 by T1_T244 Billie Eilish END. T2_T574
+T3-T993-T511 T1_T201 Dislike T0 the T1_T694 latest episode T0 of T1_T694 The Walking Dead END. T2_T574
+T3-T993-T511 T1_T201 Rate T0 the T1_T694 Star Wars T0 T1_T644_T308 movie T0 5 stars. T2_T574
+T3-T993-T511 T1_T201 Shuffle T0 my T1_T167 playlist END. T2_T597_T874
+T3-T993-T511 T1_T201 Repeat T0 the T1_T694 song T0 T1_T244 Shape of You T0 by T1_T244 Ed Sheeran END. T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T644_T308 song T0 by T1_T54 30 seconds END. T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T644_T308 audio END. T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T644_T308 video END. T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T644_T308 music END. T2_T597_T874
+T3-T993-T511 T1_T201 Play T0 the T1_T694 new album T0 by T1_T244 Ariana Grande T0 on T1_T1017 Spotify END. T2_T925_T597
+T3-T993-T511 T1_T201 Search T0 for T1_T217 horror T0 T1_T644_T308 movies T0 on T1_T1017 Netflix END. T2_T167_T170
+T3-T993-T511 T1_T201 Set T0 a reminder to T1_T201 watch T0 the T1_T694 The Crown T0 every T1_T623 Sunday T0 at T1_T786 8:00pm END. T2_T14
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 favorite T0 T1_T244 artist T0 to T1_T167 Ed Sheeran END. T2_T808_T335
+T3-T993-T511 T1_T201 Recommend T0 some T1_T217 romantic T0 T1_T644_T308 movies END. T2_T167_T899
+T3-T993-T511 T1_T201 Pause T0 the T1_T644_T308 podcast END. T2_T597_T874
+T3-T993-T511 T1_T201 Play T0 the T1_T694 latest episode T0 of T1_T694 The Daily T0 podcast. T2_T1025_T597
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T644_T308 track END. T2_T597_T874
+T3-T993-T511 T1_T201 Add T0 T1_T694 Money Heist T0 to my T1_T808_T308 watchlist END. T2_T167_T449
+T3-T993-T511 T1_T201 Remove T0 T1_T694 Narcos T0 from my T1_T808_T308 watchlist END. T2_T167_T301
+T3-T993-T511 T1_T201 Save T0 the T1_T694 latest episode T0 of T1_T694 Grey's Anatomy END. T2_T167_T463
+T3-T993-T511 T1_T201 Record T0 the T1_T694 next basketball game END. T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T201 watch T0 history. T2_T153_T689
+T3-T993-T511 T1_T201 Notify T0 me when the new T1_T694 James Bond T0 T1_T644_T308 movie T0 is available. T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to T1_T201 watch T0 T1_T694 The Big Bang Theory T0 every T1_T623 Monday T0 at T1_T786 9:00pm END. T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T694 latest album T0 by T1_T244 Justin Bieber END. T2_T574
+T3-T993-T511 T1_T201 Dislike T0 the T1_T694 latest episode T0 of T1_T694 The Handmaid's Tale END. T2_T574
+T3-T993-T511 T1_T201 Rate T0 the T1_T694 Harry Potter T0 T1_T644_T308 movie T0 4 stars. T2_T574
+T3-T993-T511 T1_T201 Shuffle T0 my T1_T167 workout playlist END. T2_T597_T874
+T3-T993-T511 T1_T201 Repeat T0 the T1_T694 song T0 T1_T244 Bad Guy T0 by T1_T244 Billie Eilish END. T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T644_T308 song T0 by T1_T54 1 minute END. T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T644_T308 audio END. T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T644_T308 video END. T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T644_T308 music END. T2_T597_T874
+T3-T993-T511 T1_T201 Play T0 the T1_T694 new album T0 by T1_T244 BTS T0 on T1_T1017 Apple Music END. T2_T925_T597
+T3-T993-T511 T1_T201 Search T0 for T1_T217 drama T0 T1_T644_T308 series T0 on T1_T1017 Hulu END. T2_T167_T170
+T3-T993-T511 T1_T201 Set T0 a reminder to T1_T201 watch T0 the T1_T694 The Mandalorian T0 every T1_T623 Friday T0 at T1_T786 7:00pm END. T2_T14
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 favorite T0 T1_T244 band T0 to T1_T167 Coldplay END. T2_T808_T335
+T3-T993-T511 T1_T201 Recommend T0 some T1_T217 thriller T0 T1_T644_T308 movies END. T2_T167_T899
+T3-T993-T511 T1_T201 Pause T0 the T1_T644_T308 audiobook END. T2_T597_T874
+T3-T993-T511 T1_T201 Play T0 the T1_T694 latest episode T0 of T1_T694 Serial T0 podcast. T2_T1025_T597
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T644_T308 chapter END. T2_T597_T874
+T3-T993-T511 T1_T201 Add T0 T1_T694 The Witcher T0 to my T1_T808_T308 watchlist END. T2_T167_T449
+T3-T993-T511 T1_T201 Remove T0 T1_T694 Peaky Blinders T0 from my T1_T808_T308 watchlist END. T2_T167_T301
+T3-T993-T511 T1_T201 Save T0 the T1_T694 latest episode T0 of T1_T694 The Good Place END. T2_T167_T463
+T3-T993-T511 T1_T201 Record T0 the T1_T694 next tennis match END. T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T201 watch T0 history. T2_T153_T689
+T3-T993-T511 T1_T201 Notify T0 me when the new T1_T694 Batman T0 T1_T644_T308 movie T0 is available. T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to T1_T201 watch T0 T1_T694 Friends T0 every T1_T623 Wednesday T0 at T1_T786 8:30pm END. T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T694 latest album T0 by T1_T244 Rihanna END. T2_T574
+T3-T993-T511 T1_T201 Dislike T0 the T1_T694 latest episode T0 of T1_T694 The 100 END. T2_T574
+T3-T993-T511 T1_T201 Rate T0 the T1_T694 Lord of the Rings T0 T1_T644_T308 movie T0 5 stars. T2_T574
+T3-T993-T511 T1_T201 Shuffle T0 my T1_T167 chill playlist END. T2_T597_T874
+T3-T993-T511 T1_T201 Repeat T0 the T1_T694 song T0 T1_T244 Perfect T0 by T1_T244 Ed Sheeran END. T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T644_T308 song T0 by T1_T54 45 seconds END. T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T644_T308 audio END. T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T644_T308 video END. T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T644_T308 music END. T2_T597_T874
+T3-T993-T511 T1_T201 Play T0 the T1_T694 new album T0 by T1_T244 Drake T0 on T1_T1017 Tidal END. T2_T925_T597
+T3-T993-T511 T1_T201 Search T0 for T1_T217 action T0 T1_T644_T308 movies T0 on T1_T1017 Amazon Prime END. T2_T167_T170
+T3-T993-T511 T1_T201 Set T0 a reminder to T1_T201 watch T0 the T1_T694 The Simpsons T0 every T1_T623 Sunday T0 at T1_T786 8:00pm END. T2_T14
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 favorite T0 T1_T244 singer T0 to T1_T167 Adele END. T2_T808_T335
+T3-T993-T511 T1_T201 Recommend T0 some T1_T217 mystery T0 T1_T644_T308 shows END. T2_T167_T899
+T3-T993-T511 T1_T201 Pause T0 the T1_T644_T308 documentary END. T2_T597_T874
+T3-T993-T511 T1_T201 Play T0 the T1_T694 latest episode T0 of T1_T694 The Moth T0 podcast. T2_T1025_T597
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T644_T308 song END. T2_T597_T874
+T3-T993-T511 T1_T201 Add T0 T1_T694 The Office T0 to my T1_T808_T308 watchlist END. T2_T167_T449
+T3-T993-T511 T1_T201 Remove T0 T1_T694 How I Met Your Mother T0 from my T1_T808_T308 watchlist END. T2_T167_T301
+T3-T993-T511 T1_T201 Save T0 the T1_T694 latest episode T0 of T1_T694 The Flash END. T2_T167_T463
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 had T0 T1_T225 a colonoscopy T0 T1_T623 two years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 metformin T0 for T1_T12 my diabetes T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 high blood pressure T0 T1_T623 last month T0 T2_T12_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a gallbladder removal surgery T0 T1_T623 three years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 will have T0 T1_T225 a cataract surgery T0 T1_T623 next month T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 arthritis T0 T1_T623 two years ago T0 T2_T12_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 a mammogram T0 T1_T623 next week T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 had T0 T1_T225 a hip replacement surgery T0 T1_T623 three years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 will be undergoing T0 T1_T225 a knee replacement surgery T0 T1_T623 next month T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 osteoporosis T0 T1_T623 last year T0 T2_T12_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 beta blockers T0 for T1_T12 my heart condition T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 a colonoscopy T0 T1_T623 next week T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 had T0 T1_T225 a pacemaker implantation T0 T1_T623 two years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 will be undergoing T0 T1_T225 a bypass surgery T0 T1_T623 next month T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 glaucoma T0 T1_T623 last year T0 T2_T12_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 antihistamines T0 for T1_T12 my allergies T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 an ultrasound T0 T1_T623 next week T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 had T0 T1_T225 a lung transplant T0 T1_T623 two years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 will be undergoing T0 T1_T225 a liver transplant T0 T1_T623 next month T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 lupus T0 T1_T623 last year T0 T2_T12_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 calcium supplements T0 for T1_T12 my osteoporosis T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 a CT scan T0 T1_T623 next week T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 had T0 T1_T225 a prostate surgery T0 T1_T623 two years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 will be undergoing T0 T1_T225 a heart valve repair surgery T0 T1_T623 next month T0 T2_T225_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 chronic kidney disease T0 T1_T623 last year T0 T2_T12_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 statins T0 for T1_T12 my high cholesterol T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 a PET scan T0 T1_T623 next week T0 T2_T983_T863
+T3-T826-T183-T511 T1_T201 Schedule T0 a T1_T983_T308 blood test T0 for T1_T248_T668 John Doe T0 on T1_T623 June 20th T0 T2_T176_T863
+T3-T826-T183-T511 T1_T201 Update T0 the T1_T248_T668 patient's medical history T0 with the new T1_T167 allergy information T0 T2_T335_T248_T668
+T3-T826-T183-T511 T1_T201 Set T0 the T1_T683 PCR machine T0 to T1_T365_T774 95 degrees Celsius T0 for T1_T54 5 minutes T0 T2_T873_T683
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T683 autoclave T0 after T1_T54 15 minutes T0 T2_T287_T683
+T3-T826-T183-T511 T1_T201 Pause T0 the T1_T683 microscope T0 calibration for T1_T54 10 minutes T0 T2_T150_T683
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T683 spectrophotometer T0 operation after T1_T54 5 minutes T0 T2_T727_T683
+T3-T826-T183-T511 T1_T201 Test T0 the T1_T163_T308 blood sample T0 of T1_T248_T668 John Doe T0 for T1_T983_T308 glucose levels T0 T2_T631_T983
+T3-T826-T183-T511 T1_T201 Collect T0 T1_T163_T308 blood samples T0 from T1_T248_T668 Bob Lee T0 for T1_T983_T308 lipid profile T0 test T2_T44_T163
+T3-T826-T183-T511 T1_T201 Store T0 the T1_T163_T308 tissue sample T0 of T1_T248_T668 Jane Doe T0 in the T1_T813 sample storage T0 T2_T995_T163
+T3-T826-T183-T511 T1_T201 Prepare T0 the T1_T683 microscope T0 for the T1_T983_T308 cell analysis T0 of T1_T248_T668 Alice Smith T0 T2_T693_T683
+T3-T826-T183-T511 T1_T201 Review T0 the T1_T50_T308 lab report T0 of T1_T248_T668 Bob Lee T0 before T1_T96 sign-off T0 T2_T437_T50
+T3-T826-T183-T511 T1_T201 Approve T0 the T1_T50_T308 lab report T0 of T1_T248_T668 John Doe T0 T2_T617_T50
+T3-T826-T183-T511 T1_T201 Schedule T0 a T1_T983_T308 liver function test T0 for T1_T248_T668 Alice Smith T0 on T1_T623 July 1st T0 T2_T176_T863
+T3-T826-T183-T511 T1_T201 Update T0 the T1_T248_T668 patient's contact details T0 with the new T1_T167 phone number T0 T2_T335_T248_T668
+T3-T826-T183-T511 T1_T201 Conduct T0 an T1_T983_T308 MRI T0 for T1_T248_T668 Jane Doe T0 in the T1_T813 radiology department T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Change T0 the T1_T365_T308 time T0 of the T1_T683 incubator T0 to T1_T365_T774 24 hours T0 T2_T334_T365
+T3-T826-T183-T511 T1_T201 Set T0 the T1_T683 biochemistry analyzer T0 to T1_T365_T774 37 degrees Celsius T0 for T1_T54 30 minutes T0 T2_T873_T683
+T3-T826-T183-T511 T1_T201 Start T0 the T1_T683 DNA sequencer T0 for T1_T248_T668 John Doe END's T1_T983_T308 genetic test T0 T2_T631_T983
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T683 blood gas analyzer T0 after T1_T54 10 minutes T0 T2_T287_T683
+T3-T826-T183-T511 T1_T201 Pause T0 the T1_T683 ELISA reader T0 calibration for T1_T54 5 minutes T0 T2_T150_T683
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T683 microtome T0 operation after T1_T54 10 minutes T0 T2_T727_T683
+T3-T826-T183-T511 T1_T201 Test T0 the T1_T163_T308 saliva sample T0 of T1_T248_T668 Bob Lee T0 for T1_T983_T308 cortisol levels T0 T2_T631_T983
+T3-T826-T183-T511 T1_T201 Retrieve T0 the T1_T248_T668 patient records T0 of T1_T248_T668 Bob Lee T0 from the T1_T1017 database T0 T2_T687_T168
+T3-T826-T183-T511 T1_T201 Prepare T0 the T1_T683 flow cytometer T0 for the T1_T983_T308 lymphocyte count T0 of T1_T248_T668 Jane Doe T0 T2_T693_T683
+T3-T826-T183-T511 T1_T201 Review T0 the T1_T50_T308 lab report T0 of T1_T248_T668 John Doe T0 before T1_T96 sign-off T0 T2_T437_T50
+T3-T826-T183-T511 T1_T201 Approve T0 the T1_T50_T308 lab report T0 of T1_T248_T668 Bob Lee T0 T2_T617_T50
+T3-T826-T183-T511 T1_T201 Schedule T0 a T1_T983_T308 kidney function test T0 for T1_T248_T668 Jane Doe T0 on T1_T623 August 2nd T0 T2_T176_T863
+T3-T826-T183-T511 T1_T201 Update T0 the T1_T248_T668 patient's medication list T0 with the new T1_T167 drug name T0 T2_T335_T248_T668
+T3-T826-T183-T511 T1_T201 Change T0 the T1_T365_T308 speed T0 of the T1_T683 centrifuge T0 to T1_T365_T774 5000 rpm T0 T2_T334_T365
+T3-T826-T183-T511 T1_T201 Set T0 the T1_T683 gel electrophoresis system T0 to T1_T365_T774 100 volts T0 for T1_T54 1 hour T0 T2_T873_T683
+T3-T826-T183-T511 T1_T201 Start T0 the T1_T683 coagulometer T0 for T1_T248_T668 Bob Lee END's T1_T983_T308 clotting time T0 test T2_T631_T983
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T683 sterilizer T0 after T1_T54 30 minutes T0 T2_T287_T683
+T3-T826-T183-T511 T1_T201 Pause T0 the T1_T683 fluorescence microscope T0 calibration for T1_T54 10 minutes T0 T2_T150_T683
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T683 mass spectrometer T0 operation after T1_T54 15 minutes T0 T2_T727_T683
+T3-T826-T183-T511 T1_T201 Report T0 the T1_T343 platelet count T0 of T1_T248_T668 Jane Doe T0 to T1_T288 Dr. Baker T0 T2_T50_T343
+T3-T826-T183-T511 T1_T201 Test T0 the T1_T163_T308 hair sample T0 of T1_T248_T668 John Doe T0 for T1_T983_T308 drug levels T0 T2_T631_T983
+T3-T826-T183-T511 T1_T201 Review T0 the T1_T50_T308 lab report T0 of T1_T248_T668 Bob Lee T0 before T1_T96 sign-off T0 T2_T437_T50
+T3-T826-T183-T511 T1_T201 Approve T0 the T1_T50_T308 lab report T0 of T1_T248_T668 John Doe T0 T2_T617_T50
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 would like to schedule T0 a T1_T682_T308 therapy session T0 on T1_T623 July 15th T0 T2_T176_T83
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 would like to T1_T201 record T0 my T1_T1018 feelings T0 T1_T297 daily T0 T2_T1018_T48
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 want to T1_T201 explore T0 some T1_T922_T308 cognitive-behavioral therapies T0 T2_T922_T622
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 need to T1_T201 update T0 my T1_T248_T668 contact information T0 T2_T123_T335
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 want to T1_T201 track T0 my T1_T282_T318 progress T0 T1_T297 weekly T0 T2_T282_T1019
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 feel better T0 when I T1_T201 engage T0 in T1_T370 physical activities T0 T2_T370_T899
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 feel T0 T1_T1018 anxious T0 T1_T786 in the mornings T0 T2_T1018_T50
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 would like to T1_T201 document T0 my T1_T667 recent mood swings T0 T2_T667_T48
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 would like to T1_T201 record T0 my T1_T1018 feelings T0 T1_T297 daily T0 T2_T1018_T48
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 want to T1_T201 explore T0 some T1_T922_T308 cognitive-behavioral therapies T0 T2_T922_T622
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 need to T1_T201 update T0 my T1_T248_T668 contact information T0 T2_T123_T335
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 want to T1_T201 track T0 my T1_T282_T318 progress T0 T1_T297 weekly T0 T2_T282_T1019
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 feel better T0 when I T1_T201 engage T0 in T1_T370 physical activities T0 T2_T370_T899
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 feel T0 T1_T1018 anxious T0 T1_T786 in the mornings T0 T2_T1018_T50
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 would like to T1_T201 document T0 my T1_T667 recent mood swings T0 T2_T667_T48
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 would like to T1_T201 record T0 my T1_T1018 feelings T0 T1_T297 daily T0 T2_T1018_T48
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 want to T1_T201 explore T0 some T1_T922_T308 cognitive-behavioral therapies T0 T2_T922_T622
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 need to T1_T201 update T0 my T1_T248_T668 contact information T0 T2_T123_T335
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 want to T1_T201 track T0 my T1_T282_T318 progress T0 T1_T297 weekly T0 T2_T282_T1019
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 feel better T0 when I T1_T201 engage T0 in T1_T370 physical activities T0 T2_T370_T899
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 feel T0 T1_T1018 anxious T0 T1_T786 in the mornings T0 T2_T1018_T50
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 would like to T1_T201 document T0 my T1_T667 recent mood swings T0 T2_T667_T48
+T3-T510-T511 T1_T201 Book T0 a T1_T627_T308 flight T0 to T1_T387 New York T0 on T1_T623 May 25th T0 T2_T409
+T3-T510-T511 T1_T201 Check T0 the T1_T627_T308 flight T0 status for T1_T988_T421 AA 123 T0 T2_T851_T915
+T3-T510-T511 T1_T201 Reserve T0 a T1_T710_T308 hotel room T0 in T1_T387 Rome T0 for T1_T623 June 10th T0 T2_T961
+T3-T510-T511 T1_T201 Set T0 a T1_T510_T1016 flight delay alert T0 for T1_T988_T421 UA 456 T0 T2_T873_T1016
+T3-T510-T511 T1_T201 Update T0 T1_T988_T421 my return flight T0 to T1_T623 July 30th T0 T2_T335_T988
+T3-T510-T511 T1_T201 View T0 the T1_T988_T421 itinerary T0 for T1_T288 John Doe T0 T2_T278_T988
+T3-T510-T511 T1_T201 Generate T0 a T1_T988_T421 travel itinerary T0 for T1_T387 Tokyo T0 T2_T145_T988
+T3-T510-T511 T1_T201 Monitor T0 T1_T627_T308 flight T0 prices for T1_T387 London T0 on T1_T1017 Skyscanner T0 T2_T523_T404
+T3-T510-T511 T1_T201 Cancel T0 my T1_T710_T308 hotel reservation T0 in T1_T387 Madrid T0 T2_T881_T409
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 train T0 booking to T1_T387 Berlin T0 T2_T111_T409
+T3-T510-T511 T1_T201 Notify T0 T1_T288 Jane Doe T0 about the T1_T510_T1016 gate change T0 for T1_T988_T421 DL 789 T0 T2_T422_T1016
+T3-T510-T511 T1_T201 Remind T0 me to check in for my T1_T627_T308 flight T0 T1_T786 24 hours T0 before departure T2_T873_T14
+T3-T510-T511 T1_T201 Plan T0 a T1_T54 7 days T0 trip to T1_T387 Sydney T0 within a T1_T251 $2000 T0 budget T2_T485_T218
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 bus T0 routes from T1_T387 Amsterdam T0 to T1_T387 Brussels T0 T2_T458_T861
+T3-T510-T511 T1_T201 Compare T0 T1_T710_T308 hotel T0 prices in T1_T387 Dubai T0 on T1_T1017 Booking.com T0 T2_T410_T286
+T3-T510-T511 T1_T201 Add T0 T1_T988_T421 a city tour T0 to my T1_T623 June 15th T0 plans T2_T449_T988_T421
+T3-T510-T511 T1_T201 Remove T0 T1_T988_T421 the museum visit T0 from my T1_T988_T421 itinerary T0 T2_T301_T988_T421
+T3-T510-T511 T1_T201 Change T0 my T1_T627_T308 flight T0 to T1_T387 San Francisco T0 to T1_T623 September 20th T0 T2_T334_T851
+T3-T510-T511 T1_T201 Book T0 a T1_T627_T308 flight T0 to T1_T387 Prague T0 for T1_T623 October 15th T0 T2_T742_T851
+T3-T510-T511 T1_T201 Check T0 the T1_T627_T308 flight T0 status for T1_T988_T421 BA 321 T0 T2_T342_T851_T915
+T3-T510-T511 T1_T201 Reserve T0 a T1_T710_T308 hotel room T0 in T1_T387 Venice T0 for T1_T623 November 5th T0 T2_T112_T289
+T3-T510-T511 T1_T201 Set T0 a T1_T510_T1016 baggage delay alert T0 for T1_T988_T421 LH 654 T0 T2_T873_T1102_T1016
+T3-T510-T511 T1_T201 Update T0 T1_T988_T421 my departure flight T0 to T1_T623 December 15th T0 T2_T335_T1029_T851
+T3-T510-T511 T1_T201 View T0 the T1_T988_T421 travel itinerary T0 for T1_T288 Michael Smith T0 T2_T278_T510_T988
+T3-T510-T511 T1_T201 Generate T0 a T1_T988_T421 vacation itinerary T0 for T1_T387 Barcelona T0 T2_T145_T1012_T988
+T3-T510-T511 T1_T201 Monitor T0 T1_T627_T308 flight T0 prices for T1_T387 Athens T0 on T1_T1017 Expedia T0 T2_T404_T286
+T3-T510-T511 T1_T201 Cancel T0 my T1_T710_T308 apartment booking T0 in T1_T387 Vienna T0 T2_T881_T68_T409
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 ferry T0 booking to T1_T387 Santorini T0 T2_T111_T132_T409
+T3-T510-T511 T1_T201 Remind T0 me to pack my T1_T510_T392 passport T0 for my T1_T623 January 15th T0 trip T2_T873_T641_T14
+T3-T510-T511 T1_T201 Plan T0 a T1_T54 10 days T0 trip to T1_T387 Bangkok T0 within a T1_T251 $1500 T0 budget T2_T485_T1012
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 train T0 routes from T1_T387 Munich T0 to T1_T387 Zurich T0 T2_T458_T972_T861
+T3-T510-T511 T1_T201 Compare T0 T1_T710_T308 hostel T0 prices in T1_T387 Lisbon T0 on T1_T1017 Hostelworld T0 T2_T410_T905_T286
+T3-T510-T511 T1_T201 Add T0 T1_T988_T421 a wine tasting event T0 to my T1_T623 February 20th T0 plans T2_T449_T388_T705
+T3-T510-T511 T1_T201 Remove T0 T1_T988_T421 the city walk T0 from my T1_T988_T421 itinerary T0 T2_T301_T124_T679
+T3-T510-T511 T1_T201 Change T0 my T1_T627_T308 flight T0 to T1_T387 Istanbul T0 to T1_T623 April 5th T0 T2_T334_T851_T623
+T3-T510-T511 T1_T201 Book T0 a T1_T627_T308 flight T0 to T1_T387 Copenhagen T0 for T1_T623 May 10th T0 T2_T742_T851_T180
+T3-T510-T511 T1_T201 Check T0 the T1_T627_T308 flight T0 status for T1_T988_T421 AF 567 T0 T2_T342_T194_T915
+T3-T510-T511 T1_T201 Set T0 a T1_T510_T1016 flight delay alert T0 for T1_T988_T421 KL 234 T0 T2_T873_T851_T665_T1016
+T3-T510-T511 T1_T201 Update T0 T1_T988_T421 my hotel check-out date T0 to T1_T623 July 15th T0 T2_T335_T1005_T623
+T3-T510-T511 T1_T201 View T0 the T1_T988_T421 itinerary T0 for T1_T288 George Brown T0 T2_T278_T988_T481
+T3-T510-T511 T1_T201 Generate T0 a T1_T988_T421 trip itinerary T0 for T1_T387 Budapest T0 T2_T145_T218_T485
+T3-T510-T511 T1_T201 Monitor T0 T1_T627_T308 flight T0 prices for T1_T387 Seoul T0 on T1_T1017 Kayak T0 T2_T404_T851_T286
+T3-T510-T511 T1_T201 Cancel T0 my T1_T710_T308 resort booking T0 in T1_T387 Cancun T0 T2_T881_T508_T961
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 bus T0 booking to T1_T387 Berlin T0 T2_T111_T757_T409
+T3-T510-T511 T1_T201 Notify T0 T1_T288 Laura Davis T0 about the T1_T510_T1016 flight time change T0 for T1_T988_T421 QR 345 T0 T2_T422_T851_T334
+T3-T510-T511 T1_T201 Remind T0 me to print my T1_T510_T392 boarding pass T0 T1_T786 2 hours T0 before the flight T2_T873_T1206_T14
+T3-T510-T511 T1_T201 Plan T0 a T1_T54 14 days T0 trip to T1_T387 Maldives T0 within a T1_T251 $4000 T0 budget T2_T485_T957
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 bike T0 routes in T1_T387 Copenhagen T0 T2_T458_T730_T861
+T3-T510-T511 T1_T201 Compare T0 T1_T710_T308 motel T0 prices in T1_T387 Las Vegas T0 on T1_T1017 Hotels.com T0 T2_T410_T917_T286
+T3-T510-T511 T1_T201 Add T0 T1_T988_T421 a concert T0 to my T1_T623 August 15th T0 plans T2_T449_T309_T436_T485
+T3-T510-T511 T1_T201 Remove T0 T1_T988_T421 the sightseeing tour T0 from my T1_T988_T421 itinerary T0 T2_T301_T149_T532
+T3-T510-T511 T1_T201 Change T0 my T1_T627_T308 flight T0 to T1_T387 Rio de Janeiro T0 to T1_T623 October 20th T0 T2_T334_T851_T409
+T3-T26-T511 T1_T201 Check T0 the balance of my T1_T591_T308 checking account T0 T2_T932_T380
+T3-T26-T511 T1_T201 Transfer T0 T1_T46 $1000 T0 from T1_T591_T308 savings account T0 to T1_T591_T308 checking account T0 T2_T588_T1013
+T3-T26-T511 T1_T201 Pay T0 T1_T46 $200 T0 towards T1_T288 credit card T0 from T1_T591_T308 checking account T0 T2_T741_T828
+T3-T26-T511 T1_T201 Update T0 my T1_T167 address T0 in T1_T591_T308 savings account T0 T2_T591_T335
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 expenses T0 for the last T1_T54 month T0 T2_T239_T894
+T3-T26-T511 T1_T201 View T0 the T1_T50_T308 statement T0 of T1_T591_T308 credit card T0 for T1_T623 last month T0 T2_T161_T278
+T3-T26-T511 T1_T201 Report T0 the T1_T167 unauthorized transaction T0 of T1_T46 $500 T0 on my T1_T591_T308 credit card T0 T2_T904_T50
+T3-T26-T511 T1_T201 Alert T0 me when T1_T591_T308 savings account T0 balance goes below T1_T46 $1000 T0 T2_T57_T932_T1016
+T3-T26-T511 T1_T201 Deposit T0 T1_T46 $1500 T0 into T1_T591_T308 savings account T0 T2_T559_T417
+T3-T26-T511 T1_T201 Withdraw T0 T1_T46 $200 T0 from T1_T591_T308 checking account T0 T2_T188_T417
+T3-T26-T511 T1_T201 Invest T0 T1_T46 $5000 T0 into T1_T167 mutual funds T0 from T1_T591_T308 savings account T0 T2_T296_T417
+T3-T26-T511 T1_T201 Save T0 T1_T46 $200 T0 per T1_T297 month T0 into T1_T591_T308 savings account T0 T2_T723_T485
+T3-T26-T511 T1_T201 Spend T0 T1_T46 $100 T0 on T1_T167 entertainment T0 from T1_T591_T308 checking account T0 this T1_T623 week T0 T2_T264_T417
+T3-T26-T511 T1_T201 Monitor T0 my T1_T591_T308 credit card T0 for T1_T167 fraudulent activity T0 T2_T904_T643
+T3-T26-T511 T1_T201 Notify T0 me when my T1_T591_T308 checking account T0 balance reaches T1_T46 $5000 T0 T2_T932_T540
+T3-T26-T511 T1_T201 Check T0 my T1_T591_T308 retirement account T0 balance on T1_T1017 mobile app T0 T2_T932_T380
+T3-T26-T511 T1_T201 Transfer T0 T1_T46 $300 T0 to T1_T288 John's savings account T0 from my T1_T591_T308 checking account T0 T2_T588_T1013
+T3-T26-T511 T1_T201 Pay T0 T1_T46 $75 T0 towards T1_T288 phone bill T0 from my T1_T591_T308 checking account T0 T2_T741_T828
+T3-T26-T511 T1_T201 Update T0 my T1_T167 email address T0 in my T1_T591_T308 savings account T0 T2_T591_T335
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 spending habits T0 for the past T1_T54 year T0 T2_T216_T894
+T3-T26-T511 T1_T201 View T0 my T1_T591_T308 checking account T0 T1_T50_T308 statement T0 for T1_T623 this month T0 T2_T161_T278
+T3-T26-T511 T1_T201 Generate T0 a T1_T50_T308 spending report T0 for my T1_T591_T308 checking account T0 T2_T50_T821
+T3-T26-T511 T1_T201 Cancel T0 the T1_T357_T308 automatic transfer T0 of T1_T46 $200 T0 to T1_T288 savings account T0 T2_T777
+T3-T26-T511 T1_T201 Report T0 an T1_T167 unauthorized charge T0 of T1_T46 $250 T0 on my T1_T591_T308 credit card T0 T2_T904_T50
+T3-T26-T511 T1_T201 Alert T0 me when my T1_T591_T308 credit card T0 balance exceeds T1_T46 $2000 T0 T2_T369_T932_T1016
+T3-T26-T511 T1_T201 Budget T0 T1_T46 $200 T0 for T1_T167 dining out T0 every T1_T297 month T0 T2_T251_T365
+T3-T26-T511 T1_T201 Deposit T0 T1_T46 $1000 T0 into my T1_T591_T308 investment account T0 T2_T559_T417
+T3-T26-T511 T1_T201 Withdraw T0 T1_T46 $500 T0 from my T1_T591_T308 ATM T0 T2_T188_T417
+T3-T26-T511 T1_T201 Invest T0 T1_T46 $10000 T0 in T1_T167 stocks T0 from my T1_T591_T308 brokerage account T0 T2_T296_T417
+T3-T26-T511 T1_T201 Save T0 T1_T46 $300 T0 per T1_T297 month T0 for T1_T167 vacation T0 T2_T723_T485
+T3-T26-T511 T1_T201 Spend T0 T1_T46 $50 T0 on T1_T167 books T0 this T1_T623 month T0 T2_T216_T485
+T3-T26-T511 T1_T201 Monitor T0 my T1_T591_T308 bank accounts T0 for T1_T167 unusual activity T0 T2_T904_T643
+T3-T26-T511 T1_T201 Notify T0 me when my T1_T591_T308 savings account T0 reaches T1_T46 $10000 T0 T2_T932_T540
+T3-T26-T511 T1_T201 Check T0 the T1_T591_T308 student loan T0 balance on T1_T1017 online banking T0 T2_T932_T380
+T3-T26-T511 T1_T201 Transfer T0 T1_T46 $150 T0 to T1_T288 Mom's checking account T0 from my T1_T591_T308 savings account T0 T2_T588_T1013
+T3-T26-T511 T1_T201 Pay T0 T1_T46 $120 T0 towards T1_T288 internet bill T0 from my T1_T591_T308 checking account T0 T2_T741_T828
+T3-T26-T511 T1_T201 Update T0 my T1_T167 phone number T0 in my T1_T591_T308 credit card account T0 T2_T591_T335
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 income and expenses T0 for the past T1_T54 six months T0 T2_T219_T894
+T3-T26-T511 T1_T201 View T0 my T1_T591_T308 mortgage account T0 T1_T50_T308 statement T0 for T1_T623 last month T0 T2_T161_T278
+T3-T26-T511 T1_T201 Generate T0 a T1_T50_T308 income report T0 for my T1_T591_T308 checking account T0 T2_T50_T821
+T3-T26-T511 T1_T201 Cancel T0 the T1_T357_T308 automatic deposit T0 of T1_T46 $500 T0 to T1_T288 brokerage account T0 T2_T777
+T3-T26-T511 T1_T201 Report T0 an T1_T167 unauthorized withdrawal T0 of T1_T46 $300 T0 from my T1_T591_T308 checking account T0 T2_T904_T50
+T3-T26-T511 T1_T201 Alert T0 me when my T1_T591_T308 checking account T0 balance drops below T1_T46 $500 T0 T2_T57_T932_T1016
+T3-T26-T511 T1_T201 Budget T0 T1_T46 $150 T0 for T1_T167 clothes shopping T0 every T1_T297 month T0 T2_T251_T365
+T3-T26-T511 T1_T201 Deposit T0 T1_T46 $2000 T0 into my T1_T591_T308 retirement account T0 T2_T559_T417
+T3-T26-T511 T1_T201 Withdraw T0 T1_T46 $100 T0 from my T1_T591_T308 savings account T0 at the T1_T167 ATM T0 T2_T188_T417
+T3-T26-T511 T1_T201 Invest T0 T1_T46 $5000 T0 in T1_T167 mutual funds T0 from my T1_T591_T308 investment account T0 T2_T296_T417
+T3-T26-T511 T1_T201 Save T0 T1_T46 $250 T0 per T1_T297 month T0 for T1_T167 emergency fund T0 T2_T723_T485
+T3-T26-T511 T1_T201 Spend T0 T1_T46 $30 T0 on T1_T167 coffee T0 this T1_T623 week T0 T2_T216_T485
+T3-T26-T511 T1_T201 Monitor T0 my T1_T591_T308 credit cards T0 for T1_T167 suspicious charges T0 T2_T904_T643
+T3-T26-T511 T1_T201 Notify T0 me when my T1_T591_T308 investment account T0 reaches T1_T46 $20000 T0 T2_T932_T540
+T3-T26-T511 T1_T201 Check T0 the T1_T591_T308 car loan T0 balance on T1_T1017 mobile app T0 T2_T932_T380
+T3-T26-T511 T1_T201 Transfer T0 T1_T46 $200 T0 to T1_T288 Dad's savings account T0 from my T1_T591_T308 checking account T0 T2_T588_T1013
+T3-T26-T511 T1_T201 Pay T0 T1_T46 $80 T0 towards T1_T288 gas bill T0 from my T1_T591_T308 checking account T0 T2_T741_T828
+T3-T26-T511 T1_T201 Update T0 my T1_T167 mailing address T0 in my T1_T591_T308 checking account T0 T2_T591_T335
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 saving habits T0 for the past T1_T54 year T0 T2_T723_T894
+T3-T26-T511 T1_T201 View T0 my T1_T591_T308 credit card T0 T1_T50_T308 statement T0 for T1_T623 this month T0 T2_T161_T278
+T3-T26-T511 T1_T201 Generate T0 a T1_T50_T308 expense report T0 for my T1_T591_T308 savings account T0 T2_T50_T821
+T3-T887-T162 T1_T536_T472 Mane T0 T1_T201 dribbles T0 past the defenders and T1_T201 shoots T0 a powerful strike for T1_T697_T472 Liverpool T0 T2_T201
+T3-T887-T162 T1_T536_T472 Neymar T0 T1_T201 fouls T0 T1_T536_T472 Messi T0 in a crucial T1_T535_T308 Champions League T0 match T2_T201
+T3-T887-T162 T1_T697_T472 Chelsea T0 T1_T201 wins T0 the T1_T936_T472 Premier League T0 title for the T1_T716 2020-2021 season T0 T2_T544
+T3-T887-T162 T1_T536_T472 Hazard T0 T1_T201 recovers T0 from his injury and T1_T201 scores T0 a stunning goal for T1_T697_T472 Real Madrid T0 T2_T140
+T3-T887-T162 T1_T536_T472 Mbappe T0 T1_T201 dribbles T0 past the defenders and T1_T201 shoots T0 a powerful strike for T1_T697_T472 PSG T0 T2_T201
+T3-T887-T162 T1_T697_T472 Arsenal T0 T1_T201 dominates T0 possession with T1_T865_T308 60% possession T0 in the first half T2_T865
+T3-T887-T162 T1_T536_T472 Kane T0 T1_T201 sets up T0 a perfect goal for T1_T697_T472 Tottenham T0 in the T1_T535_T308 Premier League T0 match T2_T140
+T3-T887-T162 T1_T536_T472 Dybala T0 T1_T201 fouls T0 T1_T536_T472 Lukaku T0 in a crucial T1_T535_T308 Serie A T0 match T2_T201
+T3-T887-T162 T1_T536_T472 Firmino T0 T1_T201 recovers T0 from his injury and T1_T201 scores T0 a stunning goal for T1_T697_T472 Liverpool T0 T2_T140
+T3-T887-T162 T1_T697_T472 Barcelona T0 T1_T201 dominates T0 possession with T1_T865_T308 70% possession T0 in the first half T2_T865
+T3-T887-T162 T1_T697_T472 Juventus T0 T1_T201 draws T0 with T1_T697_T472 Inter Milan T0 with a T1_T368 2-2 T0 scoreline T2_T544
+T3-T887-T162 T1_T536_T472 Insigne T0 T1_T201 fouls T0 T1_T536_T472 Ronaldo T0 in a crucial T1_T535_T308 Serie A T0 match T2_T201
+T3-T887-T162 T1_T697_T472 PSG T0 T1_T201 wins T0 the T1_T936_T472 Ligue 1 T0 title for the T1_T716 2020-2021 season T0 T2_T544
+T3-T887-T162 T1_T536_T472 Griezmann T0 T1_T201 recovers T0 from his injury and T1_T201 scores T0 a stunning goal for T1_T697_T472 Barcelona T0 T2_T140
+T3-T887-T162 T1_T697_T472 Liverpool T0 T1_T201 dominates T0 possession with T1_T865_T308 65% possession T0 in the first half T2_T865
+T3-T887-T162 T1_T536_T472 Lukaku T0 T1_T201 sets up T0 a perfect goal for T1_T697_T472 Inter Milan T0 in the T1_T535_T308 Serie A T0 match T2_T140
+T3-T887-T162 T1_T536_T472 Pogba T0 T1_T201 fouls T0 T1_T536_T472 Fernandes T0 in a crucial T1_T535_T308 Premier League T0 match T2_T201
+T3-T887-T162 T1_T536_T472 Modric T0 T1_T201 sets up T0 a perfect goal for T1_T697_T472 Real Madrid T0 in the T1_T535_T308 La Liga T0 match T2_T140
+T3-T887-T162 T1_T697_T472 Chelsea T0 T1_T201 draws T0 with T1_T697_T472 Manchester City T0 with a T1_T368 2-2 T0 scoreline T2_T544
+T3-T887-T162 T1_T536_T472 Silva T0 T1_T201 fouls T0 T1_T536_T472 De Bruyne T0 in a crucial T1_T535_T308 Premier League T0 match T2_T201
+T3-T887-T162 T1_T697_T472 PSG T0 T1_T201 wins T0 the T1_T936_T472 Ligue 1 T0 title for the T1_T716 2020-2021 season T0 T2_T544
+T3-T887-T162 T1_T536_T472 Neymar T0 T1_T201 recovers T0 from his injury and T1_T201 scores T0 a stunning goal for T1_T697_T472 PSG T0 T2_T140
+T3-T887-T162 T1_T536_T472 Mbappe T0 T1_T201 dribbles T0 past the defenders and T1_T201 shoots T0 a powerful strike for T1_T697_T472 PSG T0 T2_T201
+T3-T887-T162 T1_T697_T472 Barcelona T0 T1_T201 dominates T0 possession with T1_T865_T308 65% possession T0 in the first half T2_T865
+T3-T887-T162 T1_T536_T472 Dembele T0 T1_T201 sets up T0 a perfect goal for T1_T697_T472 Barcelona T0 in the T1_T535_T308 La Liga T0 match T2_T140
+T3-T887-T162 T1_T697_T472 Liverpool T0 T1_T201 draws T0 with T1_T697_T472 Manchester United T0 with a T1_T368 1-1 T0 scoreline T2_T544
+T3-T887-T162 T1_T536_T472 Henderson T0 T1_T201 fouls T0 T1_T536_T472 Pogba T0 in a crucial T1_T535_T308 Premier League T0 match T2_T201
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was diagnosed with T0 T1_T12 hypertension T0 T1_T623 two years ago T0 T2_T826_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 took T0 T1_T516 paracetamol T0 for T1_T667 my fever T0 T1_T786 yesterday night T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 had T0 T1_T225 hip replacement surgery T0 T1_T623 three months ago T0 T2_T225_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 a T1_T983_T308 mammogram T0 T1_T623 next week T0 T2_T983_T409
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 need T0 a T1_T805_T690 follow-up appointment T0 T1_T623 next month T0 T2_T956_T409
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 felt T0 T1_T667 abdominal pain T0 T1_T786 this afternoon T0 T2_T667_T47
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a CT scan T0 T1_T623 last Tuesday T0 T2_T983_T689
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 noticed T0 T1_T667 a lump T0 in my T1_T813 right breast T0 T1_T623 yesterday T0 T2_T667_T47
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 was referred to T0 T1_T183_T15 the neurology department T0 for T1_T225 further tests T0 T2_T169
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 will need T0 T1_T225 a follow-up surgery T0 T1_T623 next month T0 T2_T225_T409
+T3-T993-T511 T1_T201 Play T0 the T1_T694 Star Wars: The Last Jedi T0 T1_T644_T308 movie T0 T2_T597
+T3-T993-T511 T1_T201 Pause T0 the T1_T644_T308 music T0 T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T694 Game of Thrones T0 T1_T644_T308 series T0 T2_T597_T874
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T644_T308 episode T0 T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T644_T308 video T0 by T1_T54 15 minutes T0 T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T644_T308 audio T0 T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T644_T308 podcast T0 T2_T597_T874
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 genre T0 preference to T1_T217 horror T0 T2_T808_T335
+T3-T993-T511 T1_T201 Recommend T0 T1_T644_T308 movies T0 in the T1_T217 comedy T0 genre T2_T899
+T3-T993-T511 T1_T201 Search T0 for T1_T694 The Dark Knight T0 T1_T644_T308 movie T0 T2_T170
+T3-T993-T511 T1_T201 Add T0 the T1_T694 Friends T0 T1_T644_T308 series T0 to my watchlist T2_T449_T436_T660
+T3-T993-T511 T1_T201 Remove T0 the T1_T694 Breaking Bad T0 T1_T644_T308 series T0 from my watchlist T2_T301_T519_T660
+T3-T993-T511 T1_T201 Save T0 the T1_T244 Taylor Swift T0 album for offline listening T2_T463_T114
+T3-T993-T511 T1_T201 Record T0 the T1_T694 The Big Bang Theory T0 T1_T644_T308 show T0 T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T80_T668 username T0 and T1_T80_T668 password T0 T2_T726
+T3-T993-T511 T1_T201 Notify T0 me when the T1_T694 Stranger Things T0 T1_T644_T308 series T0 is available on T1_T1017 Netflix T0 T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to watch the T1_T694 Avengers: Endgame T0 T1_T644_T308 movie T0 on T1_T623 this Saturday T0 T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T694 The Witcher T0 T1_T644_T308 series T0 T2_T273
+T3-T993-T511 T1_T201 Dislike T0 the T1_T694 The Walking Dead T0 T1_T644_T308 series T0 T2_T276
+T3-T993-T511 T1_T201 Rate T0 the T1_T694 Joker T0 T1_T644_T308 movie T0 5 stars T2_T187
+T3-T993-T511 T1_T201 Shuffle T0 the T1_T244 Ariana Grande T0 songs T2_T688
+T3-T993-T511 T1_T201 Repeat T0 the T1_T694 Frozen II T0 T1_T644_T308 movie T0 T2_T320
+T3-T993-T511 T1_T201 Play T0 T1_T244 Ed Sheeran T0 songs on T1_T1017 Spotify T0 T2_T597
+T3-T993-T511 T1_T201 Pause T0 the T1_T694 The Good Place T0 T1_T644_T308 series T0 T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T244 BTS T0 music T2_T597_T874
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T244 Billie Eilish T0 song T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T694 Money Heist T0 T1_T644_T308 series T0 by T1_T54 10 minutes T0 T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T694 The Office T0 T1_T644_T308 series T0 T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T244 Drake T0 music T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 a reminder to listen to the T1_T244 Adele T0 album at T1_T786 7 PM T0 T2_T14
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 artist T0 preference to T1_T244 Justin Bieber T0 T2_T808_T335
+T3-T993-T511 T1_T201 Recommend T0 T1_T644_T308 songs T0 by T1_T244 Rihanna T0 T2_T899
+T3-T993-T511 T1_T201 Search T0 for T1_T694 Inception T0 T1_T644_T308 movie T0 T2_T170
+T3-T993-T511 T1_T201 Add T0 the T1_T244 Katy Perry T0 songs to my playlist T2_T449_T436_T660
+T3-T993-T511 T1_T201 Remove T0 the T1_T694 The Godfather T0 T1_T644_T308 movie T0 from my watchlist T2_T301_T519_T660
+T3-T993-T511 T1_T201 Save T0 the T1_T694 Peaky Blinders T0 T1_T644_T308 series T0 for offline viewing T2_T463_T114
+T3-T993-T511 T1_T201 Record T0 the T1_T694 The Simpsons T0 T1_T644_T308 show T0 T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T80_T668 email T0 and T1_T80_T668 password T0 T2_T726
+T3-T993-T511 T1_T201 Notify T0 me when the T1_T244 Selena Gomez T0 album is available on T1_T1017 Apple Music T0 T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to listen to the T1_T244 Bruno Mars T0 songs on T1_T623 tomorrow T0 T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T694 The Lion King T0 T1_T644_T308 movie T0 T2_T273
+T3-T993-T511 T1_T201 Dislike T0 the T1_T694 The Irishman T0 T1_T644_T308 movie T0 T2_T276
+T3-T993-T511 T1_T201 Rate T0 the T1_T694 The Shawshank Redemption T0 T1_T644_T308 movie T0 4 stars T2_T187
+T3-T993-T511 T1_T201 Shuffle T0 the T1_T244 The Weeknd T0 songs T2_T688
+T3-T993-T511 T1_T201 Repeat T0 the T1_T694 The Handmaid's Tale T0 T1_T644_T308 series T0 T2_T320
+T3-T993-T511 T1_T201 Play T0 T1_T217 jazz T0 T1_T644_T308 music T0 T2_T597
+T3-T993-T511 T1_T201 Pause T0 the T1_T217 thriller T0 T1_T644_T308 movie T0 T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T217 drama T0 T1_T644_T308 series T0 T2_T597_T874
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T217 action T0 T1_T644_T308 movie T0 T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T217 comedy T0 T1_T644_T308 show T0 by T1_T54 5 minutes T0 T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T217 pop T0 T1_T644_T308 music T0 T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T217 rock T0 T1_T644_T308 music T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 a reminder to watch the T1_T217 crime T0 T1_T644_T308 series T0 at T1_T786 9 PM T0 T2_T14
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 content T0 preference to T1_T167 documentaries T0 T2_T808_T335
+T3-T993-T511 T1_T201 Recommend T0 T1_T217 sci-fi T0 T1_T644_T308 movies T0 T2_T899
+T3-T993-T511 T1_T201 Search T0 for T1_T217 fantasy T0 T1_T644_T308 series T0 T2_T170
+T3-T993-T511 T1_T201 Add T0 the T1_T217 horror T0 T1_T644_T308 movie T0 to my watchlist T2_T449_T436_T660
+T3-T993-T511 T1_T201 Remove T0 the T1_T217 adventure T0 T1_T644_T308 series T0 from my watchlist T2_T301_T519_T660
+T3-T993-T511 T1_T201 Save T0 the T1_T217 mystery T0 T1_T644_T308 movie T0 for offline viewing T2_T463_T114
+T3-T993-T511 T1_T201 Record T0 the T1_T217 reality T0 T1_T644_T308 show T0 T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T80_T668 username T0 and T1_T80_T668 password T0 T2_T726
+T3-T993-T511 T1_T201 Notify T0 me when the T1_T217 animated T0 T1_T644_T308 movie T0 is available on T1_T1017 Disney+ T0 T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to watch the T1_T217 documentary T0 T1_T644_T308 movie T0 on T1_T623 this Sunday T0 T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T217 musical T0 T1_T644_T308 movie T0 T2_T273
+T3-T993-T511 T1_T201 Dislike T0 the T1_T217 war T0 T1_T644_T308 movie T0 T2_T276
+T3-T993-T511 T1_T201 Rate T0 the T1_T217 western T0 T1_T644_T308 movie T0 3 stars T2_T187
+T3-T993-T511 T1_T201 Shuffle T0 the T1_T217 country T0 T1_T644_T308 music T0 T2_T688
+T3-T993-T511 T1_T201 Repeat T0 the T1_T217 drama T0 T1_T644_T308 series T0 T2_T320
+T3-T993-T511 T1_T201 Play T0 T1_T694 The Queen's Gambit T0 T1_T644_T308 series T0 on T1_T1017 Netflix T0 T2_T597
+T3-T993-T511 T1_T201 Pause T0 the T1_T694 The Umbrella Academy T0 T1_T644_T308 series T0 on T1_T1017 Netflix T0 T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T694 The Witcher T0 T1_T644_T308 series T0 on T1_T1017 Netflix T0 T2_T597_T874
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T694 The Crown T0 T1_T644_T308 episode T0 on T1_T1017 Netflix T0 T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T694 Breaking Bad T0 T1_T644_T308 series T0 on T1_T1017 Netflix T0 T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T694 Dark T0 T1_T644_T308 series T0 on T1_T1017 Netflix T0 T2_T597_T874
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 genre T0 preference to T1_T217 horror T0 on T1_T1017 Amazon Prime T0 T2_T808_T335
+T3-T826-T183-T511 T1_T201 Conduct T0 a T1_T983_T308 blood test T0 on T1_T248_T668 patient 234 T0 in the T1_T813 lab 3 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Start T0 the T1_T983_T308 urinalysis T0 for T1_T248_T668 patient 567 T0 in the T1_T813 lab 1 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T343 calibration T0 on the T1_T683 centrifuge T0 T2_T683_T212
+T3-T826-T183-T511 T1_T201 Pause T0 the T1_T983_T308 DNA sequencing T0 on T1_T163_T308 sample 789 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T983_T308 glucose test T0 on T1_T163_T308 sample 345 T0 in T1_T813 lab 2 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Store T0 the T1_T163_T308 tissue samples T0 of T1_T248_T668 patient 890 T0 in T1_T813 freezer 1 T0 T2_T163_T538
+T3-T826-T183-T511 T1_T201 Prepare T0 the T1_T183_T15 histology section T0 for T1_T248_T668 patient 456 END's T1_T983_T308 biopsy T0 T2_T983_T864
+T3-T826-T183-T511 T1_T201 Review T0 the T1_T50_T308 lab results T0 of T1_T248_T668 patient 789 T0 before T1_T786 5:00 PM T0 T2_T50_T437
+T3-T826-T183-T511 T1_T201 Approve T0 the T1_T108 lab order T0 for T1_T248_T668 patient 456 END's T1_T983_T308 MRI T0 T2_T983_T65
+T3-T826-T183-T511 T1_T201 Change T0 the T1_T365_T308 humidity level T0 in the T1_T813 lab 2 T0 to T1_T365_T774 45% T0 T2_T365_T814
+T3-T826-T183-T511 T1_T201 Set T0 the T1_T365_T308 timer T0 on the T1_T683 autoclave T0 for T1_T54 30 minutes T0 T2_T365_T814
+T3-T826-T183-T511 T1_T201 Start T0 the T1_T983_T308 allergy test T0 for T1_T248_T668 patient 789 T0 in the T1_T813 lab 3 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T343 titration T0 on the T1_T683 pH meter T0 T2_T683_T212
+T3-T826-T183-T511 T1_T201 Pause T0 the T1_T983_T308 cell count T0 on T1_T163_T308 sample 123 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T983_T308 hormone test T0 on T1_T163_T308 sample 456 T0 in T1_T813 lab 1 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Test T0 the T1_T163_T308 saliva sample T0 of T1_T248_T668 patient 123 T0 for T1_T983_T308 cortisol levels T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Collect T0 T1_T163_T308 hair samples T0 from T1_T248_T668 patient 789 T0 for T1_T983_T308 drug testing T0 T2_T163_T338
+T3-T826-T183-T511 T1_T201 Store T0 the T1_T163_T308 bone marrow samples T0 of T1_T248_T668 patient 123 T0 in T1_T813 freezer 2 T0 T2_T163_T538
+T3-T826-T183-T511 T1_T201 Review T0 the T1_T50_T308 imaging results T0 of T1_T248_T668 patient 123 T0 before T1_T786 6:00 PM T0 T2_T50_T437
+T3-T826-T183-T511 T1_T201 Approve T0 the T1_T108 lab order T0 for T1_T248_T668 patient 789 END's T1_T983_T308 ultrasound T0 T2_T983_T65
+T3-T826-T183-T511 T1_T201 Change T0 the T1_T365_T308 light intensity T0 in the T1_T813 lab 1 T0 to T1_T365_T774 500 lux T0 T2_T365_T814
+T3-T826-T183-T511 T1_T201 Set T0 the T1_T365_T308 volume T0 on the T1_T683 spectrophotometer T0 to T1_T365_T774 100 mL T0 T2_T365_T814
+T3-T826-T183-T511 T1_T201 Start T0 the T1_T983_T308 liver function test T0 for T1_T248_T668 patient 123 T0 in the T1_T813 lab 4 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Stop T0 the T1_T343 dilution T0 on the T1_T683 pipette T0 T2_T683_T212
+T3-T826-T183-T511 T1_T201 Pause T0 the T1_T983_T308 genetic test T0 on T1_T163_T308 sample 789 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Resume T0 the T1_T983_T308 thyroid test T0 on T1_T163_T308 sample 123 T0 in T1_T813 lab 3 T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Test T0 the T1_T163_T308 blood sample T0 of T1_T248_T668 patient 789 T0 for T1_T983_T308 HIV T0 T2_T983_T225
+T3-T826-T183-T511 T1_T201 Store T0 the T1_T163_T308 lung tissue samples T0 of T1_T248_T668 patient 789 T0 in T1_T813 freezer 3 T0 T2_T163_T538
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 need to schedule T0 a T1_T682_T308 therapy session T0 T1_T623 next Tuesday T0 T2_T863_T176
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 want to track T0 my T1_T282_T318 progress T0 T1_T297 weekly T0 T2_T746_T282
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 feel T0 T1_T1018 anxious T0 T1_T786 in the mornings T0 T2_T50_T1018
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 need to T1_T201 cancel T0 my T1_T682_T308 therapy session T0 T1_T623 tomorrow T0 T2_T881_T176
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 would like to T1_T201 document T0 my T1_T667 recent mood swings T0 T2_T392_T903
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 want to T1_T201 explore T0 some T1_T922_T308 cognitive-behavioral therapies T0 T2_T922_T668_T506
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 feel better T0 when I T1_T201 engage T0 in T1_T370 physical activities T0 T2_T50_T370
+T3-T181-T511 T1_T248_T668 I T0 T1_T201 need T1_T360_T308 relaxation techniques T0 to help with T1_T667 my anxiety T0 T2_T360_T506
+T3-T461-T511 T1_T201 Add T0 T1_T495 3 T0 T1_T421 oranges T0 to my T1_T660_T308 shopping list T0 on the T1_T1017 mobile app END. T2_T335_T660
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 bananas T0 at T1_T995 Costco END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T813 nearest T0 T1_T995 grocery store END. T2_T521_T995
+T3-T461-T511 T1_T201 Add T0 T1_T495 2 T0 T1_T421 loaves of bread T0 to the T1_T660_T308 shopping list END. T2_T335_T660
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 organic eggs T0 at T1_T995 Whole Foods END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 dairy section T0 in T1_T995 Costco END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 almond milk T0 at T1_T995 Trader Joe's END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 produce section T0 in T1_T995 Walmart END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 canned tomatoes T0 at T1_T995 Aldi END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 bakery section T0 in T1_T995 Costco END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 brown rice T0 at T1_T995 Walmart END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 frozen foods section T0 in T1_T995 Trader Joe's END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 oatmeal T0 at T1_T995 Whole Foods END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 canned goods section T0 in T1_T995 Aldi END. T2_T521_T15
+T3-T461-T511 T1_T201 Add T0 T1_T495 1 T0 T1_T421 pack of bacon T0 to the T1_T660_T308 shopping list T0 on the T1_T1017 web app END. T2_T335_T660
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 quinoa T0 at T1_T995 Costco END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 meat section T0 in T1_T995 Walmart END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 pasta T0 at T1_T995 Trader Joe's END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 condiments section T0 in T1_T995 Aldi END. T2_T521_T15
+T3-T461-T511 T1_T201 Add T0 T1_T495 1 T0 T1_T421 jar of mayonnaise T0 to the T1_T660_T308 shopping list T0 on the T1_T1017 web app END. T2_T335_T660
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 salsa T0 at T1_T995 Whole Foods END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 snacks section T0 in T1_T995 Costco END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 pretzels T0 at T1_T995 Walmart END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 beverages section T0 in T1_T995 Trader Joe's END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 apple juice T0 at T1_T995 Aldi END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 cleaning supplies section T0 in T1_T995 Whole Foods END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 toilet paper T0 at T1_T995 Costco END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 personal care section T0 in T1_T995 Walmart END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 body wash T0 at T1_T995 Trader Joe's END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 pet supplies section T0 in T1_T995 Aldi END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 bird seed T0 at T1_T995 Whole Foods END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 baby products section T0 in T1_T995 Costco END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 baby formula T0 at T1_T995 Walmart END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 health products section T0 in T1_T995 Trader Joe's END. T2_T521_T15
+T3-T461-T511 T1_T201 Check T0 the T1_T523 price T0 of T1_T421 cough syrup T0 at T1_T995 Aldi END. T2_T342_T523
+T3-T461-T511 T1_T201 Find T0 the T1_T995_T15 electronics section T0 in T1_T995 Whole Foods END. T2_T521_T15
+T3-T968-T511 T1_T201 Set T0 the T1_T683 thermostat T0 to T1_T365_T774 72 degrees T0 in the T1_T813 living room T0 T2_T13
+T3-T968-T511 T1_T201 Increase T0 the T1_T365_T308 volume T0 of the T1_T683 TV T0 in the T1_T813 bedroom T0 to T1_T365_T774 30 T0 T2_T131
+T3-T968-T511 T1_T201 Play T0 the T1_T167 song 'Imagine' T0 on the T1_T683 smart speaker T0 T2_T925
+T3-T968-T511 T1_T201 Send T0 a T1_T167 message 'I'll be home late' T0 to T1_T288 John T0 on T1_T1017 WhatsApp T0 T2_T198
+T3-T968-T511 T1_T201 Set T0 a T1_T96 reminder T0 to T1_T201 call T0 T1_T288 Mom T0 at T1_T786 5 pm T0 T2_T14
+T3-T968-T511 T1_T201 Create T0 an T1_T96 event 'Dinner with friends' T0 on T1_T623 June 12 T0 at T1_T786 7 pm T0 T2_T96
+T3-T968-T511 T1_T201 Mute T0 the T1_T683 television T0 in the T1_T813 bedroom T0 T2_T728
+T3-T968-T511 T1_T201 Unmute T0 the T1_T683 music system T0 in the T1_T813 kitchen T0 T2_T91
+T3-T968-T511 T1_T201 Skip T0 the T1_T167 current song T0 on the T1_T683 Spotify player T0 T2_T606
+T3-T968-T511 T1_T201 Stop T0 the T1_T683 washing machine T0 in the T1_T813 laundry room T0 T2_T287
+T3-T968-T511 T1_T201 Lock T0 the T1_T683 front door T0 T2_T353
+T3-T968-T511 T1_T201 Unlock T0 the T1_T683 back door T0 T2_T295
+T3-T968-T511 T1_T201 Activate T0 the T1_T683 security system T0 T2_T492
+T3-T968-T511 T1_T201 Deactivate T0 the T1_T683 alarm T0 T2_T384
+T3-T968-T511 T1_T201 Open T0 the T1_T683 blinds T0 in the T1_T813 living room T0 T2_T415
+T3-T968-T511 T1_T201 Close T0 the T1_T683 garage door T0 T2_T979
+T3-T968-T511 T1_T201 Set T0 the T1_T683 fan T0 to T1_T365_T774 high speed T0 in the T1_T813 bedroom T0 T2_T503_T19
+T3-T968-T511 T1_T201 Send T0 an T1_T167 email 'Meeting notes' T0 to T1_T288 team T0 on T1_T1017 Gmail T0 T2_T772
+T3-T968-T511 T1_T201 Create T0 a T1_T96 meeting 'Project discussion' T0 on T1_T623 July 1 T0 at T1_T786 2 pm T0 T2_T891
+T3-T968-T511 T1_T201 Set T0 the T1_T683 air purifier T0 to T1_T365_T774 medium T0 in the T1_T813 living room T0 T2_T205_T451
+T3-T968-T511 T1_T201 Play T0 the T1_T167 podcast 'Daily News' T0 on the T1_T683 smart speaker T0 at T1_T786 8 am T0 T2_T1025
+T3-T968-T511 T1_T201 Send T0 a T1_T167 message 'Happy Birthday' T0 to T1_T288 Lisa T0 on T1_T1017 Facebook T0 at T1_T786 12 am T0 T2_T198
+T3-T968-T511 T1_T201 Set T0 a T1_T96 reminder T0 to T1_T201 buy T0 T1_T167 groceries T0 at T1_T786 5 pm T0 T2_T14
+T3-T968-T511 T1_T201 Create T0 an T1_T96 event 'Yoga class' T0 on T1_T623 June 20 T0 at T1_T786 6 pm T0 T2_T96
+T3-T968-T511 T1_T201 Mute T0 the T1_T683 radio T0 in the T1_T813 kitchen T0 T2_T728
+T3-T968-T511 T1_T201 Unmute T0 the T1_T683 sound system T0 in the T1_T813 living room T0 T2_T91
+T3-T968-T511 T1_T201 Skip T0 the T1_T167 current episode T0 on the T1_T683 Netflix player T0 T2_T606
+T3-T968-T511 T1_T201 Stop T0 the T1_T683 dishwasher T0 in the T1_T813 kitchen T0 T2_T287
+T3-T968-T511 T1_T201 Lock T0 the T1_T683 bedroom door T0 T2_T353
+T3-T968-T511 T1_T201 Unlock T0 the T1_T683 bathroom door T0 T2_T295
+T3-T968-T511 T1_T201 Activate T0 the T1_T683 sprinkler system T0 at T1_T786 6 am T0 every T1_T297 day T0 T2_T863
+T3-T968-T511 T1_T201 Deactivate T0 the T1_T683 heating system T0 T2_T384
+T3-T968-T511 T1_T201 Open T0 the T1_T683 curtains T0 in the T1_T813 bedroom T0 T2_T415
+T3-T968-T511 T1_T201 Close T0 the T1_T683 windows T0 in the T1_T813 living room T0 T2_T979
+T3-T968-T511 T1_T201 Set T0 the T1_T683 AC T0 to T1_T365_T774 68 degrees T0 in the T1_T813 bedroom T0 T2_T13
+T3-T968-T511 T1_T201 Send T0 an T1_T167 email 'Invoice details' T0 to T1_T288 client T0 on T1_T1017 Outlook T0 T2_T772
+T3-T968-T511 T1_T201 Create T0 a T1_T96 meeting 'Budget planning' T0 on T1_T623 July 15 T0 at T1_T786 11 am T0 T2_T891
+T3-T968-T511 T1_T201 Set T0 the T1_T683 dehumidifier T0 to T1_T365_T774 low T0 in the T1_T813 basement T0 T2_T1027
+T3-T968-T511 T1_T201 Play T0 the T1_T167 audiobook '1984' T0 on the T1_T683 smart speaker T0 at T1_T786 10 pm T0 T2_T395
+T3-T968-T511 T1_T201 Send T0 a T1_T167 message 'Good night' T0 to T1_T288 family T0 on T1_T1017 Messenger T0 at T1_T786 10 pm T0 T2_T198
+T3-T968-T511 T1_T201 Create T0 an T1_T96 event 'Movie night' T0 on T1_T623 June 25 T0 at T1_T786 8 pm T0 T2_T96
+T3-T968-T511 T1_T201 Mute T0 the T1_T683 alarm T0 in the T1_T813 bedroom T0 T2_T728
+T3-T968-T511 T1_T201 Unmute T0 the T1_T683 TV T0 in the T1_T813 living room T0 T2_T91
+T3-T968-T511 T1_T201 Skip T0 the T1_T167 current track T0 on the T1_T683 music player T0 T2_T606
+T3-T968-T511 T1_T201 Stop T0 the T1_T683 dryer T0 in the T1_T813 laundry room T0 T2_T287
+T3-T968-T511 T1_T201 Lock T0 the T1_T683 car T0 T2_T353
+T3-T968-T511 T1_T201 Unlock T0 the T1_T683 safe T0 T2_T295
+T3-T968-T511 T1_T201 Activate T0 the T1_T683 pool cleaner T0 at T1_T786 10 am T0 every T1_T297 day T0 T2_T863
+T3-T968-T511 T1_T201 Deactivate T0 the T1_T683 music system T0 T2_T384
+T3-T968-T511 T1_T201 Open T0 the T1_T683 garage door T0 T2_T415
+T3-T968-T511 T1_T201 Close T0 the T1_T683 blinds T0 in the T1_T813 study room T0 T2_T979
+T3-T968-T511 T1_T201 Set T0 the T1_T683 heater T0 to T1_T365_T774 75 degrees T0 in the T1_T813 living room T0 T2_T13
+T3-T968-T511 T1_T201 Send T0 an T1_T167 email 'Holiday plans' T0 to T1_T288 friends T0 on T1_T1017 Yahoo Mail T0 T2_T772
+T3-T968-T511 T1_T201 Create T0 a T1_T96 meeting 'Team building' T0 on T1_T623 July 20 T0 at T1_T786 3 pm T0 T2_T891
+T3-T968-T511 T1_T201 Set T0 the T1_T683 vacuum cleaner T0 to T1_T365_T774 high T0 in the T1_T813 living room T0 T2_T241_T299
+T3-T968-T511 T1_T201 Increase T0 the T1_T365_T308 volume T0 of the T1_T683 radio T0 in the T1_T813 kitchen T0 to T1_T365_T774 20 T0 T2_T131
+T3-T968-T511 T1_T201 Play T0 the T1_T167 playlist 'Workout Mix' T0 on the T1_T683 smart speaker T0 at T1_T786 7 am T0 T2_T925
+T3-T968-T511 T1_T201 Send T0 a T1_T167 message 'See you soon' T0 to T1_T288 friend T0 on T1_T1017 Viber T0 at T1_T786 6 pm T0 T2_T198
+T3-T968-T511 T1_T201 Set T0 a T1_T96 reminder T0 to T1_T201 feed T0 T1_T167 pets T0 at T1_T786 8 am T0 every T1_T297 day T0 T2_T14
+T3-T968-T511 T1_T201 Create T0 an T1_T96 event 'Book club' T0 on T1_T623 June 30 T0 at T1_T786 5 pm T0 T2_T96
+T3-T608-T511 T1_T201 Search T0 for T1_T608_T308 gluten-free pizza T0 recipes. T2_T170_T608
+T3-T608-T511 T1_T201 Set T0 a T1_T54 15 minutes T0 cooking T1_T786 timer T0 for the pasta. T2_T873_T269
+T3-T608-T511 T1_T201 Provide T0 the T1_T75 ingredient T0 list for T1_T608_T308 chicken parmesan END. T2_T1007_T185
+T3-T608-T511 T1_T201 Track T0 my T1_T752_T808 vegan T0 dietary preferences. T2_T746_T884
+T3-T608-T511 T1_T201 Update T0 my T1_T80_T668 profile T0 to include T1_T752_T808 lactose intolerance END. T2_T335_T327
+T3-T608-T511 T1_T201 Add T0 T1_T75 garlic T0 and T1_T75 onion T0 to the shopping list. T2_T449_T436_T660
+T3-T608-T511 T1_T201 Remove T0 T1_T75 eggs T0 from the T1_T608_T308 cake T0 recipe. T2_T314_T608
+T3-T608-T511 T1_T201 List T0 all T1_T608_T308 soup T0 recipes that include T1_T75 lentils END. T2_T170_T608
+T3-T608-T511 T1_T201 Find T0 a T1_T608_T308 dessert T0 recipe that requires less than T1_T495 5 T0 ingredients. T2_T170_T608
+T3-T608-T511 T1_T201 Prepare T0 the T1_T608_T308 beef stew T0 according to the recipe steps. T2_T693_T608
+T3-T608-T511 T1_T201 Cook T0 T1_T608_T308 spaghetti bolognese T0 for T1_T512_T308 dinner END. T2_T576_T608
+T3-T608-T511 T1_T201 Start T0 the T1_T636_T142 sautéing T0 process for T1_T75 onions END. T2_T631_T636_T142
+T3-T608-T511 T1_T201 Stop T0 the T1_T636_T142 boiling T0 process for T1_T75 potatoes END. T2_T287_T636_T142
+T3-T608-T511 T1_T201 Pause T0 the T1_T636_T142 baking T0 process for T1_T608_T308 bread END. T2_T150_T636_T142
+T3-T608-T511 T1_T201 Resume T0 the T1_T636_T142 frying T0 process for T1_T75 chicken END. T2_T727_T636_T142
+T3-T608-T511 T1_T201 Measure T0 T1_T495 1 cup T0 of T1_T75 flour END. T2_T109_T75
+T3-T608-T511 T1_T201 Chop T0 T1_T75 carrots T0 into small pieces. T2_T693_T75
+T3-T608-T511 T1_T201 Stir T0 the T1_T75 soup T0 every T1_T54 5 minutes END. T2_T768_T75
+T3-T608-T511 T1_T201 Bake T0 the T1_T608_T308 cookies T0 at T1_T495 180 T0 degrees. T2_T545_T608
+T3-T608-T511 T1_T201 Boil T0 T1_T75 pasta T0 for T1_T54 10 minutes END. T2_T803_T75
+T3-T608-T511 T1_T201 Grill T0 the T1_T75 steaks T0 to medium-rare. T2_T981_T75
+T3-T608-T511 T1_T201 Fry T0 the T1_T75 bacon T0 until crispy. T2_T706_T75
+T3-T608-T511 T1_T201 Serve T0 the T1_T608_T308 lasagna T0 with T1_T75 salad END. T2_T745_T608
+T3-T608-T511 T1_T201 Mix T0 T1_T75 flour END, T1_T75 sugar END, and T1_T75 eggs T0 in a bowl. T2_T253_T185
+T3-T608-T511 T1_T201 Combine T0 T1_T75 butter T0 and T1_T75 garlic T0 for the T1_T608_T308 garlic bread END. T2_T133_T185
+T3-T608-T511 T1_T201 Preheat T0 the oven to T1_T495 200 T0 degrees for the T1_T608_T308 roast chicken END. T2_T1021_T595
+T3-T608-T511 T1_T201 Pour T0 T1_T495 1 cup T0 of T1_T75 milk T0 into the mixture. T2_T713_T75
+T3-T608-T511 T1_T201 Blend T0 T1_T75 strawberries T0 and T1_T75 bananas T0 for the T1_T608_T308 smoothie END. T2_T877_T185
+T3-T608-T511 T1_T201 Whisk T0 T1_T75 eggs T0 until fluffy for the T1_T608_T308 omelette END. T2_T739_T75
+T3-T608-T511 T1_T201 Search T0 for T1_T608_T308 low-carb T0 recipes for T1_T512_T308 breakfast END. T2_T170_T608
+T3-T608-T511 T1_T201 Set T0 a T1_T54 30-minute T0 timer for the T1_T608_T308 brownies END. T2_T873_T269
+T3-T608-T511 T1_T201 Provide T0 the list of T1_T75 ingredients T0 needed for T1_T608_T308 sushi END. T2_T1007_T185
+T3-T608-T511 T1_T201 Track T0 my T1_T752_T808 vegetarian T0 diet preferences. T2_T746_T884
+T3-T608-T511 T1_T201 Update T0 my T1_T80_T668 profile T0 to reflect my T1_T752_T808 nut allergy END. T2_T335_T327
+T3-T608-T511 T1_T201 Add T0 T1_T75 spinach T0 and T1_T75 feta T0 to the shopping list. T2_T449_T436_T660
+T3-T608-T511 T1_T201 Remove T0 T1_T75 butter T0 from the T1_T608_T308 mashed potatoes T0 recipe. T2_T314_T608
+T3-T608-T511 T1_T201 List T0 all T1_T608_T308 salad T0 recipes that include T1_T75 avocado END. T2_T170_T608
+T3-T608-T511 T1_T201 Find T0 a T1_T608_T308 quick snack T0 recipe that requires less than T1_T495 10 T0 minutes to prepare. T2_T170_T608
+T3-T608-T511 T1_T201 Prepare T0 the T1_T608_T308 chicken curry T0 according to the recipe steps. T2_T693_T608
+T3-T608-T511 T1_T201 Cook T0 T1_T608_T308 vegetable stir fry T0 for T1_T512_T308 lunch END. T2_T576_T608
+T3-T608-T511 T1_T201 Start T0 the T1_T636_T142 grilling T0 process for T1_T75 corn END. T2_T631_T636_T142
+T3-T608-T511 T1_T201 Stop T0 the T1_T636_T142 roasting T0 process for T1_T75 turkey END. T2_T287_T636_T142
+T3-T608-T511 T1_T201 Pause T0 the T1_T636_T142 steaming T0 process for T1_T75 broccoli END. T2_T150_T636_T142
+T3-T608-T511 T1_T201 Resume T0 the T1_T636_T142 simmering T0 process for T1_T75 soup END. T2_T727_T636_T142
+T3-T608-T511 T1_T201 Measure T0 T1_T495 2 tablespoons T0 of T1_T75 olive oil END. T2_T109_T75
+T3-T608-T511 T1_T201 Chop T0 T1_T75 onions T0 into thin slices. T2_T693_T75
+T3-T608-T511 T1_T201 Stir T0 the T1_T75 sauce T0 every T1_T54 2 minutes END. T2_T768_T75
+T3-T608-T511 T1_T201 Bake T0 the T1_T608_T308 apple pie T0 at T1_T495 350 T0 degrees. T2_T545_T608
+T3-T608-T511 T1_T201 Boil T0 T1_T75 eggs T0 for T1_T54 12 minutes END. T2_T803_T75
+T3-T608-T511 T1_T201 Grill T0 the T1_T75 fish T0 until it's flaky. T2_T981_T75
+T3-T608-T511 T1_T201 Fry T0 the T1_T75 potatoes T0 until golden brown. T2_T706_T75
+T3-T608-T511 T1_T201 Serve T0 the T1_T608_T308 spaghetti T0 with T1_T75 parmesan END. T2_T745_T608
+T3-T608-T511 T1_T201 Mix T0 T1_T75 sugar END, T1_T75 cocoa powder END, and T1_T75 milk T0 in a pot. T2_T253_T185
+T3-T608-T511 T1_T201 Preheat T0 the oven to T1_T495 375 T0 degrees for the T1_T608_T308 lasagna END. T2_T1021_T595
+T3-T608-T511 T1_T201 Pour T0 T1_T495 2 cups T0 of T1_T75 chicken broth T0 into the pot. T2_T713_T75
+T3-T608-T511 T1_T201 Whisk T0 T1_T75 cream T0 until peaks form for the T1_T608_T308 whipped cream END. T2_T739_T75
+T3-T608-T511 T1_T201 Search T0 for T1_T608_T308 high-protein T0 recipes for T1_T512_T308 dinner END. T2_T170_T608
+T3-T608-T511 T1_T201 Set T0 a T1_T54 20-minute T0 timer for the T1_T608_T308 rice END. T2_T873_T269
+T3-T608-T511 T1_T201 Provide T0 the list of T1_T75 ingredients T0 needed for T1_T608_T308 guacamole END. T2_T1007_T185
+T3-T608-T511 T1_T201 Track T0 my T1_T752_T808 dairy-free T0 diet preferences. T2_T746_T884
+T3-T608-T511 T1_T201 Update T0 my T1_T80_T668 profile T0 to reflect my T1_T752_T808 shellfish allergy END. T2_T335_T327
+T3-T608-T511 T1_T201 Add T0 T1_T75 bread T0 and T1_T75 cheese T0 to the shopping list. T2_T449_T436_T660
+T3-T608-T511 T1_T201 Remove T0 T1_T75 sugar T0 from the T1_T608_T308 coffee T0 recipe. T2_T314_T608
+T3-T608-T511 T1_T201 List T0 all T1_T608_T308 pasta T0 recipes that include T1_T75 shrimp END. T2_T170_T608
+T3-T608-T511 T1_T201 Find T0 a T1_T608_T308 healthy snack T0 recipe that requires less than T1_T495 3 T0 ingredients. T2_T170_T608
+T3-T608-T511 T1_T201 Prepare T0 the T1_T608_T308 salmon fillet T0 according to the recipe steps. T2_T693_T608
+T3-T608-T511 T1_T201 Cook T0 T1_T608_T308 quinoa salad T0 for T1_T512_T308 lunch END. T2_T576_T608
+T3-T608-T511 T1_T201 Start T0 the T1_T636_T142 marinating T0 process for T1_T75 chicken END. T2_T631_T636_T142
+T3-T608-T511 T1_T201 Stop T0 the T1_T636_T142 baking T0 process for T1_T608_T308 cake END. T2_T287_T636_T142
+T3-T33-T1023-T511 T1_T201 Start T0 an T1_T594_T308 interval training T0 session for T1_T54 45 minutes T0 T2_T631_T345
+T3-T33-T1023-T511 T1_T201 Track T0 my T1_T282_T318 heart rate T0 during my T1_T594_T308 cycling T0 session T2_T746_T282
+T3-T33-T1023-T511 T1_T201 Set T0 a T1_T681_T308 weight loss T0 goal of T1_T343 10 pounds T0 T2_T873_T681
+T3-T33-T1023-T511 T1_T201 Schedule T0 a T1_T682_T308 yoga T0 session for T1_T786 6 PM T0 tomorrow T2_T863_T682
+T3-T33-T1023-T511 T1_T201 Update T0 my T1_T80_T668 height T0 to T1_T343 6 feet T0 T2_T335_T80_T668
+T3-T33-T1023-T511 T1_T201 Analyze T0 my T1_T282_T318 sleep pattern T0 for the past T1_T54 week T0 T2_T585_T282
+T3-T33-T1023-T511 T1_T201 View T0 my T1_T345_T485 weekly workout plan T0 T2_T278_T485
+T3-T33-T1023-T511 T1_T201 Generate T0 a T1_T345_T485 workout plan T0 focusing on T1_T594_T308 strength training T0 T2_T145_T485
+T3-T33-T1023-T511 T1_T201 Monitor T0 my T1_T282_T318 calorie intake T0 for today T2_T404_T282
+T3-T33-T1023-T511 T1_T201 Complete T0 a T1_T594_T308 5k run T0 in T1_T54 30 minutes T0 T2_T317_T345
+T3-T33-T1023-T511 T1_T201 Pause T0 my T1_T594_T308 treadmill run T0 T2_T150_T345
+T3-T33-T1023-T511 T1_T201 Resume T0 my T1_T594_T308 swimming T0 session T2_T727_T345
+T3-T33-T1023-T511 T1_T201 Stop T0 my T1_T594_T308 high-intensity interval training T0 session T2_T287_T345
+T3-T33-T1023-T511 T1_T201 Increase T0 the T1_T246 intensity T0 of my T1_T594_T308 elliptical T0 workout T2_T330_T246
+T3-T33-T1023-T511 T1_T201 Decrease T0 the T1_T246 intensity T0 of my T1_T594_T308 rowing T0 workout T2_T984_T246
+T3-T33-T1023-T511 T1_T201 Record T0 my T1_T282_T318 distance T0 covered during my T1_T594_T308 cycling T0 session T2_T168_T282
+T3-T33-T1023-T511 T1_T201 Log T0 my T1_T282_T318 calories burned T0 during my T1_T594_T308 jogging T0 session T2_T153_T282
+T3-T33-T1023-T511 T1_T201 Measure T0 my T1_T343 body mass index T0 T2_T109_T318
+T3-T33-T1023-T511 T1_T201 Notify T0 me T1_T786 15 minutes T0 before my T1_T682_T308 Pilates T0 class T2_T873_T14
+T3-T33-T1023-T511 T1_T201 Start T0 a T1_T594_T308 strength training T0 session with T1_T394 dumbbells T0 T2_T631_T345
+T3-T33-T1023-T511 T1_T201 Track T0 my T1_T282_T318 steps T0 for today T2_T746_T282
+T3-T33-T1023-T511 T1_T201 Set T0 a T1_T681_T308 muscle gain T0 goal of T1_T343 5 pounds T0 T2_T873_T681
+T3-T33-T1023-T511 T1_T201 Schedule T0 a T1_T682_T308 spin class T0 for T1_T623 next Monday T0 at T1_T786 7 PM T0 T2_T863_T682
+T3-T33-T1023-T511 T1_T201 Update T0 my T1_T80_T668 weight T0 to T1_T343 180 pounds T0 T2_T335_T80_T668
+T3-T33-T1023-T511 T1_T201 Analyze T0 my T1_T282_T318 hydration level T0 for today T2_T585_T282
+T3-T33-T1023-T511 T1_T201 View T0 my T1_T345_T485 monthly workout plan T0 T2_T278_T485
+T3-T33-T1023-T511 T1_T201 Generate T0 a T1_T345_T485 workout plan T0 focusing on T1_T594_T308 cardio T0 T2_T145_T485
+T3-T33-T1023-T511 T1_T201 Monitor T0 my T1_T282_T318 macronutrient intake T0 for this T1_T623 week T0 T2_T404_T282
+T3-T33-T1023-T511 T1_T201 Complete T0 a T1_T594_T308 Zumba T0 class in T1_T54 60 minutes T0 T2_T317_T345
+T3-T33-T1023-T511 T1_T201 Pause T0 my T1_T594_T308 weightlifting T0 session T2_T150_T345
+T3-T33-T1023-T511 T1_T201 Resume T0 my T1_T594_T308 aerobics T0 session T2_T727_T345
+T3-T33-T1023-T511 T1_T201 Stop T0 my T1_T594_T308 CrossFit T0 session T2_T287_T345
+T3-T33-T1023-T511 T1_T201 Increase T0 the T1_T246 intensity T0 of my T1_T594_T308 yoga T0 session T2_T330_T246
+T3-T33-T1023-T511 T1_T201 Decrease T0 the T1_T246 intensity T0 of my T1_T594_T308 Pilates T0 session T2_T984_T246
+T3-T33-T1023-T511 T1_T201 Record T0 my T1_T282_T318 heart rate T0 during my T1_T594_T308 spinning T0 session T2_T168_T282
+T3-T33-T1023-T511 T1_T201 Log T0 my T1_T282_T318 calories consumed T0 today T2_T153_T282
+T3-T33-T1023-T511 T1_T201 Measure T0 my T1_T343 body fat percentage T0 T2_T109_T318
+T3-T33-T1023-T511 T1_T201 Notify T0 me T1_T786 10 minutes T0 before my T1_T682_T308 personal training T0 session T2_T873_T14
+T3-T33-T1023-T511 T1_T201 Start T0 a T1_T594_T308 boxing T0 session for T1_T54 30 minutes T0 T2_T631_T345
+T3-T33-T1023-T511 T1_T201 Track T0 my T1_T282_T318 sleep hours T0 for the past T1_T54 week T0 T2_T746_T282
+T3-T33-T1023-T511 T1_T201 Set T0 a T1_T681_T308 flexibility T0 goal to touch my T1_T343 toes T0 T2_T873_T681
+T3-T33-T1023-T511 T1_T201 Schedule T0 a T1_T682_T308 kickboxing T0 class for T1_T623 this Saturday T0 at T1_T786 9 AM T0 T2_T863_T682
+T3-T33-T1023-T511 T1_T201 Update T0 my T1_T80_T668 age T0 to T1_T343 35 years T0 T2_T335_T80_T668
+T3-T33-T1023-T511 T1_T201 Analyze T0 my T1_T282_T318 blood pressure T0 for the past T1_T54 month T0 T2_T585_T282
+T3-T33-T1023-T511 T1_T201 View T0 my T1_T345_T485 daily workout plan T0 T2_T278_T485
+T3-T33-T1023-T511 T1_T201 Generate T0 a T1_T345_T485 workout plan T0 focusing on T1_T594_T308 flexibility T0 T2_T145_T485
+T3-T33-T1023-T511 T1_T201 Monitor T0 my T1_T282_T318 protein intake T0 for this T1_T623 week T0 T2_T404_T282
+T3-T33-T1023-T511 T1_T201 Complete T0 a T1_T594_T308 Tai Chi T0 session in T1_T54 45 minutes T0 T2_T317_T345
+T3-T33-T1023-T511 T1_T201 Pause T0 my T1_T594_T308 HIIT T0 session T2_T150_T345
+T3-T33-T1023-T511 T1_T201 Resume T0 my T1_T594_T308 dance T0 class T2_T727_T345
+T3-T33-T1023-T511 T1_T201 Stop T0 my T1_T594_T308 spinning T0 session T2_T287_T345
+T3-T33-T1023-T511 T1_T201 Increase T0 the T1_T246 intensity T0 of my T1_T594_T308 bootcamp T0 workout T2_T330_T246
+T3-T33-T1023-T511 T1_T201 Decrease T0 the T1_T246 intensity T0 of my T1_T594_T308 bodyweight workout T0 T2_T984_T246
+T3-T33-T1023-T511 T1_T201 Record T0 my T1_T282_T318 calories burned T0 during my T1_T594_T308 swimming T0 session T2_T168_T282
+T3-T33-T1023-T511 T1_T201 Log T0 my T1_T282_T318 steps T0 for today T2_T153_T282
+T3-T33-T1023-T511 T1_T201 Measure T0 my T1_T343 waist circumference T0 T2_T109_T318
+T3-T33-T1023-T511 T1_T201 Notify T0 me T1_T786 20 minutes T0 before my T1_T682_T308 gym T0 session T2_T873_T14
+T3-T33-T1023-T511 T1_T201 Start T0 a T1_T594_T308 powerlifting T0 session for T1_T54 60 minutes T0 T2_T631_T345
+T3-T33-T1023-T511 T1_T201 Track T0 my T1_T282_T318 water intake T0 for today T2_T746_T282
+T3-T33-T1023-T511 T1_T201 Set T0 a T1_T681_T308 endurance T0 goal to run T1_T343 10 kilometers T0 T2_T873_T681
+T3-T33-T1023-T511 T1_T201 Schedule T0 a T1_T682_T308 personal training T0 session for T1_T623 next Wednesday T0 at T1_T786 5 PM T0 T2_T863_T682
+T3-T33-T1023-T511 T1_T201 Update T0 my T1_T80_T668 weight T0 to T1_T343 200 pounds T0 T2_T335_T80_T668
+T3-T33-T1023-T511 T1_T201 Analyze T0 my T1_T282_T318 blood glucose level T0 for the past T1_T54 month T0 T2_T585_T282
+T3-T33-T1023-T511 T1_T201 View T0 my T1_T345_T485 weekly workout plan T0 T2_T278_T485
+T3-T33-T1023-T511 T1_T201 Generate T0 a T1_T345_T485 workout plan T0 focusing on T1_T594_T308 bodyweight exercises T0 T2_T145_T485
+T3-T33-T1023-T511 T1_T201 Monitor T0 my T1_T282_T318 carbohydrate intake T0 for this T1_T623 week T0 T2_T404_T282
+T3-T33-T1023-T511 T1_T201 Complete T0 a T1_T594_T308 ballet T0 class in T1_T54 60 minutes T0 T2_T317_T345
+T3-T33-T1023-T511 T1_T201 Pause T0 my T1_T594_T308 martial arts T0 session T2_T150_T345
+T3-T33-T1023-T511 T1_T201 Resume T0 my T1_T594_T308 kickboxing T0 class T2_T727_T345
+T3-T33-T1023-T511 T1_T201 Stop T0 my T1_T594_T308 powerlifting T0 session T2_T287_T345
+T3-T33-T1023-T511 T1_T201 Increase T0 the T1_T246 intensity T0 of my T1_T594_T308 Zumba T0 session T2_T330_T246
+T3-T33-T1023-T511 T1_T201 Decrease T0 the T1_T246 intensity T0 of my T1_T594_T308 tai chi T0 session T2_T984_T246
+T3-T33-T1023-T511 T1_T201 Record T0 my T1_T282_T318 heart rate T0 during my T1_T594_T308 powerlifting T0 session T2_T168_T282
+T3-T33-T1023-T511 T1_T201 Log T0 my T1_T282_T318 calories consumed T0 today T2_T153_T282
+T3-T33-T1023-T511 T1_T201 Measure T0 my T1_T343 body fat percentage T0 T2_T109_T318
+T3-T33-T1023-T511 T1_T201 Notify T0 me T1_T786 10 minutes T0 before my T1_T682_T308 yoga T0 class T2_T873_T14
+T3-T33-T1023-T511 T1_T201 Start T0 a T1_T594_T308 spinning T0 session for T1_T54 30 minutes T0 T2_T631_T345
+T3-T33-T1023-T511 T1_T201 Track T0 my T1_T282_T318 sleep hours T0 for the past T1_T54 week T0 T2_T746_T282
+T3-T33-T1023-T511 T1_T201 Set T0 a T1_T681_T308 strength T0 goal to lift T1_T343 200 pounds T0 T2_T873_T681
+T3-T33-T1023-T511 T1_T201 Schedule T0 a T1_T682_T308 CrossFit T0 class for T1_T623 this Friday T0 at T1_T786 6 PM T0 T2_T863_T682
+T3-T26-T511 T1_T201 Check T0 the T1_T591_T308 balance T0 of my T1_T591_T308 checking account T0 T2_T932_T342
+T3-T26-T511 T1_T201 Transfer T0 T1_T46 $2000 T0 from my T1_T591_T308 savings account T0 to my T1_T591_T308 checking account T0 T2_T1013_T417
+T3-T26-T511 T1_T201 Pay T0 the T1_T288 electricity bill T0 of T1_T46 $150 T0 from my T1_T591_T308 checking account T0 T2_T756_T741
+T3-T26-T511 T1_T201 Update T0 my T1_T167 address T0 in the T1_T591_T308 savings account T0 details T2_T335_T668
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 expenses T0 for the last T1_T54 month T0 T2_T585_T974
+T3-T26-T511 T1_T201 View T0 the T1_T50_T308 transaction history T0 of my T1_T591_T308 checking account T0 for the past T1_T54 week T0 T2_T278_T689
+T3-T26-T511 T1_T201 Generate T0 a T1_T50_T308 financial report T0 for the last T1_T54 quarter T0 T2_T145_T50
+T3-T26-T511 T1_T201 Cancel T0 the T1_T1016_T308 low balance alert T0 for my T1_T591_T308 checking account T0 T2_T881_T1016
+T3-T26-T511 T1_T201 Report T0 any T1_T357_T308 suspicious transactions T0 on my T1_T591_T308 credit card T0 T2_T50_T904
+T3-T26-T511 T1_T201 Alert T0 me when my T1_T591_T308 checking account T0 balance goes below T1_T46 $500 T0 T2_T873_T1016
+T3-T26-T511 T1_T201 Budget T0 T1_T46 $2000 T0 for T1_T167 groceries T0 this T1_T623 month T0 T2_T873_T251
+T3-T26-T511 T1_T201 Deposit T0 T1_T46 $1000 T0 into my T1_T591_T308 savings account T0 T2_T559_T464
+T3-T26-T511 T1_T201 Withdraw T0 T1_T46 $500 T0 from my T1_T591_T308 checking account T0 T2_T188_T464
+T3-T26-T511 T1_T201 Invest T0 T1_T46 $5000 T0 in T1_T167 mutual funds T0 T2_T296_T464
+T3-T26-T511 T1_T201 Save T0 T1_T46 $10000 T0 for T1_T167 vacation T0 by the end of T1_T623 year T0 T2_T463_T464
+T3-T26-T511 T1_T201 Spend T0 less than T1_T46 $100 T0 on T1_T167 dining out T0 this T1_T623 week T0 T2_T264_T464
+T3-T26-T511 T1_T201 Monitor T0 my T1_T591_T308 credit card T0 for T1_T357_T308 unusual activity T0 T2_T404_T370
+T3-T26-T511 T1_T201 Check T0 the T1_T591_T308 balance T0 of my T1_T591_T308 credit card T0 T2_T932_T342
+T3-T26-T511 T1_T201 Pay T0 the T1_T288 internet bill T0 of T1_T46 $50 T0 from my T1_T591_T308 savings account T0 T2_T756_T741
+T3-T26-T511 T1_T201 Update T0 my T1_T167 phone number T0 in the T1_T591_T308 checking account T0 details T2_T335_T668
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 spending habits T0 for the last T1_T54 year T0 T2_T585_T216
+T3-T26-T511 T1_T201 View T0 the T1_T50_T308 transaction history T0 of my T1_T591_T308 savings account T0 for the past T1_T54 month T0 T2_T278_T689
+T3-T26-T511 T1_T201 Generate T0 a T1_T50_T308 financial report T0 for the last T1_T54 year T0 T2_T145_T50
+T3-T26-T511 T1_T201 Cancel T0 the T1_T1016_T308 fraud alert T0 for my T1_T591_T308 credit card T0 T2_T881_T1016
+T3-T26-T511 T1_T201 Report T0 any T1_T357_T308 unauthorized transactions T0 on my T1_T591_T308 debit card T0 T2_T50_T904
+T3-T26-T511 T1_T201 Alert T0 me when my T1_T591_T308 savings account T0 balance goes above T1_T46 $10000 T0 T2_T873_T1016
+T3-T26-T511 T1_T201 Budget T0 T1_T46 $500 T0 for T1_T167 transportation T0 this T1_T623 month T0 T2_T873_T251
+T3-T26-T511 T1_T201 Deposit T0 T1_T46 $2000 T0 into my T1_T591_T308 checking account T0 T2_T559_T464
+T3-T26-T511 T1_T201 Withdraw T0 T1_T46 $100 T0 from my T1_T591_T308 savings account T0 T2_T188_T464
+T3-T26-T511 T1_T201 Invest T0 T1_T46 $10000 T0 in T1_T167 stocks T0 T2_T296_T464
+T3-T26-T511 T1_T201 Save T0 T1_T46 $5000 T0 for T1_T167 home renovation T0 by the end of T1_T623 year T0 T2_T463_T464
+T3-T26-T511 T1_T201 Spend T0 less than T1_T46 $50 T0 on T1_T167 entertainment T0 this T1_T623 week T0 T2_T264_T464
+T3-T26-T511 T1_T201 Monitor T0 my T1_T591_T308 debit card T0 for T1_T357_T308 fraudulent activity T0 T2_T404_T370
+T3-T26-T511 T1_T201 Check T0 the T1_T591_T308 balance T0 of my T1_T591_T308 debit card T0 T2_T932_T342
+T3-T26-T511 T1_T201 Pay T0 the T1_T288 water bill T0 of T1_T46 $70 T0 from my T1_T591_T308 checking account T0 T2_T756_T741
+T3-T26-T511 T1_T201 Update T0 my T1_T167 email T0 in the T1_T591_T308 savings account T0 details T2_T335_T668
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 income T0 for the last T1_T54 six months T0 T2_T585_T160
+T3-T26-T511 T1_T201 View T0 the T1_T50_T308 transaction history T0 of my T1_T591_T308 credit card T0 for the past T1_T54 week T0 T2_T278_T689
+T3-T26-T511 T1_T201 Generate T0 a T1_T50_T308 financial report T0 for the last T1_T54 six months T0 T2_T145_T50
+T3-T26-T511 T1_T201 Cancel T0 the T1_T1016_T308 overdraft alert T0 for my T1_T591_T308 checking account T0 T2_T881_T1016
+T3-T26-T511 T1_T201 Report T0 any T1_T357_T308 suspicious transactions T0 on my T1_T591_T308 savings account T0 T2_T50_T904
+T3-T26-T511 T1_T201 Alert T0 me when my T1_T591_T308 checking account T0 balance goes below T1_T46 $100 T0 T2_T873_T1016
+T3-T26-T511 T1_T201 Budget T0 T1_T46 $1000 T0 for T1_T167 rent T0 this T1_T623 month T0 T2_T873_T251
+T3-T26-T511 T1_T201 Deposit T0 T1_T46 $500 T0 into my T1_T591_T308 checking account T0 T2_T559_T464
+T3-T26-T511 T1_T201 Withdraw T0 T1_T46 $200 T0 from my T1_T591_T308 savings account T0 T2_T188_T464
+T3-T26-T511 T1_T201 Invest T0 T1_T46 $2000 T0 in T1_T167 bonds T0 T2_T296_T464
+T3-T26-T511 T1_T201 Save T0 T1_T46 $3000 T0 for T1_T167 car purchase T0 by the end of T1_T623 year T0 T2_T463_T464
+T3-T26-T511 T1_T201 Spend T0 less than T1_T46 $30 T0 on T1_T167 shopping T0 this T1_T623 week T0 T2_T264_T464
+T3-T26-T511 T1_T201 Monitor T0 my T1_T591_T308 checking account T0 for T1_T357_T308 unusual activity T0 T2_T404_T370
+T3-T26-T511 T1_T201 Check T0 the T1_T591_T308 balance T0 of my T1_T591_T308 savings account T0 T2_T932_T342
+T3-T26-T511 T1_T201 Pay T0 the T1_T288 gas bill T0 of T1_T46 $80 T0 from my T1_T591_T308 savings account T0 T2_T756_T741
+T3-T26-T511 T1_T201 Update T0 my T1_T167 address T0 in the T1_T591_T308 checking account T0 details T2_T335_T668
+T3-T26-T511 T1_T201 Analyze T0 my T1_T894_T308 expenses T0 for the last T1_T54 year T0 T2_T585_T974
+T3-T26-T511 T1_T201 View T0 the T1_T50_T308 transaction history T0 of my T1_T591_T308 savings account T0 for the past T1_T54 month T0 T2_T278_T689
+T3-T26-T511 T1_T201 Generate T0 a T1_T50_T308 financial report T0 for the last T1_T54 year T0 T2_T145_T50
+T3-T510-T511 T1_T201 Book T0 a T1_T627_T308 flight T0 to T1_T387 New York T0 leaving on T1_T623 June 5th T0 T2_T409
+T3-T510-T511 T1_T201 Check T0 the T1_T627_T308 flight T0 status for T1_T387 Los Angeles T0 departing on T1_T623 July 10th T0 T2_T915_T342
+T3-T510-T511 T1_T201 Reserve T0 a T1_T710_T308 hotel room T0 in T1_T387 Rome T0 for T1_T623 August 20th T0 T2_T961
+T3-T510-T511 T1_T201 Set T0 a T1_T510_T1016 travel alert T0 for T1_T387 Tokyo T0 for T1_T623 September 15th T0 T2_T1016_T365
+T3-T510-T511 T1_T201 Update T0 my T1_T988_T421 itinerary T0 with a visit to T1_T387 The Louvre T0 on T1_T623 October 30th T0 T2_T988_T335
+T3-T510-T511 T1_T201 View T0 the T1_T627_T308 train T0 schedule for T1_T387 Berlin T0 on T1_T623 November 25th T0 T2_T863_T271
+T3-T510-T511 T1_T201 Generate T0 a T1_T251 budget T0 for a trip to T1_T387 Sydney T0 for T1_T54 two weeks T0 T2_T251_T821
+T3-T510-T511 T1_T201 Monitor T0 T1_T627_T308 flight T0 prices for T1_T387 Dubai T0 for T1_T623 December 31st T0 T2_T523_T643
+T3-T510-T511 T1_T201 Cancel T0 my T1_T710_T308 hotel reservation T0 in T1_T387 Madrid T0 on T1_T623 January 1st T0 T2_T777
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 bus T0 booking to T1_T387 Amsterdam T0 on T1_T623 February 14th T0 T2_T701
+T3-T510-T511 T1_T201 Notify T0 T1_T288 me T0 when T1_T627_T308 flight T0 prices to T1_T387 Paris T0 drop T2_T523_T540
+T3-T510-T511 T1_T201 Recommend T0 a T1_T710_T308 hotel T0 in T1_T387 Athens T0 for T1_T623 April 21st T0 T2_T899
+T3-T510-T511 T1_T201 Plan T0 a T1_T627_T308 cruise T0 to T1_T387 The Caribbean T0 for T1_T623 May 25th T0 T2_T218_T781
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 train T0 options to T1_T387 Vienna T0 for T1_T623 June 29th T0 T2_T790_T622
+T3-T510-T511 T1_T201 Compare T0 T1_T627_T308 flight T0 prices to T1_T387 Beijing T0 for T1_T623 July 4th T0 T2_T523_T923
+T3-T510-T511 T1_T201 Add T0 a T1_T988_T421 museum visit T0 to my itinerary for T1_T387 Moscow T0 on T1_T623 August 8th T0 T2_T988_T332
+T3-T510-T511 T1_T201 Schedule T0 a T1_T627_T308 taxi T0 pickup from T1_T387 The airport T0 on T1_T623 October 16th T0 T2_T39_T844
+T3-T510-T511 T1_T201 Change T0 my T1_T627_T308 flight T0 to T1_T387 Rio de Janeiro T0 to T1_T623 November 20th T0 T2_T851_T334
+T3-T510-T511 T1_T201 Book T0 a T1_T627_T308 flight T0 to T1_T387 Buenos Aires T0 leaving on T1_T623 December 25th T0 T2_T409
+T3-T510-T511 T1_T201 Check T0 the T1_T627_T308 flight T0 status for T1_T387 Seoul T0 departing on T1_T623 January 1st T0 T2_T915_T342
+T3-T510-T511 T1_T201 Reserve T0 a T1_T710_T308 hotel room T0 in T1_T387 Copenhagen T0 for T1_T623 February 14th T0 T2_T961
+T3-T510-T511 T1_T201 Set T0 a T1_T510_T1016 travel alert T0 for T1_T387 Helsinki T0 for T1_T623 March 17th T0 T2_T1016_T365
+T3-T510-T511 T1_T201 Update T0 my T1_T988_T421 itinerary T0 with a visit to T1_T387 The Colosseum T0 on T1_T623 April 21st T0 T2_T988_T335
+T3-T510-T511 T1_T201 View T0 the T1_T627_T308 train T0 schedule for T1_T387 Stockholm T0 on T1_T623 May 25th T0 T2_T863_T271
+T3-T510-T511 T1_T201 Generate T0 a T1_T251 budget T0 for a trip to T1_T387 Lisbon T0 for T1_T54 one week T0 T2_T251_T821
+T3-T510-T511 T1_T201 Monitor T0 T1_T627_T308 flight T0 prices for T1_T387 Warsaw T0 for T1_T623 June 29th T0 T2_T523_T643
+T3-T510-T511 T1_T201 Cancel T0 my T1_T710_T308 hotel reservation T0 in T1_T387 Prague T0 on T1_T623 July 4th T0 T2_T777
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 bus T0 booking to T1_T387 Budapest T0 on T1_T623 August 8th T0 T2_T701
+T3-T510-T511 T1_T201 Notify T0 T1_T288 me T0 when T1_T627_T308 flight T0 prices to T1_T387 Brussels T0 drop T2_T523_T540
+T3-T510-T511 T1_T201 Recommend T0 a T1_T710_T308 hotel T0 in T1_T387 Oslo T0 for T1_T623 October 16th T0 T2_T899
+T3-T510-T511 T1_T201 Plan T0 a T1_T627_T308 cruise T0 to T1_T387 The Mediterranean T0 for T1_T623 November 20th T0 T2_T218_T781
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 train T0 options to T1_T387 Dublin T0 for T1_T623 December 25th T0 T2_T790_T622
+T3-T510-T511 T1_T201 Compare T0 T1_T627_T308 flight T0 prices to T1_T387 Edinburgh T0 for T1_T623 January 1st T0 T2_T523_T923
+T3-T510-T511 T1_T201 Add T0 a T1_T988_T421 castle tour T0 to my itinerary for T1_T387 Cardiff T0 on T1_T623 February 14th T0 T2_T988_T332
+T3-T510-T511 T1_T201 Remove T0 the T1_T988_T421 pub crawl T0 from my itinerary for T1_T387 Belfast T0 on T1_T623 March 17th T0 T2_T988_T785
+T3-T510-T511 T1_T201 Schedule T0 a T1_T627_T308 taxi T0 pickup from T1_T387 The train station T0 on T1_T623 April 21st T0 T2_T39_T844
+T3-T510-T511 T1_T201 Change T0 my T1_T627_T308 flight T0 to T1_T387 Glasgow T0 to T1_T623 May 25th T0 T2_T851_T334
+T3-T510-T511 T1_T201 Book T0 a T1_T627_T308 flight T0 to T1_T387 Perth T0 leaving on T1_T623 June 29th T0 T2_T409
+T3-T510-T511 T1_T201 Check T0 the T1_T627_T308 flight T0 status for T1_T387 Adelaide T0 departing on T1_T623 July 4th T0 T2_T915_T342
+T3-T510-T511 T1_T201 Reserve T0 a T1_T710_T308 hotel room T0 in T1_T387 Brisbane T0 for T1_T623 August 8th T0 T2_T961
+T3-T510-T511 T1_T201 Set T0 a T1_T510_T1016 travel alert T0 for T1_T387 Melbourne T0 for T1_T623 September 12th T0 T2_T1016_T365
+T3-T510-T511 T1_T201 View T0 the T1_T627_T308 train T0 schedule for T1_T387 Canberra T0 on T1_T623 November 20th T0 T2_T863_T271
+T3-T510-T511 T1_T201 Generate T0 a T1_T251 budget T0 for a trip to T1_T387 Darwin T0 for T1_T54 three weeks T0 T2_T251_T821
+T3-T510-T511 T1_T201 Monitor T0 T1_T627_T308 flight T0 prices for T1_T387 Hobart T0 for T1_T623 December 25th T0 T2_T523_T643
+T3-T510-T511 T1_T201 Cancel T0 my T1_T710_T308 hotel reservation T0 in T1_T387 Auckland T0 on T1_T623 January 1st T0 T2_T777
+T3-T510-T511 T1_T201 Confirm T0 my T1_T627_T308 bus T0 booking to T1_T387 Wellington T0 on T1_T623 February 14th T0 T2_T701
+T3-T510-T511 T1_T201 Notify T0 T1_T288 me T0 when T1_T627_T308 flight T0 prices to T1_T387 Christchurch T0 drop T2_T523_T540
+T3-T510-T511 T1_T201 Recommend T0 a T1_T710_T308 hotel T0 in T1_T387 Hamilton T0 for T1_T623 April 21st T0 T2_T899
+T3-T510-T511 T1_T201 Plan T0 a T1_T627_T308 cruise T0 to T1_T387 The Pacific Islands T0 for T1_T623 May 25th T0 T2_T218_T781
+T3-T510-T511 T1_T201 Explore T0 T1_T627_T308 train T0 options to T1_T387 Tauranga T0 for T1_T623 June 29th T0 T2_T790_T622
+T3-T510-T511 T1_T201 Compare T0 T1_T627_T308 flight T0 prices to T1_T387 Napier T0 for T1_T623 July 4th T0 T2_T523_T923
+T3-T510-T511 T1_T201 Add T0 a T1_T988_T421 wine tasting T0 to my itinerary for T1_T387 Nelson T0 on T1_T623 August 8th T0 T2_T988_T332
+T3-T887-T162 T1_T536_T472 Lewandowski T0 T1_T201 scores T0 a hat-trick, bringing T1_T697_T472 Bayern Munich T0 into a comfortable lead T2_T536_T947
+T3-T887-T162 T1_T697_T472 Arsenal T0 T1_T201 draws T0 the match despite T1_T697_T472 Chelsea's T0 early lead T2_T535_T35
+T3-T887-T162 T1_T697_T472 Juventus T0 T1_T201 loses T0 their T1_T936_T472 Serie A T0 match against T1_T697_T472 Inter Milan T0 T2_T535_T35
+T3-T887-T162 T1_T697_T472 Tottenham T0 T1_T201 defends T0 well, T1_T865_T308 conceding only one shot on target T0 in the first half T2_T697_T947
+T3-T887-T162 T1_T697_T472 Barcelona T0 T1_T201 wins T0 the T1_T535_T308 El Clasico T0 match, T1_T368 beating Real Madrid 3-2 T0 T2_T535_T35
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 Metformin T0 T1_T297 twice a day T0 for T1_T12 my diabetes T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a colonoscopy T0 T1_T623 three weeks ago T0 T2_T225_T50
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 a mammogram T0 T1_T623 next Tuesday T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 noticed T0 T1_T667 a lump T0 in my T1_T813 breast T0 T1_T623 last week T0 T2_T667_T50
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a gallbladder removal surgery T0 T1_T623 six months ago T0 T2_T225_T50
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 a CT scan T0 T1_T623 next Friday T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 noticed T0 T1_T667 a rash T0 on my T1_T813 back T0 T1_T623 yesterday T0 T2_T667_T50
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 Warfarin T0 T1_T297 daily T0 for T1_T12 my blood clot T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 had T0 T1_T225 a dental implant T0 T1_T623 three months ago T0 T2_T225_T50
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 an ultrasound T0 T1_T623 next Wednesday T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 noticed T0 T1_T667 blurred vision T0 T1_T297 occasionally T0 T1_T623 since last week T0 T2_T667_T50
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 Aspirin T0 T1_T297 daily T0 for T1_T12 my heart condition T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a hip arthroscopy T0 T1_T623 six months ago T0 T2_T225_T50
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 a bone density test T0 T1_T623 next Monday T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 take T0 T1_T516 Prozac T0 T1_T297 daily T0 for T1_T12 my depression T0 T2_T516_T18
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 underwent T0 T1_T225 a lumpectomy T0 T1_T623 one year ago T0 T2_T225_T50
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 am scheduled for T0 T1_T983_T308 an echocardiogram T0 T1_T623 next Thursday T0 T2_T983_T863
+T3-T826-T248 T1_T248_T668 I T0 T1_T201 noticed T0 T1_T667 unexplained weight loss T0 T1_T297 over the past few months T0 T2_T667_T50
+T3-T993-T511 T1_T201 Play T0 the T1_T644_T308 movie T0 titled T1_T694 The Godfather T0 T2_T597_T874
+T3-T993-T511 T1_T201 Skip T0 to the next T1_T644_T308 song T0 T2_T597_T874
+T3-T993-T511 T1_T201 Pause T0 the T1_T644_T308 podcast T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 a T1_T297 weekly T0 reminder to watch T1_T694 Game of Thrones T0 T2_T14
+T3-T993-T511 T1_T201 Recommend T0 some T1_T217 comedy T0 T1_T644_T308 shows T0 T2_T899
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 favorite T0 T1_T644_T308 genres T0 to T1_T217 rock and pop T0 T2_T376_T335
+T3-T993-T511 T1_T201 Play T0 T1_T244 Mozart's T0 T1_T694 Symphony No. 40 T0 T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T644_T308 music T0 T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T644_T308 TV T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 the T1_T644_T308 movie T0 to T1_T597_T874 repeat T0 T2_T597_T874
+T3-T993-T511 T1_T201 Add T0 T1_T694 Friends T0 to my T1_T1017 Netflix T0 watchlist T2_T449_T436_T660
+T3-T993-T511 T1_T201 Remove T0 T1_T694 The Office T0 from my T1_T1017 Netflix T0 watchlist T2_T301_T519_T660
+T3-T993-T511 T1_T201 Save T0 the T1_T167 last episode T0 of T1_T694 Breaking Bad T0 T2_T463_T167
+T3-T993-T511 T1_T201 Record T0 the T1_T694 NBA Finals T0 T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T80_T668 viewing history T0 T2_T153_T689
+T3-T993-T511 T1_T201 Notify T0 me when the new season of T1_T694 Stranger Things T0 is available T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to watch T1_T694 The Mandalorian T0 every T1_T297 Friday T0 at T1_T786 8 PM T0 T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T694 Inception T0 movie on T1_T1017 Netflix T0 T2_T273
+T3-T993-T511 T1_T201 Dislike T0 the T1_T694 Twilight T0 movie on T1_T1017 Netflix T0 T2_T276
+T3-T993-T511 T1_T201 Rate T0 the T1_T694 The Crown T0 with 5 stars on T1_T1017 Netflix T0 T2_T187
+T3-T993-T511 T1_T201 Shuffle T0 my T1_T167 playlist T0 on T1_T1017 Spotify T0 T2_T597_T874
+T3-T993-T511 T1_T201 Repeat T0 the T1_T694 song T0 T1_T244 Rolling in the Deep T0 by T1_T244 Adele T0 T2_T597_T874
+T3-T993-T511 T1_T201 Search T0 for T1_T244 Coldplay's T0 songs on T1_T1017 Spotify T0 T2_T170
+T3-T993-T511 T1_T201 Play T0 the T1_T694 album T0 T1_T694 Mylo Xyloto T0 by T1_T244 Coldplay T0 T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T644_T308 music T0 after T1_T54 30 minutes T0 T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T644_T308 movie T0 by T1_T54 10 minutes T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 a reminder to watch T1_T694 The Simpsons T0 every T1_T297 Sunday T0 at T1_T786 8 PM T0 T2_T14
+T3-T993-T511 T1_T201 Recommend T0 some T1_T217 thriller T0 T1_T644_T308 movies T0 to watch on T1_T623 this weekend T0 T2_T899
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 preferred T0 T1_T644_T308 movie genres T0 to T1_T217 horror and thriller T0 T2_T376_T335
+T3-T993-T511 T1_T201 Play T0 T1_T244 Beethoven's T0 T1_T694 Symphony No. 5 T0 T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T644_T308 radio T0 T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T644_T308 movie T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 the T1_T644_T308 TV show T0 to T1_T597_T874 repeat T0 T2_T597_T874
+T3-T993-T511 T1_T201 Add T0 T1_T694 The Big Bang Theory T0 to my T1_T1017 Netflix T0 watchlist T2_T449_T436_T660
+T3-T993-T511 T1_T201 Remove T0 T1_T694 How I Met Your Mother T0 from my T1_T1017 Netflix T0 watchlist T2_T301_T519_T660
+T3-T993-T511 T1_T201 Save T0 the T1_T167 last episode T0 of T1_T694 Friends T0 T2_T463_T167
+T3-T993-T511 T1_T201 Record T0 the T1_T694 FIFA World Cup T0 T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T80_T668 listening history T0 T2_T153_T689
+T3-T993-T511 T1_T201 Notify T0 me when the new album of T1_T244 Taylor Swift T0 is available T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to listen to T1_T694 Reputation T0 every T1_T297 Monday T0 at T1_T786 9 AM T0 T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T694 song T0 T1_T694 Bad Blood T0 on T1_T1017 Spotify T0 T2_T273
+T3-T993-T511 T1_T201 Dislike T0 the T1_T694 song T0 T1_T694 Shake It Off T0 on T1_T1017 Spotify T0 T2_T276
+T3-T993-T511 T1_T201 Rate T0 the T1_T694 album T0 T1_T694 1989 T0 with 4 stars on T1_T1017 Spotify T0 T2_T187
+T3-T993-T511 T1_T201 Shuffle T0 my T1_T167 workout playlist T0 on T1_T1017 Spotify T0 T2_T597_T874
+T3-T993-T511 T1_T201 Repeat T0 the T1_T694 song T0 T1_T244 Blank Space T0 by T1_T244 Taylor Swift T0 T2_T597_T874
+T3-T993-T511 T1_T201 Search T0 for T1_T244 Ed Sheeran's T0 songs on T1_T1017 Spotify T0 T2_T170
+T3-T993-T511 T1_T201 Play T0 the T1_T694 album T0 T1_T694 Divide T0 by T1_T244 Ed Sheeran T0 T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T644_T308 music T0 after T1_T54 1 hour T0 T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T644_T308 podcast T0 by T1_T54 2 minutes T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 a reminder to listen to T1_T694 TED Talks Daily T0 every T1_T297 weekday T0 at T1_T786 7 AM T0 T2_T14
+T3-T993-T511 T1_T201 Recommend T0 some T1_T217 mystery T0 T1_T644_T308 podcasts T0 to listen to during my commute T2_T899
+T3-T993-T511 T1_T201 Play T0 T1_T244 The Beatles' T0 T1_T694 Hey Jude T0 T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T644_T308 TV T0 T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T644_T308 radio T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 the T1_T644_T308 music T0 to T1_T597_T874 repeat T0 T2_T597_T874
+T3-T993-T511 T1_T201 Add T0 T1_T694 The Walking Dead T0 to my T1_T1017 Netflix T0 watchlist T2_T449_T436_T660
+T3-T993-T511 T1_T201 Remove T0 T1_T694 Grey's Anatomy T0 from my T1_T1017 Netflix T0 watchlist T2_T301_T519_T660
+T3-T993-T511 T1_T201 Save T0 the T1_T167 last episode T0 of T1_T694 The Crown T0 T2_T463_T167
+T3-T993-T511 T1_T201 Record T0 the T1_T694 The Oscars T0 T2_T168
+T3-T993-T511 T1_T201 Log T0 my T1_T80_T668 watching history T0 T2_T153_T689
+T3-T993-T511 T1_T201 Notify T0 me when the new season of T1_T694 The Witcher T0 is available T2_T540
+T3-T993-T511 T1_T201 Remind T0 me to watch T1_T694 Money Heist T0 every T1_T297 Wednesday T0 at T1_T786 10 PM T0 T2_T14
+T3-T993-T511 T1_T201 Like T0 the T1_T694 movie T0 T1_T694 The Dark Knight T0 on T1_T1017 Netflix T0 T2_T273
+T3-T993-T511 T1_T201 Dislike T0 the T1_T694 movie T0 T1_T694 The Notebook T0 on T1_T1017 Netflix T0 T2_T276
+T3-T993-T511 T1_T201 Rate T0 the T1_T694 series T0 T1_T694 Breaking Bad T0 with 5 stars on T1_T1017 Netflix T0 T2_T187
+T3-T993-T511 T1_T201 Shuffle T0 my T1_T167 favorite songs T0 playlist on T1_T1017 Spotify T0 T2_T597_T874
+T3-T993-T511 T1_T201 Repeat T0 the T1_T694 song T0 T1_T244 Let It Be T0 by T1_T244 The Beatles T0 T2_T597_T874
+T3-T993-T511 T1_T201 Search T0 for T1_T244 Queen's T0 songs on T1_T1017 Spotify T0 T2_T170
+T3-T993-T511 T1_T201 Play T0 the T1_T694 album T0 T1_T694 Bohemian Rhapsody T0 by T1_T244 Queen T0 T2_T597_T874
+T3-T993-T511 T1_T201 Stop T0 the T1_T644_T308 music T0 after T1_T54 45 minutes T0 T2_T597_T874
+T3-T993-T511 T1_T201 Rewind T0 the T1_T644_T308 movie T0 by T1_T54 15 minutes T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 a reminder to watch T1_T694 The Queen's Gambit T0 every T1_T297 Friday T0 at T1_T786 9 PM T0 T2_T14
+T3-T993-T511 T1_T201 Recommend T0 some T1_T217 action T0 T1_T644_T308 movies T0 to watch on T1_T623 tomorrow night T0 T2_T899
+T3-T993-T511 T1_T201 Update T0 my T1_T808_T308 preferred T0 T1_T644_T308 movie genres T0 to T1_T217 action and adventure T0 T2_T376_T335
+T3-T993-T511 T1_T201 Play T0 T1_T244 Pink Floyd's T0 T1_T694 Comfortably Numb T0 T2_T597_T874
+T3-T993-T511 T1_T201 Mute T0 the T1_T644_T308 radio T0 T2_T597_T874
+T3-T993-T511 T1_T201 Unmute T0 the T1_T644_T308 TV T0 T2_T597_T874
+T3-T993-T511 T1_T201 Set T0 the T1_T644_T308 movie T0 to T1_T597_T874 repeat T0 T2_T597_T874

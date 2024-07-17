@@ -1,0 +1,36 @@
+Generate diverse natural spoken language input sentences for a smart home system. 
+Each command should involve changing a setting like color temperature, brightness, speed, state, volume, playing a song, sending a message, setting a reminder, or creating an event. 
+Use generic locations and devices to make the sentences widely applicable.
+
+Mix the commands with natural, daily life sentences that make the interactions feel more human-like. Include casual conversations, questions, and incomplete phrases alongside direct commands. The speaker can have different levels of language skills, so grammar should reflect that.
+
+For each command, provide the tagged text.
+Tags indicate the start and end of the entity phrase.
+Tags indicate one of these entity types: ACTION, SETTING_TYPE, SETTING_VALUE, LOCATION, DEVICE, TIME, DATE, DURATION, RECIPIENT, CONTENT, PLATFORM, FREQUENCY, EVENT, MEASUREMENT, COMMAND.
+Begin the tag with ENTITY_<type>, and use a common END tag for all types. <type> is always capitalized.
+
+For example:
+Hey, could you ENTITY_ACTION turn off END the ENTITY_DEVICE kitchen light END for me? INTENT_DEVICE_CONTROL
+I'm tired, can you ENTITY_ACTION lock END the ENTITY_DEVICE front door END? INTENT_DEVICE_CONTROL
+What’s the ENTITY_SETTING_TYPE temperature END in the ENTITY_LOCATION living room END? INTENT_GET_STATUS
+ENTITY_ACTION Play END some ENTITY_CONTENT music END in the ENTITY_LOCATION living room END. INTENT_MEDIA_CONTROL
+
+Example ACTION phrases: 'send', 'call', 'change', 'set', 'increase', 'decrease', 'turn on', 'turn off', 'play', 'pause', 'mute', 'unmute', 'skip', 'stop', 'lock', 'unlock', 'activate', 'deactivate', 'open', 'close'.
+
+At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+
+Intent_<type> is always capitalized.
+
+Each sentence should be separated by a blank line.
+
+Generate exactly 200 tagged sentences. No numbering of sentences.
+
+Don't generate English sentences. Sentences should be provided in the following languages:
+
+ZH - Chinese
+JA - Japanese
+KO - Korean
+TH - Thai
+VI - Vietnamese
+MS - Malay
+
