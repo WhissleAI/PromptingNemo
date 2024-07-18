@@ -19,6 +19,6 @@ Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
 
-Generate exactly 200 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
+Generate exactly 300 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
 
 Output tagged sentences should only be in {lang}

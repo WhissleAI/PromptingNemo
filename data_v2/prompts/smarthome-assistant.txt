@@ -1,12 +1,13 @@
-Generate diverse natural spoken language input sentences for a smart home system. 
-Each command should involve changing a setting like color temperature, brightness, speed, state, volume, playing a song, sending a message, setting a reminder, or creating an event. 
-Use generic locations and devices to make the sentences widely applicable.
+Generate diverse natural spoken language input sentences for a smart home system. Each command should involve changing a setting like color temperature, brightness, speed, state, volume, playing a song, sending a message, setting a reminder, creating an event, or controlling any smart device.
+
+Use generic locations and devices to make the sentences widely applicable. Include interactions such as adjusting climate control, managing security systems, operating entertainment systems, and executing personal assistant tasks like sending emails, making phone calls, or providing information.
 
 Mix the commands with natural, daily life sentences that make the interactions feel more human-like. Include casual conversations, questions, and incomplete phrases alongside direct commands. The speaker can have different levels of language skills, so grammar should reflect that.
 
 For each command, provide the tagged text.
 Tags indicate the start and end of the entity phrase.
-Tags indicate one of these entity types: ACTION, SETTING_TYPE, SETTING_VALUE, LOCATION, DEVICE, TIME, DATE, DURATION, RECIPIENT, CONTENT, PLATFORM, FREQUENCY, EVENT, MEASUREMENT, COMMAND.
+Tags indicate one of these entity types: ACTION, SETTING_TYPE, SETTING_VALUE, LOCATION, DEVICE, TIME, DATE, DURATION, RECIPIENT, CONTENT, PLATFORM, FREQUENCY, EVENT, MEASUREMENT, COMMAND, WEATHER_CONDITION, LANGUAGE, UNIT, PRIORITY, MOOD, MODE, CURRENCY, REGION, SENDER, RECIPIENT_ROLE, INTENT, PRODUCT, PAYMENT_METHOD, ACCESS_LEVEL, CATEGORY, STATUS, CONFIRMATION, NEGATION, FEEDBACK, SENSITIVITY_LEVEL, TEMPERATURE_SETTING.
+
 Begin the tag with ENTITY_<type>, and use a common END tag for all types. <type> is always capitalized.
 
 For example:
@@ -14,15 +15,17 @@ Hey, could you ENTITY_ACTION turn off END the ENTITY_DEVICE kitchen light END fo
 I'm tired, can you ENTITY_ACTION lock END the ENTITY_DEVICE front door END? INTENT_DEVICE_CONTROL
 What’s the ENTITY_SETTING_TYPE temperature END in the ENTITY_LOCATION living room END? INTENT_GET_STATUS
 ENTITY_ACTION Play END some ENTITY_CONTENT music END in the ENTITY_LOCATION living room END. INTENT_MEDIA_CONTROL
+ENTITY_ACTION Order END ENTITY_PRODUCT pizza END with ENTITY_PAYMENT_METHOD credit card END. INTENT_ORDER
+ENTITY_ACTION Set END the ENTITY_TEMPERATURE_SETTING thermostat END to ENTITY_SETTING_VALUE 72 degrees END. INTENT_DEVICE_CONTROL
 
-Example ACTION phrases: 'send', 'call', 'change', 'set', 'increase', 'decrease', 'turn on', 'turn off', 'play', 'pause', 'mute', 'unmute', 'skip', 'stop', 'lock', 'unlock', 'activate', 'deactivate', 'open', 'close'.
+Example ACTION phrases: 'send', 'call', 'change', 'set', 'increase', 'decrease', 'turn on', 'turn off', 'play', 'pause', 'mute', 'unmute', 'skip', 'stop', 'lock', 'unlock', 'activate', 'deactivate', 'open', 'close', 'adjust', 'dim', 'brighten', 'schedule', 'remind', 'notify', 'email', 'text', 'message', 'ask', 'inform', 'update', 'configure', 'check', 'order', 'pay', 'set up', 'book', 'reserve', 'activate', 'deactivate', 'locate', 'find', 'translate', 'convert', 'rate', 'review', 'return', 'cancel'.
 
-At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+At the end of each sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
 
 Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line.
 
-Generate exactly 200 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
+Generate exactly 300 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
 
-Output tagged sentences should only be in {lang}
+Output tagged sentences should only be in {lang}.
