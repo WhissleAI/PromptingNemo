@@ -20590,3 +20590,873 @@ LANG_DE Du solltest mich daran erinnern , meinen Reisepass zu verlängern .
 LANG_DE Können Sie einige Sehenswürdigkeiten in Rom vorschlagen ?
 LANG_DE Wow , der Flughafen ist heute so überfüllt .
 LANG_DE Ich habe einen Zug nach München für morgen gebucht .
+LANG_DE Was ist der Blutzuckerspiegel für Patient 123 ?
+LANG_DE Führen Sie die Blutuntersuchung für Patient 456 durch .
+LANG_DE Ändern Sie die Temperatur auf 25 Grad im Labor .
+LANG_DE Senden Sie den Laborbericht an Arzt Müller .
+LANG_DE Planen Sie einen Termin für Patient 789 am März .
+LANG_DE Aktualisieren Sie die Patientendaten mit Herzinsuffizienz und Medikamentenplan .
+LANG_DE Verwalten Sie den Medikamentenbestand im Apotheke .
+LANG_DE Geben Sie medizinischen Rat für Kopfschmerzen basierend auf Patientenhistorie .
+LANG_DE Überprüfen Sie die Mikrobiologieabteilung für die anstehenden Tests .
+LANG_DE Informieren Sie Patient 321 über die Blutbilduntersuchung .
+LANG_DE Dokumentieren Sie die Operation von Patient 555 .
+LANG_DE Bestellen Sie Verbrauchsmaterialien für die Pathologie .
+LANG_DE Verschreiben Sie Antibiotika für Patient 222 .
+LANG_DE Überwachen Sie die Luftfeuchtigkeit im Lager .
+LANG_DE Forschen Sie im Bereich Genetik für die Studie .
+LANG_DE Veranlassen Sie die MRT-Untersuchung für Patient 999 .
+LANG_DE Empfehlen Sie Physiotherapie für Patient 666 zur Rückenschmerzen .
+LANG_DE Bewerten Sie die Laborergebnisse von Patient 444 .
+LANG_DE Archivieren Sie die Röntgenbilder von Patient 777 .
+LANG_DE Verweisen Sie Patient 888 an den Spezialisten für Atembeschwerden .
+LANG_DE Diagnostizieren Sie die Magenschmerzen bei Patient 111 .
+LANG_DE Behandeln Sie Patient 234 mit Physiotherapie für Muskelschwäche .
+LANG_DE Überprüfen Sie den Laborbedarf im Versand .
+LANG_DE Verwalten Sie die Beleuchtung in der Histologie .
+LANG_DE Bestätigen Sie die Nachsorgeuntersuchung für Patient 567 .
+LANG_DE Dispensieren Sie Schmerzmittel an Patient 345 .
+LANG_DE Erfassen Sie Urinprobe von Patient 987 für die Drogenanalyse .
+LANG_DE Lagern Sie Laborgeräte im Lager .
+LANG_DE Abrufen Sie die Ultraschallbericht von Patient 876 .
+LANG_DE Vorbereiten Sie die Genetiklabor für die kommenden Tests .
+LANG_DE Überprüfen Sie die Patientenhistorie vor der Operation .
+LANG_DE Unterzeichnen Sie den Laborbefund von Patient 654 .
+LANG_DE Genehmigen Sie die Allergietest für Patient 543 .
+LANG_DE Informieren Sie Patient 987 über die Dosierung und Einnahmezeitpunkt .
+LANG_DE Konsultieren Sie Patient 432 bezüglich der Halsschmerzen und leiten Antibiotikatherapie ein .
+LANG_DE Verschreiben Sie Insulin für Patient 765 .
+LANG_DE Bewerten Sie die Blutdruckmessung von Patient 321 .
+LANG_DE Dokumentieren Sie die Endoskopie von Patient 876 .
+LANG_DE Verwalten Sie den Verbrauchsmaterial im Labor .
+LANG_DE Forschen Sie im Bereich Onkologie für die Studie .
+LANG_DE Veranlassen Sie die Herzultraschall für Patient 543 .
+LANG_DE Empfehlen Sie Physiotherapie für Patient 999 zur Rückenschmerzen .
+LANG_DE Bewerten Sie die Laborergebnisse von Patient 222 .
+LANG_DE Archivieren Sie die MRT-Bilder von Patient 555 .
+LANG_DE Verweisen Sie Patient 444 an den Kardiologen für Herzrhythmusstörungen .
+LANG_DE Diagnostizieren Sie die Kopfschmerzen bei Patient 777 .
+LANG_DE Behandeln Sie Patient 111 mit Antibiotika für Infektion .
+LANG_DE Überprüfen Sie den Laborbedarf im Versand .
+LANG_DE Verwalten Sie die Beleuchtung in der Pathologie .
+LANG_DE Bestätigen Sie die Kontrolluntersuchung für Patient 888 .
+LANG_DE Dispensieren Sie Schmerzmittel an Patient 345 .
+LANG_DE Erfassen Sie Blutprobe von Patient 987 für die Blutgruppenbestimmung .
+LANG_DE Lagern Sie Laborgeräte im Lager .
+LANG_DE Abrufen Sie die Röntgenbericht von Patient 876 .
+LANG_DE Vorbereiten Sie die Immunologie für die anstehenden Tests .
+LANG_DE Überprüfen Sie die Patientenhistorie vor der Operation .
+LANG_DE Unterzeichnen Sie den Blutbefund von Patient 654 .
+LANG_DE Genehmigen Sie die Lungenfunktionstest für Patient 543 .
+LANG_DE Informieren Sie Patient 987 über die Dosierung und Einnahmezeitpunkt .
+LANG_DE Konsultieren Sie Patient 432 bezüglich der Halsschmerzen und leiten Antibiotikatherapie ein .
+LANG_DE Verschreiben Sie Insulin für Patient 765 .
+LANG_DE Bewerten Sie die Blutdruckmessung von Patient 321 .
+LANG_DE Dokumentieren Sie die Endoskopie von Patient 876 .
+LANG_DE Verwalten Sie den Verbrauchsmaterial im Labor .
+LANG_DE Forschen Sie im Bereich Onkologie für die Studie .
+LANG_DE Veranlassen Sie die Herzultraschall für Patient 543 .
+LANG_DE Empfehlen Sie Physiotherapie für Patient 999 zur Rückenschmerzen .
+LANG_DE Bewerten Sie die Laborergebnisse von Patient 222 .
+LANG_DE Archivieren Sie die MRT-Bilder von Patient 555 .
+LANG_DE Verweisen Sie Patient 444 an den Kardiologen für Herzrhythmusstörungen .
+LANG_DE Diagnostizieren Sie die Kopfschmerzen bei Patient 777 .
+LANG_DE Behandeln Sie Patient 111 mit Antibiotika für Infektion .
+LANG_DE Überprüfen Sie mein Sparkonto auf verdächtige Aktivitäten .
+LANG_DE Benachrichtigen Sie mich über anstehende Rechnungen .
+LANG_DE Finanznachrichten berichten über einen Anstieg des Aktienmarktes Indizes .
+LANG_DE Wirtschaftsberichte deuten auf einen Rückgang der Arbeitslosenquote hin .
+LANG_DE Überweisen Sie 500 € von meinem Sparkonto auf mein Girokonto .
+LANG_DE Richten Sie eine Benachrichtigung ein, wenn mein Kreditkarten -Guthaben 1000 € übersteigt .
+LANG_DE Aktualisieren Sie meine Kontoinformationen mit den neuesten Daten .
+LANG_DE Analysieren Sie meine Ausgaben , um Einsparungsmöglichkeiten zu finden .
+LANG_DE Zahlen Sie meine monatlichen Rechnungen automatisch von meinem Girokonto .
+LANG_DE Setzen Sie Warnmeldungen für verdächtige Transaktionen auf meinem Konto .
+LANG_DE Börsennachrichten zeigen eine Steigerung des Dow Jones Index .
+LANG_DE Finanzanalysen prognostizieren einen Rückgang der Aktienkurse .
+LANG_DE Überprüfen Sie die monatliche Finanzübersicht für Ihr Konto .
+LANG_DE Generieren Sie einen detaillierten Finanzbericht für Ihre Investitionen .
+LANG_DE Planen Sie ein Treffen mit einem Berater , um Ihre Anlagen zu besprechen .
+LANG_DE Stornieren Sie die Benachrichtigung für Ihr Sparkonto .
+LANG_DE Berichten Sie über die aktuellen Finanznachrichten aus dem Devisenmarkt .
+LANG_DE Analysieren Sie die finanzielle Performance Ihrer Aktien .
+LANG_DE Aktualisieren Sie Ihre Bankdaten , um Online-Transaktionen zu ermöglichen .
+LANG_DE Einrichten Sie Warnungen für hohe Ausgaben auf Ihrem Konto .
+LANG_DE Konvertieren Sie 1000 USD in Euro mit dem aktuellen Wechselkurs .
+LANG_DE Überweisen Sie 200 € an Ihren Freund für das Geburtstagsgeschenk .
+LANG_DE Kalkulieren Sie Ihre Steuerrückzahlung basierend auf Ihren Einkünften .
+LANG_DE Die Rohstoffpreise steigen aufgrund von Angebot und Nachfrage .
+LANG_DE Die Ölpreise fallen aufgrund von Überproduktion .
+LANG_DE Schätzen Sie die Kosten für Ihre geplante Renovierung .
+LANG_DE Überprüfen Sie die Quartalsberichte für Ihr Unternehmen .
+LANG_DE Investieren Sie in Anleihen , um Ihre Risiken zu diversifizieren .
+LANG_DE Sparen Sie regelmäßig einen Betrag für Ihre Traumreise .
+LANG_DE Überwachen Sie Ihre Investmentfonds auf potenzielle Renditen .
+LANG_DE Benachrichtigen Sie mich über aktuelle Börsenkurse per SMS .
+LANG_DE Wechseln Sie 100 GBP in US-Dollar mit dem aktuellen Wechselkurs .
+LANG_DE Berechnen Sie die Zinsen für Ihre Hypothek basierend auf dem Zinssatz .
+LANG_DE Die Technologieaktien verzeichnen einen Anstieg nach den Quartalsberichten .
+LANG_DE Die Immobilienpreise steigen aufgrund von niedrigen Zinssätzen .
+LANG_DE Vorschlagen Sie Anlagestrategien basierend auf Ihrem Risikoprofil .
+LANG_DE Schätzen Sie die monatlichen Ausgaben für Ihre Lebenshaltungskosten .
+LANG_DE Überprüfen Sie die jährliche Vermögensaufstellung für Ihr Portfolio .
+LANG_DE Investieren Sie in Aktien , um von steigenden Kursen zu profitieren .
+LANG_DE Ausgeben Sie 50 € für Lebensmittel von Ihrem Girokonto .
+LANG_DE Überwachen Sie Ihre Goldbestände auf potenzielle Preisänderungen .
+LANG_DE Benachrichtigen Sie mich über wichtige Wirtschaftsindikatoren per E-Mail .
+LANG_DE Umrechnen Sie 5000 JPY in Euro mit dem aktuellen Wechselkurs .
+LANG_DE Abheben Sie 200 USD von Ihrem Sparkonto für Einkäufe .
+LANG_DE Berechnen Sie die Steuern für Ihre Einkünfte basierend auf dem Steuersatz .
+LANG_DE Die Aktienkurse reagieren positiv auf Unternehmensgewinne .
+LANG_DE Die Zinssätze sinken aufgrund von geldpolitischen Entscheidungen .
+LANG_DE Empfehlen Sie Anlageprodukte basierend auf Ihrem Risikoprofil .
+LANG_DE Bewerten Sie Ihre Immobilien , um den aktuellen Wert zu ermitteln .
+LANG_DE Planen Sie ein Treffen mit einem Berater , um Ihre Altersvorsorge zu besprechen .
+LANG_DE Stornieren Sie die Warnung für Ihr Kreditkartenkonto .
+LANG_DE Berichten Sie über die aktuellen Devisenkurse aus der Finanzwelt .
+LANG_DE Analysieren Sie die finanzielle Performance Ihrer Anleihen .
+LANG_DE Aktualisieren Sie Ihre Kontaktdaten , um Online-Zahlungen zu ermöglichen .
+LANG_DE Einrichten Sie Warnmeldungen für hohe Ausgaben auf Ihrem Konto .
+LANG_DE Börsennachrichten zeigen eine Steigerung des DAX Index .
+LANG_DE Finanzanalysen prognostizieren einen Rückgang der Aktienkurse .
+LANG_DE Überprüfen Sie die monatliche Finanzübersicht für Ihr Konto .
+LANG_DE Generieren Sie einen detaillierten Finanzbericht für Ihre Investitionen .
+LANG_DE Planen Sie ein Treffen mit einem Berater , um Ihre Anlagen zu besprechen .
+LANG_DE Stornieren Sie die Benachrichtigung für Ihr Sparkonto .
+LANG_DE Berichten Sie über die aktuellen Finanznachrichten aus dem Devisenmarkt .
+LANG_DE Analysieren Sie die finanzielle Performance Ihrer Aktien .
+LANG_DE Aktualisieren Sie Ihre Bankdaten , um Online-Transaktionen zu ermöglichen .
+LANG_DE Einrichten Sie Warnungen für hohe Ausgaben auf Ihrem Konto .
+LANG_DE Börsennachrichten zeigen eine Steigerung des Dow Jones Index .
+LANG_DE Finanzanalysen prognostizieren einen Rückgang der Aktienkurse .
+LANG_DE Überprüfen Sie die monatliche Finanzübersicht für Ihr Konto .
+LANG_DE Generieren Sie einen detaillierten Finanzbericht für Ihre Investitionen .
+LANG_DE Planen Sie ein Treffen mit einem Berater , um Ihre Anlagen zu besprechen .
+LANG_DE Stornieren Sie die Benachrichtigung für Ihr Sparkonto .
+LANG_DE Berichten Sie über die aktuellen Finanznachrichten aus dem Devisenmarkt .
+LANG_DE Analysieren Sie die finanzielle Performance Ihrer Aktien .
+LANG_DE Aktualisieren Sie Ihre Bankdaten , um Online-Transaktionen zu ermöglichen .
+LANG_DE Einrichten Sie Warnungen für hohe Ausgaben auf Ihrem Konto .
+LANG_DE Börsennachrichten zeigen eine Steigerung des Dow Jones Index .
+LANG_DE Finanzanalysen prognostizieren einen Rückgang der Aktienkurse .
+LANG_DE Überprüfen Sie die monatliche Finanzübersicht für Ihr Konto .
+LANG_DE Generieren Sie einen detaillierten Finanzbericht für Ihre Investitionen .
+LANG_DE Planen Sie ein Treffen mit einem Berater , um Ihre Anlagen zu besprechen .
+LANG_DE Stornieren Sie die Benachrichtigung für Ihr Sparkonto .
+LANG_DE Berichten Sie über die aktuellen Finanznachrichten aus dem Devisenmarkt .
+LANG_DE Analysieren Sie die finanzielle Performance Ihrer Aktien .
+LANG_DE Aktualisieren Sie Ihre Bankdaten , um Online-Transaktionen zu ermöglichen .
+LANG_DE Einrichten Sie Warnungen für hohe Ausgaben auf Ihrem Konto .
+LANG_DE Börsennachrichten zeigen eine Steigerung des Dow Jones Index .
+LANG_DE Finanzanalysen prognostizieren einen Rückgang der Aktienkurse .
+LANG_DE Überprüfen Sie die monatliche Finanzübersicht für Ihr Konto .
+LANG_DE Generieren Sie einen detaillierten Finanzbericht für Ihre Investitionen .
+LANG_DE Planen Sie ein Treffen mit einem Berater , um Ihre Anlagen zu besprechen .
+LANG_DE Stornieren Sie die Benachrichtigung für Ihr Sparkonto .
+LANG_DE Berichten Sie über die aktuellen Finanznachrichten aus dem Devisenmarkt .
+LANG_DE Analysieren Sie die finanzielle Performance Ihrer Aktien .
+LANG_DE Aktualisieren Sie Ihre Bankdaten , um Online-Transaktionen zu ermöglichen .
+LANG_DE Einrichten Sie Warnungen für hohe Ausgaben auf Ihrem Konto .
+LANG_DE Börsennachrichten zeigen eine Steigerung des Dow Jones Index .
+LANG_DE Finanzanalysen prognostizieren einen Rückgang der Aktienkurse .
+LANG_DE Überprüfen Sie die monatliche Finanzübersicht für Ihr Konto .
+LANG_DE Generieren Sie einen detaillierten Finanzbericht für Ihre Investitionen .
+LANG_DE Planen Sie ein Treffen mit einem Berater , um Ihre Anlagen zu besprechen .
+LANG_DE Stornieren Sie die Benachrichtigung für Ihr Sparkonto .
+LANG_DE Berichten Sie über die aktuellen Finanznachrichten aus dem Devisenmarkt .
+LANG_DE Analysieren Sie die finanzielle Performance Ihrer Aktien .
+LANG_DE Aktualisieren Sie Ihre Bankdaten , um Online-Transaktionen zu ermöglichen .
+LANG_DE Einrichten Sie Warnungen für hohe Ausgaben auf Ihrem Konto .
+LANG_DE Börsennachrichten zeigen eine Steigerung des Dow Jones Index .
+LANG_DE Finanzanalysen prognostizieren einen Rückgang der Aktienkurse .
+LANG_DE Überprüfen Sie die monatliche Finanzübersicht für Ihr Konto .
+LANG_DE Generieren Sie einen detaillierten Finanzbericht für Ihre Investitionen .
+LANG_DE Planen Sie ein Treffen mit einem Berater , um Ihre Anlagen zu besprechen .
+LANG_DE Füge 2 Tomaten zu meiner Einkaufsliste
+LANG_DE Überprüfe den Preis von Hühnereiern in Aldi
+LANG_DE Finde heraus, ob Lidl die Erdnussbutter im Lebensmittelregal hat
+LANG_DE Vergleiche die frischen Erdbeeren mit gefrorenen Erdbeeren bezüglich Vitamin C-Gehalt
+LANG_DE Suche nach Vollkornnudeln in der Teigwarenabteilung
+LANG_DE Setze eine Erinnerung für den März um 10:00 Uhr für den Edeka
+LANG_DE Entferne 1 Milch von meiner Einkaufsliste
+LANG_DE Aktualisiere die Einkaufsliste mit Bananen und Äpfeln
+LANG_DE Kaufe 3 Avocados bei Rewe
+LANG_DE Verfolge die Preise für Bio-Joghurt in verschiedenen Supermärkten
+LANG_DE Notiere die Sonderangebote für Backwaren in der Lidl
+LANG_DE Suche nach glutenfreiem Brot für Zöliakie in der BIO-Produkte
+LANG_DE Vereinbare einen Termin für den wöchentlichen Einkauf bei Kaufland
+LANG_DE Erinnere mich daran, Kaffee zu kaufen, wenn ich Aldi betrete
+LANG_DE Informiere mich über den Kaloriengehalt von Schokolade
+LANG_DE Rufe Edeka an und frage nach den Sonderangeboten für Obst
+LANG_DE Vergleiche die frisches Gemüse mit Tiefkühlgemüse hinsichtlich Nährstoffgehalt
+LANG_DE Finde heraus, ob Aldi Hafermilch in der Molkereiprodukte hat
+LANG_DE Suche nach Bio-Eiern in der Frischwaren bei Rewe
+LANG_DE Kaufe 1 Packung Kekse von Bahlsen bei Müller
+LANG_DE Verfolge die Preise für Orangensaft in den Supermärkten
+LANG_DE Notiere die Sonderangebote für Fleisch in der Kaufland
+LANG_DE Suche nach laktosefreier Milch für Laktoseintoleranz in der Molkereiprodukte
+LANG_DE Vereinbare einen Termin für den monatlichen Einkauf bei Real
+LANG_DE Erinnere mich daran, frisches Brot zu kaufen, wenn ich Aldi besuche
+LANG_DE Informiere mich über den Zuckeranteil von Müsli
+LANG_DE Rufe Kaufland an und frage nach den Preisen für Getränke
+LANG_DE Vergleiche die frischen Beeren mit gefrorenen Beeren bezüglich Ballaststoffgehalt
+LANG_DE Finde heraus, ob Rewe Mandelmilch in der Getränkeabteilung hat
+LANG_DE Suche nach Bio-Kartoffeln in der Obstund Gemüseabteilung bei Edeka
+LANG_DE Kaufe 2 Packungen Tee von Meßmer bei Rossmann
+LANG_DE Verfolge die Preise für Käse in den Supermärkten
+LANG_DE Notiere die Sonderangebote für Tiefkühlprodukte in der Aldi
+LANG_DE Suche nach vegane Schokolade für Veganismus in der Süßwaren
+LANG_DE Vereinbare einen Termin für den täglichen Einkauf bei Netto
+LANG_DE Erinnere mich daran, frisches Gemüse zu kaufen, wenn ich Rewe betrete
+LANG_DE Informiere mich über den Eiweißgehalt von Joghurt
+LANG_DE Rufe Real an und frage nach den Sonderangeboten für Backwaren
+LANG_DE Vergleiche die frisches Obst mit Konservenobst hinsichtlich Vitamingehalt
+LANG_DE Finde heraus, ob Edeka Kokosmilch in der asiatischen Produkte hat
+LANG_DE Suche nach Bio-Tomaten in der Gemüseabteilung bei Lidl
+LANG_DE Kaufe 1 Packung Kekse von Bahlsen bei Müller
+LANG_DE Verfolge die Preise für Wein in den Supermärkten
+LANG_DE Notiere die Sonderangebote für Fisch in der Kaufland
+LANG_DE Suche nach glutenfreiem Brot für Glutenunverträglichkeit in der BIO-Produkte
+LANG_DE Vereinbare einen Termin für den wöchentlichen Einkauf bei Kaufland
+LANG_DE Erinnere mich daran, Kaffee zu kaufen, wenn ich Aldi betrete
+LANG_DE Informiere mich über den Kaloriengehalt von Schokolade
+LANG_DE Rufe Edeka an und frage nach den Sonderangeboten für Obst
+LANG_DE Vergleiche die frisches Gemüse mit Tiefkühlgemüse hinsichtlich Nährstoffgehalt
+LANG_DE Finde heraus, ob Aldi Hafermilch in der Molkereiprodukte hat
+LANG_DE Suche nach Bio-Eiern in der Frischwaren bei Rewe
+LANG_DE Kaufe 1 Packung Kekse von Bahlsen bei Müller
+LANG_DE Verfolge die Preise für Orangensaft in den Supermärkten
+LANG_DE Notiere die Sonderangebote für Fleisch in der Kaufland
+LANG_DE Suche nach laktosefreier Milch für Laktoseintoleranz in der Molkereiprodukte
+LANG_DE Vereinbare einen Termin für den monatlichen Einkauf bei Real
+LANG_DE Erinnere mich daran, frisches Brot zu kaufen, wenn ich Aldi besuche
+LANG_DE Informiere mich über den Zuckeranteil von Müsli
+LANG_DE Rufe Kaufland an und frage nach den Preisen für Getränke
+LANG_DE Vergleiche die frischen Beeren mit gefrorenen Beeren bezüglich Ballaststoffgehalt
+LANG_DE Finde heraus, ob Rewe Mandelmilch in der Getränkeabteilung hat
+LANG_DE Suche nach Bio-Kartoffeln in der Obstund Gemüseabteilung bei Edeka
+LANG_DE Kaufe 2 Packungen Tee von Meßmer bei Rossmann
+LANG_DE Verfolge die Preise für Käse in den Supermärkten
+LANG_DE Notiere die Sonderangebote für Tiefkühlprodukte in der Aldi
+LANG_DE Suche nach vegane Schokolade für Veganismus in der Süßwaren
+LANG_DE Vereinbare einen Termin für den täglichen Einkauf bei Netto
+LANG_DE Erinnere mich daran, frisches Gemüse zu kaufen, wenn ich Rewe betrete
+LANG_DE Informiere mich über den Eiweißgehalt von Joghurt
+LANG_DE Rufe Real an und frage nach den Sonderangeboten für Backwaren
+LANG_DE Vergleiche die frisches Obst mit Konservenobst hinsichtlich Vitamingehalt
+LANG_DE Finde heraus, ob Edeka Kokosmilch in der asiatischen Produkte hat
+LANG_DE Suche nach Bio-Tomaten in der Gemüseabteilung bei Lidl
+LANG_DE Kaufe 1 Packung Kekse von Bahlsen bei Müller
+LANG_DE Verfolge die Preise für Wein in den Supermärkten
+LANG_DE Notiere die Sonderangebote für Fisch in der Kaufland
+LANG_DE Suche nach glutenfreiem Brot für Glutenunverträglichkeit in der BIO-Produkte
+LANG_DE Vereinbare einen Termin für den wöchentlichen Einkauf bei Kaufland
+LANG_DE Erinnere mich daran, Kaffee zu kaufen, wenn ich Aldi betrete
+LANG_DE Informiere mich über den Kaloriengehalt von Schokolade
+LANG_DE Rufe Edeka an und frage nach den Sonderangeboten für Obst
+LANG_DE Vergleiche die frisches Gemüse mit Tiefkühlgemüse hinsichtlich Nährstoffgehalt
+LANG_DE Finde heraus, ob Aldi Hafermilch in der Molkereiprodukte hat
+LANG_DE Suche nach Bio-Eiern in der Frischwaren bei Rewe
+LANG_DE Kaufe 1 Packung Kekse von Bahlsen bei Müller
+LANG_DE Verfolge die Preise für Orangensaft in den Supermärkten
+LANG_DE Notiere die Sonderangebote für Fleisch in der Kaufland
+LANG_DE Suche nach laktosefreier Milch für Laktoseintoleranz in der Molkereiprodukte
+LANG_DE Vereinbare einen Termin für den monatlichen Einkauf bei Real
+LANG_DE Erinnere mich daran, frisches Brot zu kaufen, wenn ich Aldi besuche
+LANG_DE Informiere mich über den Zuckeranteil von Müsli
+LANG_DE Rufe Kaufland an und frage nach den Preisen für Getränke
+LANG_DE Vergleiche die frischen Beeren mit gefrorenen Beeren bezüglich Ballaststoffgehalt
+LANG_DE Finde heraus, ob Rewe Mandelmilch in der Getränkeabteilung hat
+LANG_DE Suche nach Bio-Kartoffeln in der Obstund Gemüseabteilung bei Edeka
+LANG_DE Kaufe 2 Packungen Tee von Meßmer bei Rossmann
+LANG_DE Verfolge die Preise für Käse in den Supermärkten
+LANG_DE Notiere die Sonderangebote für Tiefkühlprodukte in der Aldi
+LANG_DE Suche nach vegane Schokolade für Veganismus in der Süßwaren
+LANG_DE Vereinbare einen Termin für den täglichen Einkauf bei Netto
+LANG_DE Erinnere mich daran, frisches Gemüse zu kaufen, wenn ich Rewe betrete
+LANG_DE Informiere mich über den Eiweißgehalt von Joghurt
+LANG_DE Rufe Real an und frage nach den Sonderangeboten für Backwaren
+LANG_DE Vergleiche die frisches Obst mit Konservenobst hinsichtlich Vitamingehalt
+LANG_DE Finde heraus, ob Edeka Kokosmilch in der asiatischen Produkte hat
+LANG_DE Suche nach Bio-Tomaten in der Gemüseabteilung bei Lidl
+LANG_DE Kaufe 1 Packung Kekse von Bahlsen bei Müller
+LANG_DE Ich habe Kopfschmerzen seit gestern regelmäßig
+LANG_DE Meine Mutter klagt über Bauchschmerzen seit einer Woche
+LANG_DE Mein Vater hat Diabetes seit fünf Jahren
+LANG_DE Ich nehme Ibuprofen bei Rückenschmerzen zweimal täglich
+LANG_DE Meine Schwester hat eine Magenspiegelung vor drei Tagen
+LANG_DE Mein Bruder wurde mit einer Grippe letzte Woche diagnostiziert
+LANG_DE Ich fühle mich müde seit einigen Tagen
+LANG_DE Mein Onkel musste eine Herzoperation vor einem Monat durchführen
+LANG_DE Meine Tante hat Fieber seit gestern
+LANG_DE Ich nehme Antibiotika gegen eine Infektion seit drei Tagen
+LANG_DE Mein Großvater leidet an Schwindel seit einer Woche
+LANG_DE Meine Cousine hat Asthma seit ihrer Kindheit
+LANG_DE Ich hatte eine Darmspiegelung vor zwei Wochen
+LANG_DE Mein Onkel berichtete von Husten seit einigen Tagen
+LANG_DE Mein Vater erhielt Blutdrucksenker für seinen hohen Blutdruck vor einem Jahr
+LANG_DE Ich hatte Übelkeit gestern Abend
+LANG_DE Meine Schwester wurde mit einer Lebensmittelvergiftung letzte Woche diagnostiziert
+LANG_DE Mein Bruder nimmt Antidepressiva für seine Depression seit einem Monat
+LANG_DE Ich fühle mich schwach seit ein paar Tagen
+LANG_DE Meine Mutter hatte eine Knieoperation vor drei Tagen
+LANG_DE Mein Vater klagt über Rückenschmerzen seit einer Woche
+LANG_DE Meine Schwester wurde mit Migräne vor zwei Jahren diagnostiziert
+LANG_DE Ich nehme Vitamin C zur Vorbeugung Erkältung täglich
+LANG_DE Mein Onkel musste eine Hüftoperation vor einem Monat durchführen
+LANG_DE Meine Tante hat Halsschmerzen seit gestern
+LANG_DE Ich nehme Schmerzmittel bei Zahnschmerzen zweimal täglich
+LANG_DE Mein Großvater leidet an Schlaflosigkeit seit einer Woche
+LANG_DE Meine Cousine wurde mit Allergien in ihrer Kindheit diagnostiziert
+LANG_DE Ich hatte eine Magen-Darm-Spiegelung vor zwei Wochen
+LANG_DE Mein Onkel berichtete von Bauchschmerzen seit einigen Tagen
+LANG_DE Mein Vater erhielt Antibiotika für seine Infektion vor einem Jahr
+LANG_DE Ich hatte Schüttelfrost gestern Abend
+LANG_DE Meine Schwester wurde mit einer Grippe letzte Woche diagnostiziert
+LANG_DE Mein Bruder nimmt Schilddrüsenmedikamente für seine Schilddrüsenunterfunktion seit einem Monat
+LANG_DE Ich fühle mich müde seit ein paar Tagen
+LANG_DE Meine Mutter hatte eine Augenoperation vor drei Tagen
+LANG_DE Mein Vater klagt über Kopfschmerzen seit einer Woche
+LANG_DE Meine Schwester wurde mit Diabetes vor zwei Jahren diagnostiziert
+LANG_DE Ich nehme Eisenpräparate zur Vorbeugung Anämie täglich
+LANG_DE Mein Onkel musste eine Gallenblasenoperation vor einem Monat durchführen
+LANG_DE Meine Tante hat Husten seit gestern
+LANG_DE Ich nehme Beruhigungsmittel bei Angstzuständen zweimal täglich
+LANG_DE Mein Großvater leidet an Arthritis seit einer Woche
+LANG_DE Meine Cousine wurde mit Asthma in ihrer Kindheit diagnostiziert
+LANG_DE Ich hatte eine Darmspiegelung vor zwei Wochen
+LANG_DE Mein Onkel berichtete von Rückenschmerzen seit einigen Tagen
+LANG_DE Mein Vater erhielt Cholesterinsenker für seinen hohen Cholesterinspiegel vor einem Jahr
+LANG_DE Ich hatte Erbrechen gestern Abend
+LANG_DE Meine Schwester wurde mit Magengeschwüren letzte Woche diagnostiziert
+LANG_DE Mein Bruder nimmt Antihistaminika für seine Allergien seit einem Monat
+LANG_DE Ich fühle mich erschöpft seit ein paar Tagen
+LANG_DE Meine Mutter hatte eine Herzoperation vor drei Tagen
+LANG_DE Mein Vater klagt über Halsschmerzen seit einer Woche
+LANG_DE Meine Schwester wurde mit Migräne vor zwei Jahren diagnostiziert
+LANG_DE Ich nehme Vitamin D zur Vorbeugung Osteoporose täglich
+LANG_DE Mein Onkel musste eine Knieoperation vor einem Monat durchführen
+LANG_DE Meine Tante hat Schwindel seit gestern
+LANG_DE Ich nehme Schmerzmittel bei Kopfschmerzen zweimal täglich
+LANG_DE Mein Großvater leidet an Schlaflosigkeit seit einer Woche
+LANG_DE Meine Cousine wurde mit Allergien in ihrer Kindheit diagnostiziert
+LANG_DE Ich hatte eine Magen-Darm-Spiegelung vor zwei Wochen
+LANG_DE Mein Onkel berichtete von Bauchschmerzen seit einigen Tagen
+LANG_DE Mein Vater erhielt Antibiotika für seine Infektion vor einem Jahr
+LANG_DE Ich hatte Schüttelfrost gestern Abend
+LANG_DE Meine Schwester wurde mit einer Grippe letzte Woche diagnostiziert
+LANG_DE Mein Bruder nimmt Schilddrüsenmedikamente für seine Schilddrüsenunterfunktion seit einem Monat
+LANG_DE Ich fühle mich müde seit ein paar Tagen
+LANG_DE Meine Mutter hatte eine Augenoperation vor drei Tagen
+LANG_DE Mein Vater klagt über Kopfschmerzen seit einer Woche
+LANG_DE Meine Schwester wurde mit Diabetes vor zwei Jahren diagnostiziert
+LANG_DE Ich nehme Eisenpräparate zur Vorbeugung Anämie täglich
+LANG_DE Mein Onkel musste eine Gallenblasenoperation vor einem Monat durchführen
+LANG_DE Meine Tante hat Husten seit gestern
+LANG_DE Ich nehme Beruhigungsmittel bei Angstzuständen zweimal täglich
+LANG_DE Mein Großvater leidet an Arthritis seit einer Woche
+LANG_DE Meine Cousine wurde mit Asthma in ihrer Kindheit diagnostiziert
+LANG_DE Ich hatte eine Darmspiegelung vor zwei Wochen
+LANG_DE Mein Onkel berichtete von Rückenschmerzen seit einigen Tagen
+LANG_DE Mein Vater erhielt Cholesterinsenker für seinen hohen Cholesterinspiegel vor einem Jahr
+LANG_DE Ich hatte Erbrechen gestern Abend
+LANG_DE Meine Schwester wurde mit Magengeschwüren letzte Woche diagnostiziert
+LANG_DE Mein Bruder nimmt Antihistaminika für seine Allergien seit einem Monat
+LANG_DE Ich fühle mich erschöpft seit ein paar Tagen
+LANG_DE Meine Mutter hatte eine Herzoperation vor drei Tagen
+LANG_DE Bayern München führt gegen Borussia Dortmund mit 2-1 in der Bundesliga .
+LANG_DE Was für ein Schuss von Müller , aber der Bürki pariert!
+LANG_DE Lewandowski dribbelt geschickt durch die von RB Leipzig .
+LANG_DE Die Fans im Signal Iduna Park sind heute besonders laut .
+LANG_DE Guardiola scheint mit den des Felix Brych nicht einverstanden zu sein .
+LANG_DE Haaland hat heute bereits 3 Tore erzielt .
+LANG_DE Real Madrid gewinnt die La Liga mit einem 3-0 gegen Barcelona .
+LANG_DE Was für ein Tackling von Kimmich , er hat den Gegenspieler komplett ausgehebelt .
+LANG_DE Der zeigt 5 gelbe Karten in dieser Halbzeit .
+LANG_DE Ronaldo schießt und . . . Tor! Was für ein Treffer!
+LANG_DE Die Sonne scheint heute auf das Allianz Arena .
+LANG_DE Manchester City dominiert das Spiel gegen Chelsea .
+LANG_DE Salah dribbelt an der vorbei und steht plötzlich frei vor dem .
+LANG_DE Klopp wechselt Mane für Firmino ein .
+LANG_DE Was für ein Fallrückzieher von Benzema , aber der hält den Ball!
+LANG_DE Mbappé hat sich verletzt und muss ausgewechselt werden .
+LANG_DE Juventus gleicht in letzter Sekunde gegen AC Mailand aus .
+LANG_DE Die Fans feuern ihr Team lautstark an .
+LANG_DE Taylor pfeift die Premier League Partie ab .
+LANG_DE Was für ein Kopfball von van Dijk , knapp über das Tor!
+LANG_DE Neymar fällt im Strafraum , aber der entscheidet auf Abseits .
+LANG_DE Inter Mailand verliert gegen AS Rom mit einem 1-2 .
+LANG_DE De Bruyne setzt Sterling perfekt in Szene, der schießt und . . . Tor!
+LANG_DE Der Regen beeinflusst das Spielgeschehen deutlich .
+LANG_DE Mourinho schreit Anweisungen an seine Spieler .
+LANG_DE Griezmann foult Messi und erhält dafür eine gelbe Karte .
+LANG_DE Die Zuschauer im San Siro sind heute in Feierlaune .
+LANG_DE Atletico Madrid führt gegen Sevilla mit einem 2-0 .
+LANG_DE Was für ein Dribbling von Hazard , er lässt die alt aussehen!
+LANG_DE Oliver hat heute bereits 10 Fouls gepfiffen .
+LANG_DE Aguero schießt und . . . Tor! Ein Traumtor!
+LANG_DE Die Hitze macht den Spielern heute ordentlich zu schaffen .
+LANG_DE Zidane diskutiert intensiv mit dem .
+LANG_DE Pogba setzt Rashford perfekt in Szene, der schießt und . . . Tor!
+LANG_DE Der Nebel erschwert die Sicht auf dem Platz .
+LANG_DE Arsenal verliert überraschend gegen Fulham mit einem 0-1 .
+LANG_DE Kane dribbelt durch die von Everton und erzielt ein Tor!
+LANG_DE Was für ein Zweikampf zwischen Ramos und Messi , das ist echte Härte!
+LANG_DE Kuipers zeigt 2 rote Karten in dieser Partie .
+LANG_DE Son schießt und . . . Tor! Was für ein Treffer!
+LANG_DE Die Wind beeinflusst die Flugbahn des Balls .
+LANG_DE Simeone motiviert seine Spieler mit lauten Anfeuerungsrufen .
+LANG_DE Insigne hat sich eine Verletzung zugezogen und muss behandelt werden .
+LANG_DE Manchester United führt gegen Liverpool mit einem 3-2 .
+LANG_DE Was für ein Pass von De Bruyne , präzise in den Lauf von Aguero gespielt!
+LANG_DE Rocchi hat eine VAR-Entscheidung getroffen und gibt einen Elfmeter für Napoli .
+LANG_DE Modric schießt aus der Distanz, aber der hält den Ball sicher .
+LANG_DE Die Schneefall sorgt für rutschige Bedingungen auf dem Platz .
+LANG_DE Ancelotti beobachtet das Spielgeschehen konzentriert von der Seitenlinie aus .
+LANG_DE Benzema foult Hazard und sieht dafür die gelbe Karte .
+LANG_DE Die Fans im Camp Nou sind enttäuscht über die Leistung ihres Teams .
+LANG_DE Borussia Mönchengladbach gewinnt gegen VfB Stuttgart mit einem 2-0 .
+LANG_DE Was für ein Kopfball von Ramos , knapp am Tor vorbei!
+LANG_DE Salah dribbelt an der vorbei und erzielt ein Tor! Was für ein Treffer!
+LANG_DE Kuipers zeigt 2 gelbe Karten in dieser Partie .
+LANG_DE Ronaldo schießt und . . . Tor! Was für ein Treffer!
+LANG_DE Die Hitze macht den Spielern heute ordentlich zu schaffen .
+LANG_DE Klopp diskutiert intensiv mit dem .
+LANG_DE Griezmann foult Messi und erhält dafür eine gelbe Karte .
+LANG_DE Die Zuschauer im Santiago Bernabeu sind heute in Feierlaune .
+LANG_DE Atletico Madrid führt gegen Sevilla mit einem 2-0 .
+LANG_DE Was für ein Dribbling von Hazard , er lässt die alt aussehen!
+LANG_DE Oliver hat heute bereits 10 Fouls gepfiffen .
+LANG_DE Aguero schießt und . . . Tor! Ein Traumtor!
+LANG_DE Die Hitze macht den Spielern heute ordentlich zu schaffen .
+LANG_DE Zidane diskutiert intensiv mit dem .
+LANG_DE Pogba setzt Rashford perfekt in Szene, der schießt und . . . Tor!
+LANG_DE Der Nebel erschwert die Sicht auf dem Platz .
+LANG_DE Arsenal verliert überraschend gegen Fulham mit einem 0-1 .
+LANG_DE Kane dribbelt durch die von Everton und erzielt ein Tor!
+LANG_DE Was für ein Zweikampf zwischen Ramos und Messi , das ist echte Härte!
+LANG_DE Kuipers zeigt 2 rote Karten in dieser Partie .
+LANG_DE Son schießt und . . . Tor! Was für ein Treffer!
+LANG_DE Die Wind beeinflusst die Flugbahn des Balls .
+LANG_DE Simeone motiviert seine Spieler mit lauten Anfeuerungsrufen .
+LANG_DE Insigne hat sich eine Verletzung zugezogen und muss behandelt werden .
+LANG_DE Manchester United führt gegen Liverpool mit einem 3-2 .
+LANG_DE Was für ein Pass von De Bruyne , präzise in den Lauf von Aguero gespielt!
+LANG_DE Rocchi hat eine VAR-Entscheidung getroffen und gibt einen Elfmeter für Napoli .
+LANG_DE Modric schießt aus der Distanz, aber der hält den Ball sicher .
+LANG_DE Die Schneefall sorgt für rutschige Bedingungen auf dem Platz .
+LANG_DE Ancelotti beobachtet das Spielgeschehen konzentriert von der Seitenlinie aus .
+LANG_DE Benzema foult Hazard und sieht dafür die gelbe Karte .
+LANG_DE Die Fans im Camp Nou sind enttäuscht über die Leistung ihres Teams .
+LANG_DE Borussia Mönchengladbach gewinnt gegen VfB Stuttgart mit einem 2-0 .
+LANG_DE Was für ein Kopfball von Ramos , knapp am Tor vorbei!
+LANG_DE Salah dribbelt an der vorbei und erzielt ein Tor! Was für ein Treffer!
+LANG_DE Kuipers zeigt 2 gelbe Karten in dieser Partie .
+LANG_DE Ronaldo schießt und . . . Tor! Was für ein Treffer!
+LANG_DE Die Hitze macht den Spielern heute ordentlich zu schaffen .
+LANG_DE Klopp diskutiert intensiv mit dem .
+LANG_DE Griezmann foult Messi und erhält dafür eine gelbe Karte .
+LANG_DE Die Zuschauer im Santiago Bernabeu sind heute in Feierlaune .
+LANG_DE Atletico Madrid führt gegen Sevilla mit einem 2-0 .
+LANG_DE Was für ein Dribbling von Hazard , er lässt die alt aussehen!
+LANG_DE Oliver hat heute bereits 10 Fouls gepfiffen .
+LANG_DE Aguero schießt und . . . Tor! Ein Traumtor!
+LANG_DE Die Hitze macht den Spielern heute ordentlich zu schaffen .
+LANG_DE Zidane diskutiert intensiv mit dem .
+LANG_DE Pogba setzt Rashford perfekt in Szene, der schießt und . . . Tor!
+LANG_DE Der Nebel erschwert die Sicht auf dem Platz .
+LANG_DE Arsenal verliert überraschend gegen Fulham mit einem 0-1 .
+LANG_DE Kane dribbelt durch die von Everton und erzielt ein Tor!
+LANG_DE Was für ein Zweikampf zwischen Ramos und Messi , das ist echte Härte!
+LANG_DE Kuipers zeigt 2 rote Karten in dieser Partie .
+LANG_DE Son schießt und . . . Tor! Was für ein Treffer!
+LANG_DE Die Wind beeinflusst die Flugbahn des Balls .
+LANG_DE Simeone motiviert seine Spieler mit lauten Anfeuerungsrufen .
+LANG_DE Insigne hat sich eine Verletzung zugezogen und muss behandelt werden .
+LANG_DE Manchester United führt gegen Liverpool mit einem 3-2 .
+LANG_DE Was für ein Pass von De Bruyne , präzise in den Lauf von Aguero gespielt!
+LANG_DE Rocchi hat eine VAR-Entscheidung getroffen und gibt einen Elfmeter für Napoli .
+LANG_DE Modric schießt aus der Distanz, aber der hält den Ball sicher .
+LANG_DE Die Schneefall sorgt für rutschige Bedingungen auf dem Platz .
+LANG_DE Ancelotti beobachtet das Spielgeschehen konzentriert von der Seitenlinie aus .
+LANG_DE Benzema foult Hazard und sieht dafür die gelbe Karte .
+LANG_DE Die Fans im Camp Nou sind enttäuscht über die Leistung ihres Teams .
+LANG_DE Borussia Mönchengladbach gewinnt gegen VfB Stuttgart mit einem 2-0 .
+LANG_DE Was für ein Kopfball von Ramos , knapp am Tor vorbei!
+LANG_DE Salah dribbelt an der vorbei und erzielt ein Tor! Was für ein Treffer!
+LANG_DE Kuipers zeigt 2 gelbe Karten in dieser Partie .
+LANG_DE Ronaldo schießt und . . . Tor! Was für ein Treffer!
+LANG_DE Die Hitze macht den Spielern heute ordentlich zu schaffen .
+LANG_DE Start mein neues Krafttraining .
+LANG_DE Setze meine Laufziel auf 5 Kilometer .
+LANG_DE Planen wir eine Yoga -Sitzung für morgen früh .
+LANG_DE Aktualisiere meine Körpergewicht auf 70 Kilogramm .
+LANG_DE Analysiere meinen Trainingsfortschritt .
+LANG_DE Zeige mir meine geplanten Cardio -Einheiten für nächste Woche .
+LANG_DE Generiere einen neuen Trainingsplan für Ganzkörpertraining .
+LANG_DE Überwache meine Herzfrequenz während des Laufens .
+LANG_DE Beende meine Stretching -Übungen .
+LANG_DE Pausiere die Trainingseinheit für 10 Minuten .
+LANG_DE Fortsetzen des Krafttrainings nach der kurzen Pause .
+LANG_DE Stoppe die Pilates -Sitzung jetzt .
+LANG_DE Erhöhe die Intensität meiner Kniebeugen .
+LANG_DE Verringere die Häufigkeit meiner Schwimm-Einheiten .
+LANG_DE Protokolliere meine Körpergröße .
+LANG_DE Messen wir meinen Körperfettanteil .
+LANG_DE Benachrichtige mich, wenn ich meine Fitnessziele erreicht habe .
+LANG_DE Verfolge meinen Muskelzuwachs .
+LANG_DE Setze ein neues Ziel für Bauchmuskeltraining .
+LANG_DE Aktualisiere meine Trainingsplan mit neuen Übungen .
+LANG_DE Analysiere meinen Kalorienverbrauch pro Tag .
+LANG_DE Zeige mir meine geplanten Spinning -Kurse für nächsten Monat .
+LANG_DE Generiere einen Trainingsplan für Krafttraining und Cardio .
+LANG_DE Überwache meine Belastung während des Ruderns .
+LANG_DE Beende meine Box-Einheit .
+LANG_DE Pausiere die Fitness-Session für 15 Minuten .
+LANG_DE Fortsetzen des Lauftrainings nach der kurzen Pause .
+LANG_DE Stoppe die Zumba -Klasse jetzt .
+LANG_DE Erhöhe die Intensität meiner Liegestütze .
+LANG_DE Verringere die Häufigkeit meiner Yoga-Stunden .
+LANG_DE Protokolliere meine Armlänge .
+LANG_DE Messen wir meinen Taillenumfang .
+LANG_DE Benachrichtige mich, wenn ich meine Abnehmziele erreicht habe .
+LANG_DE Verfolge meinen Konditionsfortschritt .
+LANG_DE Setze ein neues Ziel für Kardiotraining .
+LANG_DE Aktualisiere meine Ernährungsplan mit neuen Rezepten .
+LANG_DE Analysiere meinen Gewichtsverlust pro Woche .
+LANG_DE Zeige mir meine geplanten Kraft-Ausdauer -Einheiten für nächstes Jahr .
+LANG_DE Generiere einen Trainingsplan für Pilates und Stretching .
+LANG_DE Überwache meine Atemfrequenz während des Radfahrens .
+LANG_DE Beende meine HIIT -Trainingseinheit .
+LANG_DE Pausiere die Schwimm-Session für 20 Minuten .
+LANG_DE Fortsetzen des Yoga-Trainings nach der kurzen Pause .
+LANG_DE Stoppe die Bauch-Beine-Po -Einheit jetzt .
+LANG_DE Erhöhe die Intensität meiner Crunches .
+LANG_DE Verringere die Häufigkeit meiner Laufgruppen .
+LANG_DE Protokolliere meine Beinlänge .
+LANG_DE Messen wir meinen Brustumfang .
+LANG_DE Benachrichtige mich, wenn ich meine Muskelmasse -Ziele erreicht habe .
+LANG_DE Verfolge meinen Flexibilitätsfortschritt .
+LANG_DE Setze ein neues Ziel für Rudern .
+LANG_DE Aktualisiere meine Schlafmuster mit neuen Entspannungsübungen .
+LANG_DE Analysiere meinen Ausdauersteigerung pro Monat .
+LANG_DE Zeige mir meine geplanten Functional Fitness -Kurse für nächste Woche .
+LANG_DE Generiere einen Trainingsplan für Bodyweight-Übungen und Stretching .
+LANG_DE Überwache meine Trainingsbelastung während des Schwimmens .
+LANG_DE Beende meine CrossFit -Einheit .
+LANG_DE Pausiere die Cardio-Training für 25 Minuten .
+LANG_DE Fortsetzen des Kraftausdauer-Workouts nach der kurzen Pause .
+LANG_DE Stoppe die Kickbox-Stunde jetzt .
+LANG_DE Erhöhe die Intensität meiner Planks .
+LANG_DE Verringere die Häufigkeit meiner Tanzkurse .
+LANG_DE Protokolliere meine Nackenumfang .
+LANG_DE Messen wir meinen Hüftumfang .
+LANG_DE Benachrichtige mich, wenn ich meine Flexibilitätsziele erreicht habe .
+LANG_DE Verfolge meinen Geschwindigkeitsfortschritt .
+LANG_DE Setze ein neues Ziel für Joggen .
+LANG_DE Aktualisiere meine Stresslevel mit neuen Meditationstechniken .
+LANG_DE Analysiere meinen Muskeltonus pro Woche .
+LANG_DE Zeige mir meine geplanten Barre -Kurse für nächsten Monat .
+LANG_DE Generiere einen Trainingsplan für Functional Training und Pilates .
+LANG_DE Überwache meine Leistung während des Kletterns .
+LANG_DE Beende meine Bodypump -Einheit .
+LANG_DE Pausiere die Lauf-Session für 30 Minuten .
+LANG_DE Fortsetzen des Stretching-Programms nach der kurzen Pause .
+LANG_DE Stoppe die BodyBalance -Klasse jetzt .
+LANG_DE Erhöhe die Intensität meiner Ausfallschritte .
+LANG_DE Verringere die Häufigkeit meiner Fitnesskurse .
+LANG_DE Protokolliere meine Handgelenksumfang .
+LANG_DE Messen wir meinen Oberarmumfang .
+LANG_DE Benachrichtige mich, wenn ich meine Ausdauerziele erreicht habe .
+LANG_DE Verfolge meinen Reaktionszeit .
+LANG_DE Setze ein neues Ziel für Schwimmen .
+LANG_DE Aktualisiere meine Wasserkonsum mit neuen Trinkgewohnheiten .
+LANG_DE Analysiere meinen Muskelmassezunahme pro Monat .
+LANG_DE Zeige mir meine geplanten BodyCombat -Kurse für nächste Woche .
+LANG_DE Generiere einen Trainingsplan für Schwimmen und Tai Chi .
+LANG_DE Überwache meine Bewegungsausführung während des Gewichthebens .
+LANG_DE Beende meine TRX -Einheit .
+LANG_DE Pausiere die Functional Fitness -Session für 35 Minuten .
+LANG_DE Fortsetzen des Pilates-Trainings nach der kurzen Pause .
+LANG_DE Stoppe die BodyAttack -Stunde jetzt .
+LANG_DE Erhöhe die Intensität meiner Burpees .
+LANG_DE Verringere die Häufigkeit meiner Bootcamp-Einheiten .
+LANG_DE Protokolliere meine Fußlänge .
+LANG_DE Messen wir meinen Wadenumfang .
+LANG_DE Benachrichtige mich, wenn ich meine Stärkeziele erreicht habe .
+LANG_DE Verfolge meinen Schnelligkeitsfortschritt .
+LANG_DE Setze ein neues Ziel für Radfahren .
+LANG_DE Aktualisiere meine Energielevel mit neuen Ernährungstipps .
+LANG_DE Analysiere meinen Beweglichkeit pro Woche .
+LANG_DE Zeige mir meine geplanten Bodypump -Kurse für nächsten Monat .
+LANG_DE Generiere einen Trainingsplan für CrossFit und Functional Training .
+LANG_DE Überwache meine Sauerstoffaufnahme während des Schwimmens .
+LANG_DE Beende meine BodyBalance -Einheit .
+LANG_DE Pausiere die Yoga-Klasse für 40 Minuten .
+LANG_DE Fortsetzen des Lauftrainings nach der kurzen Pause .
+LANG_DE Stoppe die Pilates-Stunde jetzt .
+LANG_DE Erhöhe die Intensität meiner Mountain Climbers .
+LANG_DE Verringere die Häufigkeit meiner Spinning-Kurse .
+LANG_DE Protokolliere meine Nackenumfang .
+LANG_DE Messen wir meinen Oberschenkelumfang .
+LANG_DE Benachrichtige mich, wenn ich meine Beweglichkeitziele erreicht habe .
+LANG_DE Verfolge meinen Koordinationsfortschritt .
+LANG_DE Setze ein neues Ziel für Functional Fitness .
+LANG_DE Aktualisiere meine Erholungszeit mit neuen Regenerationsmethoden .
+LANG_DE Analysiere meinen Muskelkraft pro Monat .
+LANG_DE Zeige mir meine geplanten HIIT -Kurse für nächste Woche .
+LANG_DE Generiere einen Trainingsplan für Bodybuilding und Yoga .
+LANG_DE Überwache meine Leistungsfähigkeit während des Joggen .
+LANG_DE Beende meine BodyCombat -Einheit .
+LANG_DE Pausiere die Stretching-Session für 45 Minuten .
+LANG_DE Fortsetzen des Functional Fitness -Trainings nach der kurzen Pause .
+LANG_DE Stoppe die TRX -Trainingseinheit jetzt .
+LANG_DE Erhöhe die Intensität meiner Lunges .
+LANG_DE Verringere die Häufigkeit meiner CrossFit-Einheiten .
+LANG_DE Protokolliere meine Handgelenksumfang .
+LANG_DE Messen wir meinen Oberarmumfang .
+LANG_DE Benachrichtige mich, wenn ich meine Kraftziele erreicht habe .
+LANG_DE Verfolge meinen Ausdauerfortschritt .
+LANG_DE Setze ein neues Ziel für Functional Training .
+LANG_DE Aktualisiere meine Ernährungsplan mit neuen Rezepten .
+LANG_DE Analysiere meinen Gewichtsverlust pro Woche .
+LANG_DE Zeige mir meine geplanten Pilates -Kurse für nächsten Monat .
+LANG_DE Generiere einen Trainingsplan für Stretching und Yoga .
+LANG_DE Überwache meine Belastung während des Ruderns .
+LANG_DE Beende meine Zumba -Stunde .
+LANG_DE Pausiere die Cardio-Workout für 50 Minuten .
+LANG_DE Kannst du bitte die Helligkeit der Wohnzimmerlampe auf 50 Prozent setzen ?
+LANG_DE Ich möchte Musik abspielen in der Küche .
+LANG_DE Schalte die Klimaanlage im Schlafzimmer aus .
+LANG_DE Wie ist die Lautstärke des Fernsehers ?
+LANG_DE Kannst du eine Nachricht senden an John mit dem Text Ich bin gleich da ?
+LANG_DE Schalte den Staubsauger ein .
+LANG_DE Ich denke, es wäre schön, das Licht zu dimmen in der Esszimmer .
+LANG_DE Lass uns eine Erinnerung setzen für morgen um 10 Uhr .
+LANG_DE Könntest du bitte die Alarmanlage aktivieren ?
+LANG_DE Spiele das Lied Shape of You von Ed Sheeran in der Wohnzimmer .
+LANG_DE Ich möchte eine E-Mail senden an Sarah mit dem Betreff Meeting und Text Können wir uns morgen treffen ?
+LANG_DE Schalte den Wasserkocher aus .
+LANG_DE Wie ist die Temperatur im Badezimmer ?
+LANG_DE Kannst du die Jalousien im Arbeitszimmer öffnen ?
+LANG_DE Spiele eine Playlist mit entspannender Musik in der Schlafzimmer .
+LANG_DE Ich würde gerne das Licht einschalten in der Flur .
+LANG_DE Sende eine Nachricht an Lisa mit dem Bis später!
+LANG_DE Kannst du die Heizung auf 22 Grad stellen ?
+LANG_DE Ich denke, es wäre schön, die Musik leiser zu machen .
+LANG_DE Schalte den Ventilator ein .
+LANG_DE Lass uns eine Erinnerung hinzufügen für übermorgen um 9 Uhr .
+LANG_DE Könntest du die Kaffeemaschine starten ?
+LANG_DE Spiele den Podcast Fest & Flauschig in der Küche .
+LANG_DE Ich möchte eine E-Mail schreiben an Max mit dem Betreff Urlaubsplanung und Text Hast du schon Ideen für unseren Urlaub ?
+LANG_DE Schalte den Luftbefeuchter aus .
+LANG_DE Wie ist die Helligkeit der Schreibtischlampe ?
+LANG_DE Kannst du die Rollläden im Wohnzimmer schließen ?
+LANG_DE Spiele eine Playlist mit motivierender Musik in der Fitnessraum .
+LANG_DE Ich würde gerne das Licht ausschalten in der Schlafzimmer .
+LANG_DE Sende eine Nachricht an Tom mit dem Bist du schon unterwegs ?
+LANG_DE Kannst du die Heizdecke auf Stufe 3 einstellen ?
+LANG_DE Ich denke, es wäre schön, die Lautstärke zu erhöhen .
+LANG_DE Schalte den Luftreiniger ein .
+LANG_DE Lass uns eine Erinnerung erstellen für morgen um 12 Uhr .
+LANG_DE Könntest du die Klimaanlage auf 24 Grad einstellen ?
+LANG_DE Spiele den Radiosender 1LIVE in der Küche .
+LANG_DE Ich möchte eine E-Mail senden an Anna mit dem Betreff Geburtstagsfeier und Text Können wir uns am Samstag treffen ?
+LANG_DE Schalte den Wasserkocher aus .
+LANG_DE Wie ist die Helligkeit der Deckenleuchte ?
+LANG_DE Kannst du die Jalousien im Wohnzimmer öffnen ?
+LANG_DE Spiele eine Playlist mit chilliger Musik in der Wohnzimmer .
+LANG_DE Ich würde gerne das Licht einschalten in der Flur .
+LANG_DE Sende eine Nachricht an Julia mit dem Bis später!
+LANG_DE Kannst du die Heizung auf 20 Grad stellen ?
+LANG_DE Ich denke, es wäre schön, die Musik lauter zu machen .
+LANG_DE Schalte den Ventilator ein .
+LANG_DE Lass uns eine Erinnerung hinzufügen für übermorgen um 10 Uhr .
+LANG_DE Könntest du die Kaffeemaschine starten ?
+LANG_DE Spiele den Podcast Gemischtes Hack in der Küche .
+LANG_DE Ich möchte eine E-Mail schreiben an Peter mit dem Betreff Arbeitsprojekt und Text Können wir morgen darüber sprechen ?
+LANG_DE Schalte den Luftbefeuchter aus .
+LANG_DE Wie ist die Helligkeit der Schreibtischlampe ?
+LANG_DE Kannst du die Rollläden im Wohnzimmer schließen ?
+LANG_DE Spiele eine Playlist mit entspannender Musik in der Schlafzimmer .
+LANG_DE Ich würde gerne das Licht ausschalten in der Schlafzimmer .
+LANG_DE Sende eine Nachricht an Laura mit dem Bist du schon unterwegs ?
+LANG_DE Kannst du die Heizdecke auf Stufe 2 einstellen ?
+LANG_DE Ich denke, es wäre schön, die Lautstärke zu erhöhen .
+LANG_DE Schalte den Luftreiniger ein .
+LANG_DE Lass uns eine Erinnerung erstellen für morgen um 11 Uhr .
+LANG_DE Könntest du die Klimaanlage auf 23 Grad einstellen ?
+LANG_DE Spiele den Radiosender WDR 2 in der Küche .
+LANG_DE Ich möchte eine E-Mail senden an Maria mit dem Betreff Wochenendplanung und Text Hast du Lust auf einen Ausflug ?
+LANG_DE Schalte den Wasserkocher aus .
+LANG_DE Wie ist die Helligkeit der Deckenleuchte ?
+LANG_DE Kannst du die Jalousien im Wohnzimmer öffnen ?
+LANG_DE Spiele eine Playlist mit motivierender Musik in der Fitnessraum .
+LANG_DE Ich würde gerne das Licht einschalten in der Flur .
+LANG_DE Sende eine Nachricht an Tim mit dem Bis später!
+LANG_DE Kannst du die Heizung auf 21 Grad stellen ?
+LANG_DE Ich denke, es wäre schön, die Musik lauter zu machen .
+LANG_DE Schalte den Ventilator ein .
+LANG_DE Lass uns eine Erinnerung hinzufügen für übermorgen um 11 Uhr .
+LANG_DE Könntest du die Kaffeemaschine starten ?
+LANG_DE Spiele den Podcast Sanft & Sorgfältig in der Küche .
+LANG_DE Ich möchte eine E-Mail schreiben an Sophie mit dem Betreff Geburtstagsüberraschung und Text Hast du schon Ideen für dein Geschenk ?
+LANG_DE Schalte den Luftbefeuchter aus .
+LANG_DE Wie ist die Helligkeit der Schreibtischlampe ?
+LANG_DE Kannst du die Rollläden im Wohnzimmer schließen ?
+LANG_DE Spiele eine Playlist mit entspannender Musik in der Schlafzimmer .
+LANG_DE Ich würde gerne das Licht ausschalten in der Schlafzimmer .
+LANG_DE Sende eine Nachricht an Felix mit dem Bist du schon unterwegs ?
+LANG_DE Kannst du die Heizdecke auf Stufe 1 einstellen ?
+LANG_DE Ich denke, es wäre schön, die Lautstärke zu erhöhen .
+LANG_DE Schalte den Luftreiniger ein .
+LANG_DE Lass uns eine Erinnerung erstellen für morgen um 10 Uhr .
+LANG_DE Könntest du die Klimaanlage auf 25 Grad einstellen ?
+LANG_DE Spiele den Radiosender SWR3 in der Küche .
+LANG_DE Ich möchte eine E-Mail senden an Lena mit dem Betreff Projektbesprechung und Text Können wir morgen darüber sprechen ?
+LANG_DE Schalte den Wasserkocher aus .
+LANG_DE Wie ist die Helligkeit der Deckenleuchte ?
+LANG_DE Kannst du die Jalousien im Wohnzimmer öffnen ?
+LANG_DE Spiele eine Playlist mit motivierender Musik in der Fitnessraum .
+LANG_DE Ich würde gerne das Licht einschalten in der Flur .
+LANG_DE Sende eine Nachricht an Emma mit dem Bis später!
+LANG_DE Kannst du die Heizung auf 22 Grad stellen ?
+LANG_DE Ich denke, es wäre schön, die Musik lauter zu machen .
+LANG_DE Schalte den Ventilator ein .
+LANG_DE Lass uns eine Erinnerung hinzufügen für übermorgen um 12 Uhr .
+LANG_DE Könntest du die Kaffeemaschine starten ?
+LANG_DE Spiele den Podcast Herrengedeck in der Küche .
+LANG_DE Ich möchte eine E-Mail schreiben an Paul mit dem Betreff Projektupdate und Text Können wir morgen darüber sprechen ?
+LANG_DE Schalte den Luftbefeuchter aus .
+LANG_DE Wie ist die Helligkeit der Schreibtischlampe ?
+LANG_DE Kannst du die Rollläden im Wohnzimmer schließen ?
+LANG_DE Spiele eine Playlist mit entspannender Musik in der Schlafzimmer .
+LANG_DE Ich würde gerne das Licht ausschalten in der Schlafzimmer .
+LANG_DE Sende eine Nachricht an Mia mit dem Bist du schon unterwegs ?
+LANG_DE Kannst du die Heizdecke auf Stufe 2 einstellen ?
+LANG_DE Ich denke, es wäre schön, die Lautstärke zu erhöhen .
+LANG_DE Schalte den Luftreiniger ein .
+LANG_DE Lass uns eine Erinnerung hinzufügen für morgen um 11 Uhr .
+LANG_DE Könntest du die Klimaanlage auf 24 Grad einstellen ?
+LANG_DE Spiele den Radiosender Bayern 3 in der Küche .
+LANG_DE Ich möchte eine E-Mail senden an Luca mit dem Betreff Projektbesprechung und Text Können wir morgen darüber sprechen ?
+LANG_DE Schalte den Wasserkocher aus .
+LANG_DE Wie ist die Helligkeit der Deckenleuchte ?
+LANG_DE Kannst du die Jalousien im Wohnzimmer öffnen ?
+LANG_DE Spiele eine Playlist mit motivierender Musik in der Fitnessraum .
+LANG_DE Ich würde gerne das Licht einschalten in der Flur .
+LANG_DE Sende eine Nachricht an Ben mit dem Bis später!
+LANG_DE Kannst du die Heizung auf 23 Grad stellen ?
+LANG_DE Ich denke, es wäre schön, die Musik lauter zu machen .
+LANG_DE Schalte den Ventilator ein .
+LANG_DE Lass uns eine Erinnerung hinzufügen für übermorgen um 12 Uhr .
+LANG_DE Könntest du die Kaffeemaschine starten ?
+LANG_DE Spiele den Podcast Gemischtes Hack in der Küche .
+LANG_DE Ich möchte eine E-Mail schreiben an Peter mit dem Betreff Arbeitsprojekt und Text Können wir morgen darüber sprechen ?
+LANG_DE Schalte den Luftbefeuchter aus .
+LANG_DE Wie ist die Helligkeit der Schreibtischlampe ?
+LANG_DE Kannst du die Rollläden im Wohnzimmer schließen ?
+LANG_DE Buche einen Flug nach Sydney für den März .
+LANG_DE Überprüfe den Status meines Fluges nach New York .
+LANG_DE Reserviere ein Hotelzimmer in Rom für den Juli .
+LANG_DE Setze eine Reisebenachrichtigung für Paris am April .
+LANG_DE Aktualisiere meinen Reiseplan mit einem Besuch des Eiffelturms .
+LANG_DE Benachrichtige mich, falls es Reisebeschränkungen für Japan gibt .
+LANG_DE Empfehle Strandziele für nächsten Sommer .
+LANG_DE Bestätige mein Business-Class-Ticket für den Flug nach London .
+LANG_DE Wie ist der Status meines Fluges nach New York ?
+LANG_DE Ich denke, ich muss meine Hotelreservierung in Tokio stornieren .
+LANG_DE Wie ist das Wetter in Bali für nächste Woche ?
+LANG_DE Du solltest mich daran erinnern , meinen Reisepass zu erneuern .
+LANG_DE Kannst du einige Sehenswürdigkeiten in Barcelona vorschlagen ?
+LANG_DE Wow , der Flughafen ist heute so überfüllt .
+LANG_DE Ich habe einen Zug nach Berlin für morgen gebucht .
+LANG_DE Überprüfen Sie meinen Sparkonto , um verdächtige Aktivitäten zu erkennen .
+LANG_DE Benachrichtigen Sie mich über anstehende Rechnungen .
+LANG_DE Finanznachrichten berichten über einen Anstieg im Aktienmarkt Indizes .
+LANG_DE Wirtschaftsberichte deuten auf einen Rückgang der Arbeitslosenquote hin .
+LANG_DE Überweisen Sie 500 € von meinem Sparkonto auf mein Girokonto .
+LANG_DE Richten Sie eine Benachrichtigung ein, wenn mein Kreditkarten -Saldo 1000 € überschreitet .
+LANG_DE Aktualisieren Sie meine Kontoinformationen mit meinen aktuellen Ausweisen .
+LANG_DE Analysieren Sie meine Ausgaben nach letzten Monat .
+LANG_DE Zahlen Sie meine Einkommensteuer von meinem Sparkonto .
+LANG_DE Legen Sie ein Warnsignal fest, wenn die Aktie 10% an Wert verliert .
+LANG_DE Börsennachrichten zeigen einen Anstieg bei Technologieaktien .
+LANG_DE Finanzanalysten prognostizieren eine Inflationsrate von 5% im nächsten Quartal .
+LANG_DE Konvertieren Sie 1000 USD in Euro mit dem aktuellen Wechselkurs .
+LANG_DE Investieren Sie 1000 € in Aktienfonds für langfristiges Wachstum .
+LANG_DE Sparen Sie 200 € pro Monat auf Ihrem Sparkonto .
+LANG_DE Ausgeben Sie 50 € für Lebensmittel aus Ihrem Girokonto .
+LANG_DE Überwachen Sie die Aktie von Unternehmen für potenzielle Investitionen .
+LANG_DE Benachrichtigen Sie mich, wenn mein Gehalt eingegangen ist .
+LANG_DE Die Rohstoffpreise sind aufgrund von geopolitischen Spannungen gestiegen .
+LANG_DE Die Inflationsrate hat den Prognosen entsprochen .
+LANG_DE Überprüfen Sie Ihre Anlagen , um Risiken zu minimieren .
+LANG_DE Generieren Sie einen Finanzbericht für das letzte Quartal .
+LANG_DE Planen Sie eine Budget -Überprüfung für nächste Woche .
+LANG_DE Stornieren Sie die Warnung für niedrige Aktienkurse .
+LANG_DE Berichten Sie über die Börsenentwicklung während des letzten Jahres .
+LANG_DE Alarmieren Sie mich, wenn mein Sparkonto die 5000 € -Grenze erreicht .
+LANG_DE Die Finanzkrise hat zu einem Rückgang der Aktienkurse geführt .
+LANG_DE Wirtschaftsexperten diskutieren die Auswirkungen des Zinsanstiegs .
+LANG_DE Berechnen Sie die Zinsen für Ihr Sparkonto mit dem aktuellen Zinssatz .
+LANG_DE Voraussagen Sie die Wachstumsrate des Immobilienmarktes für das nächste Jahr .
+LANG_DE Raten Sie mir, wie ich meine Anlagen diversifizieren kann .
+LANG_DE Schätzen Sie die monatlichen Ausgaben für Lebenshaltungskosten .
+LANG_DE Überprüfen Sie die Steuererklärung für das laufende Jahr auf Vollständigkeit .
+LANG_DE Überwachen Sie die Aktienkurse für die letzten 6 Monate , um Trends zu erkennen .
+LANG_DE Benachrichtigen Sie mich, wenn die Inflationsrate 3% erreicht .
+LANG_DE Die Handelskriege haben zu Unsicherheiten auf den Aktienmärkten geführt .
+LANG_DE Die Arbeitslosenzahlen sind aufgrund der Wirtschaftsreform gesunken .
+LANG_DE Überweisen Sie 2000 € von Ihrem Girokonto auf Ihr Sparkonto .
+LANG_DE Tauschen Sie 1000 GBP in US-Dollar mit dem aktuellen Wechselkurs .
+LANG_DE Investieren Sie 5000 € in Anleihen für eine sichere Rendite .
+LANG_DE Sparen Sie 300 € pro Monat für Altersvorsorge .
+LANG_DE Ausgeben Sie 100 € für Unterhaltung von Ihrem Girokonto .
+LANG_DE Überwachen Sie die Aktie von Unternehmen für potenzielle Investitionen .
+LANG_DE Benachrichtigen Sie mich, wenn mein Gehalt eingegangen ist .
+LANG_DE Die Rohstoffpreise sind aufgrund von geopolitischen Spannungen gestiegen .
+LANG_DE Die Inflationsrate hat den Prognosen entsprochen .
+LANG_DE Überprüfen Sie Ihre Anlagen , um Risiken zu minimieren .
+LANG_DE Generieren Sie einen Finanzbericht für das letzte Quartal .
+LANG_DE Planen Sie eine Budget -Überprüfung für nächste Woche .
+LANG_DE Stornieren Sie die Warnung für niedrige Aktienkurse .
+LANG_DE Berichten Sie über die Börsenentwicklung während des letzten Jahres .
+LANG_DE Alarmieren Sie mich, wenn mein Sparkonto die 5000 € -Grenze erreicht .
+LANG_DE Die Finanzkrise hat zu einem Rückgang der Aktienkurse geführt .
+LANG_DE Wirtschaftsexperten diskutieren die Auswirkungen des Zinsanstiegs .
+LANG_DE Berechnen Sie die Zinsen für Ihr Sparkonto mit dem aktuellen Zinssatz .
+LANG_DE Voraussagen Sie die Wachstumsrate des Immobilienmarktes für das nächste Jahr .
+LANG_DE Raten Sie mir, wie ich meine Anlagen diversifizieren kann .
+LANG_DE Schätzen Sie die monatlichen Ausgaben für Lebenshaltungskosten .
+LANG_DE Überprüfen Sie die Steuererklärung für das laufende Jahr auf Vollständigkeit .
+LANG_DE Überwachen Sie die Aktienkurse für die letzten 6 Monate , um Trends zu erkennen .
+LANG_DE Benachrichtigen Sie mich, wenn die Inflationsrate 3% erreicht .
+LANG_DE Die Handelskriege haben zu Unsicherheiten auf den Aktienmärkten geführt .
+LANG_DE Die Arbeitslosenzahlen sind aufgrund der Wirtschaftsreform gesunken .
+LANG_DE Überweisen Sie 2000 € von Ihrem Girokonto auf Ihr Sparkonto .
+LANG_DE Tauschen Sie 1000 GBP in US-Dollar mit dem aktuellen Wechselkurs .
+LANG_DE Investieren Sie 5000 € in Anleihen für eine sichere Rendite .
+LANG_DE Sparen Sie 300 € pro Monat für Altersvorsorge .
+LANG_DE Ausgeben Sie 100 € für Unterhaltung von Ihrem Girokonto .
+LANG_DE Überwachen Sie die Aktie von Unternehmen für potenzielle Investitionen .
+LANG_DE Benachrichtigen Sie mich, wenn mein Gehalt eingegangen ist .
+LANG_DE Die Rohstoffpreise sind aufgrund von geopolitischen Spannungen gestiegen .
+LANG_DE Die Inflationsrate hat den Prognosen entsprochen .
+LANG_DE Überprüfen Sie Ihre Anlagen , um Risiken zu minimieren .
+LANG_DE Generieren Sie einen Finanzbericht für das letzte Quartal .
+LANG_DE Planen Sie eine Budget -Überprüfung für nächste Woche .
+LANG_DE Stornieren Sie die Warnung für niedrige Aktienkurse .
+LANG_DE Berichten Sie über die Börsenentwicklung während des letzten Jahres .
+LANG_DE Alarmieren Sie mich, wenn mein Sparkonto die 5000 € -Grenze erreicht .
+LANG_DE Die Finanzkrise hat zu einem Rückgang der Aktienkurse geführt .
+LANG_DE Wirtschaftsexperten diskutieren die Auswirkungen des Zinsanstiegs .
+LANG_DE Berechnen Sie die Zinsen für Ihr Sparkonto mit dem aktuellen Zinssatz .
+LANG_DE Voraussagen Sie die Wachstumsrate des Immobilienmarktes für das nächste Jahr .
+LANG_DE Raten Sie mir, wie ich meine Anlagen diversifizieren kann .
+LANG_DE Schätzen Sie die monatlichen Ausgaben für Lebenshaltungskosten .
+LANG_DE Überprüfen Sie die Steuererklärung für das laufende Jahr auf Vollständigkeit .
+LANG_DE Überwachen Sie die Aktienkurse für die letzten 6 Monate , um Trends zu erkennen .
+LANG_DE Benachrichtigen Sie mich, wenn die Inflationsrate 3% erreicht .
+LANG_DE Die Handelskriege haben zu Unsicherheiten auf den Aktienmärkten geführt .
+LANG_DE Die Arbeitslosenzahlen sind aufgrund der Wirtschaftsreform gesunken .

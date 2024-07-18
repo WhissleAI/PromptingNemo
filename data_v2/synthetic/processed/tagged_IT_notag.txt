@@ -16332,3 +16332,622 @@ LANG_IT Aggiorna il mio itinerario con una visita al Museo del Prado .
 LANG_IT Mi consigli una sistemazione a San Francisco per il prossimo mese .
 LANG_IT Cosa ne pensi di prenotare un alloggio a Dublino per una settimana ?
 LANG_IT Imposta un avviso di viaggio per Sydney il 15 maggio .
+LANG_IT Qual è il livello di emoglobina per il paziente 456 ?
+LANG_IT Modifica il parametro di temperatura del termometro a 5°C .
+LANG_IT Modifica il settaggio di microscopio a 1000x ingrandimento .
+LANG_IT Modifica il impostazione di elettrocardiografo a derivazione standard .
+LANG_IT Invia una relazione sull'ecocardiogramma al cardiologo .
+LANG_IT Modifica il settaggio di sfigmomanometro a pressione di 120/80 mmHg .
+LANG_IT Invia il referto di ecografia al ginecologo .
+LANG_IT Modifica il parametro di luminosità del microscopio a livello 3 .
+LANG_IT Invia una relazione sull'endoscopia al gastroenterologo .
+LANG_IT Modifica il settaggio di elettroencefalogramma a derivazione frontale .
+LANG_IT Invia il referto di radiografia toracica al pneumologo .
+LANG_IT Modifica il impostazione di ecografo a modalità 2D .
+LANG_IT Invia una relazione sull'ecocardiogramma al cardiologo .
+LANG_IT Modifica il settaggio di sfigmomanometro a pressione di 120/80 mmHg .
+LANG_IT Invia il referto di ecografia al ginecologo .
+LANG_IT Modifica il parametro di luminosità del microscopio a livello 3 .
+LANG_IT Invia una relazione sull'endoscopia al gastroenterologo .
+LANG_IT Controlla il saldo del mio conto corrente .
+LANG_IT Trasferisci 100€ dal mio conto risparmio al mio conto corrente .
+LANG_IT Paga le bollette mensili automaticamente .
+LANG_IT Imposta un avviso per le transazioni superiori a 500€ sul mio conto corrente .
+LANG_IT Aggiorna le informazioni del mio profilo .
+LANG_IT Analizza le spese mensili per identificare possibili risparmi .
+LANG_IT Leggi le ultime notizie finanziarie per rimanere informato sul mercato .
+LANG_IT Configura notifiche per le transazioni online sul mio conto corrente .
+LANG_IT Genera un report dettagliato sulle spese mensili .
+LANG_IT Analizza le tendenze del mercato azionario per prendere decisioni informate sugli investimenti .
+LANG_IT Visualizza lo estratto conto del mese corrente .
+LANG_IT Pianifica un bonifico per la prossima settimana .
+LANG_IT Cancella l' avviso per le transazioni online sul mio conto corrente .
+LANG_IT Notifica le transazioni sospette sul mio conto corrente .
+LANG_IT Calcola l' importo totale delle spese mensili .
+LANG_IT Prevedi le tendenze del mercato azionario per il prossimo trimestre .
+LANG_IT Consiglia le migliori opportunità di investimento attualmente disponibili .
+LANG_IT Stima l' importo necessario per raggiungere il mio obiettivo di risparmio .
+LANG_IT Rivedi le dichiarazioni fiscali per l'anno precedente .
+LANG_IT Monitora le azioni del mio portafoglio di investimenti .
+LANG_IT Notifica le transazioni internazionali sul mio conto corrente .
+LANG_IT Converti 1000€ in dollari americani .
+LANG_IT Scambia 5000€ in yen giapponesi .
+LANG_IT Consiglia un piano di risparmio per il mio obiettivo pensionistico .
+LANG_IT Calcola l' tasso di cambio attuale tra l' euro e il dollaro statunitense .
+LANG_IT Prevedi l' tasso di interesse per i prossimi mesi .
+LANG_IT Consiglia un prestito personale con tassi di interesse convenienti .
+LANG_IT Analizza il mio punteggio di credito per identificare aree di miglioramento .
+LANG_IT Rivedi le spese mensili per individuare aree di risparmio .
+LANG_IT Monitora le entrate mensili per garantire una gestione finanziaria sana .
+LANG_IT Notifica le transazioni sospette sul mio conto risparmio .
+LANG_IT Converti 2000€ in sterline inglesi .
+LANG_IT Scambia 3000€ in dollari canadesi .
+LANG_IT Consiglia un portafoglio diversificato per una gestione prudente degli investimenti .
+LANG_IT Calcola l' tasso di cambio attuale tra l' euro e il franco svizzero .
+LANG_IT Prevedi l' tasso di interesse per il prossimo trimestre .
+LANG_IT Consiglia un mutuo ipotecario con condizioni favorevoli .
+LANG_IT Analizza il mio punteggio di credito per valutare la mia affidabilità finanziaria .
+LANG_IT Rivedi le spese mensili per individuare possibili risparmi .
+LANG_IT Monitora le entrate mensili per garantire una stabile situazione finanziaria .
+LANG_IT Notifica le transazioni sospette sul mio conto deposito .
+LANG_IT Converti 1500€ in dollari australiani .
+LANG_IT Scambia 4000€ in franchi svizzeri .
+LANG_IT Consiglia un portafoglio bilanciato per una gestione prudente degli investimenti .
+LANG_IT Calcola l' tasso di cambio attuale tra l' euro e il yen giapponesi .
+LANG_IT Prevedi l' tasso di interesse per i prossimi mesi .
+LANG_IT Consiglia un prestito personale con condizioni vantaggiose .
+LANG_IT Analizza il mio punteggio di credito per valutare la mia situazione finanziaria .
+LANG_IT Rivedi le spese mensili per individuare opportunità di risparmio .
+LANG_IT Monitora le entrate mensili per garantire una gestione finanziaria equilibrata .
+LANG_IT Notifica le transazioni sospette sul mio conto investimenti .
+LANG_IT Converti 1200€ in dollari neozelandesi .
+LANG_IT Scambia 2500€ in corone svedesi .
+LANG_IT Consiglia un portafoglio diversificato per una gestione prudente degli investimenti .
+LANG_IT Calcola l' tasso di cambio attuale tra l' euro e il dollaro canadese .
+LANG_IT Prevedi l' tasso di interesse per il prossimo semestre .
+LANG_IT Consiglia un mutuo ipotecario con condizioni convenienti .
+LANG_IT Analizza il mio punteggio di credito per valutare la mia affidabilità finanziaria .
+LANG_IT Rivedi le spese mensili per individuare possibili risparmi .
+LANG_IT Monitora le entrate mensili per garantire una stabile situazione finanziaria .
+LANG_IT Notifica le transazioni sospette sul mio conto deposito .
+LANG_IT Converti 1500€ in dollari australiani .
+LANG_IT Scambia 4000€ in franchi svizzeri .
+LANG_IT Consiglia un portafoglio bilanciato per una gestione prudente degli investimenti .
+LANG_IT Calcola l' tasso di cambio attuale tra l' euro e il yen giapponesi .
+LANG_IT Prevedi l' tasso di interesse per i prossimi mesi .
+LANG_IT Consiglia un prestito personale con condizioni vantaggiose .
+LANG_IT Analizza il mio punteggio di credito per valutare la mia situazione finanziaria .
+LANG_IT Rivedi le spese mensili per individuare opportunità di risparmio .
+LANG_IT Monitora le entrate mensili per garantire una gestione finanziaria equilibrata .
+LANG_IT Possiamo impostare un timer di 30 minuti per cena .
+LANG_IT Potresti fornire l'elenco degli ingredienti per la torta di mele ?
+LANG_IT Ciao, puoi tracciare le ricette senza glutine per me ?
+LANG_IT Penso che dovremmo aggiungere zucchero alla lista della spesa .
+LANG_IT Sai come trovare una ricetta vegetariana ?
+LANG_IT Ricorda di preriscaldare il forno a 180 gradi .
+LANG_IT Mescola gli uova fino a quando gli tuorli e gli albumi sono ben amalgamati .
+LANG_IT Riprendi la narrazione della ricetta .
+LANG_IT Aggiorna le mie preferenze vegane .
+LANG_IT Rimuovi cipolle dalla lista della spesa .
+LANG_IT Puoi elencare le informazioni sul contenuto calorico per avocado ?
+LANG_IT Suggerisci una ricetta italiana per pranzo .
+LANG_IT Traccia lo stock della dispensa per l' olio d'oliva .
+LANG_IT Aggiungi un litro di latte alla mia lista della spesa
+LANG_IT Controlla il prezzo di pomodori al supermercato più vicino
+LANG_IT Trova la posizione del reparto frutta e chiedi informazioni su mele
+LANG_IT Imposta un promemoria per fare la spesa alle 15:00 oggi
+LANG_IT Gestisci i coupon disponibili per prodotti lattiero-caseari
+LANG_IT Confronta i biscotti integrali con quelli al marchio famoso per le calorie
+LANG_IT Fornisci informazioni nutrizionali su yogurt greco
+LANG_IT Offri consigli per fare la spesa in modo più efficiente
+LANG_IT Cerca il olio d'oliva di alta qualità per la ricetta di bruschetta
+LANG_IT Consiglia un vino rosso da abbinare alla ricetta di carne alla griglia
+LANG_IT Verifica se il supermercato ha latte senza lattosio nella sezione latticini
+LANG_IT Trova il reparto surgelati e cerca gamberetti
+LANG_IT Pianifica una visita al mercato rionale per acquistare frutta fresca
+LANG_IT Ricorda di acquistare due confezioni di pasta per la ricetta di spaghetti al pomodoro
+LANG_IT Notifica quando avocado è in offerta al supermercato del quartiere
+LANG_IT Chiama il negozio di alimentari e chiedi se hanno pane integrale disponibile
+LANG_IT Cerca le offerte speciali su prodotti biologici al supermercato principale
+LANG_IT Controlla le promozioni attive su prodotti surgelati al ipermercato più grande della città
+LANG_IT Trova il banco del pesce e chiedi consigli su salmone fresco
+LANG_IT Applica i sconti disponibili su cereali integrali al supermercato del centro commerciale
+LANG_IT Raccomanda un formaggio stagionato per la ricetta di pasta al forno
+LANG_IT Scegli tra pollo fresco e pollo surgelato per la ricetta di pollo al curry
+LANG_IT Preferisci caffè macinato al marchio famoso per una migliore esperienza gustativa
+LANG_IT Valuta la qualità dei pomodori bio al mercato contadino
+LANG_IT Recensisci il servizio offerto dal supermercato del centro città
+LANG_IT Cerca i prodotti senza glutine per soddisfare le esigenze alimentari di un amico
+LANG_IT Trova il banco delle carni e chiedi consigli su filetto di manzo
+LANG_IT Pianifica di fare la spesa per la ricetta di insalata di quinoa domani mattina
+LANG_IT Ricorda di acquistare tre confezioni di latte durante la promozione al supermercato principale
+LANG_IT Notifica quando fragole sono disponibili al mercato rionale
+LANG_IT Chiama il negozio di frutta e verdura e chiedi se hanno avocado maturo in offerta
+LANG_IT Cerca le promozioni speciali su prodotti biologici al supermercato del quartiere
+LANG_IT Controlla le sconti attivi su prodotti surgelati al ipermercato più grande della città
+LANG_IT Trova il banco del pesce e chiedi consigli su orata fresca
+LANG_IT Applica i voucher disponibili su pasta integrale al supermercato del centro commerciale
+LANG_IT Raccomanda un formaggio pecorino per la ricetta di carbonara
+LANG_IT Scegli tra pollo intero e petti di pollo per la ricetta di pollo alla griglia
+LANG_IT Preferisci caffè in grani al marchio famoso per una migliore esperienza di gusto
+LANG_IT Valuta la qualità dei pomodori ciliegini al mercato contadino
+LANG_IT Recensisci il servizio offerto dal supermercato del centro commerciale
+LANG_IT Cerca i prodotti senza glutine per soddisfare le esigenze alimentari di un parente
+LANG_IT Trova il banco delle carni e chiedi consigli su filetto di vitello
+LANG_IT Pianifica di fare la spesa per la ricetta di insalata di avocado domani pomeriggio
+LANG_IT Ricorda di acquistare due confezioni di latte intero durante la promozione al supermercato principale
+LANG_IT Notifica quando kiwi sono disponibili al mercato rionale
+LANG_IT Chiama il negozio di frutta e chiedi se hanno ananas maturo in offerta
+LANG_IT Cerca le promozioni speciali su prodotti biologici al supermercato del quartiere
+LANG_IT Controlla le sconti attivi su prodotti surgelati al ipermercato più grande della città
+LANG_IT Trova il banco del pesce e chiedi consigli su salmone selvaggio
+LANG_IT Applica i voucher disponibili su pasta di farro al supermercato del centro commerciale
+LANG_IT Raccomanda un formaggio gorgonzola per la ricetta di risotto ai funghi
+LANG_IT Scegli tra pollo intero e petti di pollo per la ricetta di pollo alla cacciatora
+LANG_IT Preferisci caffè in grani al marchio famoso per una migliore esperienza di gusto
+LANG_IT Valuta la qualità dei pomodori datterini al mercato contadino
+LANG_IT Recensisci il servizio offerto dal supermercato del centro commerciale
+LANG_IT Cerca i prodotti senza glutine per soddisfare le esigenze alimentari di un amico
+LANG_IT Trova il banco delle carni e chiedi consigli su filetto di manzo
+LANG_IT Pianifica di fare la spesa per la ricetta di insalata di quinoa domani mattina
+LANG_IT Ricorda di acquistare tre confezioni di latte durante la promozione al supermercato principale
+LANG_IT Notifica quando fragole sono disponibili al mercato rionale
+LANG_IT Chiama il negozio di frutta e verdura e chiedi se hanno avocado maturo in offerta
+LANG_IT Cerca le promozioni speciali su prodotti biologici al supermercato del quartiere
+LANG_IT Controlla le sconti attivi su prodotti surgelati al ipermercato più grande della città
+LANG_IT Trova il banco del pesce e chiedi consigli su orata fresca
+LANG_IT Applica i voucher disponibili su pasta integrale al supermercato del centro commerciale
+LANG_IT Raccomanda un formaggio pecorino per la ricetta di carbonara
+LANG_IT Scegli tra pollo intero e petti di pollo per la ricetta di pollo alla griglia
+LANG_IT Preferisci caffè in grani al marchio famoso per una migliore esperienza di gusto
+LANG_IT Valuta la qualità dei pomodori ciliegini al mercato contadino
+LANG_IT Recensisci il servizio offerto dal supermercato del centro commerciale
+LANG_IT Cerca i prodotti senza glutine per soddisfare le esigenze alimentari di un parente
+LANG_IT Trova il banco delle carni e chiedi consigli su filetto di vitello
+LANG_IT Pianifica di fare la spesa per la ricetta di insalata di avocado domani pomeriggio
+LANG_IT Ricorda di acquistare due confezioni di latte intero durante la promozione al supermercato principale
+LANG_IT Notifica quando kiwi sono disponibili al mercato rionale
+LANG_IT Chiama il negozio di frutta e chiedi se hanno ananas maturo in offerta
+LANG_IT Mi sento stanco costantemente da una settimana
+LANG_IT La mia gola fa male da tre giorni
+LANG_IT Ho la tosse ogni notte da una settimana
+LANG_IT Il mio braccio è gonfio da ieri
+LANG_IT Ho la febbre da ieri sera
+LANG_IT Mio figlio ha un rash su tutto il corpo da una settimana
+LANG_IT Mi hanno prescritto antibiotici per la bronchite
+LANG_IT Ho la diarrea da tre giorni
+LANG_IT Mio marito ha la pressione alta da un mese
+LANG_IT Ho la nausea da ieri sera
+LANG_IT La mia schiena fa male da una settimana
+LANG_IT Ho il mal di stomaco da due giorni
+LANG_IT Mio nonno ha il cancro da tre anni
+LANG_IT Mi sento debole da una settimana
+LANG_IT Ho la tosse secca da tre giorni
+LANG_IT Mio fratello è stato diagnosticato con la polmonite un mese fa
+LANG_IT Ho il mal di testa da una settimana
+LANG_IT La mia pancia è gonfia da ieri sera
+LANG_IT Ho il bruciore di stomaco da tre giorni
+LANG_IT Mio figlio ha la varicella da una settimana
+LANG_IT Ho la tosse ogni notte da una settimana
+LANG_IT Mi hanno prescritto antidolorifici per il mal di schiena
+LANG_IT Ho la febbre da ieri sera
+LANG_IT Mio marito ha la febbre alta da un mese
+LANG_IT Ho la nausea da ieri sera
+LANG_IT La mia schiena fa male da una settimana
+LANG_IT Ho il mal di stomaco da due giorni
+LANG_IT Mio nonno ha il cancro da tre anni
+LANG_IT Mi sento debole da una settimana
+LANG_IT Ho la tosse secca da tre giorni
+LANG_IT Mio fratello è stato diagnosticato con la polmonite un mese fa
+LANG_IT Ho il mal di testa da una settimana
+LANG_IT La mia pancia è gonfia da ieri sera
+LANG_IT Ho il bruciore di stomaco da tre giorni
+LANG_IT Mio figlio ha la varicella da una settimana
+LANG_IT Ho la tosse ogni notte da una settimana
+LANG_IT Mi hanno prescritto antidolorifici per il mal di schiena
+LANG_IT Ho la febbre da ieri sera
+LANG_IT Mio marito ha la febbre alta da un mese
+LANG_IT Ho la nausea da ieri sera
+LANG_IT La mia schiena fa male da una settimana
+LANG_IT Ho il mal di stomaco da due giorni
+LANG_IT Mio nonno ha il cancro da tre anni
+LANG_IT Mi sento debole da una settimana
+LANG_IT Ho la tosse secca da tre giorni
+LANG_IT Mio fratello è stato diagnosticato con la polmonite un mese fa
+LANG_IT Ho il mal di testa da una settimana
+LANG_IT La mia pancia è gonfia da ieri sera
+LANG_IT Ho il bruciore di stomaco da tre giorni
+LANG_IT Mio figlio ha la varicella da una settimana
+LANG_IT Ho la tosse ogni notte da una settimana
+LANG_IT Mi hanno prescritto antidolorifici per il mal di schiena
+LANG_IT Ho la febbre da ieri sera
+LANG_IT Mio marito ha la febbre alta da un mese
+LANG_IT Ho la nausea da ieri sera
+LANG_IT La mia schiena fa male da una settimana
+LANG_IT Ho il mal di stomaco da due giorni
+LANG_IT Mio nonno ha il cancro da tre anni
+LANG_IT Mi sento debole da una settimana
+LANG_IT Ho la tosse secca da tre giorni
+LANG_IT Mio fratello è stato diagnosticato con la polmonite un mese fa
+LANG_IT Ho il mal di testa da una settimana
+LANG_IT La mia pancia è gonfia da ieri sera
+LANG_IT Ho il bruciore di stomaco da tre giorni
+LANG_IT Mio figlio ha la varicella da una settimana
+LANG_IT Ho la tosse ogni notte da una settimana
+LANG_IT Mi hanno prescritto antidolorifici per il mal di schiena
+LANG_IT Ho la febbre da ieri sera
+LANG_IT Mio marito ha la febbre alta da un mese
+LANG_IT Ho la nausea da ieri sera
+LANG_IT La mia schiena fa male da una settimana
+LANG_IT Ho il mal di stomaco da due giorni
+LANG_IT Mio nonno ha il cancro da tre anni
+LANG_IT Mi sento debole da una settimana
+LANG_IT Ho la tosse secca da tre giorni
+LANG_IT Mio fratello è stato diagnosticato con la polmonite un mese fa
+LANG_IT Ho il mal di testa da una settimana
+LANG_IT La mia pancia è gonfia da ieri sera
+LANG_IT Ho il bruciore di stomaco da tre giorni
+LANG_IT Mio figlio ha la varicella da una settimana
+LANG_IT Ho la tosse ogni notte da una settimana
+LANG_IT Mi hanno prescritto antidolorifici per il mal di schiena
+LANG_IT Ho la febbre da ieri sera
+LANG_IT Mio marito ha la febbre alta da un mese
+LANG_IT Ho la nausea da ieri sera
+LANG_IT La mia schiena fa male da una settimana
+LANG_IT Ho il mal di stomaco da due giorni
+LANG_IT Mio nonno ha il cancro da tre anni
+LANG_IT Mi sento debole da una settimana
+LANG_IT Ho la tosse secca da tre giorni
+LANG_IT Mio fratello è stato diagnosticato con la polmonite un mese fa
+LANG_IT Ho il mal di testa da una settimana
+LANG_IT Juventus e Inter si sfidano nella Serie A al Allianz Stadium .
+LANG_IT C'è un'atmosfera elettrizzante qui al San Siro mentre Lukaku si prepara a tirare il calcio d'inizio .
+LANG_IT Ronaldo dribbla due difensori avversari e poi calcia in porta, ma il portiere riesce a respingere .
+LANG_IT Che tiro potente di Immobile ! La palla sfiora il palo e esce .
+LANG_IT Insigne effettua un cross perfetto per Mertens che colpisce di testa, ma il portiere devia in corner .
+LANG_IT Il Rocchi mostra un cartellino giallo a De Vrij per un intervento falloso .
+LANG_IT Dybala viene sostituito da Morata al minuto 70 .
+LANG_IT Il sole splende forte sul campo, condizioni perfette per una grande partita di calcio .
+LANG_IT Conte è visibilmente frustrato dalla prestazione della sua squadra .
+LANG_IT Che gol spettacolare di Kessie ! Una traiettoria perfetta che si infila sotto la traversa .
+LANG_IT Napoli pareggia il punteggio contro Roma grazie a un gol di Zielinski .
+LANG_IT Barella si guadagna un rigore al minuto 85 .
+LANG_IT Il Orsato assegna un calcio di rigore a Lazio per un fallo di mano in area .
+LANG_IT Donnarumma si distingue con una parata acrobatica che mantiene il risultato in equilibrio .
+LANG_IT Che dribbling di Chiesa ! Sta mettendo in difficoltà la difesa avversaria .
+LANG_IT Milan domina il possesso palla in questo momento del match .
+LANG_IT Pellegrini viene ammonito con un cartellino giallo per un fallo tattico .
+LANG_IT Il pubblico è in delirio dopo il gol della squadra di casa .
+LANG_IT Lukaku si rende pericoloso in area avversaria con un colpo di testa che sfiora il bersaglio .
+LANG_IT Che azione spettacolare di Atalanta che sfiora il gol con un tiro di Zapata .
+LANG_IT Bonucci si fa male e deve essere sostituito al minuto 60 .
+LANG_IT Il Massa interrompe il gioco per consultare il VAR su un possibile fallo di mano in area .
+LANG_IT Vlahovic si procura un rigore al minuto 75 .
+LANG_IT Che tiro potente di Milinkovic-Savic ! Il portiere avversario si supera con una grande parata .
+LANG_IT Fiorentina subisce un gol al minuto 88 che potrebbe compromettere la partita .
+LANG_IT Pjanic entra in campo al posto di Vidal per dare nuova linfa al centrocampo .
+LANG_IT Il vento forte sta influenzando la traiettoria dei palloni in campo .
+LANG_IT Gasperini è visibilmente soddisfatto della prestazione della sua squadra fino a questo momento .
+LANG_IT Calhanoglu effettua un cross perfetto per Ibrahimovic che colpisce di testa e segna il gol del pareggio .
+LANG_IT Sassuolo domina il gioco nel primo tempo, ma non riesce a concretizzare le occasioni create .
+LANG_IT Berardi viene espulso al minuto 70 per un brutto fallo su Ronaldo .
+LANG_IT Il Maresca fischia la fine del primo tempo con il punteggio ancora in equilibrio .
+LANG_IT Muriel si procura un rigore al minuto 85 .
+LANG_IT Che gol incredibile di Caputo ! Una conclusione precisa che si infila all'incrocio dei pali .
+LANG_IT Torino pareggia il punteggio contro Sampdoria grazie a un gol di Belotti .
+LANG_IT Quagliarella viene ammonito con un cartellino giallo per un intervento falloso .
+LANG_IT Il pubblico è in delirio dopo il gol della squadra di casa .
+LANG_IT Verdi si rende pericoloso in area avversaria con un colpo di testa che sfiora il bersaglio .
+LANG_IT Che azione spettacolare di Udinese che sfiora il gol con un tiro di De Paul .
+LANG_IT De Roon si fa male e deve essere sostituito al minuto 60 .
+LANG_IT Il Doveri interrompe il gioco per consultare il VAR su un possibile fallo di mano in area .
+LANG_IT Okaka si procura un rigore al minuto 75 .
+LANG_IT Che tiro potente di Lasagna ! Il portiere avversario si supera con una grande parata .
+LANG_IT Cagliari subisce un gol al minuto 88 che potrebbe compromettere la partita .
+LANG_IT Nainggolan entra in campo al posto di Marin per dare nuova linfa al centrocampo .
+LANG_IT Il temporale forte sta influenzando la traiettoria dei palloni in campo .
+LANG_IT Joao Pedro effettua un cross perfetto per Simeone che colpisce di testa e segna il gol del pareggio .
+LANG_IT Verona domina il gioco nel primo tempo, ma non riesce a concretizzare le occasioni create .
+LANG_IT Barak viene espulso al minuto 70 per un brutto fallo su Ronaldo .
+LANG_IT Il Mariani fischia la fine del primo tempo con il punteggio ancora in equilibrio .
+LANG_IT Zaccagni si procura un rigore al minuto 85 .
+LANG_IT Che gol incredibile di Lasagna ! Una conclusione precisa che si infila all'incrocio dei pali .
+LANG_IT Benevento pareggia il punteggio contro Bologna grazie a un gol di Barrow .
+LANG_IT Orsolini viene ammonito con un cartellino giallo per un intervento falloso .
+LANG_IT Il pubblico è in delirio dopo il gol della squadra di casa .
+LANG_IT Palacio si rende pericoloso in area avversaria con un colpo di testa che sfiora il bersaglio .
+LANG_IT Che azione spettacolare di Spezia che sfiora il gol con un tiro di Nzola .
+LANG_IT Farias si fa male e deve essere sostituito al minuto 60 .
+LANG_IT Il Pasqua interrompe il gioco per consultare il VAR su un possibile fallo di mano in area .
+LANG_IT Gyasi si procura un rigore al minuto 75 .
+LANG_IT Che tiro potente di Mancosu ! Il portiere avversario si supera con una grande parata .
+LANG_IT Genoa subisce un gol al minuto 88 che potrebbe compromettere la partita .
+LANG_IT Destro entra in campo al posto di Pjaca per dare nuova linfa al centrocampo .
+LANG_IT Il nebbia fitta sta influenzando la visibilità in campo .
+LANG_IT Stroppa è visibilmente soddisfatto della prestazione della sua squadra fino a questo momento .
+LANG_IT Riviere effettua un cross perfetto per Scamacca che colpisce di testa e segna il gol del pareggio .
+LANG_IT Parma domina il gioco nel primo tempo, ma non riesce a concretizzare le occasioni create .
+LANG_IT Kucka viene espulso al minuto 70 per un brutto fallo su Ronaldo .
+LANG_IT Il Abisso fischia la fine del primo tempo con il punteggio ancora in equilibrio .
+LANG_IT Cornelius si procura un rigore al minuto 85 .
+LANG_IT Che gol incredibile di Gervinho ! Una conclusione precisa che si infila all'incrocio dei pali .
+LANG_IT Udinese pareggia il punteggio contro Crotone grazie a un gol di Deulofeu .
+LANG_IT Molina viene ammonito con un cartellino giallo per un intervento falloso .
+LANG_IT Il pubblico è in delirio dopo il gol della squadra di casa .
+LANG_IT Simy si rende pericoloso in area avversaria con un colpo di testa che sfiora il bersaglio .
+LANG_IT Che azione spettacolare di Lecce che sfiora il gol con un tiro di Saponara .
+LANG_IT Babacar si fa male e deve essere sostituito al minuto 60 .
+LANG_IT Il Valeri interrompe il gioco per consultare il VAR su un possibile fallo di mano in area .
+LANG_IT Messias si procura un rigore al minuto 75 .
+LANG_IT Che tiro potente di Lapadula ! Il portiere avversario si supera con una grande parata .
+LANG_IT Salernitana subisce un gol al minuto 88 che potrebbe compromettere la partita .
+LANG_IT Djuric entra in campo al posto di Di Tacchio per dare nuova linfa al centrocampo .
+LANG_IT Il pioggia battente sta influenzando la traiettoria dei palloni in campo .
+LANG_IT Castori è visibilmente soddisfatto della prestazione della sua squadra fino a questo momento .
+LANG_IT Bonazzoli effettua un cross perfetto per Tutino che colpisce di testa e segna il gol del pareggio .
+LANG_IT Venezia domina il gioco nel primo tempo, ma non riesce a concretizzare le occasioni create .
+LANG_IT Aramu viene espulso al minuto 70 per un brutto fallo su Ronaldo .
+LANG_IT Il Manganiello fischia la fine del primo tempo con il punteggio ancora in equilibrio .
+LANG_IT Fiordilino si procura un rigore al minuto 85 .
+LANG_IT Che gol incredibile di Henry ! Una conclusione precisa che si infila all'incrocio dei pali .
+LANG_IT Empoli pareggia il punteggio contro Ascoli grazie a un gol di Mancuso .
+LANG_IT Sabiri viene ammonito con un cartellino giallo per un intervento falloso .
+LANG_IT Il pubblico è in delirio dopo il gol della squadra di casa .
+LANG_IT Ardemagni si rende pericoloso in area avversaria con un colpo di testa che sfiora il bersaglio .
+LANG_IT Che azione spettacolare di Cremonese che sfiora il gol con un tiro di Ceravolo .
+LANG_IT Ciofani si fa male e deve essere sostituito al minuto 60 .
+LANG_IT Il Fabbri interrompe il gioco per consultare il VAR su un possibile fallo di mano in area .
+LANG_IT Ardemagni si procura un rigore al minuto 75 .
+LANG_IT Che tiro potente di Ardemagni ! Il portiere avversario si supera con una grande parata .
+LANG_IT Pisa subisce un gol al minuto 88 che potrebbe compromettere la partita .
+LANG_IT Marconi entra in campo al posto di Masucci per dare nuova linfa al centrocampo .
+LANG_IT Il grandinata fitta sta influenzando la visibilità in campo .
+LANG_IT Indiani è visibilmente soddisfatto della prestazione della sua squadra fino a questo momento .
+LANG_IT Marconi effettua un cross perfetto per Marconi che colpisce di testa e segna il gol del pareggio .
+LANG_IT Cremonese domina il gioco nel primo tempo, ma non riesce a concretizzare le occasioni create .
+LANG_IT Marconi viene espulso al minuto 70 per un brutto fallo su Ronaldo .
+LANG_IT Il Fabbri fischia la fine del primo tempo con il punteggio ancora in equilibrio .
+LANG_IT Marconi si procura un rigore al minuto 85 .
+LANG_IT Che gol incredibile di Marconi ! Una conclusione precisa che si infila all'incrocio dei pali .
+LANG_IT Pisa pareggia il punteggio contro Ascoli grazie a un gol di Marconi .
+LANG_IT Marconi viene ammonito con un cartellino giallo per un intervento falloso .
+LANG_IT Il pubblico è in delirio dopo il gol della squadra di casa .
+LANG_IT Marconi si rende pericoloso in area avversaria con un colpo di testa che sfiora il bersaglio .
+LANG_IT Che azione spettacolare di Cremonese che sfiora il gol con un tiro di Marconi .
+LANG_IT Ciao, potresti aumentare la luminosità della lampada al massimo ?
+LANG_IT Che temperatura fa nella cucina ?
+LANG_IT Mi sento rilassato, metti la TV in modalità cinema .
+LANG_IT Potresti per favore inviare un messaggio a Maria ?
+LANG_IT Mi piacerebbe impostare un promemoria per domani alle 10:00 .
+LANG_IT Cosa ne pensi di ascoltare un podcast nella stanza ?
+LANG_IT Chiama Anna per favore .
+LANG_IT Che impostazioni hai per la termostato ?
+LANG_IT Sono stanco, potresti bloccare la porta d'ingresso ?
+LANG_IT Mi piacerebbe ordinare una pizza con carta di credito .
+LANG_IT Cosa fai se attivo la modalità notte ?
+LANG_IT Potresti impostare la luminosità della lampada al 50% ?
+LANG_IT Mi piacerebbe inviare un messaggio a Luca .
+LANG_IT Che volume ha la stereo ?
+LANG_IT Mi sento energico, metti la lampada in modalità lettura .
+LANG_IT Cosa succede se attivo la modalità festa ?
+LANG_IT Potresti ordinare un regalo per compleanno di Sofia ?
+LANG_IT Mi piacerebbe impostare un appuntamento per venerdì alle 15:00 .
+LANG_IT Che impostazioni hai per la climatizzatore ?
+LANG_IT Sono stanco, potresti chiudere la finestra ?
+LANG_IT Mi piacerebbe ordinare una bottiglia di vino .
+LANG_IT Cosa fai se attivo la modalità relax ?
+LANG_IT Potresti impostare la temperatura del forno a 180 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Marco .
+LANG_IT Che luminosità ha la lampadina ?
+LANG_IT Mi sento rilassato, metti la TV in modalità musica .
+LANG_IT Cosa succede se attivo la modalità notte ?
+LANG_IT Potresti ordinare un libro online con carta di credito ?
+LANG_IT Mi piacerebbe impostare un promemoria per domani alle 9:00 .
+LANG_IT Che volume ha la radio ?
+LANG_IT Sono stanco, potresti aprire la tenda ?
+LANG_IT Mi piacerebbe ordinare una pizza per cena .
+LANG_IT Cosa fai se attivo la modalità silenziosa ?
+LANG_IT Potresti impostare la temperatura del termostato a 22 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Laura .
+LANG_IT Che luminosità ha la lampada principale ?
+LANG_IT Mi sento energico, metti la lampada in modalità luminosa .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un regalo per anniversario di Paolo ?
+LANG_IT Mi piacerebbe impostare un appuntamento per sabato alle 11:30 .
+LANG_IT Che impostazioni hai per la videocamera ?
+LANG_IT Sono stanco, potresti chiudere la finestra ?
+LANG_IT Mi piacerebbe ordinare una bottiglia di champagne .
+LANG_IT Cosa fai se attivo la modalità notte ?
+LANG_IT Potresti impostare la temperatura del forno a 200 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Giulia .
+LANG_IT Che luminosità ha la lampadario ?
+LANG_IT Mi sento rilassato, metti la TV in modalità film .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un libro online con carta di credito ?
+LANG_IT Mi piacerebbe impostare un promemoria per domani alle 10:30 .
+LANG_IT Che volume ha la stereo ?
+LANG_IT Sono stanco, potresti aprire la tenda ?
+LANG_IT Mi piacerebbe ordinare una pizza per cena .
+LANG_IT Cosa fai se attivo la modalità silenziosa ?
+LANG_IT Potresti impostare la temperatura del termostato a 20 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Marta .
+LANG_IT Che luminosità ha la lampada principale ?
+LANG_IT Mi sento energico, metti la lampada in modalità luminosa .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un regalo per anniversario di Luca ?
+LANG_IT Mi piacerebbe impostare un appuntamento per sabato alle 11:30 .
+LANG_IT Che impostazioni hai per la videocamera ?
+LANG_IT Sono stanco, potresti chiudere la finestra ?
+LANG_IT Mi piacerebbe ordinare una bottiglia di champagne .
+LANG_IT Cosa fai se attivo la modalità notte ?
+LANG_IT Potresti impostare la temperatura del forno a 200 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Giulia .
+LANG_IT Che luminosità ha la lampadario ?
+LANG_IT Mi sento rilassato, metti la TV in modalità film .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un libro online con carta di credito ?
+LANG_IT Mi piacerebbe impostare un promemoria per domani alle 10:30 .
+LANG_IT Che volume ha la stereo ?
+LANG_IT Sono stanco, potresti aprire la tenda ?
+LANG_IT Mi piacerebbe ordinare una pizza per cena .
+LANG_IT Cosa fai se attivo la modalità silenziosa ?
+LANG_IT Potresti impostare la temperatura del termostato a 20 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Marta .
+LANG_IT Che luminosità ha la lampada principale ?
+LANG_IT Mi sento energico, metti la lampada in modalità luminosa .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un regalo per anniversario di Luca ?
+LANG_IT Mi piacerebbe impostare un appuntamento per sabato alle 11:30 .
+LANG_IT Che impostazioni hai per la videocamera ?
+LANG_IT Sono stanco, potresti chiudere la finestra ?
+LANG_IT Mi piacerebbe ordinare una bottiglia di champagne .
+LANG_IT Cosa fai se attivo la modalità notte ?
+LANG_IT Potresti impostare la temperatura del forno a 200 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Giulia .
+LANG_IT Che luminosità ha la lampadario ?
+LANG_IT Mi sento rilassato, metti la TV in modalità film .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un libro online con carta di credito ?
+LANG_IT Mi piacerebbe impostare un promemoria per domani alle 10:30 .
+LANG_IT Che volume ha la stereo ?
+LANG_IT Sono stanco, potresti aprire la tenda ?
+LANG_IT Mi piacerebbe ordinare una pizza per cena .
+LANG_IT Cosa fai se attivo la modalità silenziosa ?
+LANG_IT Potresti impostare la temperatura del termostato a 20 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Marta .
+LANG_IT Che luminosità ha la lampada principale ?
+LANG_IT Mi sento energico, metti la lampada in modalità luminosa .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un regalo per anniversario di Luca ?
+LANG_IT Mi piacerebbe impostare un appuntamento per sabato alle 11:30 .
+LANG_IT Che impostazioni hai per la videocamera ?
+LANG_IT Sono stanco, potresti chiudere la finestra ?
+LANG_IT Mi piacerebbe ordinare una bottiglia di champagne .
+LANG_IT Cosa fai se attivo la modalità notte ?
+LANG_IT Potresti impostare la temperatura del forno a 200 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Giulia .
+LANG_IT Che luminosità ha la lampadario ?
+LANG_IT Mi sento rilassato, metti la TV in modalità film .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un libro online con carta di credito ?
+LANG_IT Mi piacerebbe impostare un promemoria per domani alle 10:30 .
+LANG_IT Che volume ha la stereo ?
+LANG_IT Sono stanco, potresti aprire la tenda ?
+LANG_IT Mi piacerebbe ordinare una pizza per cena .
+LANG_IT Cosa fai se attivo la modalità silenziosa ?
+LANG_IT Potresti impostare la temperatura del termostato a 20 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Marta .
+LANG_IT Che luminosità ha la lampada principale ?
+LANG_IT Mi sento energico, metti la lampada in modalità luminosa .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un regalo per anniversario di Luca ?
+LANG_IT Mi piacerebbe impostare un appuntamento per sabato alle 11:30 .
+LANG_IT Che impostazioni hai per la videocamera ?
+LANG_IT Sono stanco, potresti chiudere la finestra ?
+LANG_IT Mi piacerebbe ordinare una bottiglia di champagne .
+LANG_IT Cosa fai se attivo la modalità notte ?
+LANG_IT Potresti impostare la temperatura del forno a 200 gradi ?
+LANG_IT Mi piacerebbe inviare un messaggio a Giulia .
+LANG_IT Che luminosità ha la lampadario ?
+LANG_IT Mi sento rilassato, metti la TV in modalità film .
+LANG_IT Cosa succede se attivo la modalità relax ?
+LANG_IT Potresti ordinare un libro online con carta di credito ?
+LANG_IT Mi piacerebbe impostare un promemoria per domani alle 10:30 .
+LANG_IT Che volume ha la stereo ?
+LANG_IT Sono stanco, potresti aprire la tenda ?
+LANG_IT Mi piacerebbe ordinare una pizza per cena .
+LANG_IT Cosa fai se attivo la modalità silenziosa ?
+LANG_IT Prenota un volo per Parigi partendo il prossimo mese .
+LANG_IT Che ne pensi di visitare la Torre di Pisa durante il tuo viaggio ?
+LANG_IT Controlla lo stato del tuo volo per Tokyo .
+LANG_IT Mi puoi suggerire dei ristoranti vicino a Roma ?
+LANG_IT Sto cercando un posto dove dormire a Barcellona per il prossimo weekend .
+LANG_IT Aggiorna il tuo itinerario con una visita a Pompei .
+LANG_IT Che bel tempo fa a Miami in estate ?
+LANG_IT Verifica se ci sono restrizioni di viaggio per Londra .
+LANG_IT Ho prenotato un albergo a Milano per il prossimo mese .
+LANG_IT Consigliami delle mete per il prossimo anno .
+LANG_IT Posso cancellare la mia prenotazione a Venezia ?
+LANG_IT Mi puoi ricordare di fare il check-in per il mio volo per Berlino ?
+LANG_IT Suggerisci un luogo da visitare a Firenze .
+LANG_IT Ho bisogno di modificare la data del mio volo per Madrid .
+LANG_IT Che bello è l'aeroporto di Parigi !
+LANG_IT Monitora lo stato del tuo volo per Amsterdam .
+LANG_IT Mi puoi consigliare un hotel a Ibiza ?
+LANG_IT Sto cercando un volo per New York per il prossimo mese .
+LANG_IT Controlla se ci sono restrizioni di viaggio per Tokyo .
+LANG_IT Ho prenotato un albergo a Barcellona per il prossimo weekend .
+LANG_IT Aggiorna il tuo itinerario con una visita a Colosseo .
+LANG_IT Che bel tempo fa a Cancun in inverno ?
+LANG_IT Verifica se ci sono restrizioni di viaggio per Sydney .
+LANG_IT Mi puoi ricordare di fare il check-in per il mio volo per Tokyo ?
+LANG_IT Suggerisci un luogo da visitare a Venezia .
+LANG_IT Ho bisogno di modificare la data del mio volo per Londra .
+LANG_IT Che bello è l'aeroporto di Roma !
+LANG_IT Monitora lo stato del tuo volo per Tokyo .
+LANG_IT Mi puoi consigliare un hotel a Parigi ?
+LANG_IT Sto cercando un volo per Los Angeles per il prossimo mese .
+LANG_IT Controlla se ci sono restrizioni di viaggio per Berlino .
+LANG_IT Ho prenotato un albergo a Madrid per il prossimo weekend .
+LANG_IT Aggiorna il tuo itinerario con una visita a Sagrada Familia .
+LANG_IT Che bel tempo fa a Dubai in estate ?
+LANG_IT Verifica se ci sono restrizioni di viaggio per Amsterdam .
+LANG_IT Mi puoi ricordare di fare il check-in per il mio volo per Parigi ?
+LANG_IT Suggerisci un luogo da visitare a Milano .
+LANG_IT Ho bisogno di modificare la data del mio volo per Barcellona .
+LANG_IT Che bello è l'aeroporto di New York !
+LANG_IT Monitora lo stato del tuo volo per Parigi .
+LANG_IT Mi puoi consigliare un hotel a Ibiza ?
+LANG_IT Sto cercando un volo per Tokyo per il prossimo mese .
+LANG_IT Controlla se ci sono restrizioni di viaggio per Londra .
+LANG_IT Ho prenotato un albergo a Roma per il prossimo weekend .
+LANG_IT Aggiorna il tuo itinerario con una visita a Colosseo .
+LANG_IT Che bel tempo fa a Cancun in inverno ?
+LANG_IT Verifica se ci sono restrizioni di viaggio per Sydney .
+LANG_IT Mi puoi ricordare di fare il check-in per il mio volo per Tokyo ?
+LANG_IT Suggerisci un luogo da visitare a Venezia .
+LANG_IT Ho bisogno di modificare la data del mio volo per Londra .
+LANG_IT Che bello è l'aeroporto di Roma !
+LANG_IT Monitora lo stato del tuo volo per Tokyo .
+LANG_IT Mi puoi consigliare un hotel a Parigi ?
+LANG_IT Sto cercando un volo per Los Angeles per il prossimo mese .
+LANG_IT Controlla se ci sono restrizioni di viaggio per Berlino .
+LANG_IT Ho prenotato un albergo a Madrid per il prossimo weekend .
+LANG_IT Aggiorna il tuo itinerario con una visita a Sagrada Familia .
+LANG_IT Che bel tempo fa a Dubai in estate ?
+LANG_IT Verifica se ci sono restrizioni di viaggio per Amsterdam .
+LANG_IT Mi puoi ricordare di fare il check-in per il mio volo per Parigi ?
+LANG_IT Qual è il livello di emoglobina per il paziente 456 ?
+LANG_IT Modifica il parametro di temperatura nel termometro .
+LANG_IT Aggiorna il profilo del paziente con terapia fisica e follow-up .
+LANG_IT Invia il referto di radiologia al radiologo per la revisione .
+LANG_IT Configura il parametro di pressione nel sfigmomanometro .
+LANG_IT Invia il rapporto di patologia al oncologo per la valutazione .
+LANG_IT Riprendi il test di funzionalità renale dopo la manutenzione del analizzatore .
+LANG_IT Rivedi e approva il rapporto di microbiologia del paziente 234 .
+LANG_IT Invia il referto di radiografia al ortopedico per la consultazione .
+LANG_IT Modifica il parametro di luminosità nel microscopio .
+LANG_IT Pianifica il biopsia per il paziente 567 .
+LANG_IT Aggiorna il profilo del paziente con terapia farmacologica e follow-up .
+LANG_IT Invia il referto di ecografia al ginecologo per la revisione .
+LANG_IT Configura il parametro di frequenza cardiaca nel elettrocardiografo .
+LANG_IT Invia il rapporto di citologia al patologo per l'analisi .
+LANG_IT Riprendi il test di funzionalità epatica dopo la manutenzione del spettrofotometro .
+LANG_IT Rivedi e approva il rapporto di radiologia del paziente 456 .
+LANG_IT Invia il rapporto di microbiologia al infettivologo per la valutazione .
+LANG_IT Modifica il parametro di pressione sanguigna nel sfigmomanometro .
+LANG_IT Aggiorna il profilo del paziente con terapia farmacologica e follow-up .
+LANG_IT Invia il referto di radiografia al radiologo per la consultazione .
+LANG_IT Configura il parametro di luminosità nel microscopio .
+LANG_IT Invia il rapporto di patologia al patologo per l'analisi .
+LANG_IT Riprendi il test di funzionalità renale dopo la manutenzione del analizzatore .
+LANG_IT Rivedi e approva il rapporto di microbiologia del paziente 123 .
+LANG_IT Invia il referto di radiografia al ortopedico per la consultazione .
+LANG_IT Modifica il parametro di luminosità nel microscopio .
+LANG_IT Pianifica il biopsia per il paziente 678 .
+LANG_IT Aggiorna il profilo del paziente con terapia fisica e follow-up .
+LANG_IT Invia il referto di ecografia al ginecologo per la revisione .
+LANG_IT Configura il parametro di frequenza cardiaca nel elettrocardiografo .
+LANG_IT Invia il rapporto di citologia al patologo per l'analisi .
+LANG_IT Riprendi il test di funzionalità epatica dopo la manutenzione del spettrofotometro .
+LANG_IT Rivedi e approva il rapporto di radiologia del paziente 456 .
