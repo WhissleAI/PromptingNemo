@@ -18644,3 +18644,845 @@ LANG_ES ¿Cuál es la glucosa actual del paciente 901 ?
 LANG_ES Programa una consulta de telemedicina para el paciente 678 el próximo lunes .
 LANG_ES Envía el informe de genética al Dr . Sánchez para revisión .
 LANG_ES Configura el espectrofotómetro a longitud de onda de 600 nm para la sección de bioquímica .
+LANG_ES Revisar el saldo de mi cuenta de ahorros .
+LANG_ES Transferir $200 a mi cuenta corriente .
+LANG_ES Pagar la factura de $50 a la compañía de electricidad .
+LANG_ES Configurar alertas para notificaciones de gastos excesivos .
+LANG_ES Actualizar mi información de cuenta bancaria con mi nueva dirección .
+LANG_ES Analizar mis gastos mensuales para identificar áreas de ahorro .
+LANG_ES Generar un reporte mensual de mis inversiones .
+LANG_ES Establecer alertas para seguimiento de acciones específicas .
+LANG_ES Cancelar la suscripción a una plataforma de inversión .
+LANG_ES Programar una transferencia de $300 a mi cuenta de ahorros para el próximo viernes .
+LANG_ES Depositar $1000 en mi cuenta de inversión a plazo fijo .
+LANG_ES Retirar €50 en efectivo de mi cuenta corriente .
+LANG_ES Convertir ¥10000 a dólares estadounidenses en mi cuenta de divisas .
+LANG_ES Intercambiar £200 por euros en la entidad bancaria .
+LANG_ES Calcular el rendimiento de mis inversiones en el último trimestre .
+LANG_ES Predecir el comportamiento del mercado de valores para el próximo mes .
+LANG_ES Asesorar sobre las mejores opciones de inversión a largo plazo .
+LANG_ES Estimar el impacto de los impuestos en mis ingresos anuales .
+LANG_ES Revisar el estado de mi tarjeta de crédito para evitar cargos adicionales .
+LANG_ES Monitorear los cambios en los tasas de interés para tomar decisiones financieras informadas .
+LANG_ES Notificar sobre transacciones inusuales en mi cuenta de ahorros .
+LANG_ES Generar un presupuesto mensual para controlar mis gastos .
+LANG_ES Invertir $500 en fondos mutuos de alto rendimiento .
+LANG_ES Ahorrar un porcentaje de mis ingresos mensuales en una cuenta de ahorros .
+LANG_ES Gastar €50 en compras diarias con mi tarjeta de débito .
+LANG_ES Monitorear las fluctuaciones en el mercado de valores para identificar oportunidades de inversión .
+LANG_ES Notificar sobre vencimientos de facturas pendientes para evitar cargos por retraso .
+LANG_ES Convertir dólares a euros en la tasa de cambio actual .
+LANG_ES Intercambiar libras esterlinas por dólares en el aeropuerto antes del viaje .
+LANG_ES Calcular el rendimiento de mis activos financieros en el último año .
+LANG_ES Predecir las tendencias del mercado inmobiliario para el próximo trimestre .
+LANG_ES Asesorar sobre estrategias de diversificación de cartera para reducir el riesgo .
+LANG_ES Estimar los costos de inversión en un nuevo proyecto empresarial .
+LANG_ES Revisar el estado de mi cuenta de ahorros para planificar futuras inversiones .
+LANG_ES Monitorear las fluctuaciones en las tasas de cambio para transacciones internacionales .
+LANG_ES Notificar sobre movimientos inusuales en mi cuenta de inversión .
+LANG_ES Generar un informe trimestral de mis activos financieros .
+LANG_ES Invertir $1000 en bonos del gobierno para diversificar mi cartera .
+LANG_ES Ahorrar un porcentaje de mis ingresos mensuales en un plan de jubilación .
+LANG_ES Gastar €100 en compras en línea con mi tarjeta de crédito .
+LANG_ES Monitorear las noticias financieras para estar al tanto de los cambios en el mercado .
+LANG_ES Notificar sobre fechas límite de pagos para evitar penalizaciones .
+LANG_ES Convertir pesos a dólares utilizando una calculadora de divisas en línea .
+LANG_ES Intercambiar euros por yenes en una casa de cambio antes del viaje a Japón .
+LANG_ES Calcular el retorno de inversión de mis acciones en el último semestre .
+LANG_ES Predecir el impacto de las políticas fiscales en el mercado de valores .
+LANG_ES Asesorar sobre estrategias de ahorro para alcanzar metas financieras a largo plazo .
+LANG_ES Estimar los impuestos sobre las ganancias de capital de mis inversiones .
+LANG_ES Revisar el estado de mi cuenta de cheques para verificar transacciones recientes .
+LANG_ES Monitorear las fluctuaciones en las tasas de interés para planificar refinanciamientos .
+LANG_ES Notificar sobre retiros no autorizados en mi cuenta de ahorros .
+LANG_ES Generar un presupuesto anual para controlar mis gastos y ahorros .
+LANG_ES Invertir $2000 en acciones de empresas emergentes para diversificar la cartera .
+LANG_ES Ahorrar un porcentaje de mis ingresos en un fondo de emergencia para imprevistos .
+LANG_ES Gastar €20 en comestibles con mi tarjeta de débito .
+LANG_ES Monitorear las tendencias del mercado inmobiliario para identificar oportunidades de inversión .
+LANG_ES Notificar sobre próximos pagos de facturas para recordar fechas límite .
+LANG_ES Convertir dólares a libras esterlinas en una casa de cambio antes del viaje a Londres .
+LANG_ES Intercambiar francos suizos por euros en el banco antes de viajar a Europa .
+LANG_ES Calcular el rendimiento de mis fondos de inversión en el último año .
+LANG_ES Predecir las tendencias del mercado de valores para el próximo año .
+LANG_ES Asesorar sobre estrategias de inversión sostenible para un impacto positivo a largo plazo .
+LANG_ES Estimar los impuestos sobre las ganancias de mis inversiones en bienes raíces .
+LANG_ES Revisar el estado de mi cuenta de inversión para evaluar el desempeño de mis activos .
+LANG_ES Monitorear las fluctuaciones en las tasas de cambio para realizar transacciones internacionales .
+LANG_ES Notificar sobre movimientos inusuales en mi cuenta de jubilación .
+LANG_ES Generar un informe semestral de mis activos financieros para revisión .
+LANG_ES Invertir $1500 en bonos corporativos para diversificar mi cartera .
+LANG_ES Ahorrar un porcentaje de mis ingresos en un plan de ahorro para la educación de mis hijos .
+LANG_ES Gastar €75 en ropa con mi tarjeta de crédito .
+LANG_ES Monitorear las noticias financieras para estar al tanto de las tendencias del mercado global .
+LANG_ES Notificar sobre vencimientos de facturas para evitar cargos por retraso .
+LANG_ES Convertir pesos mexicanos a dólares estadounidenses en una sucursal bancaria .
+LANG_ES Intercambiar dólares australianos por dólares canadienses en el aeropuerto antes del vuelo .
+LANG_ES Calcular el retorno de inversión de mis fondos de pensiones en los últimos cinco años .
+LANG_ES Predecir el impacto de las elecciones en el mercado de valores .
+LANG_ES Asesorar sobre estrategias de ahorro para la compra de una vivienda .
+LANG_ES Estimar los impuestos sobre las ganancias de mis inversiones en el extranjero .
+LANG_ES Revisar el estado de mi cuenta de inversión para evaluar la diversificación de activos .
+LANG_ES Monitorear las fluctuaciones en las tasas de interés para planificar refinanciamientos de préstamos .
+LANG_ES Notificar sobre transacciones sospechosas en mi cuenta de ahorros .
+LANG_ES Generar un presupuesto familiar para controlar los gastos mensuales .
+LANG_ES Invertir $3000 en fondos de inversión diversificados para mitigar riesgos .
+LANG_ES Ahorrar un porcentaje de mis ingresos en un fondo de emergencia para situaciones imprevistas .
+LANG_ES Gastar €30 en comestibles con mi tarjeta de débito .
+LANG_ES Monitorear las tendencias del mercado inmobiliario para identificar oportunidades de inversión .
+LANG_ES Notificar sobre próximas fechas de vencimiento de facturas para evitar cargos adicionales .
+LANG_ES Convertir dólares a euros utilizando una calculadora de divisas en línea .
+LANG_ES Intercambiar libras esterlinas por dólares en la casa de cambio antes del viaje a Londres .
+LANG_ES Calcular el rendimiento de mis fondos de inversión en el último año .
+LANG_ES Predecir las tendencias del mercado de valores para el próximo año .
+LANG_ES Asesorar sobre estrategias de inversión sostenible para un impacto positivo a largo plazo .
+LANG_ES Estimar los impuestos sobre las ganancias de mis inversiones en bienes raíces .
+LANG_ES Revisar el estado de mi cuenta de inversión para evaluar el desempeño de mis activos .
+LANG_ES Monitorear las fluctuaciones en las tasas de cambio para realizar transacciones internacionales .
+LANG_ES Notificar sobre movimientos inusuales en mi cuenta de jubilación .
+LANG_ES Generar un informe semestral de mis activos financieros para revisión .
+LANG_ES Invertir $1500 en bonos corporativos para diversificar mi cartera .
+LANG_ES Ahorrar un porcentaje de mis ingresos en un plan de ahorro para la educación de mis hijos .
+LANG_ES Gastar €75 en ropa con mi tarjeta de crédito .
+LANG_ES Monitorear las noticias financieras para estar al tanto de las tendencias del mercado global .
+LANG_ES Notificar sobre vencimientos de facturas para evitar cargos por retraso .
+LANG_ES Convertir pesos mexicanos a dólares estadounidenses en una sucursal bancaria .
+LANG_ES Intercambiar dólares australianos por dólares canadienses en el aeropuerto antes del vuelo .
+LANG_ES Calcular el retorno de inversión de mis fondos de pensiones en los últimos cinco años .
+LANG_ES Predecir el impacto de las elecciones en el mercado de valores .
+LANG_ES Asesorar sobre estrategias de ahorro para la compra de una vivienda .
+LANG_ES Estimar los impuestos sobre las ganancias de mis inversiones en el extranjero .
+LANG_ES Revisar el estado de mi cuenta de inversión para evaluar la diversificación de activos .
+LANG_ES Monitorear las fluctuaciones en las tasas de interés para planificar refinanciamientos de préstamos .
+LANG_ES Notificar sobre transacciones sospechosas en mi cuenta de ahorros .
+LANG_ES ¿Qué tal si buscamos una receta vegana para la cena ?
+LANG_ES Vamos a configurar un temporizador de 30 minutos para la comida .
+LANG_ES ¿Podrías proporcionar la lista de ingredientes para la receta pastel de zanahoria ?
+LANG_ES Oye, ¿puedes rastrear recetas sin gluten para mí ?
+LANG_ES Creo que necesitamos agregar leche a la lista de compras .
+LANG_ES ¿Sabes cómo encontrar una receta vegetariana de sopa ?
+LANG_ES Recuerda precalentar el horno a 180 grados .
+LANG_ES Batir los huevos hasta que las yemas y las claras estén combinadas .
+LANG_ES Pausar el temporizador de cocina .
+LANG_ES Reanudar la narración de la receta .
+LANG_ES Actualizar mis preferencias vegetarianas .
+LANG_ES Quitar cebollas de la lista de compras .
+LANG_ES ¿Puedes listar la información nutricional del aguacate ?
+LANG_ES Sugerir una receta mexicana para la cena .
+LANG_ES Rastrear el stock de despensa de harina .
+LANG_ES Agregar dos manzanas a mi lista de compras
+LANG_ES Verificar el precio de leche en Walmart
+LANG_ES Encontrar la sección de frutas y buscar plátanos
+LANG_ES Establecer un recordatorio para comprar huevos mañana mañana a las 10 a . m .
+LANG_ES Gestionar mis cupones para cereales
+LANG_ES Comparar yogur natural con yogur de fresa para la información nutricional
+LANG_ES Proporcionar consejos de compra para productos orgánicos
+LANG_ES Buscar la marca de pasta de dientes preferida por mí
+LANG_ES Obtener la oferta actual en carne de res en la carnicería
+LANG_ES Revisar las calorías de galletas saladas
+LANG_ES Sugerir una receta para cocinar pollo a la parrilla
+LANG_ES Ayudar a encontrar pan integral adecuado para dietas sin gluten
+LANG_ES Recomendar una marca confiable de aceite de oliva
+LANG_ES Escanear los precios de cereales en Costco
+LANG_ES Redimir mis cupones de detergente para ropa en el pasillo de limpieza
+LANG_ES Cocinar una receta nueva con quinoa esta noche hoy
+LANG_ES Preferir las marcas de salsa de tomate sin azúcar añadido
+LANG_ES Calificar y dejar una reseña sobre mantequilla de maní
+LANG_ES Buscar lechuga romana fresca en la sección de verduras
+LANG_ES Elegir entre manzanas rojas o verdes para una ensalada de frutas
+LANG_ES Programar una alarma para comprar tres docenas de huevos el sábado a las 9 a . m .
+LANG_ES Recordar comprar leche en la sección de lácteos antes de la próxima semana
+LANG_ES Notificar sobre las ofertas actuales en productos enlatados
+LANG_ES Llamar a Whole Foods y preguntar por el precio de salmón fresco
+LANG_ES Buscar pasta de trigo integral en la sección de alimentos secos
+LANG_ES Rastrear los descuentos en yogur griego en la nevera de lácteos
+LANG_ES Notar la calidad de aguacates antes de comprarlos
+LANG_ES Buscar salsa de tomate sin sal añadida en la sección de alimentos saludables
+LANG_ES Comparar los precios de cereales integrales en la sección de desayuno
+LANG_ES Comprar una docena de huevos en la tienda de comestibles
+LANG_ES Gestionar mis compras para la próxima semana
+LANG_ES Buscar avena en la sección de granos y verificar la oferta
+LANG_ES Sugerir una receta saludable para pechugas de pollo
+LANG_ES Elegir entre fresas o arándanos para una ensalada de frutas
+LANG_ES Preferir las marcas de yogur con bajo contenido de azúcar
+LANG_ES Calificar y dejar un comentario sobre pan integral
+LANG_ES Buscar mantequilla de maní natural en la sección de alimentos orgánicos
+LANG_ES Elegir entre leche de almendras o leche de coco para una receta de batido
+LANG_ES Programar una alarma para comprar dos libras de carne molida el viernes a las 3 p . m .
+LANG_ES Recordar comprar pan integral en la panadería antes de la próxima semana
+LANG_ES Notificar sobre las promociones actuales en productos congelados
+LANG_ES Llamar a Trader Joe's y preguntar por el precio de aguacates
+LANG_ES Buscar arroz integral en la sección de granos
+LANG_ES Rastrear los descuentos en queso cheddar en la sección de lácteos
+LANG_ES Notar la frescura de pescado antes de comprarlo
+LANG_ES Buscar salsa de tomate orgánica en la sección de alimentos saludables
+LANG_ES Comparar los precios de mermelada en la sección de desayuno
+LANG_ES Comprar medio kilo de pollo en la carnicería
+LANG_ES Gestionar mis compras para la próxima semana
+LANG_ES Buscar queso cheddar en la sección de lácteos y verificar la oferta
+LANG_ES Sugerir una receta vegetariana para tacos
+LANG_ES Elegir entre piña o mango para una ensalada de frutas
+LANG_ES Preferir las marcas de yogur con probióticos
+LANG_ES Calificar y dejar un comentario sobre pan integral
+LANG_ES Buscar mantequilla de maní sin sal en la sección de alimentos saludables
+LANG_ES Elegir entre leche de almendras o leche de soja para una receta de batido
+LANG_ES Programar una alarma para comprar un kilo de salmón el viernes a las 3 p . m .
+LANG_ES Recordar comprar pan integral en la panadería antes de la próxima semana
+LANG_ES Notificar sobre las promociones actuales en helado
+LANG_ES Llamar a Costco y preguntar por el precio de aguacates
+LANG_ES Buscar arroz basmati en la sección de granos
+LANG_ES Rastrear los descuentos en queso parmesano en la sección de lácteos
+LANG_ES Notar la frescura de carne de res antes de comprarla
+LANG_ES Buscar salsa de tomate picante en la sección de alimentos internacionales
+LANG_ES Comparar los precios de miel en la sección de desayuno
+LANG_ES Comprar un kilo de salmón en la pescadería
+LANG_ES Gestionar mis compras para la próxima semana
+LANG_ES Buscar avena instantánea en la sección de cereales y verificar la oferta
+LANG_ES Sugerir una receta vegana para hamburguesas de lentejas
+LANG_ES Elegir entre peras o duraznos para una ensalada de frutas
+LANG_ES Preferir las marcas de yogur con frutas naturales
+LANG_ES Calificar y dejar un comentario sobre pan integral
+LANG_ES Buscar mantequilla de maní sin sal en la sección de alimentos saludables
+LANG_ES Elegir entre leche de almendras o leche de coco para una receta de batido
+LANG_ES Programar una alarma para comprar dos libras de carne molida el viernes a las 3 p . m .
+LANG_ES Recordar comprar pan integral en la panadería antes de la próxima semana
+LANG_ES Notificar sobre las promociones actuales en helado
+LANG_ES Llamar a Costco y preguntar por el precio de aguacates
+LANG_ES Buscar arroz basmati en la sección de granos
+LANG_ES Rastrear los descuentos en queso parmesano en la sección de lácteos
+LANG_ES Notar la frescura de carne de res antes de comprarla
+LANG_ES Buscar salsa de tomate picante en la sección de alimentos internacionales
+LANG_ES Comparar los precios de miel en la sección de desayuno
+LANG_ES Comprar un kilo de salmón en la pescadería
+LANG_ES Gestionar mis compras para la próxima semana
+LANG_ES Buscar avena instantánea en la sección de cereales y verificar la oferta
+LANG_ES Sugerir una receta vegana para hamburguesas de lentejas
+LANG_ES Elegir entre peras o duraznos para una ensalada de frutas
+LANG_ES Preferir las marcas de yogur con frutas naturales
+LANG_ES Calificar y dejar un comentario sobre pan integral
+LANG_ES Buscar mantequilla de maní sin sal en la sección de alimentos saludables
+LANG_ES Elegir entre leche de almendras o leche de coco para una receta de batido
+LANG_ES Programar una alarma para comprar dos libras de carne molida el viernes a las 3 p . m .
+LANG_ES Recordar comprar pan integral en la panadería antes de la próxima semana
+LANG_ES Notificar sobre las promociones actuales en helado
+LANG_ES Llamar a Costco y preguntar por el precio de aguacates
+LANG_ES Buscar arroz basmati en la sección de granos
+LANG_ES Rastrear los descuentos en queso parmesano en la sección de lácteos
+LANG_ES Notar la frescura de carne de res antes de comprarla
+LANG_ES Buscar salsa de tomate picante en la sección de alimentos internacionales
+LANG_ES Comparar los precios de miel en la sección de desayuno
+LANG_ES Comprar un kilo de salmón en la pescadería
+LANG_ES Gestionar mis compras para la próxima semana
+LANG_ES Buscar avena instantánea en la sección de cereales y verificar la oferta
+LANG_ES Sugerir una receta vegana para hamburguesas de lentejas
+LANG_ES Elegir entre peras o duraznos para una ensalada de frutas
+LANG_ES Preferir las marcas de yogur con frutas naturales
+LANG_ES Calificar y dejar un comentario sobre pan integral
+LANG_ES Buscar mantequilla de maní sin sal en la sección de alimentos saludables
+LANG_ES Elegir entre leche de almendras o leche de coco para una receta de batido
+LANG_ES Programar una alarma para comprar dos libras de carne molida el viernes a las 3 p . m .
+LANG_ES Recordar comprar pan integral en la panadería antes de la próxima semana
+LANG_ES Notificar sobre las promociones actuales en helado
+LANG_ES Llamar a Costco y preguntar por el precio de aguacates
+LANG_ES Buscar arroz basmati en la sección de granos
+LANG_ES Rastrear los descuentos en queso parmesano en la sección de lácteos
+LANG_ES Notar la frescura de carne de res antes de comprarla
+LANG_ES Buscar salsa de tomate picante en la sección de alimentos internacionales
+LANG_ES Comparar los precios de miel en la sección de desayuno
+LANG_ES Mi abuela experimentó mareos después de tomar nuevos medicamentos esta mañana
+LANG_ES Me han diagnosticado diabetes hace dos años
+LANG_ES Mi esposo tuvo fiebre la semana pasada
+LANG_ES Mi hija se someterá a una cirugía de apéndice mañana
+LANG_ES Me recetaron antibióticos para mi infección de garganta ayer
+LANG_ES Mi padre ha estado experimentando fatiga constantemente durante varios meses
+LANG_ES Mi hermano mencionó dolor de espalda durante su última visita al médico
+LANG_ES Me aconsejaron realizar análisis de sangre para verificar mis niveles de hierro
+LANG_ES Mi primo fue diagnosticado con alergias la semana pasada
+LANG_ES Me realizarán una resonancia magnética la próxima semana
+LANG_ES Mi hermana sufrió náuseas después de comer alimentos picantes anoche
+LANG_ES Me han recomendado hacer ejercicio regularmente para mejorar mi salud
+LANG_ES Mi madre está experimentando pérdida de apetito últimamente
+LANG_ES Me recetaron analgésicos para el dolor de espalda la semana pasada
+LANG_ES Mi abuela experimentó mareos después de tomar nuevos medicamentos esta mañana
+LANG_ES Me han diagnosticado presión arterial alta hace un año
+LANG_ES Mi esposo tuvo dolor de cabeza ayer
+LANG_ES Me recetaron antibióticos para mi infección de oído esta tarde
+LANG_ES Mi padre ha estado experimentando dolor de espalda ocasionalmente durante algunas semanas
+LANG_ES Mi hermano mencionó dolor de cabeza durante su última visita al médico
+LANG_ES Me aconsejaron realizar un electrocardiograma para evaluar mi corazón
+LANG_ES Mi primo fue diagnosticado con diabetes hace un mes
+LANG_ES Me realizarán una radiografía la próxima semana
+LANG_ES Mi hermana sufrió dolor de estómago después de comer mariscos anoche
+LANG_ES Me han recomendado hacer yoga diariamente para reducir mi estrés
+LANG_ES Me recetaron antihistamínicos para la alergia la semana pasada
+LANG_ES Mi hijo ha estado quejándose de dolor de garganta últimamente durante los últimos días
+LANG_ES Mi abuela experimentó fatiga después de tomar su medicamento esta mañana
+LANG_ES Me han diagnosticado migrañas hace dos años
+LANG_ES Mi esposo tuvo dolor de estómago ayer
+LANG_ES Me recetaron antiinflamatorios para la inflamación de la rodilla esta tarde
+LANG_ES Mi padre ha estado experimentando dolor de cabeza ocasionalmente durante algunas semanas
+LANG_ES Mi hermano mencionó dolor de estómago durante su última visita al médico
+LANG_ES Me aconsejaron realizar una ecografía para examinar mi abdomen
+LANG_ES Mi primo fue diagnosticado con asma la semana pasada
+LANG_ES Me realizarán una resonancia magnética la próxima semana
+LANG_ES Mi hermana sufrió dolor de cabeza después de comer chocolate anoche
+LANG_ES Me han recomendado hacer natación tres veces por semana para fortalecer mi espalda
+LANG_ES Me recetaron analgésicos para el dolor de cabeza la semana pasada
+LANG_ES Mi hijo ha estado quejándose de dolor de estómago últimamente durante los últimos días
+LANG_ES Mi abuela experimentó mareos después de tomar nuevos medicamentos esta mañana
+LANG_ES Me han diagnosticado presión arterial alta hace un año
+LANG_ES Mi esposo tuvo dolor de cabeza ayer
+LANG_ES Me recetaron antibióticos para mi infección de oído esta tarde
+LANG_ES Mi padre ha estado experimentando dolor de espalda ocasionalmente durante algunas semanas
+LANG_ES Mi hermano mencionó dolor de cabeza durante su última visita al médico
+LANG_ES Me aconsejaron realizar un electrocardiograma para evaluar mi corazón
+LANG_ES Mi primo fue diagnosticado con diabetes hace un mes
+LANG_ES Me realizarán una radiografía la próxima semana
+LANG_ES Mi hermana sufrió dolor de estómago después de comer mariscos anoche
+LANG_ES Me han recomendado hacer yoga diariamente para reducir mi estrés
+LANG_ES Me recetaron antihistamínicos para la alergia la semana pasada
+LANG_ES Mi hijo ha estado quejándose de dolor de garganta últimamente durante los últimos días
+LANG_ES Mi abuela experimentó fatiga después de tomar su medicamento esta mañana
+LANG_ES Me han diagnosticado migrañas hace dos años
+LANG_ES Mi esposo tuvo dolor de estómago ayer
+LANG_ES Me recetaron antiinflamatorios para la inflamación de la rodilla esta tarde
+LANG_ES Mi padre ha estado experimentando dolor de cabeza ocasionalmente durante algunas semanas
+LANG_ES Mi hermano mencionó dolor de estómago durante su última visita al médico
+LANG_ES Me aconsejaron realizar una ecografía para examinar mi abdomen
+LANG_ES Mi primo fue diagnosticado con asma la semana pasada
+LANG_ES Me realizarán una resonancia magnética la próxima semana
+LANG_ES Mi hermana sufrió dolor de cabeza después de comer chocolate anoche
+LANG_ES Me han recomendado hacer natación tres veces por semana para fortalecer mi espalda
+LANG_ES Me recetaron analgésicos para el dolor de cabeza la semana pasada
+LANG_ES Mi hijo ha estado quejándose de dolor de estómago últimamente durante los últimos días
+LANG_ES Mi abuela experimentó mareos después de tomar nuevos medicamentos esta mañana
+LANG_ES Me han diagnosticado presión arterial alta hace un año
+LANG_ES Mi esposo tuvo dolor de cabeza ayer
+LANG_ES Me recetaron antibióticos para mi infección de oído esta tarde
+LANG_ES Mi padre ha estado experimentando dolor de espalda ocasionalmente durante algunas semanas
+LANG_ES Mi hermano mencionó dolor de cabeza durante su última visita al médico
+LANG_ES Me aconsejaron realizar un electrocardiograma para evaluar mi corazón
+LANG_ES Mi primo fue diagnosticado con diabetes hace un mes
+LANG_ES Me realizarán una radiografía la próxima semana
+LANG_ES Real Madrid se encuentra en una posición dominante en el partido de la La Liga contra Barcelona .
+LANG_ES Qué golazo de Messi , un verdadero espectáculo para los aficionados .
+LANG_ES Cristiano Ronaldo dispara desde fuera del área, pero el Oblak realiza una parada espectacular .
+LANG_ES Martínez Munuera muestra una tarjeta amarilla a Casemiro por una falta dura .
+LANG_ES El viento está afectando el juego en el Santiago Bernabéu .
+LANG_ES Zidane realiza un cambio táctico para intentar cambiar el rumbo del partido .
+LANG_ES Qué regate de Iniesta , dejando atrás a dos defensores rivales .
+LANG_ES Manchester City empata el partido con un gol en el último minuto contra Liverpool .
+LANG_ES Mbappé sufre una lesión muscular y es sustituido por Di María .
+LANG_ES ¡Qué paradón de Ter Stegen para mantener a Bayern Munich en el partido!
+LANG_ES Juventus defiende con solidez ante los constantes ataques de Inter de Milán .
+LANG_ES Hazard asiste a Benzema , quien marca el gol de la victoria para Real Madrid .
+LANG_ES Taylor señala un fuera de juego en contra de Kane .
+LANG_ES El sol brilla en el Camp Nou para este emocionante partido de la Copa del Rey .
+LANG_ES Guardiola muestra su frustración en la banda tras un gol encajado por su equipo .
+LANG_ES PSG remonta un 0-2 en un emocionante partido contra Marseille .
+LANG_ES Salah realiza un regate impresionante, dejando a los defensores rivales sin opciones .
+LANG_ES Borussia Dortmund se lleva la Bundesliga con una 3-1 victoria sobre Bayern Munich .
+LANG_ES Pogba recibe una tarjeta roja por una entrada peligrosa en el mediocampo .
+LANG_ES El granizo está dificultando el juego en el Stamford Bridge .
+LANG_ES Simeone realiza un cambio táctico para intentar revertir la situación en el partido .
+LANG_ES Qué jugada tan elaborada por Atletico Madrid , mostrando su calidad en el Champions League .
+LANG_ES De Bruyne dispara desde larga distancia, pero el balón se va desviado por poco .
+LANG_ES AC Milan empata el partido en los últimos minutos con un gol de Ibrahimovic .
+LANG_ES Neymar sufre una lesión en el tobillo y es sustituido de inmediato .
+LANG_ES ¡Qué atajada increíble de Navas para mantener el marcador en cero!
+LANG_ES Chelsea defiende con uñas y dientes ante los ataques de Manchester United .
+LANG_ES Griezmann asiste a Suárez , quien marca el gol del empate para Barcelona .
+LANG_ES Oliver muestra una tarjeta roja directa a Ramos por una falta violenta .
+LANG_ES El neblina está descendiendo sobre el Anfield , dificultando la visibilidad .
+LANG_ES Klopp celebra efusivamente el gol de la victoria de su equipo en el Premier League .
+LANG_ES Bayern Munich remonta un 0-3 en un partido memorable contra Borussia Dortmund .
+LANG_ES Aguero realiza un regate impresionante en el área rival, pero su disparo es bloqueado por la defensa .
+LANG_ES Inter de Milán se proclama campeón de la Serie A tras una 2-1 victoria sobre Juventus .
+LANG_ES Modric recibe una tarjeta amarilla por una falta táctica en el mediocampo .
+LANG_ES El viento fuerte está afectando los pases en este partido de la Europa League .
+LANG_ES Mourinho muestra su descontento con el rendimiento de su equipo durante la primera mitad .
+LANG_ES Qué golazo de Ronaldo , una obra maestra que deja sin opciones al rival .
+LANG_ES Liverpool empata el partido en los últimos minutos con un gol de Mane .
+LANG_ES Hazard sufre una lesión en el muslo y es sustituido por Asensio .
+LANG_ES ¡Qué atajada crucial de Courtois para mantener a Real Madrid en el partido!
+LANG_ES Manchester City domina el juego en la segunda mitad contra Arsenal .
+LANG_ES De Jong asiste a Messi , quien marca el gol de la victoria para Barcelona .
+LANG_ES González González muestra una tarjeta roja directa a Vidal por una agresión flagrante .
+LANG_ES El calor intenso está afectando el rendimiento de los jugadores en este partido de la Copa Libertadores .
+LANG_ES Ancelotti realiza un cambio táctico para reforzar la defensa de su equipo .
+LANG_ES Qué regate impresionante de Neymar , dejando atrás a varios defensores con su habilidad .
+LANG_ES Chelsea empata el partido con un gol en el último minuto contra Tottenham Hotspur .
+LANG_ES Salah recibe una tarjeta amarilla por simular una falta en el área rival .
+LANG_ES Mbappé sufre una lesión en el hombro y es sustituido por Di María .
+LANG_ES ¡Qué paradón de Neuer para evitar el gol en propia puerta!
+LANG_ES Real Madrid domina el juego en la primera mitad contra Atletico Madrid .
+LANG_ES De Bruyne dispara desde larga distancia, pero el balón se estrella en el travesaño .
+LANG_ES Barcelona remonta un 0-2 en un emocionante partido contra Real Madrid .
+LANG_ES Ronaldo sufre una lesión en el tobillo y es sustituido de inmediato .
+LANG_ES ¡Qué atajada espectacular de Ter Stegen para mantener a Barcelona en el partido!
+LANG_ES Manchester United defiende con solidez ante los constantes ataques de Manchester City .
+LANG_ES Suárez asiste a Griezmann , quien marca el gol de la victoria para Barcelona .
+LANG_ES Taylor señala un fuera de juego en contra de Rashford .
+LANG_ES El lluvia está afectando el juego en el Old Trafford .
+LANG_ES Guardiola muestra su frustración en la banda tras un gol encajado por su equipo .
+LANG_ES PSG empata el partido en los últimos minutos con un gol de Mbappé .
+LANG_ES Hazard realiza un regate impresionante, dejando a los defensores rivales sin opciones .
+LANG_ES Borussia Dortmund se lleva la Bundesliga con una 3-1 victoria sobre Bayern Munich .
+LANG_ES Pogba recibe una tarjeta roja por una entrada peligrosa en el mediocampo .
+LANG_ES El granizo está dificultando el juego en el Signal Iduna Park .
+LANG_ES Simeone realiza un cambio táctico para intentar revertir la situación en el partido .
+LANG_ES Qué jugada tan elaborada por Real Madrid , mostrando su calidad en la Champions League .
+LANG_ES De Bruyne dispara desde larga distancia, pero el balón se va desviado por poco .
+LANG_ES AC Milan empata el partido en los últimos minutos con un gol de Ibrahimovic .
+LANG_ES Neymar sufre una lesión en el tobillo y es sustituido de inmediato .
+LANG_ES ¡Qué atajada increíble de Navas para mantener el marcador en cero!
+LANG_ES Chelsea defiende con uñas y dientes ante los ataques de Manchester United .
+LANG_ES Griezmann asiste a Suárez , quien marca el gol del empate para Barcelona .
+LANG_ES Oliver muestra una tarjeta roja directa a Ramos por una falta violenta .
+LANG_ES El neblina está descendiendo sobre el Wanda Metropolitano , dificultando la visibilidad .
+LANG_ES Klopp celebra efusivamente el gol de la victoria de su equipo en el Premier League .
+LANG_ES Bayern Munich remonta un 0-3 en un partido memorable contra Borussia Dortmund .
+LANG_ES Aguero realiza un regate impresionante en el área rival, pero su disparo es bloqueado por la defensa .
+LANG_ES Inter de Milán se proclama campeón de la Serie A tras una 2-1 victoria sobre Juventus .
+LANG_ES Modric recibe una tarjeta amarilla por una falta táctica en el mediocampo .
+LANG_ES El viento fuerte está afectando los pases en este partido de la Europa League .
+LANG_ES Mourinho muestra su descontento con el rendimiento de su equipo durante la primera mitad .
+LANG_ES Qué golazo de Ronaldo , una obra maestra que deja sin opciones al rival .
+LANG_ES Liverpool empata el partido en los últimos minutos con un gol de Mane .
+LANG_ES Hazard sufre una lesión en el muslo y es sustituido por Asensio .
+LANG_ES ¡Qué atajada crucial de Courtois para mantener a Real Madrid en el partido!
+LANG_ES Manchester City domina el juego en la segunda mitad contra Arsenal .
+LANG_ES De Jong asiste a Messi , quien marca el gol de la victoria para Barcelona .
+LANG_ES González González muestra una tarjeta roja directa a Vidal por una agresión flagrante .
+LANG_ES El calor intenso está afectando el rendimiento de los jugadores en este partido de la Copa Libertadores .
+LANG_ES Ancelotti realiza un cambio táctico para reforzar la defensa de su equipo .
+LANG_ES Qué regate impresionante de Neymar , dejando atrás a varios defensores con su habilidad .
+LANG_ES Chelsea empata el partido con un gol en el último minuto contra Tottenham Hotspur .
+LANG_ES Salah recibe una tarjeta amarilla por simular una falta en el área rival .
+LANG_ES Mbappé sufre una lesión en el hombro y es sustituido por Di María .
+LANG_ES ¡Qué paradón de Neuer para evitar el gol en propia puerta!
+LANG_ES Real Madrid domina el juego en la primera mitad contra Atletico Madrid .
+LANG_ES De Bruyne dispara desde larga distancia, pero el balón se estrella en el travesaño .
+LANG_ES Barcelona remonta un 0-2 en un emocionante partido contra Real Madrid .
+LANG_ES Ronaldo sufre una lesión en el tobillo y es sustituido de inmediato .
+LANG_ES ¡Qué atajada espectacular de Ter Stegen para mantener a Barcelona en el partido!
+LANG_ES Manchester United defiende con solidez ante los constantes ataques de Manchester City .
+LANG_ES Suárez asiste a Griezmann , quien marca el gol de la victoria para Barcelona .
+LANG_ES Taylor señala un fuera de juego en contra de Rashford .
+LANG_ES El lluvia está afectando el juego en el Old Trafford .
+LANG_ES Guardiola muestra su frustración en la banda tras un gol encajado por su equipo .
+LANG_ES PSG empata el partido en los últimos minutos con un gol de Mbappé .
+LANG_ES Hazard realiza un regate impresionante, dejando a los defensores rivales sin opciones .
+LANG_ES Borussia Dortmund se lleva la Bundesliga con una 3-1 victoria sobre Bayern Munich .
+LANG_ES Pogba recibe una tarjeta roja por una entrada peligrosa en el mediocampo .
+LANG_ES El granizo está dificultando el juego en el Signal Iduna Park .
+LANG_ES Simeone realiza un cambio táctico para intentar revertir la situación en el partido .
+LANG_ES Qué jugada tan elaborada por Real Madrid , mostrando su calidad en la Champions League .
+LANG_ES De Bruyne dispara desde larga distancia, pero el balón se va desviado por poco .
+LANG_ES Comenzar una sesión de entrenamiento de fuerza en el gimnasio a las 8:00 a . m . .
+LANG_ES Actualizar mi peso en la aplicación de fitness .
+LANG_ES Programar una sesión de yoga para mañana .
+LANG_ES Rastrear mi progreso en flexiones .
+LANG_ES Establecer una meta de correr tres veces a la semana .
+LANG_ES Analizar mi plan de entrenamiento actual .
+LANG_ES Ver los ejercicios recomendados para entrenamiento de cardio .
+LANG_ES Generar un informe de ganancia de músculo de la última semana .
+LANG_ES Monitorear mi ritmo cardíaco durante el entrenamiento de intervalos .
+LANG_ES Completar mi rutina de ejercicios para hoy .
+LANG_ES Pausar la clase de spinning por un momento .
+LANG_ES Reanudar la sesión de pilates después de un descanso corto .
+LANG_ES Detener el entrenamiento de boxeo debido a una lesión .
+LANG_ES Aumentar la resistencia en la máquina de remo .
+LANG_ES Disminuir la velocidad en la carrera para un enfriamiento .
+LANG_ES Registrar mi porcentaje de grasa corporal .
+LANG_ES Medir mi distancia recorrida en la pista de atletismo .
+LANG_ES Notificar mi progreso en levantamiento de pesas .
+LANG_ES Iniciar una clase de zumba en el parque a las 6:00 p . m . .
+LANG_ES Actualizar mi altura en la aplicación de fitness .
+LANG_ES Programar una sesión de natación para el próximo sábado .
+LANG_ES Rastrear mi progreso en sentadillas .
+LANG_ES Establecer una meta de flexiones cuatro veces a la semana .
+LANG_ES Analizar mi plan de entrenamiento semanal .
+LANG_ES Ver los ejercicios recomendados para entrenamiento de fuerza .
+LANG_ES Generar un informe de pérdida de peso del último mes .
+LANG_ES Monitorear mi frecuencia cardíaca durante el entrenamiento de resistencia .
+LANG_ES Completar mi rutina de ejercicios para esta tarde .
+LANG_ES Pausar la clase de spinning para tomar agua .
+LANG_ES Reanudar la sesión de yoga después de un breve descanso .
+LANG_ES Detener el entrenamiento de crossfit por fatiga extrema .
+LANG_ES Aumentar la inclinación en la cinta de correr .
+LANG_ES Disminuir la resistencia en la bicicleta estática para enfriar .
+LANG_ES Registrar mi circunferencia de cintura .
+LANG_ES Medir mi tiempo de carrera en la pista de atletismo .
+LANG_ES Notificar mi avance en flexiones .
+LANG_ES Iniciar una clase de baile en el estudio a las 7:30 p . m . .
+LANG_ES Actualizar mi edad en la aplicación de fitness .
+LANG_ES Programar una sesión de pilates para el próximo lunes .
+LANG_ES Rastrear mi progreso en abdominales .
+LANG_ES Establecer una meta de ciclismo dos veces a la semana .
+LANG_ES Analizar mi plan de entrenamiento mensual .
+LANG_ES Ver los ejercicios recomendados para entrenamiento de flexibilidad .
+LANG_ES Generar un informe de ganancia de fuerza del último trimestre .
+LANG_ES Monitorear mi nivel de energía durante el entrenamiento de cardio .
+LANG_ES Completar mi rutina de ejercicios para esta mañana .
+LANG_ES Pausar la clase de boxeo para estirar los músculos .
+LANG_ES Reanudar la sesión de spinning después de un breve descanso .
+LANG_ES Detener el entrenamiento de natación debido a una emergencia .
+LANG_ES Aumentar la velocidad en la carrera .
+LANG_ES Disminuir la resistencia en la máquina elíptica para enfriar .
+LANG_ES Registrar mi porcentaje de masa muscular .
+LANG_ES Medir mi distancia nadada en la piscina .
+LANG_ES Notificar mi progreso en levantamiento de pesas .
+LANG_ES Iniciar una clase de kickboxing en el gimnasio a las 5:00 p . m . .
+LANG_ES Actualizar mi género en la aplicación de fitness .
+LANG_ES Programar una sesión de escalada para el próximo viernes .
+LANG_ES Rastrear mi progreso en flexiones de brazos .
+LANG_ES Establecer una meta de running cinco veces a la semana .
+LANG_ES Analizar mi plan de entrenamiento anual .
+LANG_ES Ver los ejercicios recomendados para entrenamiento de resistencia .
+LANG_ES Generar un informe de pérdida de grasa corporal del último año .
+LANG_ES Monitorear mi presión arterial durante el entrenamiento de fuerza .
+LANG_ES Completar mi rutina de ejercicios para esta noche .
+LANG_ES Pausar la clase de yoga para meditar un momento .
+LANG_ES Reanudar la sesión de pilates después de un breve descanso .
+LANG_ES Detener el entrenamiento de crossfit por una lesión repentina .
+LANG_ES Aumentar la resistencia en la bicicleta de spinning .
+LANG_ES Disminuir la velocidad en la caminata para enfriar .
+LANG_ES Registrar mi frecuencia cardíaca en reposo .
+LANG_ES Medir mi tiempo de sprint en la pista de atletismo .
+LANG_ES Notificar mi avance en flexiones de brazos .
+LANG_ES Iniciar una clase de baile en el parque a las 6:30 p . m . .
+LANG_ES Actualizar mi dirección en la aplicación de fitness .
+LANG_ES Programar una sesión de pilates para el próximo martes .
+LANG_ES Rastrear mi progreso en plancha abdominal .
+LANG_ES Establecer una meta de ciclismo tres veces a la semana .
+LANG_ES Analizar mi plan de entrenamiento trimestral .
+LANG_ES Ver los ejercicios recomendados para entrenamiento de flexibilidad .
+LANG_ES Generar un informe de ganancia de resistencia del último mes .
+LANG_ES Monitorear mi nivel de fatiga durante el entrenamiento de cardio .
+LANG_ES Completar mi rutina de ejercicios para esta tarde .
+LANG_ES Pausar la clase de boxeo para hidratarme .
+LANG_ES Reanudar la sesión de spinning después de un descanso breve .
+LANG_ES Detener el entrenamiento de natación por mal tiempo .
+LANG_ES Aumentar la velocidad en la carrera .
+LANG_ES Disminuir la resistencia en la máquina de escalada para enfriar .
+LANG_ES Registrar mi porcentaje de masa grasa .
+LANG_ES Medir mi distancia recorrida en la pista de atletismo .
+LANG_ES Notificar mi progreso en flexiones de brazos .
+LANG_ES ¡Hola! ¿Podrías subir el brillo de la lámpara en la sala ?
+LANG_ES ¿Qué tal si reproduces la playlist en la altavoz del dormitorio ?
+LANG_ES Enciende el aire acondicionado en la cocina , por favor .
+LANG_ES Voy a enviar un mensaje a mamá .
+LANG_ES ¿Cuál es la velocidad del ventilador en la habitación ?
+LANG_ES Programa un recordatorio para la mañana a las 9 a . m . .
+LANG_ES Bloquea la puerta principal antes de salir, por favor .
+LANG_ES ¿Podrías disminuir la temperatura del termostato en la sala de estar ?
+LANG_ES Reproduce la canción Despacito en la sistema de sonido .
+LANG_ES Voy a enviar un correo electrónico a colega sobre el informe trimestral .
+LANG_ES ¿Qué tal si activamos la calefacción en la oficina ?
+LANG_ES Por favor, sube el volumen de la televisor en la sala .
+LANG_ES Configura un evento para la próximo viernes a las 6 p . m . .
+LANG_ES ¿Podrías desbloquear la puerta trasera para que pueda entrar ?
+LANG_ES ¡Qué día tan soleado ! ¿Cuál es la temperatura actual en la jardín ?
+LANG_ES Pausa la película que estoy viendo en la televisión .
+LANG_ES ¿Podrías aumentar el brillo de la lámpara en la sala ?
+LANG_ES Voy a enviar un mensaje a amigo para quedar mañana .
+LANG_ES ¿Qué hora es la más adecuada para programar la alarma en la despertador ?
+LANG_ES Cierra las persianas de la habitación antes de que anochezca .
+LANG_ES ¿Podrías disminuir la velocidad del ventilador en la sala ?
+LANG_ES Por favor, reproduce la lista de reproducción Canciones relajantes en la altavoces .
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES Voy a enviar un correo electrónico a cliente con el informe mensual .
+LANG_ES ¿Qué temperatura tiene el termostato en la sala de estar ?
+LANG_ES Programa un recordatorio para la reunión de equipo a las 10 a . m . .
+LANG_ES ¿Podrías cerrar la puerta principal antes de irnos ?
+LANG_ES Reproduce la canción Shape of You en la sistema de sonido .
+LANG_ES Voy a enviar un mensaje a hermana para felicitarla por su cumpleaños .
+LANG_ES ¿Podrías aumentar el volumen de la televisor en la sala ?
+LANG_ES Configura un evento para la próxima semana a las 7 p . m . .
+LANG_ES ¿Podrías desbloquear la puerta trasera para que pueda entrar ?
+LANG_ES ¡Qué día tan soleado ! ¿Cuál es la temperatura actual en la jardín ?
+LANG_ES Pausa la película que estoy viendo en la televisión .
+LANG_ES ¿Podrías aumentar el brillo de la lámpara en la sala ?
+LANG_ES Voy a enviar un mensaje a amigo para quedar mañana .
+LANG_ES ¿Qué hora es la más adecuada para programar la alarma en la despertador ?
+LANG_ES Cierra las persianas de la habitación antes de que anochezca .
+LANG_ES ¿Podrías disminuir la velocidad del ventilador en la sala ?
+LANG_ES Por favor, reproduce la lista de reproducción Canciones relajantes en la altavoces .
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES Voy a enviar un correo electrónico a cliente con el informe mensual .
+LANG_ES ¿Qué temperatura tiene el termostato en la sala de estar ?
+LANG_ES Programa un recordatorio para la reunión de equipo a las 10 a . m . .
+LANG_ES ¿Podrías cerrar la puerta principal antes de irnos ?
+LANG_ES Reproduce la canción Shape of You en la sistema de sonido .
+LANG_ES Voy a enviar un mensaje a hermana para felicitarla por su cumpleaños .
+LANG_ES ¿Podrías aumentar el volumen de la televisor en la sala ?
+LANG_ES Configura un evento para la próxima semana a las 7 p . m . .
+LANG_ES ¿Podrías desbloquear la puerta trasera para que pueda entrar ?
+LANG_ES ¡Qué día tan soleado ! ¿Cuál es la temperatura actual en la jardín ?
+LANG_ES Pausa la película que estoy viendo en la televisión .
+LANG_ES ¿Podrías aumentar el brillo de la lámpara en la sala ?
+LANG_ES Voy a enviar un mensaje a amigo para quedar mañana .
+LANG_ES ¿Qué hora es la más adecuada para programar la alarma en la despertador ?
+LANG_ES Cierra las persianas de la habitación antes de que anochezca .
+LANG_ES ¿Podrías disminuir la velocidad del ventilador en la sala ?
+LANG_ES Por favor, reproduce la lista de reproducción Canciones relajantes en la altavoces .
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES Voy a enviar un correo electrónico a cliente con el informe mensual .
+LANG_ES ¿Qué temperatura tiene el termostato en la sala de estar ?
+LANG_ES Programa un recordatorio para la reunión de equipo a las 10 a . m . .
+LANG_ES ¿Podrías cerrar la puerta principal antes de irnos ?
+LANG_ES Reproduce la canción Shape of You en la sistema de sonido .
+LANG_ES Voy a enviar un mensaje a hermana para felicitarla por su cumpleaños .
+LANG_ES ¿Podrías aumentar el volumen de la televisor en la sala ?
+LANG_ES Configura un evento para la próxima semana a las 7 p . m . .
+LANG_ES ¿Podrías desbloquear la puerta trasera para que pueda entrar ?
+LANG_ES ¡Qué día tan soleado ! ¿Cuál es la temperatura actual en la jardín ?
+LANG_ES Pausa la película que estoy viendo en la televisión .
+LANG_ES ¿Podrías aumentar el brillo de la lámpara en la sala ?
+LANG_ES Voy a enviar un mensaje a amigo para quedar mañana .
+LANG_ES ¿Qué hora es la más adecuada para programar la alarma en la despertador ?
+LANG_ES Cierra las persianas de la habitación antes de que anochezca .
+LANG_ES ¿Podrías disminuir la velocidad del ventilador en la sala ?
+LANG_ES Por favor, reproduce la lista de reproducción Canciones relajantes en la altavoces .
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES Voy a enviar un correo electrónico a cliente con el informe mensual .
+LANG_ES ¿Qué temperatura tiene el termostato en la sala de estar ?
+LANG_ES Programa un recordatorio para la reunión de equipo a las 10 a . m . .
+LANG_ES ¿Podrías cerrar la puerta principal antes de irnos ?
+LANG_ES Reproduce la canción Shape of You en la sistema de sonido .
+LANG_ES Voy a enviar un mensaje a hermana para felicitarla por su cumpleaños .
+LANG_ES ¿Podrías aumentar el volumen de la televisor en la sala ?
+LANG_ES Configura un evento para la próxima semana a las 7 p . m . .
+LANG_ES ¿Podrías desbloquear la puerta trasera para que pueda entrar ?
+LANG_ES ¡Qué día tan soleado ! ¿Cuál es la temperatura actual en la jardín ?
+LANG_ES Pausa la película que estoy viendo en la televisión .
+LANG_ES ¿Podrías aumentar el brillo de la lámpara en la sala ?
+LANG_ES Voy a enviar un mensaje a amigo para quedar mañana .
+LANG_ES ¿Qué hora es la más adecuada para programar la alarma en la despertador ?
+LANG_ES Cierra las persianas de la habitación antes de que anochezca .
+LANG_ES ¿Podrías disminuir la velocidad del ventilador en la sala ?
+LANG_ES Por favor, reproduce la lista de reproducción Canciones relajantes en la altavoces .
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES Voy a enviar un correo electrónico a cliente con el informe mensual .
+LANG_ES ¿Qué temperatura tiene el termostato en la sala de estar ?
+LANG_ES Programa un recordatorio para la reunión de equipo a las 10 a . m . .
+LANG_ES ¿Podrías cerrar la puerta principal antes de irnos ?
+LANG_ES Reproduce la canción Shape of You en la sistema de sonido .
+LANG_ES Voy a enviar un mensaje a hermana para felicitarla por su cumpleaños .
+LANG_ES ¿Podrías aumentar el volumen de la televisor en la sala ?
+LANG_ES Configura un evento para la próxima semana a las 7 p . m . .
+LANG_ES ¿Podrías desbloquear la puerta trasera para que pueda entrar ?
+LANG_ES ¡Qué día tan soleado ! ¿Cuál es la temperatura actual en la jardín ?
+LANG_ES Pausa la película que estoy viendo en la televisión .
+LANG_ES ¿Podrías aumentar el brillo de la lámpara en la sala ?
+LANG_ES Voy a enviar un mensaje a amigo para quedar mañana .
+LANG_ES ¿Qué hora es la más adecuada para programar la alarma en la despertador ?
+LANG_ES Cierra las persianas de la habitación antes de que anochezca .
+LANG_ES ¿Podrías disminuir la velocidad del ventilador en la sala ?
+LANG_ES Por favor, reproduce la lista de reproducción Canciones relajantes en la altavoces .
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES Voy a enviar un correo electrónico a cliente con el informe mensual .
+LANG_ES ¿Qué temperatura tiene el termostato en la sala de estar ?
+LANG_ES Programa un recordatorio para la reunión de equipo a las 10 a . m . .
+LANG_ES ¿Podrías cerrar la puerta principal antes de irnos ?
+LANG_ES Reproduce la canción Shape of You en la sistema de sonido .
+LANG_ES Voy a enviar un mensaje a hermana para felicitarla por su cumpleaños .
+LANG_ES ¿Podrías aumentar el volumen de la televisor en la sala ?
+LANG_ES Configura un evento para la próxima semana a las 7 p . m . .
+LANG_ES ¿Podrías desbloquear la puerta trasera para que pueda entrar ?
+LANG_ES ¡Qué día tan soleado ! ¿Cuál es la temperatura actual en la jardín ?
+LANG_ES Pausa la película que estoy viendo en la televisión .
+LANG_ES ¿Podrías aumentar el brillo de la lámpara en la sala ?
+LANG_ES Voy a enviar un mensaje a amigo para quedar mañana .
+LANG_ES Reservar un vuelo a París para el próximo viernes .
+LANG_ES ¡Qué bonito es el Coliseo en Roma !
+LANG_ES Actualizar mi itinerario con una visita a la Sagrada Familia .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en Madrid ?
+LANG_ES Deberías recordarme que renueve mi pasaporte .
+LANG_ES ¿Cómo está el clima en Cancún para la próxima semana ?
+LANG_ES Confirmar mi billete de clase ejecutiva para el vuelo a Barcelona .
+LANG_ES ¡ La playa en Miami es increíble!
+LANG_ES Reservar una habitación de hotel en Tokio para el próximo mes .
+LANG_ES ¿Cuál es el estado de mi vuelo a Buenos Aires ?
+LANG_ES He reservado un tren a Berlín para el próximo sábado .
+LANG_ES ¡ El aeropuerto en Londres es enorme!
+LANG_ES Establecer una alerta de viaje para Tokio el próximo .
+LANG_ES ¿Podrías recomendar algunos destinos de playa para el próximo verano ?
+LANG_ES Notificarme si hay restricciones de viaje para México .
+LANG_ES ¡Qué clima tan agradable en Barcelona para este fin de semana !
+LANG_ES Cancelar mi reserva de hotel en París para la próxima semana .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en Nueva York ?
+LANG_ES Por favor, recuérdame que renueve mi pasaporte .
+LANG_ES Verificar el estado de mi vuelo a Madrid .
+LANG_ES Reservar un alojamiento en Berlín para el próximo mes .
+LANG_ES ¿Cómo está el clima en Río de Janeiro para la próxima semana ?
+LANG_ES Confirmar mi billete de clase turista para el vuelo a Madrid .
+LANG_ES ¡ La playa en Cancún es paradisíaca!
+LANG_ES Actualizar mi itinerario con una visita a el Museo del Louvre .
+LANG_ES ¿Podrías recomendar algunos destinos de montaña para el próximo invierno ?
+LANG_ES Por favor, recuérdame que renueve mi visado .
+LANG_ES Notificarme si hay restricciones de viaje para China .
+LANG_ES ¡Qué clima tan agradable en Sydney para este fin de semana !
+LANG_ES Cancelar mi reserva de hotel en Barcelona para la próxima semana .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en París ?
+LANG_ES Por favor, recuérdame que renueve mi seguro de viaje .
+LANG_ES Verificar el estado de mi vuelo a Tokio .
+LANG_ES Reservar un alojamiento en Ámsterdam para el próximo mes .
+LANG_ES ¿Cómo está el clima en Bali para la próxima semana ?
+LANG_ES Confirmar mi billete de clase ejecutiva para el vuelo a Roma .
+LANG_ES ¡ La playa en Miami es increíble!
+LANG_ES Actualizar mi itinerario con una visita a la Torre Eiffel .
+LANG_ES ¿Podrías recomendar algunos destinos de playa para el próximo verano ?
+LANG_ES Por favor, recuérdame que renueve mi pasaporte .
+LANG_ES Notificarme si hay restricciones de viaje para Japón .
+LANG_ES ¡Qué clima tan agradable en Barcelona para este fin de semana !
+LANG_ES Cancelar mi reserva de hotel en Tokio para la próxima semana .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en Barcelona ?
+LANG_ES Por favor, recuérdame que renueve mi pasaporte .
+LANG_ES Verificar el estado de mi vuelo a Nueva York .
+LANG_ES Reservar un alojamiento en Berlín para el próximo mes .
+LANG_ES ¿Cómo está el clima en Río de Janeiro para la próxima semana ?
+LANG_ES Confirmar mi billete de clase turista para el vuelo a Madrid .
+LANG_ES ¡ La playa en Cancún es paradisíaca!
+LANG_ES Actualizar mi itinerario con una visita a el Museo del Louvre .
+LANG_ES ¿Podrías recomendar algunos destinos de montaña para el próximo invierno ?
+LANG_ES Por favor, recuérdame que renueve mi visado .
+LANG_ES Notificarme si hay restricciones de viaje para China .
+LANG_ES ¡Qué clima tan agradable en Sydney para este fin de semana !
+LANG_ES Cancelar mi reserva de hotel en Barcelona para la próxima semana .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en París ?
+LANG_ES Por favor, recuérdame que renueve mi seguro de viaje .
+LANG_ES Verificar el estado de mi vuelo a Tokio .
+LANG_ES Reservar un alojamiento en Ámsterdam para el próximo mes .
+LANG_ES ¿Cómo está el clima en Bali para la próxima semana ?
+LANG_ES Confirmar mi billete de clase ejecutiva para el vuelo a Roma .
+LANG_ES ¡ La playa en Miami es increíble!
+LANG_ES Actualizar mi itinerario con una visita a la Torre Eiffel .
+LANG_ES ¿Podrías recomendar algunos destinos de playa para el próximo verano ?
+LANG_ES Por favor, recuérdame que renueve mi pasaporte .
+LANG_ES Notificarme si hay restricciones de viaje para Japón .
+LANG_ES ¡Qué clima tan agradable en Barcelona para este fin de semana !
+LANG_ES Cancelar mi reserva de hotel en Tokio para la próxima semana .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en Barcelona ?
+LANG_ES Por favor, recuérdame que renueve mi pasaporte .
+LANG_ES Verificar el estado de mi vuelo a Nueva York .
+LANG_ES Reservar un alojamiento en Berlín para el próximo mes .
+LANG_ES ¿Cómo está el clima en Río de Janeiro para la próxima semana ?
+LANG_ES Confirmar mi billete de clase turista para el vuelo a Madrid .
+LANG_ES ¡ La playa en Cancún es paradisíaca!
+LANG_ES Actualizar mi itinerario con una visita a el Museo del Louvre .
+LANG_ES ¿Podrías recomendar algunos destinos de montaña para el próximo invierno ?
+LANG_ES Por favor, recuérdame que renueve mi visado .
+LANG_ES Notificarme si hay restricciones de viaje para China .
+LANG_ES ¡Qué clima tan agradable en Sydney para este fin de semana !
+LANG_ES Cancelar mi reserva de hotel en Barcelona para la próxima semana .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en París ?
+LANG_ES Por favor, recuérdame que renueve mi seguro de viaje .
+LANG_ES Verificar el estado de mi vuelo a Tokio .
+LANG_ES Reservar un alojamiento en Ámsterdam para el próximo mes .
+LANG_ES ¿Cómo está el clima en Bali para la próxima semana ?
+LANG_ES Confirmar mi billete de clase ejecutiva para el vuelo a Roma .
+LANG_ES ¡ La playa en Miami es increíble!
+LANG_ES Actualizar mi itinerario con una visita a la Torre Eiffel .
+LANG_ES ¿Podrías recomendar algunos destinos de playa para el próximo verano ?
+LANG_ES Por favor, recuérdame que renueve mi pasaporte .
+LANG_ES Notificarme si hay restricciones de viaje para Japón .
+LANG_ES ¡Qué clima tan agradable en Barcelona para este fin de semana !
+LANG_ES Cancelar mi reserva de hotel en Tokio para la próxima semana .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en Barcelona ?
+LANG_ES Por favor, recuérdame que renueve mi pasaporte .
+LANG_ES Verificar el estado de mi vuelo a Nueva York .
+LANG_ES Reservar un alojamiento en Berlín para el próximo mes .
+LANG_ES ¿Cómo está el clima en Río de Janeiro para la próxima semana ?
+LANG_ES Confirmar mi billete de clase turista para el vuelo a Madrid .
+LANG_ES ¡ La playa en Cancún es paradisíaca!
+LANG_ES Actualizar mi itinerario con una visita a el Museo del Louvre .
+LANG_ES ¿Podrías recomendar algunos destinos de montaña para el próximo invierno ?
+LANG_ES Por favor, recuérdame que renueve mi visado .
+LANG_ES Notificarme si hay restricciones de viaje para China .
+LANG_ES ¡Qué clima tan agradable en Sydney para este fin de semana !
+LANG_ES Cancelar mi reserva de hotel en Barcelona para la próxima semana .
+LANG_ES ¿Podrías sugerir algunos lugares para visitar en París ?
+LANG_ES Por favor, recuérdame que renueve mi seguro de viaje .
+LANG_ES Verificar el estado de mi vuelo a Tokio .
+LANG_ES Revisar el saldo de mi cuenta de ahorros .
+LANG_ES Transferir $200 a la cuenta corriente de mi cónyuge .
+LANG_ES Pagar la factura de $50 de mi tarjeta de crédito .
+LANG_ES Configurar alertas para notificar cuando mi saldo de inversión caiga por debajo de $1000 .
+LANG_ES Actualizar mi información de cuenta bancaria con los nuevos datos personales .
+LANG_ES Analizar mis gastos mensuales para identificar áreas de mejora financiera .
+LANG_ES Transferir €300 a mi cuenta de ahorros .
+LANG_ES Establecer alertas para recibir notificaciones sobre noticias financieras importantes .
+LANG_ES Revisar el rendimiento de mis inversiones en el último mes .
+LANG_ES Programar un pago automático de mi factura de servicios públicos .
+LANG_ES Cancelar la suscripción a una plataforma de inversión que ya no utilizo .
+LANG_ES Generar un informe financiero detallado de mis cuentas de inversión .
+LANG_ES Alertar a mi cónyuge sobre una transacción inusual en nuestra cuenta conjunta .
+LANG_ES Crear un aviso para recibir notificaciones cuando el precio de las acciones de XYZ fluctúe en más del 5% .
+LANG_ES Depositar ¥10000 en mi cuenta de ahorros .
+LANG_ES Retirar £200 en efectivo de mi cuenta corriente .
+LANG_ES Invertir $1000 en acciones de ABC .
+LANG_ES Ahorrar un €500 cada mes en mi fondo de emergencia .
+LANG_ES Gastar ¥3000 en compras mensuales .
+LANG_ES Monitorear mis activos financieros para evaluar su rendimiento .
+LANG_ES Notificar a mi cónyuge sobre el vencimiento de una factura pendiente .
+LANG_ES Convertir $50 a euros en mi cuenta de divisas .
+LANG_ES Intercambiar £100 por dólares en mi cuenta de cambio .
+LANG_ES Calcular el interés generado en mi cuenta de ahorros durante el último año .
+LANG_ES Predecir las tendencias del mercado bursátil para el próximo trimestre .
+LANG_ES Asesorar sobre las mejores inversiones a largo plazo para maximizar los rendimientos .
+LANG_ES Estimar los gastos mensuales futuros basados en el histórico de transacciones .
+LANG_ES Las noticias financieras informan sobre la caída en el precio de acciones de XYZ .
+LANG_ES Los análisis financieros destacan la volatilidad en el mercado de divisas .
+LANG_ES Los expertos financieros debaten sobre el impacto de las tasas de interés en la economía global .
+LANG_ES Los análisis de mercado muestran una disminución en el valor de acciones de ABC .
+LANG_ES Las proyecciones económicas sugieren un crecimiento sostenido en el sector de tecnología .
+LANG_ES Los informes financieros destacan la importancia de diversificar las inversiones .
+LANG_ES Los expertos en finanzas discuten sobre las implicaciones de la fluctuación en las tasas de cambio .
+LANG_ES Las últimas noticias señalan un aumento en el precio de acciones de DEF .
+LANG_ES Los expertos financieros debaten sobre las estrategias para mitigar el riesgo en las inversiones a corto plazo .
+LANG_ES Los análisis de mercado muestran un aumento en el valor de acciones de GHI .
+LANG_ES Las previsiones económicas indican un crecimiento en el sector de salud .
+LANG_ES Los informes financieros destacan la importancia de diversificar las carteras para reducir el riesgo .
+LANG_ES Los expertos en finanzas discuten sobre las implicaciones de la fluctuación en las tasas de interés en la economía global .
+LANG_ES Los análisis de mercado muestran una disminución en el valor de acciones de JKL .
+LANG_ES Las proyecciones económicas sugieren un crecimiento sostenido en el sector de turismo .
+LANG_ES Los informes financieros destacan la importancia de diversificar las inversiones .
+LANG_ES Los expertos en finanzas debaten sobre las implicaciones de la fluctuación en las tasas de cambio .
+LANG_ES Los análisis de mercado revelan una tendencia alcista en el sector de tecnología .
+LANG_ES Las últimas noticias señalan un aumento en el precio de acciones de MNO .
+LANG_ES Los expertos financieros debaten sobre las estrategias para mitigar el riesgo en las inversiones a largo plazo .
+LANG_ES Las noticias económicas informan sobre la volatilidad en el mercado de divisas .
+LANG_ES Los análisis de mercado muestran un aumento en el valor de acciones de PQR .
+LANG_ES Los informes financieros destacan la importancia de diversificar las carteras para reducir el riesgo .
+LANG_ES Los expertos en finanzas discuten sobre las implicaciones de la fluctuación en las tasas de interés en la economía global .
+LANG_ES Los análisis de mercado muestran una disminución en el valor de acciones de STU .
+LANG_ES Las proyecciones económicas sugieren un crecimiento sostenido en el sector de tecnología .
+LANG_ES Los informes financieros destacan la importancia de diversificar las inversiones .
+LANG_ES Los expertos en finanzas debaten sobre las implicaciones de la fluctuación en las tasas de cambio .
+LANG_ES Las últimas noticias señalan un aumento en el precio de acciones de VWX .
+LANG_ES Los expertos financieros debaten sobre las estrategias para mitigar el riesgo en las inversiones a corto plazo .
+LANG_ES Las proyecciones económicas indican un crecimiento en el sector de salud .
+LANG_ES Los informes financieros destacan la importancia de diversificar las carteras para reducir el riesgo .
+LANG_ES Los expertos en finanzas discuten sobre las implicaciones de la fluctuación en las tasas de interés en la economía global .
+LANG_ES Los análisis de mercado muestran una disminución en el valor de acciones de YZ .
+LANG_ES Las proyecciones económicas sugieren un crecimiento sostenido en el sector de turismo .
+LANG_ES Los informes financieros destacan la importancia de diversificar las inversiones .
+LANG_ES Los expertos en finanzas debaten sobre las implicaciones de la fluctuación en las tasas de cambio .
+LANG_ES Los análisis de mercado revelan una tendencia alcista en el sector de tecnología .
+LANG_ES Las últimas noticias señalan un aumento en el precio de acciones de XYZ .
+LANG_ES Los expertos financieros debaten sobre las estrategias para mitigar el riesgo en las inversiones a largo plazo .
+LANG_ES Las noticias económicas informan sobre la volatilidad en el mercado de divisas .
+LANG_ES Los análisis de mercado muestran un aumento en el valor de acciones de ABC .
+LANG_ES Los informes financieros destacan la importancia de diversificar las carteras para reducir el riesgo .
+LANG_ES Los expertos en finanzas discuten sobre las implicaciones de la fluctuación en las tasas de interés en la economía global .
+LANG_ES Los análisis de mercado muestran una disminución en el valor de acciones de DEF .
+LANG_ES Las proyecciones económicas sugieren un crecimiento sostenido en el sector de tecnología .
+LANG_ES Los informes financieros destacan la importancia de diversificar las inversiones .
+LANG_ES Los expertos en finanzas debaten sobre las implicaciones de la fluctuación en las tasas de cambio .
+LANG_ES Las últimas noticias señalan un aumento en el precio de acciones de GHI .
+LANG_ES Los expertos financieros debaten sobre las estrategias para mitigar el riesgo en las inversiones a corto plazo .
+LANG_ES Las proyecciones económicas indican un crecimiento en el sector de salud .
+LANG_ES Los informes financieros destacan la importancia de diversificar las carteras para reducir el riesgo .
+LANG_ES Los expertos en finanzas discuten sobre las implicaciones de la fluctuación en las tasas de interés en la economía global .

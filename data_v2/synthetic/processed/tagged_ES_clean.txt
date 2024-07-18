@@ -288,7 +288,7 @@ T1 T2 ¿Has visto mis llaves ? T79_T9 Desbloquea T107 la T79_T92 puerta trasera 
 T1 T2 ¡Qué frío hace aquí! T79_T9 Ajusta T107 la T79_T60_T104 temperatura T107 en la T79_T49 oficina T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Manda T107 un mensaje a T79_T110 amigo T107 con el contenido Nos vemos pronto . T76_T295 T0
 T1 T2 ¿Podrías T79_T9 cambiar T107 el T79_T60_T104 modo T107 de las T79_T92 luces T107 del T79_T49 comedor T107 ? T76_T92_T14 T0
-T1 T2 ¡Estoy emocionado por la fiesta! T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 7:00 PM T107 . T76_T81_T42 T0
+T1 T2 ¡Estoy emocionado por la fiesta! T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 7:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 habitación T107 . T76_T92_T14 T0
 T1 T2 ¿Qué T79_T60_T104 velocidad T107 tiene el ventilador en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Es hora de relajarse! T79_T9 Reproduce T107 música suave en la T79_T49 salón T107 . T76_T56_T14 T0
@@ -305,7 +305,7 @@ T1 T2 ¡Es hora de descansar! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 prefieres en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a bailar! T79_T9 Pon T107 música animada en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 habitación T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué bonito día! T79_T9 Activa T107 el T79_T60_T104 modo relajante T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 11:00 AM T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 encender T107 las T79_T92 luces T107 del T79_T49 comedor T107 ? T76_T92_T14 T0
@@ -317,9 +317,9 @@ T1 T2 ¡Es hora de dormir! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la T7
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 te gusta en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a T79_T9 tocar T107 música tranquila en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 cocina T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 9:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 9:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué día tan soleado! T79_T9 Activa T107 el T79_T60_T104 modo de fiesta T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
-T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 12:00 PM T107 . T76_T81_T135 T0
+T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 12:00 T1821 T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 apagar T107 las T79_T92 luces T107 del T79_T49 pasillo T107 ? T76_T92_T14 T0
 T1 T2 ¡Qué día tan ajetreado! T79_T9 Activa T107 el T79_T60_T104 modo silencioso T107 en la T79_T92 teléfono T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Reproduce T107 una lista de T79_T310 reproducción T107 animada en la T79_T49 sala T107 . T76_T56_T14 T0
@@ -329,7 +329,7 @@ T1 T2 ¡Es hora de descansar! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 prefieres en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a bailar! T79_T9 Pon T107 música animada en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 habitación T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué bonito día! T79_T9 Activa T107 el T79_T60_T104 modo relajante T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 11:00 AM T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 encender T107 las T79_T92 luces T107 del T79_T49 comedor T107 ? T76_T92_T14 T0
@@ -341,9 +341,9 @@ T1 T2 ¡Es hora de dormir! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la T7
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 te gusta en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a T79_T9 tocar T107 música tranquila en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 cocina T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 9:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 9:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué día tan soleado! T79_T9 Activa T107 el T79_T60_T104 modo de fiesta T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
-T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 12:00 PM T107 . T76_T81_T135 T0
+T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 12:00 T1821 T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 apagar T107 las T79_T92 luces T107 del T79_T49 pasillo T107 ? T76_T92_T14 T0
 T1 T2 ¡Qué día tan ajetreado! T79_T9 Activa T107 el T79_T60_T104 modo silencioso T107 en la T79_T92 teléfono T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Reproduce T107 una lista de T79_T310 reproducción T107 animada en la T79_T49 sala T107 . T76_T56_T14 T0
@@ -353,7 +353,7 @@ T1 T2 ¡Es hora de descansar! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 prefieres en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a bailar! T79_T9 Pon T107 música animada en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 habitación T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué bonito día! T79_T9 Activa T107 el T79_T60_T104 modo relajante T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 11:00 AM T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 encender T107 las T79_T92 luces T107 del T79_T49 comedor T107 ? T76_T92_T14 T0
@@ -365,9 +365,9 @@ T1 T2 ¡Es hora de dormir! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la T7
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 te gusta en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a T79_T9 tocar T107 música tranquila en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 cocina T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 9:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 9:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué día tan soleado! T79_T9 Activa T107 el T79_T60_T104 modo de fiesta T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
-T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 12:00 PM T107 . T76_T81_T135 T0
+T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 12:00 T1821 T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 apagar T107 las T79_T92 luces T107 del T79_T49 pasillo T107 ? T76_T92_T14 T0
 T1 T2 ¡Qué día tan ajetreado! T79_T9 Activa T107 el T79_T60_T104 modo silencioso T107 en la T79_T92 teléfono T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Reproduce T107 una lista de T79_T310 reproducción T107 animada en la T79_T49 sala T107 . T76_T56_T14 T0
@@ -377,7 +377,7 @@ T1 T2 ¡Es hora de descansar! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 prefieres en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a bailar! T79_T9 Pon T107 música animada en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 habitación T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué bonito día! T79_T9 Activa T107 el T79_T60_T104 modo relajante T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 11:00 AM T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 encender T107 las T79_T92 luces T107 del T79_T49 comedor T107 ? T76_T92_T14 T0
@@ -389,9 +389,9 @@ T1 T2 ¡Es hora de dormir! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la T7
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 te gusta en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a T79_T9 tocar T107 música tranquila en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 cocina T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 9:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 sábado T107 a las T79_T44 9:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué día tan soleado! T79_T9 Activa T107 el T79_T60_T104 modo de fiesta T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
-T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 12:00 PM T107 . T76_T81_T135 T0
+T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 12:00 T1821 T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 apagar T107 las T79_T92 luces T107 del T79_T49 pasillo T107 ? T76_T92_T14 T0
 T1 T2 ¡Qué día tan ajetreado! T79_T9 Activa T107 el T79_T60_T104 modo silencioso T107 en la T79_T92 teléfono T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Reproduce T107 una lista de T79_T310 reproducción T107 animada en la T79_T49 sala T107 . T76_T56_T14 T0
@@ -401,7 +401,7 @@ T1 T2 ¡Es hora de descansar! T79_T9 Baja T107 el T79_T60_T104 brillo T107 de la
 T1 T2 ¿Qué T79_T60_T104 temperatura T107 prefieres en la T79_T49 sala T107 ? T76_T225_T8 T0
 T1 T2 ¡Vamos a bailar! T79_T9 Pon T107 música animada en la T79_T49 sala T107 . T76_T56_T14 T0
 T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 ventana T107 de la T79_T49 habitación T107 ? T76_T92_T14 T0
-T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 PM T107 . T76_T81_T42 T0
+T1 T2 T79_T9 Establece T107 un T79_T42 evento T107 para la T79_T13 viernes T107 a las T79_T44 8:00 T1821 T107 . T76_T81_T42 T0
 T1 T2 ¡Qué bonito día! T79_T9 Activa T107 el T79_T60_T104 modo relajante T107 en la T79_T92 altavoces T107 del T79_T49 salón T107 . T76_T92_T14 T0
 T1 T2 T79_T9 Crea T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 11:00 AM T107 . T76_T81_T135 T0
 T1 T2 ¿Podrías T79_T9 encender T107 las T79_T92 luces T107 del T79_T49 comedor T107 ? T76_T92_T14 T0
@@ -18644,3 +18644,845 @@ T1 T2 ¿Cuál es la T79_T95 glucosa T107 actual del T79_T16_T17 paciente 901 T10
 T1 T2 Programa una consulta de T79_T290_T104 telemedicina T107 para el T79_T16_T17 paciente 678 T107 el T79_T13 próximo lunes T107 . T76_T46_T290 T0
 T1 T2 Envía el informe de T79_T10_T104 genética T107 al T79_T110 Dr . Sánchez T107 para revisión . T76_T97_T10 T0
 T1 T2 Configura el T79_T92 espectrofotómetro T107 a T79_T60_T102 longitud de onda de 600 nm T107 para la T79_T101_T7 sección de bioquímica T107 . T76_T113_T60 T0
+T1 T2 T79_T9 Revisar T107 el saldo de mi T79_T75_T104 cuenta de ahorros T107 . T76_T65_T300 T0
+T1 T2 T79_T9 Transferir T107 T79_T22 $200 T107 a mi T79_T75_T104 cuenta corriente T107 . T76_T63_T70 T0
+T1 T2 T79_T9 Pagar T107 la factura de T79_T22 $50 T107 a T79_T110 la compañía de electricidad T107 . T76_T274_T366 T0
+T1 T2 T79_T9 Configurar T107 T79_T53_T104 alertas T107 para notificaciones de gastos excesivos . T76_T81_T53 T0
+T1 T2 T79_T9 Actualizar T107 mi información de cuenta T79_T75_T104 bancaria T107 con mi nueva dirección . T76_T103_T75 T0
+T1 T2 T79_T9 Analizar T107 mis gastos mensuales para identificar áreas de ahorro . T76_T83_T195 T0
+T1 T2 T79_T9 Generar T107 un reporte T79_T10_T104 mensual T107 de mis inversiones . T76_T11_T10 T0
+T1 T2 T79_T9 Establecer T107 alertas para seguimiento de T79_T354_T227 acciones T107 específicas . T76_T81_T53 T0
+T1 T2 T79_T9 Cancelar T107 la suscripción a T79_T357 una plataforma de inversión T107 . T76_T376_T465 T0
+T1 T2 T79_T9 Programar T107 una transferencia de T79_T22 $300 T107 a mi cuenta de ahorros para el próximo T79_T13 viernes T107 . T76_T46_T59 T0
+T1 T2 T79_T9 Depositar T107 T79_T22 $1000 T107 en mi cuenta de inversión a plazo fijo . T76_T87_T70 T0
+T1 T2 T79_T9 Retirar T107 T79_T22 €50 T107 en efectivo de mi T79_T75_T104 cuenta corriente T107 . T76_T283_T70 T0
+T1 T2 T79_T9 Convertir T107 T79_T22 ¥10000 T107 a dólares estadounidenses en mi cuenta de divisas . T76_T1869_T636 T0
+T1 T2 T79_T9 Intercambiar T107 T79_T22 £200 T107 por euros en la entidad bancaria . T76_T400_T636 T0
+T1 T2 T79_T9 Calcular T107 el rendimiento de mis inversiones en el último trimestre . T76_T437_T245 T0
+T1 T2 T79_T9 Predecir T107 el comportamiento del mercado de valores para el próximo mes . T76_T1836_T253 T0
+T1 T2 T79_T9 Asesorar T107 sobre las mejores opciones de inversión a largo plazo . T76_T1436_T522_T271 T0
+T1 T2 T79_T9 Estimar T107 el impacto de los impuestos en mis ingresos anuales . T76_T1484_T1963 T0
+T1 T2 T79_T9 Revisar T107 el estado de mi T79_T75_T104 tarjeta de crédito T107 para evitar cargos adicionales . T76_T108_T75 T0
+T1 T2 T79_T9 Monitorear T107 los cambios en los T79_T495_T376 tasas de interés T107 para tomar decisiones financieras informadas . T76_T99_T430 T0
+T1 T2 T79_T9 Notificar T107 sobre transacciones inusuales en mi cuenta de T79_T75_T104 ahorros T107 . T76_T61_T388_T96 T0
+T1 T2 T79_T9 Generar T107 un presupuesto mensual para controlar mis gastos . T76_T11_T84 T0
+T1 T2 T79_T9 Invertir T107 T79_T22 $500 T107 en fondos mutuos de alto rendimiento . T76_T343_T70 T0
+T1 T2 T79_T9 Ahorrar T107 un porcentaje de mis ingresos mensuales en una cuenta de ahorros . T76_T352_T209 T0
+T1 T2 T79_T9 Gastar T107 T79_T22 €50 T107 en compras diarias con mi tarjeta de débito . T76_T170_T209 T0
+T1 T2 T79_T9 Monitorear T107 las fluctuaciones en el mercado de valores para identificar oportunidades de inversión . T76_T99_T253 T0
+T1 T2 T79_T9 Notificar T107 sobre vencimientos de facturas pendientes para evitar cargos por retraso . T76_T61_T500 T0
+T1 T2 T79_T9 Convertir T107 dólares a euros en la tasa de cambio actual . T76_T1869_T636 T0
+T1 T2 T79_T9 Intercambiar T107 libras esterlinas por dólares en el aeropuerto antes del viaje . T76_T400_T636 T0
+T1 T2 T79_T9 Calcular T107 el rendimiento de mis activos financieros en el último año . T76_T437_T1477 T0
+T1 T2 T79_T9 Predecir T107 las tendencias del mercado inmobiliario para el próximo trimestre . T76_T1836_T253 T0
+T1 T2 T79_T9 Asesorar T107 sobre estrategias de diversificación de cartera para reducir el riesgo . T76_T1436_T522_T271 T0
+T1 T2 T79_T9 Estimar T107 los costos de inversión en un nuevo proyecto empresarial . T76_T1484_T245 T0
+T1 T2 T79_T9 Revisar T107 el estado de mi T79_T75_T104 cuenta de ahorros T107 para planificar futuras inversiones . T76_T108_T75 T0
+T1 T2 T79_T9 Monitorear T107 las fluctuaciones en las T79_T400_T376 tasas de cambio T107 para transacciones internacionales . T76_T99_T430 T0
+T1 T2 T79_T9 Notificar T107 sobre movimientos inusuales en mi T79_T75_T104 cuenta de inversión T107 . T76_T61_T388_T96 T0
+T1 T2 T79_T9 Generar T107 un informe T79_T10_T104 trimestral T107 de mis activos financieros . T76_T11_T10 T0
+T1 T2 T79_T9 Invertir T107 T79_T22 $1000 T107 en bonos del gobierno para diversificar mi cartera . T76_T343_T70 T0
+T1 T2 T79_T9 Ahorrar T107 un porcentaje de mis ingresos mensuales en un plan de jubilación . T76_T352_T209 T0
+T1 T2 T79_T9 Gastar T107 T79_T22 €100 T107 en compras en línea con mi tarjeta de crédito . T76_T170_T209 T0
+T1 T2 T79_T9 Monitorear T107 las noticias financieras para estar al tanto de los cambios en el mercado . T76_T99_T381 T0
+T1 T2 T79_T9 Notificar T107 sobre fechas límite de pagos para evitar penalizaciones . T76_T61_T500 T0
+T1 T2 T79_T9 Convertir T107 pesos a dólares utilizando una calculadora de divisas en línea . T76_T1869_T636 T0
+T1 T2 T79_T9 Intercambiar T107 euros por yenes en una casa de cambio antes del viaje a Japón . T76_T400_T636 T0
+T1 T2 T79_T9 Calcular T107 el retorno de inversión de mis acciones en el último semestre . T76_T437_T1477 T0
+T1 T2 T79_T9 Predecir T107 el impacto de las políticas fiscales en el mercado de valores . T76_T1836_T253 T0
+T1 T2 T79_T9 Asesorar T107 sobre estrategias de ahorro para alcanzar metas financieras a largo plazo . T76_T1436_T522_T271 T0
+T1 T2 T79_T9 Estimar T107 los impuestos sobre las ganancias de capital de mis inversiones . T76_T1484_T1963 T0
+T1 T2 T79_T9 Revisar T107 el estado de mi T79_T75_T104 cuenta de cheques T107 para verificar transacciones recientes . T76_T108_T75 T0
+T1 T2 T79_T9 Monitorear T107 las fluctuaciones en las T79_T495_T376 tasas de interés T107 para planificar refinanciamientos . T76_T99_T430 T0
+T1 T2 T79_T9 Notificar T107 sobre retiros no autorizados en mi T79_T75_T104 cuenta de ahorros T107 . T76_T61_T388_T96 T0
+T1 T2 T79_T9 Generar T107 un presupuesto anual para controlar mis gastos y ahorros . T76_T11_T84 T0
+T1 T2 T79_T9 Invertir T107 T79_T22 $2000 T107 en acciones de empresas emergentes para diversificar la cartera . T76_T343_T70 T0
+T1 T2 T79_T9 Ahorrar T107 un porcentaje de mis ingresos en un fondo de emergencia para imprevistos . T76_T352_T209 T0
+T1 T2 T79_T9 Gastar T107 T79_T22 €20 T107 en comestibles con mi tarjeta de débito . T76_T170_T209 T0
+T1 T2 T79_T9 Monitorear T107 las tendencias del mercado inmobiliario para identificar oportunidades de inversión . T76_T99_T253 T0
+T1 T2 T79_T9 Notificar T107 sobre próximos pagos de facturas para recordar fechas límite . T76_T61_T500 T0
+T1 T2 T79_T9 Convertir T107 dólares a libras esterlinas en una casa de cambio antes del viaje a Londres . T76_T1869_T636 T0
+T1 T2 T79_T9 Intercambiar T107 francos suizos por euros en el banco antes de viajar a Europa . T76_T400_T636 T0
+T1 T2 T79_T9 Calcular T107 el rendimiento de mis fondos de inversión en el último año . T76_T437_T1477 T0
+T1 T2 T79_T9 Predecir T107 las tendencias del mercado de valores para el próximo año . T76_T1836_T253 T0
+T1 T2 T79_T9 Asesorar T107 sobre estrategias de inversión sostenible para un impacto positivo a largo plazo . T76_T1436_T522_T271 T0
+T1 T2 T79_T9 Estimar T107 los impuestos sobre las ganancias de mis inversiones en bienes raíces . T76_T1484_T1963 T0
+T1 T2 T79_T9 Revisar T107 el estado de mi T79_T75_T104 cuenta de inversión T107 para evaluar el desempeño de mis activos . T76_T108_T75 T0
+T1 T2 T79_T9 Monitorear T107 las fluctuaciones en las T79_T400_T376 tasas de cambio T107 para realizar transacciones internacionales . T76_T99_T430 T0
+T1 T2 T79_T9 Notificar T107 sobre movimientos inusuales en mi T79_T75_T104 cuenta de jubilación T107 . T76_T61_T388_T96 T0
+T1 T2 T79_T9 Generar T107 un informe T79_T10_T104 semestral T107 de mis activos financieros para revisión . T76_T11_T10 T0
+T1 T2 T79_T9 Invertir T107 T79_T22 $1500 T107 en bonos corporativos para diversificar mi cartera . T76_T343_T70 T0
+T1 T2 T79_T9 Ahorrar T107 un porcentaje de mis ingresos en un plan de ahorro para la educación de mis hijos . T76_T352_T209 T0
+T1 T2 T79_T9 Gastar T107 T79_T22 €75 T107 en ropa con mi tarjeta de crédito . T76_T170_T209 T0
+T1 T2 T79_T9 Monitorear T107 las noticias financieras para estar al tanto de las tendencias del mercado global . T76_T99_T381 T0
+T1 T2 T79_T9 Notificar T107 sobre vencimientos de facturas para evitar cargos por retraso . T76_T61_T500 T0
+T1 T2 T79_T9 Convertir T107 pesos mexicanos a dólares estadounidenses en una sucursal bancaria . T76_T1869_T636 T0
+T1 T2 T79_T9 Intercambiar T107 dólares australianos por dólares canadienses en el aeropuerto antes del vuelo . T76_T400_T636 T0
+T1 T2 T79_T9 Calcular T107 el retorno de inversión de mis fondos de pensiones en los últimos cinco años . T76_T437_T1477 T0
+T1 T2 T79_T9 Predecir T107 el impacto de las elecciones en el mercado de valores . T76_T1836_T253 T0
+T1 T2 T79_T9 Asesorar T107 sobre estrategias de ahorro para la compra de una vivienda . T76_T1436_T522_T271 T0
+T1 T2 T79_T9 Estimar T107 los impuestos sobre las ganancias de mis inversiones en el extranjero . T76_T1484_T1963 T0
+T1 T2 T79_T9 Revisar T107 el estado de mi T79_T75_T104 cuenta de inversión T107 para evaluar la diversificación de activos . T76_T108_T75 T0
+T1 T2 T79_T9 Monitorear T107 las fluctuaciones en las T79_T495_T376 tasas de interés T107 para planificar refinanciamientos de préstamos . T76_T99_T430 T0
+T1 T2 T79_T9 Notificar T107 sobre transacciones sospechosas en mi T79_T75_T104 cuenta de ahorros T107 . T76_T61_T388_T96 T0
+T1 T2 T79_T9 Generar T107 un presupuesto familiar para controlar los gastos mensuales . T76_T11_T84 T0
+T1 T2 T79_T9 Invertir T107 T79_T22 $3000 T107 en fondos de inversión diversificados para mitigar riesgos . T76_T343_T70 T0
+T1 T2 T79_T9 Ahorrar T107 un porcentaje de mis ingresos en un fondo de emergencia para situaciones imprevistas . T76_T352_T209 T0
+T1 T2 T79_T9 Gastar T107 T79_T22 €30 T107 en comestibles con mi tarjeta de débito . T76_T170_T209 T0
+T1 T2 T79_T9 Monitorear T107 las tendencias del mercado inmobiliario para identificar oportunidades de inversión . T76_T99_T253 T0
+T1 T2 T79_T9 Notificar T107 sobre próximas fechas de vencimiento de facturas para evitar cargos adicionales . T76_T61_T500 T0
+T1 T2 T79_T9 Convertir T107 dólares a euros utilizando una calculadora de divisas en línea . T76_T1869_T636 T0
+T1 T2 T79_T9 Intercambiar T107 libras esterlinas por dólares en la casa de cambio antes del viaje a Londres . T76_T400_T636 T0
+T1 T2 T79_T9 Calcular T107 el rendimiento de mis fondos de inversión en el último año . T76_T437_T1477 T0
+T1 T2 T79_T9 Predecir T107 las tendencias del mercado de valores para el próximo año . T76_T1836_T253 T0
+T1 T2 T79_T9 Asesorar T107 sobre estrategias de inversión sostenible para un impacto positivo a largo plazo . T76_T1436_T522_T271 T0
+T1 T2 T79_T9 Estimar T107 los impuestos sobre las ganancias de mis inversiones en bienes raíces . T76_T1484_T1963 T0
+T1 T2 T79_T9 Revisar T107 el estado de mi T79_T75_T104 cuenta de inversión T107 para evaluar el desempeño de mis activos . T76_T108_T75 T0
+T1 T2 T79_T9 Monitorear T107 las fluctuaciones en las T79_T400_T376 tasas de cambio T107 para realizar transacciones internacionales . T76_T99_T430 T0
+T1 T2 T79_T9 Notificar T107 sobre movimientos inusuales en mi T79_T75_T104 cuenta de jubilación T107 . T76_T61_T388_T96 T0
+T1 T2 T79_T9 Generar T107 un informe T79_T10_T104 semestral T107 de mis activos financieros para revisión . T76_T11_T10 T0
+T1 T2 T79_T9 Invertir T107 T79_T22 $1500 T107 en bonos corporativos para diversificar mi cartera . T76_T343_T70 T0
+T1 T2 T79_T9 Ahorrar T107 un porcentaje de mis ingresos en un plan de ahorro para la educación de mis hijos . T76_T352_T209 T0
+T1 T2 T79_T9 Gastar T107 T79_T22 €75 T107 en ropa con mi tarjeta de crédito . T76_T170_T209 T0
+T1 T2 T79_T9 Monitorear T107 las noticias financieras para estar al tanto de las tendencias del mercado global . T76_T99_T381 T0
+T1 T2 T79_T9 Notificar T107 sobre vencimientos de facturas para evitar cargos por retraso . T76_T61_T500 T0
+T1 T2 T79_T9 Convertir T107 pesos mexicanos a dólares estadounidenses en una sucursal bancaria . T76_T1869_T636 T0
+T1 T2 T79_T9 Intercambiar T107 dólares australianos por dólares canadienses en el aeropuerto antes del vuelo . T76_T400_T636 T0
+T1 T2 T79_T9 Calcular T107 el retorno de inversión de mis fondos de pensiones en los últimos cinco años . T76_T437_T1477 T0
+T1 T2 T79_T9 Predecir T107 el impacto de las elecciones en el mercado de valores . T76_T1836_T253 T0
+T1 T2 T79_T9 Asesorar T107 sobre estrategias de ahorro para la compra de una vivienda . T76_T1436_T522_T271 T0
+T1 T2 T79_T9 Estimar T107 los impuestos sobre las ganancias de mis inversiones en el extranjero . T76_T1484_T1963 T0
+T1 T2 T79_T9 Revisar T107 el estado de mi T79_T75_T104 cuenta de inversión T107 para evaluar la diversificación de activos . T76_T108_T75 T0
+T1 T2 T79_T9 Monitorear T107 las fluctuaciones en las T79_T495_T376 tasas de interés T107 para planificar refinanciamientos de préstamos . T76_T99_T430 T0
+T1 T2 T79_T9 Notificar T107 sobre transacciones sospechosas en mi T79_T75_T104 cuenta de ahorros T107 . T76_T61_T388_T96 T0
+T1 T2 ¿Qué tal si T79_T9 buscamos T107 una receta T79_T206_T104 vegana T107 para la cena ? T76_T150_T206 T0
+T1 T2 Vamos a T79_T9 configurar T107 un temporizador de T79_T45 30 minutos T107 para la T79_T209_T104 comida T107 . T76_T81_T194 T0
+T1 T2 ¿Podrías T79_T9 proporcionar T107 la lista de T79_T35 ingredientes T107 para la receta T79_T206_T104 pastel de zanahoria T107 ? T76_T1436_T138 T0
+T1 T2 Oye, ¿puedes T79_T9 rastrear T107 recetas T79_T196_T68 sin gluten T107 para mí ? T76_T89_T270 T0
+T1 T2 Creo que necesitamos T79_T9 agregar T107 T79_T35 leche T107 a la lista de compras T79_T183_T26 T107 . T76_T103_T26 T0
+T1 T2 ¿Sabes cómo T79_T9 encontrar T107 una receta T79_T206_T104 vegetariana T107 de sopa ? T76_T150_T206 T0
+T1 T2 Recuerda T79_T9 precalentar T107 el horno a T79_T649 180 grados T107 . T76_T117_T82 T0
+T1 T2 T79_T9 Batir T107 los T79_T35 huevos T107 hasta que las T79_T35 yemas T107 y las T79_T35 claras T107 estén combinadas . T76_T117_T82 T0
+T1 T2 T79_T9 Pausar T107 el temporizador de T79_T117_T82 cocina T107 . T76_T14_T194 T0
+T1 T2 T79_T9 Reanudar T107 la narración de la receta T79_T117_T82 T107 . T76_T14_T208 T0
+T1 T2 T79_T9 Actualizar T107 mis preferencias T79_T196_T68 vegetarianas T107 . T76_T103_T24 T0
+T1 T2 T79_T9 Quitar T107 T79_T35 cebollas T107 de la lista de compras T79_T183_T26 T107 . T76_T103_T26 T0
+T1 T2 ¿Puedes T79_T9 listar T107 la información T79_T1580_T17 nutricional T107 del T79_T35 aguacate T107 ? T76_T1436_T1580_T17 T0
+T1 T2 T79_T9 Sugerir T107 una receta T79_T1526 mexicana T107 para la T79_T209_T104 cena T107 . T76_T229_T206 T0
+T1 T2 T79_T9 Rastrear T107 el T79_T35 stock de despensa T107 de T79_T35 harina T107 . T76_T89_T1558 T0
+T1 T2 T79_T9 Agregar T107 T79_T109 dos T107 T79_T36 manzanas T107 a mi T79_T26_T104 lista de compras T107 T76_T58_T43_T26 T0
+T1 T2 T79_T9 Verificar T107 el T79_T51 precio T107 de T79_T36 leche T107 en T79_T90 Walmart T107 T76_T65_T51 T0
+T1 T2 T79_T9 Encontrar T107 la T79_T90_T49 sección de frutas T107 y buscar T79_T36 plátanos T107 T76_T28_T36 T0
+T1 T2 T79_T9 Establecer T107 un T79_T135_T104 recordatorio T107 para comprar T79_T36 huevos T107 mañana T79_T13 mañana T107 a las T79_T44 10 a . m . T107 T76_T81_T135 T0
+T1 T2 T79_T9 Gestionar T107 mis T79_T26_T104 cupones T107 para T79_T36 cereales T107 T76_T656_T1777 T0
+T1 T2 T79_T9 Comparar T107 T79_T36 yogur natural T107 con T79_T36 yogur de fresa T107 para la T79_T1580_T17 información nutricional T107 T76_T351_T279 T0
+T1 T2 T79_T9 Proporcionar T107 consejos de compra para T79_T1196 productos orgánicos T107 T76_T183_T271 T0
+T1 T2 T79_T9 Buscar T107 la T79_T1625 marca T107 de T79_T36 pasta de dientes T107 preferida por T79_T66_T17 mí T107 T76_T28_T36 T0
+T1 T2 T79_T9 Obtener T107 la T79_T51 oferta T107 actual en T79_T36 carne de res T107 en T79_T90_T7 la carnicería T107 T76_T65_T1458 T0
+T1 T2 T79_T9 Revisar T107 las T79_T1580_T17 calorías T107 de T79_T36 galletas saladas T107 T76_T1580_T17 T0
+T1 T2 T79_T9 Sugerir T107 una T79_T1196 receta T107 para cocinar T79_T36 pollo a la parrilla T107 T76_T206_T706 T0
+T1 T2 T79_T9 Ayudar T107 a encontrar T79_T36 pan integral T107 adecuado para T79_T196_T68 dietas sin gluten T107 T76_T28_T36 T0
+T1 T2 T79_T9 Recomendar T107 una T79_T1625 marca T107 confiable de T79_T36 aceite de oliva T107 T76_T205 T0
+T1 T2 T79_T9 Escanear T107 los T79_T51 precios T107 de T79_T36 cereales T107 en T79_T90 Costco T107 T76_T1601_T337 T0
+T1 T2 T79_T9 Redimir T107 mis T79_T1856_T104 cupones T107 de T79_T36 detergente para ropa T107 en T79_T90_T7 el pasillo de limpieza T107 T76_T1580_T1777 T0
+T1 T2 T79_T9 Cocinar T107 una T79_T206 receta T107 nueva con T79_T36 quinoa T107 esta noche T79_T13 hoy T107 T76_T591_T206 T0
+T1 T2 T79_T9 Preferir T107 las T79_T1625 marcas T107 de T79_T36 salsa de tomate T107 sin azúcar añadido T107 T76_T1894 T0
+T1 T2 T79_T9 Calificar T107 y T79_T1845 dejar una reseña T107 sobre T79_T36 mantequilla de maní T107 T76_T376_T1908 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 lechuga romana T107 fresca en T79_T90_T7 la sección de verduras T107 T76_T28_T36 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 manzanas rojas T107 o T79_T36 verdes T107 para una T79_T206 ensalada de frutas T107 T76_T1708_T36 T0
+T1 T2 T79_T9 Programar T107 una T79_T135_T104 alarma T107 para comprar T79_T109 tres T107 T79_T36 docenas de T79_T36 huevos T107 el T79_T13 sábado T107 a las T79_T44 9 a . m . T107 T76_T46_T135 T0
+T1 T2 T79_T9 Recordar T107 comprar T79_T36 leche T107 en T79_T90_T7 la sección de lácteos T107 antes de T79_T13 la próxima semana T107 T76_T81_T135 T0
+T1 T2 T79_T9 Notificar T107 sobre las T79_T1458 ofertas T107 actuales en T79_T36 productos enlatados T107 T76_T61_T1313 T0
+T1 T2 T79_T9 Llamar T107 a T79_T90 Whole Foods T107 y T79_T9 preguntar T107 por el T79_T51 precio T107 de T79_T36 salmón fresco T107 T76_T216_T90 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 pasta T107 de T79_T1196 trigo integral T107 en T79_T90_T7 la sección de alimentos secos T107 T76_T28_T36 T0
+T1 T2 T79_T9 Rastrear T107 los T79_T51 descuentos T107 en T79_T36 yogur griego T107 en T79_T90_T7 la nevera de lácteos T107 T76_T89_T1313 T0
+T1 T2 T79_T9 Notar T107 la T79_T459 calidad T107 de T79_T36 aguacates T107 antes de comprarlos T76_T375_T459 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 salsa de tomate T107 sin sal añadida en T79_T90_T7 la sección de alimentos saludables T107 T76_T28_T36 T0
+T1 T2 T79_T9 Comparar T107 los T79_T51 precios T107 de T79_T36 cereales integrales T107 en T79_T90_T7 la sección de desayuno T107 T76_T351_T337 T0
+T1 T2 T79_T9 Comprar T107 T79_T109 una T107 T79_T36 docena de T79_T36 huevos T107 en T79_T90_T7 la tienda de comestibles T107 T76_T323_T36 T0
+T1 T2 T79_T9 Gestionar T107 mis T79_T26_T104 compras T107 para la T79_T13 próxima semana T107 T76_T656_T183 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 avena T107 en T79_T90_T7 la sección de granos T107 y verificar la T79_T51 oferta T107 T76_T28_T36 T0
+T1 T2 T79_T9 Sugerir T107 una T79_T206 receta T107 saludable para T79_T36 pechugas de pollo T107 T76_T229_T206 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 fresas T107 o T79_T36 arándanos T107 para una T79_T206 ensalada de frutas T107 T76_T1708_T36 T0
+T1 T2 T79_T9 Preferir T107 las T79_T1625 marcas T107 de T79_T36 yogur T107 con bajo contenido de azúcar T107 T76_T1894 T0
+T1 T2 T79_T9 Calificar T107 y dejar un T79_T1845 comentario T107 sobre T79_T36 pan integral T107 T76_T376_T1908 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 mantequilla de maní T107 natural en T79_T90_T7 la sección de alimentos orgánicos T107 T76_T28_T36 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 leche de almendras T107 o T79_T36 leche de coco T107 para una T79_T206 receta T107 de batido T76_T1708_T36 T0
+T1 T2 T79_T9 Programar T107 una T79_T135_T104 alarma T107 para comprar T79_T109 dos T107 T79_T36 libras de T79_T36 carne molida T107 el T79_T13 viernes T107 a las T79_T44 3 p . m . T107 T76_T46_T135 T0
+T1 T2 T79_T9 Recordar T107 comprar T79_T36 pan integral T107 en T79_T90_T7 la panadería T107 antes de T79_T13 la próxima semana T107 T76_T81_T135 T0
+T1 T2 T79_T9 Notificar T107 sobre las T79_T1458 promociones T107 actuales en T79_T36 productos congelados T107 T76_T61_T1313 T0
+T1 T2 T79_T9 Llamar T107 a T79_T90 Trader Joe's T107 y preguntar por el T79_T51 precio T107 de T79_T36 aguacates T107 T76_T216_T90 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 arroz integral T107 en T79_T90_T7 la sección de granos T107 T76_T28_T36 T0
+T1 T2 T79_T9 Rastrear T107 los T79_T51 descuentos T107 en T79_T36 queso cheddar T107 en T79_T90_T7 la sección de lácteos T107 T76_T89_T1313 T0
+T1 T2 T79_T9 Notar T107 la T79_T459 frescura T107 de T79_T36 pescado T107 antes de comprarlo T76_T375_T459 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 salsa de tomate T107 orgánica en T79_T90_T7 la sección de alimentos saludables T107 T76_T28_T36 T0
+T1 T2 T79_T9 Comparar T107 los T79_T51 precios T107 de T79_T36 mermelada T107 en T79_T90_T7 la sección de desayuno T107 T76_T351_T337 T0
+T1 T2 T79_T9 Comprar T107 T79_T109 medio kilo de T79_T36 pollo T107 en T79_T90_T7 la carnicería T107 T76_T323_T36 T0
+T1 T2 T79_T9 Gestionar T107 mis T79_T26_T104 compras T107 para la T79_T13 próxima semana T107 T76_T656_T183 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 queso cheddar T107 en T79_T90_T7 la sección de lácteos T107 y verificar la T79_T51 oferta T107 T76_T28_T36 T0
+T1 T2 T79_T9 Sugerir T107 una T79_T206 receta T107 vegetariana para T79_T36 tacos T107 T76_T229_T206 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 piña T107 o T79_T36 mango T107 para una T79_T206 ensalada de frutas T107 T76_T1708_T36 T0
+T1 T2 T79_T9 Preferir T107 las T79_T1625 marcas T107 de T79_T36 yogur T107 con probióticos T107 T76_T1894 T0
+T1 T2 T79_T9 Calificar T107 y dejar un T79_T1845 comentario T107 sobre T79_T36 pan integral T107 T76_T376_T1908 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 mantequilla de maní T107 sin sal en T79_T90_T7 la sección de alimentos saludables T107 T76_T28_T36 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 leche de almendras T107 o T79_T36 leche de soja T107 para una T79_T206 receta T107 de batido T76_T1708_T36 T0
+T1 T2 T79_T9 Programar T107 una T79_T135_T104 alarma T107 para comprar T79_T109 un kilo de T79_T36 salmón T107 el T79_T13 viernes T107 a las T79_T44 3 p . m . T107 T76_T46_T135 T0
+T1 T2 T79_T9 Recordar T107 comprar T79_T36 pan integral T107 en T79_T90_T7 la panadería T107 antes de T79_T13 la próxima semana T107 T76_T81_T135 T0
+T1 T2 T79_T9 Notificar T107 sobre las T79_T1458 promociones T107 actuales en T79_T36 helado T107 T76_T61_T1313 T0
+T1 T2 T79_T9 Llamar T107 a T79_T90 Costco T107 y preguntar por el T79_T51 precio T107 de T79_T36 aguacates T107 T76_T216_T90 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 arroz basmati T107 en T79_T90_T7 la sección de granos T107 T76_T28_T36 T0
+T1 T2 T79_T9 Rastrear T107 los T79_T51 descuentos T107 en T79_T36 queso parmesano T107 en T79_T90_T7 la sección de lácteos T107 T76_T89_T1313 T0
+T1 T2 T79_T9 Notar T107 la T79_T459 frescura T107 de T79_T36 carne de res T107 antes de comprarla T76_T375_T459 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 salsa de tomate T107 picante en T79_T90_T7 la sección de alimentos internacionales T107 T76_T28_T36 T0
+T1 T2 T79_T9 Comparar T107 los T79_T51 precios T107 de T79_T36 miel T107 en T79_T90_T7 la sección de desayuno T107 T76_T351_T337 T0
+T1 T2 T79_T9 Comprar T107 T79_T109 un kilo de T79_T36 salmón T107 en T79_T90_T7 la pescadería T107 T76_T323_T36 T0
+T1 T2 T79_T9 Gestionar T107 mis T79_T26_T104 compras T107 para la T79_T13 próxima semana T107 T76_T656_T183 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 avena instantánea T107 en T79_T90_T7 la sección de cereales T107 y verificar la T79_T51 oferta T107 T76_T28_T36 T0
+T1 T2 T79_T9 Sugerir T107 una T79_T206 receta T107 vegana para T79_T36 hamburguesas de lentejas T107 T76_T229_T206 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 peras T107 o T79_T36 duraznos T107 para una T79_T206 ensalada de frutas T107 T76_T1708_T36 T0
+T1 T2 T79_T9 Preferir T107 las T79_T1625 marcas T107 de T79_T36 yogur T107 con frutas naturales T107 T76_T1894 T0
+T1 T2 T79_T9 Calificar T107 y dejar un T79_T1845 comentario T107 sobre T79_T36 pan integral T107 T76_T376_T1908 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 mantequilla de maní T107 sin sal en T79_T90_T7 la sección de alimentos saludables T107 T76_T28_T36 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 leche de almendras T107 o T79_T36 leche de coco T107 para una T79_T206 receta T107 de batido T76_T1708_T36 T0
+T1 T2 T79_T9 Programar T107 una T79_T135_T104 alarma T107 para comprar T79_T109 dos T107 T79_T36 libras de T79_T36 carne molida T107 el T79_T13 viernes T107 a las T79_T44 3 p . m . T107 T76_T46_T135 T0
+T1 T2 T79_T9 Recordar T107 comprar T79_T36 pan integral T107 en T79_T90_T7 la panadería T107 antes de T79_T13 la próxima semana T107 T76_T81_T135 T0
+T1 T2 T79_T9 Notificar T107 sobre las T79_T1458 promociones T107 actuales en T79_T36 helado T107 T76_T61_T1313 T0
+T1 T2 T79_T9 Llamar T107 a T79_T90 Costco T107 y preguntar por el T79_T51 precio T107 de T79_T36 aguacates T107 T76_T216_T90 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 arroz basmati T107 en T79_T90_T7 la sección de granos T107 T76_T28_T36 T0
+T1 T2 T79_T9 Rastrear T107 los T79_T51 descuentos T107 en T79_T36 queso parmesano T107 en T79_T90_T7 la sección de lácteos T107 T76_T89_T1313 T0
+T1 T2 T79_T9 Notar T107 la T79_T459 frescura T107 de T79_T36 carne de res T107 antes de comprarla T76_T375_T459 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 salsa de tomate T107 picante en T79_T90_T7 la sección de alimentos internacionales T107 T76_T28_T36 T0
+T1 T2 T79_T9 Comparar T107 los T79_T51 precios T107 de T79_T36 miel T107 en T79_T90_T7 la sección de desayuno T107 T76_T351_T337 T0
+T1 T2 T79_T9 Comprar T107 T79_T109 un kilo de T79_T36 salmón T107 en T79_T90_T7 la pescadería T107 T76_T323_T36 T0
+T1 T2 T79_T9 Gestionar T107 mis T79_T26_T104 compras T107 para la T79_T13 próxima semana T107 T76_T656_T183 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 avena instantánea T107 en T79_T90_T7 la sección de cereales T107 y verificar la T79_T51 oferta T107 T76_T28_T36 T0
+T1 T2 T79_T9 Sugerir T107 una T79_T206 receta T107 vegana para T79_T36 hamburguesas de lentejas T107 T76_T229_T206 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 peras T107 o T79_T36 duraznos T107 para una T79_T206 ensalada de frutas T107 T76_T1708_T36 T0
+T1 T2 T79_T9 Preferir T107 las T79_T1625 marcas T107 de T79_T36 yogur T107 con frutas naturales T107 T76_T1894 T0
+T1 T2 T79_T9 Calificar T107 y dejar un T79_T1845 comentario T107 sobre T79_T36 pan integral T107 T76_T376_T1908 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 mantequilla de maní T107 sin sal en T79_T90_T7 la sección de alimentos saludables T107 T76_T28_T36 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 leche de almendras T107 o T79_T36 leche de coco T107 para una T79_T206 receta T107 de batido T76_T1708_T36 T0
+T1 T2 T79_T9 Programar T107 una T79_T135_T104 alarma T107 para comprar T79_T109 dos T107 T79_T36 libras de T79_T36 carne molida T107 el T79_T13 viernes T107 a las T79_T44 3 p . m . T107 T76_T46_T135 T0
+T1 T2 T79_T9 Recordar T107 comprar T79_T36 pan integral T107 en T79_T90_T7 la panadería T107 antes de T79_T13 la próxima semana T107 T76_T81_T135 T0
+T1 T2 T79_T9 Notificar T107 sobre las T79_T1458 promociones T107 actuales en T79_T36 helado T107 T76_T61_T1313 T0
+T1 T2 T79_T9 Llamar T107 a T79_T90 Costco T107 y preguntar por el T79_T51 precio T107 de T79_T36 aguacates T107 T76_T216_T90 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 arroz basmati T107 en T79_T90_T7 la sección de granos T107 T76_T28_T36 T0
+T1 T2 T79_T9 Rastrear T107 los T79_T51 descuentos T107 en T79_T36 queso parmesano T107 en T79_T90_T7 la sección de lácteos T107 T76_T89_T1313 T0
+T1 T2 T79_T9 Notar T107 la T79_T459 frescura T107 de T79_T36 carne de res T107 antes de comprarla T76_T375_T459 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 salsa de tomate T107 picante en T79_T90_T7 la sección de alimentos internacionales T107 T76_T28_T36 T0
+T1 T2 T79_T9 Comparar T107 los T79_T51 precios T107 de T79_T36 miel T107 en T79_T90_T7 la sección de desayuno T107 T76_T351_T337 T0
+T1 T2 T79_T9 Comprar T107 T79_T109 un kilo de T79_T36 salmón T107 en T79_T90_T7 la pescadería T107 T76_T323_T36 T0
+T1 T2 T79_T9 Gestionar T107 mis T79_T26_T104 compras T107 para la T79_T13 próxima semana T107 T76_T656_T183 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 avena instantánea T107 en T79_T90_T7 la sección de cereales T107 y verificar la T79_T51 oferta T107 T76_T28_T36 T0
+T1 T2 T79_T9 Sugerir T107 una T79_T206 receta T107 vegana para T79_T36 hamburguesas de lentejas T107 T76_T229_T206 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 peras T107 o T79_T36 duraznos T107 para una T79_T206 ensalada de frutas T107 T76_T1708_T36 T0
+T1 T2 T79_T9 Preferir T107 las T79_T1625 marcas T107 de T79_T36 yogur T107 con frutas naturales T107 T76_T1894 T0
+T1 T2 T79_T9 Calificar T107 y dejar un T79_T1845 comentario T107 sobre T79_T36 pan integral T107 T76_T376_T1908 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 mantequilla de maní T107 sin sal en T79_T90_T7 la sección de alimentos saludables T107 T76_T28_T36 T0
+T1 T2 T79_T9 Elegir T107 entre T79_T36 leche de almendras T107 o T79_T36 leche de coco T107 para una T79_T206 receta T107 de batido T76_T1708_T36 T0
+T1 T2 T79_T9 Programar T107 una T79_T135_T104 alarma T107 para comprar T79_T109 dos T107 T79_T36 libras de T79_T36 carne molida T107 el T79_T13 viernes T107 a las T79_T44 3 p . m . T107 T76_T46_T135 T0
+T1 T2 T79_T9 Recordar T107 comprar T79_T36 pan integral T107 en T79_T90_T7 la panadería T107 antes de T79_T13 la próxima semana T107 T76_T81_T135 T0
+T1 T2 T79_T9 Notificar T107 sobre las T79_T1458 promociones T107 actuales en T79_T36 helado T107 T76_T61_T1313 T0
+T1 T2 T79_T9 Llamar T107 a T79_T90 Costco T107 y preguntar por el T79_T51 precio T107 de T79_T36 aguacates T107 T76_T216_T90 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 arroz basmati T107 en T79_T90_T7 la sección de granos T107 T76_T28_T36 T0
+T1 T2 T79_T9 Rastrear T107 los T79_T51 descuentos T107 en T79_T36 queso parmesano T107 en T79_T90_T7 la sección de lácteos T107 T76_T89_T1313 T0
+T1 T2 T79_T9 Notar T107 la T79_T459 frescura T107 de T79_T36 carne de res T107 antes de comprarla T76_T375_T459 T0
+T1 T2 T79_T9 Buscar T107 T79_T36 salsa de tomate T107 picante en T79_T90_T7 la sección de alimentos internacionales T107 T76_T28_T36 T0
+T1 T2 T79_T9 Comparar T107 los T79_T51 precios T107 de T79_T36 miel T107 en T79_T90_T7 la sección de desayuno T107 T76_T351_T337 T0
+T1 T2 T79_T16_T17 Mi abuela T107 T79_T9 experimentó T107 T79_T105 mareos T107 después de T79_T9 tomar T107 T79_T30 nuevos medicamentos T107 T79_T44 esta mañana T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han diagnosticado T107 T79_T116 diabetes T107 T79_T13 hace dos años T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Mi esposo T107 T79_T9 tuvo T107 T79_T105 fiebre T107 T79_T44 la semana pasada T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi hija T107 T79_T9 se someterá a T107 T79_T15 una cirugía de apéndice T107 T79_T13 mañana T107 T76_T15_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 antibióticos T107 para T79_T105 mi infección de garganta T107 T79_T44 ayer T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi padre T107 T79_T9 ha estado experimentando T107 T79_T105 fatiga T107 T79_T64 constantemente T107 durante T79_T45 varios meses T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi hermano T107 T79_T9 mencionó T107 T79_T105 dolor de espalda T107 durante T79_T44 su última visita T107 T79_T49 al médico T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 aconsejaron T107 T79_T9 realizar T107 T79_T115_T104 análisis de sangre T107 para T79_T9 verificar T107 T79_T105 mis niveles de hierro T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi primo T107 T79_T9 fue diagnosticado con T107 T79_T116 alergias T107 T79_T13 la semana pasada T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 realizarán T107 T79_T115_T104 una resonancia magnética T107 T79_T13 la próxima semana T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi hermana T107 T79_T9 sufrió T107 T79_T105 náuseas T107 después de T79_T9 comer T107 T79_T310 alimentos picantes T107 T79_T44 anoche T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han recomendado T107 T79_T9 hacer T107 T79_T9 ejercicio T107 T79_T64 regularmente T107 para T79_T9 mejorar T107 T79_T105 mi salud T107 T76_T9 T0
+T1 T2 T79_T16_T17 Mi madre T107 T79_T9 está experimentando T107 T79_T105 pérdida de apetito T107 T79_T64 últimamente T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 analgésicos T107 para T79_T105 el dolor de espalda T107 T79_T44 la semana pasada T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi abuela T107 T79_T9 experimentó T107 T79_T105 mareos T107 después de T79_T9 tomar T107 T79_T30 nuevos medicamentos T107 T79_T44 esta mañana T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han diagnosticado T107 T79_T116 presión arterial alta T107 T79_T13 hace un año T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Mi esposo T107 T79_T9 tuvo T107 T79_T105 dolor de cabeza T107 T79_T44 ayer T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 antibióticos T107 para T79_T105 mi infección de oído T107 T79_T44 esta tarde T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi padre T107 T79_T9 ha estado experimentando T107 T79_T105 dolor de espalda T107 T79_T64 ocasionalmente T107 durante T79_T45 algunas semanas T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi hermano T107 T79_T9 mencionó T107 T79_T105 dolor de cabeza T107 durante T79_T44 su última visita T107 T79_T49 al médico T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 aconsejaron T107 T79_T9 realizar T107 T79_T115_T104 un electrocardiograma T107 para T79_T9 evaluar T107 T79_T105 mi corazón T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi primo T107 T79_T9 fue diagnosticado con T107 T79_T116 diabetes T107 T79_T13 hace un mes T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 realizarán T107 T79_T115_T104 una radiografía T107 T79_T13 la próxima semana T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi hermana T107 T79_T9 sufrió T107 T79_T105 dolor de estómago T107 después de T79_T9 comer T107 T79_T310 mariscos T107 T79_T44 anoche T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han recomendado T107 T79_T9 hacer T107 T79_T9 yoga T107 T79_T64 diariamente T107 para T79_T9 reducir T107 T79_T105 mi estrés T107 T76_T9 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 antihistamínicos T107 para T79_T105 la alergia T107 T79_T44 la semana pasada T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi hijo T107 T79_T9 ha estado quejándose de T107 T79_T105 dolor de garganta T107 T79_T64 últimamente T107 durante T79_T45 los últimos días T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi abuela T107 T79_T9 experimentó T107 T79_T105 fatiga T107 después de T79_T9 tomar T107 T79_T30 su medicamento T107 T79_T44 esta mañana T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han diagnosticado T107 T79_T116 migrañas T107 T79_T13 hace dos años T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Mi esposo T107 T79_T9 tuvo T107 T79_T105 dolor de estómago T107 T79_T44 ayer T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 antiinflamatorios T107 para T79_T105 la inflamación de la rodilla T107 T79_T44 esta tarde T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi padre T107 T79_T9 ha estado experimentando T107 T79_T105 dolor de cabeza T107 T79_T64 ocasionalmente T107 durante T79_T45 algunas semanas T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi hermano T107 T79_T9 mencionó T107 T79_T105 dolor de estómago T107 durante T79_T44 su última visita T107 T79_T49 al médico T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 aconsejaron T107 T79_T9 realizar T107 T79_T115_T104 una ecografía T107 para T79_T9 examinar T107 T79_T105 mi abdomen T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi primo T107 T79_T9 fue diagnosticado con T107 T79_T116 asma T107 T79_T13 la semana pasada T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 realizarán T107 T79_T115_T104 una resonancia magnética T107 T79_T13 la próxima semana T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi hermana T107 T79_T9 sufrió T107 T79_T105 dolor de cabeza T107 después de T79_T9 comer T107 T79_T310 chocolate T107 T79_T44 anoche T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han recomendado T107 T79_T9 hacer T107 T79_T9 natación T107 T79_T64 tres veces por semana T107 para T79_T9 fortalecer T107 T79_T105 mi espalda T107 T76_T9 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 analgésicos T107 para T79_T105 el dolor de cabeza T107 T79_T44 la semana pasada T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi hijo T107 T79_T9 ha estado quejándose de T107 T79_T105 dolor de estómago T107 T79_T64 últimamente T107 durante T79_T45 los últimos días T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi abuela T107 T79_T9 experimentó T107 T79_T105 mareos T107 después de T79_T9 tomar T107 T79_T30 nuevos medicamentos T107 T79_T44 esta mañana T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han diagnosticado T107 T79_T116 presión arterial alta T107 T79_T13 hace un año T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Mi esposo T107 T79_T9 tuvo T107 T79_T105 dolor de cabeza T107 T79_T44 ayer T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 antibióticos T107 para T79_T105 mi infección de oído T107 T79_T44 esta tarde T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi padre T107 T79_T9 ha estado experimentando T107 T79_T105 dolor de espalda T107 T79_T64 ocasionalmente T107 durante T79_T45 algunas semanas T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi hermano T107 T79_T9 mencionó T107 T79_T105 dolor de cabeza T107 durante T79_T44 su última visita T107 T79_T49 al médico T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 aconsejaron T107 T79_T9 realizar T107 T79_T115_T104 un electrocardiograma T107 para T79_T9 evaluar T107 T79_T105 mi corazón T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi primo T107 T79_T9 fue diagnosticado con T107 T79_T116 diabetes T107 T79_T13 hace un mes T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 realizarán T107 T79_T115_T104 una radiografía T107 T79_T13 la próxima semana T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi hermana T107 T79_T9 sufrió T107 T79_T105 dolor de estómago T107 después de T79_T9 comer T107 T79_T310 mariscos T107 T79_T44 anoche T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han recomendado T107 T79_T9 hacer T107 T79_T9 yoga T107 T79_T64 diariamente T107 para T79_T9 reducir T107 T79_T105 mi estrés T107 T76_T9 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 antihistamínicos T107 para T79_T105 la alergia T107 T79_T44 la semana pasada T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi hijo T107 T79_T9 ha estado quejándose de T107 T79_T105 dolor de garganta T107 T79_T64 últimamente T107 durante T79_T45 los últimos días T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi abuela T107 T79_T9 experimentó T107 T79_T105 fatiga T107 después de T79_T9 tomar T107 T79_T30 su medicamento T107 T79_T44 esta mañana T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han diagnosticado T107 T79_T116 migrañas T107 T79_T13 hace dos años T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Mi esposo T107 T79_T9 tuvo T107 T79_T105 dolor de estómago T107 T79_T44 ayer T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 antiinflamatorios T107 para T79_T105 la inflamación de la rodilla T107 T79_T44 esta tarde T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi padre T107 T79_T9 ha estado experimentando T107 T79_T105 dolor de cabeza T107 T79_T64 ocasionalmente T107 durante T79_T45 algunas semanas T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi hermano T107 T79_T9 mencionó T107 T79_T105 dolor de estómago T107 durante T79_T44 su última visita T107 T79_T49 al médico T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 aconsejaron T107 T79_T9 realizar T107 T79_T115_T104 una ecografía T107 para T79_T9 examinar T107 T79_T105 mi abdomen T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi primo T107 T79_T9 fue diagnosticado con T107 T79_T116 asma T107 T79_T13 la semana pasada T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 realizarán T107 T79_T115_T104 una resonancia magnética T107 T79_T13 la próxima semana T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi hermana T107 T79_T9 sufrió T107 T79_T105 dolor de cabeza T107 después de T79_T9 comer T107 T79_T310 chocolate T107 T79_T44 anoche T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han recomendado T107 T79_T9 hacer T107 T79_T9 natación T107 T79_T64 tres veces por semana T107 para T79_T9 fortalecer T107 T79_T105 mi espalda T107 T76_T9 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 analgésicos T107 para T79_T105 el dolor de cabeza T107 T79_T44 la semana pasada T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi hijo T107 T79_T9 ha estado quejándose de T107 T79_T105 dolor de estómago T107 T79_T64 últimamente T107 durante T79_T45 los últimos días T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi abuela T107 T79_T9 experimentó T107 T79_T105 mareos T107 después de T79_T9 tomar T107 T79_T30 nuevos medicamentos T107 T79_T44 esta mañana T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 han diagnosticado T107 T79_T116 presión arterial alta T107 T79_T13 hace un año T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Mi esposo T107 T79_T9 tuvo T107 T79_T105 dolor de cabeza T107 T79_T44 ayer T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 recetaron T107 T79_T30 antibióticos T107 para T79_T105 mi infección de oído T107 T79_T44 esta tarde T107 T76_T30_T10 T0
+T1 T2 T79_T16_T17 Mi padre T107 T79_T9 ha estado experimentando T107 T79_T105 dolor de espalda T107 T79_T64 ocasionalmente T107 durante T79_T45 algunas semanas T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Mi hermano T107 T79_T9 mencionó T107 T79_T105 dolor de cabeza T107 durante T79_T44 su última visita T107 T79_T49 al médico T107 T76_T105_T10 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 aconsejaron T107 T79_T9 realizar T107 T79_T115_T104 un electrocardiograma T107 para T79_T9 evaluar T107 T79_T105 mi corazón T107 T76_T115_T104 T0
+T1 T2 T79_T16_T17 Mi primo T107 T79_T9 fue diagnosticado con T107 T79_T116 diabetes T107 T79_T13 hace un mes T107 T76_T106_T39 T0
+T1 T2 T79_T16_T17 Me T107 T79_T9 realizarán T107 T79_T115_T104 una radiografía T107 T79_T13 la próxima semana T107 T76_T115_T104 T0
+T1 T2 T79_T73_T62 Real Madrid T107 se encuentra en una posición dominante en el partido de la T79_T214_T104 La Liga T107 contra T79_T73_T62 Barcelona T107 . T76_T71 T0
+T1 T2 Qué T79_T9 golazo T107 de T79_T100_T62 Messi END, un verdadero espectáculo para los aficionados . T76_T78 T0
+T1 T2 T79_T100_T62 Cristiano Ronaldo T107 T79_T9 dispara T107 desde fuera del área, pero el T79_T1896_T62 Oblak T107 realiza una T79_T9 parada T107 espectacular . T76_T352 T0
+T1 T2 T79_T1875_T62 Martínez Munuera T107 muestra una T79_T447_T104 tarjeta amarilla T107 a T79_T100_T62 Casemiro T107 por una falta dura . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 viento T107 está afectando el juego en el T79_T1658_T62 Santiago Bernabéu T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Zidane T107 realiza un T79_T9 cambio T107 táctico para intentar cambiar el rumbo del partido . T76_T524 T0
+T1 T2 Qué T79_T9 regate T107 de T79_T100_T62 Iniesta END, dejando atrás a dos defensores rivales . T76_T739 T0
+T1 T2 T79_T73_T62 Manchester City T107 T79_T9 empata T107 el partido con un gol en el último minuto contra T79_T73_T62 Liverpool T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Mbappé T107 sufre una T79_T502_T104 lesión muscular T107 y es sustituido por T79_T100_T62 Di María T107 . T76_T502 T0
+T1 T2 ¡Qué T79_T9 paradón T107 de T79_T1896_T62 Ter Stegen T107 para mantener a T79_T73_T62 Bayern Munich T107 en el partido! T76_T352 T0
+T1 T2 T79_T73_T62 Juventus T107 T79_T9 defiende T107 con solidez ante los constantes ataques de T79_T73_T62 Inter de Milán T107 . T76_T71 T0
+T1 T2 T79_T100_T62 Hazard T107 T79_T9 asiste T107 a T79_T100_T62 Benzema END, quien marca el T79_T9 gol T107 de la victoria para T79_T73_T62 Real Madrid T107 . T76_T78 T0
+T1 T2 T79_T1875_T62 Taylor T107 señala un T79_T578_T1326 fuera de juego T107 en contra de T79_T100_T62 Kane T107 . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 sol T107 brilla en el T79_T1658_T62 Camp Nou T107 para este emocionante partido de la T79_T214_T104 Copa del Rey T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Guardiola T107 muestra su T79_T1566_T1404 frustración en la banda tras un gol encajado por su equipo . T76_T71 T0
+T1 T2 T79_T73_T62 PSG T107 T79_T9 remonta T107 un T79_T47 0-2 T107 en un emocionante partido contra T79_T73_T62 Marseille T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Salah T107 realiza un T79_T9 regate T107 impresionante, dejando a los defensores rivales sin opciones . T76_T739 T0
+T1 T2 T79_T73_T62 Borussia Dortmund T107 se lleva la T79_T214_T104 Bundesliga T107 con una T79_T47 3-1 T107 victoria sobre T79_T73_T62 Bayern Munich T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Pogba T107 recibe una T79_T9 tarjeta roja T107 por una entrada peligrosa en el mediocampo . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 granizo T107 está dificultando el juego en el T79_T1658_T62 Stamford Bridge T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Simeone T107 realiza un T79_T9 cambio táctico T107 para intentar revertir la situación en el partido . T76_T524 T0
+T1 T2 Qué T79_T9 jugada T107 tan elaborada por T79_T73_T62 Atletico Madrid END, mostrando su calidad en el T79_T214_T104 Champions League T107 . T76_T71 T0
+T1 T2 T79_T100_T62 De Bruyne T107 T79_T9 dispara T107 desde larga distancia, pero el balón se va desviado por poco . T76_T711_T369 T0
+T1 T2 T79_T73_T62 AC Milan T107 T79_T9 empata T107 el partido en los T79_T44 últimos minutos T107 con un gol de T79_T100_T62 Ibrahimovic T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Neymar T107 sufre una T79_T502_T104 lesión en el tobillo T107 y es sustituido de inmediato . T76_T502 T0
+T1 T2 ¡Qué T79_T9 atajada T107 increíble de T79_T1896_T62 Navas T107 para mantener el marcador en cero! T76_T352 T0
+T1 T2 T79_T73_T62 Chelsea T107 T79_T9 defiende T107 con uñas y dientes ante los ataques de T79_T73_T62 Manchester United T107 . T76_T71 T0
+T1 T2 T79_T100_T62 Griezmann T107 T79_T9 asiste T107 a T79_T100_T62 Suárez END, quien marca el T79_T9 gol T107 del empate para T79_T73_T62 Barcelona T107 . T76_T78 T0
+T1 T2 T79_T1875_T62 Oliver T107 muestra una T79_T447_T104 tarjeta roja T107 directa a T79_T100_T62 Ramos T107 por una falta violenta . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 neblina T107 está descendiendo sobre el T79_T1658_T62 Anfield END, dificultando la visibilidad . T76_T71 T0
+T1 T2 T79_T1731_T62 Klopp T107 celebra efusivamente el gol de la victoria de su equipo en el T79_T214_T104 Premier League T107 . T76_T496 T0
+T1 T2 T79_T73_T62 Bayern Munich T107 T79_T9 remonta T107 un T79_T47 0-3 T107 en un partido memorable contra T79_T73_T62 Borussia Dortmund T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Aguero T107 realiza un T79_T9 regate T107 impresionante en el área rival, pero su disparo es bloqueado por la defensa . T76_T739 T0
+T1 T2 T79_T73_T62 Inter de Milán T107 se proclama campeón de la T79_T214_T104 Serie A T107 tras una T79_T47 2-1 T107 victoria sobre T79_T73_T62 Juventus T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Modric T107 recibe una T79_T9 tarjeta amarilla T107 por una falta táctica en el mediocampo . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 viento T107 fuerte está afectando los pases en este partido de la T79_T214_T104 Europa League T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Mourinho T107 muestra su T79_T1566_T1404 descontento con el rendimiento de su equipo durante la primera mitad . T76_T71 T0
+T1 T2 Qué T79_T9 golazo T107 de T79_T100_T62 Ronaldo END, una obra maestra que deja sin opciones al T79_T1896_T62 rival T107 . T76_T78 T0
+T1 T2 T79_T73_T62 Liverpool T107 T79_T9 empata T107 el partido en los T79_T44 últimos minutos T107 con un gol de T79_T100_T62 Mane T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Hazard T107 sufre una T79_T502_T104 lesión en el muslo T107 y es sustituido por T79_T100_T62 Asensio T107 . T76_T502 T0
+T1 T2 ¡Qué T79_T9 atajada T107 crucial de T79_T1896_T62 Courtois T107 para mantener a T79_T73_T62 Real Madrid T107 en el partido! T76_T352 T0
+T1 T2 T79_T73_T62 Manchester City T107 T79_T9 domina T107 el juego en la segunda mitad contra T79_T73_T62 Arsenal T107 . T76_T71 T0
+T1 T2 T79_T100_T62 De Jong T107 T79_T9 asiste T107 a T79_T100_T62 Messi END, quien marca el T79_T9 gol T107 de la victoria para T79_T73_T62 Barcelona T107 . T76_T78 T0
+T1 T2 T79_T1875_T62 González González T107 muestra una T79_T447_T104 tarjeta roja T107 directa a T79_T100_T62 Vidal T107 por una agresión flagrante . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 calor T107 intenso está afectando el rendimiento de los jugadores en este partido de la T79_T214_T104 Copa Libertadores T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Ancelotti T107 realiza un T79_T9 cambio táctico T107 para reforzar la defensa de su equipo . T76_T524 T0
+T1 T2 Qué T79_T9 regate T107 impresionante de T79_T100_T62 Neymar END, dejando atrás a varios defensores con su habilidad . T76_T739 T0
+T1 T2 T79_T73_T62 Chelsea T107 T79_T9 empata T107 el partido con un gol en el último minuto contra T79_T73_T62 Tottenham Hotspur T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Salah T107 recibe una T79_T9 tarjeta amarilla T107 por simular una falta en el área rival . T76_T1326 T0
+T1 T2 T79_T100_T62 Mbappé T107 sufre una T79_T502_T104 lesión en el hombro T107 y es sustituido por T79_T100_T62 Di María T107 . T76_T502 T0
+T1 T2 ¡Qué T79_T9 paradón T107 de T79_T1896_T62 Neuer T107 para evitar el gol en propia puerta! T76_T352 T0
+T1 T2 T79_T73_T62 Real Madrid T107 T79_T9 domina T107 el juego en la primera mitad contra T79_T73_T62 Atletico Madrid T107 . T76_T71 T0
+T1 T2 T79_T100_T62 De Bruyne T107 T79_T9 dispara T107 desde larga distancia, pero el balón se estrella en el travesaño . T76_T711_T369 T0
+T1 T2 T79_T73_T62 Barcelona T107 T79_T9 remonta T107 un T79_T47 0-2 T107 en un emocionante partido contra T79_T73_T62 Real Madrid T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Ronaldo T107 sufre una T79_T502_T104 lesión en el tobillo T107 y es sustituido de inmediato . T76_T502 T0
+T1 T2 ¡Qué T79_T9 atajada T107 espectacular de T79_T1896_T62 Ter Stegen T107 para mantener a T79_T73_T62 Barcelona T107 en el partido! T76_T352 T0
+T1 T2 T79_T73_T62 Manchester United T107 T79_T9 defiende T107 con solidez ante los constantes ataques de T79_T73_T62 Manchester City T107 . T76_T71 T0
+T1 T2 T79_T100_T62 Suárez T107 T79_T9 asiste T107 a T79_T100_T62 Griezmann END, quien marca el T79_T9 gol T107 de la victoria para T79_T73_T62 Barcelona T107 . T76_T78 T0
+T1 T2 T79_T1875_T62 Taylor T107 señala un T79_T578_T1326 fuera de juego T107 en contra de T79_T100_T62 Rashford T107 . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 lluvia T107 está afectando el juego en el T79_T1658_T62 Old Trafford T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Guardiola T107 muestra su T79_T1566_T1404 frustración en la banda tras un gol encajado por su equipo . T76_T71 T0
+T1 T2 T79_T73_T62 PSG T107 T79_T9 empata T107 el partido en los T79_T44 últimos minutos T107 con un gol de T79_T100_T62 Mbappé T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Hazard T107 realiza un T79_T9 regate T107 impresionante, dejando a los defensores rivales sin opciones . T76_T739 T0
+T1 T2 T79_T73_T62 Borussia Dortmund T107 se lleva la T79_T214_T104 Bundesliga T107 con una T79_T47 3-1 T107 victoria sobre T79_T73_T62 Bayern Munich T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Pogba T107 recibe una T79_T9 tarjeta roja T107 por una entrada peligrosa en el mediocampo . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 granizo T107 está dificultando el juego en el T79_T1658_T62 Signal Iduna Park T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Simeone T107 realiza un T79_T9 cambio táctico T107 para intentar revertir la situación en el partido . T76_T524 T0
+T1 T2 Qué T79_T9 jugada T107 tan elaborada por T79_T73_T62 Real Madrid END, mostrando su calidad en la T79_T214_T104 Champions League T107 . T76_T71 T0
+T1 T2 T79_T100_T62 De Bruyne T107 T79_T9 dispara T107 desde larga distancia, pero el balón se va desviado por poco . T76_T711_T369 T0
+T1 T2 T79_T73_T62 AC Milan T107 T79_T9 empata T107 el partido en los T79_T44 últimos minutos T107 con un gol de T79_T100_T62 Ibrahimovic T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Neymar T107 sufre una T79_T502_T104 lesión en el tobillo T107 y es sustituido de inmediato . T76_T502 T0
+T1 T2 ¡Qué T79_T9 atajada T107 increíble de T79_T1896_T62 Navas T107 para mantener el marcador en cero! T76_T352 T0
+T1 T2 T79_T73_T62 Chelsea T107 T79_T9 defiende T107 con uñas y dientes ante los ataques de T79_T73_T62 Manchester United T107 . T76_T71 T0
+T1 T2 T79_T100_T62 Griezmann T107 T79_T9 asiste T107 a T79_T100_T62 Suárez END, quien marca el T79_T9 gol T107 del empate para T79_T73_T62 Barcelona T107 . T76_T78 T0
+T1 T2 T79_T1875_T62 Oliver T107 muestra una T79_T447_T104 tarjeta roja T107 directa a T79_T100_T62 Ramos T107 por una falta violenta . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 neblina T107 está descendiendo sobre el T79_T1658_T62 Wanda Metropolitano END, dificultando la visibilidad . T76_T71 T0
+T1 T2 T79_T1731_T62 Klopp T107 celebra efusivamente el gol de la victoria de su equipo en el T79_T214_T104 Premier League T107 . T76_T496 T0
+T1 T2 T79_T73_T62 Bayern Munich T107 T79_T9 remonta T107 un T79_T47 0-3 T107 en un partido memorable contra T79_T73_T62 Borussia Dortmund T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Aguero T107 realiza un T79_T9 regate T107 impresionante en el área rival, pero su disparo es bloqueado por la defensa . T76_T739 T0
+T1 T2 T79_T73_T62 Inter de Milán T107 se proclama campeón de la T79_T214_T104 Serie A T107 tras una T79_T47 2-1 T107 victoria sobre T79_T73_T62 Juventus T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Modric T107 recibe una T79_T9 tarjeta amarilla T107 por una falta táctica en el mediocampo . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 viento T107 fuerte está afectando los pases en este partido de la T79_T214_T104 Europa League T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Mourinho T107 muestra su T79_T1566_T1404 descontento con el rendimiento de su equipo durante la primera mitad . T76_T71 T0
+T1 T2 Qué T79_T9 golazo T107 de T79_T100_T62 Ronaldo END, una obra maestra que deja sin opciones al T79_T1896_T62 rival T107 . T76_T78 T0
+T1 T2 T79_T73_T62 Liverpool T107 T79_T9 empata T107 el partido en los T79_T44 últimos minutos T107 con un gol de T79_T100_T62 Mane T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Hazard T107 sufre una T79_T502_T104 lesión en el muslo T107 y es sustituido por T79_T100_T62 Asensio T107 . T76_T502 T0
+T1 T2 ¡Qué T79_T9 atajada T107 crucial de T79_T1896_T62 Courtois T107 para mantener a T79_T73_T62 Real Madrid T107 en el partido! T76_T352 T0
+T1 T2 T79_T73_T62 Manchester City T107 T79_T9 domina T107 el juego en la segunda mitad contra T79_T73_T62 Arsenal T107 . T76_T71 T0
+T1 T2 T79_T100_T62 De Jong T107 T79_T9 asiste T107 a T79_T100_T62 Messi END, quien marca el T79_T9 gol T107 de la victoria para T79_T73_T62 Barcelona T107 . T76_T78 T0
+T1 T2 T79_T1875_T62 González González T107 muestra una T79_T447_T104 tarjeta roja T107 directa a T79_T100_T62 Vidal T107 por una agresión flagrante . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 calor T107 intenso está afectando el rendimiento de los jugadores en este partido de la T79_T214_T104 Copa Libertadores T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Ancelotti T107 realiza un T79_T9 cambio táctico T107 para reforzar la defensa de su equipo . T76_T524 T0
+T1 T2 Qué T79_T9 regate T107 impresionante de T79_T100_T62 Neymar END, dejando atrás a varios defensores con su habilidad . T76_T739 T0
+T1 T2 T79_T73_T62 Chelsea T107 T79_T9 empata T107 el partido con un gol en el último minuto contra T79_T73_T62 Tottenham Hotspur T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Salah T107 recibe una T79_T9 tarjeta amarilla T107 por simular una falta en el área rival . T76_T1326 T0
+T1 T2 T79_T100_T62 Mbappé T107 sufre una T79_T502_T104 lesión en el hombro T107 y es sustituido por T79_T100_T62 Di María T107 . T76_T502 T0
+T1 T2 ¡Qué T79_T9 paradón T107 de T79_T1896_T62 Neuer T107 para evitar el gol en propia puerta! T76_T352 T0
+T1 T2 T79_T73_T62 Real Madrid T107 T79_T9 domina T107 el juego en la primera mitad contra T79_T73_T62 Atletico Madrid T107 . T76_T71 T0
+T1 T2 T79_T100_T62 De Bruyne T107 T79_T9 dispara T107 desde larga distancia, pero el balón se estrella en el travesaño . T76_T711_T369 T0
+T1 T2 T79_T73_T62 Barcelona T107 T79_T9 remonta T107 un T79_T47 0-2 T107 en un emocionante partido contra T79_T73_T62 Real Madrid T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Ronaldo T107 sufre una T79_T502_T104 lesión en el tobillo T107 y es sustituido de inmediato . T76_T502 T0
+T1 T2 ¡Qué T79_T9 atajada T107 espectacular de T79_T1896_T62 Ter Stegen T107 para mantener a T79_T73_T62 Barcelona T107 en el partido! T76_T352 T0
+T1 T2 T79_T73_T62 Manchester United T107 T79_T9 defiende T107 con solidez ante los constantes ataques de T79_T73_T62 Manchester City T107 . T76_T71 T0
+T1 T2 T79_T100_T62 Suárez T107 T79_T9 asiste T107 a T79_T100_T62 Griezmann END, quien marca el T79_T9 gol T107 de la victoria para T79_T73_T62 Barcelona T107 . T76_T78 T0
+T1 T2 T79_T1875_T62 Taylor T107 señala un T79_T578_T1326 fuera de juego T107 en contra de T79_T100_T62 Rashford T107 . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 lluvia T107 está afectando el juego en el T79_T1658_T62 Old Trafford T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Guardiola T107 muestra su T79_T1566_T1404 frustración en la banda tras un gol encajado por su equipo . T76_T71 T0
+T1 T2 T79_T73_T62 PSG T107 T79_T9 empata T107 el partido en los T79_T44 últimos minutos T107 con un gol de T79_T100_T62 Mbappé T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Hazard T107 realiza un T79_T9 regate T107 impresionante, dejando a los defensores rivales sin opciones . T76_T739 T0
+T1 T2 T79_T73_T62 Borussia Dortmund T107 se lleva la T79_T214_T104 Bundesliga T107 con una T79_T47 3-1 T107 victoria sobre T79_T73_T62 Bayern Munich T107 . T76_T52 T0
+T1 T2 T79_T100_T62 Pogba T107 recibe una T79_T9 tarjeta roja T107 por una entrada peligrosa en el mediocampo . T76_T1326 T0
+T1 T2 El T79_T1565_T1881 granizo T107 está dificultando el juego en el T79_T1658_T62 Signal Iduna Park T107 . T76_T71 T0
+T1 T2 T79_T1731_T62 Simeone T107 realiza un T79_T9 cambio táctico T107 para intentar revertir la situación en el partido . T76_T524 T0
+T1 T2 Qué T79_T9 jugada T107 tan elaborada por T79_T73_T62 Real Madrid END, mostrando su calidad en la T79_T214_T104 Champions League T107 . T76_T71 T0
+T1 T2 T79_T100_T62 De Bruyne T107 T79_T9 dispara T107 desde larga distancia, pero el balón se va desviado por poco . T76_T711_T369 T0
+T1 T2 T79_T9 Comenzar T107 una sesión de T79_T38_T104 entrenamiento de fuerza T107 en el gimnasio a las T79_T44 8:00 a . m . T107 . T76_T88_T80 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T66_T17 peso T107 en la aplicación de fitness . T76_T103_T17 T0
+T1 T2 T79_T9 Programar T107 una sesión de T79_T38_T104 yoga T107 para T79_T13 mañana T107 . T76_T46_T38 T0
+T1 T2 T79_T9 Rastrear T107 mi progreso en T79_T29_T34 flexiones T107 . T76_T89_T29 T0
+T1 T2 T79_T9 Establecer T107 una meta de T79_T120_T104 correr T107 T79_T64 tres veces a la semana T107 . T76_T81_T120 T0
+T1 T2 T79_T9 Analizar T107 mi T79_T80_T32 plan de entrenamiento T107 actual . T76_T83 T0
+T1 T2 T79_T9 Ver T107 los T79_T80_T32 ejercicios T107 recomendados para T79_T27_T104 entrenamiento de cardio T107 . T76_T55 T0
+T1 T2 T79_T9 Generar T107 un informe de T79_T29_T34 ganancia de músculo T107 de la última semana . T76_T11_T10 T0
+T1 T2 T79_T9 Monitorear T107 mi T79_T21 ritmo cardíaco T107 durante el T79_T45 entrenamiento de intervalos T107 . T76_T99 T0
+T1 T2 T79_T9 Completar T107 mi T79_T80_T32 rutina de ejercicios T107 para hoy . T76_T31 T0
+T1 T2 T79_T9 Pausar T107 la T79_T38_T104 clase de spinning T107 por un momento . T76_T6 T0
+T1 T2 T79_T9 Reanudar T107 la T79_T38_T104 sesión de pilates T107 después de un descanso corto . T76_T77 T0
+T1 T2 T79_T9 Detener T107 el T79_T38_T104 entrenamiento de boxeo T107 debido a una lesión . T76_T111 T0
+T1 T2 T79_T9 Aumentar T107 la T79_T21 resistencia T107 en la T79_T495 máquina de remo T107 . T76_T91_T21 T0
+T1 T2 T79_T9 Disminuir T107 la T79_T21 velocidad T107 en la T79_T27_T104 carrera T107 para un enfriamiento . T76_T12_T21 T0
+T1 T2 T79_T9 Registrar T107 mi T79_T95 porcentaje de grasa corporal T107 . T76_T93_T29 T0
+T1 T2 T79_T9 Medir T107 mi T79_T95 distancia recorrida T107 en la T79_T49 pista de atletismo T107 . T76_T264 T0
+T1 T2 T79_T9 Notificar T107 mi T79_T29_T34 progreso T107 en T79_T120_T104 levantamiento de pesas T107 . T76_T61 T0
+T1 T2 T79_T9 Iniciar T107 una T79_T38_T104 clase de zumba T107 en el parque a las T79_T44 6:00 p . m . T107 . T76_T88_T80 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T66_T17 altura T107 en la aplicación de fitness . T76_T103_T17 T0
+T1 T2 T79_T9 Programar T107 una sesión de T79_T38_T104 natación T107 para T79_T13 el próximo sábado T107 . T76_T46_T38 T0
+T1 T2 T79_T9 Rastrear T107 mi progreso en T79_T29_T34 sentadillas T107 . T76_T89_T29 T0
+T1 T2 T79_T9 Establecer T107 una meta de T79_T120_T104 flexiones T107 T79_T64 cuatro veces a la semana T107 . T76_T81_T120 T0
+T1 T2 T79_T9 Analizar T107 mi T79_T80_T32 plan de entrenamiento T107 semanal . T76_T83 T0
+T1 T2 T79_T9 Ver T107 los T79_T80_T32 ejercicios T107 recomendados para T79_T27_T104 entrenamiento de fuerza T107 . T76_T55 T0
+T1 T2 T79_T9 Generar T107 un informe de T79_T29_T34 pérdida de peso T107 del último mes . T76_T11_T10 T0
+T1 T2 T79_T9 Monitorear T107 mi T79_T21 frecuencia cardíaca T107 durante el T79_T45 entrenamiento de resistencia T107 . T76_T99 T0
+T1 T2 T79_T9 Completar T107 mi T79_T80_T32 rutina de ejercicios T107 para esta tarde . T76_T31 T0
+T1 T2 T79_T9 Pausar T107 la T79_T38_T104 clase de spinning T107 para tomar agua . T76_T6 T0
+T1 T2 T79_T9 Reanudar T107 la T79_T38_T104 sesión de yoga T107 después de un breve descanso . T76_T77 T0
+T1 T2 T79_T9 Detener T107 el T79_T38_T104 entrenamiento de crossfit T107 por fatiga extrema . T76_T111 T0
+T1 T2 T79_T9 Aumentar T107 la T79_T21 inclinación T107 en la T79_T495 cinta de correr T107 . T76_T91_T21 T0
+T1 T2 T79_T9 Disminuir T107 la T79_T21 resistencia T107 en la T79_T27_T104 bicicleta estática T107 para enfriar . T76_T12_T21 T0
+T1 T2 T79_T9 Registrar T107 mi T79_T95 circunferencia de cintura T107 . T76_T93_T29 T0
+T1 T2 T79_T9 Medir T107 mi T79_T95 tiempo de carrera T107 en la T79_T49 pista de atletismo T107 . T76_T264 T0
+T1 T2 T79_T9 Notificar T107 mi T79_T29_T34 avance T107 en T79_T120_T104 flexiones T107 . T76_T61 T0
+T1 T2 T79_T9 Iniciar T107 una T79_T38_T104 clase de baile T107 en el estudio a las T79_T44 7:30 p . m . T107 . T76_T88_T80 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T66_T17 edad T107 en la aplicación de fitness . T76_T103_T17 T0
+T1 T2 T79_T9 Programar T107 una sesión de T79_T38_T104 pilates T107 para T79_T13 el próximo lunes T107 . T76_T46_T38 T0
+T1 T2 T79_T9 Rastrear T107 mi progreso en T79_T29_T34 abdominales T107 . T76_T89_T29 T0
+T1 T2 T79_T9 Establecer T107 una meta de T79_T120_T104 ciclismo T107 T79_T64 dos veces a la semana T107 . T76_T81_T120 T0
+T1 T2 T79_T9 Analizar T107 mi T79_T80_T32 plan de entrenamiento T107 mensual . T76_T83 T0
+T1 T2 T79_T9 Ver T107 los T79_T80_T32 ejercicios T107 recomendados para T79_T27_T104 entrenamiento de flexibilidad T107 . T76_T55 T0
+T1 T2 T79_T9 Generar T107 un informe de T79_T29_T34 ganancia de fuerza T107 del último trimestre . T76_T11_T10 T0
+T1 T2 T79_T9 Monitorear T107 mi T79_T21 nivel de energía T107 durante el T79_T45 entrenamiento de cardio T107 . T76_T99 T0
+T1 T2 T79_T9 Completar T107 mi T79_T80_T32 rutina de ejercicios T107 para esta mañana . T76_T31 T0
+T1 T2 T79_T9 Pausar T107 la T79_T38_T104 clase de boxeo T107 para estirar los músculos . T76_T6 T0
+T1 T2 T79_T9 Reanudar T107 la T79_T38_T104 sesión de spinning T107 después de un breve descanso . T76_T77 T0
+T1 T2 T79_T9 Detener T107 el T79_T38_T104 entrenamiento de natación T107 debido a una emergencia . T76_T111 T0
+T1 T2 T79_T9 Aumentar T107 la T79_T21 velocidad T107 en la T79_T27_T104 carrera T107 . T76_T91_T21 T0
+T1 T2 T79_T9 Disminuir T107 la T79_T21 resistencia T107 en la T79_T495 máquina elíptica T107 para enfriar . T76_T12_T21 T0
+T1 T2 T79_T9 Registrar T107 mi T79_T95 porcentaje de masa muscular T107 . T76_T93_T29 T0
+T1 T2 T79_T9 Medir T107 mi T79_T95 distancia nadada T107 en la T79_T49 piscina T107 . T76_T264 T0
+T1 T2 T79_T9 Notificar T107 mi T79_T29_T34 progreso T107 en T79_T120_T104 levantamiento de pesas T107 . T76_T61 T0
+T1 T2 T79_T9 Iniciar T107 una T79_T38_T104 clase de kickboxing T107 en el gimnasio a las T79_T44 5:00 p . m . T107 . T76_T88_T80 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T66_T17 género T107 en la aplicación de fitness . T76_T103_T17 T0
+T1 T2 T79_T9 Programar T107 una sesión de T79_T38_T104 escalada T107 para T79_T13 el próximo viernes T107 . T76_T46_T38 T0
+T1 T2 T79_T9 Rastrear T107 mi progreso en T79_T29_T34 flexiones de brazos T107 . T76_T89_T29 T0
+T1 T2 T79_T9 Establecer T107 una meta de T79_T120_T104 running T107 T79_T64 cinco veces a la semana T107 . T76_T81_T120 T0
+T1 T2 T79_T9 Analizar T107 mi T79_T80_T32 plan de entrenamiento T107 anual . T76_T83 T0
+T1 T2 T79_T9 Ver T107 los T79_T80_T32 ejercicios T107 recomendados para T79_T27_T104 entrenamiento de resistencia T107 . T76_T55 T0
+T1 T2 T79_T9 Generar T107 un informe de T79_T29_T34 pérdida de grasa corporal T107 del último año . T76_T11_T10 T0
+T1 T2 T79_T9 Monitorear T107 mi T79_T21 presión arterial T107 durante el T79_T45 entrenamiento de fuerza T107 . T76_T99 T0
+T1 T2 T79_T9 Completar T107 mi T79_T80_T32 rutina de ejercicios T107 para esta noche . T76_T31 T0
+T1 T2 T79_T9 Pausar T107 la T79_T38_T104 clase de yoga T107 para meditar un momento . T76_T6 T0
+T1 T2 T79_T9 Reanudar T107 la T79_T38_T104 sesión de pilates T107 después de un breve descanso . T76_T77 T0
+T1 T2 T79_T9 Detener T107 el T79_T38_T104 entrenamiento de crossfit T107 por una lesión repentina . T76_T111 T0
+T1 T2 T79_T9 Aumentar T107 la T79_T21 resistencia T107 en la T79_T495 bicicleta de spinning T107 . T76_T91_T21 T0
+T1 T2 T79_T9 Disminuir T107 la T79_T21 velocidad T107 en la T79_T27_T104 caminata T107 para enfriar . T76_T12_T21 T0
+T1 T2 T79_T9 Registrar T107 mi T79_T95 frecuencia cardíaca en reposo T107 . T76_T93_T29 T0
+T1 T2 T79_T9 Medir T107 mi T79_T95 tiempo de sprint T107 en la T79_T49 pista de atletismo T107 . T76_T264 T0
+T1 T2 T79_T9 Notificar T107 mi T79_T29_T34 avance T107 en T79_T120_T104 flexiones de brazos T107 . T76_T61 T0
+T1 T2 T79_T9 Iniciar T107 una T79_T38_T104 clase de baile T107 en el parque a las T79_T44 6:30 p . m . T107 . T76_T88_T80 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T66_T17 dirección T107 en la aplicación de fitness . T76_T103_T17 T0
+T1 T2 T79_T9 Programar T107 una sesión de T79_T38_T104 pilates T107 para T79_T13 el próximo martes T107 . T76_T46_T38 T0
+T1 T2 T79_T9 Rastrear T107 mi progreso en T79_T29_T34 plancha abdominal T107 . T76_T89_T29 T0
+T1 T2 T79_T9 Establecer T107 una meta de T79_T120_T104 ciclismo T107 T79_T64 tres veces a la semana T107 . T76_T81_T120 T0
+T1 T2 T79_T9 Analizar T107 mi T79_T80_T32 plan de entrenamiento T107 trimestral . T76_T83 T0
+T1 T2 T79_T9 Ver T107 los T79_T80_T32 ejercicios T107 recomendados para T79_T27_T104 entrenamiento de flexibilidad T107 . T76_T55 T0
+T1 T2 T79_T9 Generar T107 un informe de T79_T29_T34 ganancia de resistencia T107 del último mes . T76_T11_T10 T0
+T1 T2 T79_T9 Monitorear T107 mi T79_T21 nivel de fatiga T107 durante el T79_T45 entrenamiento de cardio T107 . T76_T99 T0
+T1 T2 T79_T9 Completar T107 mi T79_T80_T32 rutina de ejercicios T107 para esta tarde . T76_T31 T0
+T1 T2 T79_T9 Pausar T107 la T79_T38_T104 clase de boxeo T107 para hidratarme . T76_T6 T0
+T1 T2 T79_T9 Reanudar T107 la T79_T38_T104 sesión de spinning T107 después de un descanso breve . T76_T77 T0
+T1 T2 T79_T9 Detener T107 el T79_T38_T104 entrenamiento de natación T107 por mal tiempo . T76_T111 T0
+T1 T2 T79_T9 Aumentar T107 la T79_T21 velocidad T107 en la T79_T27_T104 carrera T107 . T76_T91_T21 T0
+T1 T2 T79_T9 Disminuir T107 la T79_T21 resistencia T107 en la T79_T495 máquina de escalada T107 para enfriar . T76_T12_T21 T0
+T1 T2 T79_T9 Registrar T107 mi T79_T95 porcentaje de masa grasa T107 . T76_T93_T29 T0
+T1 T2 T79_T9 Medir T107 mi T79_T95 distancia recorrida T107 en la T79_T49 pista de atletismo T107 . T76_T264 T0
+T1 T2 T79_T9 Notificar T107 mi T79_T29_T34 progreso T107 en T79_T120_T104 flexiones de brazos T107 . T76_T61 T0
+T1 T2 ¡Hola! ¿Podrías T79_T9 subir T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 ¿Qué tal si T79_T9 reproduces T107 la T79_T310 playlist T107 en la T79_T92 altavoz T107 del T79_T49 dormitorio T107 ? T76_T56_T14 T0
+T1 T2 T79_T9 Enciende T107 el T79_T92 aire acondicionado T107 en la T79_T49 cocina END, por favor . T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 mamá T107 . T76_T295 T0
+T1 T2 ¿Cuál es la T79_T60_T104 velocidad T107 del T79_T92 ventilador T107 en la T79_T49 habitación T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Programa T107 un T79_T42 recordatorio T107 para la T79_T13 mañana T107 a las T79_T44 9 a . m . T107 . T76_T81_T135 T0
+T1 T2 T79_T9 Bloquea T107 la T79_T92 puerta principal T107 antes de salir, por favor . T76_T92_T14 T0
+T1 T2 ¿Podrías T79_T9 disminuir T107 la T79_T60_T104 temperatura T107 del T79_T92 termostato T107 en la T79_T49 sala de estar T107 ? T76_T92_T14 T0
+T1 T2 T79_T9 Reproduce T107 la T79_T310 canción T107 Despacito en la T79_T92 sistema de sonido T107 . T76_T56_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 correo electrónico T107 a T79_T110 colega T107 sobre el T79_T42 informe trimestral T107 . T76_T800 T0
+T1 T2 ¿Qué tal si T79_T9 activamos T107 la T79_T92 calefacción T107 en la T79_T49 oficina T107 ? T76_T92_T14 T0
+T1 T2 Por favor, T79_T9 sube T107 el T79_T60_T104 volumen T107 de la T79_T92 televisor T107 en la T79_T49 sala T107 . T76_T92_T14 T0
+T1 T2 T79_T9 Configura T107 un T79_T42 evento T107 para la T79_T13 próximo viernes T107 a las T79_T44 6 p . m . T107 . T76_T213_T42 T0
+T1 T2 ¿Podrías T79_T9 desbloquear T107 la T79_T92 puerta trasera T107 para que pueda entrar ? T76_T92_T14 T0
+T1 T2 ¡Qué día tan T79_T60_T102 soleado END! ¿Cuál es la T79_T60_T104 temperatura T107 actual en la T79_T49 jardín T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Pausa T107 la T79_T310 película T107 que estoy viendo en la T79_T92 televisión T107 . T76_T56_T14 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 amigo T107 para quedar mañana . T76_T295 T0
+T1 T2 ¿Qué T79_T60_T104 hora T107 es la más adecuada para programar la T79_T9 alarma T107 en la T79_T92 despertador T107 ? T76_T81_T492 T0
+T1 T2 T79_T9 Cierra T107 las T79_T92 persianas T107 de la T79_T49 habitación T107 antes de que anochezca . T76_T92_T14 T0
+T1 T2 ¿Podrías T79_T9 disminuir T107 la T79_T60_T104 velocidad T107 del T79_T92 ventilador T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Por favor, T79_T9 reproduce T107 la T79_T310 lista de reproducción T107 Canciones relajantes en la T79_T92 altavoces T107 . T76_T56_T14 T0
+T1 T2 T79_T9 Activa T107 la T79_T92 cámara de seguridad T107 en la T79_T49 entrada T107 . T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 correo electrónico T107 a T79_T110 cliente T107 con el T79_T42 informe mensual T107 . T76_T800 T0
+T1 T2 ¿Qué T79_T60_T104 temperatura T107 tiene el T79_T92 termostato T107 en la T79_T49 sala de estar T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Programa T107 un T79_T42 recordatorio T107 para la T79_T13 reunión de equipo T107 a las T79_T44 10 a . m . T107 . T76_T81_T135 T0
+T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 puerta principal T107 antes de irnos ? T76_T92_T14 T0
+T1 T2 T79_T9 Reproduce T107 la T79_T310 canción T107 Shape of You en la T79_T92 sistema de sonido T107 . T76_T56_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 hermana T107 para felicitarla por su cumpleaños . T76_T295 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 volumen T107 de la T79_T92 televisor T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 T79_T9 Configura T107 un T79_T42 evento T107 para la T79_T13 próxima semana T107 a las T79_T44 7 p . m . T107 . T76_T213_T42 T0
+T1 T2 ¿Podrías T79_T9 desbloquear T107 la T79_T92 puerta trasera T107 para que pueda entrar ? T76_T92_T14 T0
+T1 T2 ¡Qué T79_T1565_T1881 día tan soleado END! ¿Cuál es la T79_T60_T104 temperatura T107 actual en la T79_T49 jardín T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Pausa T107 la T79_T310 película T107 que estoy viendo en la T79_T92 televisión T107 . T76_T56_T14 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 amigo T107 para quedar mañana . T76_T295 T0
+T1 T2 ¿Qué T79_T60_T104 hora T107 es la más adecuada para programar la T79_T9 alarma T107 en la T79_T92 despertador T107 ? T76_T81_T492 T0
+T1 T2 T79_T9 Cierra T107 las T79_T92 persianas T107 de la T79_T49 habitación T107 antes de que anochezca . T76_T92_T14 T0
+T1 T2 ¿Podrías T79_T9 disminuir T107 la T79_T60_T104 velocidad T107 del T79_T92 ventilador T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Por favor, T79_T9 reproduce T107 la T79_T310 lista de reproducción T107 Canciones relajantes en la T79_T92 altavoces T107 . T76_T56_T14 T0
+T1 T2 T79_T9 Activa T107 la T79_T92 cámara de seguridad T107 en la T79_T49 entrada T107 . T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 correo electrónico T107 a T79_T110 cliente T107 con el T79_T42 informe mensual T107 . T76_T800 T0
+T1 T2 ¿Qué T79_T60_T104 temperatura T107 tiene el T79_T92 termostato T107 en la T79_T49 sala de estar T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Programa T107 un T79_T42 recordatorio T107 para la T79_T13 reunión de equipo T107 a las T79_T44 10 a . m . T107 . T76_T81_T135 T0
+T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 puerta principal T107 antes de irnos ? T76_T92_T14 T0
+T1 T2 T79_T9 Reproduce T107 la T79_T310 canción T107 Shape of You en la T79_T92 sistema de sonido T107 . T76_T56_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 hermana T107 para felicitarla por su cumpleaños . T76_T295 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 volumen T107 de la T79_T92 televisor T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 T79_T9 Configura T107 un T79_T42 evento T107 para la T79_T13 próxima semana T107 a las T79_T44 7 p . m . T107 . T76_T213_T42 T0
+T1 T2 ¿Podrías T79_T9 desbloquear T107 la T79_T92 puerta trasera T107 para que pueda entrar ? T76_T92_T14 T0
+T1 T2 ¡Qué T79_T1565_T1881 día tan soleado END! ¿Cuál es la T79_T60_T104 temperatura T107 actual en la T79_T49 jardín T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Pausa T107 la T79_T310 película T107 que estoy viendo en la T79_T92 televisión T107 . T76_T56_T14 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 amigo T107 para quedar mañana . T76_T295 T0
+T1 T2 ¿Qué T79_T60_T104 hora T107 es la más adecuada para programar la T79_T9 alarma T107 en la T79_T92 despertador T107 ? T76_T81_T492 T0
+T1 T2 T79_T9 Cierra T107 las T79_T92 persianas T107 de la T79_T49 habitación T107 antes de que anochezca . T76_T92_T14 T0
+T1 T2 ¿Podrías T79_T9 disminuir T107 la T79_T60_T104 velocidad T107 del T79_T92 ventilador T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Por favor, T79_T9 reproduce T107 la T79_T310 lista de reproducción T107 Canciones relajantes en la T79_T92 altavoces T107 . T76_T56_T14 T0
+T1 T2 T79_T9 Activa T107 la T79_T92 cámara de seguridad T107 en la T79_T49 entrada T107 . T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 correo electrónico T107 a T79_T110 cliente T107 con el T79_T42 informe mensual T107 . T76_T800 T0
+T1 T2 ¿Qué T79_T60_T104 temperatura T107 tiene el T79_T92 termostato T107 en la T79_T49 sala de estar T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Programa T107 un T79_T42 recordatorio T107 para la T79_T13 reunión de equipo T107 a las T79_T44 10 a . m . T107 . T76_T81_T135 T0
+T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 puerta principal T107 antes de irnos ? T76_T92_T14 T0
+T1 T2 T79_T9 Reproduce T107 la T79_T310 canción T107 Shape of You en la T79_T92 sistema de sonido T107 . T76_T56_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 hermana T107 para felicitarla por su cumpleaños . T76_T295 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 volumen T107 de la T79_T92 televisor T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 T79_T9 Configura T107 un T79_T42 evento T107 para la T79_T13 próxima semana T107 a las T79_T44 7 p . m . T107 . T76_T213_T42 T0
+T1 T2 ¿Podrías T79_T9 desbloquear T107 la T79_T92 puerta trasera T107 para que pueda entrar ? T76_T92_T14 T0
+T1 T2 ¡Qué T79_T1565_T1881 día tan soleado END! ¿Cuál es la T79_T60_T104 temperatura T107 actual en la T79_T49 jardín T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Pausa T107 la T79_T310 película T107 que estoy viendo en la T79_T92 televisión T107 . T76_T56_T14 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 amigo T107 para quedar mañana . T76_T295 T0
+T1 T2 ¿Qué T79_T60_T104 hora T107 es la más adecuada para programar la T79_T9 alarma T107 en la T79_T92 despertador T107 ? T76_T81_T492 T0
+T1 T2 T79_T9 Cierra T107 las T79_T92 persianas T107 de la T79_T49 habitación T107 antes de que anochezca . T76_T92_T14 T0
+T1 T2 ¿Podrías T79_T9 disminuir T107 la T79_T60_T104 velocidad T107 del T79_T92 ventilador T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Por favor, T79_T9 reproduce T107 la T79_T310 lista de reproducción T107 Canciones relajantes en la T79_T92 altavoces T107 . T76_T56_T14 T0
+T1 T2 T79_T9 Activa T107 la T79_T92 cámara de seguridad T107 en la T79_T49 entrada T107 . T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 correo electrónico T107 a T79_T110 cliente T107 con el T79_T42 informe mensual T107 . T76_T800 T0
+T1 T2 ¿Qué T79_T60_T104 temperatura T107 tiene el T79_T92 termostato T107 en la T79_T49 sala de estar T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Programa T107 un T79_T42 recordatorio T107 para la T79_T13 reunión de equipo T107 a las T79_T44 10 a . m . T107 . T76_T81_T135 T0
+T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 puerta principal T107 antes de irnos ? T76_T92_T14 T0
+T1 T2 T79_T9 Reproduce T107 la T79_T310 canción T107 Shape of You en la T79_T92 sistema de sonido T107 . T76_T56_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 hermana T107 para felicitarla por su cumpleaños . T76_T295 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 volumen T107 de la T79_T92 televisor T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 T79_T9 Configura T107 un T79_T42 evento T107 para la T79_T13 próxima semana T107 a las T79_T44 7 p . m . T107 . T76_T213_T42 T0
+T1 T2 ¿Podrías T79_T9 desbloquear T107 la T79_T92 puerta trasera T107 para que pueda entrar ? T76_T92_T14 T0
+T1 T2 ¡Qué T79_T1565_T1881 día tan soleado END! ¿Cuál es la T79_T60_T104 temperatura T107 actual en la T79_T49 jardín T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Pausa T107 la T79_T310 película T107 que estoy viendo en la T79_T92 televisión T107 . T76_T56_T14 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 amigo T107 para quedar mañana . T76_T295 T0
+T1 T2 ¿Qué T79_T60_T104 hora T107 es la más adecuada para programar la T79_T9 alarma T107 en la T79_T92 despertador T107 ? T76_T81_T492 T0
+T1 T2 T79_T9 Cierra T107 las T79_T92 persianas T107 de la T79_T49 habitación T107 antes de que anochezca . T76_T92_T14 T0
+T1 T2 ¿Podrías T79_T9 disminuir T107 la T79_T60_T104 velocidad T107 del T79_T92 ventilador T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Por favor, T79_T9 reproduce T107 la T79_T310 lista de reproducción T107 Canciones relajantes en la T79_T92 altavoces T107 . T76_T56_T14 T0
+T1 T2 T79_T9 Activa T107 la T79_T92 cámara de seguridad T107 en la T79_T49 entrada T107 . T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 correo electrónico T107 a T79_T110 cliente T107 con el T79_T42 informe mensual T107 . T76_T800 T0
+T1 T2 ¿Qué T79_T60_T104 temperatura T107 tiene el T79_T92 termostato T107 en la T79_T49 sala de estar T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Programa T107 un T79_T42 recordatorio T107 para la T79_T13 reunión de equipo T107 a las T79_T44 10 a . m . T107 . T76_T81_T135 T0
+T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 puerta principal T107 antes de irnos ? T76_T92_T14 T0
+T1 T2 T79_T9 Reproduce T107 la T79_T310 canción T107 Shape of You en la T79_T92 sistema de sonido T107 . T76_T56_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 hermana T107 para felicitarla por su cumpleaños . T76_T295 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 volumen T107 de la T79_T92 televisor T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 T79_T9 Configura T107 un T79_T42 evento T107 para la T79_T13 próxima semana T107 a las T79_T44 7 p . m . T107 . T76_T213_T42 T0
+T1 T2 ¿Podrías T79_T9 desbloquear T107 la T79_T92 puerta trasera T107 para que pueda entrar ? T76_T92_T14 T0
+T1 T2 ¡Qué T79_T1565_T1881 día tan soleado END! ¿Cuál es la T79_T60_T104 temperatura T107 actual en la T79_T49 jardín T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Pausa T107 la T79_T310 película T107 que estoy viendo en la T79_T92 televisión T107 . T76_T56_T14 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 amigo T107 para quedar mañana . T76_T295 T0
+T1 T2 ¿Qué T79_T60_T104 hora T107 es la más adecuada para programar la T79_T9 alarma T107 en la T79_T92 despertador T107 ? T76_T81_T492 T0
+T1 T2 T79_T9 Cierra T107 las T79_T92 persianas T107 de la T79_T49 habitación T107 antes de que anochezca . T76_T92_T14 T0
+T1 T2 ¿Podrías T79_T9 disminuir T107 la T79_T60_T104 velocidad T107 del T79_T92 ventilador T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Por favor, T79_T9 reproduce T107 la T79_T310 lista de reproducción T107 Canciones relajantes en la T79_T92 altavoces T107 . T76_T56_T14 T0
+T1 T2 T79_T9 Activa T107 la T79_T92 cámara de seguridad T107 en la T79_T49 entrada T107 . T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 correo electrónico T107 a T79_T110 cliente T107 con el T79_T42 informe mensual T107 . T76_T800 T0
+T1 T2 ¿Qué T79_T60_T104 temperatura T107 tiene el T79_T92 termostato T107 en la T79_T49 sala de estar T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Programa T107 un T79_T42 recordatorio T107 para la T79_T13 reunión de equipo T107 a las T79_T44 10 a . m . T107 . T76_T81_T135 T0
+T1 T2 ¿Podrías T79_T9 cerrar T107 la T79_T92 puerta principal T107 antes de irnos ? T76_T92_T14 T0
+T1 T2 T79_T9 Reproduce T107 la T79_T310 canción T107 Shape of You en la T79_T92 sistema de sonido T107 . T76_T56_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 hermana T107 para felicitarla por su cumpleaños . T76_T295 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 volumen T107 de la T79_T92 televisor T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 T79_T9 Configura T107 un T79_T42 evento T107 para la T79_T13 próxima semana T107 a las T79_T44 7 p . m . T107 . T76_T213_T42 T0
+T1 T2 ¿Podrías T79_T9 desbloquear T107 la T79_T92 puerta trasera T107 para que pueda entrar ? T76_T92_T14 T0
+T1 T2 ¡Qué T79_T1565_T1881 día tan soleado END! ¿Cuál es la T79_T60_T104 temperatura T107 actual en la T79_T49 jardín T107 ? T76_T225_T8 T0
+T1 T2 T79_T9 Pausa T107 la T79_T310 película T107 que estoy viendo en la T79_T92 televisión T107 . T76_T56_T14 T0
+T1 T2 ¿Podrías T79_T9 aumentar T107 el T79_T60_T104 brillo T107 de la T79_T92 lámpara T107 en la T79_T49 sala T107 ? T76_T92_T14 T0
+T1 T2 Voy a T79_T9 enviar T107 un T79_T310 mensaje T107 a T79_T110 amigo T107 para quedar mañana . T76_T295 T0
+T1 T2 T79_T9 Reservar T107 un vuelo T79_T121_T104 a T79_T69 París T107 para T79_T13 el próximo viernes T107 . T76_T25_T470 T0
+T1 T2 ¡Qué bonito es el T79_T1702_T1799 Coliseo T107 en T79_T69 Roma END! T76_T71 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T85_T36 itinerario T107 con una visita a T79_T1702_T1799 la Sagrada Familia T107 . T76_T103_T85 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 Madrid T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Deberías T79_T9 recordarme T107 que renueve mi T79_T18_T146 pasaporte T107 . T76_T305_T1621 T0
+T1 T2 ¿Cómo está el T79_T1813 clima T107 en T79_T69 Cancún T107 para T79_T13 la próxima semana T107 ? T76_T65_T1565 T0
+T1 T2 T79_T9 Confirmar T107 mi billete de T79_T489_T104 clase ejecutiva T107 para el vuelo T79_T121_T104 a T79_T69 Barcelona T107 . T76_T329_T50 T0
+T1 T2 ¡ENTITY_T49 La playa T107 en T79_T69 Miami T107 es increíble! T76_T71 T0
+T1 T2 T79_T9 Reservar T107 una habitación de T79_T98_T104 hotel T107 en T79_T69 Tokio T107 para T79_T13 el próximo mes T107 . T76_T20_T98 T0
+T1 T2 ¿Cuál es el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Buenos Aires T107 ? T76_T65_T8 T0
+T1 T2 T79_T66_T17 He T79_T9 reservado T107 un tren T79_T121_T104 a T79_T69 Berlín T107 para T79_T13 el próximo sábado T107 . T76_T643_T50 T0
+T1 T2 ¡ENTITY_T49 El aeropuerto T107 en T79_T69 Londres T107 es enorme! T76_T71 T0
+T1 T2 T79_T9 Establecer T107 una alerta de viaje T79_T18_T53 para T79_T69 Tokio T107 el T79_T13 próximo T107 . T76_T81_T53 T0
+T1 T2 ¿Podrías T79_T9 recomendar T107 algunos T79_T69 destinos de playa T107 para T79_T13 el próximo verano T107 ? T76_T205_T69 T0
+T1 T2 T79_T9 Notificarme T107 si hay T79_T18_T1598 restricciones de viaje T107 para T79_T69 México T107 . T76_T61_T1385 T0
+T1 T2 ¡Qué T79_T1813 clima T107 tan agradable en T79_T69 Barcelona T107 para T79_T13 este fin de semana END! T76_T71 T0
+T1 T2 T79_T9 Cancelar T107 mi reserva de T79_T98_T104 hotel T107 en T79_T69 París T107 para T79_T13 la próxima semana T107 . T76_T376_T23 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 Nueva York T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 pasaporte T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Verificar T107 el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Madrid T107 . T76_T65_T8 T0
+T1 T2 T79_T9 Reservar T107 un T79_T98_T104 alojamiento T107 en T79_T69 Berlín T107 para T79_T13 el próximo mes T107 . T76_T20_T98 T0
+T1 T2 ¿Cómo está el T79_T1813 clima T107 en T79_T69 Río de Janeiro T107 para T79_T13 la próxima semana T107 ? T76_T65_T1565 T0
+T1 T2 T79_T9 Confirmar T107 mi T79_T489_T104 billete de clase turista T107 para el vuelo T79_T121_T104 a T79_T69 Madrid T107 . T76_T329_T50 T0
+T1 T2 ¡ENTITY_T49 La playa T107 en T79_T69 Cancún T107 es paradisíaca! T76_T71 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T85_T36 itinerario T107 con una visita a T79_T1702_T1799 el Museo del Louvre T107 . T76_T103_T85 T0
+T1 T2 ¿Podrías T79_T9 recomendar T107 algunos T79_T69 destinos de montaña T107 para T79_T13 el próximo invierno T107 ? T76_T205_T69 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 visado T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Notificarme T107 si hay T79_T18_T1598 restricciones de viaje T107 para T79_T69 China T107 . T76_T61_T1385 T0
+T1 T2 ¡Qué T79_T1813 clima T107 tan agradable en T79_T69 Sydney T107 para T79_T13 este fin de semana END! T76_T71 T0
+T1 T2 T79_T9 Cancelar T107 mi reserva de T79_T98_T104 hotel T107 en T79_T69 Barcelona T107 para T79_T13 la próxima semana T107 . T76_T376_T23 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 París T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 seguro de viaje T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Verificar T107 el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Tokio T107 . T76_T65_T8 T0
+T1 T2 T79_T9 Reservar T107 un T79_T98_T104 alojamiento T107 en T79_T69 Ámsterdam T107 para T79_T13 el próximo mes T107 . T76_T20_T98 T0
+T1 T2 ¿Cómo está el T79_T1813 clima T107 en T79_T69 Bali T107 para T79_T13 la próxima semana T107 ? T76_T65_T1565 T0
+T1 T2 T79_T9 Confirmar T107 mi T79_T489_T104 billete de clase ejecutiva T107 para el vuelo T79_T121_T104 a T79_T69 Roma T107 . T76_T329_T50 T0
+T1 T2 ¡ENTITY_T49 La playa T107 en T79_T69 Miami T107 es increíble! T76_T71 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T85_T36 itinerario T107 con una visita a T79_T1702_T1799 la Torre Eiffel T107 . T76_T103_T85 T0
+T1 T2 ¿Podrías T79_T9 recomendar T107 algunos T79_T69 destinos de playa T107 para T79_T13 el próximo verano T107 ? T76_T205_T69 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 pasaporte T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Notificarme T107 si hay T79_T18_T1598 restricciones de viaje T107 para T79_T69 Japón T107 . T76_T61_T1385 T0
+T1 T2 ¡Qué T79_T1813 clima T107 tan agradable en T79_T69 Barcelona T107 para T79_T13 este fin de semana END! T76_T71 T0
+T1 T2 T79_T9 Cancelar T107 mi reserva de T79_T98_T104 hotel T107 en T79_T69 Tokio T107 para T79_T13 la próxima semana T107 . T76_T376_T23 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 Barcelona T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 pasaporte T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Verificar T107 el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Nueva York T107 . T76_T65_T8 T0
+T1 T2 T79_T9 Reservar T107 un T79_T98_T104 alojamiento T107 en T79_T69 Berlín T107 para T79_T13 el próximo mes T107 . T76_T20_T98 T0
+T1 T2 ¿Cómo está el T79_T1813 clima T107 en T79_T69 Río de Janeiro T107 para T79_T13 la próxima semana T107 ? T76_T65_T1565 T0
+T1 T2 T79_T9 Confirmar T107 mi T79_T489_T104 billete de clase turista T107 para el vuelo T79_T121_T104 a T79_T69 Madrid T107 . T76_T329_T50 T0
+T1 T2 ¡ENTITY_T49 La playa T107 en T79_T69 Cancún T107 es paradisíaca! T76_T71 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T85_T36 itinerario T107 con una visita a T79_T1702_T1799 el Museo del Louvre T107 . T76_T103_T85 T0
+T1 T2 ¿Podrías T79_T9 recomendar T107 algunos T79_T69 destinos de montaña T107 para T79_T13 el próximo invierno T107 ? T76_T205_T69 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 visado T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Notificarme T107 si hay T79_T18_T1598 restricciones de viaje T107 para T79_T69 China T107 . T76_T61_T1385 T0
+T1 T2 ¡Qué T79_T1813 clima T107 tan agradable en T79_T69 Sydney T107 para T79_T13 este fin de semana END! T76_T71 T0
+T1 T2 T79_T9 Cancelar T107 mi reserva de T79_T98_T104 hotel T107 en T79_T69 Barcelona T107 para T79_T13 la próxima semana T107 . T76_T376_T23 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 París T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 seguro de viaje T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Verificar T107 el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Tokio T107 . T76_T65_T8 T0
+T1 T2 T79_T9 Reservar T107 un T79_T98_T104 alojamiento T107 en T79_T69 Ámsterdam T107 para T79_T13 el próximo mes T107 . T76_T20_T98 T0
+T1 T2 ¿Cómo está el T79_T1813 clima T107 en T79_T69 Bali T107 para T79_T13 la próxima semana T107 ? T76_T65_T1565 T0
+T1 T2 T79_T9 Confirmar T107 mi T79_T489_T104 billete de clase ejecutiva T107 para el vuelo T79_T121_T104 a T79_T69 Roma T107 . T76_T329_T50 T0
+T1 T2 ¡ENTITY_T49 La playa T107 en T79_T69 Miami T107 es increíble! T76_T71 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T85_T36 itinerario T107 con una visita a T79_T1702_T1799 la Torre Eiffel T107 . T76_T103_T85 T0
+T1 T2 ¿Podrías T79_T9 recomendar T107 algunos T79_T69 destinos de playa T107 para T79_T13 el próximo verano T107 ? T76_T205_T69 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 pasaporte T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Notificarme T107 si hay T79_T18_T1598 restricciones de viaje T107 para T79_T69 Japón T107 . T76_T61_T1385 T0
+T1 T2 ¡Qué T79_T1813 clima T107 tan agradable en T79_T69 Barcelona T107 para T79_T13 este fin de semana END! T76_T71 T0
+T1 T2 T79_T9 Cancelar T107 mi reserva de T79_T98_T104 hotel T107 en T79_T69 Tokio T107 para T79_T13 la próxima semana T107 . T76_T376_T23 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 Barcelona T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 pasaporte T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Verificar T107 el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Nueva York T107 . T76_T65_T8 T0
+T1 T2 T79_T9 Reservar T107 un T79_T98_T104 alojamiento T107 en T79_T69 Berlín T107 para T79_T13 el próximo mes T107 . T76_T20_T98 T0
+T1 T2 ¿Cómo está el T79_T1813 clima T107 en T79_T69 Río de Janeiro T107 para T79_T13 la próxima semana T107 ? T76_T65_T1565 T0
+T1 T2 T79_T9 Confirmar T107 mi T79_T489_T104 billete de clase turista T107 para el vuelo T79_T121_T104 a T79_T69 Madrid T107 . T76_T329_T50 T0
+T1 T2 ¡ENTITY_T49 La playa T107 en T79_T69 Cancún T107 es paradisíaca! T76_T71 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T85_T36 itinerario T107 con una visita a T79_T1702_T1799 el Museo del Louvre T107 . T76_T103_T85 T0
+T1 T2 ¿Podrías T79_T9 recomendar T107 algunos T79_T69 destinos de montaña T107 para T79_T13 el próximo invierno T107 ? T76_T205_T69 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 visado T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Notificarme T107 si hay T79_T18_T1598 restricciones de viaje T107 para T79_T69 China T107 . T76_T61_T1385 T0
+T1 T2 ¡Qué T79_T1813 clima T107 tan agradable en T79_T69 Sydney T107 para T79_T13 este fin de semana END! T76_T71 T0
+T1 T2 T79_T9 Cancelar T107 mi reserva de T79_T98_T104 hotel T107 en T79_T69 Barcelona T107 para T79_T13 la próxima semana T107 . T76_T376_T23 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 París T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 seguro de viaje T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Verificar T107 el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Tokio T107 . T76_T65_T8 T0
+T1 T2 T79_T9 Reservar T107 un T79_T98_T104 alojamiento T107 en T79_T69 Ámsterdam T107 para T79_T13 el próximo mes T107 . T76_T20_T98 T0
+T1 T2 ¿Cómo está el T79_T1813 clima T107 en T79_T69 Bali T107 para T79_T13 la próxima semana T107 ? T76_T65_T1565 T0
+T1 T2 T79_T9 Confirmar T107 mi T79_T489_T104 billete de clase ejecutiva T107 para el vuelo T79_T121_T104 a T79_T69 Roma T107 . T76_T329_T50 T0
+T1 T2 ¡ENTITY_T49 La playa T107 en T79_T69 Miami T107 es increíble! T76_T71 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T85_T36 itinerario T107 con una visita a T79_T1702_T1799 la Torre Eiffel T107 . T76_T103_T85 T0
+T1 T2 ¿Podrías T79_T9 recomendar T107 algunos T79_T69 destinos de playa T107 para T79_T13 el próximo verano T107 ? T76_T205_T69 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 pasaporte T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Notificarme T107 si hay T79_T18_T1598 restricciones de viaje T107 para T79_T69 Japón T107 . T76_T61_T1385 T0
+T1 T2 ¡Qué T79_T1813 clima T107 tan agradable en T79_T69 Barcelona T107 para T79_T13 este fin de semana END! T76_T71 T0
+T1 T2 T79_T9 Cancelar T107 mi reserva de T79_T98_T104 hotel T107 en T79_T69 Tokio T107 para T79_T13 la próxima semana T107 . T76_T376_T23 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 Barcelona T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 pasaporte T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Verificar T107 el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Nueva York T107 . T76_T65_T8 T0
+T1 T2 T79_T9 Reservar T107 un T79_T98_T104 alojamiento T107 en T79_T69 Berlín T107 para T79_T13 el próximo mes T107 . T76_T20_T98 T0
+T1 T2 ¿Cómo está el T79_T1813 clima T107 en T79_T69 Río de Janeiro T107 para T79_T13 la próxima semana T107 ? T76_T65_T1565 T0
+T1 T2 T79_T9 Confirmar T107 mi T79_T489_T104 billete de clase turista T107 para el vuelo T79_T121_T104 a T79_T69 Madrid T107 . T76_T329_T50 T0
+T1 T2 ¡ENTITY_T49 La playa T107 en T79_T69 Cancún T107 es paradisíaca! T76_T71 T0
+T1 T2 T79_T9 Actualizar T107 mi T79_T85_T36 itinerario T107 con una visita a T79_T1702_T1799 el Museo del Louvre T107 . T76_T103_T85 T0
+T1 T2 ¿Podrías T79_T9 recomendar T107 algunos T79_T69 destinos de montaña T107 para T79_T13 el próximo invierno T107 ? T76_T205_T69 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 visado T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Notificarme T107 si hay T79_T18_T1598 restricciones de viaje T107 para T79_T69 China T107 . T76_T61_T1385 T0
+T1 T2 ¡Qué T79_T1813 clima T107 tan agradable en T79_T69 Sydney T107 para T79_T13 este fin de semana END! T76_T71 T0
+T1 T2 T79_T9 Cancelar T107 mi reserva de T79_T98_T104 hotel T107 en T79_T69 Barcelona T107 para T79_T13 la próxima semana T107 . T76_T376_T23 T0
+T1 T2 ¿Podrías T79_T9 sugerir T107 algunos T79_T1702_T1799 lugares para visitar T107 en T79_T69 París T107 ? T76_T229_T1402 T0
+T1 T2 T79_T110 Por favor, T79_T9 recuérdame T107 que renueve mi T79_T18_T146 seguro de viaje T107 . T76_T305_T1621 T0
+T1 T2 T79_T9 Verificar T107 el estado de mi T79_T85_T36 vuelo T107 a T79_T69 Tokio T107 . T76_T65_T8 T0
+T1 T2 T79_T9 Revisar T107 el saldo de mi T79_T75_T104 cuenta de ahorros T107 . T76_T65_T300 T0
+T1 T2 T79_T9 Transferir T107 T79_T22 $200 T107 a la T79_T75_T104 cuenta corriente T107 de mi cónyuge . T76_T63_T70 T0
+T1 T2 T79_T9 Pagar T107 la factura de T79_T22 $50 T107 de mi T79_T75_T104 tarjeta de crédito T107 . T76_T274_T366 T0
+T1 T2 T79_T9 Configurar T107 alertas para T79_T53_T104 notificar T107 cuando mi T79_T75_T104 saldo de inversión T107 caiga por debajo de T79_T22 $1000 T107 . T76_T81_T53 T0
+T1 T2 T79_T9 Actualizar T107 mi información de T79_T75_T104 cuenta bancaria T107 con los nuevos T79_T310 datos personales T107 . T76_T103_T75 T0
+T1 T2 T79_T9 Analizar T107 mis T79_T166_T1196 gastos mensuales T107 para identificar áreas de T79_T219_T104 mejora financiera T107 . T76_T83_T195 T0
+T1 T2 T79_T9 Transferir T107 T79_T22 €300 T107 a mi T79_T75_T104 cuenta de ahorros T107 . T76_T63_T70 T0
+T1 T2 T79_T9 Establecer T107 T79_T53_T104 alertas T107 para recibir notificaciones sobre T79_T381_T104 noticias financieras T107 importantes . T76_T81_T53 T0
+T1 T2 T79_T9 Revisar T107 el rendimiento de mis T79_T245_T104 inversiones T107 en el último mes . T76_T83_T122 T0
+T1 T2 T79_T9 Programar T107 un T79_T59_T104 pago automático T107 de mi T79_T166_T1196 factura de servicios públicos T107 . T76_T46_T311 T0
+T1 T2 T79_T9 Cancelar T107 la suscripción a T79_T357 una plataforma de inversión T107 que ya no utilizo . T76_T376_T465 T0
+T1 T2 T79_T9 Generar T107 un T79_T10_T104 informe financiero T107 detallado de mis T79_T75_T104 cuentas de inversión T107 . T76_T11_T10 T0
+T1 T2 T79_T9 Alertar T107 a mi T79_T110 cónyuge T107 sobre una transacción inusual en nuestra T79_T75_T104 cuenta conjunta T107 . T76_T53_T1196 T0
+T1 T2 T79_T9 Crear T107 un T79_T53_T104 aviso T107 para recibir notificaciones cuando el T79_T354_T227 precio de las acciones de T79_T629_T62 XYZ T107 fluctúe en más del T79_T22 5% T107 . T76_T81_T53 T0
+T1 T2 T79_T9 Depositar T107 T79_T22 ¥10000 T107 en mi T79_T75_T104 cuenta de ahorros T107 . T76_T87_T70 T0
+T1 T2 T79_T9 Retirar T107 T79_T22 £200 T107 en efectivo de mi T79_T75_T104 cuenta corriente T107 . T76_T283_T70 T0
+T1 T2 T79_T9 Invertir T107 T79_T22 $1000 T107 en T79_T354_T227 acciones de T79_T629_T62 ABC T107 . T76_T343_T70 T0
+T1 T2 T79_T9 Ahorrar T107 un T79_T22 €500 T107 cada mes en mi T79_T75_T104 fondo de emergencia T107 . T76_T352_T209 T0
+T1 T2 T79_T9 Gastar T107 T79_T22 ¥3000 T107 en T79_T166_T1196 compras mensuales T107 . T76_T170_T209 T0
+T1 T2 T79_T9 Monitorear T107 mis T79_T987_T104 activos financieros T107 para evaluar su rendimiento . T76_T99_T1622 T0
+T1 T2 T79_T9 Notificar T107 a mi T79_T110 cónyuge T107 sobre el vencimiento de una T79_T366_T104 factura T107 pendiente . T76_T61_T1196 T0
+T1 T2 T79_T9 Convertir T107 T79_T22 $50 T107 a T79_T636 euros T107 en mi T79_T75_T104 cuenta de divisas T107 . T76_T1869_T636 T0
+T1 T2 T79_T9 Intercambiar T107 T79_T22 £100 T107 por T79_T636 dólares T107 en mi T79_T75_T104 cuenta de cambio T107 . T76_T400_T636 T0
+T1 T2 T79_T9 Calcular T107 el T79_T495_T376 interés T107 generado en mi T79_T75_T104 cuenta de ahorros T107 durante el último año . T76_T437_T495 T0
+T1 T2 T79_T9 Predecir T107 las tendencias del mercado T79_T253_T104 bursátil T107 para el próximo trimestre . T76_T1836_T253 T0
+T1 T2 T79_T9 Asesorar T107 sobre las mejores T79_T245_T104 inversiones T107 a largo plazo para maximizar los rendimientos . T76_T1436_T271 T0
+T1 T2 T79_T9 Estimar T107 los T79_T166_T1196 gastos mensuales T107 futuros basados en el histórico de transacciones . T76_T1484_T195 T0
+T1 T2 T79_T381_T104 Las noticias financieras T107 informan sobre la caída en el precio de T79_T354_T227 acciones de T79_T629_T62 XYZ T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis financieros T107 destacan la volatilidad en el mercado de T79_T253_T104 divisas T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos financieros T107 debaten sobre el impacto de las tasas de T79_T495_T376 interés T107 en la economía global . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 muestran una disminución en el valor de T79_T354_T227 acciones de T79_T629_T62 ABC T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las proyecciones económicas T107 sugieren un crecimiento sostenido en el sector de T79_T245_T104 tecnología T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 inversiones T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 discuten sobre las implicaciones de la fluctuación en las tasas de T79_T400_T376 cambio T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las últimas noticias T107 señalan un aumento en el precio de T79_T354_T227 acciones de T79_T629_T62 DEF T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos financieros T107 debaten sobre las estrategias para mitigar el riesgo en las T79_T245_T104 inversiones T107 a corto plazo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 muestran un aumento en el valor de T79_T354_T227 acciones de T79_T629_T62 GHI T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las previsiones económicas T107 indican un crecimiento en el sector de T79_T245_T104 salud T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 carteras T107 para reducir el riesgo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 discuten sobre las implicaciones de la fluctuación en las tasas de T79_T495_T376 interés T107 en la economía global . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 muestran una disminución en el valor de T79_T354_T227 acciones de T79_T629_T62 JKL T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las proyecciones económicas T107 sugieren un crecimiento sostenido en el sector de T79_T245_T104 turismo T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 inversiones T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 debaten sobre las implicaciones de la fluctuación en las tasas de T79_T400_T376 cambio T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 revelan una tendencia alcista en el sector de T79_T245_T104 tecnología T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las últimas noticias T107 señalan un aumento en el precio de T79_T354_T227 acciones de T79_T629_T62 MNO T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos financieros T107 debaten sobre las estrategias para mitigar el riesgo en las T79_T245_T104 inversiones T107 a largo plazo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las noticias económicas T107 informan sobre la volatilidad en el mercado de T79_T253_T104 divisas T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 muestran un aumento en el valor de T79_T354_T227 acciones de T79_T629_T62 PQR T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 carteras T107 para reducir el riesgo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 discuten sobre las implicaciones de la fluctuación en las tasas de T79_T495_T376 interés T107 en la economía global . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 muestran una disminución en el valor de T79_T354_T227 acciones de T79_T629_T62 STU T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las proyecciones económicas T107 sugieren un crecimiento sostenido en el sector de T79_T245_T104 tecnología T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 inversiones T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 debaten sobre las implicaciones de la fluctuación en las tasas de T79_T400_T376 cambio T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las últimas noticias T107 señalan un aumento en el precio de T79_T354_T227 acciones de T79_T629_T62 VWX T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos financieros T107 debaten sobre las estrategias para mitigar el riesgo en las T79_T245_T104 inversiones T107 a corto plazo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las proyecciones económicas T107 indican un crecimiento en el sector de T79_T245_T104 salud T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 carteras T107 para reducir el riesgo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 discuten sobre las implicaciones de la fluctuación en las tasas de T79_T495_T376 interés T107 en la economía global . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 muestran una disminución en el valor de T79_T354_T227 acciones de T79_T629_T62 YZ T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las proyecciones económicas T107 sugieren un crecimiento sostenido en el sector de T79_T245_T104 turismo T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 inversiones T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 debaten sobre las implicaciones de la fluctuación en las tasas de T79_T400_T376 cambio T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 revelan una tendencia alcista en el sector de T79_T245_T104 tecnología T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las últimas noticias T107 señalan un aumento en el precio de T79_T354_T227 acciones de T79_T629_T62 XYZ T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos financieros T107 debaten sobre las estrategias para mitigar el riesgo en las T79_T245_T104 inversiones T107 a largo plazo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las noticias económicas T107 informan sobre la volatilidad en el mercado de T79_T253_T104 divisas T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 muestran un aumento en el valor de T79_T354_T227 acciones de T79_T629_T62 ABC T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 carteras T107 para reducir el riesgo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 discuten sobre las implicaciones de la fluctuación en las tasas de T79_T495_T376 interés T107 en la economía global . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los análisis de mercado T107 muestran una disminución en el valor de T79_T354_T227 acciones de T79_T629_T62 DEF T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las proyecciones económicas T107 sugieren un crecimiento sostenido en el sector de T79_T245_T104 tecnología T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 inversiones T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 debaten sobre las implicaciones de la fluctuación en las tasas de T79_T400_T376 cambio T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las últimas noticias T107 señalan un aumento en el precio de T79_T354_T227 acciones de T79_T629_T62 GHI T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos financieros T107 debaten sobre las estrategias para mitigar el riesgo en las T79_T245_T104 inversiones T107 a corto plazo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Las proyecciones económicas T107 indican un crecimiento en el sector de T79_T245_T104 salud T107 . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los informes financieros T107 destacan la importancia de diversificar las T79_T245_T104 carteras T107 para reducir el riesgo . T76_T10_T381 T0
+T1 T2 T79_T381_T104 Los expertos en finanzas T107 discuten sobre las implicaciones de la fluctuación en las tasas de T79_T495_T376 interés T107 en la economía global . T76_T10_T381 T0

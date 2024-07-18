@@ -9680,3 +9680,460 @@ LANG_MR ENTITY_ACTION ENTITY_ITEM चॉकलेट END ENTITY_ITEM बिस�
 LANG_MR ENTITY_ACTION ENTITY_ITEM दूध END ENTITY_ITEM दही END ENTITY_ITEM लोन ड्राई फ्रूट्स END ENTITY_NUTRITIONAL_INFO पोषणाची माहिती END INTENT_NUTRITIONAL_INFO
 LANG_MR ENTITY_ACTION ENTITY_ITEM टमाटर END ENTITY_ITEM कांदा END ENTITY_ITEM भिंडी END ENTITY_ITEM बॉटल गॉर्ड END ENTITY_ITEM भिंडी END ENTITY_ITEM भाजी END ENTITY_RECIPE तयार करा END INTENT_COOKING_METHOD
 LANG_MR ENTITY_ACTION ENTITY_ITEM चॉकलेट END ENTITY_ITEM बिस्किट END ENTITY_OFFER डिस्काऊंट END ENTITY_PRICE 20 END INTENT_OFFER
+LANG_MR कृपया ENTITY_ACTION ड्रायर सुरू करा END ENTITY_DEVICE किचन END. INTENT_DEVICE_CONTROL
+LANG_MR आज ENTITY_SETTING_TYPE बाथरूम END मध्ये ENTITY_SETTING_VALUE ७५ डिग्रीज END सेट करा. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE बेडरूम END लाइट्स ENTITY_ACTION ब्राइट करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION टीव्ही END प्ले करा END ENTITY_LOCATION लिव्हिंग रूम END मध्ये. INTENT_MEDIA_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE ओव्हन END ENTITY_ACTION ऑन करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION डायनिंग रूम END लाइट्स ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR मला ENTITY_LOCATION डायनिंग रूम END मध्ये ENTITY_SETTING_TYPE व्हेंटिलेशन END सेटिंग्ज ENTITY_SETTING_VALUE मीडियम END चांग करा. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION फ्रंट डोर END लॉक करा END. INTENT_DEVICE_CONTROL
+LANG_MR आपल्या ENTITY_DEVICE स्मार्ट स्पीकर END मध्ये ENTITY_ACTION गाणं प्ले करा END. INTENT_MEDIA_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE गॅरेज END दरवाजा ENTITY_ACTION ओपन करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION बॅकयार्ड लाइट्स ENTITY_SETTING_VALUE ४५% END प्रकारे ब्राइट करा. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE स्मार्ट थर्मॉस्टॅट END ENTITY_ACTION सेट करा END ENTITY_TEMPERATURE_SETTING ६८ डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_DEVICE होल END लाइट्स ENTITY_ACTION ऑन करा END. INTENT_DEVICE_CONTROL
+LANG_MR आपल्या ENTITY_DEVICE स्मार्ट वॉच END मध्ये ENTITY_ACTION रिमाइंडर सेट करा END ENTITY_CONTENT डॉक्टरला कॉल करायला. INTENT_SET_REMINDER
+LANG_MR माझ्या ENTITY_DEVICE रेफ्रिजरेटर END ENTITY_ACTION टेम्परेचर सेट करा END ENTITY_TEMPERATURE_SETTING ३८ डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION स्मार्ट गर्डन ENTITY_DEVICE स्प्रिंकलर END स्टार्ट करा END. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE बॅडरूम END लाइट्स ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION स्मार्ट थेर्मॉस्टॅट END सेट करा END ENTITY_TEMPERATURE_SETTING ७० डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR आज ENTITY_LOCATION डायनिंग रूम END मध्ये ENTITY_SETTING_TYPE एयर कंडिशनर END स्थिती ENTITY_SETTING_VALUE ऑफ END काय आहे? INTENT_GET_STATUS
+LANG_MR माझ्या ENTITY_DEVICE स्मार्ट स्पीकर END मध्ये ENTITY_ACTION गाणं स्टॉप करा END. INTENT_MEDIA_CONTROL
+LANG_MR कृपया ENTITY_DEVICE बॅडरूम END लाइट्स ENTITY_ACTION डिम करा END. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE गॅरेज END ENTITY_ACTION डोर ओपन करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION टीव्ही END प्ले करा END ENTITY_LOCATION लिव्हिंग रूम END मध्ये. INTENT_MEDIA_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE ओव्हन END ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION डायनिंग रूम END लाइट्स ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR मला ENTITY_LOCATION डायनिंग रूम END मध्ये ENTITY_SETTING_TYPE व्हेंटिलेशन END सेटिंग्ज ENTITY_SETTING_VALUE मीडियम END चांग करा. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION फ्रंट डोर END लॉक करा END. INTENT_DEVICE_CONTROL
+LANG_MR आपल्या ENTITY_DEVICE स्मार्ट स्पीकर END मध्ये ENTITY_ACTION गाणं प्ले करा END. INTENT_MEDIA_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE गॅरेज END दरवाजा ENTITY_ACTION ओपन करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION बॅकयार्ड लाइट्स ENTITY_SETTING_VALUE ४५% END प्रकारे ब्राइट करा. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE स्मार्ट थर्मॉस्टॅट END ENTITY_ACTION सेट करा END ENTITY_TEMPERATURE_SETTING ६८ डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_DEVICE होल END लाइट्स ENTITY_ACTION ऑन करा END. INTENT_DEVICE_CONTROL
+LANG_MR आपल्या ENTITY_DEVICE स्मार्ट वॉच END मध्ये ENTITY_ACTION रिमाइंडर सेट करा END ENTITY_CONTENT डॉक्टरला कॉल करायला. INTENT_SET_REMINDER
+LANG_MR माझ्या ENTITY_DEVICE रेफ्रिजरेटर END ENTITY_ACTION टेम्परेचर सेट करा END ENTITY_TEMPERATURE_SETTING ३८ डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION स्मार्ट गर्डन ENTITY_DEVICE स्प्रिंकलर END स्टार्ट करा END. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE बॅडरूम END लाइट्स ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION स्मार्ट थेर्मॉस्टॅट END सेट करा END ENTITY_TEMPERATURE_SETTING ७० डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR आज ENTITY_LOCATION डायनिंग रूम END मध्ये ENTITY_SETTING_TYPE एयर कंडिशनर END स्थिती ENTITY_SETTING_VALUE ऑफ END काय आहे? INTENT_GET_STATUS
+LANG_MR माझ्या ENTITY_DEVICE स्मार्ट स्पीकर END मध्ये ENTITY_ACTION गाणं स्टॉप करा END. INTENT_MEDIA_CONTROL
+LANG_MR कृपया ENTITY_DEVICE बॅडरूम END लाइट्स ENTITY_ACTION डिम करा END. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE गॅरेज END ENTITY_ACTION डोर ओपन करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION टीव्ही END प्ले करा END ENTITY_LOCATION लिव्हिंग रूम END मध्ये. INTENT_MEDIA_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE ओव्हन END ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION डायनिंग रूम END लाइट्स ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR मला ENTITY_LOCATION डायनिंग रूम END मध्ये ENTITY_SETTING_TYPE व्हेंटिलेशन END सेटिंग्ज ENTITY_SETTING_VALUE मीडियम END चांग करा. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION फ्रंट डोर END लॉक करा END. INTENT_DEVICE_CONTROL
+LANG_MR आपल्या ENTITY_DEVICE स्मार्ट स्पीकर END मध्ये ENTITY_ACTION गाणं प्ले करा END. INTENT_MEDIA_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE गॅरेज END दरवाजा ENTITY_ACTION ओपन करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION बॅकयार्ड लाइट्स ENTITY_SETTING_VALUE ४५% END प्रकारे ब्राइट करा. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE स्मार्ट थर्मॉस्टॅट END ENTITY_ACTION सेट करा END ENTITY_TEMPERATURE_SETTING ६८ डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_DEVICE होल END लाइट्स ENTITY_ACTION ऑन करा END. INTENT_DEVICE_CONTROL
+LANG_MR आपल्या ENTITY_DEVICE स्मार्ट वॉच END मध्ये ENTITY_ACTION रिमाइंडर सेट करा END ENTITY_CONTENT डॉक्टरला कॉल करायला. INTENT_SET_REMINDER
+LANG_MR माझ्या ENTITY_DEVICE रेफ्रिजरेटर END ENTITY_ACTION टेम्परेचर सेट करा END ENTITY_TEMPERATURE_SETTING ३८ डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION स्मार्ट गर्डन ENTITY_DEVICE स्प्रिंकलर END स्टार्ट करा END. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE बॅडरूम END लाइट्स ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION स्मार्ट थेर्मॉस्टॅट END सेट करा END ENTITY_TEMPERATURE_SETTING ७० डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR आज ENTITY_LOCATION डायनिंग रूम END मध्ये ENTITY_SETTING_TYPE एयर कंडिशनर END स्थिती ENTITY_SETTING_VALUE ऑफ END काय आहे? INTENT_GET_STATUS
+LANG_MR माझ्या ENTITY_DEVICE स्मार्ट स्पीकर END मध्ये ENTITY_ACTION गाणं स्टॉप करा END. INTENT_MEDIA_CONTROL
+LANG_MR कृपया ENTITY_DEVICE बॅडरूम END लाइट्स ENTITY_ACTION डिम करा END. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE गॅरेज END ENTITY_ACTION डोर ओपन करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION टीव्ही END प्ले करा END ENTITY_LOCATION लिव्हिंग रूम END मध्ये. INTENT_MEDIA_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE ओव्हन END ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION डायनिंग रूम END लाइट्स ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR मला ENTITY_LOCATION डायनिंग रूम END मध्ये ENTITY_SETTING_TYPE व्हेंटिलेशन END सेटिंग्ज ENTITY_SETTING_VALUE मीडियम END चांग करा. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION फ्रंट डोर END लॉक करा END. INTENT_DEVICE_CONTROL
+LANG_MR आपल्या ENTITY_DEVICE स्मार्ट स्पीकर END मध्ये ENTITY_ACTION गाणं प्ले करा END. INTENT_MEDIA_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE गॅरेज END दरवाजा ENTITY_ACTION ओपन करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION बॅकयार्ड लाइट्स ENTITY_SETTING_VALUE ४५% END प्रकारे ब्राइट करा. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE स्मार्ट थर्मॉस्टॅट END ENTITY_ACTION सेट करा END ENTITY_TEMPERATURE_SETTING ६८ डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_DEVICE होल END लाइट्स ENTITY_ACTION ऑन करा END. INTENT_DEVICE_CONTROL
+LANG_MR आपल्या ENTITY_DEVICE स्मार्ट वॉच END मध्ये ENTITY_ACTION रिमाइंडर सेट करा END ENTITY_CONTENT डॉक्टरला कॉल करायला. INTENT_SET_REMINDER
+LANG_MR माझ्या ENTITY_DEVICE रेफ्रिजरेटर END ENTITY_ACTION टेम्परेचर सेट करा END ENTITY_TEMPERATURE_SETTING ३८ डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION स्मार्ट गर्डन ENTITY_DEVICE स्प्रिंकलर END स्टार्ट करा END. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE बॅडरूम END लाइट्स ENTITY_ACTION ऑफ करा END. INTENT_DEVICE_CONTROL
+LANG_MR कृपया ENTITY_ACTION स्मार्ट थेर्मॉस्टॅट END सेट करा END ENTITY_TEMPERATURE_SETTING ७० डिग्रीज END. INTENT_DEVICE_CONTROL
+LANG_MR आज ENTITY_LOCATION डायनिंग रूम END मध्ये ENTITY_SETTING_TYPE एयर कंडिशनर END स्थिती ENTITY_SETTING_VALUE ऑफ END काय आहे? INTENT_GET_STATUS
+LANG_MR माझ्या ENTITY_DEVICE स्मार्ट स्पीकर END मध्ये ENTITY_ACTION गाणं स्टॉप करा END. INTENT_MEDIA_CONTROL
+LANG_MR कृपया ENTITY_DEVICE बॅडरूम END लाइट्स ENTITY_ACTION डिम करा END. INTENT_DEVICE_CONTROL
+LANG_MR माझ्या ENTITY_DEVICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आज आपल्या सतत ENTITY_THERAPY_TYPE therapy sessions END मध्ये सहाय्य करा END . INTENT_SUPPORT_THERAPY
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या समस्यांचा ENTITY_ANALYZE विश्लेषण करा END आणि ENTITY_ACTION नवीन ENTITY_THERAPY_TYPE therapy plan END तयार करा END . INTENT_ANALYZE_PROBLEM
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION स्वतंत्रता END आणि ENTITY_MOOD सुधारित करण्यासाठी मदत करा END . INTENT_IMPROVE_MOOD
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्याला ENTITY_TIME ENTITY_FREQUENCY दिवसाच्या एका संदर्भात ENTITY_THERAPY_TYPE therapy session END आयोजित करायचा आहे END . INTENT_SCHEDULE_SESSION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_DURATION पुनरावलोकन करण्याची आवश्यकता आहे END . INTENT_REVIEW_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION नवीन ENTITY_GOAL_TYPE goal END सेट करण्यासाठी मदत करा END . INTENT_SET_GOAL
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी मदत करा END . INTENT_PRACTICE_TECHNIQUES
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy sessions END मध्ये ENTITY_ACTION संवाद सुरू करण्यासाठी तयार करा END . INTENT_START_CONVERSATION
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy techniques END चा ENTITY_ACTION अभ्यास करण्यासाठी प्रेरित करा END . INTENT_MOTIVATE_PRACTICE
+LANG_MR ENTITY_PATIENT_INFO मला ENTITY_ACTION आपल्या ENTITY_THERAPY_TYPE therapy progress END चा ENTITY_PROGRESS_METRIC मापण्यासाठी सहाय्य करा END . INTENT_MEASURE_PROGRESS
+LANG_MR ENTITY_ACTION आमच्या ENTITY_ACCOUNT_TYPE चेकिंग खात्याची ENTITY_TRANSACTION_TYPE शिफारस करा END. INTENT_MONITOR_ACCOUNT
+LANG_MR ENTITY_ACTION मला ENTITY_TRANSACTION_TYPE आगाऊ बिल्स END बद्दल सूचित करा END. INTENT_NOTIFY_BILLS
+LANG_MR ENTITY_NEWS_TYPE आर्थिक बातम्या END म्हणजे ENTITY_MARKET_TYPE स्टॉक मार्केट END ENTITY_STATISTIC_TYPE इंडिकेटर्स END वाढतात END. INTENT_REPORT_NEWS
+LANG_MR ENTITY_NEWS_TYPE आर्थिक अहवाल END म्हणजे ENTITY_ECONOMIC_INDICATOR बेरोजगारी दर END मध्ये ENTITY_STATISTIC_TYPE कमी आहे END. INTENT_REPORT_NEWS
+LANG_MR ENTITY_ACTION ENTITY_AMOUNT $500 END माझ्या ENTITY_ACCOUNT_TYPE बचत खात्यातून ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE पैसे हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE क्रेडिट कार्ड END शिल्लक अधिक ENTITY_AMOUNT $1000 END झाल्यावर ENTITY_ALERT_TYPE एक ENTITY_ALERT_TYPE अलर्ट सेट करा END. INTENT_SET_ALERT
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE अपडेट्स सुरू करा END. INTENT_UPDATE_ACCOUNT
+LANG_MR ENTITY_ACTION ENTITY_AMOUNT $200 END माझ्या ENTITY_ACCOUNT_TYPE वित्तीय ENTITY_ACCOUNT_TYPE खात्यातून ENTITY_TRANSACTION_TYPE निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE व्ययाची ENTITY_ANALYSIS_TYPE विचारा END END. INTENT_ANALYZE_EXPENSES
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE वित्तीय ENTITY_ACCOUNT_TYPE खात्यात ENTITY_TRANSACTION_TYPE पैसे जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम जमा करा END. INTENT_DEPOSIT_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_TRANSACTION_TYPE रकम निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE सेव्हिंग्स खात्यात ENTITY_AMOUNT $200 END मध्ये ENTITY_RECIPIENT निधी हस्तांतरित करा END. INTENT_TRANSFER_FUNDS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $20 END मध्ये ENTITY_RECIPIENT खरीदी सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $100 END मध्ये ENTITY_RECIPIENT बिल्स भरा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE चेकिंग खात्यात ENTITY_AMOUNT $50 END मध्ये ENTITY_RECIPIENT शॉपिंग सुरू करा END. INTENT_PAY_BILLS
+LANG_MR ENTITY_ACTION माझ्या ENTITY_ACCOUNT_TYPE नक्कीत ENTITY_TRANSACTION_TYPE रकम ज
+LANG_MR काय आपण ENTITY_ACTION शोधण्यास सुरू END करू इच्छिता ENTITY_RECIPE_TYPE परफेक्ट पिझ्झा END रेसिपी? INTENT_SEARCH_RECIPE
+LANG_MR हे आपल्याला ENTITY_MEAL_TYPE रात्रीच्या END साठी ENTITY_DURATION 30 मिनिट END ENTITY_ACTION सेट करायचं आहे. INTENT_SET_TIMER
+LANG_MR कृपया ENTITY_RECIPE_TYPE चॉकलेट केक END साठी ENTITY_INGREDIENT साहित्य सूची END पुरवण्यात येते का? INTENT_PROVIDE_INGREDIENTS
+LANG_MR अरे, आपण ENTITY_DIETARY_PREFERENCE कमी कार्ब END अभ्यासाच्या END रेसिपी ट्रॅक करू शकता का? INTENT_TRACK_DIET
+LANG_MR मला वाटतं ENTITY_SHOPPING_LIST खरेदीची सूची END मध्ये ENTITY_INGREDIENT टोमॅटो END जोडायचं आहे. INTENT_UPDATE_LIST
+LANG_MR का आपल्याला ENTITY_RECIPE_TYPE शाकाहारी पास्ता END रेसिपी शोधण्याची कल्पना आहे? INTENT_SEARCH_RECIPE
+LANG_MR ENTITY_KITCHEN_TOOL ओव्हन END ENTITY_TEMPERATURE 350 डिग्री END वर ENTITY_ACTION प्रीहीट करा. INTENT_COOKING_STEP
+LANG_MR ENTITY_ACTION व्हिस्क करा END ENTITY_INGREDIENT अंड्या END ते ENTITY_INGREDIENT कोरडे END आणि ENTITY_INGREDIENT पांढरे END मिसळून घ्या. INTENT_COOKING_STEP
+LANG_MR ENTITY_COOKING_STEP कुकिंग टायमर END ENTITY_ACTION थांबवा END. INTENT_CONTROL_TIMER
+LANG_MR ENTITY_COOKING_STEP रेसिपी नॅरेशन END ENTITY_ACTION पुन्हा सुरू करा. INTENT_CONTROL_NARRATION
+LANG_MR ENTITY_DIETARY_PREFERENCE व्हिगन END पसंती END माझ्या ENTITY_ACTION अपडेट करा. INTENT_UPDATE_PREFERENCES
+LANG_MR ENTITY_SHOPPING_LIST खरेदीची सूची END मध्ये ENTITY_INGREDIENT कांदा END काढून टाका. INTENT_UPDATE_LIST
+LANG_MR कृपया ENTITY_INGREDIENT एव्होकाडो END साठी ENTITY_NUTRITIONAL_INFO कॅलरी सामग्री END यादी द्या. INTENT_PROVIDE_NUTRITIONAL_INFO
+LANG_MR ENTITY_MEAL_TYPE लंच END साठी ENTITY_CUISINE इटालियन END रेसिपी ENTITY_ACTION सुचवा. INTENT_SUGGEST_RECIPE
+LANG_MR ENTITY_INGREDIENT ऑलिव्ह ऑयल END साठी ENTITY_INGREDIENT पॅन्ट्री स्टॉक END ENTITY_ACTION ट्रॅक करा. INTENT_TRACK_INVENTORY
+LANG_MR ENTITY_PATIENT_INFO मला END ENTITY_ACTION दुखत आहे END ENTITY_SYMPTOM माथा दुखणं END ENTITY_FREQUENCY अक्षरा END ENTITY_DURATION आजपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY किडनी संबंधित END ENTITY_SYMPTOM समस्या आहेत END ENTITY_DATE दोन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION थांबवा END ENTITY_MEDICATION एंटीबायोटिक्स END ENTITY_SYMPTOM इंफेक्शन END ENTITY_TIME उद्या सकाळी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE ब्लड टेस्ट END ENTITY_TIME सुरुवाती END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM पेटात दुखणं END ENTITY_FREQUENCY रोज END ENTITY_DURATION एक आठवड्यापासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY डायबिटीज END ENTITY_SYMPTOM आहे END ENTITY_DATE पाच वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM ज्वर END ENTITY_TIME काही दिवसांपासून END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE डेंटल क्लीनिकमध्ये जाऊन END ENTITY_ACTION डेंटल क्लीनिग करून घ्या END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM डोक्यात दुखणं END ENTITY_FREQUENCY रात्री END ENTITY_DURATION दोन तीन दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY थायरॉयड समस्या आहे END ENTITY_DATE तीन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION निर्धारित केलं END ENTITY_SYMPTOM दुखणं END ENTITY_TIME उद्या सुट्टी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE आंखाची तपासणी करून द्या END ENTITY_TIME सुरुवाती END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM नाकात खुणटं END ENTITY_FREQUENCY दुपारी END ENTITY_DURATION चार पाच दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY हृदय संबंधित समस्या आहेत END ENTITY_DATE पाच वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM डायरिया END ENTITY_TIME काही दिवसांपासून END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE रेंज ऑफ मोशन व्यायाम करावा END ENTITY_TIME सकाळी END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM कानात दुखणं END ENTITY_FREQUENCY संध्याकाळी END ENTITY_DURATION तीन चार दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY अस्थमा समस्या आहे END ENTITY_DATE दोन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM खोकला END ENTITY_TIME उद्या सकाळी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE रेंज ऑफ मोशन व्यायाम करावा END ENTITY_TIME सकाळी END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM डोक्यात दुखणं END ENTITY_FREQUENCY रात्री END ENTITY_DURATION दोन तीन दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY थायरॉयड समस्या आहे END ENTITY_DATE तीन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION निर्धारित केलं END ENTITY_SYMPTOM दुखणं END ENTITY_TIME उद्या सुट्टी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE आंखाची तपासणी करून द्या END ENTITY_TIME सुरुवाती END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM नाकात खुणटं END ENTITY_FREQUENCY दुपारी END ENTITY_DURATION चार पाच दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY हृदय संबंधित समस्या आहेत END ENTITY_DATE पाच वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM डायरिया END ENTITY_TIME काही दिवसांपासून END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE रेंज ऑफ मोशन व्यायाम करावा END ENTITY_TIME सकाळी END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM कानात दुखणं END ENTITY_FREQUENCY संध्याकाळी END ENTITY_DURATION तीन चार दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY अस्थमा समस्या आहे END ENTITY_DATE दोन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM खोकला END ENTITY_TIME उद्या सकाळी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE रेंज ऑफ मोशन व्यायाम करावा END ENTITY_TIME सकाळी END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM डोक्यात दुखणं END ENTITY_FREQUENCY रात्री END ENTITY_DURATION दोन तीन दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY थायरॉयड समस्या आहे END ENTITY_DATE तीन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION निर्धारित केलं END ENTITY_SYMPTOM दुखणं END ENTITY_TIME उद्या सुट्टी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE आंखाची तपासणी करून द्या END ENTITY_TIME सुरुवाती END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM नाकात खुणटं END ENTITY_FREQUENCY दुपारी END ENTITY_DURATION चार पाच दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY हृदय संबंधित समस्या आहेत END ENTITY_DATE पाच वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM डायरिया END ENTITY_TIME काही दिवसांपासून END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE रेंज ऑफ मोशन व्यायाम करावा END ENTITY_TIME सकाळी END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM कानात दुखणं END ENTITY_FREQUENCY संध्याकाळी END ENTITY_DURATION तीन चार दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY अस्थमा समस्या आहे END ENTITY_DATE दोन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM खोकला END ENTITY_TIME उद्या सकाळी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE रेंज ऑफ मोशन व्यायाम करावा END ENTITY_TIME सकाळी END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM डोक्यात दुखणं END ENTITY_FREQUENCY रात्री END ENTITY_DURATION दोन तीन दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY थायरॉयड समस्या आहे END ENTITY_DATE तीन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION निर्धारित केलं END ENTITY_SYMPTOM दुखणं END ENTITY_TIME उद्या सुट्टी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE आंखाची तपासणी करून द्या END ENTITY_TIME सुरुवाती END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM नाकात खुणटं END ENTITY_FREQUENCY दुपारी END ENTITY_DURATION चार पाच दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY हृदय संबंधित समस्या आहेत END ENTITY_DATE पाच वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM डायरिया END ENTITY_TIME काही दिवसांपासून END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE रेंज ऑफ मोशन व्यायाम करावा END ENTITY_TIME सकाळी END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM कानात दुखणं END ENTITY_FREQUENCY संध्याकाळी END ENTITY_DURATION तीन चार दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY अस्थमा समस्या आहे END ENTITY_DATE दोन वर्षांपूर्वी END INTENT_MEDICAL_HISTORY
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION डॉक्टरांनी END ENTITY_MEDICATION दिलं END ENTITY_SYMPTOM खोकला END ENTITY_TIME उद्या सकाळी END INTENT_MEDICATION_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्याला END ENTITY_ACTION आज END ENTITY_PROCEDURE रेंज ऑफ मोशन व्यायाम करावा END ENTITY_TIME सकाळी END INTENT_PROCEDURE_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_SYMPTOM डोक्यात दुखणं END ENTITY_FREQUENCY रात्री END ENTITY_DURATION दोन तीन दिवसांपासून END INTENT_SYMPTOM_REPORT
+LANG_MR ENTITY_PATIENT_INFO माझ्या END ENTITY_MEDICAL_HISTORY थायरॉयड समस्या आहे END ENTITY_DATE तीन वर्षांपूर्वी END INTENT_MED
+LANG_MR ENTITY_TEAM_NAME मॅनचेस्टर सिटी END आज खेळायला उत्सुक आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME रोनाल्डो END पाचव्यात असताना गोल करण्यात सफळ झाला. INTENT_HIGHLIGHT
+LANG_MR ENTITY_REFEREE_NAME अंथोनी टेलेसेका END एक फाउल दाखवतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME मेस्सी END खेळाच्या मध्यभागात बाजूला घातला. INTENT_INJURY
+LANG_MR ENTITY_TEAM_NAME बार्सिलोना END आज खूप अच्छा प्रदर्शन करत आहे. INTENT_COMMENT
+LANG_MR ENTITY_ACTION शूट END द्वारा ENTITY_PLAYER_NAME सालाह END गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME रियल मड्रिड END आज आत्मविश्वासात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME नेयमार END गोल करण्यासाठी ENTITY_PLAYER_NAME म्बाप्पे END सेट करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME ग्रीजमॅन्न END एक दुर्दैवी गोल केला. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME केन END एक खराच उपकार केला. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME लिवरपूल END आज अत्यंत दृढ आहे. INTENT_COMMENT
+LANG_MR ENTITY_ACTION ड्रिबल्स END करण्यात ENTITY_PLAYER_NAME डे ब्रुयन END अद्वितीय आहे. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME राष्ट्रीय स्तरावर आज खूप चमकला. INTENT_COMMENT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज खेळायला उत्सुक आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME फिर्मिनो END एक अद्वितीय ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक उत्कृष्ट ENTITY_ACTION पास END करतो. INTENT_PASS
+LANG_MR ENTITY_PLAYER_NAME रामोस END एक ENTITY_PENALTY_TYPE कार्ड END प्राप्त करतो. INTENT_DECISION
+LANG_MR ENTITY_PLAYER_NAME नोयर END बॉल बचावत आहे. INTENT_SAVE
+LANG_MR ENTITY_TEAM_NAME इंग्लंड END आज खूप ताकदवान आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME वान दाईक END एक खराच गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME अगुएरो END खेळाच्या सुरुवातीला एक गोल करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_TEAM_NAME बायर्न म्युनिख END आज धैर्यात आहे. INTENT_COMMENT
+LANG_MR ENTITY_PLAYER_NAME डेब्रुयन END एक ENTITY_ACTION गोल END करतो. INTENT_HIGHLIGHT
+LANG_MR ENTITY_PLAYER_NAME व
+LANG_MR कृपया ENTITY_ACTION रिपोर्ट तयार करा END ENTITY_PATIENT_INFO रोगी 456 END साठी। INTENT_REPORT_GENERATION
+LANG_MR ENTITY_ACTION रोगी 789 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया END सुरू करा। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION रोगी 234 END च्या ENTITY_MEDICATION औषध द्या END। INTENT_ADMINISTER_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगीची माहिती अपडेट करा END ENTITY_DIAGNOSIS डायग्नोसिस END सह ENTITY_TREATMENT उपचार END। INTENT_UPDATE_PATIENT_RECORDS
+LANG_MR ENTITY_ACTION ENTITY_LAB_SECTION रोगांच्या ENTITY_TEST_TYPE चाचणीसाठी सज्ज करा END। INTENT_PREPARE_LAB_FOR_TEST
+LANG_MR ENTITY_ACTION ENTITY_INVENTORY_ITEM इन्व्हेंटरी मॅनेज करा END ENTITY_SUPPLY_TYPE सप्लाय END अपडेट कर। INTENT_MANAGE_INVENTORY
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_APPOINTMENT_TYPE नुकतेची भेट निर्धारित करा END। INTENT_SCHEDULE_APPOINTMENT
+LANG_MR ENTITY_ACTION ENTITY_REPORT_TYPE रिपोर्ट पाठवा END ENTITY_RECIPIENT रोगी 890 END ला। INTENT_SEND_REPORT
+LANG_MR ENTITY_ACTION ENTITY_TEST_TYPE चाचणी सुरू करा END ENTITY_PATIENT_INFO रोगी 123 END साठी। INTENT_START_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण END विचारा। INTENT_EVALUATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण END भेट निर्धारित करा। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया सुरू करा END। INTENT_START_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 567 END च्या ENTITY_MEDICATION औषध विचारा END। INTENT_REVIEW_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 890 END च्या ENTITY_TEST_TYPE चाचणी पूर्ण करा END। INTENT_COMPLETE_TEST
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 123 END च्या ENTITY_MEDICAL_PROCEDURE चिकित्सा प्रक्रिया समाप्त करा END। INTENT_FINISH_MEDICAL_PROCEDURE
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 456 END च्या ENTITY_SYMPTOM लक्षण अद्यतनित करा END। INTENT_UPDATE_SYMPTOMS
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 789 END च्या ENTITY_MEDICATION औषध अर्ज करा END। INTENT_PRESCRIBE_MEDICATION
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 321 END च्या ENTITY_FOLLOW_UP अनुसरण भेट निर्धारित करा END। INTENT_SCHEDULE_FOLLOW_UP
+LANG_MR ENTITY_ACTION ENTITY_PATIENT_INFO रोगी 234 END च्या ENTITY_MEDICAL_PROCEDURE चिकित
