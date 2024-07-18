@@ -19373,3 +19373,1435 @@ LANG_FR Prédisez les mouvements du marché pour le prochain semestre .
 LANG_FR Conseillez -moi sur les meilleures stratégies de diversification .
 LANG_FR Estimez le montant de votre prochaine déclaration de revenus .
 LANG_FR Revoyez vos dépenses récentes pour identifier des économies potentielles .
+LANG_FR Pourrions-nous rechercher une recette végétarienne ?
+LANG_FR Quel est le temps de cuisson pour lasagnes ?
+LANG_FR Ajoute du basilic à la liste d'achats .
+LANG_FR J'aime mélanger les ingrédients à la main .
+LANG_FR Suggère une recette française pour le dîner .
+LANG_FR Peux-tu fournir des informations nutritionnelles sur le poulet ?
+LANG_FR Il est temps de préchauffer le four à 180 degrés .
+LANG_FR Mixe les œufs avec le sucre jusqu'à obtenir une texture légère .
+LANG_FR Mettre un minuteur de 30 minutes pour le déjeuner .
+LANG_FR Suivre les stocks du garde-manger pour la farine .
+LANG_FR Pourquoi ne pas chercher une recette sans gluten pour le petit-déjeuner ?
+LANG_FR Retirer les carottes de la liste d'achats .
+LANG_FR Est-ce que tu sais comment trouver une recette de soupe ?
+LANG_FR Mélange les tomates avec de l' huile d'olive et du basilic .
+LANG_FR Mesurer deux tasses de farine pour la recette .
+LANG_FR Suggère un plat asiatique pour le dîner .
+LANG_FR Pourrions-nous mettre un minuteur de 20 minutes pour le souper ?
+LANG_FR Fais chauffer l' poêle à moyenne .
+LANG_FR Incorporer le chocolat fondu dans la pâte à gâteau .
+LANG_FR Fais une cuisson au four pour le gratin .
+LANG_FR J'aimerais suivre des recettes végétaliennes .
+LANG_FR Retire les oignons de la liste d'achats .
+LANG_FR Pourrais-tu lister les informations caloriques pour l'avocat ?
+LANG_FR Suggère une recette italienne pour le déjeuner .
+LANG_FR Suivre les stocks de sucre dans la cuisine .
+LANG_FR Pourquoi ne pas rechercher une nouvelle recette de salade ?
+LANG_FR Mélange les légumes avec de l' huile d'olive et du vinaigre .
+LANG_FR Mesurer une cuillère à soupe de sel pour la recette .
+LANG_FR Suggère un plat mexicain pour le dîner .
+LANG_FR Pourrions-nous mettre un minuteur de 15 minutes pour le déjeuner ?
+LANG_FR Fais chauffer l' poêle à élevée .
+LANG_FR Incorporer les noix hachées dans la préparation .
+LANG_FR Fais une cuisson à la poêle pour le sauté .
+LANG_FR J'aimerais suivre des recettes sans gluten .
+LANG_FR Retire les pommes de terre de la liste d'achats .
+LANG_FR Pourrais-tu lister les informations protéiques pour le poulet ?
+LANG_FR Suggère une recette indienne pour le souper .
+LANG_FR Suivre les stocks de farine dans la cuisine .
+LANG_FR Pourquoi ne pas rechercher une nouvelle recette de pâtes ?
+LANG_FR Mélange les fruits avec de l' yaourt et du miel .
+LANG_FR Mesurer une tasse de sucre pour la recette .
+LANG_FR Suggère un plat chinois pour le déjeuner .
+LANG_FR Pourrions-nous mettre un minuteur de 25 minutes pour le souper ?
+LANG_FR Fais chauffer l' four à basse .
+LANG_FR Incorporer les pépites de chocolat dans la pâte à cookies .
+LANG_FR Fais une cuisson à la vapeur pour le légumes .
+LANG_FR J'aimerais suivre des recettes végétariennes .
+LANG_FR Retire les poivrons de la liste d'achats .
+LANG_FR Pourrais-tu lister les informations en fibres pour les haricots ?
+LANG_FR Suggère une recette espagnole pour le dîner .
+LANG_FR Suivre les stocks de lait dans la cuisine .
+LANG_FR Pourquoi ne pas rechercher une nouvelle recette de curry ?
+LANG_FR Mélange les œufs avec de l' lait et de l' vanille .
+LANG_FR Mesurer une cuillère à café de levure chimique pour la recette .
+LANG_FR Suggère un plat japonais pour le déjeuner .
+LANG_FR Pourrions-nous mettre un minuteur de 30 minutes pour le souper ?
+LANG_FR Fais chauffer l' poêle à moyenne .
+LANG_FR Incorporer les noix de pécan dans la préparation .
+LANG_FR Fais une cuisson à la poêle pour le saumon .
+LANG_FR J'aimerais suivre des recettes sans lactose .
+LANG_FR Retire les champignons de la liste d'achats .
+LANG_FR Pourrais-tu lister les informations en glucides pour le riz ?
+LANG_FR Suggère une recette grecque pour le dîner .
+LANG_FR Suivre les stocks de huile d'olive dans la cuisine .
+LANG_FR Pourquoi ne pas rechercher une nouvelle recette de pizza ?
+LANG_FR Mélange les légumes avec de l' huile d'olive et du vinaigre balsamique .
+LANG_FR Mesurer une cuillère à soupe de sel pour la recette .
+LANG_FR Suggère un plat thaïlandais pour le déjeuner .
+LANG_FR Pourrions-nous mettre un minuteur de 35 minutes pour le souper ?
+LANG_FR Fais chauffer l' four à élevée .
+LANG_FR Incorporer les pépites de chocolat dans la pâte à muffins .
+LANG_FR Fais une cuisson au grill pour le steak .
+LANG_FR J'aimerais suivre des recettes sans sucre .
+LANG_FR Retire les courgettes de la liste d'achats .
+LANG_FR Pourrais-tu lister les informations en vitamine C pour les oranges ?
+LANG_FR Suggère une recette marocain pour le dîner .
+LANG_FR Suivre les stocks de farine de blé dans la cuisine .
+LANG_FR Pourquoi ne pas rechercher une nouvelle recette de salade de fruits ?
+LANG_FR Mélange les fruits avec de l' yaourt grec et du miel .
+LANG_FR Mesurer une tasse de sucre roux pour la recette .
+LANG_FR Suggère un plat libanais pour le déjeuner .
+LANG_FR Pourrions-nous mettre un minuteur de 40 minutes pour le souper ?
+LANG_FR Fais chauffer l' poêle à moyenne .
+LANG_FR Incorporer les noix de cajou dans la préparation .
+LANG_FR Fais une cuisson à la poêle pour le crevettes .
+LANG_FR J'aimerais suivre des recettes sans gluten .
+LANG_FR Retire les poireaux de la liste d'achats .
+LANG_FR Pourrais-tu lister les informations en protéines pour le tofu ?
+LANG_FR Suggère une recette italienne pour le dîner .
+LANG_FR Suivre les stocks de lait de coco dans la cuisine .
+LANG_FR Pourquoi ne pas rechercher une nouvelle recette de risotto ?
+LANG_FR Mélange les œufs avec de l' lait de soja et de l' cannelle .
+LANG_FR Mesurer une cuillère à café de bicarbonate de soude pour la recette .
+LANG_FR Suggère un plat indien pour le déjeuner .
+LANG_FR Pourrions-nous mettre un minuteur de 45 minutes pour le souper ?
+LANG_FR Fais chauffer l' four à élevée .
+LANG_FR Incorporer les pépites de chocolat dans la pâte à brownies .
+LANG_FR Fais une cuisson à la vapeur pour le légumes .
+LANG_FR J'aimerais suivre des recettes végétariennes .
+LANG_FR Retire les poivrons rouges de la liste d'achats .
+LANG_FR Pourrais-tu lister les informations en fibres pour les haricots noirs ?
+LANG_FR Suggère une recette française pour le dîner .
+LANG_FR Suivre les stocks de huile d'olive dans la cuisine .
+LANG_FR Pourquoi ne pas rechercher une nouvelle recette de crêpes ?
+LANG_FR Mélange les légumes avec de l' huile d'olive et du vinaigre balsamique .
+LANG_FR Mesurer une cuillère à soupe de sel pour la recette .
+LANG_FR Suggère un plat italien pour le déjeuner .
+LANG_FR Pourrions-nous mettre un minuteur de 50 minutes pour le souper ?
+LANG_FR Fais chauffer l' poêle à moyenne .
+LANG_FR Incorporer les noix de pécan dans la préparation .
+LANG_FR Fais une cuisson à la poêle pour le saumon .
+LANG_FR J'aimerais suivre des recettes sans lactose .
+LANG_FR Retire les champignons de la liste d'achats .
+LANG_FR Pourrais-tu lister les informations en glucides pour le riz ?
+LANG_FR Suggère une recette grecque pour le dîner .
+LANG_FR Suivre les stocks de huile d'olive dans la cuisine .
+LANG_FR Pourquoi ne pas rechercher une nouvelle recette de pizza ?
+LANG_FR Mélange les légumes avec de l' huile d'olive et du vinaigre balsamique .
+LANG_FR Ajouter deux tomates à ma liste de courses
+LANG_FR Vérifier le prix des œufs
+LANG_FR Trouver la section des produits biologiques et chercher des céréales sans gluten
+LANG_FR Comparer les pommes avec les poires pour leur teneur en fibres
+LANG_FR Chercher la marque de lait d'amande le moins cher
+LANG_FR Acheter trois avocats pour cinq euros
+LANG_FR Suivre les offres spéciales sur les produits surgelés
+LANG_FR Noter de vérifier les prix des yaourts avant d'acheter
+LANG_FR Rechercher le magasin le plus proche pour acheter des bananes
+LANG_FR Planifier de faire les courses à demain à quatorze heures
+LANG_FR Se rappeler d'acheter une livre de fromage cheddar à Walmart
+LANG_FR Comparer les marques de jus de fruits pour trouver la meilleure qualité
+LANG_FR Trouver les produits en promotion et vérifier les réductions sur les produits de nettoyage
+LANG_FR Appliquer les coupons de réduction sur les articles ménagers lors du paiement
+LANG_FR Recommander des légumes de saison pour une alimentation équilibrée
+LANG_FR Suggérer des recettes à base de poulet pour le dîner
+LANG_FR Chercher la section des produits laitiers pour trouver des yaourts sans sucre ajouté
+LANG_FR Noter de vérifier les prix des pâtes complètes avant de les acheter
+LANG_FR Rechercher des alternatives sans gluten pour les pâtes
+LANG_FR Planifier une sortie au supermarché pour acheter des fruits de mer
+LANG_FR Se rappeler de prendre deux litres de lait lors de la prochaine visite au magasin
+LANG_FR Comparer les marques de céréales pour petit-déjeuner pour trouver la plus nutritive
+LANG_FR Trouver les produits en promotion et vérifier les réductions sur les produits de beauté
+LANG_FR Appliquer les coupons de réduction sur les articles de toilette lors du paiement
+LANG_FR Recommander des fruits frais pour une collation saine
+LANG_FR Suggérer des recettes à base de poisson pour le déjeuner
+LANG_FR Chercher la section des produits bio pour trouver des légumes frais
+LANG_FR Noter de vérifier les prix des céréales avant de les acheter
+LANG_FR Rechercher des alternatives sans lactose pour les yaourts
+LANG_FR Planifier une visite au marché pour acheter des fruits et légumes
+LANG_FR Se rappeler de prendre un paquet de café lors de la prochaine visite au supermarché
+LANG_FR Comparer les marques de produits laitiers pour trouver la meilleure qualité
+LANG_FR Trouver les produits en promotion et vérifier les réductions sur les produits de soin de la peau
+LANG_FR Appliquer les coupons de réduction sur les produits de maquillage lors du paiement
+LANG_FR Recommander des légumes de saison pour une alimentation équilibrée
+LANG_FR Suggérer des recettes à base de bœuf pour le dîner
+LANG_FR Chercher la section des produits frais pour trouver des yaourts nature
+LANG_FR Noter de vérifier les prix des viandes avant de les acheter
+LANG_FR Rechercher des alternatives sans gluten pour les pâtes
+LANG_FR Planifier une sortie au supermarché pour acheter des produits surgelés
+LANG_FR Se rappeler de prendre deux douzaines de œufs lors de la prochaine visite au marché
+LANG_FR Comparer les marques de yaourts pour trouver la plus nutritive
+LANG_FR Trouver les produits en promotion et vérifier les réductions sur les produits de nettoyage
+LANG_FR Appliquer les coupons de réduction sur les produits de beauté lors du paiement
+LANG_FR Recommander des fruits frais pour une collation saine
+LANG_FR Suggérer des recettes à base de poulet pour le déjeuner
+LANG_FR Chercher la section des produits bio pour trouver des légumes frais
+LANG_FR Noter de vérifier les prix des pâtes complètes avant de les acheter
+LANG_FR Rechercher des alternatives sans gluten pour les pâtes
+LANG_FR Planifier une sortie au supermarché pour acheter des fruits de mer
+LANG_FR Se rappeler de prendre deux litres de lait lors de la prochaine visite au magasin
+LANG_FR Comparer les marques de céréales pour petit-déjeuner pour trouver la plus nutritive
+LANG_FR Trouver les produits en promotion et vérifier les réductions sur les produits de beauté
+LANG_FR Appliquer les coupons de réduction sur les articles de toilette lors du paiement
+LANG_FR Recommander des fruits frais pour une collation saine
+LANG_FR Suggérer des recettes à base de poisson pour le déjeuner
+LANG_FR Chercher la section des produits bio pour trouver des légumes frais
+LANG_FR Noter de vérifier les prix des céréales avant de les acheter
+LANG_FR Rechercher des alternatives sans lactose pour les yaourts
+LANG_FR Planifier une visite au marché pour acheter des fruits et légumes
+LANG_FR Se rappeler de prendre un paquet de café lors de la prochaine visite au supermarché
+LANG_FR Comparer les marques de produits laitiers pour trouver la meilleure qualité
+LANG_FR Trouver les produits en promotion et vérifier les réductions sur les produits de soin de la peau
+LANG_FR Appliquer les coupons de réduction sur les produits de maquillage lors du paiement
+LANG_FR Recommander des légumes de saison pour une alimentation équilibrée
+LANG_FR Suggérer des recettes à base de bœuf pour le dîner
+LANG_FR Chercher la section des produits frais pour trouver des yaourts nature
+LANG_FR Noter de vérifier les prix des viandes avant de les acheter
+LANG_FR Rechercher des alternatives sans gluten pour les pâtes
+LANG_FR Planifier une sortie au supermarché pour acheter des produits surgelés
+LANG_FR Se rappeler de prendre deux douzaines de œufs lors de la prochaine visite au marché
+LANG_FR Comparer les marques de yaourts pour trouver la plus nutritive
+LANG_FR Ma mère se plaint de maux de tête fréquemment pour depuis une semaine
+LANG_FR Mon frère a été diagnostiqué avec diabète il y a deux ans
+LANG_FR J'ai pris des antibiotiques pour mon infection ce matin
+LANG_FR Ma sœur prend des antihistaminiques pour ses allergies régulièrement
+LANG_FR J'ai eu des nausées après le repas une fois
+LANG_FR Mon cousin doit faire une IRM demain
+LANG_FR J'ai consulté un spécialiste pour mes douleurs articulaires la semaine dernière
+LANG_FR Ma nièce a de la fièvre depuis hier toute la journée
+LANG_FR Mon oncle a des démangeaisons sur la peau parfois
+LANG_FR J'ai un rendez-vous avec le médecin la semaine prochaine
+LANG_FR Ma cousine a des maux de ventre depuis ce matin quelques heures
+LANG_FR Mon voisin a des vertiges fréquemment depuis hier
+LANG_FR J'ai pris des antalgiques pour mes maux de dos hier soir
+LANG_FR Mon amie a des problèmes de sommeil depuis une semaine toutes les nuits
+LANG_FR Mon frère a des problèmes de digestion après les repas régulièrement
+LANG_FR J'ai un rendez-vous pour une analyse de sang
+LANG_FR Ma sœur a des picotements dans les mains depuis hier
+LANG_FR Mon père a des douleurs thoraciques après l'effort parfois
+LANG_FR J'ai pris des antipyrétiques pour ma fièvre ce matin
+LANG_FR Ma mère a des troubles de la vision depuis quelques jours toute la journée
+LANG_FR Mon grand-père a des problèmes respiratoires la nuit souvent
+LANG_FR Mon ami a des démangeaisons sur le corps depuis hier
+LANG_FR Ma sœur a des maux de gorge depuis ce matin toute la journée
+LANG_FR Mon frère a des douleurs musculaires après l'entraînement régulièrement
+LANG_FR J'ai un rendez-vous avec le spécialiste la semaine prochaine
+LANG_FR Ma tante a des troubles de l'équilibre depuis hier quelques heures
+LANG_FR Mon cousin a des maux de tête fréquemment depuis une semaine
+LANG_FR Ma nièce a des démangeaisons sur la peau depuis hier
+LANG_FR Mon oncle a des douleurs abdominales après les repas parfois
+LANG_FR J'ai pris des antispasmodiques pour mes crampes hier soir
+LANG_FR Ma cousine a des frissons depuis ce matin quelques heures
+LANG_FR Mon voisin a des troubles du sommeil depuis hier toutes les nuits
+LANG_FR J'ai un rendez-vous pour une échographie
+LANG_FR Ma cousine a des douleurs articulaires depuis hier toute la journée
+LANG_FR Mon amie a des vertiges fréquemment depuis une semaine
+LANG_FR Mon frère a des maux de dos après une mauvaise posture parfois
+LANG_FR Ma sœur a des maux de ventre depuis ce matin quelques heures
+LANG_FR Mon père a des maux de tête après le travail régulièrement
+LANG_FR J'ai pris des antalgiques pour mes maux de tête hier soir
+LANG_FR Ma mère a des problèmes de digestion après les repas parfois
+LANG_FR Mon grand-père a des douleurs thoraciques après l'effort parfois
+LANG_FR Mon ami a des troubles de la vision depuis quelques jours toute la journée
+LANG_FR Ma tante a des problèmes respiratoires la nuit souvent
+LANG_FR Mon cousin a des démangeaisons sur le corps depuis hier
+LANG_FR J'ai un rendez-vous pour une analyse de sang
+LANG_FR Ma sœur a des picotements dans les mains depuis hier
+LANG_FR Mon frère a des problèmes de sommeil depuis une semaine toutes les nuits
+LANG_FR Mon père a des problèmes de digestion après les repas régulièrement
+LANG_FR J'ai un rendez-vous pour une IRM
+LANG_FR Ma sœur a de la fièvre depuis hier toute la journée
+LANG_FR Mon grand-père a des démangeaisons sur la peau parfois
+LANG_FR Mon ami a des vertiges fréquemment depuis hier
+LANG_FR J'ai pris des antipyrétiques pour ma fièvre ce matin
+LANG_FR Ma mère a des troubles de la vision depuis quelques jours toute la journée
+LANG_FR Mon grand-père a des problèmes respiratoires la nuit souvent
+LANG_FR Mon ami a des démangeaisons sur le corps depuis hier
+LANG_FR Ma sœur a des maux de gorge depuis ce matin toute la journée
+LANG_FR Mon frère a des douleurs musculaires après l'entraînement régulièrement
+LANG_FR J'ai un rendez-vous avec le spécialiste la semaine prochaine
+LANG_FR Ma tante a des troubles de l'équilibre depuis hier quelques heures
+LANG_FR Mon cousin a des maux de tête fréquemment depuis une semaine
+LANG_FR Ma nièce a des démangeaisons sur la peau depuis hier
+LANG_FR Mon oncle a des douleurs abdominales après les repas parfois
+LANG_FR J'ai pris des antispasmodiques pour mes crampes hier soir
+LANG_FR Ma cousine a des frissons depuis ce matin quelques heures
+LANG_FR Mon voisin a des troubles du sommeil depuis hier toutes les nuits
+LANG_FR J'ai un rendez-vous pour une échographie
+LANG_FR Ma cousine a des douleurs articulaires depuis hier toute la journée
+LANG_FR Mon amie a des vertiges fréquemment depuis une semaine
+LANG_FR Mon frère a des maux de dos après une mauvaise posture parfois
+LANG_FR Ma sœur a des maux de ventre depuis ce matin quelques heures
+LANG_FR Mon père a des maux de tête après le travail régulièrement
+LANG_FR J'ai pris des antalgiques pour mes maux de tête hier soir
+LANG_FR Ma mère a des problèmes de digestion après les repas parfois
+LANG_FR Mon grand-père a des douleurs thoraciques après l'effort parfois
+LANG_FR Mon ami a des troubles de la vision depuis quelques jours toute la journée
+LANG_FR Ma tante a des problèmes respiratoires la nuit souvent
+LANG_FR Mon cousin a des démangeaisons sur le corps depuis hier
+LANG_FR J'ai un rendez-vous pour une analyse de sang
+LANG_FR Ma sœur a des picotements dans les mains depuis hier
+LANG_FR Mon frère a des problèmes de sommeil depuis une semaine toutes les nuits
+LANG_FR Mon père a des problèmes de digestion après les repas régulièrement
+LANG_FR J'ai un rendez-vous pour une IRM
+LANG_FR Ma sœur a de la fièvre depuis hier toute la journée
+LANG_FR Mon grand-père a des démangeaisons sur la peau parfois
+LANG_FR Mon ami a des vertiges fréquemment depuis une semaine
+LANG_FR J'ai pris des antipyrétiques pour ma fièvre ce matin
+LANG_FR Ma mère a des troubles de la vision depuis quelques jours toute la journée
+LANG_FR Mon grand-père a des problèmes respiratoires la nuit souvent
+LANG_FR Mon ami a des démangeaisons sur le corps depuis hier
+LANG_FR Ma sœur a des maux de gorge depuis ce matin toute la journée
+LANG_FR Mon frère a des douleurs musculaires après l'entraînement régulièrement
+LANG_FR J'ai un rendez-vous avec le spécialiste la semaine prochaine
+LANG_FR Ma tante a des troubles de l'équilibre depuis hier quelques heures
+LANG_FR Real Madrid et Barcelona s'affrontent dans le célèbre El Clasico ce soir .
+LANG_FR Messi tente une frappe de loin, mais le Courtois est vigilant .
+LANG_FR Hazard fait une passe décisive à Benzema qui ne parvient pas à conclure .
+LANG_FR Michael Oliver accorde un penalty discutable à Manchester United .
+LANG_FR Ronaldo célèbre son but en courant vers les supporters .
+LANG_FR Guardiola donne des instructions à ses joueurs depuis la touche .
+LANG_FR Salah est remplacé par Mane à la 75ème minute .
+LANG_FR Quel match intense et plein de rebondissements!
+LANG_FR Mbappé est en grande forme aujourd'hui, il domine le milieu de terrain .
+LANG_FR Juventus égalise juste avant la mi-temps .
+LANG_FR De Bruyne tente une frappe puissante , mais le Neuer réalise une parade exceptionnelle .
+LANG_FR Le soleil brille sur le Santiago Bernabeu pour cette rencontre .
+LANG_FR Pogba reçoit un carton rouge pour un tacle dangereux .
+LANG_FR Chelsea remporte la Premier League après une 3-1 victoire contre Manchester City .
+LANG_FR Kane dribble habilement dans la surface de réparation, mais sa frappe passe à côté du but .
+LANG_FR Anthony Taylor siffle la fin de la première mi-temps .
+LANG_FR Griezmann est signalé hors-jeu par un cheveu .
+LANG_FR Bayern Munich domine le Bundesliga cette saison .
+LANG_FR Sterling est victime d'une blessure et doit quitter le terrain .
+LANG_FR Modric réalise une passe décisive parfaite pour Bale qui marque d'une tête imparable .
+LANG_FR Zidane est furieux contre l'arbitre après une décision controversée .
+LANG_FR Aguero célèbre son but en embrassant l'écusson de son équipe .
+LANG_FR PSG remporte la Ligue 1 pour la saison en cours .
+LANG_FR Kante effectue une récupération cruciale dans sa propre surface de réparation .
+LANG_FR Martin Atkinson consulte le VAR pour une décision litigieuse .
+LANG_FR Sterling simule une faute et reçoit un carton jaune pour comportement anti-sportif .
+LANG_FR Atletico Madrid élimine Liverpool de la Ligue des Champions aux tirs au but .
+LANG_FR Lewandowski inscrit un but spectaculaire d'une volée à l'entrée de la surface de réparation .
+LANG_FR Hazard est élu joueur du match pour sa performance exceptionnelle .
+LANG_FR Arsenal subit une défaite humiliante contre Watford .
+LANG_FR De Gea réalise une parade décisive pour préserver le 1-0 en faveur de Manchester United .
+LANG_FR La pluie s'intensifie, rendant le terrain glissant et difficile à jouer .
+LANG_FR Ramos reçoit un carton jaune pour une faute tactique au milieu de terrain .
+LANG_FR Mbappé célèbre son but en imitant la danse de célébration de Neymar .
+LANG_FR Simeone motive ses joueurs lors de la mi-temps pour renverser la situation .
+LANG_FR Sterling est exclu du match après avoir reçu un deuxième carton jaune .
+LANG_FR Inter Milan remporte la Serie A après une 2-1 victoire contre AC Milan .
+LANG_FR Salah tente une frappe lointaine qui frôle la barre transversale .
+LANG_FR Sterling est remplacé par Mahrez à la 80ème minute .
+LANG_FR Quelle partie palpitante avec des actions de haut niveau des deux équipes!
+LANG_FR Ronaldo est en feu aujourd'hui, marquant un but après l'autre .
+LANG_FR Manchester City égalise grâce à un but de Aguero dans les dernières minutes du match .
+LANG_FR De Jong réalise une passe décisive sublime pour Messi qui ne manque pas l'occasion de marquer .
+LANG_FR Le brouillard commence à envelopper le San Siro , réduisant la visibilité .
+LANG_FR Vidal reçoit un carton rouge pour comportement violent envers un adversaire .
+LANG_FR Aguero célèbre son but en sautant dans les bras de ses coéquipiers .
+LANG_FR Dortmund remporte la Bundesliga après une 4-2 victoire contre Bayern Munich .
+LANG_FR Neymar réalise une feinte incroyable pour éliminer deux défenseurs .
+LANG_FR Salah est remplacé par Firmino à la 70ème minute .
+LANG_FR Paris Saint-Germain remporte la Ligue 1 pour la saison en cours .
+LANG_FR Kante effectue une récupération cruciale dans sa propre surface de réparation .
+LANG_FR Martin Atkinson consulte le VAR pour une décision litigieuse .
+LANG_FR Sterling simule une faute et reçoit un carton jaune pour comportement anti-sportif .
+LANG_FR Atletico Madrid élimine Liverpool de la Ligue des Champions aux tirs au but .
+LANG_FR Lewandowski inscrit un but spectaculaire d'une volée à l'entrée de la surface de réparation .
+LANG_FR Hazard est élu joueur du match pour sa performance exceptionnelle .
+LANG_FR Arsenal subit une défaite humiliante contre Watford .
+LANG_FR De Gea réalise une parade décisive pour préserver le 1-0 en faveur de Manchester United .
+LANG_FR La pluie s'intensifie, rendant le terrain glissant et difficile à jouer .
+LANG_FR Ramos reçoit un carton jaune pour une faute tactique au milieu de terrain .
+LANG_FR Mbappé célèbre son but en imitant la danse de célébration de Neymar .
+LANG_FR Simeone motive ses joueurs lors de la mi-temps pour renverser la situation .
+LANG_FR Sterling est exclu du match après avoir reçu un deuxième carton jaune .
+LANG_FR Inter Milan remporte la Serie A après une 2-1 victoire contre AC Milan .
+LANG_FR Salah tente une frappe lointaine qui frôle la barre transversale .
+LANG_FR Sterling est remplacé par Mahrez à la 80ème minute .
+LANG_FR Quelle partie palpitante avec des actions de haut niveau des deux équipes!
+LANG_FR Ronaldo est en feu aujourd'hui, marquant un but après l'autre .
+LANG_FR Manchester City égalise grâce à un but de Aguero dans les dernières minutes du match .
+LANG_FR De Jong réalise une passe décisive sublime pour Messi qui ne manque pas l'occasion de marquer .
+LANG_FR Le brouillard commence à envelopper le San Siro , réduisant la visibilité .
+LANG_FR Vidal reçoit un carton rouge pour comportement violent envers un adversaire .
+LANG_FR Aguero célèbre son but en sautant dans les bras de ses coéquipiers .
+LANG_FR Dortmund remporte la Bundesliga après une 4-2 victoire contre Bayern Munich .
+LANG_FR Neymar réalise une feinte incroyable pour éliminer deux défenseurs .
+LANG_FR Salah est remplacé par Firmino à la 70ème minute .
+LANG_FR Paris Saint-Germain remporte la Ligue 1 pour la saison en cours .
+LANG_FR Kante effectue une récupération cruciale dans sa propre surface de réparation .
+LANG_FR Martin Atkinson consulte le VAR pour une décision litigieuse .
+LANG_FR Sterling simule une faute et reçoit un carton jaune pour comportement anti-sportif .
+LANG_FR Atletico Madrid élimine Liverpool de la Ligue des Champions aux tirs au but .
+LANG_FR Lewandowski inscrit un but spectaculaire d'une volée à l'entrée de la surface de réparation .
+LANG_FR Hazard est élu joueur du match pour sa performance exceptionnelle .
+LANG_FR Arsenal subit une défaite humiliante contre Watford .
+LANG_FR De Gea réalise une parade décisive pour préserver le 1-0 en faveur de Manchester United .
+LANG_FR La pluie s'intensifie, rendant le terrain glissant et difficile à jouer .
+LANG_FR Ramos reçoit un carton jaune pour une faute tactique au milieu de terrain .
+LANG_FR Mbappé célèbre son but en imitant la danse de célébration de Neymar .
+LANG_FR Simeone motive ses joueurs lors de la mi-temps pour renverser la situation .
+LANG_FR Sterling est exclu du match après avoir reçu un deuxième carton jaune .
+LANG_FR Inter Milan remporte la Serie A après une 2-1 victoire contre AC Milan .
+LANG_FR Salah tente une frappe lointaine qui frôle la barre transversale .
+LANG_FR Sterling est remplacé par Mahrez à la 80ème minute .
+LANG_FR Quelle partie palpitante avec des actions de haut niveau des deux équipes!
+LANG_FR Ronaldo est en feu aujourd'hui, marquant un but après l'autre .
+LANG_FR Manchester City égalise grâce à un but de Aguero dans les dernières minutes du match .
+LANG_FR De Jong réalise une passe décisive sublime pour Messi qui ne manque pas l'occasion de marquer .
+LANG_FR Le brouillard commence à envelopper le San Siro , réduisant la visibilité .
+LANG_FR Vidal reçoit un carton rouge pour comportement violent envers un adversaire .
+LANG_FR Aguero célèbre son but en sautant dans les bras de ses coéquipiers .
+LANG_FR Dortmund remporte la Bundesliga après une 4-2 victoire contre Bayern Munich .
+LANG_FR Neymar réalise une feinte incroyable pour éliminer deux défenseurs .
+LANG_FR Salah est remplacé par Firmino à la 70ème minute .
+LANG_FR Paris Saint-Germain remporte la Ligue 1 pour la saison en cours .
+LANG_FR Kante effectue une récupération cruciale dans sa propre surface de réparation .
+LANG_FR Martin Atkinson consulte le VAR pour une décision litigieuse .
+LANG_FR Sterling simule une faute et reçoit un carton jaune pour comportement anti-sportif .
+LANG_FR Atletico Madrid élimine Liverpool de la Ligue des Champions aux tirs au but .
+LANG_FR Lewandowski inscrit un but spectaculaire d'une volée à l'entrée de la surface de réparation .
+LANG_FR Commencer un nouveau plan d'entraînement axé sur la musculation .
+LANG_FR Suivre mes performances lors de chaque séance d'entraînement .
+LANG_FR Définir mes objectifs de perte de poids pour le mois prochain .
+LANG_FR Planifier des séances d'entraînement régulières à 7 heures du matin .
+LANG_FR Mettre à jour mes informations de poids et de taille .
+LANG_FR Analyser les progrès de la course à pied au fil du temps .
+LANG_FR Visualiser mes plans d'entraînement pour la semaine prochaine .
+LANG_FR Générer un nouveau programme d'entraînement basé sur l'entraînement en force .
+LANG_FR Surveiller ma fréquence cardiaque pendant les exercices de cardio .
+LANG_FR Terminer ma séance d'entraînement par des étirements pour la zone des jambes .
+LANG_FR Mettre en pause mon entraînement pour 5 minutes .
+LANG_FR Reprendre mon séance d'entraînement là où je l'ai arrêtée .
+LANG_FR Arrêter l'enregistrement de mes calories brûlées pour le moment .
+LANG_FR Augmenter mon intensité d'entraînement pour les squats .
+LANG_FR Diminuer la intensité de mes exercices de gainage .
+LANG_FR Enregistrer mes mensurations corporelles .
+LANG_FR Consigner mes progrès en termes de force musculaire .
+LANG_FR Mesurer ma fréquence cardiaque avant et après une séance de HIIT .
+LANG_FR Notifier lorsque j'atteins mes objectifs de nombre de pompes .
+LANG_FR Commencer un nouveau programme d'entraînement axé sur la natation .
+LANG_FR Suivre mes performances lors de chaque séance d'entraînement .
+LANG_FR Définir mes objectifs de prise de masse musculaire pour les prochains mois .
+LANG_FR Planifier des séances d'entraînement régulières à 18 heures .
+LANG_FR Mettre à jour mes informations de poids et de taille .
+LANG_FR Analyser les progrès de la course en montagne au fil du temps .
+LANG_FR Visualiser mes plans d'entraînement pour la semaine prochaine .
+LANG_FR Générer un nouveau programme d'entraînement basé sur l'entraînement en endurance .
+LANG_FR Surveiller ma fréquence cardiaque pendant les exercices de saut à la corde .
+LANG_FR Terminer ma séance d'entraînement par des étirements pour la zone du dos .
+LANG_FR Mettre en pause mon entraînement pour 10 minutes .
+LANG_FR Reprendre mon séance d'entraînement là où je l'ai arrêtée .
+LANG_FR Arrêter l'enregistrement de mes calories brûlées pour le moment .
+LANG_FR Augmenter mon intensité d'entraînement pour les fentes .
+LANG_FR Diminuer la intensité de mes exercices de planche .
+LANG_FR Enregistrer mes mensurations corporelles .
+LANG_FR Consigner mes progrès en termes de endurance .
+LANG_FR Mesurer ma fréquence cardiaque avant et après une séance de yoga .
+LANG_FR Notifier lorsque j'atteins mes objectifs de nombre de burpees .
+LANG_FR Commencer un nouveau programme d'entraînement axé sur le cyclisme .
+LANG_FR Suivre mes performances lors de chaque séance d'entraînement .
+LANG_FR Définir mes objectifs de gain de flexibilité pour les prochaines semaines .
+LANG_FR Planifier des séances d'entraînement régulières à 15 heures .
+LANG_FR Mettre à jour mes informations de poids et de taille .
+LANG_FR Analyser les progrès de la course en salle au fil du temps .
+LANG_FR Visualiser mes plans d'entraînement pour la semaine prochaine .
+LANG_FR Générer un nouveau programme d'entraînement basé sur l'entraînement en souplesse .
+LANG_FR Surveiller ma fréquence cardiaque pendant les exercices de boxe .
+LANG_FR Terminer ma séance d'entraînement par des étirements pour la zone des bras .
+LANG_FR Mettre en pause mon entraînement pour 7 minutes .
+LANG_FR Reprendre mon séance d'entraînement là où je l'ai arrêtée .
+LANG_FR Arrêter l'enregistrement de mes calories brûlées pour le moment .
+LANG_FR Augmenter mon intensité d'entraînement pour les pompes .
+LANG_FR Diminuer la intensité de mes exercices de squat .
+LANG_FR Enregistrer mes mensurations corporelles .
+LANG_FR Consigner mes progrès en termes de agilité .
+LANG_FR Mesurer ma fréquence cardiaque avant et après une séance de Pilates .
+LANG_FR Notifier lorsque j'atteins mes objectifs de nombre de burpees .
+LANG_FR Salut, pourrais-tu augmenter la luminosité dans la chambre ?
+LANG_FR Je pense qu'il serait bien de programmer le système de chauffage à 20 degrés pour la salle de séjour .
+LANG_FR Quelle est la vitesse du ventilateur dans la cuisine ?
+LANG_FR Hey, peux-tu baisser le volume de la téléviseur ?
+LANG_FR J'aimerais que tu envoies un message à maman pour lui dire que je suis rentré .
+LANG_FR Est-ce que tu peux jouer la chanson Shape of You dans la salle de bain ?
+LANG_FR Il faudrait régler l'alarme pour 7 heures du matin .
+LANG_FR Je voudrais que tu changes la couleur des lumières à bleu dans la salle à manger .
+LANG_FR Pourrais-tu vérifier si la porte d'entrée est verrouillée ?
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Salut, est-ce que tu peux éteindre la cafetière ?
+LANG_FR Il serait bien de programmer un rappel pour demain à 15 heures .
+LANG_FR Peux-tu augmenter le volume de la enceinte ?
+LANG_FR Je voudrais que tu envoies un email à John pour lui confirmer notre rendez-vous .
+LANG_FR Hey, peux-tu mettre en marche la machine à laver ?
+LANG_FR Il faudrait régler le thermostat à 22 degrés pour la chambre .
+LANG_FR J'aimerais que tu changes la luminosité des lumières à 50% dans le salon .
+LANG_FR Est-ce que tu peux baisser le volume de la radio ?
+LANG_FR Peux-tu lire les dernières actualités dans la cuisine ?
+LANG_FR Il serait bien de activer le système d'alarme .
+LANG_FR Quelle est la température idéale pour la bureau ?
+LANG_FR Salut, pourrais-tu mettre en pause la musique dans la chambre ?
+LANG_FR Je pense qu'il serait bien de programmer une alarme pour 8 heures .
+LANG_FR Quelle est la luminosité actuelle dans la salle à manger ?
+LANG_FR Hey, peux-tu augmenter le volume de la téléviseur ?
+LANG_FR J'aimerais que tu envoies un message à Sophie pour lui demander si elle peut passer ce soir .
+LANG_FR Est-ce que tu peux jouer de la musique relaxante dans la salle de bain ?
+LANG_FR Il faudrait régler la température à 18 degrés pour la chambre .
+LANG_FR Je voudrais que tu changes la couleur des lumières à vert dans la salon .
+LANG_FR Pourrais-tu vérifier si la porte de garage est fermée ?
+LANG_FR Quelle est la vitesse du ventilateur dans la chambre ?
+LANG_FR Salut, est-ce que tu peux éteindre la lampe de chevet ?
+LANG_FR Il serait bien de programmer un rappel pour après-demain à 10 heures .
+LANG_FR Peux-tu augmenter le volume de la enceinte ?
+LANG_FR Je voudrais que tu envoies un email à Laura pour lui souhaiter un joyeux anniversaire .
+LANG_FR Hey, peux-tu mettre en marche la cafetière ?
+LANG_FR Il faudrait régler le thermostat à 20 degrés pour la salon .
+LANG_FR J'aimerais que tu changes la luminosité des lumières à 70% dans le cuisine .
+LANG_FR Est-ce que tu peux baisser le volume de la radio ?
+LANG_FR Peux-tu lire les derniers messages reçus dans la chambre ?
+LANG_FR Il serait bien de activer le système de surveillance .
+LANG_FR Quelle est la température recommandée pour la salle à manger ?
+LANG_FR Salut, pourrais-tu mettre en pause la musique dans la salon ?
+LANG_FR Je pense qu'il serait bien de programmer une alarme pour 9 heures .
+LANG_FR Quelle est la luminosité actuelle dans la salle de bain ?
+LANG_FR Hey, peux-tu augmenter le volume de la enceinte ?
+LANG_FR J'aimerais que tu envoies un message à Marc pour lui demander s'il peut passer demain .
+LANG_FR Est-ce que tu peux jouer de la musique relaxante dans la chambre ?
+LANG_FR Il faudrait régler la température à 22 degrés pour la salon .
+LANG_FR Je voudrais que tu changes la couleur des lumières à orange dans la cuisine .
+LANG_FR Pourrais-tu vérifier si la fenêtre de la cuisine est fermée ?
+LANG_FR Quelle est la vitesse du ventilateur dans la salon ?
+LANG_FR Salut, est-ce que tu peux éteindre la lampe de bureau ?
+LANG_FR Il serait bien de programmer un rappel pour après-demain à 14 heures .
+LANG_FR Peux-tu augmenter le volume de la téléviseur ?
+LANG_FR Je voudrais que tu envoies un email à Sophie pour lui partager les photos de la soirée .
+LANG_FR Hey, peux-tu mettre en marche la lave-vaisselle ?
+LANG_FR Il faudrait régler le thermostat à 24 degrés pour la chambre .
+LANG_FR J'aimerais que tu changes la luminosité des lumières à 60% dans le salle à manger .
+LANG_FR Est-ce que tu peux baisser le volume de la radio ?
+LANG_FR Peux-tu lire les derniers emails reçus dans la bureau ?
+LANG_FR Il serait bien de activer le système de climatisation .
+LANG_FR Quelle est la température recommandée pour la chambre ?
+LANG_FR Salut, pourrais-tu mettre en pause la musique dans la salle de bain ?
+LANG_FR Je pense qu'il serait bien de programmer une alarme pour 10 heures .
+LANG_FR Quelle est la luminosité actuelle dans la cuisine ?
+LANG_FR Hey, peux-tu augmenter le volume de la radio ?
+LANG_FR J'aimerais que tu envoies un message à Emma pour lui demander de passer à la pharmacie .
+LANG_FR Est-ce que tu peux jouer de la musique relaxante dans la salon ?
+LANG_FR Il faudrait régler la température à 19 degrés pour la salle à manger .
+LANG_FR Je voudrais que tu changes la couleur des lumières à violet dans la bureau .
+LANG_FR Pourrais-tu vérifier si la fenêtre du salon est fermée ?
+LANG_FR Quelle est la vitesse du ventilateur dans la chambre ?
+LANG_FR Salut, est-ce que tu peux éteindre la lampe de salon ?
+LANG_FR Il serait bien de programmer un rappel pour après-demain à 16 heures .
+LANG_FR Peux-tu augmenter le volume de la enceinte ?
+LANG_FR Je voudrais que tu envoies un email à Pierre pour lui souhaiter un bon anniversaire .
+LANG_FR Hey, peux-tu mettre en marche la aspirateur ?
+LANG_FR Il faudrait régler le thermostat à 21 degrés pour la salle de bain .
+LANG_FR J'aimerais que tu changes la luminosité des lumières à 80% dans le chambre .
+LANG_FR Est-ce que tu peux baisser le volume de la téléviseur ?
+LANG_FR Peux-tu lire les derniers messages reçus dans la cuisine ?
+LANG_FR Il serait bien de activer le système de sécurité .
+LANG_FR Quelle est la température recommandée pour la salon ?
+LANG_FR Salut, pourrais-tu mettre en pause la musique dans la bureau ?
+LANG_FR Je pense qu'il serait bien de programmer une alarme pour 11 heures .
+LANG_FR Quelle est la luminosité actuelle dans la salle à manger ?
+LANG_FR Hey, peux-tu augmenter le volume de la enceinte ?
+LANG_FR J'aimerais que tu envoies un message à Marie pour lui demander si elle peut passer demain soir .
+LANG_FR Est-ce que tu peux jouer de la musique relaxante dans la chambre ?
+LANG_FR Il faudrait régler la température à 23 degrés pour la salon .
+LANG_FR Je voudrais que tu changes la couleur des lumières à jaune dans la cuisine .
+LANG_FR Pourrais-tu vérifier si la porte d'entrée est verrouillée ?
+LANG_FR Quelle est la vitesse du ventilateur dans la salle à manger ?
+LANG_FR Salut, est-ce que tu peux éteindre la lampe de chevet ?
+LANG_FR Il serait bien de programmer un rappel pour après-demain à 12 heures .
+LANG_FR Peux-tu augmenter le volume de la radio ?
+LANG_FR Je voudrais que tu envoies un email à Hugo pour lui partager les photos de la soirée .
+LANG_FR Hey, peux-tu mettre en marche la lave-vaisselle ?
+LANG_FR Il faudrait régler le thermostat à 25 degrés pour la chambre .
+LANG_FR J'aimerais que tu changes la luminosité des lumières à 90% dans le salon .
+LANG_FR Est-ce que tu peux baisser le volume de la radio ?
+LANG_FR Peux-tu lire les derniers emails reçus dans la bureau ?
+LANG_FR Il serait bien de activer le système de climatisation .
+LANG_FR Quelle est la température recommandée pour la chambre ?
+LANG_FR Salut, pourrais-tu mettre en pause la musique dans la salle de bain ?
+LANG_FR Je pense qu'il serait bien de programmer une alarme pour 13 heures .
+LANG_FR Quelle est la luminosité actuelle dans la cuisine ?
+LANG_FR Hey, peux-tu augmenter le volume de la radio ?
+LANG_FR J'aimerais que tu envoies un message à Emma pour lui demander de passer à la pharmacie .
+LANG_FR Est-ce que tu peux jouer de la musique relaxante dans la salon ?
+LANG_FR Il faudrait régler la température à 26 degrés pour la salle à manger .
+LANG_FR Je voudrais que tu changes la couleur des lumières à violet dans la bureau .
+LANG_FR Pourrais-tu vérifier si la fenêtre du salon est fermée ?
+LANG_FR Quelle est la vitesse du ventilateur dans la chambre ?
+LANG_FR Salut, est-ce que tu peux éteindre la lampe de salon ?
+LANG_FR Il serait bien de programmer un rappel pour après-demain à 16 heures .
+LANG_FR Peux-tu augmenter le volume de la enceinte ?
+LANG_FR Je voudrais que tu envoies un email à Pierre pour lui souhaiter un bon anniversaire .
+LANG_FR Hey, peux-tu mettre en marche la aspirateur ?
+LANG_FR Il faudrait régler le thermostat à 21 degrés pour la salle de bain .
+LANG_FR J'aimerais que tu changes la luminosité des lumières à 80% dans le chambre .
+LANG_FR Est-ce que tu peux baisser le volume de la téléviseur ?
+LANG_FR Peux-tu lire les derniers messages reçus dans la cuisine ?
+LANG_FR Il serait bien de activer le système de sécurité .
+LANG_FR Quelle est la température recommandée pour la salon ?
+LANG_FR Salut, pourrais-tu mettre en pause la musique dans la bureau ?
+LANG_FR Je pense qu'il serait bien de programmer une alarme pour 11 heures .
+LANG_FR Quelle est la luminosité actuelle dans la salle à manger ?
+LANG_FR Hey, peux-tu augmenter le volume de la enceinte ?
+LANG_FR J'aimerais que tu envoies un message à Marie pour lui demander si elle peut passer demain soir .
+LANG_FR Est-ce que tu peux jouer de la musique relaxante dans la chambre ?
+LANG_FR Il faudrait régler la température à 23 degrés pour la salon .
+LANG_FR Je voudrais que tu changes la couleur des lumières à jaune dans la cuisine .
+LANG_FR Réservez un hôtel à Londres pour le 15 juillet .
+LANG_FR Je pense que je vais annuler ma réservation d' chambre d'hôtel à Paris .
+LANG_FR Vérifiez l'état de mon vol à Tokyo .
+LANG_FR Mettez une alerte de voyage pour Rome le 20 août .
+LANG_FR Quel beau temps il fait à Barcelone aujourd'hui!
+LANG_FR Recommandez des destinations de plage pour cet été .
+LANG_FR Confirmez mon billet de classe affaires pour un vol en avion vers Dubaï .
+LANG_FR Mise à jour de mon itinéraire avec une visite à la Tour Eiffel .
+LANG_FR Notifiez -moi s'il y a des restrictions de voyage pour le Japon .
+LANG_FR Planifiez un voyage à Sydney pour le mois prochain .
+LANG_FR Ajoutez une visite à la Sagrada Familia à mon itinéraire .
+LANG_FR Comparez les prix des hôtels à Miami pour le week-end prochain .
+LANG_FR Suivez l'état de mon vol à Berlin .
+LANG_FR Remarquez -moi de renouveler mon passeport avant la fin du mois .
+LANG_FR Suggérez des endroits à visiter à Amsterdam .
+LANG_FR Les gares sont souvent très animées le vendredi soir .
+LANG_FR J'ai réservé un billet de train pour Lyon pour samedi prochain .
+LANG_FR Retardez mon billet pour le vol à Madrid .
+LANG_FR Avancez ma réservation pour le vol à Athènes .
+LANG_FR Reportez ma réservation pour le vol à Lisbonne .
+LANG_FR Rebookez mon vol pour Sydney .
+LANG_FR Changez le type de chambre pour ma réservation à Paris .
+LANG_FR Arrangez un logement à Barcelone pour le mois prochain .
+LANG_FR Annulez ma réservation à Rome pour le 10 août .
+LANG_FR Vérifiez les restrictions de voyage pour le Brésil .
+LANG_FR Confirmez ma réservation pour le vol à Tokyo .
+LANG_FR Notifiez -moi des alertes de voyage pour Londres .
+LANG_FR Recommandez des destinations de montagne pour cet hiver .
+LANG_FR Planifiez une excursion à la Grande Muraille de Chine pour le mois prochain .
+LANG_FR Ajoutez une visite à le Colisée à mon itinéraire .
+LANG_FR Retirez la visite à la Statue de la Liberté de mon itinéraire .
+LANG_FR Changez l' hôtel de ma réservation à Barcelone .
+LANG_FR Arrangez un hébergement à Tokyo pour la semaine prochaine .
+LANG_FR Annulez ma réservation à Londres pour le 25 juillet .
+LANG_FR Vérifiez les restrictions de voyage pour l'Australie .
+LANG_FR Confirmez ma réservation pour le vol à Paris .
+LANG_FR Notifiez -moi des alertes de voyage pour New York .
+LANG_FR Recommandez des destinations de randonnée pour ce printemps .
+LANG_FR Planifiez une excursion à le Louvre pour le mois prochain .
+LANG_FR Ajoutez une visite à la Tour de Londres à mon itinéraire .
+LANG_FR Retirez la visite à le Musée du Prado de mon itinéraire .
+LANG_FR Changez l' hôtel de ma réservation à Madrid .
+LANG_FR Arrangez un hébergement à Rome pour la semaine prochaine .
+LANG_FR Annulez ma réservation à Berlin pour le 30 juillet .
+LANG_FR Vérifiez les restrictions de voyage pour le Japon .
+LANG_FR Confirmez ma réservation pour le vol à Madrid .
+LANG_FR Notifiez -moi des alertes de voyage pour Paris .
+LANG_FR Recommandez des destinations de ski pour cet hiver .
+LANG_FR Planifiez une excursion à le Colisée pour le mois prochain .
+LANG_FR Ajoutez une visite à le Musée d'Orsay à mon itinéraire .
+LANG_FR Retirez la visite à le Palais de Buckingham de mon itinéraire .
+LANG_FR Changez l' hôtel de ma réservation à Barcelone .
+LANG_FR Arrangez un hébergement à Londres pour la semaine prochaine .
+LANG_FR Annulez ma réservation à Amsterdam pour le 25 juillet .
+LANG_FR Vérifiez les restrictions de voyage pour le Canada .
+LANG_FR Confirmez ma réservation pour le vol à Tokyo .
+LANG_FR Notifiez -moi des alertes de voyage pour Londres .
+LANG_FR Recommandez des destinations de plage pour cet été .
+LANG_FR Planifiez une excursion à la Statue de la Liberté pour le mois prochain .
+LANG_FR Ajoutez une visite à le Musée du Louvre à mon itinéraire .
+LANG_FR Retirez la visite à le Colisée de mon itinéraire .
+LANG_FR Changez l' hôtel de ma réservation à Rome .
+LANG_FR Arrangez un hébergement à Paris pour la semaine prochaine .
+LANG_FR Annulez ma réservation à Madrid pour le 30 juillet .
+LANG_FR Vérifiez les restrictions de voyage pour l'Espagne .
+LANG_FR Confirmez ma réservation pour le vol à Londres .
+LANG_FR Notifiez -moi des alertes de voyage pour New York .
+LANG_FR Recommandez des destinations de montagne pour cet hiver .
+LANG_FR Planifiez une excursion à le Mont Saint-Michel pour le mois prochain .
+LANG_FR Ajoutez une visite à le Musée Van Gogh à mon itinéraire .
+LANG_FR Retirez la visite à la Tour CN de mon itinéraire .
+LANG_FR Changez l' hôtel de ma réservation à Berlin .
+LANG_FR Arrangez un hébergement à Tokyo pour la semaine prochaine .
+LANG_FR Annulez ma réservation à Londres pour le 25 juillet .
+LANG_FR Vérifiez les restrictions de voyage pour le Japon .
+LANG_FR Confirmez ma réservation pour le vol à Madrid .
+LANG_FR Notifiez -moi des alertes de voyage pour Paris .
+LANG_FR Recommandez des destinations de ski pour cet hiver .
+LANG_FR Planifiez une excursion à le Colisée pour le mois prochain .
+LANG_FR Ajoutez une visite à le Musée d'Orsay à mon itinéraire .
+LANG_FR Retirez la visite à le Palais de Buckingham de mon itinéraire .
+LANG_FR Changez l' hôtel de ma réservation à Barcelone .
+LANG_FR Arrangez un hébergement à Londres pour la semaine prochaine .
+LANG_FR Annulez ma réservation à Amsterdam pour le 25 juillet .
+LANG_FR Vérifiez les restrictions de voyage pour le Canada .
+LANG_FR Confirmez ma réservation pour le vol à Tokyo .
+LANG_FR Notifiez -moi des alertes de voyage pour Londres .
+LANG_FR Recommandez des destinations de plage pour cet été .
+LANG_FR Planifiez une excursion à la Statue de la Liberté pour le mois prochain .
+LANG_FR Ajoutez une visite à le Musée du Louvre à mon itinéraire .
+LANG_FR Retirez la visite à le Colisée de mon itinéraire .
+LANG_FR Changez l' hôtel de ma réservation à Rome .
+LANG_FR Arrangez un hébergement à Paris pour la semaine prochaine .
+LANG_FR Annulez ma réservation à Madrid pour le 30 juillet .
+LANG_FR Vérifiez les restrictions de voyage pour l'Espagne .
+LANG_FR Confirmez ma réservation pour le vol à Londres .
+LANG_FR Notifiez -moi des alertes de voyage pour New York .
+LANG_FR Recommandez des destinations de montagne pour cet hiver .
+LANG_FR Planifiez une excursion à le Mont Saint-Michel pour le mois prochain .
+LANG_FR Ajoutez une visite à le Musée Van Gogh à mon itinéraire .
+LANG_FR Retirez la visite à la Tour CN de mon itinéraire .
+LANG_FR Changez l' hôtel de ma réservation à Berlin .
+LANG_FR Arrangez un hébergement à Tokyo pour la semaine prochaine .
+LANG_FR Annulez ma réservation à Londres pour le 25 juillet .
+LANG_FR Vérifiez les restrictions de voyage pour le Japon .
+LANG_FR Confirmez ma réservation pour le vol à Madrid .
+LANG_FR Notifiez -moi des alertes de voyage pour Paris .
+LANG_FR Recommandez des destinations de ski pour cet hiver .
+LANG_FR Planifiez une excursion à le Colisée pour le mois prochain .
+LANG_FR Changez le paramètre de température du thermocycleur à 65 degrés Celsius .
+LANG_FR Prescrivez le antibiotique pour le infection bactérienne .
+LANG_FR Révisez le rapport de radiologie pour le patient 890 et approuvez .
+LANG_FR Planifiez une consultation avec le spécialiste en cardiologie pour le patient 123 .
+LANG_FR Prescrivez un analgésique pour le maux de tête .
+LANG_FR Révisez le rapport d'analyse sanguine pour le patient 234 et signez .
+LANG_FR Changez le réglage de pression du respirateur à 20 cmH2O .
+LANG_FR Prescrivez le antipyrétique pour le fièvre .
+LANG_FR Consultez le patient 678 sur le essoufflement .
+LANG_FR Vérifiez le niveau de stock des bandages .
+LANG_FR Prescrivez un anti-inflammatoire pour le douleur articulaire .
+LANG_FR Envoyez le rapport d'immunologie au rhumatologue .
+LANG_FR Révisez le rapport de microbiologie pour le patient 123 et approuvez .
+LANG_FR Planifiez une consultation avec le dermatologue pour le patient 678 .
+LANG_FR Prescrivez un antihistaminique pour le allergies saisonnières .
+LANG_FR Envoyez le rapport de neurologie au neurologue .
+LANG_FR Révisez le rapport d'analyse d'urine pour le patient 678 et signez .
+LANG_FR Changez le réglage de débit du perfuseur à 50 mL/h .
+LANG_FR Prescrivez le antitussif pour le toux persistante .
+LANG_FR Envoyez le rapport de génétique moléculaire au généticien .
+LANG_FR Prescrivez un antifongique pour le mycose cutanée .
+LANG_FR Envoyez le rapport de cardiologie au cardiologue .
+LANG_FR Révisez le rapport de microbiologie pour le patient 456 et approuvez .
+LANG_FR Planifiez une consultation avec le endocrinologue pour le patient 123 .
+LANG_FR Prescrivez un antispasmodique pour le crampes abdominales .
+LANG_FR Envoyez le rapport d'immunologie au allergologue .
+LANG_FR Révisez le rapport d'analyse d'urine pour le patient 678 et signez .
+LANG_FR Changez le réglage de débit du perfuseur à 50 mL/h .
+LANG_FR Prescrivez le antitussif pour le toux persistante .
+LANG_FR Envoyez le rapport de génétique moléculaire au généticien .
+LANG_FR Prescrivez un antifongique pour le mycose cutanée .
+LANG_FR Envoyez le rapport de cardiologie au cardiologue .
+LANG_FR Révisez le rapport de microbiologie pour le patient 456 et approuvez .
+LANG_FR Planifiez une consultation avec le endocrinologue pour le patient 123 .
+LANG_FR Prescrivez un antispasmodique pour le crampes abdominales .
+LANG_FR Envoyez le rapport d'immunologie au allergologue .
+LANG_FR Révisez le rapport d'analyse d'urine pour le patient 678 et signez .
+LANG_FR Vérifiez le solde de mon compte d'épargne .
+LANG_FR Transférer 200 € de mon compte courant à mon compte chèques .
+LANG_FR Analyser mes dépenses mensuelles pour le mois dernier .
+LANG_FR Payer la facture 75 € pour le fournisseur de services .
+LANG_FR Configurer des alertes pour les dépenses excessives sur mon carte de crédit .
+LANG_FR Consulter les actualités financières pour les dernières mises à jour sur le marché boursier .
+LANG_FR Générer un rapport sur mes investissements actuels .
+LANG_FR Calculer l' taux d'intérêt pour mon prêt hypothécaire .
+LANG_FR Prédire les fluctuations du marché des changes pour la semaine prochaine .
+LANG_FR Conseiller des stratégies d'investissement pour diversifier mon portefeuille .
+LANG_FR Les informations financières indiquent une hausse du marché immobilier .
+LANG_FR L'actualité financière rapporte une baisse des actions de la société XYZ .
+LANG_FR Les données économiques révèlent une croissance du PIB au dernier trimestre .
+LANG_FR Déposer 1000 € sur mon compte d'épargne .
+LANG_FR Retirer 50 € en espèces de mon compte courant .
+LANG_FR Investir 500 € dans des actions à haut rendement .
+LANG_FR Économiser sur les dépenses mensuelles en réduisant les coûts superflus .
+LANG_FR Dépenser 200 € pour des achats courants avec ma carte de débit .
+LANG_FR Surveiller les fluctuations du cours de l'action de la société ABC .
+LANG_FR Notifier les dépenses excessives sur mon compte bancaire .
+LANG_FR Convertir 100 USD en euros sur le marché des changes .
+LANG_FR Échanger des 300 GBP contre des dollars américains .
+LANG_FR Annuler l' alerte pour les paiements récurrents sur mon compte courant .
+LANG_FR Planifier un rapport financier détaillé pour le trimestre en cours .
+LANG_FR Budgétiser les dépenses mensuelles pour mieux gérer les finances .
+LANG_FR Analyser les tendances du marché des matières premières pour l'année en cours .
+LANG_FR Prévoir les rendements des fonds communs de placement pour le prochain trimestre .
+LANG_FR Conseiller sur les meilleures stratégies de placement pour un revenu passif .
+LANG_FR Les actualités financières signalent une baisse du marché obligataire .
+LANG_FR L'actualité financière annonce une hausse des actions de la société ABC .
+LANG_FR Déposer 500 € sur mon compte d'épargne .
+LANG_FR Retirer 75 € en liquide de mon compte courant .
+LANG_FR Investir 1000 € dans des obligations à long terme .
+LANG_FR Économiser sur les dépenses en limitant les achats non essentiels .
+LANG_FR Dépenser 150 € pour des achats en ligne avec ma carte de crédit .
+LANG_FR Surveiller les fluctuations du cours de l'action de la société XYZ .
+LANG_FR Notifier les dépenses excessives sur mon compte d'épargne .
+LANG_FR Convertir 50 GBP en dollars américains sur le marché des changes .
+LANG_FR Échanger des 200 USD contre des euros .
+LANG_FR Annuler l' alerte pour les paiements récurrents sur mon carte de crédit .
+LANG_FR Planifier un rapport financier détaillé pour l'année en cours .
+LANG_FR Budgétiser les dépenses mensuelles pour mieux contrôler les finances .
+LANG_FR Analyser les tendances du marché des métaux précieux pour le trimestre en cours .
+LANG_FR Prévoir les rendements des actions pour le prochain semestre .
+LANG_FR Conseiller sur les meilleures stratégies de placement pour une croissance à long terme .
+LANG_FR Les actualités financières rapportent une hausse du marché des changes .
+LANG_FR L'actualité financière mentionne une baisse des actions de la société XYZ .
+LANG_FR Les données économiques révèlent une expansion du PIB au dernier trimestre .
+LANG_FR Déposer 700 € sur mon compte courant .
+LANG_FR Retirer 100 € en espèces de mon compte d'épargne .
+LANG_FR Investir 800 € dans des fonds communs de placement diversifiés .
+LANG_FR Économiser sur les dépenses en réduisant les achats impulsifs .
+LANG_FR Dépenser 250 € pour des achats en magasin avec ma carte de débit .
+LANG_FR Surveiller les fluctuations du cours de l'action de la société ABC .
+LANG_FR Notifier les dépenses excessives sur mon compte bancaire .
+LANG_FR Convertir 75 USD en euros sur le marché des changes .
+LANG_FR Échanger des 150 GBP contre des dollars américains .
+LANG_FR Annuler l' alerte pour les paiements récurrents sur mon compte courant .
+LANG_FR Planifier un rapport financier détaillé pour le trimestre en cours .
+LANG_FR Budgétiser les dépenses mensuelles pour mieux gérer les finances .
+LANG_FR Analyser les tendances du marché des matières premières pour l'année en cours .
+LANG_FR Prévoir les rendements des fonds communs de placement pour le prochain trimestre .
+LANG_FR Conseiller sur les meilleures stratégies de placement pour un revenu passif .
+LANG_FR Les actualités financières signalent une baisse du marché obligataire .
+LANG_FR L'actualité financière annonce une hausse des actions de la société ABC .
+LANG_FR Déposer 500 € sur mon compte d'épargne .
+LANG_FR Retirer 75 € en liquide de mon compte courant .
+LANG_FR Investir 1000 € dans des obligations à long terme .
+LANG_FR Économiser sur les dépenses en limitant les achats non essentiels .
+LANG_FR Dépenser 150 € pour des achats en ligne avec ma carte de crédit .
+LANG_FR Surveiller les fluctuations du cours de l'action de la société XYZ .
+LANG_FR Notifier les dépenses excessives sur mon compte d'épargne .
+LANG_FR Convertir 50 GBP en dollars américains sur le marché des changes .
+LANG_FR Échanger des 200 USD contre des euros .
+LANG_FR Annuler l' alerte pour les paiements récurrents sur mon carte de crédit .
+LANG_FR Planifier un rapport financier détaillé pour l'année en cours .
+LANG_FR Budgétiser les dépenses mensuelles pour mieux contrôler les finances .
+LANG_FR Analyser les tendances du marché des métaux précieux pour le trimestre en cours .
+LANG_FR Prévoir les rendements des actions pour le prochain semestre .
+LANG_FR Conseiller sur les meilleures stratégies de placement pour une croissance à long terme .
+LANG_FR Les actualités financières rapportent une hausse du marché des changes .
+LANG_FR L'actualité financière mentionne une baisse des actions de la société XYZ .
+LANG_FR Les données économiques révèlent une expansion du PIB au dernier trimestre .
+LANG_FR Peux-tu rechercher une recette de soupe aux tomates ?
+LANG_FR Je vais régler un minuteur de 30 minutes pour le dîner .
+LANG_FR Quels sont les ingrédients nécessaires pour la recette de tarte aux pommes ?
+LANG_FR J'aimerais suivre des recettes végétariennes .
+LANG_FR Il faudrait ajouter des oignons à la liste de courses .
+LANG_FR Sais-tu comment trouver une recette de curry végétarien ?
+LANG_FR N'oublie pas de préchauffer le four à 180 degrés .
+LANG_FR Mélanger les œufs jusqu'à ce que les jaunes et les blancs soient combinés .
+LANG_FR Reprendre la narration de la recette .
+LANG_FR Mettre à jour mes préférences pour sans gluten .
+LANG_FR Retirer les carottes de la liste de courses .
+LANG_FR Peux-tu énumérer les informations nutritionnelles sur les amandes ?
+LANG_FR Proposer une recette française pour le dîner .
+LANG_FR Suivre le stock du lait dans le réfrigérateur .
+LANG_FR Ajouter deux tomates à ma liste de courses
+LANG_FR Vérifier le prix des œufs
+LANG_FR Trouver l'emplacement du magasin de riz
+LANG_FR Régler un rappel pour faire les courses demain à 15h
+LANG_FR Gérer mes coupons pour les céréales
+LANG_FR Comparer les pommes bio avec les pommes conventionnelles pour les informations nutritionnelles
+LANG_FR Offrir des promotions sur les produits laitiers
+LANG_FR Trouver des alternatives sans gluten pour les pâtes
+LANG_FR Proposer des suggestions pour un régime végétarien
+LANG_FR Acheter un poulet rôti du supermarché
+LANG_FR Consulter les informations nutritionnelles des barres de céréales
+LANG_FR Choisir entre les marques de café pour trouver la meilleure offre
+LANG_FR Préparer une recette de soupe aux légumes pour le dîner
+LANG_FR Recevoir des avis des clients sur les produits bio
+LANG_FR Noter les promotions actuelles sur les fruits
+LANG_FR Rechercher des substituts végétaliens pour le fromage
+LANG_FR Scanner les codes-barres des articles pour vérifier les prix
+LANG_FR Appliquer les coupons de réduction sur les produits surgelés
+LANG_FR Recommander des options de desserts pour une alimentation sans sucre
+LANG_FR Visiter le supermarché pour acheter des fournitures scolaires
+LANG_FR Cuisiner un plat de pâtes à la carbonara pour le dîner
+LANG_FR Choisir les marques de produits de nettoyage les plus respectueuses de l'environnement
+LANG_FR Préférer les fruits de saison pour une alimentation équilibrée
+LANG_FR Noter et évaluer les produits frais du marché
+LANG_FR Revoir les offres spéciales sur les produits bio
+LANG_FR Suivre les recommandations de légumes pour une alimentation équilibrée
+LANG_FR Rechercher les ingrédients pour une recette de gâteau aux carottes
+LANG_FR Comparer les marques de yaourts pour trouver la meilleure offre
+LANG_FR Trouver les aliments adaptés à un régime végétalien
+LANG_FR Offrir des réductions sur les produits de nettoyage pour une première commande
+LANG_FR Proposer des conseils pour une alimentation équilibrée
+LANG_FR Acheter trois avocats pour faire une guacamole
+LANG_FR Consulter les valeurs nutritives des snacks pour enfants
+LANG_FR Choisir entre les variétés de thés pour découvrir de nouvelles marques
+LANG_FR Préparer une recette de salade composée de poulet et de légumes
+LANG_FR Recevoir des retours sur les produits de la marque
+LANG_FR Noter les promotions sur les produits de beauté actuellement en magasin
+LANG_FR Mettre à jour ma liste de courses avec les articles de nettoyage
+LANG_FR Rechercher des alternatives sans gluten pour les pâtes à la section alimentation
+LANG_FR Scanner les codes-barres des produits pour obtenir des informations sur les prix
+LANG_FR Appliquer les coupons de réduction sur les produits de beauté
+LANG_FR Recommander des options de desserts pour une alimentation sans sucre
+LANG_FR Visiter le supermarché pour acheter des fournitures scolaires
+LANG_FR Cuisiner un plat de pâtes à la carbonara pour le dîner
+LANG_FR Choisir les marques de produits de nettoyage les plus respectueuses de l'environnement
+LANG_FR Préférer les fruits de saison pour une alimentation équilibrée
+LANG_FR Noter et évaluer les produits frais du marché
+LANG_FR Revoir les offres spéciales sur les produits bio
+LANG_FR Suivre les recommandations de légumes pour une alimentation équilibrée
+LANG_FR Rechercher les ingrédients pour une recette de gâteau aux carottes
+LANG_FR Comparer les marques de yaourts pour trouver la meilleure offre
+LANG_FR Trouver les aliments adaptés à un régime végétalien
+LANG_FR Offrir des réductions sur les produits de nettoyage pour une première commande
+LANG_FR Proposer des conseils pour une alimentation équilibrée
+LANG_FR Acheter trois avocats pour faire une guacamole
+LANG_FR Consulter les valeurs nutritives des snacks pour enfants
+LANG_FR Choisir entre les variétés de thés pour découvrir de nouvelles marques
+LANG_FR Préparer une recette de salade composée de poulet et de légumes
+LANG_FR Recevoir des retours sur les produits de la marque
+LANG_FR Noter les promotions sur les produits de beauté actuellement en magasin
+LANG_FR Mettre à jour ma liste de courses avec les articles de nettoyage
+LANG_FR Rechercher des alternatives sans gluten pour les pâtes à la section alimentation
+LANG_FR Scanner les codes-barres des produits pour obtenir des informations sur les prix
+LANG_FR Appliquer les coupons de réduction sur les produits de beauté
+LANG_FR Recommander des options de desserts pour une alimentation sans sucre
+LANG_FR Visiter le supermarché pour acheter des fournitures scolaires
+LANG_FR Cuisiner un plat de pâtes à la carbonara pour le dîner
+LANG_FR Choisir les marques de produits de nettoyage les plus respectueuses de l'environnement
+LANG_FR Préférer les fruits de saison pour une alimentation équilibrée
+LANG_FR Noter et évaluer les produits frais du marché
+LANG_FR Revoir les offres spéciales sur les produits bio
+LANG_FR Suivre les recommandations de légumes pour une alimentation équilibrée
+LANG_FR Rechercher les ingrédients pour une recette de gâteau aux carottes
+LANG_FR Comparer les marques de yaourts pour trouver la meilleure offre
+LANG_FR Trouver les aliments adaptés à un régime végétalien
+LANG_FR Offrir des réductions sur les produits de nettoyage pour une première commande
+LANG_FR Proposer des conseils pour une alimentation équilibrée
+LANG_FR Ma mère a été diagnostiquée avec diabète il y a cinq ans
+LANG_FR Je ressens des douleurs abdominales depuis une semaine
+LANG_FR J'ai pris des antibiotiques pour mon infection ce matin
+LANG_FR Mon père a mentionné une perte de poids soudaine récemment
+LANG_FR Ma sœur a été conseillée de suivre une thérapie physique pour sa blessure au genou
+LANG_FR Je vais passer une IRM la semaine prochaine
+LANG_FR Ma tante a reçu une prescription pour ses maux de tête hier
+LANG_FR Je vais voir mon médecin traitant la semaine prochaine
+LANG_FR Ma nièce a de la fièvre depuis trois jours
+LANG_FR Mon oncle a été diagnostiqué avec hypertension l'année dernière
+LANG_FR Ma cousine a des nausées fréquemment
+LANG_FR Je vais demander une deuxième opinion à un spécialiste la semaine prochaine
+LANG_FR Mon amie a une toux persistante depuis deux semaines
+LANG_FR Mon collègue a des douleurs dorsales depuis un mois
+LANG_FR Je vais consulter un dermatologue demain
+LANG_FR Ma voisine a des maux de gorge depuis quelques jours
+LANG_FR Mon frère a des vertiges occasionnellement
+LANG_FR Ma sœur a des douleurs articulaires depuis plusieurs semaines
+LANG_FR Mon père a des problèmes de sommeil depuis longtemps
+LANG_FR Ma mère a une fatigue constante depuis un moment
+LANG_FR Mon grand-père a des troubles de la mémoire depuis un certain temps
+LANG_FR Ma grand-mère a des difficultés respiratoires depuis un certain temps
+LANG_FR Mon cousin a des problèmes digestifs depuis un certain temps
+LANG_FR Ma cousine a des maux de tête fréquents depuis un certain temps
+LANG_FR Mon oncle a une perte d'appétit depuis un certain temps
+LANG_FR Mon amie a des saignements anormaux depuis un certain temps
+LANG_FR Mon collègue a des douleurs thoraciques depuis un certain temps
+LANG_FR Ma voisine a des problèmes de vision depuis un certain temps
+LANG_FR Mon frère a des problèmes d'audition depuis un certain temps
+LANG_FR Ma sœur a des douleurs musculaires depuis un certain temps
+LANG_FR Mon père a des douleurs articulaires depuis un certain temps
+LANG_FR Ma mère a des douleurs abdominales depuis un certain temps
+LANG_FR Mon grand-père a des problèmes de sommeil depuis un certain temps
+LANG_FR Ma grand-mère a des douleurs chroniques depuis un certain temps
+LANG_FR Mon cousin a des douleurs lombaires depuis un certain temps
+LANG_FR Ma cousine a des problèmes de peau depuis un certain temps
+LANG_FR Mon oncle a des problèmes de mémoire depuis un certain temps
+LANG_FR Mon amie a des douleurs thoraciques depuis un certain temps
+LANG_FR Mon collègue a des problèmes de vision depuis un certain temps
+LANG_FR Ma voisine a des douleurs articulaires depuis un certain temps
+LANG_FR Mon frère a des problèmes de sommeil depuis un certain temps
+LANG_FR Ma sœur a des douleurs musculaires depuis un certain temps
+LANG_FR Mon père a des maux de tête depuis un certain temps
+LANG_FR Ma mère a des douleurs abdominales depuis un certain temps
+LANG_FR Mon grand-père a des problèmes digestifs depuis un certain temps
+LANG_FR Ma grand-mère a des douleurs chroniques depuis un certain temps
+LANG_FR Mon cousin a des douleurs lombaires depuis un certain temps
+LANG_FR Ma cousine a des problèmes de peau depuis un certain temps
+LANG_FR Mon oncle a des problèmes de mémoire depuis un certain temps
+LANG_FR Mon amie a des douleurs thoraciques depuis un certain temps
+LANG_FR Mon collègue a des problèmes de vision depuis un certain temps
+LANG_FR Ma voisine a des douleurs articulaires depuis un certain temps
+LANG_FR Mon frère a des problèmes de sommeil depuis un certain temps
+LANG_FR Ma sœur a des douleurs musculaires depuis un certain temps
+LANG_FR Mon père a des maux de tête depuis un certain temps
+LANG_FR Ma mère a des douleurs abdominales depuis un certain temps
+LANG_FR Mon grand-père a des problèmes digestifs depuis un certain temps
+LANG_FR Ma grand-mère a des douleurs chroniques depuis un certain temps
+LANG_FR Mon cousin a des douleurs lombaires depuis un certain temps
+LANG_FR Ma cousine a des problèmes de peau depuis un certain temps
+LANG_FR Mon oncle a des problèmes de mémoire depuis un certain temps
+LANG_FR Mon amie a des douleurs thoraciques depuis un certain temps
+LANG_FR Mon collègue a des problèmes de vision depuis un certain temps
+LANG_FR Ma voisine a des douleurs articulaires depuis un certain temps
+LANG_FR Manchester United affronte Liverpool dans un match de Premier League .
+LANG_FR Salah tente une frappe lointaine mais le De Gea est attentif .
+LANG_FR Klopp donne des instructions passionnées depuis le bord du terrain .
+LANG_FR Rashford fait une passe décisive à Fernandes qui ne rate pas l'occasion de marquer .
+LANG_FR Taylor siffle une faute pour une charge trop rugueuse de Maguire .
+LANG_FR Le soleil brille fort aujourd'hui, parfait pour un bon match de football .
+LANG_FR Guardiola semble satisfait de la performance de son équipe en première mi-temps .
+LANG_FR Kane tente de dribbler Pogba mais ce dernier lui vole le brillamment .
+LANG_FR Real Madrid remporte la Liga après une 3-1 victoire contre Barcelona .
+LANG_FR Mbappé est en grande forme aujourd'hui, il a déjà inscrit deux ACTION buts .
+LANG_FR Oliver accorde un penalty à Chelsea pour une main dans la surface .
+LANG_FR Arsenal tente de revenir au score après avoir encaissé un but rapide .
+LANG_FR De Bruyne réalise une frappe puissante mais le Alisson est sur la trajectoire .
+LANG_FR Solskjaer encourage ses joueurs à presser haut pour récupérer le .
+LANG_FR Sterling est remplacé par Mahrez à la 70ème minute .
+LANG_FR Bayern Munich célèbre son triomphe en levant le trophée de la Bundesliga .
+LANG_FR Griezmann est signalé hors-jeu par le juge de touche .
+LANG_FR La pluie s'intensifie, rendant le terrain glissant et difficile à jouer .
+LANG_FR Zidane discute tactiques avec ses assistants pendant la mi-temps .
+LANG_FR Sterling reçoit un carton jaune pour une faute sur Henderson .
+LANG_FR Juventus et Inter Milan se disputent la Serie A dans un match tendu .
+LANG_FR Neymar tente une bicyclette spectaculaire mais le Courtois capte le .
+LANG_FR Atkinson consulte le VAR pour une possible faute dans la surface .
+LANG_FR Messi est élu meilleur joueur du match pour sa performance exceptionnelle .
+LANG_FR Manchester City domine le match avec une possession de balle écrasante .
+LANG_FR Ronaldo célèbre son but en courant vers les supporters avec un grand sourire .
+LANG_FR Paris Saint-Germain subit la pression constante de Marseille en ce début de match .
+LANG_FR De Gea réalise une parade décisive pour empêcher Aubameyang de marquer .
+LANG_FR Ancelotti demande à ses joueurs de défendre en bloc pour protéger leur avance .
+LANG_FR Vardy est blessé et doit être remplacé par Iheanacho .
+LANG_FR Borussia Dortmund égalise grâce à un but de Haaland dans les dernières minutes du match .
+LANG_FR Ramos reçoit un carton rouge pour une faute grossière sur Messi .
+LANG_FR Taylor accorde un penalty à Manchester United pour une main dans la surface .
+LANG_FR Chelsea prend l'avantage grâce à un but opportuniste de Mount .
+LANG_FR Kante est un véritable moteur au milieu de terrain pour Chelsea .
+LANG_FR Le vent fort perturbe les tireurs sur coup de pied arrêté .
+LANG_FR Simeone encourage ses joueurs à rester compacts en défense malgré la pression de Real Madrid .
+LANG_FR De Jong est remplacé par Puig à la 80ème minute pour apporter de la fraîcheur au milieu de terrain .
+LANG_FR Liverpool célèbre sa victoire en dansant sur le terrain avec joie .
+LANG_FR Lewandowski est signalé hors-jeu alors qu'il filait vers le .
+LANG_FR Oliver accorde un penalty à Arsenal pour une faute dans la surface .
+LANG_FR Benzema est élu homme du match pour ses deux buts décisifs .
+LANG_FR Manchester City contrôle le jeu avec une possession de balle impressionnante .
+LANG_FR Ronaldo célèbre son but en mimant un saut spectaculaire devant les supporters .
+LANG_FR Lyon subit la pression constante de Lille en ce début de match .
+LANG_FR Navas réalise une parade réflexe pour empêcher Depay de marquer .
+LANG_FR Guardiola demande à ses joueurs de presser haut pour récupérer le .
+LANG_FR Mbappé est blessé et doit être remplacé par Sarabia .
+LANG_FR Borussia Mönchengladbach égalise grâce à un but de Thuram dans les dernières minutes du match .
+LANG_FR Ramos reçoit un carton rouge pour une faute grossière sur Haaland .
+LANG_FR Taylor accorde un penalty à Manchester City pour une main dans la surface .
+LANG_FR Chelsea prend l'avantage grâce à un but opportuniste de Werner .
+LANG_FR Kante est un véritable moteur au milieu de terrain pour Chelsea .
+LANG_FR La pluie battante rend le terrain glissant et difficile à jouer .
+LANG_FR Simeone encourage ses joueurs à rester compacts en défense malgré la pression de Real Madrid .
+LANG_FR De Jong est remplacé par Alba à la 80ème minute pour apporter de la fraîcheur au milieu de terrain .
+LANG_FR Liverpool célèbre sa victoire en dansant sur le terrain avec joie .
+LANG_FR Lewandowski est signalé hors-jeu alors qu'il filait vers le .
+LANG_FR Oliver accorde un penalty à Arsenal pour une faute dans la surface .
+LANG_FR Benzema est élu homme du match pour ses deux buts décisifs .
+LANG_FR Manchester City contrôle le jeu avec une possession de balle impressionnante .
+LANG_FR Ronaldo célèbre son but en mimant un saut spectaculaire devant les supporters .
+LANG_FR Lyon subit la pression constante de Lille en ce début de match .
+LANG_FR Navas réalise une parade réflexe pour empêcher Depay de marquer .
+LANG_FR Guardiola demande à ses joueurs de presser haut pour récupérer le .
+LANG_FR Mbappé est blessé et doit être remplacé par Sarabia .
+LANG_FR Borussia Mönchengladbach égalise grâce à un but de Thuram dans les dernières minutes du match .
+LANG_FR Ramos reçoit un carton rouge pour une faute grossière sur Haaland .
+LANG_FR Taylor accorde un penalty à Manchester City pour une main dans la surface .
+LANG_FR Chelsea prend l'avantage grâce à un but opportuniste de Werner .
+LANG_FR Kante est un véritable moteur au milieu de terrain pour Chelsea .
+LANG_FR La pluie battante rend le terrain glissant et difficile à jouer .
+LANG_FR Simeone encourage ses joueurs à rester compacts en défense malgré la pression de Real Madrid .
+LANG_FR De Jong est remplacé par Alba à la 80ème minute pour apporter de la fraîcheur au milieu de terrain .
+LANG_FR Liverpool célèbre sa victoire en dansant sur le terrain avec joie .
+LANG_FR Lewandowski est signalé hors-jeu alors qu'il filait vers le .
+LANG_FR Oliver accorde un penalty à Arsenal pour une faute dans la surface .
+LANG_FR Benzema est élu homme du match pour ses deux buts décisifs .
+LANG_FR Manchester City contrôle le jeu avec une possession de balle impressionnante .
+LANG_FR Ronaldo célèbre son but en mimant un saut spectaculaire devant les supporters .
+LANG_FR Lyon subit la pression constante de Lille en ce début de match .
+LANG_FR Navas réalise une parade réflexe pour empêcher Depay de marquer .
+LANG_FR Guardiola demande à ses joueurs de presser haut pour récupérer le .
+LANG_FR Mbappé est blessé et doit être remplacé par Sarabia .
+LANG_FR Borussia Mönchengladbach égalise grâce à un but de Thuram dans les dernières minutes du match .
+LANG_FR Ramos reçoit un carton rouge pour une faute grossière sur Haaland .
+LANG_FR Taylor accorde un penalty à Manchester City pour une main dans la surface .
+LANG_FR Chelsea prend l'avantage grâce à un but opportuniste de Werner .
+LANG_FR Kante est un véritable moteur au milieu de terrain pour Chelsea .
+LANG_FR La pluie battante rend le terrain glissant et difficile à jouer .
+LANG_FR Simeone encourage ses joueurs à rester compacts en défense malgré la pression de Real Madrid .
+LANG_FR De Jong est remplacé par Alba à la 80ème minute pour apporter de la fraîcheur au milieu de terrain .
+LANG_FR Liverpool célèbre sa victoire en dansant sur le terrain avec joie .
+LANG_FR Lewandowski est signalé hors-jeu alors qu'il filait vers le .
+LANG_FR Oliver accorde un penalty à Arsenal pour une faute dans la surface .
+LANG_FR Benzema est élu homme du match pour ses deux buts décisifs .
+LANG_FR Manchester City contrôle le jeu avec une possession de balle impressionnante .
+LANG_FR Ronaldo célèbre son but en mimant un saut spectaculaire devant les supporters .
+LANG_FR Lyon subit la pression constante de Lille en ce début de match .
+LANG_FR Navas réalise une parade réflexe pour empêcher Depay de marquer .
+LANG_FR Guardiola demande à ses joueurs de presser haut pour récupérer le .
+LANG_FR Mbappé est blessé et doit être remplacé par Sarabia .
+LANG_FR Borussia Mönchengladbach égalise grâce à un but de Thuram dans les dernières minutes du match .
+LANG_FR Ramos reçoit un carton rouge pour une faute grossière sur Haaland .
+LANG_FR Taylor accorde un penalty à Manchester City pour une main dans la surface .
+LANG_FR Chelsea prend l'avantage grâce à un but opportuniste de Werner .
+LANG_FR Kante est un véritable moteur au milieu de terrain pour Chelsea .
+LANG_FR La pluie battante rend le terrain glissant et difficile à jouer .
+LANG_FR Simeone encourage ses joueurs à rester compacts en défense malgré la pression de Real Madrid .
+LANG_FR De Jong est remplacé par Alba à la 80ème minute pour apporter de la fraîcheur au milieu de terrain .
+LANG_FR Liverpool célèbre sa victoire en dansant sur le terrain avec joie .
+LANG_FR Lewandowski est signalé hors-jeu alors qu'il filait vers le .
+LANG_FR Oliver accorde un penalty à Arsenal pour une faute dans la surface .
+LANG_FR Salut, pourrais-tu augmenter la luminosité des lampes de la chambre ?
+LANG_FR Je voudrais que tu envoies un message à maman pour lui dire que je suis en chemin .
+LANG_FR Quelle est la vitesse du ventilateur dans le salon ?
+LANG_FR Peux-tu régler le thermostat sur 20 degrés dans la cuisine ?
+LANG_FR J'ai besoin de programmer un rendez-vous pour demain à 10h .
+LANG_FR Est-ce que tu peux jouer la chanson préférée de papa dans la salle de séjour ?
+LANG_FR Je suis en train de regarder un film, peux-tu baisser la luminosité des lampes ?
+LANG_FR Envoie un email à collègue pour lui rappeler la réunion de demain .
+LANG_FR Il fait chaud ici, peux-tu baisser la température de la chambre ?
+LANG_FR Appelle grand-mère pour prendre de ses nouvelles .
+LANG_FR Pourrais-tu augmenter le volume de la télévision ?
+LANG_FR Je dois commander courses en ligne pour la semaine .
+LANG_FR Joue de la musique relaxante dans la chambre .
+LANG_FR Peux-tu régler le thermostat à 22 degrés ?
+LANG_FR Je vais envoyer un message à ami pour lui dire que je serai en retard .
+LANG_FR Ouvre les volets de la cuisine , s'il te plaît .
+LANG_FR J'aimerais que tu programmes un rappel pour vendredi à 15h .
+LANG_FR Il est temps de fermer la porte d'entrée .
+LANG_FR Envoie un email à patron avec le rapport final .
+LANG_FR Peux-tu augmenter la luminosité des ampoules dans la salon ?
+LANG_FR Je vais appeler médecin pour prendre rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Il est temps de verrouiller la porte d'entrée .
+LANG_FR Envoie un email à professeur avec le devoir en pièce jointe .
+LANG_FR Peux-tu augmenter la luminosité des lampes dans la salon ?
+LANG_FR Je vais appeler client pour confirmer le rendez-vous .
+LANG_FR Quelle est la température actuelle dans la chambre ?
+LANG_FR Peux-tu régler le thermostat sur 18 degrés dans la bureau ?
+LANG_FR J'aimerais que tu envoies un message à sœur pour lui souhaiter bon anniversaire .
+LANG_FR Joue de la musique entraînante dans la salle de sport .
+LANG_FR Je vais envoyer un message à collègue pour lui demander le rapport .
+LANG_FR Ferme les volets de la chambre , s'il te plaît .
+LANG_FR Réservez un hôtel à Paris pour le 15 juillet .
+LANG_FR Vérifiez l'état de mon vol en avion vers Tokyo .
+LANG_FR Je pense que je devrais annuler ma réservation d' chambre d'hôtel à Londres .
+LANG_FR Comment est la météo à Rome pour la semaine prochaine ?
+LANG_FR Tu devrais me rappeler de renouveler mon passeport .
+LANG_FR Pouvez-vous suggérer des endroits à visiter à Barcelone ?
+LANG_FR Waouh , l'aéroport est tellement bondé aujourd'hui .
+LANG_FR J'ai réservé un train à Berlin pour demain .
+LANG_FR Planifiez une chambre d'hôtel à Amsterdam pour le week-end prochain .
+LANG_FR Mettez à jour mon itinéraire avec une visite à la Tour Eiffel .
+LANG_FR Confirmez mon billet classe affaires pour le vol à Madrid .
+LANG_FR Je me demande si je devrais changer ma réservation d' chambre d'hôtel à Venise .
+LANG_FR Réservez une auberge de jeunesse à Lisbonne pour le mois prochain .
+LANG_FR N'oublie pas de vérifier si j'ai tous mes documents de voyage .
+LANG_FR Comparez les prix des hôtels à New York pour cet été .
+LANG_FR Ajoutez une visite guidée à Prague à mon itinéraire .
+LANG_FR Je me demande si je devrais avancer mon vol pour Sydney .
+LANG_FR Les plages de Hawaii sont incroyables .
+LANG_FR J'ai réservé un vol à Athènes pour le mois prochain .
+LANG_FR Réservez un appartement à Prague pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à la Sagrada Familia .
+LANG_FR Vérifiez si mon train pour Milan est en retard .
+LANG_FR N'oublie pas de vérifier les exigences pour la Chine .
+LANG_FR Planifiez une chambre d'hôtel à Vienne pour le mois prochain .
+LANG_FR Réservez une chambre d'hôtel à Berlin pour le 20 août .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Madrid .
+LANG_FR L'aéroport est tellement calme à cette heure-ci .
+LANG_FR J'ai réservé un vol à Tokyo pour le mois prochain .
+LANG_FR Réservez un gîte à Nice pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à le Louvre .
+LANG_FR Vérifiez si mon vol pour Barcelone est à l'heure .
+LANG_FR N'oublie pas de renouveler mon visa avant mon voyage à l'Inde .
+LANG_FR Planifiez une chambre d'hôtel à Amsterdam pour le mois prochain .
+LANG_FR Réservez une auberge de jeunesse à Lisbonne pour le mois prochain .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Londres .
+LANG_FR J'ai réservé un vol à Rome pour le mois prochain .
+LANG_FR Réservez un appartement à Prague pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à la Tour Eiffel .
+LANG_FR Vérifiez si mon train pour Milan est en retard .
+LANG_FR N'oublie pas de vérifier les exigences pour la Chine .
+LANG_FR Planifiez une chambre d'hôtel à Vienne pour le mois prochain .
+LANG_FR Réservez une chambre d'hôtel à Berlin pour le 20 août .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Madrid .
+LANG_FR L'aéroport est tellement calme à cette heure-ci .
+LANG_FR J'ai réservé un vol à Tokyo pour le mois prochain .
+LANG_FR Réservez un gîte à Nice pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à le Louvre .
+LANG_FR Vérifiez si mon vol pour Barcelone est à l'heure .
+LANG_FR N'oublie pas de renouveler mon visa avant mon voyage à l'Inde .
+LANG_FR Planifiez une chambre d'hôtel à Amsterdam pour le mois prochain .
+LANG_FR Réservez une auberge de jeunesse à Lisbonne pour le mois prochain .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Londres .
+LANG_FR J'ai réservé un vol à Rome pour le mois prochain .
+LANG_FR Réservez un appartement à Prague pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à la Tour Eiffel .
+LANG_FR Vérifiez si mon train pour Milan est en retard .
+LANG_FR N'oublie pas de vérifier les exigences pour la Chine .
+LANG_FR Planifiez une chambre d'hôtel à Vienne pour le mois prochain .
+LANG_FR Réservez une chambre d'hôtel à Berlin pour le 20 août .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Madrid .
+LANG_FR L'aéroport est tellement calme à cette heure-ci .
+LANG_FR J'ai réservé un vol à Tokyo pour le mois prochain .
+LANG_FR Réservez un gîte à Nice pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à le Louvre .
+LANG_FR Vérifiez si mon vol pour Barcelone est à l'heure .
+LANG_FR N'oublie pas de renouveler mon visa avant mon voyage à l'Inde .
+LANG_FR Planifiez une chambre d'hôtel à Amsterdam pour le mois prochain .
+LANG_FR Réservez une auberge de jeunesse à Lisbonne pour le mois prochain .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Londres .
+LANG_FR J'ai réservé un vol à Rome pour le mois prochain .
+LANG_FR Réservez un appartement à Prague pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à la Tour Eiffel .
+LANG_FR Vérifiez si mon train pour Milan est en retard .
+LANG_FR N'oublie pas de vérifier les exigences pour la Chine .
+LANG_FR Planifiez une chambre d'hôtel à Vienne pour le mois prochain .
+LANG_FR Réservez une chambre d'hôtel à Berlin pour le 20 août .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Madrid .
+LANG_FR L'aéroport est tellement calme à cette heure-ci .
+LANG_FR J'ai réservé un vol à Tokyo pour le mois prochain .
+LANG_FR Réservez un gîte à Nice pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à le Louvre .
+LANG_FR Vérifiez si mon vol pour Barcelone est à l'heure .
+LANG_FR N'oublie pas de renouveler mon visa avant mon voyage à l'Inde .
+LANG_FR Planifiez une chambre d'hôtel à Amsterdam pour le mois prochain .
+LANG_FR Réservez une auberge de jeunesse à Lisbonne pour le mois prochain .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Londres .
+LANG_FR J'ai réservé un vol à Rome pour le mois prochain .
+LANG_FR Réservez un appartement à Prague pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à la Tour Eiffel .
+LANG_FR Vérifiez si mon train pour Milan est en retard .
+LANG_FR N'oublie pas de vérifier les exigences pour la Chine .
+LANG_FR Planifiez une chambre d'hôtel à Vienne pour le mois prochain .
+LANG_FR Réservez une chambre d'hôtel à Berlin pour le 20 août .
+LANG_FR Je me demande si je devrais annuler ma réservation d' chambre d'hôtel à Madrid .
+LANG_FR L'aéroport est tellement calme à cette heure-ci .
+LANG_FR J'ai réservé un vol à Tokyo pour le mois prochain .
+LANG_FR Réservez un gîte à Nice pour le week-end prochain .
+LANG_FR Modifiez l'heure de mon excursion à le Louvre .
+LANG_FR Vérifiez si mon vol pour Barcelone est à l'heure .
+LANG_FR N'oublie pas de renouveler mon visa avant mon voyage à l'Inde .
+LANG_FR Planifiez une chambre d'hôtel à Amsterdam pour le mois prochain .
+LANG_FR Réservez une auberge de jeunesse à Lisbonne pour le mois prochain .
+LANG_FR Programmer l' analyse sanguine pour le patient 234 .
+LANG_FR Collecter des échantillons d'urine du patient 456 .
+LANG_FR Modifier les paramètres de température du centrifugeuse .
+LANG_FR Arrêter l' test de glycémie en cours sur le glucomètre .
+LANG_FR Réviser le rapport de radiographie du patient 567 et approuver .
+LANG_FR Collecter des échantillons de selles du patient 890 .
+LANG_FR Modifier les réglages de calibration du spectrophotomètre .
+LANG_FR Envoyer le rapport de cytologie du patient 123 au pathologiste .
+LANG_FR Notifier le patient 567 des instructions préalables pour l' IRM .
+LANG_FR Examiner le rapport d'électrocardiogramme du patient 890 et signer .
+LANG_FR Collecter des échantillons de liquide céphalorachidien du patient 321 .
+LANG_FR Modifier les paramètres de pression du autoclave .
+LANG_FR Reprendre l' test de numération globulaire sur le hémato-analyseur .
+LANG_FR Examiner le rapport d'analyse d'urine du patient 678 et valider .
+LANG_FR Collecter des échantillons de liquide synovial du patient 567 .
+LANG_FR Modifier les réglages de sensibilité du microscope .
+LANG_FR Envoyer le rapport de biopsie du patient 890 au oncologue .
+LANG_FR Arrêter l' test de fonction rénale en cours sur le analyseur d'urine .
+LANG_FR Notifier le patient 678 des consignes avant l' coloscopie .
+LANG_FR Réviser le rapport d'IRM du patient 321 et approuver .
+LANG_FR Collecter des échantillons de moelle osseuse du patient 456 .
+LANG_FR Modifier les paramètres de vitesse du centrifugeuse .
+LANG_FR Envoyer le rapport d'analyse de tissus du patient 789 au chirurgien .
+LANG_FR Examiner le rapport de biopsie cutanée du patient 234 et signer .
+LANG_FR Collecter des échantillons de liquide amniotique du patient 678 .
+LANG_FR Modifier les réglages de contraste du scanner .
+LANG_FR Envoyer le rapport de frottis cervico-vaginal du patient 321 au gynécologue .
+LANG_FR Reprendre l' test de fonction thyroïdienne sur le analyseur hormonal .
+LANG_FR Notifier le patient 321 des résultats de l' mammographie .
+LANG_FR Examiner le rapport de ponction lombaire du patient 567 et valider .
+LANG_FR Collecter des échantillons de tissu hépatique du patient 890 .
+LANG_FR Envoyer le rapport de culture bactérienne du patient 234 au infectiologue .
+LANG_FR Arrêter l' test de fonction pulmonaire en cours sur le spiromètre .
+LANG_FR Notifier le patient 678 des consignes avant l' coloscopie .
+LANG_FR Réviser le rapport de radiographie thoracique du patient 321 et approuver .
+LANG_FR Collecter des échantillons de liquide pleural du patient 456 .
+LANG_FR Modifier les réglages de température du incubateur .
+LANG_FR Envoyer le rapport d'analyse de liquide céphalorachidien du patient 789 au neurologue .
+LANG_FR Examiner le rapport de biopsie rénale du patient 234 et signer .
+LANG_FR Collecter des échantillons de liquide synovial du patient 678 .
+LANG_FR Modifier les paramètres de pression du autoclave .
+LANG_FR Envoyer le rapport de biopsie hépatique du patient 321 au hépatologue .
+LANG_FR Reprendre l' test de numération globulaire sur le hémato-analyseur .
+LANG_FR Examiner le rapport d'analyse d'urine du patient 678 et valider .
+LANG_FR Collecter des échantillons de tissu pulmonaire du patient 567 .
+LANG_FR Modifier les réglages de sensibilité du microscope .
+LANG_FR Envoyer le rapport de culture bactérienne du patient 890 au microbiologiste .
+LANG_FR Arrêter l' test de fonction rénale en cours sur le analyseur d'urine .
+LANG_FR Notifier le patient 567 des instructions préalables pour l' coloscopie .
+LANG_FR Réviser le rapport d'IRM du patient 321 et approuver .
+LANG_FR Collecter des échantillons de moelle osseuse du patient 456 .
+LANG_FR Modifier les paramètres de vitesse du centrifugeuse .
+LANG_FR Envoyer le rapport de biopsie du patient 789 au oncologue .
+LANG_FR Vérifiez le solde de mon compte d'épargne .
+LANG_FR Effectuez un virement de 200 € de mon compte courant vers mon compte d'investissement .
+LANG_FR Payez ma facture d'électricité automatiquement chaque mois .
+LANG_FR Mettez en place des alertes pour suivre les fluctuations du marché boursier .
+LANG_FR Mettez à jour mes informations de compte avec ma nouvelle adresse .
+LANG_FR Analysez mes dépenses mensuelles pour identifier les domaines où je peux économiser .
+LANG_FR Consultez les dernières nouvelles financières pour rester informé sur les tendances du marché des changes .
+LANG_FR Configurez des alertes pour être averti des fluctuations du cours de l'action de vos sociétés préférées .
+LANG_FR Planifiez un examen approfondi de votre portefeuille d'investissement ce week-end .
+LANG_FR Annulez le rappel pour le paiement de votre facture de téléphone .
+LANG_FR Générez un rapport détaillé sur vos dépenses mensuelles pour le mois dernier .
+LANG_FR Alertez -moi si le cours de l'action de XYZ baisse de plus de 5% .
+LANG_FR Budgétisez vos dépenses mensuelles pour mieux gérer votre revenu .
+LANG_FR Déposez 1000 € sur votre compte d'épargne pour commencer à épargner .
+LANG_FR Retirez 50 € de votre compte courant pour vos dépenses quotidiennes .
+LANG_FR Investissez dans des actions pour diversifier votre portefeuille financier .
+LANG_FR Économisez régulièrement en programmant des transferts automatiques vers votre compte d'épargne .
+LANG_FR Dépensez avec prudence en suivant un budget mensuel strict .
+LANG_FR Surveillez les fluctuations du marché des changes pour repérer les opportunités d'investissement .
+LANG_FR Notifiez -moi des paiements récurrents sur ma carte de crédit .
+LANG_FR Convertissez 100 USD en EUR au taux de change actuel .
+LANG_FR Échangez des devises étrangères avant votre voyage à l'étranger .
+LANG_FR Calculez le montant total de vos dépenses mensuelles pour évaluer votre budget .
+LANG_FR Prédisez les tendances du marché boursier en analysant les données historiques .
+LANG_FR Conseillez -moi sur les meilleures options d'investissement pour mon profil de risque .
+LANG_FR Estimez le coût total de votre prochain prêt immobilier en fonction des taux d'intérêt actuels .
+LANG_FR Passez en revue vos dépenses mensuelles pour identifier les domaines où vous pouvez réduire les coûts .
+LANG_FR Les rapports économiques indiquent une croissance soutenue du PIB .
+LANG_FR Transférez 500 € de votre compte chèques vers votre compte d'épargne .
+LANG_FR Configurez des alertes pour être informé des mouvements de votre portefeuille d'actions .
+LANG_FR Mettez à jour vos informations de compte avec votre nouvelle pièce d'identité .
+LANG_FR Analysez vos dépenses mensuelles pour identifier les domaines où vous pouvez réduire les coûts .
+LANG_FR Consultez les dernières nouvelles financières pour rester informé sur les tendances du marché des matières premières .
+LANG_FR Configurez des alertes pour être averti des fluctuations du cours de l'action de vos entreprises préférées .
+LANG_FR Planifiez un examen approfondi de votre portefeuille d'investissement ce week-end .
+LANG_FR Annulez le rappel pour le paiement de votre facture de gaz .
+LANG_FR Générez un rapport détaillé sur vos dépenses mensuelles pour le mois dernier .
+LANG_FR Alertez -moi si le cours de l'action de ABC baisse de plus de 5% .
+LANG_FR Budgétisez vos dépenses mensuelles pour mieux gérer votre revenu .
+LANG_FR Déposez 1000 € sur votre compte d'épargne pour commencer à épargner .
+LANG_FR Retirez 50 € de votre compte courant pour vos dépenses quotidiennes .
+LANG_FR Investissez dans des actions pour diversifier votre portefeuille financier .
+LANG_FR Économisez régulièrement en programmant des transferts automatiques vers votre compte d'épargne .
+LANG_FR Dépensez avec prudence en suivant un budget mensuel strict .
+LANG_FR Surveillez les fluctuations du marché des matières premières pour repérer les opportunités d'investissement .
+LANG_FR Notifiez -moi des paiements récurrents sur ma carte de débit .
+LANG_FR Convertissez 100 USD en EUR au taux de change actuel .
+LANG_FR Échangez des devises étrangères avant votre voyage à l'étranger .
+LANG_FR Calculez le montant total de vos dépenses mensuelles pour évaluer votre budget .
+LANG_FR Prédisez les tendances du marché boursier en analysant les données historiques .
+LANG_FR Conseillez -moi sur les meilleures options d'investissement pour mon profil de risque .
+LANG_FR Estimez le coût total de votre prochain prêt automobile en fonction des taux d'intérêt actuels .
+LANG_FR Passez en revue vos dépenses mensuelles pour identifier les domaines où vous pouvez réduire les coûts .
+LANG_FR Les rapports économiques indiquent une croissance soutenue du PIB .
+LANG_FR Peux-tu rechercher une recette végétarienne pour le dîner ?
+LANG_FR Je vais régler un minuteur de 20 minutes pour la soupe .
+LANG_FR Quels sont les ingrédients nécessaires pour faire un gâteau au chocolat ?
+LANG_FR J'aimerais suivre des recettes sans gluten .
+LANG_FR Je pense qu'il faudrait ajouter des pommes de terre à la liste de courses .
+LANG_FR Peux-tu m'aider à trouver une recette de curry ?
+LANG_FR N'oublie pas de préchauffer le four à 180 degrés .
+LANG_FR Mélanger les œufs jusqu'à ce que les jaunes et les blancs soient combinés .
+LANG_FR Mettre en pause le minuteur de cuisson .
+LANG_FR Reprendre la narration de la recette .
+LANG_FR Mettre à jour mes préférences végétaliennes .
+LANG_FR Retirer les oignons de la liste de courses .
+LANG_FR Peux-tu lister les informations nutritionnelles sur les avocats ?
+LANG_FR Suggérer une recette française pour le dîner .
+LANG_FR Suivre le stock d'épicerie d' huile d'olive .

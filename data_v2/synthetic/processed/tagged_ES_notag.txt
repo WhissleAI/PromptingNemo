@@ -19486,3 +19486,1369 @@ LANG_ES Los expertos financieros debaten sobre las estrategias para mitigar el r
 LANG_ES Las proyecciones económicas indican un crecimiento en el sector de salud .
 LANG_ES Los informes financieros destacan la importancia de diversificar las carteras para reducir el riesgo .
 LANG_ES Los expertos en finanzas discuten sobre las implicaciones de la fluctuación en las tasas de interés en la economía global .
+LANG_ES ¿Qué tal si buscamos una receta de ensalada ?
+LANG_ES Vamos a configurar un temporizador de 30 minutos para la cena .
+LANG_ES ¿Podrías proporcionar la lista de ingredientes para la receta de pastel de zanahoria ?
+LANG_ES Oye, ¿puedes rastrear recetas bajas en carbohidratos para mí ?
+LANG_ES Creo que necesitamos agregar leche a la lista de compras .
+LANG_ES ¿Sabes cómo encontrar una receta de sopa de pollo ?
+LANG_ES Recuerda precalentar el horno a 180 grados .
+LANG_ES Batir los huevos hasta que los yemas y las claras estén combinadas .
+LANG_ES Pausar el temporizador de cocción .
+LANG_ES Reanudar la narración de la receta de cocina .
+LANG_ES Actualizar mis preferencias veganas .
+LANG_ES Quitar las cebollas de la lista de compras .
+LANG_ES ¿Puedes listar la información nutricional del aguacate ?
+LANG_ES Sugerir una receta italiana para el almuerzo .
+LANG_ES Rastrear el stock de despensa de aceite de oliva .
+LANG_ES Agregar dos manzanas a mi lista de compras
+LANG_ES Revisar el precio de leche en Walmart
+LANG_ES Encontrar la sección de frutas y buscar plátanos
+LANG_ES Establecer un recordatorio para comprar huevos mañana mañana
+LANG_ES Gestionar mis cupones para cereal
+LANG_ES Comparar mantequilla de maní con mermelada para ver la información nutricional
+LANG_ES Proporcionar consejos de compra para verduras frescas
+LANG_ES Buscar la sección de congelados y encontrar helado
+LANG_ES Ofrecer información nutricional sobre yogur natural
+LANG_ES Recomendar una marca de pasta de buena calidad
+LANG_ES Ayudar a encontrar pan integral en la sección de panadería
+LANG_ES Escanear código de barras de galletas para verificar el precio
+LANG_ES Redimir cupón para detergente en Target
+LANG_ES Cocinar una receta con pollo para la cena
+LANG_ES Preferir marca de leche orgánica
+LANG_ES Calificar y dar una opinión sobre café recién molido
+LANG_ES Revisar mi lista de compras antes de ir al supermercado
+LANG_ES Elegir queso cheddar para preparar una receta de macarrones con queso
+LANG_ES Sugerir opciones de frutas para una dieta saludable
+LANG_ES Buscar la sección de carnes y encontrar pechuga de pollo
+LANG_ES Programar una visita a Costco para comprar productos a granel
+LANG_ES Recordar comprar papel higiénico antes de el fin de semana
+LANG_ES Notificar sobre las ofertas de aceite de oliva en Whole Foods
+LANG_ES Llamar a Safeway para preguntar por la oferta de salmón
+LANG_ES Buscar la sección de productos lácteos y encontrar yogur griego
+LANG_ES Gestionar mis cupones para detergente para ropa
+LANG_ES Comparar arroz integral con arroz blanco para ver las diferencias nutricionales
+LANG_ES Proporcionar consejos de compra para carne fresca
+LANG_ES Buscar la sección de panadería y encontrar baguettes
+LANG_ES Ofrecer información nutricional sobre aguacates
+LANG_ES Recomendar una marca de pasta sin gluten
+LANG_ES Ayudar a encontrar lechuga romana en la sección de verduras
+LANG_ES Escanear código de barras de pasta de dientes para verificar el precio
+LANG_ES Redimir cupón para detergente para platos en Target
+LANG_ES Cocinar una receta con salmón para la cena
+LANG_ES Preferir marca de leche descremada
+LANG_ES Calificar y dar una opinión sobre pan integral recién horneado
+LANG_ES Revisar mi lista de compras antes de ir al supermercado
+LANG_ES Elegir queso parmesano para preparar una receta de pasta alfredo
+LANG_ES Sugerir opciones de verduras para una dieta equilibrada
+LANG_ES Buscar la sección de pescado y encontrar filetes de salmón
+LANG_ES Programar una visita a Costco para comprar productos orgánicos
+LANG_ES Recordar comprar detergente para ropa antes de el fin de semana
+LANG_ES Notificar sobre las ofertas de vino tinto en Whole Foods
+LANG_ES Llamar a Safeway para preguntar por la oferta de carne de res
+LANG_ES Buscar la sección de productos lácteos y encontrar queso cheddar
+LANG_ES Gestionar mis cupones para yogur
+LANG_ES Comparar leche de almendra con leche de soja para ver las diferencias nutricionales
+LANG_ES Proporcionar consejos de compra para frutas frescas
+LANG_ES Buscar la sección de congelados y encontrar pizza congelada
+LANG_ES Ofrecer información nutricional sobre avena
+LANG_ES Recomendar una marca de salsa de tomate orgánica
+LANG_ES Ayudar a encontrar pan de centeno en la sección de panadería
+LANG_ES Escanear código de barras de cereales para verificar el precio
+LANG_ES Redimir cupón para detergente para platos en Target
+LANG_ES Cocinar una receta con pollo para la cena
+LANG_ES Preferir marca de leche de almendras
+LANG_ES Calificar y dar una opinión sobre café molido recién
+LANG_ES Revisar mi lista de compras antes de ir al supermercado
+LANG_ES Elegir queso cheddar para preparar una receta de macarrones con queso
+LANG_ES Sugerir opciones de frutas para una dieta saludable
+LANG_ES Buscar la sección de carnes y encontrar pechuga de pollo
+LANG_ES Programar una visita a Costco para comprar productos a granel
+LANG_ES Recordar comprar papel higiénico antes de el fin de semana
+LANG_ES Notificar sobre las ofertas de aceite de oliva en Whole Foods
+LANG_ES Llamar a Safeway para preguntar por la oferta de salmón
+LANG_ES Buscar la sección de productos lácteos y encontrar yogur griego
+LANG_ES Gestionar mis cupones para detergente para ropa
+LANG_ES Comparar arroz integral con arroz blanco para ver las diferencias nutricionales
+LANG_ES Proporcionar consejos de compra para carne fresca
+LANG_ES Buscar la sección de panadería y encontrar baguettes
+LANG_ES Ofrecer información nutricional sobre aguacates
+LANG_ES Recomendar una marca de pasta sin gluten
+LANG_ES Ayudar a encontrar lechuga romana en la sección de verduras
+LANG_ES Escanear código de barras de pasta de dientes para verificar el precio
+LANG_ES Redimir cupón para detergente para platos en Target
+LANG_ES Cocinar una receta con salmón para la cena
+LANG_ES Preferir marca de leche descremada
+LANG_ES Calificar y dar una opinión sobre pan integral recién horneado
+LANG_ES Revisar mi lista de compras antes de ir al supermercado
+LANG_ES Elegir queso parmesano para preparar una receta de pasta alfredo
+LANG_ES Sugerir opciones de verduras para una dieta equilibrada
+LANG_ES Buscar la sección de pescado y encontrar filetes de salmón
+LANG_ES Programar una visita a Costco para comprar productos orgánicos
+LANG_ES Recordar comprar detergente para ropa antes de el fin de semana
+LANG_ES Notificar sobre las ofertas de vino tinto en Whole Foods
+LANG_ES Llamar a Safeway para preguntar por la oferta de carne de res
+LANG_ES Buscar la sección de productos lácteos y encontrar queso cheddar
+LANG_ES Gestionar mis cupones para yogur
+LANG_ES Comparar leche de almendra con leche de soja para ver las diferencias nutricionales
+LANG_ES Proporcionar consejos de compra para frutas frescas
+LANG_ES Buscar la sección de congelados y encontrar pizza congelada
+LANG_ES Ofrecer información nutricional sobre avena
+LANG_ES Recomendar una marca de salsa de tomate orgánica
+LANG_ES Ayudar a encontrar pan de centeno en la sección de panadería
+LANG_ES Escanear código de barras de cereales para verificar el precio
+LANG_ES Redimir cupón para detergente para platos en Target
+LANG_ES Cocinar una receta con pollo para la cena
+LANG_ES Preferir marca de leche de almendras
+LANG_ES Calificar y dar una opinión sobre café molido recién
+LANG_ES Revisar mi lista de compras antes de ir al supermercado
+LANG_ES Elegir queso cheddar para preparar una receta de macarrones con queso
+LANG_ES Sugerir opciones de frutas para una dieta saludable
+LANG_ES Buscar la sección de carnes y encontrar pechuga de pollo
+LANG_ES Programar una visita a Costco para comprar productos a granel
+LANG_ES Recordar comprar papel higiénico antes de el fin de semana
+LANG_ES Notificar sobre las ofertas de aceite de oliva en Whole Foods
+LANG_ES Llamar a Safeway para preguntar por la oferta de salmón
+LANG_ES Buscar la sección de productos lácteos y encontrar yogur griego
+LANG_ES Gestionar mis cupones para detergente para ropa
+LANG_ES Comparar arroz integral con arroz blanco para ver las diferencias nutricionales
+LANG_ES Proporcionar consejos de compra para carne fresca
+LANG_ES Buscar la sección de panadería y encontrar baguettes
+LANG_ES Ofrecer información nutricional sobre aguacates
+LANG_ES Recomendar una marca de pasta sin gluten
+LANG_ES Ayudar a encontrar lechuga romana en la sección de verduras
+LANG_ES Escanear código de barras de pasta de dientes para verificar el precio
+LANG_ES Redimir cupón para detergente para platos en Target
+LANG_ES Cocinar una receta con salmón para la cena
+LANG_ES Preferir marca de leche descremada
+LANG_ES Calificar y dar una opinión sobre pan integral recién horneado
+LANG_ES Revisar mi lista de compras antes de ir al supermercado
+LANG_ES Elegir queso parmesano para preparar una receta de pasta alfredo
+LANG_ES Sugerir opciones de verduras para una dieta equilibrada
+LANG_ES Buscar la sección de pescado y encontrar filetes de salmón
+LANG_ES Programar una visita a Costco para comprar productos orgánicos
+LANG_ES Recordar comprar detergente para ropa antes de el fin de semana
+LANG_ES Notificar sobre las ofertas de vino tinto en Whole Foods
+LANG_ES Llamar a Safeway para preguntar por la oferta de carne de res
+LANG_ES Buscar la sección de productos lácteos y encontrar yogur griego
+LANG_ES Gestionar mis cupones para detergente para ropa
+LANG_ES Comparar leche de almendra con leche de soja para ver las diferencias nutricionales
+LANG_ES Proporcionar consejos de compra para frutas frescas
+LANG_ES Buscar la sección de congelados y encontrar pizza congelada
+LANG_ES Me han recetado antibióticos para mi infección de garganta esta mañana
+LANG_ES Mi hermana mencionó dolor abdominal ayer
+LANG_ES Mi tía fue diagnosticada con diabetes hace dos años
+LANG_ES Me aconsejaron hacer ejercicio regularmente para mejorar mi salud
+LANG_ES Mi primo está experimentando fatiga crónica constantemente desde hace meses
+LANG_ES Me realizaron un análisis de sangre la semana pasada
+LANG_ES Mi hijo necesita tomar un jarabe para la tos cada seis horas
+LANG_ES Mi padre sufrió un desmayo esta tarde
+LANG_ES Me recetaron antiinflamatorios para mi dolor de espalda la semana pasada
+LANG_ES Mi amiga me recomendó consultar a un especialista para mis problemas de visión
+LANG_ES Mi vecino se quejó de mareos esta mañana
+LANG_ES Me aconsejaron hacer reposo para mi resfriado ayer
+LANG_ES Mi hermano experimentó fiebre alta la semana pasada
+LANG_ES Me realizaron una resonancia magnética hace dos días
+LANG_ES Mi prima necesita tomar un analgésico para su dolor de cabeza cada ocho horas
+LANG_ES Mi sobrino fue diagnosticado con alergias el mes pasado
+LANG_ES Me aconsejaron evitar los alimentos picantes para mi gastritis
+LANG_ES Mi cuñada ha estado experimentando dolor en el pecho ocasionalmente durante los últimos días
+LANG_ES Me recetaron un antihistamínico para mi alergia esta mañana
+LANG_ES Mi hermana mencionó problemas de sueño ayer
+LANG_ES Me diagnosticaron hipertensión hace un año
+LANG_ES Mi vecina me recomendó probar un medicamento para el dolor de articulaciones para mi artritis
+LANG_ES Mi primo experimentó náuseas la semana pasada
+LANG_ES Me realizaron un electrocardiograma ayer
+LANG_ES Mi hija necesita tomar un jarabe para la tos para su resfriado cada cuatro horas
+LANG_ES Me aconsejaron mantener una dieta equilibrada para mejorar mi salud
+LANG_ES Me recetaron un antibiótico para mi infección de oído la semana pasada
+LANG_ES Mi hermano mencionó problemas de visión ayer
+LANG_ES Me diagnosticaron asma hace dos años
+LANG_ES Mi vecino me recomendó visitar a un especialista para mi dolor de espalda
+LANG_ES Mi tía experimentó escalofríos la semana pasada
+LANG_ES Me realizaron una radiografía ayer
+LANG_ES Mi primo necesita tomar un antipirético para su fiebre cada seis horas
+LANG_ES Me aconsejaron descansar para mi gripe ayer
+LANG_ES Mi sobrino experimentó dolor de oído la semana pasada
+LANG_ES Me recetaron un antiinflamatorio para mi dolor de rodilla esta mañana
+LANG_ES Mi amiga me recomendó consultar a un especialista para mis problemas de audición
+LANG_ES Mi vecina mencionó fatiga ayer
+LANG_ES Me realizaron una ecografía hace tres días
+LANG_ES Mi hermano necesita tomar un antitusígeno para su tos cada ocho horas
+LANG_ES Mi prima fue diagnosticada con migraña el mes pasado
+LANG_ES Me aconsejaron evitar el estrés para mejorar mi salud
+LANG_ES Mi cuñada ha estado experimentando dolor de espalda ocasionalmente durante los últimos días
+LANG_ES Me recetaron un antidepresivo para mi ansiedad esta mañana
+LANG_ES Mi hermana mencionó problemas de sueño ayer
+LANG_ES Me diagnosticaron hipotiroidismo hace un año
+LANG_ES Mi vecina me recomendó probar un medicamento para el dolor de espalda para mi lumbalgia
+LANG_ES Mi primo experimentó vómitos la semana pasada
+LANG_ES Me realizaron una prueba de alergia ayer
+LANG_ES Mi hija necesita tomar un antipirético para su fiebre cada cuatro horas
+LANG_ES Me aconsejaron mantener una dieta equilibrada para mejorar mi salud
+LANG_ES Me recetaron un antiinflamatorio para mi dolor de espalda la semana pasada
+LANG_ES Mi hermano mencionó problemas de visión ayer
+LANG_ES Me diagnosticaron diabetes hace dos años
+LANG_ES Mi vecino me recomendó visitar a un especialista para mi dolor de cuello
+LANG_ES Mi tía experimentó dolor de estómago la semana pasada
+LANG_ES Me realizaron una resonancia magnética ayer
+LANG_ES Mi primo necesita tomar un antitusígeno para su tos cada seis horas
+LANG_ES Me aconsejaron descansar para mi gripe ayer
+LANG_ES Mi sobrino experimentó dolor de oído la semana pasada
+LANG_ES Me recetaron un antiinflamatorio para mi dolor de rodilla esta mañana
+LANG_ES Mi amiga me recomendó consultar a un especialista para mis problemas de audición
+LANG_ES Mi vecina mencionó fatiga ayer
+LANG_ES Me realizaron una ecografía hace tres días
+LANG_ES Mi hermano necesita tomar un antitusígeno para su tos cada ocho horas
+LANG_ES Mi prima fue diagnosticada con migraña el mes pasado
+LANG_ES Me aconsejaron evitar el estrés para mejorar mi salud
+LANG_ES Mi cuñada ha estado experimentando dolor de espalda ocasionalmente durante los últimos días
+LANG_ES Me recetaron un antidepresivo para mi ansiedad esta mañana
+LANG_ES Mi hermana mencionó problemas de sueño ayer
+LANG_ES Me diagnosticaron hipotiroidismo hace un año
+LANG_ES Mi vecina me recomendó probar un medicamento para el dolor de espalda para mi lumbalgia
+LANG_ES Mi primo experimentó vómitos la semana pasada
+LANG_ES Me realizaron una prueba de alergia ayer
+LANG_ES Mi hija necesita tomar un antipirético para su fiebre cada cuatro horas
+LANG_ES Me aconsejaron mantener una dieta equilibrada para mejorar mi salud
+LANG_ES Me recetaron un antiinflamatorio para mi dolor de espalda la semana pasada
+LANG_ES Mi hermano mencionó problemas de visión ayer
+LANG_ES Me diagnosticaron diabetes hace dos años
+LANG_ES Mi vecino me recomendó visitar a un especialista para mi dolor de cuello
+LANG_ES Mi tía experimentó dolor de estómago la semana pasada
+LANG_ES Me realizaron una resonancia magnética ayer
+LANG_ES Mi primo necesita tomar un antitusígeno para su tos cada seis horas
+LANG_ES Me aconsejaron descansar para mi gripe ayer
+LANG_ES Qué pase tan preciso de Messi para Suarez .
+LANG_ES Ronaldo dispara desde fuera del área, pero el De Gea hace una gran parada .
+LANG_ES ¡Qué golazo de chilena de Ibrahimovic ! La afición está enloquecida .
+LANG_ES Howard Webb muestra una tarjeta roja directa a Aguero .
+LANG_ES El sol brilla en el Santiago Bernabéu .
+LANG_ES Guardiola está dando instrucciones a sus jugadores desde la banda .
+LANG_ES Hazard regatea a dos defensores y se acerca al área rival .
+LANG_ES ¡Qué defensa tan sólida de Juventus ! No dejan pasar ni un balón .
+LANG_ES Kane remata de cabeza, pero el balón se va desviado .
+LANG_ES Barcelona empata el partido en los últimos minutos .
+LANG_ES ¡El levanta la bandera ! Mbappé estaba en posición adelantada .
+LANG_ES Modric recupera el balón en el centro del campo .
+LANG_ES Salah cae en el área, pero el árbitro no señala penalti .
+LANG_ES ¡Qué ambiente tan increíble en el Camp Nou ! La multitud está eufórica .
+LANG_ES Pogba comete una falta táctica para detener el contraataque .
+LANG_ES Manchester City realiza un cambio táctico en busca de más profundidad .
+LANG_ES Iniesta asiste a Villa , quien marca el gol de la victoria .
+LANG_ES ¡Qué atajada de Neuer ! Impide el gol con una gran estirada .
+LANG_ES Ramos celebra con la afición tras anotar de cabeza .
+LANG_ES Anthony Taylor revisa la jugada en el VAR .
+LANG_ES PSG vence por 3-1 a Bayern Munich en un emocionante partido .
+LANG_ES ¡Qué golazo de tiro libre de Eriksen ! La pelota entra por la escuadra .
+LANG_ES Benzema controla el balón con elegancia en el área rival .
+LANG_ES Liverpool remonta un 0-2 y gana el partido en los últimos minutos .
+LANG_ES De Gea da indicaciones a su defensa antes de un saque de esquina .
+LANG_ES Aguero se lleva una tarjeta amarilla por simular una falta .
+LANG_ES ¡Qué velocidad tiene Mbappé ! Los defensores no pueden detenerlo .
+LANG_ES Kante roba el balón en el centro del campo y comienza un contraataque .
+LANG_ES Chelsea empata el partido con un gol en el último minuto .
+LANG_ES Griezmann se lamenta de haber fallado una ocasión clara de gol .
+LANG_ES ¡Qué atajada de Courtois ! Evita el gol con una estirada espectacular .
+LANG_ES Sterling cae en el área, pero el árbitro no señala penalti .
+LANG_ES Inter de Milán avanza a la siguiente ronda de la Champions League tras vencer en los penales .
+LANG_ES Casemiro corta un pase peligroso y evita el contraataque rival .
+LANG_ES Lewandowski remata de volea y marca un golazo .
+LANG_ES Dybala se marcha lesionado y tendrá que ser sustituido .
+LANG_ES ¡Qué ambiente tan festivo en el Signal Iduna Park ! La hinchada está cantando sin parar .
+LANG_ES Alba desborda por la banda izquierda y centra al área .
+LANG_ES Rashford se anticipa al defensor y anota el gol de la victoria .
+LANG_ES Vidal protesta airadamente al árbitro por una decisión polémica .
+LANG_ES Mbappé arranca en velocidad y deja atrás a los defensores .
+LANG_ES Arsenal pierde por 0-3 en un partido para olvidar .
+LANG_ES Kroos ejecuta un córner al primer palo, pero la defensa despeja el peligro .
+LANG_ES Sterling se gana una tarjeta amarilla por una entrada brusca .
+LANG_ES ¡Qué golazo de Neymar ! Define con clase ante la salida del portero .
+LANG_ES Manchester United empata en el último minuto con un gol de cabeza .
+LANG_ES De Ligt despeja un centro peligroso con un cabezazo contundente .
+LANG_ES De Gea organiza la barrera antes de un tiro libre peligroso .
+LANG_ES Salah se duele del tobillo tras un choque con un defensor .
+LANG_ES ¡Qué atajada increíble de Oblak ! Salva a su equipo en el último minuto .
+LANG_ES Ramos celebra con la afición tras marcar de penalti .
+LANG_ES Martin Atkinson revisa una jugada dudosa en el VAR .
+LANG_ES Hazard se retira cojeando del campo por una lesión muscular .
+LANG_ES Bayern Munich avanza a la siguiente ronda de la Champions League con una victoria contundente .
+LANG_ES ¡Qué golazo de falta de Modric ! El balón entra por la escuadra .
+LANG_ES Benzema controla el balón con elegancia en el área rival .
+LANG_ES Liverpool remonta un 0-2 y gana el partido en los últimos minutos .
+LANG_ES De Gea da indicaciones a su defensa antes de un saque de esquina .
+LANG_ES Aguero se lleva una tarjeta amarilla por simular una falta .
+LANG_ES ¡Qué velocidad tiene Mbappé ! Los defensores no pueden detenerlo .
+LANG_ES Kante roba el balón en el centro del campo y comienza un contraataque .
+LANG_ES Chelsea empata el partido con un gol en el último minuto .
+LANG_ES Griezmann se lamenta de haber fallado una ocasión clara de gol .
+LANG_ES ¡Qué atajada de Courtois ! Evita el gol con una estirada espectacular .
+LANG_ES Sterling cae en el área, pero el árbitro no señala penalti .
+LANG_ES Inter de Milán avanza a la siguiente ronda de la Champions League tras vencer en los penales .
+LANG_ES Casemiro corta un pase peligroso y evita el contraataque rival .
+LANG_ES Lewandowski remata de volea y marca un golazo .
+LANG_ES Dybala se marcha lesionado y tendrá que ser sustituido .
+LANG_ES ¡Qué ambiente tan festivo en el Signal Iduna Park ! La hinchada está cantando sin parar .
+LANG_ES Alba desborda por la banda izquierda y centra al área .
+LANG_ES Rashford se anticipa al defensor y anota el gol de la victoria .
+LANG_ES Vidal protesta airadamente al árbitro por una decisión polémica .
+LANG_ES Mbappé arranca en velocidad y deja atrás a los defensores .
+LANG_ES Arsenal pierde por 0-3 en un partido para olvidar .
+LANG_ES Kroos ejecuta un córner al primer palo, pero la defensa despeja el peligro .
+LANG_ES Sterling se gana una tarjeta amarilla por una entrada brusca .
+LANG_ES ¡Qué golazo de Neymar ! Define con clase ante la salida del portero .
+LANG_ES Manchester United empata en el último minuto con un gol de cabeza .
+LANG_ES De Ligt despeja un centro peligroso con un cabezazo contundente .
+LANG_ES De Gea organiza la barrera antes de un tiro libre peligroso .
+LANG_ES Salah se duele del tobillo tras un choque con un defensor .
+LANG_ES ¡Qué atajada increíble de Oblak ! Salva a su equipo en el último minuto .
+LANG_ES Ramos celebra con la afición tras marcar de penalti .
+LANG_ES Martin Atkinson revisa una jugada dudosa en el VAR .
+LANG_ES Hazard se retira cojeando del campo por una lesión muscular .
+LANG_ES Bayern Munich avanza a la siguiente ronda de la Champions League con una victoria contundente .
+LANG_ES ¡Qué golazo de falta de Modric ! El balón entra por la escuadra .
+LANG_ES Benzema controla el balón con elegancia en el área rival .
+LANG_ES Empezar una rutina de entrenamiento cardiovascular . Actualizar mi peso corporal en la fecha de hoy .
+LANG_ES Establecer un objetivo de perder 5 kilogramos en los próximos tres meses . Programar una sesión de yoga para el sábado próximo .
+LANG_ES Analizar mi progreso en levantamiento de pesas . Ver el plan de entrenamiento para la próxima semana .
+LANG_ES Generar un nuevo plan de ejercicios de cuerpo completo . Monitorear mi ritmo cardíaco durante la hora de ciclismo .
+LANG_ES Completar la rutina de ejercicios de piernas . Pausar mi sesión de entrenamiento funcional por 10 minutos .
+LANG_ES Reanudar la clase de baile que estaba pausada . Detener el entrenamiento de cardio debido a cansancio extremo .
+LANG_ES Aumentar la resistencia en carrera . Disminuir la frecuencia de entrenamiento de fuerza a dos veces por semana .
+LANG_ES Registrar mi porcentaje de grasa corporal . Medir mi presión arterial antes y después de entrenamiento de intervalos .
+LANG_ES Notificar recordatorio para sesión de pilates mañana . Actualizar mi plan de entrenamiento con nuevos ejercicios de flexibilidad .
+LANG_ES Programar una clase de natación para el próximo lunes . Analizar mi progreso en flexiones de brazos .
+LANG_ES Verificar mi frecuencia cardíaca durante sesión de spinning . Generar un nuevo plan de ejercicios de espalda .
+LANG_ES Completar la rutina de abdominales . Pausar mi sesión de pilates por 5 minutos .
+LANG_ES Reanudar la clase de zumba que estaba pausada . Detener el entrenamiento de boxeo debido a lesión en la muñeca .
+LANG_ES Aumentar la inclinación en caminadora . Disminuir la duración de sesión de pilates a 45 minutos .
+LANG_ES Registrar mi circunferencia de cintura . Medir mi nivel de glucosa en sangre antes y después de entrenamiento de fuerza .
+LANG_ES Notificar aviso para clase de spinning esta tarde . Actualizar mi plan de entrenamiento con nuevos ejercicios de equilibrio .
+LANG_ES Programar una sesión de pilates para el próximo miércoles . Analizar mi progreso en sentadillas .
+LANG_ES Verificar mi presión arterial durante sesión de yoga . Generar un nuevo plan de ejercicios de pecho .
+LANG_ES Completar la rutina de flexiones . Pausar mi sesión de natación por 3 minutos .
+LANG_ES Reanudar la clase de baile que estaba pausada . Detener el entrenamiento de escalada debido a mareos .
+LANG_ES Aumentar la velocidad en bicicleta estática . Disminuir la intensidad de entrenamiento de intervalos a moderada .
+LANG_ES Registrar mi porcentaje de masa muscular . Medir mi frecuencia cardíaca máxima durante sesión de HIIT .
+LANG_ES Notificar alerta para clase de crossfit mañana temprano . Actualizar mi plan de entrenamiento con nuevos ejercicios de resistencia .
+LANG_ES Programar una clase de pilates para el próximo viernes . Analizar mi progreso en plancha abdominal .
+LANG_ES Verificar mi ritmo respiratorio durante sesión de meditación . Generar un nuevo plan de ejercicios de hombros .
+LANG_ES Completar la rutina de estiramientos . Pausar mi sesión de pilates por 7 minutos .
+LANG_ES Reanudar la clase de zumba que estaba pausada . Detener el entrenamiento de kickboxing debido a calambres musculares .
+LANG_ES Aumentar la resistencia en máquina de remo . Disminuir la duración de sesión de yoga a 50 minutos .
+LANG_ES Registrar mi circunferencia de muslo . Medir mi nivel de oxígeno en sangre antes y después de entrenamiento de resistencia .
+LANG_ES Notificar recordatorio para clase de spinning esta tarde . Actualizar mi plan de entrenamiento con nuevos ejercicios de flexibilidad .
+LANG_ES Programar una sesión de pilates para el próximo martes . Analizar mi progreso en flexiones de brazos .
+LANG_ES Verificar mi frecuencia cardíaca durante sesión de spinning . Generar un nuevo plan de ejercicios de espalda .
+LANG_ES Completar la rutina de abdominales . Pausar mi sesión de pilates por 5 minutos .
+LANG_ES Reanudar la clase de zumba que estaba pausada . Detener el entrenamiento de boxeo debido a lesión en la muñeca .
+LANG_ES Aumentar la inclinación en caminadora . Disminuir la duración de sesión de pilates a 45 minutos .
+LANG_ES Registrar mi circunferencia de cintura . Medir mi nivel de glucosa en sangre antes y después de entrenamiento de fuerza .
+LANG_ES Notificar aviso para clase de spinning esta tarde . Actualizar mi plan de entrenamiento con nuevos ejercicios de equilibrio .
+LANG_ES Programar una sesión de pilates para el próximo miércoles . Analizar mi progreso en sentadillas .
+LANG_ES Verificar mi presión arterial durante sesión de yoga . Generar un nuevo plan de ejercicios de pecho .
+LANG_ES Completar la rutina de flexiones . Pausar mi sesión de natación por 3 minutos .
+LANG_ES Reanudar la clase de baile que estaba pausada . Detener el entrenamiento de escalada debido a mareos .
+LANG_ES Aumentar la velocidad en bicicleta estática . Disminuir la intensidad de entrenamiento de intervalos a moderada .
+LANG_ES Registrar mi porcentaje de masa muscular . Medir mi frecuencia cardíaca máxima durante sesión de HIIT .
+LANG_ES Notificar alerta para clase de crossfit mañana temprano . Actualizar mi plan de entrenamiento con nuevos ejercicios de resistencia .
+LANG_ES Programar una clase de pilates para el próximo viernes . Analizar mi progreso en plancha abdominal .
+LANG_ES Verificar mi ritmo respiratorio durante sesión de meditación . Generar un nuevo plan de ejercicios de hombros .
+LANG_ES Completar la rutina de estiramientos . Pausar mi sesión de pilates por 7 minutos .
+LANG_ES Reanudar la clase de zumba que estaba pausada . Detener el entrenamiento de kickboxing debido a calambres musculares .
+LANG_ES Aumentar la resistencia en máquina de remo . Disminuir la duración de sesión de yoga a 50 minutos .
+LANG_ES Registrar mi circunferencia de muslo . Medir mi nivel de oxígeno en sangre antes y después de entrenamiento de resistencia .
+LANG_ES Notificar recordatorio para clase de spinning esta tarde . Actualizar mi plan de entrenamiento con nuevos ejercicios de flexibilidad .
+LANG_ES Programar una sesión de pilates para el próximo martes . Analizar mi progreso en flexiones de brazos .
+LANG_ES Verificar mi frecuencia cardíaca durante sesión de spinning . Generar un nuevo plan de ejercicios de espalda .
+LANG_ES Completar la rutina de abdominales . Pausar mi sesión de pilates por 5 minutos .
+LANG_ES Reanudar la clase de zumba que estaba pausada . Detener el entrenamiento de boxeo debido a lesión en la muñeca .
+LANG_ES Aumentar la inclinación en caminadora . Disminuir la duración de sesión de pilates a 45 minutos .
+LANG_ES Registrar mi circunferencia de cintura . Medir mi nivel de glucosa en sangre antes y después de entrenamiento de fuerza .
+LANG_ES Notificar aviso para clase de spinning esta tarde . Actualizar mi plan de entrenamiento con nuevos ejercicios de equilibrio .
+LANG_ES Programar una sesión de pilates para el próximo miércoles . Analizar mi progreso en sentadillas .
+LANG_ES Verificar mi presión arterial durante sesión de yoga . Generar un nuevo plan de ejercicios de pecho
+LANG_ES ¡Hola! ¿Podrías subir el brillo de la lámpara en la sala ?
+LANG_ES Estoy un poco frío, ¿podrías aumentar la temperatura en la habitación ?
+LANG_ES Reproduce la canción Despacito en la altavoces .
+LANG_ES ¿Qué volumen tiene la televisión en la sala ?
+LANG_ES Envía un mensaje a mamá diciendo que llegaré tarde .
+LANG_ES Vamos a programar un recordatorio para la mañana a las 9:00 a . m . .
+LANG_ES No puedo encontrar mis llaves, ¿podrías activar el rastreador ?
+LANG_ES Pausa la película en la televisor .
+LANG_ES ¿Qué temperatura tiene la termostato en la cocina ?
+LANG_ES ¡Qué calor hace aquí! Baja la temperatura en la sala .
+LANG_ES Enciende la lámpara en la habitación .
+LANG_ES ¿Podrías disminuir el brillo de la bombilla en la comedor ?
+LANG_ES Me gustaría reproducir la lista de reproducción Relax en la sistema de sonido .
+LANG_ES ¿Podrías bloquear la puerta principal ?
+LANG_ES Envía un correo electrónico a jefe con el informe mensual adjunto .
+LANG_ES ¿A qué hora está programado el evento en la jardín ?
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES ¿Podrías subir el volumen de la radio en la cocina ?
+LANG_ES ¡Qué frío hace aquí! Aumenta la temperatura en la sala .
+LANG_ES Reproduce la canción Shape of You en la altavoces .
+LANG_ES ¿Qué brillo tiene la lámpara en la habitación ?
+LANG_ES Envía un mensaje a amigo diciendo que llegaré tarde .
+LANG_ES Vamos a programar un recordatorio para la mañana a las 10:00 a . m . .
+LANG_ES No puedo encontrar mi teléfono, ¿podrías activar el localizador ?
+LANG_ES Pausa la serie en la televisión .
+LANG_ES ¿Qué temperatura tiene la termostato en la sala ?
+LANG_ES ¡Qué calor hace aquí! Disminuye la temperatura en la cocina .
+LANG_ES Enciende la lámpara en la habitación .
+LANG_ES ¿Podrías ajustar el brillo de la bombilla en la comedor ?
+LANG_ES Me gustaría reproducir la lista de reproducción Fiesta en la sistema de sonido .
+LANG_ES ¿Podrías cerrar la puerta principal ?
+LANG_ES Envía un correo electrónico a cliente con el propuesta comercial adjunta .
+LANG_ES ¿A qué hora está programado el evento en la jardín ?
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES ¿Podrías aumentar el volumen de la radio en la cocina ?
+LANG_ES ¡Qué frío hace aquí! Sube la temperatura en la sala .
+LANG_ES Reproduce la canción Perfect en la altavoces .
+LANG_ES ¿Qué brillo tiene la lámpara en la habitación ?
+LANG_ES Envía un mensaje a hermana diciendo que llegaré tarde .
+LANG_ES Vamos a programar un recordatorio para la mañana a las 11:00 a . m . .
+LANG_ES No puedo encontrar mis llaves, ¿podrías activar el rastreador ?
+LANG_ES Pausa la película en la televisor .
+LANG_ES ¿Qué temperatura tiene la termostato en la cocina ?
+LANG_ES ¡Qué calor hace aquí! Baja la temperatura en la sala .
+LANG_ES Enciende la lámpara en la habitación .
+LANG_ES ¿Podrías disminuir el brillo de la bombilla en la comedor ?
+LANG_ES Me gustaría reproducir la lista de reproducción Relax en la sistema de sonido .
+LANG_ES ¿Podrías bloquear la puerta principal ?
+LANG_ES Envía un correo electrónico a jefe con el informe mensual adjunto .
+LANG_ES ¿A qué hora está programado el evento en la jardín ?
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES ¿Podrías subir el volumen de la radio en la cocina ?
+LANG_ES ¡Qué frío hace aquí! Aumenta la temperatura en la sala .
+LANG_ES Reproduce la canción Shape of You en la altavoces .
+LANG_ES ¿Qué brillo tiene la lámpara en la habitación ?
+LANG_ES Envía un mensaje a amigo diciendo que llegaré tarde .
+LANG_ES Vamos a programar un recordatorio para la mañana a las 10:00 a . m . .
+LANG_ES No puedo encontrar mi teléfono, ¿podrías activar el localizador ?
+LANG_ES Pausa la serie en la televisión .
+LANG_ES ¿Qué temperatura tiene la termostato en la sala ?
+LANG_ES ¡Qué calor hace aquí! Disminuye la temperatura en la cocina .
+LANG_ES Enciende la lámpara en la habitación .
+LANG_ES ¿Podrías ajustar el brillo de la bombilla en la comedor ?
+LANG_ES Me gustaría reproducir la lista de reproducción Fiesta en la sistema de sonido .
+LANG_ES ¿Podrías cerrar la puerta principal ?
+LANG_ES Envía un correo electrónico a cliente con el propuesta comercial adjunta .
+LANG_ES ¿A qué hora está programado el evento en la jardín ?
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES ¿Podrías aumentar el volumen de la radio en la cocina ?
+LANG_ES ¡Qué frío hace aquí! Sube la temperatura en la sala .
+LANG_ES Reproduce la canción Perfect en la altavoces .
+LANG_ES ¿Qué brillo tiene la lámpara en la habitación ?
+LANG_ES Envía un mensaje a hermana diciendo que llegaré tarde .
+LANG_ES Vamos a programar un recordatorio para la mañana a las 11:00 a . m . .
+LANG_ES No puedo encontrar mis llaves, ¿podrías activar el rastreador ?
+LANG_ES Pausa la película en la televisor .
+LANG_ES ¿Qué temperatura tiene la termostato en la cocina ?
+LANG_ES ¡Qué calor hace aquí! Baja la temperatura en la sala .
+LANG_ES Enciende la lámpara en la habitación .
+LANG_ES ¿Podrías disminuir el brillo de la bombilla en la comedor ?
+LANG_ES Me gustaría reproducir la lista de reproducción Relax en la sistema de sonido .
+LANG_ES ¿Podrías bloquear la puerta principal ?
+LANG_ES Envía un correo electrónico a jefe con el informe mensual adjunto .
+LANG_ES ¿A qué hora está programado el evento en la jardín ?
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES ¿Podrías aumentar el volumen de la radio en la cocina ?
+LANG_ES ¡Qué frío hace aquí! Sube la temperatura en la sala .
+LANG_ES Reproduce la canción Shape of You en la altavoces .
+LANG_ES ¿Qué brillo tiene la lámpara en la habitación ?
+LANG_ES Envía un mensaje a amigo diciendo que llegaré tarde .
+LANG_ES Vamos a programar un recordatorio para la mañana a las 10:00 a . m . .
+LANG_ES No puedo encontrar mi teléfono, ¿podrías activar el localizador ?
+LANG_ES Pausa la serie en la televisión .
+LANG_ES ¿Qué temperatura tiene la termostato en la sala ?
+LANG_ES ¡Qué calor hace aquí! Disminuye la temperatura en la cocina .
+LANG_ES Enciende la lámpara en la habitación .
+LANG_ES ¿Podrías ajustar el brillo de la bombilla en la comedor ?
+LANG_ES Me gustaría reproducir la lista de reproducción Fiesta en la sistema de sonido .
+LANG_ES ¿Podrías cerrar la puerta principal ?
+LANG_ES Envía un correo electrónico a cliente con el propuesta comercial adjunta .
+LANG_ES ¿A qué hora está programado el evento en la jardín ?
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES ¿Podrías aumentar el volumen de la radio en la cocina ?
+LANG_ES ¡Qué frío hace aquí! Sube la temperatura en la sala .
+LANG_ES Reproduce la canción Perfect en la altavoces .
+LANG_ES ¿Qué brillo tiene la lámpara en la habitación ?
+LANG_ES Envía un mensaje a hermana diciendo que llegaré tarde .
+LANG_ES Vamos a programar un recordatorio para la mañana a las 11:00 a . m . .
+LANG_ES No puedo encontrar mis llaves, ¿podrías activar el rastreador ?
+LANG_ES Pausa la película en la televisor .
+LANG_ES ¿Qué temperatura tiene la termostato en la cocina ?
+LANG_ES ¡Qué calor hace aquí! Baja la temperatura en la sala .
+LANG_ES Enciende la lámpara en la habitación .
+LANG_ES ¿Podrías disminuir el brillo de la bombilla en la comedor ?
+LANG_ES Me gustaría reproducir la lista de reproducción Relax en la sistema de sonido .
+LANG_ES ¿Podrías bloquear la puerta principal ?
+LANG_ES Envía un correo electrónico a jefe con el informe mensual adjunto .
+LANG_ES ¿A qué hora está programado el evento en la jardín ?
+LANG_ES Activa la cámara de seguridad en la entrada .
+LANG_ES ¿Podrías aumentar el volumen de la radio en la cocina ?
+LANG_ES ¡Qué frío hace aquí! Sube la temperatura en la sala .
+LANG_ES Reproduce la canción Shape of You en la altavoces .
+LANG_ES ¿Qué brillo tiene la lámpara en la habitación ?
+LANG_ES Envía un mensaje a amigo diciendo que llegaré tarde .
+LANG_ES Vamos a programar un recordatorio para la mañana a las 10:00 a . m . .
+LANG_ES No puedo encontrar mi teléfono, ¿podrías activar el localizador ?
+LANG_ES Pausa la serie en la televisión .
+LANG_ES ¿Qué temperatura tiene la termostato en la sala ?
+LANG_ES ¡Qué calor hace aquí! Disminuye la temperatura en la cocina .
+LANG_ES Enciende la lámpara en la habitación .
+LANG_ES ¿Podrías ajustar el brillo de la bombilla en la comedor ?
+LANG_ES Me gustaría reproducir la lista de reproducción Fiesta en la sistema de sonido .
+LANG_ES ¿Podrías cerrar la puerta principal ?
+LANG_ES Envía un correo electrónico a cliente con el propuesta comercial adjunta .
+LANG_ES Reservar un vuelo a París para el próximo verano .
+LANG_ES ¡Vaya! , la estación de tren está muy concurrida hoy .
+LANG_ES Actualizar mi itinerario con una visita a la Alhambra .
+LANG_ES Deberías recordarme que renueve mi pasaporte .
+LANG_ES ¿Cómo está el clima en Cancún para la próxima semana ?
+LANG_ES Confirmar mi boleto de clase ejecutiva para el vuelo a Madrid .
+LANG_ES Reservé un tren a Barcelona para mañana .
+LANG_ES Verificar si hay restricciones de viaje para Italia .
+LANG_ES Recomendar destinos de montaña para el próximo invierno .
+LANG_ES ¿Puedes sugerirme algunos lugares para visitar en Tokio ?
+LANG_ES Cancelar mi reserva de habitación de hotel en Berlín .
+LANG_ES Programar una alerta de viaje para Río de Janeiro el próximo mes .
+LANG_ES Por favor, avísame si mi vuelo a Londres se retrasa .
+LANG_ES ¿Cuánto tiempo dura el viaje en tren a Ámsterdam ?
+LANG_ES Comparar los precios de alojamiento en Miami para este verano .
+LANG_ES Añadí una visita a la Torre de Pisa a mi itinerario .
+LANG_ES ¡Qué caluroso día hace en Dubai !
+LANG_ES Postergar mi vuelo a Sydney para la próxima semana .
+LANG_ES Necesito que me ayudes a encontrar mi pasaporte .
+LANG_ES ¿Cuál es el horario de mi vuelo a Bangkok ?
+LANG_ES Reconfirmar mi reserva de habitación de hotel en Venecia para agosto .
+LANG_ES Cambié mi vuelo a Seúl para el próximo mes .
+LANG_ES Eliminar la visita a el Coliseo de mi itinerario .
+LANG_ES ¿Qué bonitas playas recomiendas en Tailandia ?
+LANG_ES Organizar un alojamiento en Ámsterdam para la próxima semana .
+LANG_ES Por favor, verifica si tengo todos mis documentos de viaje .
+LANG_ES ¿Cuál es la duración del vuelo a Los Ángeles ?
+LANG_ES Reagendar mi visita a el Museo del Louvre en mi itinerario .
+LANG_ES Reservé un Airbnb en Lisboa para el próximo mes .
+LANG_ES Notificarme si hay restricciones de viaje para Grecia .
+LANG_ES ¡Qué fresco día hace en Vancouver !
+LANG_ES Recomendar destinos históricos para este verano .
+LANG_ES ¿Puedes sugerirme algunos lugares para visitar en África ?
+LANG_ES Cancelar mi reserva de habitación de hotel en París .
+LANG_ES Programar una alerta de viaje para Río de Janeiro el próximo mes .
+LANG_ES Por favor, avísame si mi vuelo a Londres se retrasa .
+LANG_ES ¿Cuánto tiempo dura el viaje en tren a Ámsterdam ?
+LANG_ES Comparar los precios de alojamiento en Miami para este verano .
+LANG_ES Añadí una visita a la Torre de Pisa a mi itinerario .
+LANG_ES ¡Qué caluroso día hace en Dubai !
+LANG_ES Postergar mi vuelo a Sydney para la próxima semana .
+LANG_ES Necesito que me ayudes a encontrar mi pasaporte .
+LANG_ES ¿Cuál es el horario de mi vuelo a Bangkok ?
+LANG_ES Reconfirmar mi reserva de habitación de hotel en Venecia para agosto .
+LANG_ES Cambié mi vuelo a Seúl para el próximo mes .
+LANG_ES Eliminar la visita a el Coliseo de mi itinerario .
+LANG_ES ¿Qué bonitas playas recomiendas en Tailandia ?
+LANG_ES Organizar un alojamiento en Ámsterdam para la próxima semana .
+LANG_ES Por favor, verifica si tengo todos mis documentos de viaje .
+LANG_ES ¿Cuál es la duración del vuelo a Los Ángeles ?
+LANG_ES Reagendar mi visita a el Museo del Louvre en mi itinerario .
+LANG_ES Reservé un Airbnb en Lisboa para el próximo mes .
+LANG_ES Notificarme si hay restricciones de viaje para Grecia .
+LANG_ES ¡Qué fresco día hace en Vancouver !
+LANG_ES ¿Podrías realizar un análisis de sangre para el paciente 567 ?
+LANG_ES Recolecta muestras de orina del paciente 654 .
+LANG_ES Inicia la revisión de los informes de laboratorio para el paciente 123 .
+LANG_ES Cambia la configuración de temperatura en la incubadora .
+LANG_ES ¿Podrías enviar el informe de patología al patólogo ?
+LANG_ES Programa una cita de seguimiento para el paciente 678 .
+LANG_ES Recolecta muestras de heces del paciente 210 .
+LANG_ES Inicia la revisión de los informes de microbiología para el paciente 678 .
+LANG_ES Cambia la configuración de humedad en la cámara de cultivo .
+LANG_ES ¿Podrías enviar el informe de genética al genetista ?
+LANG_ES Programa una consulta de seguimiento para el paciente 321 .
+LANG_ES Recolecta muestras de saliva del paciente 543 .
+LANG_ES Inicia la revisión de los informes de histología para el paciente 876 .
+LANG_ES Cambia la configuración de iluminación en la microscopio .
+LANG_ES ¿Podrías enviar el informe de citología al patólogo ?
+LANG_ES Programa una cita de seguimiento para el paciente 987 .
+LANG_ES Recolecta muestras de sangre del paciente 876 .
+LANG_ES Inicia la revisión de los informes de serología para el paciente 543 .
+LANG_ES Cambia la configuración de agitación en la agitador magnético .
+LANG_ES ¿Podrías enviar el informe de microbiología al microbiólogo ?
+LANG_ES Programa una consulta de seguimiento para el paciente 876 .
+LANG_ES Recolecta muestras de tejido del paciente 654 .
+LANG_ES Inicia la revisión de los informes de genética para el paciente 234 .
+LANG_ES Cambia la configuración de presión en la autoclave .
+LANG_ES ¿Podrías enviar el informe de histología al patólogo ?
+LANG_ES Programa una cita de seguimiento para el paciente 210 .
+LANG_ES Recolecta muestras de líquido cefalorraquídeo del paciente 789 .
+LANG_ES Inicia la revisión de los informes de citología para el paciente 210 .
+LANG_ES Cambia la configuración de velocidad en la centrifugadora .
+LANG_ES ¿Podrías enviar el informe de serología al inmunólogo ?
+LANG_ES Programa una consulta de seguimiento para el paciente 654 .
+LANG_ES Recolecta muestras de sangre del paciente 987 .
+LANG_ES Inicia la revisión de los informes de patología para el paciente 321 .
+LANG_ES Cambia la configuración de temperatura en la nevera de almacenamiento .
+LANG_ES ¿Podrías enviar el informe de microbiología al microbiólogo ?
+LANG_ES Programa una cita de seguimiento para el paciente 543 .
+LANG_ES Recolecta muestras de orina del paciente 876 .
+LANG_ES Inicia la revisión de los informes de microbiología para el paciente 543 .
+LANG_ES Cambia la configuración de humedad en la cámara de incubación .
+LANG_ES ¿Podrías enviar el informe de genética al genetista ?
+LANG_ES Programa una consulta de seguimiento para el paciente 876 .
+LANG_ES Recolecta muestras de saliva del paciente 210 .
+LANG_ES Inicia la revisión de los informes de histología para el paciente 543 .
+LANG_ES Cambia la configuración de iluminación en la microscopio .
+LANG_ES ¿Podrías enviar el informe de citología al patólogo ?
+LANG_ES Programa una cita de seguimiento para el paciente 321 .
+LANG_ES Recolecta muestras de sangre del paciente 210 .
+LANG_ES Inicia la revisión de los informes de serología para el paciente 876 .
+LANG_ES Cambia la configuración de agitación en la agitador magnético .
+LANG_ES ¿Podrías enviar el informe de microbiología al microbiólogo ?
+LANG_ES Programa una consulta de seguimiento para el paciente 543 .
+LANG_ES Recolecta muestras de orina del paciente 543 .
+LANG_ES Inicia la revisión de los informes de microbiología para el paciente 210 .
+LANG_ES Cambia la configuración de humedad en la cámara de incubación .
+LANG_ES ¿Podrías enviar el informe de genética al genetista ?
+LANG_ES Programa una cita de seguimiento para el paciente 654 .
+LANG_ES Revisar el saldo de mi cuenta de ahorros .
+LANG_ES Transferir $200 a cuenta de inversión .
+LANG_ES Pagar la factura de $75 a compañía de servicios públicos .
+LANG_ES Configurar alertas para notificaciones de gastos en mi cuenta corriente .
+LANG_ES Actualizar mi información de contacto .
+LANG_ES Analizar mis gastos mensuales .
+LANG_ES Analizar las noticias financieras del día .
+LANG_ES Transferir €300 de mi cuenta de inversión a mi cuenta de ahorros .
+LANG_ES Establecer alertas para seguimiento de mercado de valores .
+LANG_ES Generar un informe de mis ingresos mensuales .
+LANG_ES Programar una transferencia mensual de $100 a mi cuenta de ahorros .
+LANG_ES Cancelar la transferencia de €50 a amigo .
+LANG_ES Revisar el informe de rendimiento de inversiones .
+LANG_ES Alertar sobre transacciones inusuales en mi cuenta corriente .
+LANG_ES Presupuestar mis gastos mensuales .
+LANG_ES Depositar $500 en mi cuenta de ahorros .
+LANG_ES Retirar €200 de mi cuenta corriente .
+LANG_ES Invertir $1000 en fondos mutuos .
+LANG_ES Ahorrar €50 cada mes en mi cuenta de ahorros .
+LANG_ES Gastar $50 en comestibles .
+LANG_ES Monitorear mis inversiones diariamente .
+LANG_ES Notificar sobre próximos pagos .
+LANG_ES Transferir $300 de mi cuenta corriente a mi cuenta de inversión .
+LANG_ES Configurar una alerta para notificar cuando mi saldo de tarjeta de crédito supere los $1000 .
+LANG_ES Actualizar mi dirección de domicilio .
+LANG_ES Analizar mis gastos mensuales para identificar áreas de ahorro .
+LANG_ES Analizar las noticias financieras del mercado internacional .
+LANG_ES Transferir €400 de mi cuenta de ahorros a mi cuenta corriente .
+LANG_ES Establecer alertas para seguimiento de mercado de divisas .
+LANG_ES Generar un informe de mis ingresos anuales .
+LANG_ES Programar una transferencia quincenal de $200 a mi cuenta de ahorros .
+LANG_ES Cancelar la transferencia de €75 a familiar .
+LANG_ES Revisar el informe de rendimiento de cartera .
+LANG_ES Alertar sobre transacciones sospechosas en mi cuenta de inversión .
+LANG_ES Presupuestar mis gastos mensuales para controlar mis finanzas .
+LANG_ES Depositar $1000 en mi cuenta corriente .
+LANG_ES Retirar €300 de mi cuenta de ahorros .
+LANG_ES Invertir $2000 en acciones .
+LANG_ES Ahorrar €100 cada mes en mi cuenta de ahorros .
+LANG_ES Gastar $75 en entretenimiento .
+LANG_ES Monitorear mis transacciones semanalmente .
+LANG_ES Notificar sobre próximos vencimientos de préstamos .
+LANG_ES Transferir $500 de mi cuenta corriente a mi cuenta de ahorros .
+LANG_ES Configurar una alerta para notificar cuando mi saldo de tarjeta de débito sea bajo .
+LANG_ES Actualizar mi número de teléfono .
+LANG_ES Analizar mis gastos mensuales para optimizar mi presupuesto .
+LANG_ES Analizar las noticias financieras del sector bancario .
+LANG_ES Transferir €200 de mi cuenta de ahorros a mi cuenta corriente .
+LANG_ES Establecer alertas para seguimiento de mercado de criptomonedas .
+LANG_ES Generar un informe de mis ingresos trimestrales .
+LANG_ES Programar una transferencia mensual de $300 a mi cuenta corriente .
+LANG_ES Cancelar la transferencia de €50 a proveedor .
+LANG_ES Revisar el informe de rendimiento de activos .
+LANG_ES Alertar sobre transacciones no autorizadas en mi cuenta de ahorros .
+LANG_ES Presupuestar mis gastos mensuales para lograr mis metas financieras .
+LANG_ES Depositar $700 en mi cuenta de ahorros .
+LANG_ES Retirar €100 de mi cuenta corriente .
+LANG_ES Invertir $1500 en bonos .
+LANG_ES Ahorrar €75 cada mes en mi cuenta de ahorros .
+LANG_ES Gastar $100 en ropa .
+LANG_ES Monitorear mis inversiones mensualmente .
+LANG_ES Notificar sobre próximos pagos de tarjeta de crédito .
+LANG_ES Transferir $400 de mi cuenta corriente a mi cuenta de inversión .
+LANG_ES Configurar una alerta para notificar cuando mi saldo de tarjeta de crédito esté por debajo de $500 .
+LANG_ES Actualizar mi dirección de correo electrónico .
+LANG_ES Analizar mis gastos mensuales para identificar áreas de reducción de costos .
+LANG_ES Analizar las noticias financieras del mercado nacional .
+LANG_ES Transferir €500 de mi cuenta de ahorros a mi cuenta corriente .
+LANG_ES Establecer alertas para seguimiento de mercado de bonos del gobierno .
+LANG_ES Generar un informe de mis ingresos semestrales .
+LANG_ES Programar una transferencia semanal de $150 a mi cuenta de ahorros .
+LANG_ES Cancelar la transferencia de €100 a proveedor de servicios .
+LANG_ES Revisar el informe de rendimiento de fondos de inversión .
+LANG_ES Alertar sobre transacciones fraudulentas en mi cuenta corriente .
+LANG_ES Presupuestar mis gastos mensuales para mantener un equilibrio financiero .
+LANG_ES Depositar $800 en mi cuenta corriente .
+LANG_ES Retirar €150 de mi cuenta de ahorros .
+LANG_ES Invertir $2500 en fondos de pensiones .
+LANG_ES Ahorrar €125 cada mes en mi cuenta de ahorros .
+LANG_ES Gastar $125 en transporte .
+LANG_ES Monitorear mis transacciones anualmente .
+LANG_ES Notificar sobre próximos vencimientos de facturas .
+LANG_ES Transferir $600 de mi cuenta corriente a mi cuenta de ahorros .
+LANG_ES Configurar una alerta para notificar cuando mi saldo de tarjeta de débito sea bajo .
+LANG_ES Actualizar mi número de teléfono .
+LANG_ES Analizar mis gastos mensuales para optimizar mi presupuesto .
+LANG_ES Analizar las noticias financieras del sector bancario .
+LANG_ES Transferir €200 de mi cuenta de ahorros a mi cuenta corriente .
+LANG_ES Establecer alertas para seguimiento de mercado de criptomonedas .
+LANG_ES Generar un informe de mis ingresos trimestrales .
+LANG_ES Programar una transferencia mensual de $300 a mi cuenta corriente .
+LANG_ES Cancelar la transferencia de €50 a proveedor .
+LANG_ES Revisar el informe de rendimiento de activos .
+LANG_ES Alertar sobre transacciones no autorizadas en mi cuenta de ahorros .
+LANG_ES Presupuestar mis gastos mensuales para lograr mis metas financieras .
+LANG_ES Depositar $700 en mi cuenta de ahorros .
+LANG_ES Retirar €100 de mi cuenta corriente .
+LANG_ES Invertir $2000 en acciones .
+LANG_ES Ahorrar €100 cada mes en mi cuenta de ahorros .
+LANG_ES Gastar $75 en entretenimiento .
+LANG_ES Monitorear mis transacciones mensualmente .
+LANG_ES Notificar sobre próximos pagos de tarjeta de crédito .
+LANG_ES Transferir $400 de mi cuenta corriente a mi cuenta de inversión .
+LANG_ES Configurar una alerta para notificar cuando mi saldo de tarjeta de crédito esté por debajo de $500 .
+LANG_ES Actualizar mi dirección de correo electrónico .
+LANG_ES Analizar mis gastos mensuales para identificar áreas de reducción de costos .
+LANG_ES Analizar las noticias financieras del mercado nacional .
+LANG_ES ¿Qué te parece si buscamos una receta vegana para la cena ?
+LANG_ES Vamos a configurar un temporizador de 30 minutos para el almuerzo .
+LANG_ES ¿Podrías proporcionar la lista de ingredientes para la receta pastel de zanahoria ?
+LANG_ES Oye, ¿puedes rastrear recetas sin gluten para mí ?
+LANG_ES Creo que necesitamos agregar leche a la lista de compras .
+LANG_ES ¿Sabes cómo encontrar una receta vegetariana de sopa ?
+LANG_ES Recuerda precalentar el horno a 180 grados .
+LANG_ES Batir los huevos hasta que los yemas y las claras estén combinadas .
+LANG_ES Pausar el temporizador de cocción .
+LANG_ES Reanudar la narración de la receta de cocina .
+LANG_ES Actualizar mis preferencias vegetarianas .
+LANG_ES Quitar cebollas de la lista de compras .
+LANG_ES ¿Puedes listar la información nutricional del aguacate ?
+LANG_ES Sugerir una receta mexicana para el desayuno .
+LANG_ES Rastrear el stock de despensa de harina .
+LANG_ES Agregar dos manzanas a mi lista de compras
+LANG_ES Verificar el precio de leche en Walmart
+LANG_ES Encontrar la sección de frutas y buscar plátanos
+LANG_ES Establecer un recordatorio para comprar huevos mañana mañana
+LANG_ES Gestionar mis cupones para la compra en la sección de lácteos
+LANG_ES Comparar cereales de Kellogg's con cereales de General Mills para ver las calorías
+LANG_ES Proporcionar información nutricional sobre yogur
+LANG_ES Ofrecer consejos de compra para productos orgánicos
+LANG_ES Buscar la ubicación de Costco en el mapa aplicación móvil
+LANG_ES Programar una visita a Walmart para comprar carne el próximo sábado
+LANG_ES Recordar comprar tres aguacates en la sección de productos frescos
+LANG_ES Notificar sobre las ofertas en Target hoy
+LANG_ES Llamar a Safeway para preguntar por pan integral
+LANG_ES Escanear el código de barras de galletas para ver el precio en la sección de bocadillos
+LANG_ES Redimir mis cupones de descuento en pasta en la caja registradora
+LANG_ES Cocinar una receta saludable con pollo y vegetales
+LANG_ES Preferir pan integral en lugar de pan blanco por motivos de salud
+LANG_ES Recomendar queso cheddar para hacer macarrones con queso
+LANG_ES Sugerir una lista de compras para una dieta vegetariana
+LANG_ES Buscar la dirección de Trader Joe's en Seattle
+LANG_ES Seleccionar una docena de huevos en la sección de lácteos
+LANG_ES Preferir Coca-Cola sobre Pepsi por su sabor preferido
+LANG_ES Calificar y dejar una reseña sobre la sandía que compré en Walmart
+LANG_ES Revisar mi lista de compras antes de ir a la tienda de comestibles
+LANG_ES Buscar leche desnatada en la sección de lácteos de Costco
+LANG_ES Comprar medio kilo de fresas en la frutería
+LANG_ES Rastrear los precios de carne de res en la carnicería de Safeway
+LANG_ES Anotar tres tomates en mi lista de compras
+LANG_ES Buscar pasta sin gluten en la sección de alimentos especiales de Whole Foods
+LANG_ES Localizar la dirección de Target en San Francisco
+LANG_ES Programar un recordatorio para comprar leche el próximo lunes
+LANG_ES Recordar llevar dos botellas de agua en mi lista de compras
+LANG_ES Notificar sobre las promociones en Walmart esta semana
+LANG_ES Llamar a Safeway para preguntar por el precio de salmón
+LANG_ES Escanear el código de barras de cereal para ver las calorías por porción
+LANG_ES Redimir mis cupones de descuento en yogur en la caja registradora
+LANG_ES Cocinar una receta rápida con pasta y salsa de tomate
+LANG_ES Preferir arroz integral en lugar de arroz blanco por su contenido de fibra
+LANG_ES Recomendar aguacates para hacer guacamole
+LANG_ES Sugerir una lista de compras para una dieta sin gluten
+LANG_ES Buscar la dirección de Trader Joe's en Nueva York
+LANG_ES Seleccionar dos filetes de salmón en la pescadería
+LANG_ES Preferir Nike sobre Adidas por su calidad preferida
+LANG_ES Calificar y dejar una reseña sobre la piña que compré en Walmart
+LANG_ES Revisar mi lista de compras antes de ir a la tienda de comestibles
+LANG_ES Buscar pan integral en la sección de panadería de Costco
+LANG_ES Comprar un kilo de uvas en la frutería
+LANG_ES Rastrear los precios de queso cheddar en la sección de lácteos de Safeway
+LANG_ES Anotar cuatro peras en mi lista de compras
+LANG_ES Buscar pasta sin gluten en la sección de alimentos especiales de Whole Foods
+LANG_ES Localizar la dirección de Target en Los Ángeles
+LANG_ES Programar un recordatorio para comprar pan el próximo miércoles
+LANG_ES Recordar llevar tres latas de atún en mi lista de compras
+LANG_ES Notificar sobre las promociones en Walmart este mes
+LANG_ES Llamar a Safeway para preguntar por el precio de aguacates
+LANG_ES Escanear el código de barras de leche para ver las proteínas por porción
+LANG_ES Redimir mis cupones de descuento en yogur en la caja registradora
+LANG_ES Cocinar una receta saludable con salmón y espárragos
+LANG_ES Preferir leche desnatada en lugar de leche entera por su contenido de calcio
+LANG_ES Recomendar aguacates para hacer guacamole
+LANG_ES Sugerir una lista de compras para una dieta vegana
+LANG_ES Buscar la dirección de Trader Joe's en Chicago
+LANG_ES Seleccionar una docena de huevos en la sección de lácteos
+LANG_ES Preferir Coca-Cola sobre Pepsi por su sabor preferido
+LANG_ES Calificar y dejar una reseña sobre la sandía que compré en Walmart
+LANG_ES Revisar mi lista de compras antes de ir a la tienda de comestibles
+LANG_ES Buscar leche desnatada en la sección de lácteos de Costco
+LANG_ES Comprar medio kilo de fresas en la frutería
+LANG_ES Rastrear los precios de carne de res en la carnicería de Safeway
+LANG_ES Anotar tres tomates en mi lista de compras
+LANG_ES Buscar pasta sin gluten en la sección de alimentos especiales de Whole Foods
+LANG_ES Localizar la dirección de Target en San Francisco
+LANG_ES Programar un recordatorio para comprar leche el próximo lunes
+LANG_ES Recordar llevar dos botellas de agua en mi lista de compras
+LANG_ES Notificar sobre las promociones en Walmart esta semana
+LANG_ES Llamar a Safeway para preguntar por el precio de salmón
+LANG_ES Escanear el código de barras de cereal para ver las calorías por porción
+LANG_ES Redimir mis cupones de descuento en yogur en la caja registradora
+LANG_ES Cocinar una receta rápida con pasta y salsa de tomate
+LANG_ES Preferir arroz integral en lugar de arroz blanco por su contenido de fibra
+LANG_ES Recomendar aguacates para hacer guacamole
+LANG_ES Sugerir una lista de compras para una dieta sin gluten
+LANG_ES Buscar la dirección de Trader Joe's en Nueva York
+LANG_ES Seleccionar dos filetes de salmón en la pescadería
+LANG_ES Preferir Nike sobre Adidas por su calidad preferida
+LANG_ES Calificar y dejar una reseña sobre la piña que compré en Walmart
+LANG_ES Revisar mi lista de compras antes de ir a la tienda de comestibles
+LANG_ES Buscar pan integral en la sección de panadería de Costco
+LANG_ES Comprar un kilo de uvas en la frutería
+LANG_ES Rastrear los precios de queso cheddar en la sección de lácteos de Safeway
+LANG_ES Anotar cuatro peras en mi lista de compras
+LANG_ES Buscar pasta sin gluten en la sección de alimentos especiales de Whole Foods
+LANG_ES Localizar la dirección de Target en Los Ángeles
+LANG_ES Programar un recordatorio para comprar pan el próximo miércoles
+LANG_ES Recordar llevar tres latas de atún en mi lista de compras
+LANG_ES Notificar sobre las promociones en Walmart este mes
+LANG_ES Llamar a Safeway para preguntar por el precio de aguacates
+LANG_ES Escanear el código de barras de leche para ver las proteínas por porción
+LANG_ES Redimir mis cupones de descuento en yogur en la caja registradora
+LANG_ES Cocinar una receta saludable con salmón y espárragos
+LANG_ES Preferir leche desnatada en lugar de leche entera por su contenido de calcio
+LANG_ES Recomendar aguacates para hacer guacamole
+LANG_ES Sugerir una lista de compras para una dieta vegana
+LANG_ES Buscar la dirección de Trader Joe's en Chicago
+LANG_ES Seleccionar una docena de huevos en la sección de lácteos
+LANG_ES Preferir Coca-Cola sobre Pepsi por su sabor preferido
+LANG_ES Calificar y dejar una reseña sobre la sandía que compré en Walmart
+LANG_ES Revisar mi lista de compras antes de ir a la tienda de comestibles
+LANG_ES Anoche experimenté dolor abdominal después de cenar
+LANG_ES Hace dos meses me recetaron antibióticos para mi infección de garganta
+LANG_ES Mi abuela fue diagnosticada con diabetes hace cinco años
+LANG_ES Me realizaron una radiografía la semana pasada
+LANG_ES Últimamente he estado sintiendo fatiga y mareos cada mañana
+LANG_ES Mi esposo toma medicamentos para su presión arterial todas las noches
+LANG_ES Mi hermana necesita una cirugía de apéndice la próxima semana
+LANG_ES Desde la semana pasada he estado experimentando náuseas y vómitos cada tarde
+LANG_ES Mi hijo ha tenido fiebre por más de una semana
+LANG_ES Hace un año me recetaron analgésicos para mi dolor de espalda por la noche
+LANG_ES Desde ayer noto enrojecimiento y hinchazón en mi pierna
+LANG_ES Mi abuelo fue diagnosticado con Alzheimer hace dos años
+LANG_ES Anoche experimenté dolor de pecho después de cenar
+LANG_ES Hace tres semanas me recetaron antibióticos para mi infección de oído cada ocho horas
+LANG_ES Mi tía necesita una cirugía de cadera en dos meses
+LANG_ES Desde la semana pasada he estado experimentando dolor de estómago y acidez después de comer
+LANG_ES Mi hijo ha tenido tos desde hace dos semanas
+LANG_ES Últimamente he estado sintiendo dolor de cabeza y fatiga cada tarde
+LANG_ES Mi esposo toma medicamentos para su tiroides todas las mañanas
+LANG_ES Mi hermano necesita una cirugía de rodilla la próxima semana
+LANG_ES Desde ayer noto picazón y enrojecimiento en mi piel
+LANG_ES Mi hijo ha tenido fiebre por más de una semana
+LANG_ES Hace un mes me recetaron analgésicos para mi dolor de cabeza por la noche
+LANG_ES Desde ayer noto enrojecimiento y hinchazón en mi pierna
+LANG_ES Mi abuelo fue diagnosticado con diabetes hace dos años
+LANG_ES Anoche experimenté dolor de pecho después de cenar
+LANG_ES Hace tres semanas me recetaron antibióticos para mi infección de oído cada ocho horas
+LANG_ES Mi tía necesita una cirugía de cadera en dos meses
+LANG_ES Desde la semana pasada he estado experimentando dolor de estómago y acidez después de comer
+LANG_ES Mi hijo ha tenido tos desde hace dos semanas
+LANG_ES Últimamente he estado sintiendo dolor de cabeza y fatiga cada tarde
+LANG_ES Mi esposo toma medicamentos para su tiroides todas las mañanas
+LANG_ES Mi hermano necesita una cirugía de rodilla la próxima semana
+LANG_ES Desde ayer noto picazón y enrojecimiento en mi piel
+LANG_ES Mi hijo ha tenido fiebre por más de una semana
+LANG_ES Hace un mes me recetaron analgésicos para mi dolor de cabeza por la noche
+LANG_ES Desde ayer noto enrojecimiento y hinchazón en mi pierna
+LANG_ES Mi abuelo fue diagnosticado con diabetes hace dos años
+LANG_ES Anoche experimenté dolor de pecho después de cenar
+LANG_ES Hace tres semanas me recetaron antibióticos para mi infección de oído cada ocho horas
+LANG_ES Mi tía necesita una cirugía de cadera en dos meses
+LANG_ES Desde la semana pasada he estado experimentando dolor de estómago y acidez después de comer
+LANG_ES Mi hijo ha tenido tos desde hace dos semanas
+LANG_ES Últimamente he estado sintiendo dolor de cabeza y fatiga cada tarde
+LANG_ES Mi esposo toma medicamentos para su tiroides todas las mañanas
+LANG_ES Mi hermano necesita una cirugía de rodilla la próxima semana
+LANG_ES Desde ayer noto picazón y enrojecimiento en mi piel
+LANG_ES Mi hijo ha tenido fiebre por más de una semana
+LANG_ES Hace un mes me recetaron analgésicos para mi dolor de cabeza por la noche
+LANG_ES Desde ayer noto enrojecimiento y hinchazón en mi pierna
+LANG_ES Mi abuelo fue diagnosticado con diabetes hace dos años
+LANG_ES Anoche experimenté dolor de pecho después de cenar
+LANG_ES Hace tres semanas me recetaron antibióticos para mi infección de oído cada ocho horas
+LANG_ES Mi tía necesita una cirugía de cadera en dos meses
+LANG_ES Desde la semana pasada he estado experimentando dolor de estómago y acidez después de comer
+LANG_ES Mi hijo ha tenido tos desde hace dos semanas
+LANG_ES Últimamente he estado sintiendo dolor de cabeza y fatiga cada tarde
+LANG_ES Mi esposo toma medicamentos para su tiroides todas las mañanas
+LANG_ES Mi hermano necesita una cirugía de rodilla la próxima semana
+LANG_ES Desde ayer noto picazón y enrojecimiento en mi piel
+LANG_ES Mi hijo ha tenido fiebre por más de una semana
+LANG_ES Hace un mes me recetaron analgésicos para mi dolor de cabeza por la noche
+LANG_ES Desde ayer noto enrojecimiento y hinchazón en mi pierna
+LANG_ES Mi abuelo fue diagnosticado con diabetes hace dos años
+LANG_ES Anoche experimenté dolor de pecho después de cenar
+LANG_ES Hace tres semanas me recetaron antibióticos para mi infección de oído cada ocho horas
+LANG_ES Mi tía necesita una cirugía de cadera en dos meses
+LANG_ES Desde la semana pasada he estado experimentando dolor de estómago y acidez después de comer
+LANG_ES Mi hijo ha tenido tos desde hace dos semanas
+LANG_ES Últimamente he estado sintiendo dolor de cabeza y fatiga cada tarde
+LANG_ES Mi esposo toma medicamentos para su tiroides todas las mañanas
+LANG_ES Mi hermano necesita una cirugía de rodilla la próxima semana
+LANG_ES Desde ayer noto picazón y enrojecimiento en mi piel
+LANG_ES Mi hijo ha tenido fiebre por más de una semana
+LANG_ES Hace un mes me recetaron analgésicos para mi dolor de cabeza por la noche
+LANG_ES Real Madrid está dominando el partido contra Barcelona con un juego excepcional en el Clásico .
+LANG_ES Messi intenta un tiro desde fuera del área, pero la defensa de Real Madrid bloquea el intento .
+LANG_ES Ronaldo se lanza en un regate impresionante, dejando atrás a dos defensores rivales .
+LANG_ES ¡Y Salah anota un golazo con un remate imparable al ángulo!
+LANG_ES Howard Webb muestra una tarjeta amarilla a Pogba por una falta táctica .
+LANG_ES Guardiola está dando indicaciones tácticas a sus jugadores desde la banda .
+LANG_ES ¡Qué atajada del portero Neuer , evitando un gol seguro!
+LANG_ES Manchester City empata el partido con un gol de último minuto de Aguero .
+LANG_ES Mbappé realiza un desborde espectacular por la banda derecha, dejando a los defensores en el suelo .
+LANG_ES Chelsea realiza una jugada colectiva impresionante que culmina en un gol de Hazard .
+LANG_ES Lewandowski recibe un pase perfecto y dispara al arco, pero el balón se va desviado por poco .
+LANG_ES ¡Qué remate de cabeza de Ramos , rozando el travesaño!
+LANG_ES Bayern Munich avanza a la siguiente ronda de la Champions League tras vencer a PSG en los penales .
+LANG_ES Iniesta sufre una lesión en el tobillo y es sustituido por Rakitic .
+LANG_ES Pierluigi Collina señala un fuera de juego en una jugada polémica .
+LANG_ES Kane celebra su gol con un baile peculiar que divierte a los aficionados .
+LANG_ES Juventus empata el partido con un gol en propia puerta de Varane .
+LANG_ES Liverpool remonta un marcador adverso y consigue la victoria en los últimos minutos del partido .
+LANG_ES Hazard es objeto de una falta clara en el borde del área, generando una oportunidad de gol para Real Madrid .
+LANG_ES Arsenal sufre una derrota inesperada ante Burnley en un partido lleno de sorpresas .
+LANG_ES Griezmann es sustituido por Dembélé en un cambio táctico del Simeone .
+LANG_ES Modric ejecuta un tiro libre magistral que se estrella en el travesaño .
+LANG_ES Borussia Dortmund avanza a la siguiente fase de la Europa League tras una victoria contundente sobre Inter .
+LANG_ES Van Dijk gana todos los duelos aéreos en defensa, mostrando su fortaleza física .
+LANG_ES Benzema asiste a Vinicius Jr con un pase milimétrico que termina en gol .
+LANG_ES Sterling es derribado en el área y el árbitro señala un penal a favor de Manchester City .
+LANG_ES Barcelona sufre una lesión de Piqué que preocupa a los aficionados .
+LANG_ES Kante recupera un balón en el centro del campo y lanza un contragolpe letal para Chelsea .
+LANG_ES PSG derrota a Lyon en un partido emocionante que se definió en los minutos finales .
+LANG_ES De Jong comete una falta táctica para detener un avance peligroso de Neymar .
+LANG_ES AC Milan empata con un gol agónico en el último minuto del partido .
+LANG_ES Salah se lleva una tarjeta roja por una entrada violenta sobre De Bruyne .
+LANG_ES Inter sufre una derrota aplastante ante Juventus en un partido que quedará en la memoria de los aficionados .
+LANG_ES Mbappé deslumbra con su velocidad y habilidad en el Clásico .
+LANG_ES Bayern Munich avanza a la final de la Champions League tras vencer a Chelsea en un partido lleno de emociones .
+LANG_ES De Bruyne dispara desde larga distancia, pero el balón se va desviado por poco .
+LANG_ES Real Madrid celebra el título de la La Liga con una victoria contundente sobre Sevilla .
+LANG_ES Kane anota un gol de cabeza tras un centro perfecto de Son .
+LANG_ES Mark Clattenburg revisa una jugada polémica en el VAR y decide anular un gol por fuera de juego .
+LANG_ES Neymar sufre una lesión muscular y es sustituido por Di María .
+LANG_ES Arsenal remonta un marcador adverso y consigue la victoria en los últimos minutos del partido .
+LANG_ES Modric domina el centro del campo con su visión de juego y precisión en los pases .
+LANG_ES Barcelona sufre una derrota sorpresiva ante Getafe en un partido lleno de polémica .
+LANG_ES Aguero marca un golazo de chilena que deja sin palabras a los espectadores .
+LANG_ES Liverpool avanza a la siguiente ronda de la Champions League tras vencer a Atletico Madrid en la tanda de penales .
+LANG_ES Ramos comete una falta táctica para detener un contragolpe peligroso .
+LANG_ES De Gea realiza una atajada milagrosa que mantiene a Manchester United en el partido .
+LANG_ES Chelsea empata en el último minuto con un gol de Pulisic .
+LANG_ES Sterling es objeto de una falta en el área y el árbitro señala un penal a favor de Manchester City .
+LANG_ES PSG vence a Marseille en el clásico francés con un gol agónico en el tiempo de descuento .
+LANG_ES Messi regatea a tres defensores y dispara al arco, pero el portero realiza una atajada espectacular .
+LANG_ES Juventus avanza a la final de la Europa League tras una victoria contundente sobre Roma .
+LANG_ES Van Dijk corta un pase peligroso con una intervención impecable en el área .
+LANG_ES Manchester City remonta un marcador adverso y consigue la victoria en los últimos minutos del partido .
+LANG_ES Benzema asiste a Vinicius Jr con un pase preciso que culmina en gol .
+LANG_ES Salah es derribado en el área y el árbitro señala un penal a favor de Liverpool .
+LANG_ES Barcelona sufre una lesión de Piqué que preocupa a los aficionados .
+LANG_ES Kante recupera un balón en el centro del campo y lanza un contragolpe letal para Chelsea .
+LANG_ES PSG derrota a Lyon en un partido emocionante que se definió en los minutos finales .
+LANG_ES De Jong comete una falta táctica para detener un avance peligroso de Neymar .
+LANG_ES AC Milan empata con un gol agónico en el último minuto del partido .
+LANG_ES Salah se lleva una tarjeta roja por una entrada violenta sobre De Bruyne .
+LANG_ES Inter sufre una derrota aplastante ante Juventus en un partido que quedará en la memoria de los aficionados .
+LANG_ES Mbappé deslumbra con su velocidad y habilidad en el Clásico .
+LANG_ES Bayern Munich avanza a la final de la Champions League tras vencer a Chelsea en un partido lleno de emociones .
+LANG_ES De Bruyne dispara desde larga distancia, pero el balón se va desviado por poco .
+LANG_ES Real Madrid celebra el título de la La Liga con una victoria contundente sobre Sevilla .
+LANG_ES Kane anota un gol de cabeza tras un centro perfecto de Son .
+LANG_ES Mark Clattenburg revisa una jugada polémica en el VAR y decide anular un gol por fuera de juego .
+LANG_ES Neymar sufre una lesión muscular y es sustituido por Di María .
+LANG_ES Arsenal remonta un marcador adverso y consigue la victoria en los últimos minutos del partido .
+LANG_ES Modric domina el centro del campo con su visión de juego y precisión en los pases .
+LANG_ES Barcelona sufre una derrota sorpresiva ante Getafe en un partido lleno de polémica .
+LANG_ES Aguero marca un golazo de chilena que deja sin palabras a los espectadores .
+LANG_ES Liverpool avanza a la siguiente ronda de la Champions League tras vencer a Atletico Madrid en la tanda de penales .
+LANG_ES Ramos comete una falta táctica para detener un contragolpe peligroso .
+LANG_ES De Gea realiza una atajada milagrosa que mantiene a Manchester United en el partido .
+LANG_ES Chelsea empata en el último minuto con un gol de Pulisic .
+LANG_ES Sterling es objeto de una falta en el área y el árbitro señala un penal a favor de Manchester City .
+LANG_ES PSG vence a Marseille en el clásico francés con un gol agónico en el tiempo de descuento .
+LANG_ES Messi regatea a tres defensores y dispara al arco, pero el portero realiza una atajada espectacular .
+LANG_ES Juventus avanza a la final de la Europa League tras una victoria contundente sobre Roma .
+LANG_ES Van Dijk corta un pase peligroso con una intervención impecable en el área .
+LANG_ES Manchester City remonta un marcador adverso y consigue la victoria en los últimos minutos del partido .
+LANG_ES Benzema asiste a Vinicius Jr con un pase preciso que culmina en gol .
+LANG_ES Salah es derribado en el área y el árbitro señala un penal a favor de Liverpool .
+LANG_ES Barcelona sufre una lesión de Piqué que preocupa a los aficionados .
+LANG_ES Kante recupera un balón en el centro del campo y lanza un contragolpe letal para Chelsea .
+LANG_ES PSG derrota a Lyon en un partido emocionante que se definió en los minutos finales .
+LANG_ES De Jong comete una falta táctica para detener un avance peligroso de Neymar .
+LANG_ES AC Milan empata con un gol agónico en el último minuto del partido .
+LANG_ES Salah se lleva una tarjeta roja por una entrada violenta sobre De Bruyne .
+LANG_ES Inter sufre una derrota aplastante ante Juventus en un partido que quedará en la memoria de los aficionados .
+LANG_ES Mbappé deslumbra con su velocidad y habilidad en el Clásico .
+LANG_ES Bayern Munich avanza a la final de la Champions League tras vencer a Chelsea en un partido lleno de emociones .
+LANG_ES De Bruyne dispara desde larga distancia, pero el balón se va desviado por poco .
+LANG_ES Real Madrid celebra el título de la La Liga con una victoria contundente sobre Sevilla .
+LANG_ES Kane anota un gol de cabeza tras un centro perfecto de Son .
+LANG_ES Mark Clattenburg revisa una jugada polémica en el VAR y decide anular un gol por fuera de juego .
+LANG_ES Neymar sufre una lesión muscular y es sustituido por Di María .
+LANG_ES Arsenal remonta un marcador adverso y consigue la victoria en los últimos minutos del partido .
+LANG_ES Modric domina el centro del campo con su visión de juego y precisión en los pases .
+LANG_ES Comenzar una sesión de entrenamiento de cuerpo completo mañana a las 8 a . m . .
+LANG_ES Actualizar mi peso en la aplicación de fitness .
+LANG_ES Establecer un nuevo objetivo de levantamiento de pesas para tres veces a la semana .
+LANG_ES Rastrear mi progreso en yoga durante 30 minutos .
+LANG_ES Programar una sesión de entrenamiento en casa para el próximo viernes .
+LANG_ES Analizar mi progreso en resistencia cardiovascular .
+LANG_ES Ver mi plan de ejercicios para hoy .
+LANG_ES Generar un nuevo plan de entrenamiento personalizado .
+LANG_ES Monitorear mi frecuencia cardíaca durante el entrenamiento de alta intensidad .
+LANG_ES Completar mi rutina de ejercicios para hoy .
+LANG_ES Pausar el entrenamiento de fuerza por 10 minutos .
+LANG_ES Reanudar mi sesión de estiramiento .
+LANG_ES Detener el entrenamiento de intervalos .
+LANG_ES Aumentar la intensidad de carrera en la cinta de correr .
+LANG_ES Disminuir la resistencia en la bicicleta estática .
+LANG_ES Registrar mi porcentaje de grasa corporal .
+LANG_ES Medir mi progreso en flexiones .
+LANG_ES Notificar mi peso actual al final de la semana .
+LANG_ES Iniciar una clase de zumba en el gimnasio .
+LANG_ES Seguir mi rutina de pilates .
+LANG_ES Configurar un nuevo objetivo de natación para dos veces por semana .
+LANG_ES Programar una sesión de boxeo para el próximo martes .
+LANG_ES Actualizar mi altura en la aplicación de fitness .
+LANG_ES Analizar mi progreso en flexibilidad .
+LANG_ES Ver mi plan de entrenamiento para mañana .
+LANG_ES Generar un nuevo plan de ejercicios para la próxima semana .
+LANG_ES Monitorear mi nivel de energía durante el entrenamiento de cardio .
+LANG_ES Completar mi rutina de pesas para hoy .
+LANG_ES Pausar el entrenamiento de kickboxing por 5 minutos .
+LANG_ES Reanudar mi sesión de estiramientos .
+LANG_ES Detener el entrenamiento de baile .
+LANG_ES Aumentar la velocidad en la cinta de correr .
+LANG_ES Disminuir la inclinación en la máquina elíptica .
+LANG_ES Registrar mi circunferencia de cintura .
+LANG_ES Medir mi progreso en sentadillas .
+LANG_ES Notificar mi porcentaje de grasa corporal al final del mes .
+LANG_ES Iniciar una clase de spinning en el gimnasio .
+LANG_ES Seguir mi rutina de pilates .
+LANG_ES Configurar un nuevo objetivo de ciclismo para tres veces por semana .
+LANG_ES Programar una sesión de yoga para el próximo jueves .
+LANG_ES Actualizar mi peso corporal en la aplicación de fitness .
+LANG_ES Analizar mi progreso en fuerza muscular .
+LANG_ES Ver mi plan de entrenamiento para el próximo mes .
+LANG_ES Generar un nuevo plan de ejercicios para la próxima temporada .
+LANG_ES Monitorear mi ritmo cardíaco durante el entrenamiento de crossfit .
+LANG_ES Completar mi rutina de flexiones para hoy .
+LANG_ES Pausar el entrenamiento de pilates por 10 minutos .
+LANG_ES Reanudar mi sesión de estiramientos .
+LANG_ES Detener el entrenamiento de natación .
+LANG_ES Aumentar la resistencia en la bicicleta estática .
+LANG_ES Disminuir la velocidad en la cinta de correr .
+LANG_ES Registrar mi porcentaje de masa muscular .
+LANG_ES Medir mi progreso en abdominales .
+LANG_ES Notificar mi peso actual al final de la semana .
+LANG_ES Iniciar una clase de baile en el gimnasio .
+LANG_ES Seguir mi rutina de yoga .
+LANG_ES Configurar un nuevo objetivo de levantamiento de pesas para cuatro veces por semana .
+LANG_ES Programar una sesión de boxeo para el próximo miércoles .
+LANG_ES Actualizar mi altura en la aplicación de fitness .
+LANG_ES Analizar mi progreso en flexibilidad .
+LANG_ES Ver mi plan de entrenamiento para mañana .
+LANG_ES Generar un nuevo plan de ejercicios para la próxima semana .
+LANG_ES Monitorear mi nivel de energía durante el entrenamiento de cardio .
+LANG_ES Completar mi rutina de pesas para hoy .
+LANG_ES Pausar el entrenamiento de kickboxing por 5 minutos .
+LANG_ES Reanudar mi sesión de estiramientos .
+LANG_ES Detener el entrenamiento de baile .
+LANG_ES Aumentar la velocidad en la cinta de correr .
+LANG_ES Disminuir la inclinación en la máquina elíptica .
+LANG_ES Registrar mi circunferencia de cintura .
+LANG_ES Medir mi progreso en sentadillas .
+LANG_ES Notificar mi porcentaje de grasa corporal al final del mes .
+LANG_ES Iniciar una clase de spinning en el gimnasio .
+LANG_ES Seguir mi rutina de pilates .
+LANG_ES Configurar un nuevo objetivo de ciclismo para tres veces por semana .
+LANG_ES Programar una sesión de yoga para el próximo jueves .
+LANG_ES Actualizar mi peso corporal en la aplicación de fitness .
+LANG_ES Analizar mi progreso en fuerza muscular .
+LANG_ES Ver mi plan de entrenamiento para el próximo mes .
+LANG_ES Generar un nuevo plan de ejercicios para la próxima temporada .
+LANG_ES Monitorear mi ritmo cardíaco durante el entrenamiento de crossfit .
+LANG_ES Completar mi rutina de flexiones para hoy .
+LANG_ES Pausar el entrenamiento de pilates por 10 minutos .
+LANG_ES Reanudar mi sesión de estiramientos .
+LANG_ES Detener el entrenamiento de natación .
+LANG_ES Aumentar la resistencia en la bicicleta estática .
+LANG_ES Disminuir la velocidad en la cinta de correr .
+LANG_ES Registrar mi porcentaje de masa muscular .
+LANG_ES Medir mi progreso en abdominales .
+LANG_ES Notificar mi peso actual al final de la semana .
+LANG_ES Iniciar una clase de baile en el gimnasio .
+LANG_ES Seguir mi rutina de yoga .
+LANG_ES Configurar un nuevo objetivo de levantamiento de pesas para cuatro veces por semana .
+LANG_ES Programar una sesión de boxeo para el próximo miércoles .
+LANG_ES Actualizar mi altura en la aplicación de fitness .
+LANG_ES Analizar mi progreso en flexibilidad .
+LANG_ES Ver mi plan de entrenamiento para mañana .
+LANG_ES Generar un nuevo plan de ejercicios para la próxima semana .
+LANG_ES Monitorear mi nivel de energía durante el entrenamiento de cardio .
+LANG_ES Completar mi rutina de pesas para hoy .
+LANG_ES Pausar el entrenamiento de kickboxing por 5 minutos .
+LANG_ES Reanudar mi sesión de estiramientos .
+LANG_ES Detener el entrenamiento de baile .
+LANG_ES Aumentar la velocidad en la cinta de correr .
+LANG_ES Disminuir la inclinación en la máquina elíptica .
+LANG_ES Registrar mi circunferencia de cintura .
+LANG_ES Medir mi progreso en sentadillas .
+LANG_ES Notificar mi porcentaje de grasa corporal al final del mes .
+LANG_ES Iniciar una clase de spinning en el gimnasio .
+LANG_ES Seguir mi rutina de pilates .
+LANG_ES Configurar un nuevo objetivo de ciclismo para tres veces por semana .
+LANG_ES Programar una sesión de yoga para el próximo jueves .
+LANG_ES Actualizar mi peso corporal en la aplicación de fitness .
+LANG_ES Analizar mi progreso en fuerza muscular .
+LANG_ES Ver mi plan de entrenamiento para el próximo mes .
+LANG_ES Generar un nuevo plan de ejercicios para la próxima temporada .
+LANG_ES Monitorear mi ritmo cardíaco durante el entrenamiento de crossfit .
+LANG_ES Completar mi rutina de flexiones para hoy .
+LANG_ES Pausar el entrenamiento de pilates por 10 minutos .
+LANG_ES Reanudar mi sesión de estiramientos .
+LANG_ES Detener el entrenamiento de natación .
+LANG_ES Aumentar la resistencia en la bicicleta estática .
+LANG_ES Disminuir la velocidad en la cinta de correr .
+LANG_ES Registrar mi porcentaje de masa muscular .
+LANG_ES Medir mi progreso en abdominales .
+LANG_ES Notificar mi peso actual al final de la semana .
+LANG_ES ¡Hola! ¿Podrías encender las luces de la sala , por favor ?
+LANG_ES Estoy cansado, ¿puedes cerrar la puerta principal ?
+LANG_ES ¿Cuál es la temperatura en la cocina ?
+LANG_ES Vamos a reproducir algo de música en la sala de estar .
+LANG_ES Ordenar una pizza con tarjeta de crédito .
+LANG_ES Por favor, ajustar la intensidad de la lámpara en la habitación .
+LANG_ES ¿Podrías enviar un mensaje a Juan ?
+LANG_ES Establecer un recordatorio para mañana a las 9 a . m . .
+LANG_ES ¡Qué calor hace! Bajar la temperatura del aire acondicionado .
+LANG_ES Voy a llamar a María , ¿puedes encontrar su número ?
+LANG_ES Por favor, pausar la televisión en la sala .
+LANG_ES Configurar el termostato a 68 grados .
+LANG_ES ¿Podrías abrir las persianas de la habitación ?
+LANG_ES ¡Qué frío! Aumentar la temperatura del calefacción .
+LANG_ES Voy a enviar un correo electrónico a Ana , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, desactivar la alarma en la casa .
+LANG_ES Reproducir la lista de reproducción Canciones Relajantes en la sala de estar .
+LANG_ES ¿Podrías traducir esta frase al francés ?
+LANG_ES ¡Qué día tan soleado! Ajustar la iluminación de la terraza .
+LANG_ES Voy a programar un evento para el próximo viernes a las 7 p . m . .
+LANG_ES Por favor, buscar información sobre recetas de cocina en la internet .
+LANG_ES Cambiar la velocidad del ventilador a alta .
+LANG_ES ¿Podrías recordar a papá que recoger a mamá en el aeropuerto mañana ?
+LANG_ES ¡Qué tarde tan tranquila! Encender la lámpara en la porche .
+LANG_ES Voy a enviar un mensaje a Pedro , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, programar una reunión para el próximo lunes a las 10 a . m . .
+LANG_ES Reproducir la canción Shape of You en la cocina .
+LANG_ES ¿Podrías abrir la puerta de la garaje ?
+LANG_ES ¡Qué frío hace! Subir la temperatura del calentador .
+LANG_ES Voy a enviar un correo electrónico a Laura , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, activar la cámara de seguridad en la entrada .
+LANG_ES Cambiar la configuración del termostato a modo noche .
+LANG_ES ¿Podrías buscar el número de teléfono de Carlos en la directorio telefónico ?
+LANG_ES ¡Qué bonito día! Ajustar la iluminación de la jardín .
+LANG_ES Voy a programar un recordatorio para el próximo martes a las 3 p . m . .
+LANG_ES Por favor, desactivar la alarma en la casa .
+LANG_ES Reproducir la lista de reproducción Éxitos de los 80 en la sala de estar .
+LANG_ES ¿Podrías traducir esta palabra al alemán ?
+LANG_ES ¡Qué día tan soleado! Ajustar la iluminación de la terraza .
+LANG_ES Voy a programar un evento para el próximo viernes a las 7 p . m . .
+LANG_ES Por favor, buscar información sobre recetas de cocina en la internet .
+LANG_ES Cambiar la velocidad del ventilador a alta .
+LANG_ES ¿Podrías recordar a papá que recoger a mamá en el aeropuerto mañana ?
+LANG_ES ¡Qué tarde tan tranquila! Encender la lámpara en la porche .
+LANG_ES Voy a enviar un mensaje a Pedro , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, programar una reunión para el próximo lunes a las 10 a . m . .
+LANG_ES Reproducir la canción Shape of You en la cocina .
+LANG_ES ¿Podrías abrir la puerta de la garaje ?
+LANG_ES ¡Qué frío hace! Subir la temperatura del calentador .
+LANG_ES Voy a enviar un correo electrónico a Laura , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, activar la cámara de seguridad en la entrada .
+LANG_ES Cambiar la configuración del termostato a modo noche .
+LANG_ES ¿Podrías buscar el número de teléfono de Carlos en la directorio telefónico ?
+LANG_ES ¡Qué bonito día! Ajustar la iluminación de la jardín .
+LANG_ES Voy a programar un recordatorio para el próximo martes a las 3 p . m . .
+LANG_ES Por favor, desactivar la alarma en la casa .
+LANG_ES Reproducir la lista de reproducción Éxitos de los 80 en la sala de estar .
+LANG_ES ¿Podrías traducir esta palabra al alemán ?
+LANG_ES ¡Qué día tan soleado! Ajustar la iluminación de la terraza .
+LANG_ES Voy a programar un evento para el próximo viernes a las 7 p . m . .
+LANG_ES Por favor, buscar información sobre recetas de cocina en la internet .
+LANG_ES Cambiar la velocidad del ventilador a alta .
+LANG_ES ¿Podrías recordar a papá que recoger a mamá en el aeropuerto mañana ?
+LANG_ES ¡Qué tarde tan tranquila! Encender la lámpara en la porche .
+LANG_ES Voy a enviar un mensaje a Pedro , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, programar una reunión para el próximo lunes a las 10 a . m . .
+LANG_ES Reproducir la canción Shape of You en la cocina .
+LANG_ES ¿Podrías abrir la puerta de la garaje ?
+LANG_ES ¡Qué frío hace! Subir la temperatura del calentador .
+LANG_ES Voy a enviar un correo electrónico a Laura , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, activar la cámara de seguridad en la entrada .
+LANG_ES Cambiar la configuración del termostato a modo noche .
+LANG_ES ¿Podrías buscar el número de teléfono de Carlos en la directorio telefónico ?
+LANG_ES ¡Qué bonito día! Ajustar la iluminación de la jardín .
+LANG_ES Voy a programar un recordatorio para el próximo martes a las 3 p . m . .
+LANG_ES Por favor, desactivar la alarma en la casa .
+LANG_ES Reproducir la lista de reproducción Éxitos de los 80 en la sala de estar .
+LANG_ES ¿Podrías traducir esta palabra al alemán ?
+LANG_ES ¡Qué día tan soleado! Ajustar la iluminación de la terraza .
+LANG_ES Voy a programar un evento para el próximo viernes a las 7 p . m . .
+LANG_ES Por favor, buscar información sobre recetas de cocina en la internet .
+LANG_ES Cambiar la velocidad del ventilador a alta .
+LANG_ES ¿Podrías recordar a papá que recoger a mamá en el aeropuerto mañana ?
+LANG_ES ¡Qué tarde tan tranquila! Encender la lámpara en la porche .
+LANG_ES Voy a enviar un mensaje a Pedro , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, programar una reunión para el próximo lunes a las 10 a . m . .
+LANG_ES Reproducir la canción Shape of You en la cocina .
+LANG_ES ¿Podrías abrir la puerta de la garaje ?
+LANG_ES ¡Qué frío hace! Subir la temperatura del calentador .
+LANG_ES Voy a enviar un correo electrónico a Laura , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, activar la cámara de seguridad en la entrada .
+LANG_ES Cambiar la configuración del termostato a modo noche .
+LANG_ES ¿Podrías buscar el número de teléfono de Carlos en la directorio telefónico ?
+LANG_ES ¡Qué bonito día! Ajustar la iluminación de la jardín .
+LANG_ES Voy a programar un recordatorio para el próximo martes a las 3 p . m . .
+LANG_ES Por favor, desactivar la alarma en la casa .
+LANG_ES Reproducir la lista de reproducción Éxitos de los 80 en la sala de estar .
+LANG_ES ¿Podrías traducir esta palabra al alemán ?
+LANG_ES ¡Qué día tan soleado! Ajustar la iluminación de la terraza .
+LANG_ES Voy a programar un evento para el próximo viernes a las 7 p . m . .
+LANG_ES Por favor, buscar información sobre recetas de cocina en la internet .
+LANG_ES Cambiar la velocidad del ventilador a alta .
+LANG_ES ¿Podrías recordar a papá que recoger a mamá en el aeropuerto mañana ?
+LANG_ES ¡Qué tarde tan tranquila! Encender la lámpara en la porche .
+LANG_ES Voy a enviar un mensaje a Pedro , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, programar una reunión para el próximo lunes a las 10 a . m . .
+LANG_ES Reproducir la canción Shape of You en la cocina .
+LANG_ES ¿Podrías abrir la puerta de la garaje ?
+LANG_ES ¡Qué frío hace! Subir la temperatura del calentador .
+LANG_ES Voy a enviar un correo electrónico a Laura , ¿me puedes ayudar a redactarlo ?
+LANG_ES Por favor, activar la cámara de seguridad en la entrada .
+LANG_ES Cambiar la configuración del termostato a modo noche .
+LANG_ES ¿Podrías buscar el número de teléfono de Carlos en la directorio telefónico ?
+LANG_ES ¡Qué bonito día! Ajustar la iluminación de la jardín .
+LANG_ES Voy a programar un recordatorio para el próximo martes a las 3 p . m . .
+LANG_ES Por favor, desactivar la alarma en la casa .
+LANG_ES Reproducir la lista de reproducción Éxitos de los 80 en la sala de estar .
+LANG_ES ¿Podrías traducir esta palabra al alemán ?
+LANG_ES ¡Qué día tan soleado! Ajustar la iluminación de la terraza .
+LANG_ES Voy a programar un evento para el próximo viernes a las 7 p . m . .
+LANG_ES Por favor, buscar información sobre recetas de cocina en la internet .
+LANG_ES Cambiar la velocidad del ventilador a alta .
+LANG_ES Reservar un vuelo a París para el 15 de mayo .
+LANG_ES Revisar el estado de mi vuelo a Madrid .
+LANG_ES Reservar una habitación de hotel en Barcelona para el próximo fin de semana .
+LANG_ES Establecer una alerta de viaje para Roma en el 20 de junio .
+LANG_ES Actualizar mi itinerario con una visita a la Sagrada Familia .
+LANG_ES Notificarme si hay restricciones de viaje para Japón .
+LANG_ES Recomendar destinos de playa para el próximo verano .
+LANG_ES Confirmar mi boleto de clase ejecutiva para un vuelo a Cancún .
+LANG_ES ¿Cuál es el estado del itinerario de mi vuelo a Miami ?
+LANG_ES Creo que necesito cancelar mi reserva de hotel en Tokio .
+LANG_ES ¿Cómo está el clima en Tenerife para la próxima semana ?
+LANG_ES Deberías recordarme renovar mi pasaporte .
+LANG_ES ¿Puedes sugerir algunos lugares turísticos para visitar en Madrid ?
+LANG_ES Vaya , el aeropuerto está tan lleno hoy .
+LANG_ES He reservado un tren a Sevilla para mañana .
+LANG_ES Revisar el saldo de mi cuenta de ahorros .
+LANG_ES Transferir $200 a cuenta corriente .
+LANG_ES Pagar la factura de $50 a la compañía de electricidad .
+LANG_ES Configurar alertas para mi cuenta de inversiones .
+LANG_ES Actualizar la información de mi cuenta de jubilación .
+LANG_ES Analizar mis gastos mensuales .
+LANG_ES Analizar las noticias financieras del día .
+LANG_ES Informes financieros muestran un aumento en el mercado de valores .
+LANG_ES Transferir €300 a mi cuenta de negocios .
+LANG_ES Establecer un aviso para recibir notificaciones sobre movimientos en mi cuenta de ahorros .
+LANG_ES Cancelar la suscripción a una plataforma de inversión .
+LANG_ES Generar un informe detallado de mis inversiones del último trimestre .
+LANG_ES Programar un pago automático para mis facturas mensuales .
+LANG_ES Depositar ¥10,000 en mi cuenta de inversión .
+LANG_ES Retirar £500 de mi cuenta de ahorros .
+LANG_ES Invertir en acciones de tecnología .
+LANG_ES Ahorrar un porcentaje de mis ingresos mensuales para un fondo de emergencia .
+LANG_ES Gastar $100 en compras esenciales esta semana .
+LANG_ES Monitorear las fluctuaciones en el mercado de divisas .
+LANG_ES Notificar sobre próximos pagos en mi cuenta corriente .
+LANG_ES Convertir €200 a dólares estadounidenses .
+LANG_ES Intercambiar ¥5,000 por euros en el mercado de divisas .
+LANG_ES Calcular el rendimiento de mis acciones en el último mes .
+LANG_ES Predecir la evolución de los índices bursátiles para el próximo trimestre .
+LANG_ES Asesorar sobre las mejores opciones de inversión para mi perfil financiero .
+LANG_ES Estimar el valor de mis propiedades actuales .
+LANG_ES Revisar los informes de mis activos financieros .
+LANG_ES Noticias económicas indican un aumento en el PIB del país .
+LANG_ES El informe del mercado de valores destaca un crecimiento en las acciones de TECH .
+LANG_ES Las últimas noticias económicas muestran un aumento en la demanda de oro .
+LANG_ES Transferir $300 a mi cuenta de ahorros .
+LANG_ES Establecer un aviso para cuando mi saldo de tarjeta de crédito supere los $100 .
+LANG_ES Actualizar mi información de contacto en la plataforma de banca en línea .
+LANG_ES Analizar mis gastos de entretenimiento del mes pasado .
+LANG_ES Analizar las últimas noticias financieras para identificar tendencias del mercado .
+LANG_ES Transferir €500 a mi cuenta corriente .
+LANG_ES Establecer un recordatorio para pagar la factura de $75 .
+LANG_ES Cancelar la suscripción a una plataforma de análisis financiero .
+LANG_ES Generar un informe detallado de mis gastos mensuales .
+LANG_ES Programar un pago automático para mis facturas de servicios públicos .
+LANG_ES Depositar ¥20,000 en mi cuenta de ahorros .
+LANG_ES Retirar £300 de mi cuenta corriente .
+LANG_ES Invertir en bonos del gobierno .
+LANG_ES Ahorrar un porcentaje de mis ingresos mensuales para un viaje de vacaciones .
+LANG_ES Gastar $150 en compras de supermercado esta semana .
+LANG_ES Monitorear las tendencias en el mercado de criptomonedas .
+LANG_ES Notificar sobre próximos pagos en mi tarjeta de crédito .
+LANG_ES Convertir €300 a libras esterlinas .
+LANG_ES Intercambiar ¥10,000 por dólares canadienses en el mercado de divisas .
+LANG_ES Calcular el rendimiento de mis fondos mutuos en el último año .
+LANG_ES Predecir la evolución de los precios del petróleo para el próximo trimestre .
+LANG_ES Asesorar sobre las estrategias de ahorro más efectivas para mi situación financiera .
+LANG_ES Estimar el valor de mis bienes raíces actuales .
+LANG_ES Revisar los informes de mis pasivos financieros .
+LANG_ES Los informes financieros revelan una caída en el valor del euro .
+LANG_ES ¿Qué tal si buscamos una receta de ensalada ?
+LANG_ES Vamos a configurar un temporizador de 30 minutos para la cena .
+LANG_ES ¿Podrías proporcionar la lista de ingredientes para la receta de pastel de zanahoria ?
+LANG_ES Oye, ¿puedes rastrear recetas bajas en carbohidratos para mí ?
+LANG_ES Creo que necesitamos agregar leche a la lista de compras .
+LANG_ES ¿Sabes cómo encontrar una receta de sopa de pollo ?
+LANG_ES Recuerda precalentar el horno a 180 grados .
+LANG_ES Batir los huevos hasta que los yemas y las claras estén combinadas .
+LANG_ES Pausar el temporizador de cocción .
+LANG_ES Reanudar la narración de la receta de cocina .
+LANG_ES Actualizar mis preferencias veganas .
+LANG_ES Quitar las cebollas de la lista de compras .
+LANG_ES ¿Puedes enumerar la información nutricional del aguacate ?
+LANG_ES Sugerir una receta italiana para el almuerzo .
+LANG_ES Rastrear el stock de la despensa de aceite de oliva .
