@@ -21460,3 +21460,1539 @@ LANG_DE Überwachen Sie die Aktienkurse für die letzten 6 Monate , um Trends zu
 LANG_DE Benachrichtigen Sie mich, wenn die Inflationsrate 3% erreicht .
 LANG_DE Die Handelskriege haben zu Unsicherheiten auf den Aktienmärkten geführt .
 LANG_DE Die Arbeitslosenzahlen sind aufgrund der Wirtschaftsreform gesunken .
+LANG_DE Kannst du nach einem vegetarischen Nudelrezept suchen ?
+LANG_DE Setze einen 30-Minuten Timer für Abendessen .
+LANG_DE Hey, könntest du meine vegetarischen Vorlieben aktualisieren ?
+LANG_DE Mische die Eier , bis die Eigelbe und Eiweiße kombiniert sind .
+LANG_DE Füge Tomaten der Einkaufsliste hinzu .
+LANG_DE Kannst du die Zutatenliste für Schokoladenkuchen bereitstellen ?
+LANG_DE Unterbreche den Kochtimer .
+LANG_DE Pausiere die Rezepterzählung .
+LANG_DE Rühre die Soße , bis sie dickflüssig wird .
+LANG_DE Informiere mich über den Kaloriengehalt von Avocado .
+LANG_DE Vorschlagen eines italienischen Rezepts für Mittagessen .
+LANG_DE Tracke den Vorrat im Vorratsschrank für Olivenöl .
+LANG_DE Starte das Backen des Apfelkuchens .
+LANG_DE Könntest du eine Einkaufsliste mit Mehl und Zucker erstellen ?
+LANG_DE Mische die Zutaten für Pfannkuchen , bis sie glatt sind .
+LANG_DE Wie finde ich ein gesundes Salat-Rezept ?
+LANG_DE Stelle den Herd auf mittlere Hitze ein .
+LANG_DE Wie messe ich Reis für das Abendessen ?
+LANG_DE Füge Knoblauch zu den Zutaten für Spaghetti hinzu .
+LANG_DE Welche Kochmethode ist am besten für gebratenes Hähnchen ?
+LANG_DE Stoppe die Küchentimer .
+LANG_DE Fortfahren mit der Rezeptnarration .
+LANG_DE Welche Küchenutensilien benötige ich für Lasagne ?
+LANG_DE Kannst du eine Einkaufsliste mit Milch und Brot erstellen ?
+LANG_DE Rühre die Suppe , bis sie heiß ist .
+LANG_DE Könntest du die Zutatenliste für Bananenbrot bereitstellen ?
+LANG_DE Mixe die Zutaten für Smoothie , bis sie cremig sind .
+LANG_DE Wie bereite ich gebratenen Reis zu ?
+LANG_DE Stelle den Grill auf hohe Hitze ein .
+LANG_DE Wie schneide ich Gemüse für Nudelsalat ?
+LANG_DE Füge Schokoladenstückchen zu den Teig für Brownies hinzu .
+LANG_DE Welche Kochmethode eignet sich am besten für gebackenen Lachs ?
+LANG_DE Pause den Kochtimer .
+LANG_DE Weitermachen mit der Rezepterzählung .
+LANG_DE Welche Küchenwerkzeuge benötige ich für Tiramisu ?
+LANG_DE Kannst du eine Einkaufsliste mit Eiern und Käse erstellen ?
+LANG_DE Rühre die Soße , bis sie eingedickt ist .
+LANG_DE Könntest du die Zutatenliste für Gemüseauflauf bereitstellen ?
+LANG_DE Mixe die Zutaten für Smoothie , bis sie gut gemischt sind .
+LANG_DE Wie koche ich cremige Kartoffelsuppe ?
+LANG_DE Stelle den Ofen auf 180 Grad ein .
+LANG_DE Wie schneide ich Zwiebeln für Bolognese ?
+LANG_DE Füge Schinken zu den Zutaten für Omelett hinzu .
+LANG_DE Welche Kochmethode ist am besten für gebratenen Tofu ?
+LANG_DE Stoppe den Küchentimer .
+LANG_DE Fortfahren mit der Rezeptnarration .
+LANG_DE Welche Küchenutensilien benötige ich für Lasagne ?
+LANG_DE Kannst du eine Einkaufsliste mit Mehl und Zucker erstellen ?
+LANG_DE Rühre die Suppe , bis sie heiß ist .
+LANG_DE Könntest du die Zutatenliste für Bananenbrot bereitstellen ?
+LANG_DE Mixe die Zutaten für Smoothie , bis sie cremig sind .
+LANG_DE Wie bereite ich gebratenen Reis zu ?
+LANG_DE Stelle den Grill auf hohe Hitze ein .
+LANG_DE Wie schneide ich Gemüse für Nudelsalat ?
+LANG_DE Füge Schokoladenstückchen zu den Teig für Brownies hinzu .
+LANG_DE Welche Kochmethode eignet sich am besten für gebackenen Lachs ?
+LANG_DE Pause den Kochtimer .
+LANG_DE Weitermachen mit der Rezepterzählung .
+LANG_DE Welche Küchenwerkzeuge benötige ich für Tiramisu ?
+LANG_DE Kannst du eine Einkaufsliste mit Eiern und Käse erstellen ?
+LANG_DE Rühre die Soße , bis sie eingedickt ist .
+LANG_DE Könntest du die Zutatenliste für Gemüseauflauf bereitstellen ?
+LANG_DE Mixe die Zutaten für Smoothie , bis sie gut gemischt sind .
+LANG_DE Wie koche ich cremige Kartoffelsuppe ?
+LANG_DE Stelle den Ofen auf 180 Grad ein .
+LANG_DE Wie schneide ich Zwiebeln für Bolognese ?
+LANG_DE Füge Schinken zu den Zutaten für Omelett hinzu .
+LANG_DE Welche Kochmethode ist am besten für gebratenen Tofu ?
+LANG_DE Stoppe den Küchentimer .
+LANG_DE Fortfahren mit der Rezeptnarration .
+LANG_DE Welche Küchenutensilien benötige ich für Lasagne ?
+LANG_DE Kannst du eine Einkaufsliste mit Mehl und Zucker erstellen ?
+LANG_DE Rühre die Suppe , bis sie heiß ist .
+LANG_DE Könntest du die Zutatenliste für Bananenbrot bereitstellen ?
+LANG_DE Mixe die Zutaten für Smoothie , bis sie cremig sind .
+LANG_DE Wie bereite ich gebratenen Reis zu ?
+LANG_DE Stelle den Grill auf hohe Hitze ein .
+LANG_DE Wie schneide ich Gemüse für Nudelsalat ?
+LANG_DE Füge Schokoladenstückchen zu den Teig für Brownies hinzu .
+LANG_DE Welche Kochmethode eignet sich am besten für gebackenen Lachs ?
+LANG_DE Pause den Kochtimer .
+LANG_DE Weitermachen mit der Rezepterzählung .
+LANG_DE Welche Küchenwerkzeuge benötige ich für Tiramisu ?
+LANG_DE Kannst du eine Einkaufsliste mit Eiern und Käse erstellen ?
+LANG_DE Rühre die Soße , bis sie eingedickt ist .
+LANG_DE Könntest du die Zutatenliste für Gemüseauflauf bereitstellen ?
+LANG_DE Mixe die Zutaten für Smoothie , bis sie gut gemischt sind .
+LANG_DE Wie koche ich cremige Kartoffelsuppe ?
+LANG_DE Stelle den Ofen auf 180 Grad ein .
+LANG_DE Wie schneide ich Zwiebeln für Bolognese ?
+LANG_DE Füge Schinken zu den Zutaten für Omelett hinzu .
+LANG_DE Welche Kochmethode ist am besten für gebratenen Tofu ?
+LANG_DE Stoppe den Küchentimer .
+LANG_DE Fortfahren mit der Rezeptnarration .
+LANG_DE Welche Küchenutensilien benötige ich für Lasagne ?
+LANG_DE Kannst du eine Einkaufsliste mit Mehl und Zucker erstellen ?
+LANG_DE Rühre die Suppe , bis sie heiß ist .
+LANG_DE Könntest du die Zutatenliste für Bananenbrot bereitstellen ?
+LANG_DE Mixe die Zutaten für Smoothie , bis sie cremig sind .
+LANG_DE Wie bereite ich gebratenen Reis zu ?
+LANG_DE Stelle den Grill auf hohe Hitze ein .
+LANG_DE Wie schneide ich Gemüse für Nudelsalat ?
+LANG_DE Füge Schokoladenstückchen zu den Teig für Brownies hinzu .
+LANG_DE Welche Kochmethode eignet sich am besten für gebackenen Lachs ?
+LANG_DE Pause den Kochtimer .
+LANG_DE Weitermachen mit der Rezepterzählung .
+LANG_DE Welche Küchenwerkzeuge benötige ich für Tiramisu ?
+LANG_DE Kannst du eine Einkaufsliste mit Eiern und Käse erstellen ?
+LANG_DE Rühre die Soße , bis sie eingedickt ist .
+LANG_DE Könntest du die Zutatenliste für Gemüseauflauf bereitstellen ?
+LANG_DE Mixe die Zutaten für Smoothie , bis sie gut gemischt sind .
+LANG_DE Wie koche ich cremige Kartoffelsuppe ?
+LANG_DE Stelle den Ofen auf 180 Grad ein .
+LANG_DE Wie schneide ich Zwiebeln für Bolognese ?
+LANG_DE Füge Schinken zu den Zutaten für Omelett hinzu .
+LANG_DE Welche Kochmethode ist am besten für gebratenen Tofu ?
+LANG_DE Stoppe den Küchentimer .
+LANG_DE Fortfahren mit der Rezeptnarration .
+LANG_DE Welche Küchenutensilien benötige ich für Lasagne ?
+LANG_DE Füge zwei Äpfel zu meiner Einkaufsliste
+LANG_DE Überprüfe den Preis von Bio-Joghurt
+LANG_DE Finde heraus, wo sich Aldi in meiner Nähe befindet
+LANG_DE Setze eine Erinnerung für den nächsten Samstag , um einkaufen zu gehen
+LANG_DE Verwalte meine Einkaufsliste und suche nach Sonnenblumenkernen
+LANG_DE Vergleiche die Avocados von BioBio und Gut&Günstig hinsichtlich des Preises
+LANG_DE Gib mir die Nährwertangaben für Vollkornbrot
+LANG_DE Gib mir Empfehlungen für gesunde Snacks
+LANG_DE Finde heraus, ob Edeka Rabatte auf frisches Gemüse hat
+LANG_DE Suche nach glutenfreier Pasta in der Trockenwarenabteilung
+LANG_DE Aktualisiere die Einkaufsliste und entferne drei Orangen
+LANG_DE Kaufe ein Kilo Kartoffeln von Rewe
+LANG_DE Verfolge die Preise von Erdnussbutter in verschiedenen Geschäften
+LANG_DE Notiere dir den aktuellen Preis von Hähnchenbrustfilet
+LANG_DE Suche nach Hafermilch und finde heraus, welcher am beliebtesten ist
+LANG_DE Lokalisiere die Tiefkühlkost und schau nach vegane Burger
+LANG_DE Plane meinen Einkauf für morgen Nachmittag und erinnere mich daran
+LANG_DE Erinnere mich daran, Bananen auf meiner Einkaufsliste zu notieren
+LANG_DE Rufe Penny an und frage nach Sonderangeboten für Käse
+LANG_DE Sprich mit Mitarbeiter bei Lidl und bitte um Rückmeldung zu frischem Fisch
+LANG_DE Besuche Aldi und wende Gutscheine auf Haushaltswaren an
+LANG_DE Wende digitale Coupons auf Müsli bei dm an
+LANG_DE Empfehle mir eine gute Käsesorte für Lasagne
+LANG_DE Schlage vor, Bio-Produkte für eine gesunde Ernährung zu bevorzugen
+LANG_DE Suche nach glutenfreien Keksen und vergleiche die Nährwertangaben
+LANG_DE Rate mir, frisches Obst für Smoothies zu verwenden
+LANG_DE Schau nach Bio-Gemüse und vergleiche die Preise bei verschiedenen Geschäften
+LANG_DE Scanne Barcodes von Markenprodukten , um Sonderangebote zu finden
+LANG_DE Löse Rabattcoupons für Kaffee bei Rossmann ein
+LANG_DE Koche ein gesundes Gericht mit Quinoa und Gemüse
+LANG_DE Bereite Hähnchensalat mit gebratenem Hähnchen und Gemüse zu
+LANG_DE Wähle die frische Fleischsorte für Grillabend aus
+LANG_DE Bevorzuge Vollkornprodukte für eine ausgewogene Ernährung
+LANG_DE Bewerte den Geschmack von BioBio Joghurt
+LANG_DE Überprüfe die Nährwerte von Tiefkühlpizza für eine kalorienarme Ernährung
+LANG_DE Bewerte die Qualität von frischen Erdbeeren bei Edeka
+LANG_DE Suche nach veganen Backwaren und finde heraus, welche am besten schmeckt
+LANG_DE Finde heraus, ob Kaufland Sonderangebote für Bio-Produkte hat
+LANG_DE Suche nach laktosefreier Milch und vergleiche die Preise bei verschiedenen Geschäften
+LANG_DE Scanne Barcodes von Markenprodukten , um Rabatte zu finden
+LANG_DE Löse digitale Coupons für Müsli bei dm ein
+LANG_DE Koche ein schnelles Gericht mit Nudeln und Tomatensauce
+LANG_DE Bereite Hähnchencurry mit gebratenem Hähnchen und Gemüse zu
+LANG_DE Wähle die frische Fischsorte für Fischgericht aus
+LANG_DE Bevorzuge Vollkornbrot für eine ballaststoffreiche Ernährung
+LANG_DE Bewerte den Geschmack von Gut&Günstig Joghurt
+LANG_DE Überprüfe die Nährwertangaben von Tiefkühlgemüse für eine vitaminreiche Ernährung
+LANG_DE Bewerte die Qualität von frischem Obst bei Aldi
+LANG_DE Suche nach vegane Süßigkeiten und finde heraus, welche am besten schmeckt
+LANG_DE Finde heraus, ob Rewe Rabatte für Bio-Produkte hat
+LANG_DE Suche nach glutenfreiem Brot und vergleiche die Preise bei verschiedenen Geschäften
+LANG_DE Scanne Barcodes von Markenprodukten , um Sonderangebote zu finden
+LANG_DE Löse digitale Coupons für Kaffee bei Rossmann ein
+LANG_DE Koche ein einfaches Gericht mit Reis und Gemüse
+LANG_DE Bereite Hähnchensalat mit gegrilltem Hähnchen und Gemüse zu
+LANG_DE Wähle die frische Gemüsesorte für Salat aus
+LANG_DE Bevorzuge Vollkornnudeln für eine ausgewogene Ernährung
+LANG_DE Bewerte den Geschmack von BioBio Joghurt
+LANG_DE Überprüfe die Nährwerte von Tiefkühlpizza für eine kalorienarme Ernährung
+LANG_DE Bewerte die Qualität von frischem Obst bei Edeka
+LANG_DE Suche nach vegane Backwaren und finde heraus, welche am besten schmeckt
+LANG_DE Finde heraus, ob Kaufland Sonderangebote für Bio-Produkte hat
+LANG_DE Suche nach laktosefreier Milch und vergleiche die Preise bei verschiedenen Geschäften
+LANG_DE Scanne Barcodes von Markenprodukten , um Rabatte zu finden
+LANG_DE Löse digitale Coupons für Müsli bei dm ein
+LANG_DE Koche ein schnelles Gericht mit Nudeln und Tomatensauce
+LANG_DE Bereite Hähnchencurry mit gebratenem Hähnchen und Gemüse zu
+LANG_DE Wähle die frische Fischsorte für Fischgericht aus
+LANG_DE Bevorzuge Vollkornbrot für eine ballaststoffreiche Ernährung
+LANG_DE Bewerte den Geschmack von Gut&Günstig Joghurt
+LANG_DE Überprüfe die Nährwertangaben von Tiefkühlgemüse für eine vitaminreiche Ernährung
+LANG_DE Bewerte die Qualität von frischem Obst bei Aldi
+LANG_DE Suche nach vegane Süßigkeiten und finde heraus, welche am besten schmeckt
+LANG_DE Meine Tochter klagt über Kopfschmerzen täglich für zwei Wochen
+LANG_DE Mein Vater hat Diabetes seit fünf Jahren
+LANG_DE Ich nehme Ibuprofen gegen meine Rückenschmerzen jeden Morgen
+LANG_DE Mein Bruder hat eine Appendektomie vor einem Monat
+LANG_DE Meine Mutter berichtete von Übelkeit gestern Abend
+LANG_DE Ich wurde mit einer Sinusinfektion vor zwei Tagen diagnostiziert
+LANG_DE Mein Sohn hat Halsschmerzen regelmäßig seit einer Woche
+LANG_DE Meine Schwester nimmt Antihistaminika für ihre Allergien jeden Abend
+LANG_DE Mein Großvater hatte eine Herzoperation vor sechs Monaten
+LANG_DE Ich beklage mich über Bauchschmerzen gelegentlich seit einigen Tagen
+LANG_DE Meine Tante erhielt die Diagnose Arthritis vor einem Jahr
+LANG_DE Ich verwende Salbe für meinen Hautausschlag zweimal täglich
+LANG_DE Meine Nichte erwähnte Schwindelgefühl heute Morgen
+LANG_DE Ich wurde mit einer Lungenentzündung vor einer Woche diagnostiziert
+LANG_DE Mein Neffe leidet unter Husten ständig seit mehreren Wochen
+LANG_DE Meine Cousine nimmt Antibiotika gegen ihre Infektion dreimal täglich
+LANG_DE Mein Opa hatte eine Hüftoperation vor einem Jahr
+LANG_DE Ich beobachte Schwellung manchmal seit einigen Tagen
+LANG_DE Meine Oma erinnert sich an Bluthochdruck seit zwei Jahren
+LANG_DE Ich benutze Augentropfen für meine Bindehautentzündung mehrmals täglich
+LANG_DE Mein Hund erhielt eine Kastration vor zwei Wochen
+LANG_DE Mein Hamster zeigt Appetitlosigkeit seit gestern
+LANG_DE Mein Wellensittich wurde mit Federling vor drei Tagen diagnostiziert
+LANG_DE Mein Kaninchen leidet unter Durchfall oft seit einer Woche
+LANG_DE Mein Fisch schwimmt abnorm seit gestern
+LANG_DE Mein Papagei spricht ungewöhnlich leise seit einigen Tagen
+LANG_DE Mein Meerschweinchen hat Haarausfall gelegentlich seit zwei Wochen
+LANG_DE Mein Pferd zeigt Lahmheit seit gestern
+LANG_DE Mein Huhn legt weniger Eier seit letzter Woche
+LANG_DE Mein Schaf hat Husten regelmäßig seit einigen Tagen
+LANG_DE Mein Schwein frisst weniger seit gestern
+LANG_DE Mein Esel zeigt Müdigkeit seit einigen Tagen
+LANG_DE Mein Ziegenbock hat Schuppung manchmal seit zwei Wochen
+LANG_DE Mein Truthahn gackert ungewöhnlich seit gestern
+LANG_DE Mein Hase hoppelt weniger seit letzter Woche
+LANG_DE Mein Frettchen zeigt Zittern seit einigen Tagen
+LANG_DE Mein Storch fliegt langsamer seit einigen Tagen
+LANG_DE Mein Adler hat Trägheit oft seit zwei Wochen
+LANG_DE Mein Otter schwimmt weniger seit gestern
+LANG_DE Mein Dachs buddelt weniger seit letzter Woche
+LANG_DE Mein Fuchs zeigt Unruhe seit einigen Tagen
+LANG_DE Mein Luchs hat Appetitlosigkeit gelegentlich seit zwei Wochen
+LANG_DE Mein Wolf heult lauter seit gestern
+LANG_DE Mein Bär zeigt Aggressivität seit einigen Tagen
+LANG_DE Mein Tiger hat Fellverlust oft seit zwei Wochen
+LANG_DE Mein Elefant trompetet seltener seit gestern
+LANG_DE Mein Nashorn zeigt Steifheit seit letzter Woche
+LANG_DE Mein Krokodil schwimmt weniger seit einigen Tagen
+LANG_DE Mein Hai hat Blässe manchmal seit zwei Wochen
+LANG_DE Mein Delphin springt weniger seit gestern
+LANG_DE Mein Oktopus zeigt Verwirrung seit einigen Tagen
+LANG_DE Mein Seestern bewegt sich langsamer seit letzter Woche
+LANG_DE Mein Wal hat Gewichtsverlust oft seit zwei Wochen
+LANG_DE Mein Seelöwe bellt lauter seit gestern
+LANG_DE Mein Pinguin zeigt Schüchternheit seit einigen Tagen
+LANG_DE Mein Eisbär hat Appetitlosigkeit gelegentlich seit zwei Wochen
+LANG_DE Mein Gorilla trommelt leiser seit gestern
+LANG_DE Mein Schimpanse zeigt Aggressivität seit einigen Tagen
+LANG_DE Mein Orang-Utan hat Fellverlust oft seit zwei Wochen
+LANG_DE Mein Leopard schnurrt seltener seit gestern
+LANG_DE Mein Panther zeigt Steifheit seit letzter Woche
+LANG_DE Mein Jaguar schwimmt weniger seit einigen Tagen
+LANG_DE Mein Tigerhai hat Blässe manchmal seit zwei Wochen
+LANG_DE Mein Weißer Hai springt weniger seit gestern
+LANG_DE Mein Hammerhai zeigt Verwirrung seit einigen Tagen
+LANG_DE Mein Thunfisch bewegt sich langsamer seit letzter Woche
+LANG_DE Mein Schwertfisch hat Gewichtsverlust oft seit zwei Wochen
+LANG_DE Mein Rochen bellt lauter seit gestern
+LANG_DE Mein Kugelfisch zeigt Schüchternheit seit einigen Tagen
+LANG_DE Mein Seepferdchen hat Appetitlosigkeit gelegentlich seit zwei Wochen
+LANG_DE Mein Walross trommelt leiser seit gestern
+LANG_DE Mein Seestern zeigt Aggressivität seit einigen Tagen
+LANG_DE Mein Seelöwe hat Fellverlust oft seit zwei Wochen
+LANG_DE Mein Pinguin schnurrt seltener seit gestern
+LANG_DE Mein Eisbär zeigt Steifheit seit letzter Woche
+LANG_DE Mein Gorilla schwimmt weniger seit einigen Tagen
+LANG_DE Mein Schimpanse hat Blässe manchmal seit zwei Wochen
+LANG_DE Mein Orang-Utan springt weniger seit gestern
+LANG_DE Mein Leopard zeigt Verwirrung seit einigen Tagen
+LANG_DE Mein Panther bewegt sich langsamer seit letzter Woche
+LANG_DE Mein Jaguar hat Gewichtsverlust oft seit zwei Wochen
+LANG_DE Mein Tigerhai bellt lauter seit gestern
+LANG_DE Mein Weißer Hai zeigt Schüchternheit seit einigen Tagen
+LANG_DE Mein Hammerhai hat Appetitlosigkeit gelegentlich seit zwei Wochen
+LANG_DE Mein Thunfisch trommelt leiser seit gestern
+LANG_DE Mein Schwertfisch zeigt Aggressivität seit einigen Tagen
+LANG_DE Mein Rochen hat Fellverlust oft seit zwei Wochen
+LANG_DE Mein Kugelfisch schnurrt seltener seit gestern
+LANG_DE Mein Seepferdchen zeigt Steifheit seit letzter Woche
+LANG_DE Mein Walross schwimmt weniger seit einigen Tagen
+LANG_DE Mein Storch bellt lauter seit gestern
+LANG_DE Mein Adler zeigt Schüchternheit seit einigen Tagen
+LANG_DE Mein Otter hat Appetitlosigkeit gelegentlich seit zwei Wochen
+LANG_DE Mein Dachs trommelt leiser seit gestern
+LANG_DE Mein Fuchs zeigt Aggressivität seit einigen Tagen
+LANG_DE Mein Luchs hat Fellverlust oft seit zwei Wochen
+LANG_DE Mein Wolf schnurrt seltener seit gestern
+LANG_DE Mein Bär zeigt Steifheit seit letzter Woche
+LANG_DE Mein Tiger schwimmt weniger seit einigen Tagen
+LANG_DE Mein Elefant hat Blässe manchmal seit zwei Wochen
+LANG_DE Mein Nashorn springt weniger seit gestern
+LANG_DE Mein Krokodil zeigt Verwirrung seit einigen Tagen
+LANG_DE Mein Hai bewegt sich langsamer seit letzter Woche
+LANG_DE Mein Delphin hat Gewichtsverlust oft seit zwei Wochen
+LANG_DE Mein Oktopus bellt lauter seit gestern
+LANG_DE Mein Seestern zeigt Schüchternheit seit einigen Tagen
+LANG_DE Bayern München und Borussia Dortmund stehen sich heute in der Bundesliga gegenüber .
+LANG_DE Was für eine Parade von Neuer ! Der hält sein Team im Spiel .
+LANG_DE Lewandowski schießt knapp am Tor vorbei . Das war eine gute Chance .
+LANG_DE Felix Brych zeigt 5 Minuten Nachspielzeit an .
+LANG_DE Haaland dribbelt sich durch die gegnerische Abwehr . Er ist einfach nicht zu stoppen .
+LANG_DE Die Fans feuern ihre Mannschaft lautstark an . Die Stimmung im Allianz Arena ist elektrisierend .
+LANG_DE Müller flankt den Ball in den Strafraum, aber die Abwehr ist aufmerksam .
+LANG_DE Flick wechselt Coman für Gnabry ein . Eine frische Kraft für die Schlussphase .
+LANG_DE Der Regen beeinflusst das Spielgeschehen . Die Spieler haben Schwierigkeiten, den Ball zu kontrollieren .
+LANG_DE Deniz Aytekin pfeift ab . Bayern München gewinnt mit 3-1 gegen Borussia Dortmund .
+LANG_DE Sancho liegt verletzt am Boden . Hoffentlich ist es nichts Ernstes .
+LANG_DE Was für ein Tor ! Kimmich trifft mit einem wunderschönen Schuss ins obere Eck .
+LANG_DE RB Leipzig dominiert das Spiel mit schnellem Passspiel . FC Bayern München hat Probleme, dagegenzuhalten .
+LANG_DE Reus foult Goretzka und sieht dafür die gelbe Karte .
+LANG_DE Alaba klärt in letzter Sekunde vor dem einschussbereiten Haaland . Das war knapp!
+LANG_DE Neuer spielt einen langen Ball auf Lewandowski . Der Stürmer ist alleine auf das Tor zulaufend .
+LANG_DE Borussia Mönchengladbach gleicht in der Minute aus . Das ist bitter für Eintracht Frankfurt .
+LANG_DE Havertz schießt den Elfmeter souverän ins Netz . Chelsea geht in Führung .
+LANG_DE Hummels köpft den Ball nach einer Ecke knapp über das Tor . Das war eine gute Gelegenheit .
+LANG_DE Daniel Siebert zeigt 2 Minuten Nachspielzeit an . Das Spiel neigt sich dem Ende zu .
+LANG_DE Sane sprintet die linke Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Müller feiert seinen Neuer nach einer herausragenden Parade . Teamgeist pur!
+LANG_DE FC Barcelona gewinnt die La Liga mit einem 2-0 Sieg über Real Madrid .
+LANG_DE Modric passt den Ball perfekt in den Lauf von Benzema . Das war eine Weltklasse-Vorlage .
+LANG_DE Kimmich grätscht in einen Zweikampf und erobert den Ball zurück . Ein wichtiger Einsatz in der Defensive .
+LANG_DE Sancho wird verwarnt für ein Foul an Kimmich . Die Spannung steigt .
+LANG_DE Manchester City führt die Premier League mit 10 Punkten Vorsprung an .
+LANG_DE Rashford dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Bibiana Steinhaus pfeift an . Das Spiel zwischen Hertha BSC und Schalke 04 beginnt .
+LANG_DE Werner sprintet die rechte Seite entlang und flankt den Ball in den Strafraum . Havertz köpft knapp am Tor vorbei .
+LANG_DE Goretzka setzt zu einem Distanzschuss an, aber der Ball geht weit über das Tor .
+LANG_DE Paris Saint-Germain gewinnt die Ligue 1 nach einem 3-1 Sieg über Olympique Marseille .
+LANG_DE Mbappé sprintet alleine auf das Tor zu, aber der hält den Schuss .
+LANG_DE Coman dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Atletico Madrid verteidigt mit Leidenschaft und lässt kaum Chancen zu . Real Madrid hat Schwierigkeiten, sich durchzusetzen .
+LANG_DE Suarez fällt im Strafraum, aber der entscheidet auf Weiterspielen . Kein Elfmeter!
+LANG_DE Ramos köpft den Ball nach einer Ecke knapp über das Tor . Das war eine gute Gelegenheit .
+LANG_DE Kroos passt den Ball perfekt in den Lauf von Benzema . Das war eine Weltklasse-Vorlage .
+LANG_DE Modric grätscht in einen Zweikampf und erobert den Ball zurück . Ein wichtiger Einsatz in der Defensive .
+LANG_DE Benzema wird verwarnt für ein Foul an Kroos . Die Spannung steigt .
+LANG_DE Real Madrid führt die La Liga mit 10 Punkten Vorsprung an .
+LANG_DE Hazard dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Felix Zwayer pfeift an . Das Spiel zwischen Union Berlin und VfL Wolfsburg beginnt .
+LANG_DE Weghorst sprintet die rechte Seite entlang und flankt den Ball in den Strafraum . Baku köpft knapp am Tor vorbei .
+LANG_DE Arnold setzt zu einem Distanzschuss an, aber der Ball geht weit über das Tor .
+LANG_DE Borussia Dortmund gewinnt die DFB-Pokal nach einem 2-1 Sieg über RB Leipzig .
+LANG_DE Haaland sprintet alleine auf das Tor zu, aber der hält den Schuss .
+LANG_DE Reyna dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Eintracht Frankfurt verteidigt mit Leidenschaft und lässt kaum Chancen zu . FC Bayern München hat Schwierigkeiten, sich durchzusetzen .
+LANG_DE Goretzka fällt im Strafraum, aber der entscheidet auf Weiterspielen . Kein Elfmeter!
+LANG_DE Müller köpft den Ball nach einer Ecke knapp über das Tor . Das war eine gute Gelegenheit .
+LANG_DE Lewandowski passt den Ball perfekt in den Lauf von Coman . Das war eine Weltklasse-Vorlage .
+LANG_DE Kimmich grätscht in einen Zweikampf und erobert den Ball zurück . Ein wichtiger Einsatz in der Defensive .
+LANG_DE Sancho wird verwarnt für ein Foul an Goretzka . Die Spannung steigt .
+LANG_DE RB Leipzig führt die Bundesliga mit 10 Punkten Vorsprung an .
+LANG_DE Werner dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Bibiana Steinhaus pfeift an . Das Spiel zwischen Borussia Mönchengladbach und Bayer Leverkusen beginnt .
+LANG_DE Havertz sprintet die rechte Seite entlang und flankt den Ball in den Strafraum . Volland köpft knapp am Tor vorbei .
+LANG_DE Amiri setzt zu einem Distanzschuss an, aber der Ball geht weit über das Tor .
+LANG_DE Borussia Dortmund gewinnt die Champions League nach einem 2-1 Sieg über Paris Saint-Germain .
+LANG_DE Mbappé sprintet alleine auf das Tor zu, aber der hält den Schuss .
+LANG_DE Coman dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Atletico Madrid verteidigt mit Leidenschaft und lässt kaum Chancen zu . FC Barcelona hat Schwierigkeiten, sich durchzusetzen .
+LANG_DE Suarez fällt im Strafraum, aber der entscheidet auf Weiterspielen . Kein Elfmeter!
+LANG_DE Ramos köpft den Ball nach einer Ecke knapp über das Tor . Das war eine gute Gelegenheit .
+LANG_DE Kroos passt den Ball perfekt in den Lauf von Benzema . Das war eine Weltklasse-Vorlage .
+LANG_DE Modric grätscht in einen Zweikampf und erobert den Ball zurück . Ein wichtiger Einsatz in der Defensive .
+LANG_DE Benzema wird verwarnt für ein Foul an Kroos . Die Spannung steigt .
+LANG_DE Real Madrid führt die La Liga mit 10 Punkten Vorsprung an .
+LANG_DE Hazard dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Felix Zwayer pfeift an . Das Spiel zwischen FC Bayern München und Borussia Mönchengladbach beginnt .
+LANG_DE Weghorst sprintet die rechte Seite entlang und flankt den Ball in den Strafraum . Baku köpft knapp am Tor vorbei .
+LANG_DE Arnold setzt zu einem Distanzschuss an, aber der Ball geht weit über das Tor .
+LANG_DE Borussia Dortmund gewinnt die DFB-Pokal nach einem 2-1 Sieg über RB Leipzig .
+LANG_DE Haaland sprintet alleine auf das Tor zu, aber der hält den Schuss .
+LANG_DE Reyna dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Eintracht Frankfurt verteidigt mit Leidenschaft und lässt kaum Chancen zu . FC Bayern München hat Schwierigkeiten, sich durchzusetzen .
+LANG_DE Goretzka fällt im Strafraum, aber der entscheidet auf Weiterspielen . Kein Elfmeter!
+LANG_DE Müller köpft den Ball nach einer Ecke knapp über das Tor . Das war eine gute Gelegenheit .
+LANG_DE Lewandowski passt den Ball perfekt in den Lauf von Coman . Das war eine Weltklasse-Vorlage .
+LANG_DE Kimmich grätscht in einen Zweikampf und erobert den Ball zurück . Ein wichtiger Einsatz in der Defensive .
+LANG_DE Sancho wird verwarnt für ein Foul an Goretzka . Die Spannung steigt .
+LANG_DE RB Leipzig führt die Bundesliga mit 10 Punkten Vorsprung an .
+LANG_DE Werner dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Bibiana Steinhaus pfeift an . Das Spiel zwischen Borussia Mönchengladbach und Bayer Leverkusen beginnt .
+LANG_DE Havertz sprintet die rechte Seite entlang und flankt den Ball in den Strafraum . Volland köpft knapp am Tor vorbei .
+LANG_DE Amiri setzt zu einem Distanzschuss an, aber der Ball geht weit über das Tor .
+LANG_DE Borussia Dortmund gewinnt die Champions League nach einem 2-1 Sieg über Paris Saint-Germain .
+LANG_DE Mbappé sprintet alleine auf das Tor zu, aber der hält den Schuss .
+LANG_DE Coman dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Atletico Madrid verteidigt mit Leidenschaft und lässt kaum Chancen zu . FC Barcelona hat Schwierigkeiten, sich durchzusetzen .
+LANG_DE Suarez fällt im Strafraum, aber der entscheidet auf Weiterspielen . Kein Elfmeter!
+LANG_DE Ramos köpft den Ball nach einer Ecke knapp über das Tor . Das war eine gute Gelegenheit .
+LANG_DE Kroos passt den Ball perfekt in den Lauf von Benzema . Das war eine Weltklasse-Vorlage .
+LANG_DE Modric grätscht in einen Zweikampf und erobert den Ball zurück . Ein wichtiger Einsatz in der Defensive .
+LANG_DE Benzema wird verwarnt für ein Foul an Kroos . Die Spannung steigt .
+LANG_DE Real Madrid führt die La Liga mit 10 Punkten Vorsprung an .
+LANG_DE Hazard dribbelt sich durch die gegnerische Abwehr und schießt knapp am Tor vorbei . Das war knapp!
+LANG_DE Felix Zwayer pfeift an . Das Spiel zwischen FC Bayern München und Borussia Mönchengladbach beginnt .
+LANG_DE Weghorst sprintet die rechte Seite entlang und flankt den Ball in den Strafraum . Baku köpft knapp am Tor vorbei .
+LANG_DE Arnold setzt zu einem Distanzschuss an, aber der Ball geht weit über das Tor .
+LANG_DE Hey, könntest du bitte die Helligkeit der Wohnzimmerlampe auf 50 Prozent einstellen ?
+LANG_DE Ich möchte, dass du die Küchengeräte ausschaltest .
+LANG_DE Kannst du die Musik in der Küche pausieren ?
+LANG_DE Wie ist das Wetter in der Stadtmitte heute ?
+LANG_DE Schalte den Fernseher in der Wohnzimmer ein .
+LANG_DE Lass uns eine Geburtstagsfeier für nächsten Samstag planen .
+LANG_DE Könntest du bitte die Klimaanlage im Schlafzimmer auf 22 Grad einstellen ?
+LANG_DE Ich möchte eine Besprechung für morgen um 10 Uhr eintragen .
+LANG_DE Spiele die Playlist Entspannung in der Lounge ab .
+LANG_DE Kannst du die Jalousien im Wohnzimmer öffnen ?
+LANG_DE Wie kann ich eine Erinnerung für nächsten Montag um 9 Uhr setzen ?
+LANG_DE Ich denke, es wäre schön, wenn wir die Beleuchtung in der Esszimmer dimmen könnten .
+LANG_DE Lass uns eine Einkaufsliste für dieses Wochenende erstellen .
+LANG_DE Kannst du eine E-Mail an Max Mustermann mit dem Betreff Besprechung senden ?
+LANG_DE Ich würde gerne die Temperatur im Badezimmer erhöhen .
+LANG_DE Spiele das Lied Shape of You in der Küche .
+LANG_DE Könntest du die Alarmanlage im Haus aktivieren ?
+LANG_DE Wie kann ich eine Erinnerung für nächsten Dienstag um 15 Uhr einstellen ?
+LANG_DE Ich denke, die Helligkeit in der Arbeitszimmer sollte erhöht werden .
+LANG_DE Kannst du die Heizung im Wohnzimmer einschalten ?
+LANG_DE Lass uns eine Familienessen für nächsten Sonntag um 18 Uhr planen .
+LANG_DE Ich glaube, die Lautstärke in der Stereoanlage sollte verringert werden .
+LANG_DE Könntest du bitte eine SMS an Lisa mit dem Text Bin gleich da schicken ?
+LANG_DE Ich hätte gerne, dass die Klimaanlage im Wohnzimmer auf 20 Grad eingestellt wird .
+LANG_DE Spiele die Playlist Chillout in der Wohnzimmer ab .
+LANG_DE Kannst du die Garagentor im Haus öffnen ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 11 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Schlafzimmer sollte reduziert werden .
+LANG_DE Lass uns eine Filmnacht für diesen Freitag um 20 Uhr organisieren .
+LANG_DE Könntest du eine E-Mail an Peter Mustermann mit dem Betreff Projektupdate senden ?
+LANG_DE Ich würde gerne die Temperatur im Büro senken .
+LANG_DE Spiele das Album Thriller in der Wohnzimmer ab .
+LANG_DE Kannst du die Überwachungskamera im Garten aktivieren ?
+LANG_DE Wie kann ich eine Erinnerung für nächsten Mittwoch um 14 Uhr setzen ?
+LANG_DE Ich denke, die Lautstärke in der Soundbar sollte erhöht werden .
+LANG_DE Könntest du bitte eine SMS an Tom mit dem Text Bis später schicken ?
+LANG_DE Ich hätte gerne, dass die Heizung im Schlafzimmer auf 18 Grad eingestellt wird .
+LANG_DE Spiele die Playlist Gute Laune in der Küche ab .
+LANG_DE Kannst du die Rollläden im Wohnzimmer schließen ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 10 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Wohnzimmer sollte erhöht werden .
+LANG_DE Lass uns eine Grillparty für diesen Samstag um 17 Uhr planen .
+LANG_DE Könntest du eine E-Mail an Julia Mustermann mit dem Betreff Urlaubsplanung senden ?
+LANG_DE Ich würde gerne die Klimaanlage im Büro auf 24 Grad einstellen .
+LANG_DE Spiele das Lied Dance Monkey in der Wohnzimmer .
+LANG_DE Kannst du die Beleuchtung im Flur einschalten ?
+LANG_DE Wie kann ich eine Geburtstagsfeier für nächsten Sonntag um 16 Uhr organisieren ?
+LANG_DE Ich denke, die Lautstärke in der Bluetooth-Lautsprecher sollte verringert werden .
+LANG_DE Könntest du bitte eine SMS an Anna mit dem Text Bis gleich schicken ?
+LANG_DE Ich hätte gerne, dass die Heizung im Wohnzimmer auf 22 Grad eingestellt wird .
+LANG_DE Spiele die Playlist Romantik in der Schlafzimmer ab .
+LANG_DE Kannst du die Türklingel im Haus ausschalten ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 9 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Küche sollte reduziert werden .
+LANG_DE Lass uns eine Spieleabend für diesen Freitag um 19 Uhr organisieren .
+LANG_DE Könntest du eine E-Mail an Max Mustermann mit dem Betreff Projektabschluss senden ?
+LANG_DE Ich würde gerne die Temperatur im Schlafzimmer senken .
+LANG_DE Spiele das Album Abbey Road in der Wohnzimmer ab .
+LANG_DE Kannst du die Bewegungsmelder im Garten aktivieren ?
+LANG_DE Wie kann ich eine Erinnerung für nächsten Donnerstag um 13 Uhr setzen ?
+LANG_DE Ich denke, die Lautstärke in der Fernseher sollte erhöht werden .
+LANG_DE Könntest du bitte eine SMS an Lisa mit dem Text Bin unterwegs schicken ?
+LANG_DE Ich hätte gerne, dass die Klimaanlage im Wohnzimmer auf 21 Grad eingestellt wird .
+LANG_DE Spiele die Playlist Partyhits in der Wohnzimmer ab .
+LANG_DE Kannst du die Alarmanlage im Haus aktivieren ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 10 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Schlafzimmer sollte erhöht werden .
+LANG_DE Lass uns eine Filmnacht für diesen Freitag um 20 Uhr organisieren .
+LANG_DE Kannst du eine E-Mail an Peter Mustermann mit dem Betreff Projektupdate senden ?
+LANG_DE Ich würde gerne die Temperatur im Büro senken .
+LANG_DE Spiele das Album Thriller in der Wohnzimmer ab .
+LANG_DE Kannst du die Überwachungskamera im Garten aktivieren ?
+LANG_DE Wie kann ich eine Erinnerung für nächsten Mittwoch um 14 Uhr setzen ?
+LANG_DE Ich denke, die Lautstärke in der Soundbar sollte erhöht werden .
+LANG_DE Könntest du bitte eine SMS an Tom mit dem Text Bis später schicken ?
+LANG_DE Ich hätte gerne, dass die Heizung im Schlafzimmer auf 18 Grad eingestellt wird .
+LANG_DE Spiele die Playlist Gute Laune in der Küche ab .
+LANG_DE Kannst du die Rollläden im Wohnzimmer schließen ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 10 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Wohnzimmer sollte erhöht werden .
+LANG_DE Lass uns eine Grillparty für diesen Samstag um 17 Uhr planen .
+LANG_DE Könntest du eine E-Mail an Julia Mustermann mit dem Betreff Urlaubsplanung senden ?
+LANG_DE Ich würde gerne die Klimaanlage im Büro auf 24 Grad einstellen .
+LANG_DE Spiele das Lied Dance Monkey in der Wohnzimmer .
+LANG_DE Kannst du die Türklingel im Haus ausschalten ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 9 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Küche sollte reduziert werden .
+LANG_DE Lass uns eine Spieleabend für diesen Freitag um 19 Uhr organisieren .
+LANG_DE Könntest du eine E-Mail an Max Mustermann mit dem Betreff Projektabschluss senden ?
+LANG_DE Ich würde gerne die Temperatur im Schlafzimmer senken .
+LANG_DE Spiele das Album Abbey Road in der Wohnzimmer ab .
+LANG_DE Kannst du die Bewegungsmelder im Garten aktivieren ?
+LANG_DE Wie kann ich eine Erinnerung für nächsten Donnerstag um 13 Uhr setzen ?
+LANG_DE Ich denke, die Lautstärke in der Fernseher sollte erhöht werden .
+LANG_DE Könntest du bitte eine SMS an Lisa mit dem Text Bin unterwegs schicken ?
+LANG_DE Ich hätte gerne, dass die Klimaanlage im Wohnzimmer auf 21 Grad eingestellt wird .
+LANG_DE Spiele die Playlist Partyhits in der Wohnzimmer ab .
+LANG_DE Kannst du die Alarmanlage im Haus aktivieren ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 10 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Schlafzimmer sollte erhöht werden .
+LANG_DE Lass uns eine Filmnacht für diesen Freitag um 20 Uhr organisieren .
+LANG_DE Kannst du eine E-Mail an Peter Mustermann mit dem Betreff Projektupdate senden ?
+LANG_DE Ich würde gerne die Temperatur im Büro senken .
+LANG_DE Spiele das Album Thriller in der Wohnzimmer ab .
+LANG_DE Kannst du die Überwachungskamera im Garten aktivieren ?
+LANG_DE Wie kann ich eine Erinnerung für nächsten Mittwoch um 14 Uhr setzen ?
+LANG_DE Ich denke, die Lautstärke in der Soundbar sollte erhöht werden .
+LANG_DE Könntest du bitte eine SMS an Tom mit dem Text Bis später schicken ?
+LANG_DE Ich hätte gerne, dass die Heizung im Schlafzimmer auf 18 Grad eingestellt wird .
+LANG_DE Spiele die Playlist Gute Laune in der Küche ab .
+LANG_DE Kannst du die Rollläden im Wohnzimmer schließen ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 10 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Wohnzimmer sollte erhöht werden .
+LANG_DE Lass uns eine Grillparty für diesen Samstag um 17 Uhr planen .
+LANG_DE Könntest du eine E-Mail an Julia Mustermann mit dem Betreff Urlaubsplanung senden ?
+LANG_DE Ich würde gerne die Klimaanlage im Büro auf 24 Grad einstellen .
+LANG_DE Spiele das Lied Dance Monkey in der Wohnzimmer .
+LANG_DE Kannst du die Türklingel im Haus ausschalten ?
+LANG_DE Wie kann ich eine Besprechung für nächste Woche um 9 Uhr eintragen ?
+LANG_DE Ich denke, die Helligkeit in der Küche sollte reduziert werden .
+LANG_DE Lass uns eine Spieleabend für diesen Freitag um 19 Uhr organisieren .
+LANG_DE Könntest du eine E-Mail an Max Mustermann mit dem Betreff Projektabschluss senden ?
+LANG_DE Ich würde gerne die Temperatur im Schlafzimmer senken .
+LANG_DE Buch ein Flug nach Paris für den Juni .
+LANG_DE Überprüfen Sie den Status meines Fluges nach Madrid .
+LANG_DE Reservieren Sie ein Hotelzimmer in London für September .
+LANG_DE Stellen Sie eine Reisebenachrichtigung für Rom am August ein .
+LANG_DE Aktualisieren Sie mein Reiseplan mit einem Besuch des Kolosseums .
+LANG_DE Benachrichtigen Sie mich, wenn es Reisebeschränkungen für Deutschland gibt .
+LANG_DE Empfehlen Sie Bergziele für nächsten Winter .
+LANG_DE Bestätigen Sie mein Business-Class-Ticket für den Flug nach Barcelona .
+LANG_DE Wie ist der Status meines Fluges nach Berlin ?
+LANG_DE Ich denke, ich muss meine Hotelreservierung in München stornieren .
+LANG_DE Wie ist das Wetter in Sydney für nächste Woche ?
+LANG_DE Du solltest mich daran erinnern , meinen Reisepass zu erneuern .
+LANG_DE Können Sie einige Sehenswürdigkeiten in Wien vorschlagen ?
+LANG_DE Wow , der Flughafen ist heute so überfüllt .
+LANG_DE Ich habe einen Zug nach Zürich für übermorgen gebucht .
+LANG_DE Was ist der Glukosespiegel für Patient 567 ?
+LANG_DE Führen Sie den Bluttest für Patient 234 durch .
+LANG_DE Ändern Sie die Temperatur auf 25 Grad in Laborraum 2 .
+LANG_DE Senden Sie den Laborergebnisbericht an Arzt .
+LANG_DE Planen Sie einen Konsultationstermin für Patient 890 .
+LANG_DE Aktualisieren Sie die Patientenakte mit Grippe-Verdacht und Ruhe und Flüssigkeitszufuhr .
+LANG_DE Verwalten Sie den Medikamentenbestand und überprüfen Sie die Verfallsdaten .
+LANG_DE Geben Sie medizinischen Rat für Kopfschmerzen basierend auf den Patienteninformationen .
+LANG_DE Rufen Sie den Mikrobiologie-Labor ab, um Urinprobe für Patient 456 zu analysieren .
+LANG_DE Bereiten Sie das Pathologie-Labor für morgige Gewebeproben vor .
+LANG_DE Überprüfen Sie die Blutbild-Ergebnisse von Patient 678 und genehmigen .
+LANG_DE Ändern Sie die Beleuchtung auf 50% im Untersuchungsraum .
+LANG_DE Starten Sie die Operation um 14:00 Uhr im OP-Saal .
+LANG_DE Sammeln Sie DNA-Proben von Patient 123 für die Genetik-Analyse .
+LANG_DE Setzen Sie die Blutdruckmessgerät auf automatischer Modus .
+LANG_DE Speichern Sie die Gewebeprobe im Gefrierschrank bei -20 Grad .
+LANG_DE Abrufen Sie den Radiologiebericht von Patient 345 für die Arztbesprechung .
+LANG_DE Dokumentieren Sie die Impfung für Patient 789 in der Krankenakte .
+LANG_DE Beenden Sie die Physiotherapie für Patient 567 nach 30 Minuten .
+LANG_DE Pausieren Sie die Allergietest für Patient 890 und informieren den Arzt .
+LANG_DE Wiederaufnehmen Sie die Dialyse für Patient 234 nach 1 Stunde .
+LANG_DE Berichten Sie über den Drogenscreening an Arbeitgeber .
+LANG_DE Testen Sie die Wasserprobe auf Verunreinigungen im Umweltlabor .
+LANG_DE Analysieren Sie die Blutwerte von Patient 456 und bewerten die Ergebnisse .
+LANG_DE Sammeln Sie Stuhlprobe von Patient 678 für die Darmkrebsvorsorge .
+LANG_DE Lagern Sie die Impfstoffe im Kühlschrank bei 4 Grad .
+LANG_DE Abrufen Sie die Laborergebnisse von Patient 567 für die Arztbesprechung .
+LANG_DE Vorbereiten Sie das Virologie-Labor für kommende Virusproben .
+LANG_DE Überprüfen Sie die Röntgenbilder von Patient 123 und genehmigen die Freigabe .
+LANG_DE Ändern Sie die Druckeinstellungen auf Standardformat in Drucker .
+LANG_DE Starten Sie die MRT-Untersuchung um 10:30 Uhr im Radiologieabteilung .
+LANG_DE Sammeln Sie Speichelprobe von Patient 890 für die DNA-Analyse .
+LANG_DE Setzen Sie die Laborwaage auf Nullpunkt .
+LANG_DE Speichern Sie die Blutprobe im Tiefkühltruhe bei -80 Grad .
+LANG_DE Abrufen Sie den EKG-Bericht von Patient 234 für die Herzspezialist .
+LANG_DE Dokumentieren Sie die Operation für Patient 678 in der Krankenakte .
+LANG_DE Beenden Sie die Physiotherapie für Patient 456 nach 45 Minuten .
+LANG_DE Pausieren Sie die Lungenfunktionstest für Patient 789 und informieren den Lungenfacharzt .
+LANG_DE Wiederaufnehmen Sie die Chemotherapie für Patient 567 nach 2 Stunden .
+LANG_DE Berichten Sie über den Blutgruppenbestimmung an Krankenhaus .
+LANG_DE Testen Sie die Bodenprobe auf Nährstoffgehalt im Agrarwissenschaften .
+LANG_DE Analysieren Sie die Urinwerte von Patient 890 und bewerten die Ergebnisse .
+LANG_DE Sammeln Sie Hautbiopsie von Patient 234 für die Hautkrebsuntersuchung .
+LANG_DE Lagern Sie die Blutkonserven im Gefrierschrank bei -30 Grad .
+LANG_DE Abrufen Sie die MRT-Befund von Patient 678 für die Neurologe .
+LANG_DE Vorbereiten Sie das Toxikologie-Labor für anstehende Drogentests .
+LANG_DE Überprüfen Sie die Ultraschallbilder von Patient 345 und genehmigen die Freigabe .
+LANG_DE Ändern Sie die Bildschirmhelligkeit auf 80% im Büro .
+LANG_DE Starten Sie die Endoskopie um 09:00 Uhr im Endoskopieabteilung .
+LANG_DE Sammeln Sie Speichelprobe von Patient 123 für die Hormonanalyse .
+LANG_DE Setzen Sie die Mikroskop auf 400-fache Vergrößerung .
+LANG_DE Speichern Sie die Gewebeprobe im Kühlschrank bei 4 Grad .
+LANG_DE Abrufen Sie den CT-Bericht von Patient 456 für die Onkologe .
+LANG_DE Dokumentieren Sie die Impfung für Patient 789 in der Krankenakte .
+LANG_DE Beenden Sie die Dialyse für Patient 567 nach 2 Stunden .
+LANG_DE Pausieren Sie die Allergietest für Patient 890 und informieren den Allergologen .
+LANG_DE Wiederaufnehmen Sie die Physiotherapie für Patient 234 nach 1 Stunde .
+LANG_DE Berichten Sie über den HIV-Test an Gesundheitsamt .
+LANG_DE Testen Sie die Lebensmittelprobe auf Kontamination im Lebensmittellabor .
+LANG_DE Analysieren Sie die Blutwerte von Patient 678 und bewerten die Ergebnisse .
+LANG_DE Sammeln Sie Urinprobe von Patient 345 für die Nierenfunktionstest .
+LANG_DE Lagern Sie die Medikamente im Medikamentenschrank bei Raumtemperatur .
+LANG_DE Abrufen Sie die EEG-Befund von Patient 567 für die Neurologe .
+LANG_DE Vorbereiten Sie das Genetik-Labor für anstehende DNA-Analysen .
+LANG_DE Überprüfen Sie die Röntgenbilder von Patient 123 und genehmigen die Freigabe .
+LANG_DE Ändern Sie die Raumtemperatur auf 22 Grad im Empfangsbereich .
+LANG_DE Starten Sie die Knochenmarkspunktion um 11:30 Uhr im Behandlungszimmer .
+LANG_DE Sammeln Sie Blutprobe von Patient 890 für die Blutgruppenbestimmung .
+LANG_DE Setzen Sie die Mikroskop auf 1000-fache Vergrößerung .
+LANG_DE Speichern Sie die Gewebeprobe im Gefrierschrank bei -70 Grad .
+LANG_DE Abrufen Sie den Mammografie-Befund von Patient 234 für die Gynäkologe .
+LANG_DE Dokumentieren Sie die Operation für Patient 678 in der Krankenakte .
+LANG_DE Beenden Sie die Chemotherapie für Patient 456 nach 3 Stunden .
+LANG_DE Pausieren Sie die Lungenfunktionstest für Patient 789 und informieren den Lungenfacharzt .
+LANG_DE Wiederaufnehmen Sie die Dialyse für Patient 567 nach 2 Stunden .
+LANG_DE Berichten Sie über den Schilddrüsenuntersuchung an Endokrinologe .
+LANG_DE Testen Sie die Bodenprobe auf Schwermetalle im Umweltlabor .
+LANG_DE Analysieren Sie die Blutwerte von Patient 890 und bewerten die Ergebnisse .
+LANG_DE Sammeln Sie Speichelprobe von Patient 234 für die DNA-Analyse .
+LANG_DE Lagern Sie die Blutkonserven im Kühlschrank bei 4 Grad .
+LANG_DE Abrufen Sie die MRT-Befund von Patient 678 für die Neurologe .
+LANG_DE Vorbereiten Sie das Toxikologie-Labor für anstehende Drogentests .
+LANG_DE Überprüfen Sie die Ultraschallbilder von Patient 345 und genehmigen die Freigabe .
+LANG_DE Ändern Sie die Bildschirmhelligkeit auf 80% im Büro .
+LANG_DE Starten Sie die Endoskopie um 09:00 Uhr im Endoskopieabteilung .
+LANG_DE Sammeln Sie Speichelprobe von Patient 123 für die Hormonanalyse .
+LANG_DE Setzen Sie die Mikroskop auf 400-fache Vergrößerung .
+LANG_DE Speichern Sie die Gewebeprobe im Kühlschrank bei 4 Grad .
+LANG_DE Abrufen Sie den CT-Bericht von Patient 456 für die Onkologe .
+LANG_DE Dokumentieren Sie die Impfung für Patient 789 in der Krankenakte .
+LANG_DE Beenden Sie die Dialyse für Patient 567 nach 2 Stunden .
+LANG_DE Pausieren Sie die Allergietest für Patient 890 und informieren den Allergologen .
+LANG_DE Wiederaufnehmen Sie die Physiotherapie für Patient 234 nach 1 Stunde .
+LANG_DE Berichten Sie über den HIV-Test an Gesundheitsamt .
+LANG_DE Testen Sie die Lebensmittelprobe auf Kontamination im Lebensmittellabor .
+LANG_DE Analysieren Sie die Blutwerte von Patient 678 und bewerten die Ergebnisse .
+LANG_DE Sammeln Sie Urinprobe von Patient 345 für die Nierenfunktionstest .
+LANG_DE Lagern Sie die Medikamente im Medikamentenschrank bei Raumtemperatur .
+LANG_DE Abrufen Sie die EEG-Befund von Patient 567 für die Neurologe .
+LANG_DE Überprüfen Sie meinen Sparkonto auf verdächtige Aktivitäten .
+LANG_DE Überweisen Sie 1000€ von meinem Girokonto auf mein Sparkonto .
+LANG_DE Zahlen Sie die 200€ Rechnung an Stadtwerke .
+LANG_DE Richten Sie Benachrichtigungen ein, wenn mein Kreditkartensaldo 500€ übersteigt .
+LANG_DE Aktualisieren Sie meine Kontoinformationen mit meiner neuen Adresse .
+LANG_DE Analysieren Sie meine Ausgaben der letzten Woche .
+LANG_DE Überprüfen Sie die aktuellen Finanznachrichten .
+LANG_DE Generieren Sie einen Finanzbericht für das letzte Quartal .
+LANG_DE Planen Sie eine Überweisung von 300€ auf mein Sparkonto für nächsten Montag .
+LANG_DE Stornieren Sie die Überweisung an Amazon .
+LANG_DE Berichten Sie über die jüngsten Wirtschaftsnachrichten .
+LANG_DE Einrichten Sie Warnungen für Kursänderungen bei AAPL .
+LANG_DE Budgetieren Sie meine monatlichen Ausgaben .
+LANG_DE Einzahlen Sie 1000€ auf mein Sparkonto .
+LANG_DE Abheben Sie 200€ von meinem Girokonto .
+LANG_DE Investieren Sie 5000€ in Aktienfonds .
+LANG_DE Sparen Sie 300€ pro Monat in meinem Altersvorsorgekonto .
+LANG_DE Ausgeben Sie 50€ für Lebensmittel .
+LANG_DE Überwachen Sie meine Investmentportfolio auf mögliche Risiken .
+LANG_DE Benachrichtigen Sie mich über wichtige Finanzmeldungen .
+LANG_DE Konvertieren Sie 1000€ in US-Dollar .
+LANG_DE Austauschen Sie 500€ in Pfund .
+LANG_DE Berechnen Sie die 10% Zinsen für mein Sparkonto .
+LANG_DE Vorhersagen Sie die zukünftige Entwicklung des Aktienmarktes .
+LANG_DE Beraten Sie mich bei meinen Anlagemöglichkeiten .
+LANG_DE Schätzen Sie meine Immobilienwert .
+LANG_DE Überprüfen Sie meinen Kontoauszug für letzte Woche .
+LANG_DE Überprüfen Sie die Steuererklärung für dieses Jahr .
+LANG_DE Überprüfen Sie die Empfehlungen für ETFs .
+LANG_DE Überprüfen Sie die Einkommensquellen für letzten Monat .
+LANG_DE Überprüfen Sie die Darlehensbedingungen für nächste Woche .
+LANG_DE Überprüfen Sie die Vermögenswerte in meinem Investmentkonto .
+LANG_DE Überprüfen Sie die Schulden auf meinem Kreditkartenkonto .
+LANG_DE Überprüfen Sie die monatlichen Ausgaben für diesen Monat .
+LANG_DE Überprüfen Sie die Steuersätze für dieses Jahr .
+LANG_DE Überprüfen Sie die Risikobewertung für meine Anlagen .
+LANG_DE Überprüfen Sie die Anlagemöglichkeiten für nächstes Jahr .
+LANG_DE Finanznachrichten berichten über einen Anstieg des Aktienmarktes .
+LANG_DE Wirtschaftsberichte deuten auf einen Rückgang der Arbeitslosenquote hin .
+LANG_DE Die Börse verzeichnete heute einen Rückgang der Indizes .
+LANG_DE Die Inflationsrate stieg im letzten Monat .
+LANG_DE Analysten prognostizieren ein Wachstum bei GOOGL .
+LANG_DE Die Handelsbilanz verbesserte sich im letzten Quartal .
+LANG_DE Die Rohstoffpreise sind aufgrund von geopolitischen Spannungen gestiegen .
+LANG_DE Die Aktienkurse von TSLA fielen nach einer Gewinnwarnung .
+LANG_DE Die Zinsentscheidung der Zentralbank wird für nächste Woche erwartet .
+LANG_DE Die Devisenkurse schwanken aufgrund von globalen Ereignissen .
+LANG_DE Die Arbeitsmarktdaten zeigen eine verbesserte Beschäftigungsquote .
+LANG_DE Die Immobilienpreise steigen aufgrund von niedrigen Zinsen .
+LANG_DE Die Technologieaktien verzeichneten einen Anstieg nach guten Quartalsergebnissen .
+LANG_DE Die Verbraucherpreisindex stieg im letzten Monat .
+LANG_DE Die Ölpreise sind aufgrund von Angebotsschwankungen volatil .
+LANG_DE Die BIP-Wachstum übertraf die Erwartungen im letzten Quartal .
+LANG_DE Die Bankaktien reagierten positiv auf Konjunkturdaten .
+LANG_DE Die Handelskrieg sorgt für Unsicherheit an den Finanzmärkten .
+LANG_DE Die Verbrauchervertrauen sank im letzten Monat .
+LANG_DE Die Anleihenrenditen fielen aufgrund von Wirtschaftsschwäche .
+LANG_DE Die Einzelhandelsaktien profitierten von positiven Verkaufszahlen .
+LANG_DE Die Rentenmarkt reagierte auf Zinsanpassungen .
+LANG_DE Die Arbeitslosenquote erreichte den niedrigsten Stand seit letzten Jahr .
+LANG_DE Die Aktienindizes verzeichneten einen Rekordhochstand nach positiven Unternehmensberichten .
+LANG_DE Die Handelsbilanz weist ein Defizit im letzten Quartal auf .
+LANG_DE Die Technologieaktien sind aufgrund von Innovationen gefragt .
+LANG_DE Die Lohnwachstum stagnierte im letzten Monat .
+LANG_DE Die Rohstoffpreise fielen aufgrund von Überproduktion .
+LANG_DE Die Zinsentscheidung der Federal Reserve wird für nächste Woche erwartet .
+LANG_DE Die Inflation bleibt stabil trotz steigender Kosten .
+LANG_DE Die Handelsdaten zeigen ein Handelsdefizit .
+LANG_DE Die Automobilaktien leiden unter Produktionsausfällen .
+LANG_DE Die Konsumausgaben stiegen im letzten Quartal .
+LANG_DE Die Devisenmärkte reagierten auf politische Unsicherheiten .
+LANG_DE Die Produktionszahlen zeigen ein Wachstum .
+LANG_DE Die Arbeitslosenquote sank auf den niedrigsten Stand seit letzten Jahr .
+LANG_DE Die Aktienkurse schwanken aufgrund von globalen Ereignissen .
+LANG_DE Die Handelsbilanz verbesserte sich im letzten Quartal .
+LANG_DE Die Technologieaktien verzeichneten einen Anstieg nach guten Quartalsergebnissen .
+LANG_DE Die Verbraucherpreisindex stieg im letzten Monat .
+LANG_DE Die Ölpreise sind aufgrund von Angebotsschwankungen volatil .
+LANG_DE Die BIP-Wachstum übertraf die Erwartungen im letzten Quartal .
+LANG_DE Die Bankaktien reagierten positiv auf Konjunkturdaten .
+LANG_DE Die Handelskrieg sorgt für Unsicherheit an den Finanzmärkten .
+LANG_DE Die Verbrauchervertrauen sank im letzten Monat .
+LANG_DE Die Anleihenrenditen fielen aufgrund von Wirtschaftsschwäche .
+LANG_DE Die Einzelhandelsaktien profitierten von positiven Verkaufszahlen .
+LANG_DE Die Rentenmarkt reagierte auf Zinsanpassungen .
+LANG_DE Die Arbeitslosenquote erreichte den niedrigsten Stand seit letzten Jahr .
+LANG_DE Die Aktienindizes verzeichneten einen Rekordhochstand nach positiven Unternehmensberichten .
+LANG_DE Die Handelsbilanz weist ein Defizit im letzten Quartal auf .
+LANG_DE Die Technologieaktien sind aufgrund von Innovationen gefragt .
+LANG_DE Die Lohnwachstum stagnierte im letzten Monat .
+LANG_DE Die Rohstoffpreise fielen aufgrund von Überproduktion .
+LANG_DE Die Zinsentscheidung der Federal Reserve wird für nächste Woche erwartet .
+LANG_DE Die Inflation bleibt stabil trotz steigender Kosten .
+LANG_DE Die Handelsdaten zeigen ein Handelsdefizit .
+LANG_DE Die Automobilaktien leiden unter Produktionsausfällen .
+LANG_DE Die Konsumausgaben stiegen im letzten Quartal .
+LANG_DE Die Devisenmärkte reagierten auf politische Unsicherheiten .
+LANG_DE Die Produktionszahlen zeigen ein Wachstum .
+LANG_DE Wie wäre es, wenn wir eine 30-minütige Backzeit für Schokoladenkekse einstellen ?
+LANG_DE Kannst du mir die Zutatenliste für Gemüsecurry geben ?
+LANG_DE Hey, kannst du low-carb Rezepte für mich verfolgen ?
+LANG_DE Ich denke, wir sollten Milch zur Einkaufsliste hinzufügen .
+LANG_DE Denk daran, den Ofen auf 180 Grad vorzuheizen .
+LANG_DE Rühren Sie Mehl und Wasser zusammen, bis sie glatt sind .
+LANG_DE Pausiere den Kochtimer .
+LANG_DE Setze die Rezepterzählung fort .
+LANG_DE Aktualisiere meine vegetarischen Vorlieben .
+LANG_DE Entferne Erdnüsse von der Einkaufsliste .
+LANG_DE Kannst du die Nährwertangaben für Bananen auflisten ?
+LANG_DE Schlag ein italienisches Rezept für Abendessen vor .
+LANG_DE Verfolge den Vorratsschrank für Reis .
+LANG_DE Füge zwei Äpfel zu meiner Einkaufsliste
+LANG_DE Überprüfe den Preis von Hühnereiern bei Aldi
+LANG_DE Finde heraus, ob Rewe frische Erdbeeren hat
+LANG_DE Vergleiche die Vollkornnudeln mit Reis bezüglich Ballaststoffgehalt
+LANG_DE Suche nach Bio-Joghurt im Kühlregal
+LANG_DE Setze eine Erinnerung für morgen um 10 Uhr für den Einkauf bei Lidl
+LANG_DE Verwalte meine Einkaufsliste und entferne drei Tomaten
+LANG_DE Kaufe ein Pfund Rinderhackfleisch bei Edeka
+LANG_DE Verfolge die Sonderangebote bei Penny für Haushaltsartikel
+LANG_DE Notiere zwei Milchpackungen auf meiner Einkaufsliste
+LANG_DE Suche nach glutenfreiem Brot im Bäckerei von Real
+LANG_DE Vergleiche die frischen Obstsorten bei Kaufland bezüglich Preis
+LANG_DE Finde heraus, ob dm vegane Schokolade führt
+LANG_DE Setze eine Erinnerung für nächsten Samstag um 15 Uhr für den Einkauf von Putzmitteln bei Rossmann
+LANG_DE Verwalte meine Einkaufsliste und füge ein Pfund Karotten hinzu
+LANG_DE Kaufe zwei Packungen Haferflocken bei Netto
+LANG_DE Verfolge die Preise von Bio-Produkten bei Alnatura
+LANG_DE Notiere drei Avocados auf meiner Einkaufsliste
+LANG_DE Suche nach laktosefreier Milch im Kühlregal von Edeka
+LANG_DE Vergleiche die Tiefkühlpizza von Dr . Oetker mit selbstgemachter Pizza bezüglich Kaloriengehalt
+LANG_DE Finde heraus, ob Norma frische Kräuter im Sortiment hat
+LANG_DE Setze eine Erinnerung für übermorgen um 12 Uhr für den Einkauf bei Aldi Süd
+LANG_DE Verwalte meine Einkaufsliste und entferne vier Orangen
+LANG_DE Kaufe ein Kilo Bio-Äpfel bei Lidl
+LANG_DE Verfolge die Angebote von Getränken bei Rewe
+LANG_DE Notiere zwei Packungen Nudeln auf meiner Einkaufsliste
+LANG_DE Suche nach glutenfreiem Brot im Bäckerei von Real
+LANG_DE Vergleiche die frischen Obstsorten bei Kaufland bezüglich Preis
+LANG_DE Finde heraus, ob dm vegane Schokolade führt
+LANG_DE Setze eine Erinnerung für nächsten Samstag um 15 Uhr für den Einkauf von Putzmitteln bei Rossmann
+LANG_DE Verwalte meine Einkaufsliste und füge ein Pfund Karotten hinzu
+LANG_DE Kaufe zwei Packungen Haferflocken bei Netto
+LANG_DE Verfolge die Preise von Bio-Produkten bei Alnatura
+LANG_DE Notiere drei Avocados auf meiner Einkaufsliste
+LANG_DE Suche nach laktosefreier Milch im Kühlregal von Edeka
+LANG_DE Vergleiche die Tiefkühlpizza von Dr . Oetker mit selbstgemachter Pizza bezüglich Kaloriengehalt
+LANG_DE Finde heraus, ob Norma frische Kräuter im Sortiment hat
+LANG_DE Setze eine Erinnerung für übermorgen um 12 Uhr für den Einkauf bei Aldi Süd
+LANG_DE Verwalte meine Einkaufsliste und entferne vier Orangen
+LANG_DE Kaufe ein Kilo Bio-Äpfel bei Lidl
+LANG_DE Verfolge die Angebote von Getränken bei Rewe
+LANG_DE Notiere zwei Packungen Nudeln auf meiner Einkaufsliste
+LANG_DE Suche nach glutenfreiem Brot im Bäckerei von Real
+LANG_DE Vergleiche die frischen Obstsorten bei Kaufland bezüglich Preis
+LANG_DE Finde heraus, ob dm vegane Schokolade führt
+LANG_DE Setze eine Erinnerung für nächsten Samstag um 15 Uhr für den Einkauf von Putzmitteln bei Rossmann
+LANG_DE Verwalte meine Einkaufsliste und füge ein Pfund Karotten hinzu
+LANG_DE Kaufe zwei Packungen Haferflocken bei Netto
+LANG_DE Verfolge die Preise von Bio-Produkten bei Alnatura
+LANG_DE Notiere drei Avocados auf meiner Einkaufsliste
+LANG_DE Suche nach laktosefreier Milch im Kühlregal von Edeka
+LANG_DE Vergleiche die Tiefkühlpizza von Dr . Oetker mit selbstgemachter Pizza bezüglich Kaloriengehalt
+LANG_DE Finde heraus, ob Norma frische Kräuter im Sortiment hat
+LANG_DE Setze eine Erinnerung für übermorgen um 12 Uhr für den Einkauf bei Aldi Süd
+LANG_DE Verwalte meine Einkaufsliste und entferne vier Orangen
+LANG_DE Kaufe ein Kilo Bio-Äpfel bei Lidl
+LANG_DE Verfolge die Angebote von Getränken bei Rewe
+LANG_DE Notiere zwei Packungen Nudeln auf meiner Einkaufsliste
+LANG_DE Suche nach glutenfreiem Brot im Bäckerei von Real
+LANG_DE Vergleiche die frischen Obstsorten bei Kaufland bezüglich Preis
+LANG_DE Finde heraus, ob dm vegane Schokolade führt
+LANG_DE Setze eine Erinnerung für nächsten Samstag um 15 Uhr für den Einkauf von Putzmitteln bei Rossmann
+LANG_DE Verwalte meine Einkaufsliste und füge ein Pfund Karotten hinzu
+LANG_DE Kaufe zwei Packungen Haferflocken bei Netto
+LANG_DE Verfolge die Preise von Bio-Produkten bei Alnatura
+LANG_DE Notiere drei Avocados auf meiner Einkaufsliste
+LANG_DE Suche nach laktosefreier Milch im Kühlregal von Edeka
+LANG_DE Vergleiche die Tiefkühlpizza von Dr . Oetker mit selbstgemachter Pizza bezüglich Kaloriengehalt
+LANG_DE Finde heraus, ob Norma frische Kräuter im Sortiment hat
+LANG_DE Setze eine Erinnerung für übermorgen um 12 Uhr für den Einkauf bei Aldi Süd
+LANG_DE Verwalte meine Einkaufsliste und entferne vier Orangen
+LANG_DE Kaufe ein Kilo Bio-Äpfel bei Lidl
+LANG_DE Verfolge die Angebote von Getränken bei Rewe
+LANG_DE Notiere zwei Packungen Nudeln auf meiner Einkaufsliste
+LANG_DE Suche nach glutenfreiem Brot im Bäckerei von Real
+LANG_DE Vergleiche die frischen Obstsorten bei Kaufland bezüglich Preis
+LANG_DE Finde heraus, ob dm vegane Schokolade führt
+LANG_DE Setze eine Erinnerung für nächsten Samstag um 15 Uhr für den Einkauf von Putzmitteln bei Rossmann
+LANG_DE Verwalte meine Einkaufsliste und füge ein Pfund Karotten hinzu
+LANG_DE Kaufe zwei Packungen Haferflocken bei Netto
+LANG_DE Verfolge die Preise von Bio-Produkten bei Alnatura
+LANG_DE Notiere drei Avocados auf meiner Einkaufsliste
+LANG_DE Suche nach laktosefreier Milch im Kühlregal von Edeka
+LANG_DE Vergleiche die Tiefkühlpizza von Dr . Oetker mit selbstgemachter Pizza bezüglich Kaloriengehalt
+LANG_DE Finde heraus, ob Norma frische Kräuter im Sortiment hat
+LANG_DE Setze eine Erinnerung für übermorgen um 12 Uhr für den Einkauf bei Aldi Süd
+LANG_DE Verwalte meine Einkaufsliste und entferne vier Orangen
+LANG_DE Kaufe ein Kilo Bio-Äpfel bei Lidl
+LANG_DE Verfolge die Angebote von Getränken bei Rewe
+LANG_DE Notiere zwei Packungen Nudeln auf meiner Einkaufsliste
+LANG_DE Suche nach glutenfreiem Brot im Bäckerei von Real
+LANG_DE Vergleiche die frischen Obstsorten bei Kaufland bezüglich Preis
+LANG_DE Finde heraus, ob dm vegane Schokolade führt
+LANG_DE Setze eine Erinnerung für nächsten Samstag um 15 Uhr für den Einkauf von Putzmitteln bei Rossmann
+LANG_DE Verwalte meine Einkaufsliste und füge ein Pfund Karotten hinzu
+LANG_DE Kaufe zwei Packungen Haferflocken bei Netto
+LANG_DE Verfolge die Preise von Bio-Produkten bei Alnatura
+LANG_DE Notiere drei Avocados auf meiner Einkaufsliste
+LANG_DE Suche nach laktosefreier Milch im Kühlregal von Edeka
+LANG_DE Vergleiche die Tiefkühlpizza von Dr . Oetker mit selbstgemachter Pizza bezüglich Kaloriengehalt
+LANG_DE Finde heraus, ob Norma frische Kräuter im Sortiment hat
+LANG_DE Setze eine Erinnerung für übermorgen um 12 Uhr für den Einkauf bei Aldi Süd
+LANG_DE Verwalte meine Einkaufsliste und entferne vier Orangen
+LANG_DE Kaufe ein Kilo Bio-Äpfel bei Lidl
+LANG_DE Verfolge die Angebote von Getränken bei Rewe
+LANG_DE Notiere zwei Packungen Nudeln auf meiner Einkaufsliste
+LANG_DE Suche nach glutenfreiem Brot im Bäckerei von Real
+LANG_DE Vergleiche die frischen Obstsorten bei Kaufland bezüglich Preis
+LANG_DE Finde heraus, ob dm vegane Schokolade führt
+LANG_DE Mein Vater klagt über starke Kopfschmerzen täglich seit einer Woche
+LANG_DE Ich nehme Ibuprofen gegen meine Rückenschmerzen jeden Abend
+LANG_DE Meine Mutter wurde mit Diabetes vor zwei Jahren diagnostiziert
+LANG_DE Mein Bruder hat Fieber und Husten seit drei Tagen
+LANG_DE Ich hatte eine Magenspiegelung letzte Woche
+LANG_DE Meine Schwester nimmt Antibiotika gegen ihre Infektion seit fünf Tagen
+LANG_DE Mein Sohn hat Halsschmerzen und Schluckbeschwerden gelegentlich
+LANG_DE Ich wurde mit einer Lebensmittelvergiftung gestern diagnostiziert
+LANG_DE Meine Tochter hat Hautausschlag und Juckreiz seit einer Woche
+LANG_DE Mein Mann musste eine Appendektomie vor einem Monat durchführen lassen
+LANG_DE Ich nehme Blutdruckmedikamente gegen meinen hohen Blutdruck jeden Morgen
+LANG_DE Mein Vater leidet unter Schlaflosigkeit und Müdigkeit regelmäßig
+LANG_DE Meine Mutter hatte eine Knieoperation vor drei Monaten
+LANG_DE Meine Schwester nimmt Antidepressiva gegen ihre Depression seit einem Jahr
+LANG_DE Mein Bruder klagt über Bauchschmerzen und Übelkeit seit zwei Tagen
+LANG_DE Ich hatte eine Lungenentzündung vor zwei Wochen
+LANG_DE Meine Tochter hat Erbrechen und Durchfall mehrmals täglich
+LANG_DE Mein Mann wurde mit Arthritis vor einem Jahr diagnostiziert
+LANG_DE Ich nehme Vitamin D zur Stärkung meines Immunsystems jeden Tag
+LANG_DE Mein Vater hat Atemnot und Brustschmerzen seit einer Woche
+LANG_DE Meine Mutter wurde mit Osteoporose vor fünf Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Schmerzmittel gegen ihre Migräne bei Bedarf
+LANG_DE Mein Bruder klagt über Schwindelgefühle und Sehstörungen gelegentlich
+LANG_DE Ich hatte eine Darmspiegelung vor einem Monat
+LANG_DE Meine Tochter hat Bauchkrämpfe und Verstopfung seit drei Tagen
+LANG_DE Mein Mann musste eine Herzoperation vor zwei Jahren durchführen lassen
+LANG_DE Ich nehme Eisenpräparate zur Behandlung meiner Anämie täglich
+LANG_DE Mein Vater leidet unter Schulterschmerzen und Bewegungseinschränkungen regelmäßig
+LANG_DE Meine Mutter wurde mit Rheuma vor drei Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Beruhigungsmittel gegen ihre Angstzustände vor dem Schlafengehen
+LANG_DE Mein Bruder klagt über Rückenschmerzen und Steifheit seit einer Woche
+LANG_DE Ich hatte eine Schilddrüsenüberfunktion vor einem Jahr
+LANG_DE Meine Tochter hat Ohrenschmerzen und Hörprobleme gelegentlich
+LANG_DE Mein Mann wurde mit Magengeschwüren vor vier Jahren diagnostiziert
+LANG_DE Ich nehme Antihistaminika gegen meine Allergie vor dem Schlafengehen
+LANG_DE Mein Vater hat Schwindelanfälle und Übelkeit seit einer Woche
+LANG_DE Meine Mutter wurde mit Asthma vor sechs Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Blutverdünner gegen ihre Thrombose zweimal täglich
+LANG_DE Mein Bruder klagt über Magenbeschwerden und Sodbrennen regelmäßig
+LANG_DE Ich hatte eine Gallenblasenentfernung vor zwei Jahren
+LANG_DE Meine Tochter hat Schlafstörungen und Albträume seit einer Woche
+LANG_DE Mein Mann musste eine Hüftoperation vor drei Jahren durchführen lassen
+LANG_DE Ich nehme Betablocker gegen meinen hohen Blutdruck morgens und abends
+LANG_DE Mein Vater leidet unter Gelenkschmerzen und Schwellungen täglich
+LANG_DE Meine Mutter wurde mit Krebs vor sieben Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Schilddrüsenhormone gegen ihre Unterfunktion jeden Morgen
+LANG_DE Mein Bruder klagt über Schlaflosigkeit und Nervosität seit zwei Tagen
+LANG_DE Ich hatte eine Nierenentzündung vor einem Monat
+LANG_DE Meine Tochter hat Appetitlosigkeit und Gewichtsverlust gelegentlich
+LANG_DE Mein Mann wurde mit Hepatitis vor zwei Jahren diagnostiziert
+LANG_DE Ich nehme Schmerzmittel gegen meine Arthrose bei Bedarf
+LANG_DE Mein Vater hat Schlafapnoe und Schnarchen seit einer Woche
+LANG_DE Meine Mutter wurde mit Demenz vor vier Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Antazida gegen ihre Magenbeschwerden nach den Mahlzeiten
+LANG_DE Mein Bruder klagt über Schulterschmerzen und Bewegungseinschränkungen regelmäßig
+LANG_DE Ich hatte eine Magenbypass-Operation vor einem Jahr
+LANG_DE Meine Tochter hat Kopfschmerzen und Lichtempfindlichkeit seit drei Tagen
+LANG_DE Mein Mann musste eine Bandscheibenoperation vor zwei Jahren durchführen lassen
+LANG_DE Ich nehme Antidepressiva gegen meine Depression jeden Abend
+LANG_DE Mein Vater leidet unter Rückenschmerzen und Taubheitsgefühlen täglich
+LANG_DE Meine Mutter wurde mit Schilddrüsenkrebs vor fünf Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Blutdrucksenker gegen ihre Hypertonie einmal täglich
+LANG_DE Mein Bruder klagt über Magenkrämpfe und Blähungen seit einer Woche
+LANG_DE Ich hatte eine Lungenembolie vor zwei Wochen
+LANG_DE Meine Tochter hat Schlafstörungen und Alpträume gelegentlich
+LANG_DE Mein Mann wurde mit Diabetes vor einem Jahr diagnostiziert
+LANG_DE Ich nehme Cholesterinsenker gegen meinen hohen Cholesterinspiegel jeden Morgen
+LANG_DE Mein Vater hat Schulterschmerzen und Bewegungseinschränkungen seit einer Woche
+LANG_DE Meine Mutter wurde mit Arthrose vor drei Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Schmerzmittel gegen ihre Migräne bei Bedarf
+LANG_DE Mein Bruder klagt über Rückenschmerzen und Steifheit seit einer Woche
+LANG_DE Ich hatte eine Schilddrüsenüberfunktion vor einem Jahr
+LANG_DE Meine Tochter hat Ohrenschmerzen und Hörprobleme gelegentlich
+LANG_DE Mein Mann wurde mit Magengeschwüren vor vier Jahren diagnostiziert
+LANG_DE Ich nehme Antihistaminika gegen meine Allergie vor dem Schlafengehen
+LANG_DE Mein Vater hat Schwindelanfälle und Übelkeit seit einer Woche
+LANG_DE Meine Mutter wurde mit Asthma vor sechs Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Blutverdünner gegen ihre Thrombose zweimal täglich
+LANG_DE Mein Bruder klagt über Magenbeschwerden und Sodbrennen regelmäßig
+LANG_DE Ich hatte eine Gallenblasenentfernung vor zwei Jahren
+LANG_DE Meine Tochter hat Schlafstörungen und Albträume seit einer Woche
+LANG_DE Mein Mann musste eine Hüftoperation vor drei Jahren durchführen lassen
+LANG_DE Ich nehme Betablocker gegen meinen hohen Blutdruck morgens und abends
+LANG_DE Mein Vater leidet unter Gelenkschmerzen und Schwellungen täglich
+LANG_DE Meine Mutter wurde mit Krebs vor sieben Jahren diagnostiziert
+LANG_DE Meine Schwester nimmt Schilddrüsenhormone gegen ihre Unterfunktion jeden Morgen
+LANG_DE Mein Bruder klagt über Schlaflosigkeit und Nervosität seit zwei Tagen
+LANG_DE Ich hatte eine Nierenentzündung vor einem Monat
+LANG_DE Meine Tochter hat Appetitlosigkeit und Gewichtsverlust gelegentlich
+LANG_DE Mein Mann wurde mit Hepatitis vor zwei Jahren diagnostiziert
+LANG_DE Bayern München liegt momentan vorne gegen Borussia Dortmund mit einem 2-1 .
+LANG_DE Müller dribbelt geschickt durch die gegnerische Verteidigung .
+LANG_DE Guardiola scheint unzufrieden mit der Leistung seiner Mannschaft zu sein .
+LANG_DE Ronaldo hat heute schon drei Tore erzielt .
+LANG_DE Was für ein Schuss von Salah , knapp am Tor vorbei!
+LANG_DE Messi flankt den Ball perfekt in den Strafraum .
+LANG_DE Klopp wechselt Mane für Firmino aus .
+LANG_DE Tackling von Van Dijk , er gewinnt den Ball souverän zurück .
+LANG_DE Lewandowski hat sich verletzt und muss ausgewechselt werden .
+LANG_DE Taylor pfeift Abseits , knappe Entscheidung!
+LANG_DE De Bruyne schießt aus der Distanz, aber der Torwart hält den Ball sicher .
+LANG_DE Juventus hat 70% Ballbesitz in dieser Partie .
+LANG_DE Hazard dribbelt an drei Verteidigern vorbei, aber sein Schuss geht knapp am Tor vorbei .
+LANG_DE Zidane feuert seine Spieler von der Seitenlinie an .
+LANG_DE Aguero foult seinen Gegenspieler und sieht dafür die gelbe Karte .
+LANG_DE Chelsea hat 10 Torschüsse in der ersten Halbzeit abgegeben .
+LANG_DE Neuer macht eine Weltklasse-Parade und hält sein Team im Spiel .
+LANG_DE Konter von Barcelona , sie brechen schnell nach vorne aus .
+LANG_DE Mbappe hat bereits zwei Vorlagen in dieser Partie gegeben .
+LANG_DE Atkinson zeigt die rote Karte für Pogba wegen groben Foulspiels .
+LANG_DE Kane versucht es mit einem Fallrückzieher, aber der Ball geht über das Tor .
+LANG_DE Simeone diskutiert heftig mit dem Schiedsrichter über eine strittige Entscheidung .
+LANG_DE Sterling sprintet die linke Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Griezmann tanzt durch die Abwehrreihen und erzielt ein fantastisches Tor!
+LANG_DE Kuipers entscheidet auf Elfmeter für PSG .
+LANG_DE Kante erobert den Ball und leitet einen schnellen Gegenangriff ein .
+LANG_DE Arsenal hat 5 Ecken in der zweiten Halbzeit bereits gehabt .
+LANG_DE Benzema köpft den Ball knapp über die Latte .
+LANG_DE Mourinho wechselt drei Spieler auf einmal ein, um frischen Wind ins Spiel zu bringen .
+LANG_DE Son sprintet alleine auf das Tor zu, aber sein Schuss wird vom Torwart pariert .
+LANG_DE Insigne zieht aus der Distanz ab, aber der Ball geht knapp am Tor vorbei .
+LANG_DE Makkelie zeigt insgesamt neun gelbe Karten in dieser hitzigen Partie .
+LANG_DE Sterling dribbelt an der Seitenlinie entlang und bringt eine scharfe Flanke in den Strafraum .
+LANG_DE Hazard tanzt durch die Abwehrreihen und erzielt ein traumhaftes Tor!
+LANG_DE Oliver entscheidet auf Strafstoß für Real Madrid .
+LANG_DE Salah sprintet die rechte Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Ancelotti analysiert intensiv die Spielsituation und überlegt einen taktischen Wechsel .
+LANG_DE Aguero foult seinen Gegenspieler und sieht dafür die rote Karte .
+LANG_DE Neuer macht eine Weltklasse-Parade und hält sein Team im Spiel .
+LANG_DE Konter von Liverpool , sie brechen schnell nach vorne aus .
+LANG_DE Mbappe hat bereits zwei Vorlagen in dieser Partie gegeben .
+LANG_DE Taylor zeigt die rote Karte für Pogba wegen groben Foulspiels .
+LANG_DE Kane versucht es mit einem Fallrückzieher, aber der Ball geht über das Tor .
+LANG_DE Simeone diskutiert heftig mit dem Schiedsrichter über eine strittige Entscheidung .
+LANG_DE Sterling sprintet die linke Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Griezmann tanzt durch die Abwehrreihen und erzielt ein fantastisches Tor!
+LANG_DE Kuipers entscheidet auf Elfmeter für PSG .
+LANG_DE Kante erobert den Ball und leitet einen schnellen Gegenangriff ein .
+LANG_DE Arsenal hat 5 Ecken in der zweiten Halbzeit bereits gehabt .
+LANG_DE Benzema köpft den Ball knapp über die Latte .
+LANG_DE Mourinho wechselt drei Spieler auf einmal ein, um frischen Wind ins Spiel zu bringen .
+LANG_DE Son sprintet alleine auf das Tor zu, aber sein Schuss wird vom Torwart pariert .
+LANG_DE Insigne zieht aus der Distanz ab, aber der Ball geht knapp am Tor vorbei .
+LANG_DE Makkelie zeigt insgesamt neun gelbe Karten in dieser hitzigen Partie .
+LANG_DE Sterling dribbelt an der Seitenlinie entlang und bringt eine scharfe Flanke in den Strafraum .
+LANG_DE Hazard tanzt durch die Abwehrreihen und erzielt ein traumhaftes Tor!
+LANG_DE Oliver entscheidet auf Strafstoß für Real Madrid .
+LANG_DE Salah sprintet die rechte Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Ancelotti analysiert intensiv die Spielsituation und überlegt einen taktischen Wechsel .
+LANG_DE Aguero foult seinen Gegenspieler und sieht dafür die rote Karte .
+LANG_DE Neuer macht eine Weltklasse-Parade und hält sein Team im Spiel .
+LANG_DE Konter von Liverpool , sie brechen schnell nach vorne aus .
+LANG_DE Mbappe hat bereits zwei Vorlagen in dieser Partie gegeben .
+LANG_DE Taylor zeigt die rote Karte für Pogba wegen groben Foulspiels .
+LANG_DE Kane versucht es mit einem Fallrückzieher, aber der Ball geht über das Tor .
+LANG_DE Simeone diskutiert heftig mit dem Schiedsrichter über eine strittige Entscheidung .
+LANG_DE Sterling sprintet die linke Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Griezmann tanzt durch die Abwehrreihen und erzielt ein fantastisches Tor!
+LANG_DE Kuipers entscheidet auf Elfmeter für PSG .
+LANG_DE Kante erobert den Ball und leitet einen schnellen Gegenangriff ein .
+LANG_DE Arsenal hat 5 Ecken in der zweiten Halbzeit bereits gehabt .
+LANG_DE Benzema köpft den Ball knapp über die Latte .
+LANG_DE Mourinho wechselt drei Spieler auf einmal ein, um frischen Wind ins Spiel zu bringen .
+LANG_DE Son sprintet alleine auf das Tor zu, aber sein Schuss wird vom Torwart pariert .
+LANG_DE Insigne zieht aus der Distanz ab, aber der Ball geht knapp am Tor vorbei .
+LANG_DE Makkelie zeigt insgesamt neun gelbe Karten in dieser hitzigen Partie .
+LANG_DE Sterling dribbelt an der Seitenlinie entlang und bringt eine scharfe Flanke in den Strafraum .
+LANG_DE Hazard tanzt durch die Abwehrreihen und erzielt ein traumhaftes Tor!
+LANG_DE Oliver entscheidet auf Strafstoß für Real Madrid .
+LANG_DE Salah sprintet die rechte Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Ancelotti analysiert intensiv die Spielsituation und überlegt einen taktischen Wechsel .
+LANG_DE Aguero foult seinen Gegenspieler und sieht dafür die rote Karte .
+LANG_DE Neuer macht eine Weltklasse-Parade und hält sein Team im Spiel .
+LANG_DE Konter von Liverpool , sie brechen schnell nach vorne aus .
+LANG_DE Mbappe hat bereits zwei Vorlagen in dieser Partie gegeben .
+LANG_DE Taylor zeigt die rote Karte für Pogba wegen groben Foulspiels .
+LANG_DE Kane versucht es mit einem Fallrückzieher, aber der Ball geht über das Tor .
+LANG_DE Simeone diskutiert heftig mit dem Schiedsrichter über eine strittige Entscheidung .
+LANG_DE Sterling sprintet die linke Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Griezmann tanzt durch die Abwehrreihen und erzielt ein fantastisches Tor!
+LANG_DE Kuipers entscheidet auf Elfmeter für PSG .
+LANG_DE Kante erobert den Ball und leitet einen schnellen Gegenangriff ein .
+LANG_DE Arsenal hat 5 Ecken in der zweiten Halbzeit bereits gehabt .
+LANG_DE Benzema köpft den Ball knapp über die Latte .
+LANG_DE Mourinho wechselt drei Spieler auf einmal ein, um frischen Wind ins Spiel zu bringen .
+LANG_DE Son sprintet alleine auf das Tor zu, aber sein Schuss wird vom Torwart pariert .
+LANG_DE Insigne zieht aus der Distanz ab, aber der Ball geht knapp am Tor vorbei .
+LANG_DE Makkelie zeigt insgesamt neun gelbe Karten in dieser hitzigen Partie .
+LANG_DE Sterling dribbelt an der Seitenlinie entlang und bringt eine scharfe Flanke in den Strafraum .
+LANG_DE Hazard tanzt durch die Abwehrreihen und erzielt ein traumhaftes Tor!
+LANG_DE Oliver entscheidet auf Strafstoß für Real Madrid .
+LANG_DE Salah sprintet die rechte Seite entlang und bringt eine gefährliche Flanke in den Strafraum .
+LANG_DE Start mein neues Krafttraining .
+LANG_DE Aktualisieren meine Gewichtsangabe auf 70 Kilogramm .
+LANG_DE Planen eine Laufeinheit für morgen .
+LANG_DE Verfolgen meinen Kalorienverbrauch während des einstündigen Cardiotrainings .
+LANG_DE Setzen ein neues Ziel von 5 Kilogramm Gewichtsverlust .
+LANG_DE Überprüfen meine nächsten Yoga .
+LANG_DE Generieren einen neuen Trainingsplan für nächste Woche .
+LANG_DE Analysieren meine Fortschritte im Krafttraining .
+LANG_DE Überwachen meinen Puls während des Lauftrainings .
+LANG_DE Abschließen mein Ganzkörpertraining für 45 Minuten .
+LANG_DE Pausieren mein HIIT-Training für 5 Minuten .
+LANG_DE Wiederaufnehmen mein Krafttraining nach einer Pause .
+LANG_DE Stoppen die Workout-App .
+LANG_DE Erhöhen meine Trainingsintensität für Kniebeugen .
+LANG_DE Verringern die Geschwindigkeit während des Lauftrainings .
+LANG_DE Aufzeichnen meinen Körperfettanteil .
+LANG_DE Protokollieren meine Trainingsgewicht für Bankdrücken .
+LANG_DE Messen meinen Fortschritt bei Liegestützen .
+LANG_DE Benachrichtigen mich über wöchentliche Pilates-Stunden .
+LANG_DE Starten Stretching-Einheit für 15 Minuten .
+LANG_DE Beenden die Trainingspause und starten Krafttraining .
+LANG_DE Aktualisieren meine Größe auf 175 Zentimeter .
+LANG_DE Planen ein Schwimmtraining für nächsten Montag .
+LANG_DE Verfolgen meinen Fortschritt beim Seilspringen .
+LANG_DE Setzen ein neues Ziel von 15 Kilometern Laufen pro Woche .
+LANG_DE Überprüfen meine nächsten Spinning-Kurs .
+LANG_DE Generieren einen neuen Trainingsplan für die kommenden zwei Wochen .
+LANG_DE Analysieren meine Leistungssteigerung im Rudern .
+LANG_DE Überwachen meinen Herzschlag während des Radfahrens .
+LANG_DE Abschließen mein Bauchmuskeltraining für 30 Minuten .
+LANG_DE Pausieren mein Zirkeltraining für 10 Minuten .
+LANG_DE Wiederaufnehmen mein Stretching nach einer kurzen Pause .
+LANG_DE Stoppen die Fitness-Tracker .
+LANG_DE Erhöhen meine Wiederholungen für Bizepscurls .
+LANG_DE Verringern die Steigung auf dem Laufband während des Lauftrainings .
+LANG_DE Aufzeichnen meinen Taillenumfang .
+LANG_DE Protokollieren meine Laufdistanz für Joggen .
+LANG_DE Messen meinen Fortschritt bei Klimmzügen .
+LANG_DE Benachrichtigen mich über tägliche Yoga-Kurse .
+LANG_DE Starten Dehnübungen für 20 Minuten .
+LANG_DE Beenden die Ruhepause und starten Schwimmen .
+LANG_DE Aktualisieren meine Altersangabe auf 30 Jahre .
+LANG_DE Planen ein Functional Training für nächsten Dienstag .
+LANG_DE Verfolgen meinen Muskelzuwachs beim Bankdrücken .
+LANG_DE Setzen ein neues Ziel von 3 Mal pro Woche Joggen .
+LANG_DE Überprüfen meine nächsten Bodypump-Kurs .
+LANG_DE Generieren einen neuen Trainingsplan für die kommende Woche .
+LANG_DE Analysieren meine Ausdauer im Radfahren .
+LANG_DE Überwachen meinen Kalorienverbrauch während des Rudertrainings .
+LANG_DE Abschließen mein Beintraining für 40 Minuten .
+LANG_DE Pausieren mein Boxtraining für 8 Minuten .
+LANG_DE Wiederaufnehmen mein Stretching nach einer kurzen Pause .
+LANG_DE Stoppen die Trainings-App .
+LANG_DE Erhöhen meine Gewicht beim Kreuzheben .
+LANG_DE Verringern die Geschwindigkeit beim Laufen .
+LANG_DE Aufzeichnen meinen Körperumfang .
+LANG_DE Protokollieren meine Trainingsfortschritt für Kniebeugen .
+LANG_DE Messen meinen Fortschritt bei Liegestützen .
+LANG_DE Benachrichtigen mich über monatliche Pilates-Stunden .
+LANG_DE Starten Yoga-Einheit für 25 Minuten .
+LANG_DE Beenden die Ruhepause und starten Functional Training .
+LANG_DE Aktualisieren meine Geschlecht auf weiblich .
+LANG_DE Planen ein Spinning-Kurs für nächsten Freitag .
+LANG_DE Verfolgen meinen Gewichtsverlust beim Laufen .
+LANG_DE Setzen ein neues Ziel von 20 Kilogramm Muskelmassezuwachs .
+LANG_DE Überprüfen meine nächsten Bodybalance-Kurs .
+LANG_DE Generieren einen neuen Trainingsplan für die folgende Woche .
+LANG_DE Analysieren meine Flexibilität im Yoga .
+LANG_DE Überwachen meinen Atemfrequenz während des Schwimmtrainings .
+LANG_DE Abschließen mein Rückentraining für 50 Minuten .
+LANG_DE Pausieren mein HIIT-Training für 7 Minuten .
+LANG_DE Wiederaufnehmen mein Stretching nach einer kurzen Pause .
+LANG_DE Stoppen die Fitness-App .
+LANG_DE Erhöhen meine Wiederholungen für Liegestütze .
+LANG_DE Verringern die Steigung auf dem Laufband während des Lauftrainings .
+LANG_DE Aufzeichnen meinen Körperfettanteil .
+LANG_DE Protokollieren meine Trainingsgewicht für Klimmzüge .
+LANG_DE Messen meinen Fortschritt bei Sit-ups .
+LANG_DE Benachrichtigen mich über tägliche Yoga-Stunden .
+LANG_DE Starten Stretching-Einheit für 20 Minuten .
+LANG_DE Beenden die Ruhepause und starten Joggen .
+LANG_DE Aktualisieren meine Gewicht auf 75 Kilogramm .
+LANG_DE Planen ein Functional Training für nächsten Mittwoch .
+LANG_DE Verfolgen meinen Muskelmasse beim Bankdrücken .
+LANG_DE Setzen ein neues Ziel von 4 Mal pro Woche Schwimmen .
+LANG_DE Überprüfen meine nächsten Zumba-Kurs .
+LANG_DE Generieren einen neuen Trainingsplan für die kommenden drei Wochen .
+LANG_DE Analysieren meine Ausdauer im Laufen .
+LANG_DE Überwachen meinen Herzfrequenz während des Radfahrens .
+LANG_DE Abschließen mein Bauchmuskeltraining für 35 Minuten .
+LANG_DE Pausieren mein Boxtraining für 5 Minuten .
+LANG_DE Wiederaufnehmen mein Stretching nach einer kurzen Pause .
+LANG_DE Stoppen die Trainings-Tracker .
+LANG_DE Erhöhen meine Gewicht beim Kreuzheben .
+LANG_DE Verringern die Geschwindigkeit beim Laufen .
+LANG_DE Aufzeichnen meinen Taillenumfang .
+LANG_DE Protokollieren meine Laufdistanz für Joggen .
+LANG_DE Messen meinen Fortschritt bei Klimmzügen .
+LANG_DE Benachrichtigen mich über wöchentliche Pilates-Stunden .
+LANG_DE Starten Yoga-Einheit für 30 Minuten .
+LANG_DE Beenden die Ruhepause und starten Functional Training .
+LANG_DE Aktualisieren meine Geschlecht auf männlich .
+LANG_DE Planen ein Spinning-Kurs für nächsten Samstag .
+LANG_DE Verfolgen meinen Gewichtsverlust beim Laufen .
+LANG_DE Setzen ein neues Ziel von 25 Kilogramm Muskelmassezuwachs .
+LANG_DE Überprüfen meine nächsten Bodybalance-Kurs .
+LANG_DE Generieren einen neuen Trainingsplan für die folgende Woche .
+LANG_DE Analysieren meine Flexibilität im Yoga .
+LANG_DE Überwachen meinen Atemfrequenz während des Schwimmtrainings .
+LANG_DE Abschließen mein Rückentraining für 50 Minuten .
+LANG_DE Pausieren mein HIIT-Training für 7 Minuten .
+LANG_DE Wiederaufnehmen mein Stretching nach einer kurzen Pause .
+LANG_DE Stoppen die Fitness-App .
+LANG_DE Erhöhen meine Wiederholungen für Liegestütze .
+LANG_DE Verringern die Steigung auf dem Laufband während des Lauftrainings .
+LANG_DE Aufzeichnen meinen Körperfettanteil .
+LANG_DE Protokollieren meine Trainingsgewicht für Klimmzüge .
+LANG_DE Messen meinen Fortschritt bei Sit-ups .
+LANG_DE Benachrichtigen mich über tägliche Yoga-Stunden .
+LANG_DE Starten Stretching-Einheit für 20 Minuten .
+LANG_DE Beenden die Ruhepause und starten Joggen .
+LANG_DE Kannst du bitte die Küchenlampe auf 50 Prozent Helligkeit stellen ?
+LANG_DE Ich möchte, dass die Jalousien im Wohnzimmer geöffnet werden .
+LANG_DE Spiele den Song Shape of You im Schlafzimmer ab .
+LANG_DE Wie ist die Temperatur im Badezimmer eingestellt ?
+LANG_DE Kannst du eine Nachricht an Mom senden und sagen, dass ich später anrufe ?
+LANG_DE Ich möchte, dass die Kaffeemaschine um 7 Uhr morgens eingeschaltet wird .
+LANG_DE Erinnere mich daran, die Waschmaschine um 18 Uhr anzustellen .
+LANG_DE Könntest du bitte die Heizung im Wohnzimmer auf 22 Grad einstellen ?
+LANG_DE Spiele eine Playlist für Entspannung in der Küche ab .
+LANG_DE Würdest du das Licht im Flur dimmen ?
+LANG_DE Kannst du den Staubsauger im Wohnzimmer starten ?
+LANG_DE Lass uns die Alarmanlage für Zuhause aktivieren .
+LANG_DE Sende eine E-Mail an John mit dem Betreff Meeting morgen und Text Bitte bestätigen .
+LANG_DE Könntest du das Garagentor öffnen ?
+LANG_DE Spiele den Film Inception auf dem Fernseher im Wohnzimmer ab .
+LANG_DE Kannst du den Ventilator im Schlafzimmer ausschalten ?
+LANG_DE Ich würde gerne eine Geburtstagsfeier für nächste Woche planen .
+LANG_DE Könntest du die Klimaanlage im Büro einschalten ?
+LANG_DE Lass uns die Kaffeemaschine im Küche programmieren , damit sie morgen früh startet .
+LANG_DE Schalte das Nachtlicht im Kinderzimmer aus .
+LANG_DE Kannst du eine Erinnerung für morgen um 10 Uhr setzen ?
+LANG_DE Lass uns den Luftbefeuchter im Wohnzimmer einschalten .
+LANG_DE Ich würde gerne eine Besprechung für nächste Woche um 15 Uhr eintragen .
+LANG_DE Könntest du die Rollläden im Schlafzimmer schließen ?
+LANG_DE Spiele die Playlist Chillout auf dem Lautsprecher in der Terrasse ab .
+LANG_DE Kannst du den Wecker auf 7 Uhr morgens stellen ?
+LANG_DE Lass uns die Sicherheitskamera im Eingangsbereich aktivieren .
+LANG_DE Sende eine Nachricht an Sarah mit dem Text Können wir morgen frühstücken gehen ? .
+LANG_DE Kannst du das Licht im Wohnzimmer heller machen ?
+LANG_DE Ich möchte, dass die Heizung im Büro auf 20 Grad gestellt wird .
+LANG_DE Spiele das Album Thriller von Michael Jackson auf dem Stereoanlage im Wohnzimmer ab .
+LANG_DE Wie ist die Lautstärke auf dem Fernseher im Wohnzimmer eingestellt ?
+LANG_DE Kannst du eine Erinnerung für morgen um 9 Uhr hinzufügen ?
+LANG_DE Lass uns die Kaffeemaschine im Büro einschalten .
+LANG_DE Könntest du die Beleuchtung im Esszimmer anpassen ?
+LANG_DE Ich würde gerne eine Videokonferenz für nächste Woche um 14 Uhr organisieren .
+LANG_DE Kannst du den Ventilator im Schlafzimmer einschalten ?
+LANG_DE Spiele die Playlist Summer Vibes auf dem Lautsprecher in der Terrasse ab .
+LANG_DE Kannst du das Licht im Flur ausschalten ?
+LANG_DE Ich möchte, dass die Klimaanlage im Wohnzimmer auf 24 Grad eingestellt wird .
+LANG_DE Sende eine E-Mail an Lisa mit dem Betreff Urlaubsplanung und Text Wohin sollen wir diesen Sommer reisen ? .
+LANG_DE Könntest du das Garagentor schließen ?
+LANG_DE Spiele den Film The Shawshank Redemption auf dem Fernseher im Wohnzimmer ab .
+LANG_DE Kannst du den Staubsauger im Wohnzimmer starten ?
+LANG_DE Lass uns die Alarmanlage für Zuhause deaktivieren .
+LANG_DE Sende eine Nachricht an Peter mit dem Text Können wir uns heute Abend treffen ? .
+LANG_DE Kannst du den Luftbefeuchter im Wohnzimmer ausschalten ?
+LANG_DE Ich würde gerne eine Geburtstagsfeier für nächste Woche um 18 Uhr planen .
+LANG_DE Könntest du die Kaffeemaschine im Küche programmieren , damit sie morgen früh startet ?
+LANG_DE Schalte das Nachtlicht im Kinderzimmer ein .
+LANG_DE Kannst du eine Erinnerung für morgen um 11 Uhr setzen ?
+LANG_DE Lass uns den Luftbefeuchter im Wohnzimmer einschalten .
+LANG_DE Ich würde gerne eine Besprechung für nächste Woche um 16 Uhr eintragen .
+LANG_DE Könntest du die Rollläden im Schlafzimmer öffnen ?
+LANG_DE Spiele die Playlist Relaxing Piano auf dem Lautsprecher in der Terrasse ab .
+LANG_DE Kannst du den Wecker auf 6 Uhr morgens stellen ?
+LANG_DE Lass uns die Sicherheitskamera im Eingangsbereich aktivieren .
+LANG_DE Sende eine Nachricht an Anna mit dem Text Können wir morgen Mittag telefonieren ? .
+LANG_DE Kannst du das Licht im Wohnzimmer dunkler machen ?
+LANG_DE Ich möchte, dass die Heizung im Büro auf 22 Grad gestellt wird .
+LANG_DE Spiele das Album Back in Black von AC/DC auf dem Stereoanlage im Wohnzimmer ab .
+LANG_DE Wie ist die Lautstärke auf dem Fernseher im Wohnzimmer eingestellt ?
+LANG_DE Kannst du eine Erinnerung für morgen um 8 Uhr hinzufügen ?
+LANG_DE Lass uns die Kaffeemaschine im Büro einschalten .
+LANG_DE Könntest du die Beleuchtung im Esszimmer anpassen ?
+LANG_DE Ich würde gerne eine Videokonferenz für nächste Woche um 13 Uhr organisieren .
+LANG_DE Kannst du den Ventilator im Schlafzimmer einschalten ?
+LANG_DE Spiele die Playlist Summer Hits auf dem Lautsprecher in der Terrasse ab .
+LANG_DE Kannst du das Licht im Flur ausschalten ?
+LANG_DE Ich möchte, dass die Klimaanlage im Wohnzimmer auf 26 Grad eingestellt wird .
+LANG_DE Sende eine E-Mail an Max mit dem Betreff Projektupdate und Text Bitte überprüfe die letzten Änderungen .
+LANG_DE Könntest du das Garagentor schließen ?
+LANG_DE Spiele den Film The Godfather auf dem Fernseher im Wohnzimmer ab .
+LANG_DE Kannst du den Staubsauger im Wohnzimmer starten ?
+LANG_DE Lass uns die Alarmanlage für Zuhause deaktivieren .
+LANG_DE Sende eine Nachricht an Laura mit dem Text Können wir uns heute Nachmittag treffen ? .
+LANG_DE Kannst du den Luftbefeuchter im Wohnzimmer ausschalten ?
+LANG_DE Ich würde gerne eine Geburtstagsfeier für nächste Woche um 20 Uhr planen .
+LANG_DE Könntest du die Kaffeemaschine im Küche programmieren , damit sie morgen früh startet ?
+LANG_DE Schalte das Nachtlicht im Kinderzimmer ein .
+LANG_DE Kannst du eine Erinnerung für morgen um 12 Uhr setzen ?
+LANG_DE Lass uns den Luftbefeuchter im Wohnzimmer einschalten .
+LANG_DE Ich würde gerne eine Besprechung für nächste Woche um 17 Uhr eintragen .
+LANG_DE Könntest du die Rollläden im Schlafzimmer öffnen ?
+LANG_DE Spiele die Playlist Jazz Classics auf dem Lautsprecher in der Terrasse ab .
+LANG_DE Kannst du den Wecker auf 5 Uhr morgens stellen ?
+LANG_DE Lass uns die Sicherheitskamera im Eingangsbereich aktivieren .
+LANG_DE Sende eine Nachricht an Julia mit dem Text Können wir morgen frühstücken gehen ? .
+LANG_DE Kannst du das Licht im Wohnzimmer dunkler machen ?
+LANG_DE Ich möchte, dass die Heizung im Büro auf 24 Grad gestellt wird .
+LANG_DE Spiele das Album Rumours von Fleetwood Mac auf dem Stereoanlage im Wohnzimmer ab .
+LANG_DE Wie ist die Lautstärke auf dem Fernseher im Wohnzimmer eingestellt ?
+LANG_DE Kannst du eine Erinnerung für morgen um 13 Uhr hinzufügen ?
+LANG_DE Lass uns die Kaffeemaschine im Büro einschalten .
+LANG_DE Könntest du die Beleuchtung im Esszimmer anpassen ?
+LANG_DE Ich würde gerne eine Videokonferenz für nächste Woche um 12 Uhr organisieren .
+LANG_DE Kannst du den Ventilator im Schlafzimmer einschalten ?
+LANG_DE Spiele die Playlist 80s Hits auf dem Lautsprecher in der Terrasse ab .
+LANG_DE Kannst du das Licht im Flur ausschalten ?
+LANG_DE Ich möchte, dass die Klimaanlage im Wohnzimmer auf 28 Grad eingestellt wird .
+LANG_DE Sende eine E-Mail an Paul mit dem Betreff Projektabschluss und Text Bitte überprüfe die letzten Änderungen .
+LANG_DE Könntest du das Garagentor schließen ?
+LANG_DE Spiele den Film Pulp Fiction auf dem Fernseher im Wohnzimmer ab .
+LANG_DE Kannst du den Staubsauger im Wohnzimmer starten ?
+LANG_DE Lass uns die Alarmanlage für Zuhause deaktivieren .
+LANG_DE Sende eine Nachricht an Mia mit dem Text Können wir uns heute Abend treffen ? .
+LANG_DE Kannst du den Luftbefeuchter im Wohnzimmer ausschalten ?
+LANG_DE Ich würde gerne eine Geburtstagsfeier für nächste Woche um 22 Uhr planen .
+LANG_DE Könntest du die Kaffeemaschine im Küche programmieren , damit sie morgen früh startet ?
+LANG_DE Schalte das Nachtlicht im Kinderzimmer ein .
+LANG_DE Kannst du eine Erinnerung für morgen um 14 Uhr setzen ?
+LANG_DE Lass uns den Luftbefeuchter im Wohnzimmer einschalten .
+LANG_DE Ich würde gerne eine Besprechung für nächste Woche um 18 Uhr eintragen .
+LANG_DE Könntest du die Rollläden im Schlafzimmer öffnen ?
+LANG_DE Spiele die Playlist Classical Study auf dem Lautsprecher in der Terrasse ab .
+LANG_DE Kannst du den Wecker auf 4 Uhr morgens stellen ?
+LANG_DE Lass uns die Sicherheitskamera im Eingangsbereich aktivieren .
+LANG_DE Sende eine Nachricht an Ben mit dem Text Können wir morgen frühstücken gehen ? .
+LANG_DE Buchen eines Fluges nach Sydney für den März .
+LANG_DE Überprüfen Sie den Status meines Fluges nach New York .
+LANG_DE Reservieren eines Hotelzimmers in Rom für den Juli .
+LANG_DE Einrichten eines Reisehinweises für Paris am April .
+LANG_DE Aktualisieren Sie meinen Reiseplan mit einem Besuch des Eiffelturms .
+LANG_DE Benachrichtigen Sie mich, falls es Reisebeschränkungen für Japan gibt .
+LANG_DE Empfehlen von Strandzielen für nächsten Sommer .
+LANG_DE Bestätigen Sie mein Business-Class-Ticket für den Flug nach London .
+LANG_DE Wie ist der Status meines Fluges nach New York ?
+LANG_DE Ich denke, ich muss meine Reservierung meines Hotelzimmers in Tokio stornieren .
+LANG_DE Wie ist das Wetter in Bali für nächste Woche ?
+LANG_DE Du solltest mich daran erinnern , meinen Reisepass zu verlängern .
+LANG_DE Können Sie einige Sehenswürdigkeiten in Barcelona vorschlagen ?
+LANG_DE Wow , der Flughafen ist heute so überfüllt .
+LANG_DE Ich habe einen Zug nach Berlin für morgen gebucht .
+LANG_DE Führen Sie eine Blutuntersuchung für Patient 567 durch .
+LANG_DE Aktualisieren Sie die Laborgeräte auf optimale Temperatur .
+LANG_DE Senden Sie den Laborbericht an Arzt .
+LANG_DE Planen Sie einen Ultraschalltermin für Patient 234 .
+LANG_DE Ändern Sie die Patientendaten mit neuen Symptomen .
+LANG_DE Verwalten Sie den Medikamentenvorrat im Lager .
+LANG_DE Geben Sie Ratschläge zur Schmerzlinderung .
+LANG_DE Empfangen Sie die Gewebeproben für die Genetiktest .
+LANG_DE Überprüfen Sie die Mikrobiologie-Abteilung für kommende Studien .
+LANG_DE Starten Sie die Studie zur Krebsbehandlung .
+LANG_DE Dokumentieren Sie die Operation von Patient 456 .
+LANG_DE Leiten Sie die Bluttransfusion für Patient 123 ein .
+LANG_DE Analysieren Sie die Urinprobe auf Nierenfunktion .
+LANG_DE Setzen Sie die Laborgeräte auf automatische Reinigung .
+LANG_DE Vereinbaren Sie einen Check-up-Termin für Patient 678 .
+LANG_DE Ändern Sie die Patientenakte mit Allergiehinweisen .
+LANG_DE Überwachen Sie den Verbrauchsmaterial im Untersuchungsraum .
+LANG_DE Geben Sie Empfehlungen zur Ernährungsumstellung .
+LANG_DE Empfangen Sie die Stuhlprobe für die Darmkrebsvorsorge .
+LANG_DE Vorbereiten Sie die Pathologie-Abteilung für morgige Proben .
+LANG_DE Starten Sie die Studie zur Impfstoffentwicklung .
+LANG_DE Dokumentieren Sie die Katarakt-OP von Patient 789 .
+LANG_DE Leiten Sie die Blutabnahme für Patient 567 ein .
+LANG_DE Analysieren Sie die Speichelprobe auf Hormonspiegel .
+LANG_DE Setzen Sie die Laborgeräte auf Energiesparmodus .
+LANG_DE Vereinbaren Sie einen Impftermin für Patient 234 .
+LANG_DE Ändern Sie die Patientendaten mit neuen Befunden .
+LANG_DE Überwachen Sie den Impfstoffe im Kühlschrank .
+LANG_DE Geben Sie Tipps zur Stressbewältigung .
+LANG_DE Empfangen Sie die Hautbiopsie für die Dermatologietest .
+LANG_DE Vorbereiten Sie die Immunologie-Abteilung für kommende Analysen .
+LANG_DE Starten Sie die Studie zur Schmerztherapie .
+LANG_DE Dokumentieren Sie die Herz-OP von Patient 456 .
+LANG_DE Leiten Sie die Blutuntersuchung für Patient 123 ein .
+LANG_DE Analysieren Sie die Gewebeprobe auf Krebsmarker .
+LANG_DE Setzen Sie die Laborgeräte auf Wartungsmodus .
+LANG_DE Vereinbaren Sie einen Physiotherapietermin für Patient 678 .
+LANG_DE Ändern Sie die Patientenakte mit neuen Untersuchungsergebnissen .
+LANG_DE Überwachen Sie den Medikamente im Apotheke .
+LANG_DE Geben Sie Hinweise zur Schlafhygiene .
+LANG_DE Empfangen Sie die Blutplasma für die Blutgruppenbestimmung .
+LANG_DE Vorbereiten Sie die Radiologie-Abteilung für kommende Scans .
+LANG_DE Starten Sie die Studie zur Präventionsmaßnahmen .
+LANG_DE Dokumentieren Sie die Magenspiegelung von Patient 789 .
+LANG_DE Leiten Sie die Impfung für Patient 567 ein .
+LANG_DE Analysieren Sie die Haarprobe auf Drogenrückstände .
+LANG_DE Setzen Sie die Laborgeräte auf Kalibrierungsmodus .
+LANG_DE Vereinbaren Sie einen Augenarzttermin für Patient 234 .
+LANG_DE Ändern Sie die Patientendaten mit neuen Laborergebnissen .
+LANG_DE Überwachen Sie den Verbandmaterial im Erste-Hilfe-Raum .
+LANG_DE Geben Sie Empfehlungen zur Gewichtsreduktion .
+LANG_DE Empfangen Sie die Speichelprobe für die DNA-Analyse .
+LANG_DE Vorbereiten Sie die Endokrinologie-Abteilung für Hormontests .
+LANG_DE Starten Sie die Studie zur Infektionsprävention .
+LANG_DE Dokumentieren Sie die Knie-OP von Patient 456 .
+LANG_DE Leiten Sie die Blutabnahme für Patient 123 ein .
+LANG_DE Analysieren Sie die Urinprobe auf Nierenwerte .
+LANG_DE Setzen Sie die Laborgeräte auf Sicherheitsmodus .
+LANG_DE Vereinbaren Sie einen MRT-Termin für Patient 678 .
+LANG_DE Ändern Sie die Patientenakte mit neuen Befunden .
+LANG_DE Überwachen Sie den Medikamentenvorrat im Medikamentenschrank .
+LANG_DE Geben Sie Tipps zur Stressbewältigung .
+LANG_DE Empfangen Sie die Stuhlprobe für die Darmkrebsvorsorge .
+LANG_DE Vorbereiten Sie die Immunologie-Abteilung für kommende Analysen .
+LANG_DE Starten Sie die Studie zur Schmerztherapie .
+LANG_DE Dokumentieren Sie die Herz-OP von Patient 456 .
+LANG_DE Leiten Sie die Blutuntersuchung für Patient 123 ein .
+LANG_DE Analysieren Sie die Speichelprobe auf Hormonspiegel .
+LANG_DE Setzen Sie die Laborgeräte auf Energiesparmodus .
+LANG_DE Vereinbaren Sie einen Impftermin für Patient 234 .
+LANG_DE Ändern Sie die Patientendaten mit neuen Befunden .
+LANG_DE Überwachen Sie den Impfstoffe im Kühlschrank .
+LANG_DE Geben Sie Hinweise zur Schlafhygiene .
+LANG_DE Empfangen Sie die Hautbiopsie für die Dermatologietest .
+LANG_DE Vorbereiten Sie die Immunologie-Abteilung für kommende Analysen .
+LANG_DE Starten Sie die Studie zur Präventionsmaßnahmen .
+LANG_DE Dokumentieren Sie die Magenspiegelung von Patient 789 .
+LANG_DE Leiten Sie die Impfung für Patient 567 ein .
+LANG_DE Analysieren Sie die Haarprobe auf Drogenrückstände .
+LANG_DE Setzen Sie die Laborgeräte auf Kalibrierungsmodus .
+LANG_DE Vereinbaren Sie einen Augenarzttermin für Patient 234 .
+LANG_DE Ändern Sie die Patientendaten mit neuen Laborergebnissen .
+LANG_DE Überwachen Sie den Verbandmaterial im Erste-Hilfe-Raum .
+LANG_DE Geben Sie Empfehlungen zur Gewichtsreduktion .
+LANG_DE Empfangen Sie die Speichelprobe für die DNA-Analyse .
+LANG_DE Vorbereiten Sie die Endokrinologie-Abteilung für Hormontests .
+LANG_DE Starten Sie die Studie zur Infektionsprävention .
+LANG_DE Dokumentieren Sie die Knie-OP von Patient 456 .
+LANG_DE Leiten Sie die Blutabnahme für Patient 123 ein .
+LANG_DE Analysieren Sie die Urinprobe auf Nierenwerte .
+LANG_DE Setzen Sie die Laborgeräte auf Sicherheitsmodus .
+LANG_DE Vereinbaren Sie einen MRT-Termin für Patient 678 .
+LANG_DE Ändern Sie die Patientenakte mit neuen Befunden .
+LANG_DE Überwachen Sie den Medikamentenvorrat im Medikamentenschrank .
+LANG_DE Geben Sie Tipps zur Stressbewältigung .
+LANG_DE Empfangen Sie die Stuhlprobe für die Darmkrebsvorsorge .
+LANG_DE Vorbereiten Sie die Immunologie-Abteilung für kommende Analysen .
+LANG_DE Starten Sie die Studie zur Schmerztherapie .
+LANG_DE Dokumentieren Sie die Herz-OP von Patient 456 .
+LANG_DE Leiten Sie die Blutuntersuchung für Patient 123 ein .
+LANG_DE Analysieren Sie die Speichelprobe auf Hormonspiegel .
+LANG_DE Setzen Sie die Laborgeräte auf Energiesparmodus .
+LANG_DE Vereinbaren Sie einen Impftermin für Patient 234 .
+LANG_DE Ändern Sie die Patientendaten mit neuen Befunden .
+LANG_DE Überwachen Sie den Impfstoffe im Kühlschrank .
+LANG_DE Geben Sie Hinweise zur Schlafhygiene .
+LANG_DE Empfangen Sie die Hautbiopsie für die Dermatologietest .
+LANG_DE Vorbereiten Sie die Immunologie-Abteilung für kommende Analysen .
+LANG_DE Starten Sie die Studie zur Präventionsmaßnahmen .
+LANG_DE Dokumentieren Sie die Magenspiegelung von Patient 789 .
+LANG_DE Leiten Sie die Impfung für Patient 567 ein .
+LANG_DE Analysieren Sie die Haarprobe auf Drogenrückstände .
+LANG_DE Setzen Sie die Laborgeräte auf Kalibrierungsmodus .
+LANG_DE Vereinbaren Sie einen Augenarzttermin für Patient 234 .
+LANG_DE Ändern Sie die Patientendaten mit neuen Laborergebnissen .
+LANG_DE Überwachen Sie den Verbandmaterial im Erste-Hilfe-Raum .
+LANG_DE Geben Sie Empfehlungen zur Gewichtsreduktion .
+LANG_DE Empfangen Sie die Speichelprobe für die DNA-Analyse .
+LANG_DE Überprüfen Sie mein Girokonto auf verdächtige Aktivitäten .
+LANG_DE Benachrichtigen Sie mich über anstehende Rechnungen .
+LANG_DE Finanznachrichten berichten über einen Anstieg des Aktienmarktes Indizes .
+LANG_DE Wirtschaftsberichte deuten auf einen Rückgang der Arbeitslosenquote hin .
+LANG_DE Überweisen Sie 500 € von meinem Sparkonto auf mein Girokonto .
+LANG_DE Richten Sie eine Benachrichtigung ein, wenn mein Kreditkarten -Saldo 1000 € überschreitet .
+LANG_DE Aktualisieren Sie meine Kontoinformationen mit meiner neuen Adresse .
+LANG_DE Analysieren Sie meine Ausgaben der letzten Monate .
+LANG_DE Zahlen Sie die 200 € Rechnung an Stromversorger von meinem Girokonto .
+LANG_DE Stellen Sie Warnmeldungen für große Transaktionen auf meinem Konto ein .
+LANG_DE Börsennachrichten zeigen einen Anstieg des Aktienkurses .
+LANG_DE Finanzanalysten prognostizieren eine Baisse .
+LANG_DE Generieren Sie einen Finanzbericht für das letzte Quartal .
+LANG_DE Planen Sie eine monatliche Überweisung auf mein Sparkonto .
+LANG_DE Stornieren Sie die Benachrichtigung für niedrige Kontostände .
+LANG_DE Berichten Sie über die Inflationsrate für das letzte Jahr .
+LANG_DE Alarmieren Sie mich, wenn die Aktienkurse meines Portfolios fallen .
+LANG_DE Wirtschaftsnachrichten zeigen eine Erholung nach dem Börsencrash .
+LANG_DE Aktuelle Finanzmeldungen weisen auf eine Zinssatzerhöhung hin .
+LANG_DE Konvertieren Sie 1000 USD in Euro zu dem aktuellen Wechselkurs .
+LANG_DE Tauschen Sie 500 GBP in US-Dollar um .
+LANG_DE Berechnen Sie die 10% Zinsen für mein Sparkonto .
+LANG_DE Voraussagen Sie die Wachstumsrate des Aktienmarktes für das nächste Jahr .
+LANG_DE Empfehlen Sie eine Anlagestrategie basierend auf meinem Risikoprofil .
+LANG_DE Schätzen Sie die monatlichen Ausgaben für Lebensmittel für eine Familie von vier Personen .
+LANG_DE Überprüfen Sie die Einkommensquellen für die vergangenen Monate .
+LANG_DE Investieren Sie 1000 € in Aktienfonds .
+LANG_DE Sparen Sie 200 € pro Monat für einen Urlaubsfonds .
+LANG_DE Ausgeben Sie 50 € für Unterhaltung von Ihrem Girokonto .
+LANG_DE Überwachen Sie Ihre Investitionen regelmäßig, um Risiken zu minimieren .
+LANG_DE Benachrichtigen Sie mich, wenn der Aktienkurs von XYZ steigt .
+LANG_DE Aktuelle Finanzmeldungen zeigen einen Börsenabschwung aufgrund von Handelskonflikten .
+LANG_DE Wirtschaftsnachrichten berichten über eine Inflationsrate über dem Durchschnitt .
+LANG_DE Generieren Sie einen Steuerbericht für das vergangene Geschäftsjahr .
+LANG_DE Planen Sie eine wöchentliche Überweisung auf Ihr Sparkonto .
+LANG_DE Stornieren Sie die Warnung für hohe Ausgaben .
+LANG_DE Berichten Sie über die Arbeitslosenquote für das aktuelle Quartal .
+LANG_DE Alarmieren Sie mich, wenn die Aktienkurse meines Portfolios steigen .
+LANG_DE Wirtschaftsnachrichten zeigen eine Rezession in der Eurozone .
+LANG_DE Finanzanalysten prognostizieren eine Baisse aufgrund von Handelsbeschränkungen .
+LANG_DE Konvertieren Sie 5000 USD in Yen zu dem aktuellen Wechselkurs .
+LANG_DE Tauschen Sie 300 GBP in Schweizer Franken um .
+LANG_DE Berechnen Sie die 5% Zinsen für mein Tagesgeldkonto .
+LANG_DE Voraussagen Sie die Inflationsrate des Aktienmarktes für das kommende Jahr .
+LANG_DE Empfehlen Sie eine Diversifikationsstrategie basierend auf Ihrem Risikoprofil .
+LANG_DE Schätzen Sie die monatlichen Ausgaben für Miete für eine Einzelperson .
+LANG_DE Überprüfen Sie die Einkommensquellen für die vergangenen Jahre .
+LANG_DE Investieren Sie 1500 € in Anleihen .
+LANG_DE Sparen Sie 300 € pro Monat für einen Notfallfonds .
+LANG_DE Ausgeben Sie 75 € für Bekleidung von Ihrem Girokonto .
+LANG_DE Überwachen Sie Ihre Anlagen regelmäßig, um Risiken zu minimieren .
+LANG_DE Benachrichtigen Sie mich, wenn der Aktienkurs von ABC fällt .
+LANG_DE Aktuelle Finanzmeldungen zeigen einen Börsenaufschwung aufgrund von Konjunkturprogrammen .
+LANG_DE Wirtschaftsnachrichten berichten über eine Arbeitslosenquote unter dem Durchschnitt .
+LANG_DE Generieren Sie einen Bilanzbericht für das laufende Geschäftsjahr .
+LANG_DE Planen Sie eine tägliche Überweisung auf Ihr Sparkonto .
+LANG_DE Stornieren Sie die Warnmeldung für niedrige Einnahmen .
+LANG_DE Berichten Sie über die Wirtschaftswachstum für das nächste Quartal .
+LANG_DE Alarmieren Sie mich, wenn die Aktienkurse meines Portfolios stagnieren .
+LANG_DE Wirtschaftsnachrichten zeigen eine Rezession in der USA .
+LANG_DE Finanzanalysten prognostizieren eine Baisse aufgrund von Zinserhöhungen .
+LANG_DE Konvertieren Sie 2000 USD in Pfund zu dem aktuellen Wechselkurs .
+LANG_DE Tauschen Sie 400 GBP in Australische Dollar um .
+LANG_DE Berechnen Sie die 3% Zinsen für mein Festgeldkonto .
+LANG_DE Voraussagen Sie die Wachstumsrate des Aktienmarktes für das folgende Jahr .
+LANG_DE Empfehlen Sie eine Portfoliostrategie basierend auf Ihrem Risikoprofil .
+LANG_DE Schätzen Sie die monatlichen Ausgaben für Bildung für eine Familie mit zwei Kindern .
+LANG_DE Überprüfen Sie die Einkommensquellen für die vergangenen Monate .
+LANG_DE Investieren Sie 800 € in Rohstoffe .
+LANG_DE Sparen Sie 400 € pro Monat für einen Eigenheimkauf .
+LANG_DE Ausgeben Sie 100 € für Restaurantbesuche von Ihrem Girokonto .
+LANG_DE Überwachen Sie Ihre Anlagen regelmäßig, um Risiken zu minimieren .
+LANG_DE Benachrichtigen Sie mich, wenn der Aktienkurs von DEF steigt .
+LANG_DE Aktuelle Finanzmeldungen zeigen einen Börsenaufschwung aufgrund von Technologieinnovationen .
+LANG_DE Wirtschaftsnachrichten berichten über eine Inflationsrate über dem Durchschnitt .
+LANG_DE Generieren Sie einen Steuerbericht für das vergangene Geschäftsjahr .
+LANG_DE Planen Sie eine wöchentliche Überweisung auf Ihr Sparkonto .
+LANG_DE Stornieren Sie die Warnung für hohe Ausgaben .
+LANG_DE Berichten Sie über die Arbeitslosenquote für das aktuelle Quartal .
+LANG_DE Alarmieren Sie mich, wenn die Aktienkurse meines Portfolios steigen .
+LANG_DE Wirtschaftsnachrichten zeigen eine Rezession in der Eurozone .
+LANG_DE Finanzanalysten prognostizieren eine Baisse aufgrund von Handelsbeschränkungen .
+LANG_DE Konvertieren Sie 5000 USD in Yen zu dem aktuellen Wechselkurs .
+LANG_DE Tauschen Sie 300 GBP in Schweizer Franken um .
+LANG_DE Berechnen Sie die 5% Zinsen für mein Tagesgeldkonto .
+LANG_DE Voraussagen Sie die Inflationsrate des Aktienmarktes für das kommende Jahr .
+LANG_DE Empfehlen Sie eine Diversifikationsstrategie basierend auf Ihrem Risikoprofil .
+LANG_DE Schätzen Sie die monatlichen Ausgaben für Miete für eine Einzelperson .
+LANG_DE Überprüfen Sie die Einkommensquellen für die vergangenen Jahre .
+LANG_DE Investieren Sie 1500 € in Anleihen .
+LANG_DE Sparen Sie 300 € pro Monat für einen Notfallfonds .
+LANG_DE Ausgeben Sie 75 € für Bekleidung von Ihrem Girokonto .
+LANG_DE Überwachen Sie Ihre Anlagen regelmäßig, um Risiken zu minimieren .
+LANG_DE Benachrichtigen Sie mich, wenn der Aktienkurs von ABC fällt .
+LANG_DE Aktuelle Finanzmeldungen zeigen einen Börsenaufschwung aufgrund von Konjunkturprogrammen .
+LANG_DE Wirtschaftsnachrichten berichten über eine Arbeitslosenquote unter dem Durchschnitt .
+LANG_DE Generieren Sie einen Bilanzbericht für das laufende Geschäftsjahr .
+LANG_DE Planen Sie eine tägliche Überweisung auf Ihr Sparkonto .
+LANG_DE Stornieren Sie die Warnmeldung für niedrige Einnahmen .
+LANG_DE Berichten Sie über die Wirtschaftswachstum für das nächste Quartal .
+LANG_DE Alarmieren Sie mich, wenn die Aktienkurse meines Portfolios stagnieren .
+LANG_DE Wirtschaftsnachrichten zeigen eine Rezession in der USA .
+LANG_DE Finanzanalysten prognostizieren eine Baisse aufgrund von Zinserhöhungen .
+LANG_DE Ich denke, wir sollten einen 30-minütigen Timer für das Abendessen setzen .
+LANG_DE Gib mir die Zutatenliste für Schokoladenkekse .
+LANG_DE Hey, kannst du kohlenhydratarme Rezepte für mich verfolgen ?
+LANG_DE Ich glaube, wir müssen Milch zur Einkaufsliste hinzufügen .
+LANG_DE Denk daran, den Backofen auf 180 Grad vorzuheizen .
+LANG_DE Vermische die Eier , bis Eigelb und Eiweiß kombiniert sind .
+LANG_DE Pausiere den Kochtimer .
+LANG_DE Setze die Rezepterzählung fort .
+LANG_DE Aktualisiere meine vegetarischen Vorlieben .
+LANG_DE Entferne Zwiebeln von der Einkaufsliste .
+LANG_DE Kannst du den Kaloriengehalt für Avocado auflisten ?
+LANG_DE Schlag ein italienisches Rezept für das Mittagessen vor .
+LANG_DE Überwache den Vorratsschrank für Olivenöl .

@@ -6171,3 +6171,350 @@ LANG_KN ENTITY_PLAYER_NAME ನೇಮಾರ್ END ಅವರು ENTITY_TEAM_NAME 
 LANG_KN ENTITY_PLAYER_NAME ಕೆವಿನ್ ಡೆ ಬ್ರೂನೆ END ಅವರು ENTITY_TEAM_NAME ಮ್ಯಾಂಚೆಸ್ಟರ್ ಸಿಟಿ END ಅನ್ನು ENTITY_ACTION ಗೋಲ್ END ಅನ್ನು ಸ್ಕೋರ್ ಮಾಡಿದರು. INTENT_HIGHLIGHT
 LANG_KN ENTITY_COACH_NAME ಗ್ವಾರ್ಡಿಯೋಳಾ END ಅವರು ENTITY_TEAM_NAME ಮ್ಯಾಂಚೆಸ್ಟರ್ ಸಿಟಿ END ಅನ್ನು ENTITY_ACTION ಗೆಲ್ಲಿಸಿದರು. INTENT_RESULT
 LANG_KN ENTITY_PLAYER_NAME ರೊನಾಲ್ಡೊ END ಅವರು ENTITY_TEAM_NAME ಜುವೆಂಟಸ್ END ಅನ್ನು ENTITY_ACTION ಗೋಲ್ END ಅನ್ನು ಸ್ಕೋರ್ ಮಾಡಿದರು. INTENT_HIGHLIGHT
+LANG_KN ENTITY_ACTION ENTITY_TEST_TYPE ರಿಪೋರ್ಟ್‌ಗಳನ್ನು ENTITY_PATIENT_INFO ರೈತು 456 END ಪ್ರಮಾಣಿಸಿಕೊಳ್ಳಲಾಗಿದೆ. INTENT_REVIEW_REPORT
+LANG_KN ENTITY_ACTION ENTITY_SAMPLE_TYPE ರಕ್ತ ನಮೂನೆಗಳನ್ನು ENTITY_PATIENT_INFO ರೈತು 789 END ಇಂದ ಸಂಗ್ರಹಿಸಿ. INTENT_COLLECT_SAMPLE
+LANG_KN ENTITY_ACTION ENTITY_LAB_SECTION ಬಿಯೋಕೆಮಿಸ್ಟ್ರಿ ಲ್ಯಾಬ್‌ನನ್ನು ENTITY_EVENT ನಾಳೆಯ ಪರೀಕ್ಷೆಗಳಿಗಾಗಿ ಸಿದ್ಧಗೊಳಿಸಿ. INTENT_PREPARE_LAB
+LANG_KN ENTITY_ACTION ENTITY_APPOINTMENT_TYPE ನಂತರದ ಸಂಪರ್ಕದ ಸಮಯವನ್ನು ENTITY_PATIENT_INFO ರೈತು 321 END ಹೇಗೆ ನಿರ್ಧರಿಸಬೇಕು? INTENT_QUERY_APPOINTMENT
+LANG_KN ENTITY_ACTION ENTITY_PATIENT_INFO ರೈತು 654 END ರಿಕಾರ್ಡ್‌ಗಳನ್ನು ENTITY_DIAGNOSIS ಡಯಾಬಿಟೀಸ್ ನಿಖರತೆ END ಮತ್ತು ENTITY_TREATMENT ಇನ್ಸುಲಿನ್ ಚಿಕಿತ್ಸೆ END ಇಲ್ಲಿ ನವೀಕರಿಸಿ. INTENT_UPDATE_RECORDS
+LANG_KN ENTITY_ACTION ENTITY_TEST_TYPE ಮುಂದಿನ MRI ಸ್ಕ್ಯಾನ್‌ಗಾಗಿ ENTITY_PATIENT_INFO ರೈತು 987 END ಅವರನ್ನು ಅವಗಾಹನೆ ಮಾಡಿ. INTENT_NOTIFY_PATIENT
+LANG_KN ENTITY_ACTION ENTITY_INVENTORY_ITEM ಸೂಚಿಯನ್ನು ENTITY_SUPPLY_TYPE ನ್ನು ನವೀಕರಿಸಿ ಮತ್ತು ENTITY_ACTION ಸ್ಟಾಕ್ ಸ್ಥಿತಿ END ಪರಿಶೀಲಿಸಿ. INTENT_UPDATE_INVENTORY
+LANG_KN ENTITY_ACTION ENTITY_PATIENT_INFO ರೈತು 234 END ಪರೀಕ್ಷೆಯ ಫಲಿತಾಂಶಗಳನ್ನು ENTITY_REPORT_TYPE ಹೃದಯ ಪರೀಕ್ಷೆ END ಪರಿಶೀಲಿಸಿ. INTENT_REVIEW_REPORT
+LANG_KN ENTITY_ACTION ENTITY_MEDICAL_PROCEDURE ಚಿಕಿತ್ಸೆಯ ನಡುವೆ ENTITY_PATIENT_INFO ರೈತು 543 END ಅನುಮತಿ ನೀಡಿ. INTENT_APPROVE_PROCEDURE
+LANG_KN ENTITY_ACTION ENTITY_EVENT ನಾಳೆಯ ಪರೀಕ್ಷೆಗಳಿಗಾಗಿ ENTITY_LAB_SECTION ಲ್ಯಾಬ್‌ನನ್ನು ಸಿದ್ಧಗೊಳಿಸಿ. INTENT_PREPARE_LAB
+LANG_KN ENTITY_ACTION ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ಗೆ END ENTITY_TITLE ರಾಗವಾನ್‌ END ಸುಂದರ ಗೀತೆಯನ್ನು ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ಪ್ಲೇ ಮಾಡಿ. INTENT_PLAY
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ಮೌತ್ಯದಿಂದ ನಿಲ್ಲಿಸಿ. INTENT_PAUSE
+LANG_KN ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಭಾವನೆಗಳು END ಮಾರುಕಟ್ಟೆ ಮಾಡಿ. INTENT_UPDATE_PREFERENCES
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ಹುಡುಕಿ. INTENT_SEARCH
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ಸೂಚಿತ ಮಾಡಿ. INTENT_RECOMMEND
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ಪ್ಲೇ ಮಾಡಿ. INTENT_PLAY
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ಮುಂದಕ್ಕೆ ಸರಿಯಿರಿ. INTENT_SKIP
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಧ್ವನಿ END ಮ್ಯೂಟ್ ಮಾಡಿ. INTENT_MUTE
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ಅಡ್ಡಹಾಲಿಗೆ ಸೆಳೆಯಿರಿ. INTENT_FAST_FORWARD
+LANG_KN ENTITY_ACTION ನನಗೆ END ENTITY_MEDIA_TYPE ಪ್ರಿಫರೆನ್ಸ್‌ಗಳು END ಸೂಚಿತ ಮಾಡಿ. INTENT_RECOMMEND
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಕಾರ್ಯಕ್ಷೇತ್ರ END ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಪ್ರಿಫರೆನ್ಸ್‌ಗಳು END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯನ್ನು ಅನುಸರಿಸಲಾರವು. INTENT_UPDATE_PREFERENCES
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಂಗೀತ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿರಿಯಲ್ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಚಲನಚಿತ್ರ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಪಾಟ END ನನ್ನ ವೀಕ್ಷಣಾಪಟಿಯಲ್ಲಿ ಸೇರಿಸಿ. INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ನನ್ನ ಪ್ಲೇಲಿಸ್ಟ್‌ನಲ್ಲಿ ಸ
+LANG_KN ENTITY_ACTION ನನಗೆ ENTITY_DESTINATION ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_DATE ಜೂನ್ ೧೫ END ರಂದು ಪ್ಯಾಕ್ ಮಾಡಲು ಸಹಾಯ ಮಾಡಿ END. INTENT_BOOK_TRIP
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_TRANSPORT_TYPE ವಿಮಾನ END ಗೆ ENTITY_DESTINATION ಲಂಡನ್ END ಗೆ ಹೋಗುವ ಸ್ಥಿತಿ END ನೋಡಲು ಸಹಾಯ ಮಾಡಿ END. INTENT_CHECK_STATUS
+LANG_KN ENTITY_ACTION ENTITY_ACCOMMODATION_TYPE ಹೋಟೆಲ್ ಕೊಠಡಿ END ಒದಗಿಸಲು ENTITY_DESTINATION ಟೋಕಿಯೋ END ನಲ್ಲಿ END ENTITY_DATE ಆಗಸ್ಟ್ ೨೦ END ರಂದು ಸಹಾಯ ಮಾಡಿ END. INTENT_RESERVE_ACCOMMODATION
+LANG_KN ENTITY_ACTION ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_DATE ಏಪ್ರಿಲ್ ೧೫ END ರಂದು ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾರಿಸ್ END ಗೆ ಪ್ಯಾ
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ END. INTENT_START_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಲಕ್ಷ್ಯವನ್ನು ENTITY_MEASUREMENT 5 ಕಿಲೋಗ್ರಾಂ END ಗೆ ಹೆಚ್ಚಿಸಿ END. INTENT_INCREASE_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_PROGRESS_METRIC ಪ್ರೋಗ್ರೆಸ್ ಮೆಟ್ರಿಕ್ END ಅನ್ನು ನೋಡಿ END. INTENT_VIEW_PROGRESS
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_SESSION_TYPE ಸತ್ಯಾಪಿಸಿ END. INTENT_VALIDATE_SESSION
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_USER_INFO ಬದಲಾಯಿಸಿ END. INTENT_UPDATE_USER_INFO
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ನನ್ನ ENTITY_FREQUENCY ದಿನಚರಿಯನ್ನು ENTITY_TIME ಸ್ಥಳದಲ್ಲಿ ನಿರ್ಧಾರಿಸಿ END. INTENT_SCHEDULE_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_INTENSITY ಕಡಿಮೆಮಾಡಿ END ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮದ ತೀವ್ರತೆ END. INTENT_DECREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_MEASUREMENT ತೊಡೆ ಪರಿಮಾಣವನ್ನು ಗುರುತಿಸಿ END. INTENT_RECORD_MEASUREMENT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_DURATION ಸಮಯದಲ್ಲಿ ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮವನ್ನು ಪೂರೈಸಿ END. INTENT_COMPLETE_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_FREQUENCY ದಿನಚರಿಯನ್ನು ENTITY_TIME ಸ್ಥಳದಲ್ಲಿ ನೋಡಿ END. INTENT_VIEW_SCHEDULE
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_INTENSITY ತೀವ್ರತೆಯನ್ನು ಹೆಚ್ಚಿಸಿ END. INTENT_INCREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಲಕ್ಷ್ಯವನ್ನು ENTITY_MEASUREMENT 10 ಕಿಲೋಗ್ರಾಂ END ಗೆ ಕಡಿಮೆಮಾಡಿ END. INTENT_DECREASE_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_INTENSITY ಕಡಿಮೆಮಾಡಿ END ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮದ ತೀವ್ರತೆ END. INTENT_DECREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_MEASUREMENT ತೊಡೆ ಪರಿಮಾಣವನ್ನು ಗುರುತಿಸಿ END. INTENT_RECORD_MEASUREMENT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_DURATION ಸಮಯದಲ್ಲಿ ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮವನ್ನು ಪೂರೈಸಿ END. INTENT_COMPLETE_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_FREQUENCY ದಿನಚರಿಯನ್ನು ENTITY_TIME ಸ್ಥಳದಲ್ಲಿ ನೋಡಿ END. INTENT_VIEW_SCHEDULE
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_INTENSITY ತೀವ್ರತೆಯನ್ನು ಹೆಚ್ಚಿಸಿ END. INTENT_INCREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಲಕ್ಷ್ಯವನ್ನು ENTITY_MEASUREMENT 10 ಕಿಲೋಗ್ರಾಂ END ಗೆ ಕಡಿಮೆಮಾಡಿ END. INTENT_DECREASE_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_INTENSITY ಕಡಿಮೆಮಾಡಿ END ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮದ ತೀವ್ರತೆ END. INTENT_DECREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_MEASUREMENT ತೊಡೆ ಪರಿಮಾಣವನ್ನು ಗುರುತಿಸಿ END. INTENT_RECORD_MEASUREMENT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_DURATION ಸಮಯದಲ್ಲಿ ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮವನ್ನು ಪೂರೈಸಿ END. INTENT_COMPLETE_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_FREQUENCY ದಿನಚರಿಯನ್ನು ENTITY_TIME ಸ್ಥಳದಲ್ಲಿ ನೋಡಿ END. INTENT_VIEW_SCHEDULE
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_INTENSITY ತೀವ್ರತೆಯನ್ನು ಹೆಚ್ಚಿಸಿ END. INTENT_INCREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಲಕ್ಷ್ಯವನ್ನು ENTITY_MEASUREMENT 10 ಕಿಲೋಗ್ರಾಂ END ಗೆ ಕಡಿಮೆಮಾಡಿ END. INTENT_DECREASE_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_INTENSITY ಕಡಿಮೆಮಾಡಿ END ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮದ ತೀವ್ರತೆ END. INTENT_DECREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_MEASUREMENT ತೊಡೆ ಪರಿಮಾಣವನ್ನು ಗುರುತಿಸಿ END. INTENT_RECORD_MEASUREMENT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_DURATION ಸಮಯದಲ್ಲಿ ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮವನ್ನು ಪೂರೈಸಿ END. INTENT_COMPLETE_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_FREQUENCY ದಿನಚರಿಯನ್ನು ENTITY_TIME ಸ್ಥಳದಲ್ಲಿ ನೋಡಿ END. INTENT_VIEW_SCHEDULE
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_INTENSITY ತೀವ್ರತೆಯನ್ನು ಹೆಚ್ಚಿಸಿ END. INTENT_INCREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಲಕ್ಷ್ಯವನ್ನು ENTITY_MEASUREMENT 10 ಕಿಲೋಗ್ರಾಂ END ಗೆ ಕಡಿಮೆಮಾಡಿ END. INTENT_DECREASE_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_INTENSITY ಕಡಿಮೆಮಾಡಿ END ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮದ ತೀವ್ರತೆ END. INTENT_DECREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_MEASUREMENT ತೊಡೆ ಪರಿಮಾಣವನ್ನು ಗುರುತಿಸಿ END. INTENT_RECORD_MEASUREMENT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_DURATION ಸಮಯದಲ್ಲಿ ನನ್ನ ENTITY_EXERCISE_TYPE ವ್ಯಾಯಾಮವನ್ನು ಪೂರೈಸಿ END. INTENT_COMPLETE_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_FREQUENCY ದಿನಚರಿಯನ್ನು ENTITY_TIME ಸ್ಥಳದಲ್ಲಿ ನೋಡಿ END. INTENT_VIEW_SCHEDULE
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಯೊಂದಿಗೆ ENTITY_INTENSITY ತೀವ್ರತೆಯನ್ನು ಹೆಚ್ಚಿಸಿ END. INTENT_INCREASE_INTENSITY
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಲಕ್�
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_LIST_TYPE ಶಾಪಿಂಗ್ ಲಿಸ್ಟ್ END ಗೆ ENTITY_QUANTITY 2 END ENTITY_ITEM ಹಣ್ಣುಗಳು END ಸೇರಿಸಿ END INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION ENTITY_STORE ಮಧ್ಯದಲ್ಲಿ ಹುಲ್ಲು ಸ್ಥಳ END ಹುಡುಕಿ END ಮತ್ತು ENTITY_ITEM ಪಕ್ಷಿಗಳ ಹಾಲು END ಹುಡುಕಿ END INTENT_FIND_ITEM
+LANG_KN ENTITY_ACTION ENTITY_STORE ಬಿಗ್ ಬಾಸ್ಕೆಟ್ END ನಲ್ಲಿ ENTITY_ITEM ಬೇಕುಳ್ಳ ವಸ್ತುಗಳು END ತೋರಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ರೈಸ್ ಪ್ಯಾಕ್‌ಸ್ END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಕೋಸ್ಟ್ಕೊ END ನಲ್ಲಿ ENTITY_ITEM ಸೂಪರ್ ಫುಡ್ಸ್ END ಕಂಡುಹಿಡಿಯಿರಿ END INTENT_FIND_ITEM
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಬಾದಾಮಿನ ಹಾಲು END ಮತ್ತು ENTITY_ITEM ಸೋಯ ಹಾಲು END ತುಲನಾ ಮಾಡಿ END ENTITY_NUTRITIONAL_INFO ಕ್ಯಾಲ್ಶಿಯಂ ವಿಷಯಕ END INTENT_COMPARE_ITEMS
+LANG_KN ENTITY_ACTION ENTITY_STORE ಕೋಸ್ಟ್ಕೊ END ನಲ್ಲಿ ENTITY_ITEM ಚೆದ್ದರ್ ಚೀಸ್ END ಯಾವ ವಿಭಾಗದಲ್ಲಿ ಇದೆ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಬಿಯರ್ ಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಕೊಬ್ಬರಿ ತೆಂಗಿನ ತೈಲ END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಅಲ್ಲಿಯಲ್ಲಿ ಬೇಕುಳ್ಳದು END ಹುಡುಕಿ END ಮತ್ತು ENTITY_STORE_SECTION ತಿಂಡಿಗಳ ವಿಭಾಗ END ನಲ್ಲಿ ಹುಡುಕಿ END INTENT_FIND_ITEM
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಸುಗಂಧಿತ ಸೋದರ ಹುಲ್ಲು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಮಾರುತಿ ಸೂಪರ್ ಮಾರುತಿ ಸೂಪರ್ END ನಲ್ಲಿ ENTITY_ITEM ಬೇಕುಳ್ಳದು END ತೋರಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಕೋಸ್ಟ್ಕೊ END ನಲ್ಲಿ ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಇದೆ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಅಲ್ಲಿಯಲ್ಲಿ ಬೇಕುಳ್ಳದು END ಹುಡುಕಿ END ಮತ್ತು ENTITY_STORE_SECTION ತಿಂಡಿಗಳ ವಿಭಾಗ END ನಲ್ಲಿ ಹುಡುಕಿ END INTENT_FIND_ITEM
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಸುಗಂಧಿತ ಸೋದರ ಹುಲ್ಲು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಮಾರುತಿ ಸೂಪರ್ ಮಾರುತಿ ಸೂಪರ್ END ನಲ್ಲಿ ENTITY_ITEM ಬೇಕುಳ್ಳದು END ತೋರಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಕೋಸ್ಟ್ಕೊ END ನಲ್ಲಿ ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಇದೆ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಅಲ್ಲಿಯಲ್ಲಿ ಬೇಕುಳ್ಳದು END ಹುಡುಕಿ END ಮತ್ತು ENTITY_STORE_SECTION ತಿಂಡಿಗಳ ವಿಭಾಗ END ನಲ್ಲಿ ಹುಡುಕಿ END INTENT_FIND_ITEM
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಸುಗಂಧಿತ ಸೋದರ ಹುಲ್ಲು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಮಾರುತಿ ಸೂಪರ್ ಮಾರುತಿ ಸೂಪರ್ END ನಲ್ಲಿ ENTITY_ITEM ಬೇಕುಳ್ಳದು END ತೋರಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಕೋಸ್ಟ್ಕೊ END ನಲ್ಲಿ ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಇದೆ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಅಲ್ಲಿಯಲ್ಲಿ ಬೇಕುಳ್ಳದು END ಹುಡುಕಿ END ಮತ್ತು ENTITY_STORE_SECTION ತಿಂಡಿಗಳ ವಿಭಾಗ END ನಲ್ಲಿ ಹುಡುಕಿ END INTENT_FIND_ITEM
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಸುಗಂಧಿತ ಸೋದರ ಹುಲ್ಲು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಮಾರುತಿ ಸೂಪರ್ ಮಾರುತಿ ಸೂಪರ್ END ನಲ್ಲಿ ENTITY_ITEM ಬೇಕುಳ್ಳದು END ತೋರಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಕೋಸ್ಟ್ಕೊ END ನಲ್ಲಿ ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಇದೆ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಅಲ್ಲಿಯಲ್ಲಿ ಬೇಕುಳ್ಳದು END ಹುಡುಕಿ END ಮತ್ತು ENTITY_STORE_SECTION ತಿಂಡಿಗಳ ವಿಭಾಗ END ನಲ್ಲಿ ಹುಡುಕಿ END INTENT_FIND_ITEM
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಸುಗಂಧಿತ ಸೋದರ ಹುಲ್ಲು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಮಾರುತಿ ಸೂಪರ್ ಮಾರುತಿ ಸೂಪರ್ END ನಲ್ಲಿ ENTITY_ITEM ಬೇಕುಳ್ಳದು END ತೋರಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_STORE ಕೋಸ್ಟ್ಕೊ END ನಲ್ಲಿ ENTITY_ITEM ಚಕ್ಕರ್ಪಿಂಡಿ END ಇದೆ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ END INTENT_ITEM_AVAILABILITY
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸಿ END INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ನೀರುಬೋಟಲ್‌ಗಳು END ಬೆಲೆ END ಯನ್ನು ತಪ್ಪಿಸ
+LANG_KN ಹೇಗಿದೆ, ನೀವು ENTITY_ACTION ಮಧ್ಯಾಹ್ನ ಸಮಯ END ಗೆ ENTITY_SETTING_TYPE ಬೆಳಕಿನ ತೀವ್ರತೆ END ಅನ್ನು ENTITY_DEVICE ಹಳೆಯ ಹಾಳದ ಬಲ END ಗೆ ಹೊಂದಿಸಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಹಸಿದು ನಿದ್ರೆ ಬರುತ್ತಿದೆ, ENTITY_ACTION ಕುಟುಂಬದ ಗೇಟ್ END ಅನ್ನು ENTITY_DEVICE ಮುಚ್ಚಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಹೊಸ ಗಾಡಿಯ ಬಗ್ಗೆ ಹೇಗಿದೆಯೆಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ಕುಟುಂಬದ ENTITY_LOCATION ರೂಮ್ END ನಲ್ಲಿ ENTITY_ACTION ಸಂಗೀತ END ಆಡಿ. INTENT_MEDIA_CONTROL
+LANG_KN ENTITY_ACTION ಕೊಳ್ಳಿ END ENTITY_PRODUCT ಪಿಜ್ಜಾ END ಅನ್ನು ENTITY_PAYMENT_METHOD ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ END ಬಳಸಿ. INTENT_ORDER
+LANG_KN ENTITY_ACTION ಸೆಟ್ END ಮನೆಯ ENTITY_TEMPERATURE_SETTING ಥೆರ್ಮೋಸ್ಟೇಟ್ END ಅನ್ನು ENTITY_SETTING_VALUE 72 ಡಿಗ್ರಿಗಳನ್ನು END. INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಹುಡುಕುವಿಕೆಯಲ್ಲಿ ಸಹಾಯ ಬೇಕಾಗಿದೆ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಪ್ರವೇಶಿಸಲು ಸಹಾಯ ಮಾಡಬಹುದೇ? INTENT_ASSISTANCE
+LANG_KN ನನಗೆ ಮನೆಯ ENTITY_DEVICE ಸುರಕ್ಷತೆ END ಬಗ್ಗೆ ಮಾಹಿತಿ ಬೇಡಿ. INTENT_GET_STATUS
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸುರಕ್ಷೆ ಸಿಸ್ಟಮ್ END ಅನ್ನು ENTITY_DEVICE ಸಕ್ರಿಯಗೊಳಿಸಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ENTITY_ACTION ಬದಲಾಯಿಸಿ END ಮನೆಯ ENTITY_DEVICE ಬೆಳಕು END ನಿಧಾನವಾಗಿ ಬದಲಾಯಿಸಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಈ ವಾರವು ENTITY_DATE ಸಮಯದಲ್ಲಿ ENTITY_DEVICE ಟಿವಿಯ ವಿನ್ಯಾಸ END ಬೇಡಿ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಬೆಳಕಿನ ತೀವ್ರತೆ END ಹೇಗಿದೆ ಎಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ನನಗೆ ಹೊಸ ಸಂಗೀತ ಪಾಠವನ್ನು ಶುರು ಮಾಡಲು ಸಹಾಯ ಬೇಡಿ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಬೆಳಕಿನ ತೀವ್ರತೆ END ಹೇಗಿದೆ ಎಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ನನಗೆ ಹೊಸ ಗಾಡಿಯ ಬಗ್ಗೆ ಹೇಗಿದೆಯೆಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ಕುಟುಂಬದ ENTITY_LOCATION ರೂಮ್ END ನಲ್ಲಿ ENTITY_ACTION ಸಂಗೀತ END ಆಡಿ. INTENT_MEDIA_CONTROL
+LANG_KN ENTITY_ACTION ಕೊಳ್ಳಿ END ENTITY_PRODUCT ಪಿಜ್ಜಾ END ಅನ್ನು ENTITY_PAYMENT_METHOD ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ END ಬಳಸಿ. INTENT_ORDER
+LANG_KN ENTITY_ACTION ಸೆಟ್ END ಮನೆಯ ENTITY_TEMPERATURE_SETTING ಥೆರ್ಮೋಸ್ಟೇಟ್ END ಅನ್ನು ENTITY_SETTING_VALUE 72 ಡಿಗ್ರಿಗಳನ್ನು END. INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಹುಡುಕುವಿಕೆಯಲ್ಲಿ ಸಹಾಯ ಬೇಕಾಗಿದೆ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಪ್ರವೇಶಿಸಲು ಸಹಾಯ ಮಾಡಬಹುದೇ? INTENT_ASSISTANCE
+LANG_KN ನನಗೆ ಮನೆಯ ENTITY_DEVICE ಸುರಕ್ಷತೆ END ಬಗ್ಗೆ ಮಾಹಿತಿ ಬೇಡಿ. INTENT_GET_STATUS
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸುರಕ್ಷೆ ಸಿಸ್ಟಮ್ END ಅನ್ನು ENTITY_DEVICE ಸಕ್ರಿಯಗೊಳಿಸಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ENTITY_ACTION ಬದಲಾಯಿಸಿ END ಮನೆಯ ENTITY_DEVICE ಬೆಳಕು END ನಿಧಾನವಾಗಿ ಬದಲಾಯಿಸಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಈ ವಾರವು ENTITY_DATE ಸಮಯದಲ್ಲಿ ENTITY_DEVICE ಟಿವಿಯ ವಿನ್ಯಾಸ END ಬೇಡಿ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಬೆಳಕಿನ ತೀವ್ರತೆ END ಹೇಗಿದೆ ಎಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ನನಗೆ ಹೊಸ ಸಂಗೀತ ಪಾಠವನ್ನು ಶುರು ಮಾಡಲು ಸಹಾಯ ಬೇಡಿ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಬೆಳಕಿನ ತೀವ್ರತೆ END ಹೇಗಿದೆ ಎಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ನನಗೆ ಹೊಸ ಗಾಡಿಯ ಬಗ್ಗೆ ಹೇಗಿದೆಯೆಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ಕುಟುಂಬದ ENTITY_LOCATION ರೂಮ್ END ನಲ್ಲಿ ENTITY_ACTION ಸಂಗೀತ END ಆಡಿ. INTENT_MEDIA_CONTROL
+LANG_KN ENTITY_ACTION ಕೊಳ್ಳಿ END ENTITY_PRODUCT ಪಿಜ್ಜಾ END ಅನ್ನು ENTITY_PAYMENT_METHOD ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ END ಬಳಸಿ. INTENT_ORDER
+LANG_KN ENTITY_ACTION ಸೆಟ್ END ಮನೆಯ ENTITY_TEMPERATURE_SETTING ಥೆರ್ಮೋಸ್ಟೇಟ್ END ಅನ್ನು ENTITY_SETTING_VALUE 72 ಡಿಗ್ರಿಗಳನ್ನು END. INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಹುಡುಕುವಿಕೆಯಲ್ಲಿ ಸಹಾಯ ಬೇಕಾಗಿದೆ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಪ್ರವೇಶಿಸಲು ಸಹಾಯ ಮಾಡಬಹುದೇ? INTENT_ASSISTANCE
+LANG_KN ನನಗೆ ಮನೆಯ ENTITY_DEVICE ಸುರಕ್ಷತೆ END ಬಗ್ಗೆ ಮಾಹಿತಿ ಬೇಡಿ. INTENT_GET_STATUS
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸುರಕ್ಷೆ ಸಿಸ್ಟಮ್ END ಅನ್ನು ENTITY_DEVICE ಸಕ್ರಿಯಗೊಳಿಸಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ENTITY_ACTION ಬದಲಾಯಿಸಿ END ಮನೆಯ ENTITY_DEVICE ಬೆಳಕು END ನಿಧಾನವಾಗಿ ಬದಲಾಯಿಸಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಈ ವಾರವು ENTITY_DATE ಸಮಯದಲ್ಲಿ ENTITY_DEVICE ಟಿವಿಯ ವಿನ್ಯಾಸ END ಬೇಡಿ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಬೆಳಕಿನ ತೀವ್ರತೆ END ಹೇಗಿದೆ ಎಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ನನಗೆ ಹೊಸ ಸಂಗೀತ ಪಾಠವನ್ನು ಶುರು ಮಾಡಲು ಸಹಾಯ ಬೇಡಿ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಬೆಳಕಿನ ತೀವ್ರತೆ END ಹೇಗಿದೆ ಎಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ನನಗೆ ಹೊಸ ಗಾಡಿಯ ಬಗ್ಗೆ ಹೇಗಿದೆಯೆಂದು ಹೇಳಿ. INTENT_GET_STATUS
+LANG_KN ಕುಟುಂಬದ ENTITY_LOCATION ರೂಮ್ END ನಲ್ಲಿ ENTITY_ACTION ಸಂಗೀತ END ಆಡಿ. INTENT_MEDIA_CONTROL
+LANG_KN ENTITY_ACTION ಕೊಳ್ಳಿ END ENTITY_PRODUCT ಪಿಜ್ಜಾ END ಅನ್ನು ENTITY_PAYMENT_METHOD ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ END ಬಳಸಿ. INTENT_ORDER
+LANG_KN ENTITY_ACTION ಸೆಟ್ END ಮನೆಯ ENTITY_TEMPERATURE_SETTING ಥೆರ್ಮೋಸ್ಟೇಟ್ END ಅನ್ನು ENTITY_SETTING_VALUE 72 ಡಿಗ್ರಿಗಳನ್ನು END. INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಹುಡುಕುವಿಕೆಯಲ್ಲಿ ಸಹಾಯ ಬೇಕಾಗಿದೆ. INTENT_ASSISTANCE
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಸ್ಥಳದ ಮುಂದೆ END ನನಗೆ ENTITY_SETTING_TYPE ಪ್ರವೇಶಿಸಲು ಸಹಾಯ ಮಾಡಬಹುದೇ? INTENT_ASSISTANCE
+LANG_KN ನನಗೆ ಮನೆಯ ENTITY_DEVICE ಸುರಕ್ಷತೆ END ಬಗ್ಗೆ
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ನನ್ನ ENTITY_SYMPTOM ಹಿಂದಿನ ENTITY_MOOD ಬದಲಾವಣೆಗಳನ್ನು END ದಾಖಲಿಸಲು END ಬಯಸುತ್ತೇನೆ END . INTENT_DOCUMENT_SYMPTOM
+LANG_KN ENTITY_PATIENT_INFO ನಾವು END ENTITY_ACTION ಹೊಸ ENTITY_GOAL_TYPE ಗುರಿ END ಹೊಂದಿಸಲು END ಸಾಧ್ಯವಾಗುತ್ತದೆಯಾ? INTENT_SET_GOAL
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ಹಿನ್ನೆಲೆಯನ್ನು END ಪರಿಶೀಲಿಸಲು END ಇಚ್ಛಿಸುತ್ತೇನೆ END . INTENT_REVIEW_PROGRESS
+LANG_KN ENTITY_PATIENT_INFO ನನ್ನ ENTITY_MOOD ಸ್ಥಿತಿ END ಹೇಗಿದೆ ಎಂಬುದನ್ನು END ಪರಿಶೀಲಿಸಲು END ಸಹಾಯ ಮಾಡಬಹುದೇ? INTENT_ASSESS_MOOD
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ನನ್ನ ENTITY_SYMPTOM ವ್ಯಾಖ್ಯಾನಿಸಲು END ಸಹಾಯ ಬೇಕಾಗಿದೆ END . INTENT_SUPPORT_SYMPTOM
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ಹೊಸ ENTITY_ACTIVITY ಕಾರ್ಯಕ್ಷೇತ್ರ END ಪ್ರಾರಂಭಿಸಲು END ಇಚ್ಛಿಸುತ್ತೇನೆ END . INTENT_START_ACTIVITY
+LANG_KN ENTITY_PATIENT_INFO ನಾವು END ENTITY_ACTION ನಮ್ಮ ENTITY_GOAL_TYPE ಪ್ರಗತಿಯನ್ನು END ಪರಿಶೀಲಿಸಲು END ಪ್ರಯತ್ನಿಸೋಣ END . INTENT_REVIEW_PROGRESS
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ನನ್ನ ENTITY_THERAPY_TYPE ಚಿಕಿತ್ಸೆಯ ಹೊಸ ENTITY_GOAL_TYPE ಗುರಿ END ಹೊಂದಿಸಲು END ಆಗುತ್ತದೆಯಾ? INTENT_SET_GOAL
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ನನ್ನ ENTITY_SYMPTOM ಪ್ರಗತಿಯನ್ನು END ನೀಡಲು END ಸಹಾಯ ಬೇಕಾಗಿದೆ END . INTENT_PROVIDE_PROGRESS
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ನನ್ನ ENTITY_MOOD ಸ್ಥಿತಿಯನ್ನು END ಪರಿಶೀಲಿಸಲು END ನೀವು END ನನಗೆ END ಸಹಾಯ ಮಾಡಬಹುದೇ? INTENT_ASSESS_MOOD
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_ACCOUNT_TYPE ಚೆಕ್ಕಿಂಗ್ ಖಾತೆ END ಯನ್ನು ENTITY_TRANSACTION_TYPE ಸಂದೇಹಾತ್ಮಕ ಚಟುವಟಿಕೆ END ಗಳಿಗಾಗಿ ENTITY_ACTION ಪರಿಶೀಲಿಸಿ END. INTENT_MONITOR_ACCOUNT
+LANG_KN ENTITY_ACTION ಮುಂದಿನ ENTITY_TRANSACTION_TYPE ಬಿಲ್ಲುಗಳನ್ನು END ನನಗೆ ENTITY_ACTION ಅಧಿಸೂಚಿಸಿ END. INTENT_NOTIFY_BILLS
+LANG_KN ENTITY_NEWS_TYPE ಆರ್ಥಿಕ ಸುದ್ದಿ END ವರ್ತಮಾನದಲ್ಲಿ ENTITY_MARKET_TYPE ಶೇಯರ್ ಮಾರುಕಟ್ಟೆ END ENTITY_STATISTIC_TYPE ಸೂಚಕಗಳು END ಬದಲಾವಣೆಯಾಗಿವೆ. INTENT_REPORT_NEWS
+LANG_KN ENTITY_NEWS_TYPE ಆರ್ಥಿಕ ವರದಿಗಳು END ಬೇಕಾದಾಗ ENTITY_ECONOMIC_INDICATOR ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ ಬೇಕಾದಾಗ. INTENT_REPORT_NEWS
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_ACCOUNT_TYPE ಸೇವಿಂಗ್ಸ್ ಖಾತೆ END ನಿಂದ ENTITY_AMOUNT
+LANG_KN ನಾವು ENTITY_ACTION ತೋಟದ ಮೇಲೆ ರೆಸಿಪಿಗಳನ್ನು ENTITY_RECIPE_TYPE ಶೋಧಿಸಬಹುದೇನು? INTENT_SEARCH_RECIPE
+LANG_KN ನಾವು ENTITY_ACTION ರಾತ್ರಿಯನ್ನು ENTITY_MEAL_TYPE ಮಾಡಬಹುದೇನು? ENTITY_DURATION 10 ನಿಮಿಷ END ಟೈಮರ್ END ಹೊಡೆಯಬಹುದೇನು? INTENT_SET_TIMER
+LANG_KN ಚಾಕ್ಲೇಟ್ ಕೇಕ್ ENTITY_RECIPE_TYPE ಸಾಮಗ್ರಿ ಪಟ್ಟಿಯನ್ನು ENTITY_ACTION ನೀಡಬಹುದೇನು? INTENT_PROVIDE_INGREDIENTS
+LANG_KN ಹೌದು, ನೀವು ENTITY_DIETARY_PREFERENCE ನೀಚು-ಕಾರ್ಬ್ ರೆಸಿಪಿಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಬಹುದೇನು? INTENT_TRACK_DIET
+LANG_KN ನನಗೆ ಹೇಳಿದ್ದರಿಂದ ENTITY_SHOPPING_LIST ಶಾಪಿಂಗ್ ಲಿಸ್ಟ್ ಗೆ ENTITY_INGREDIENT ಟಮೋಟೋಗಳನ್ನು ಸೇರಿಸಬೇಕು ಎಂಬುದು ನನಗೆ ತೋರುತ್ತದೆ. INTENT_UPDATE_LIST
+LANG_KN ವೆಜಿಟೇರಿಯನ್ ಪಾಸ್ತಾ ENTITY_RECIPE_TYPE ರೆಸಿಪಿಯನ್ನು ಹೇಗೆ ಹುಡುಕಬಹುದೇನು? INTENT_SEARCH_RECIPE
+LANG_KN ಓವನ್ ENTITY_KITCHEN_TOOL ಅನ್ನು ENTITY_TEMPERATURE 350 ಡಿಗ್ರಿಗೆ ಪೂರ್ವಗೊಳಿಸಬೇಕು. INTENT_COOKING_STEP
+LANG_KN ENTITY_ACTION ಎಂಡುವುದು ಎಗ್ಸ್ ಸಮಗ್ರಿ ಎಂಬುದನ್ನು ENTITY_INGREDIENT ವಿರಳುಗಳು END ಮಿಶ್ರಣವಾಗುವವರೆಗೆ ವಿಸರಿಸಿ. INTENT_COOKING_STEP
+LANG_KN ENTITY_COOKING_STEP ಕುಕಿಂಗ್ ಟೈಮರ್ END ನಿಲ್ಲಿಸಿ. INTENT_CONTROL_TIMER
+LANG_KN ENTITY_COOKING_STEP ರೆಸಿಪಿ ವಿವರಣೆ END ಪುನರಾರಂಭಿಸಿ. INTENT_CONTROL_NARRATION
+LANG_KN ENTITY_DIETARY_PREFERENCE ವೀಗನ್ END ಪ್ರಾಧಾನ್ಯತೆಗಳನ್ನು ನವೀಕರಿಸಿ. INTENT_UPDATE_PREFERENCES
+LANG_KN ENTITY_SHOPPING_LIST ಶಾಪಿಂಗ್ ಲಿಸ್ಟ್ ನಿಂದ ENTITY_INGREDIENT ಉಲ್ಲೇಖನಗಳನ್ನು ತೆಗೆದುಹಾಕಿ. INTENT_UPDATE_LIST
+LANG_KN ನೀವು ENTITY_INGREDIENT ಆವಕಾಡೊ END ಕ್ಯಾಲೊರಿ ವಿಷಯವನ್ನು ಪಟ್ಟಿಯನ್ನು ನೀಡಬಹುದೇನು? INTENT_PROVIDE_NUTRITIONAL_INFO
+LANG_KN ENTITY_MEAL_TYPE ಲಂಚ್ ಮಾಡಲು ENTITY_CUISINE ಇಟಾಲಿಯನ್ END ರೆಸಿಪಿಯನ್ನು ಸೂಚಿಸಬಹುದೇನು? INTENT_SUGGEST_RECIPE
+LANG_KN ENTITY_INGREDIENT ಒಲಿವ್ ಆಯಿಲ್ END ಪ್ಯಾಂಟ್ರಿ ಸ್ಟಾಕ್ END ಟ್ರ್ಯಾಕ್ ಮಾಡಬಹುದೇನು? INTENT_TRACK_INVENTORY
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ಹೆಚ್ಚಿನ END ENTITY_SYMPTOM ಉಬ್ಬಿಕೆ END ENTITY_FREQUENCY ಸಾಮಾನ್ಯವಾಗಿ END ENTITY_DURATION ಕೆಲವು ದಿನಗಳಿಂದ END INTENT_SYMPTOM_REPORT
+LANG_KN ENTITY_PATIENT_INFO ನನಗೆ END ENTITY_ACTION ನಿದಾನ END ENTITY_SYMPTOM ತಲೆನೋವು END ENTITY_DATE ಇನ್ನು ಕೆಲವು ದಿನಗಳಿಂದ END INTENT_DIAGNOSIS
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ಅನುಭವಿಸುತ್ತಿದ್ದೇನೆ END ENTITY_SYMPTOM ತೊಂದರೆ END ENTITY_TIME ಹೆಚ್ಚಿನದರಲ್ಲಿ END INTENT_SYMPTOM_REPORT
+LANG_KN ENTITY_PATIENT_INFO ನನಗೆ END ENTITY_ACTION ವಿಮರ್ಶಿಸಲು END ENTITY_SYMPTOM ನೋವು END ENTITY_DATE ಹೊಸದಾಗಿ END INTENT_ACTION
+LANG_KN ENTITY_PATIENT_INFO ನನಗೆ END ENTITY_ACTION ನೋವು END ENTITY_SYMPTOM ಹೆಚ್ಚಿನದರಲ್ಲಿ END ENTITY_TIME ಕೆಲವು ದಿನಗಳಿಂದ END INTENT_SYMPTOM_REPORT
+LANG_KN ENTITY_PATIENT_INFO ನನಗೆ END ENTITY_ACTION ನಿದಾನ END ENTITY_SYMPTOM ತಲೆನೋವು END ENTITY_DATE ಇನ್ನು ಕೆಲವು ದಿನಗಳಿಂದ END INTENT_DIAGNOSIS
+LANG_KN ENTITY_PATIENT_INFO ನಾನು END ENTITY_ACTION ಅನುಭವಿಸುತ್ತಿದ್ದೇನೆ END ENTITY_SYMPTOM ತೊಂದರೆ END ENTITY_TIME ಹೆಚ್ಚಿನದರಲ್ಲಿ END INTENT_SYMPTOM_REPORT
+LANG_KN ENTITY_PATIENT_INFO ನನಗೆ END ENTITY_ACTION ವಿಮರ್ಶಿಸಲು END ENTITY_SYMPTOM ನೋವು END ENTITY_DATE ಹೊಸದಾಗಿ END INTENT_ACTION
+LANG_KN ENTITY_PATIENT_INFO ನನಗೆ END ENTITY_ACTION ನೋವು END ENTITY_SYMPTOM ಹೆಚ್ಚಿನದರಲ್ಲಿ END ENTITY_TIME ಕೆಲವು ದಿನಗಳಿಂದ END INTENT_SYMPTOM_REPORT
+LANG_KN ENTITY_PATIENT_INFO ನನಗೆ END ENTITY_ACTION ನಿದಾನ END ENTITY_SYMPTOM ತಲೆನೋವು END ENTITY_DATE ಇನ್ನು ಕೆಲವು ದಿನಗಳಿಂದ END INTENT_DIAGNOSIS
+LANG_KN ENTITY_TEAM_NAME ಬಾರ್ಸಲೋನಾ END ಮೌಖಿಕವಾಗಿ ENTITY_ACTION ಗೆಲ್ಲುತ್ತದೆ END ಮತ್ತು ENTITY_TEAM_NAME ರಿಯಾಲ್ ಮದ್ರಿಡ್ END ಅದನ್ನು ಸ್ವೀಕರಿಸುತ್ತದೆ. INTENT_RESULT
+LANG_KN ENTITY_PLAYER_NAME ಮೆಸ್ಸಿ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಗೋಲ್ END ಅನ್ನು ಸ್ಕೋರು ಮಾಡುತ್ತಾರೆ. INTENT_HIGHLIGHT
+LANG_KN ENTITY_PLAYER_NAME ರನಾಲ್ಡೊ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಪಾಸ್ END ನಿರ್ವಹಿಸುತ್ತಾರೆ, ಅದು ಕ್ಲಾಸ್ಮಾತ್ತಿಕ್! INTENT_PASS
+LANG_KN ENTITY_TEAM_NAME ಬಾಯರ್ನ್ ಮ್ಯೂನಿಕ್ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಆಟ END ನಿರ್ವಹಿಸುತ್ತದೆ ಮತ್ತು ENTITY_TEAM_NAME ಡಾರ್ಮ್ಸ್ಟಾಡ್ END ಅದನ್ನು ಹರಡುತ್ತದೆ. INTENT_COMMENT
+LANG_KN ENTITY_PLAYER_NAME ನೆಯ್ಮಾರ್ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಗೋಲ್ END ಸೆಟ್ ಅಪ್ ಮಾಡುತ್ತಾನೆ ENTITY_TEAM_NAME ಪ್ಯಾರಿಸ್ ಸೆಂಟ್ ಜರ್ಮೈನ್ END ಅಂತಿಮವಾಗಿ ಗೆಲ್ಲುತ್ತದೆ. INTENT_HIGHLIGHT
+LANG_KN ENTITY_PLAYER_NAME ಸಾಲಾಹ್ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಗೋಲ್ END ಹೊಂದಿಸುತ್ತಾನೆ ENTITY_TEAM_NAME ಲಿವರ್ಪೂಲ್ END ಮತ್ತು ಅದು ENTITY_TEAM_NAME ಮ್ಯಾನ್ಚಸ್ಟರ್ ಯುನೈಟೆಡ್ END ವಿರುದ್ಧ ವಿಜಯವನ್ನು ಸಾಧಿಸುತ್ತದೆ. INTENT_RESULT
+LANG_KN ENTITY_PLAYER_NAME ಕೇನ್ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಗೋಲ್ END ಹೊಂದಿಸುತ್ತಾನೆ ಮತ್ತು ಅದು ಸ್ವಲ್ಪ ENTITY_TIME ನಂತರ END ಸಮಾನವಾಗುತ್ತದೆ. INTENT_HIGHLIGHT
+LANG_KN ENTITY_TEAM_NAME ಬಾರ್ಸಲೋನಾ END ಮೌಖಿಕವಾಗಿ ENTITY_ACTION ಗೆಲ್ಲುತ್ತದೆ END ಮತ್ತು ENTITY_TEAM_NAME ರಿಯಾಲ್ ಮದ್ರಿಡ್ END ಅದನ್ನು ಸ್ವೀಕರಿಸುತ್ತದೆ. INTENT_RESULT
+LANG_KN ENTITY_PLAYER_NAME ಮೆಸ್ಸಿ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಗೋಲ್ END ಅನ್ನು ಸ್ಕೋರು ಮಾಡುತ್ತಾರೆ. INTENT_HIGHLIGHT
+LANG_KN ENTITY_PLAYER_NAME ರನಾಲ್ಡೊ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಪಾಸ್ END ನಿರ್ವಹಿಸುತ್ತಾರೆ, ಅದು ಕ್ಲಾಸ್ಮಾತ್ತಿಕ್! INTENT_PASS
+LANG_KN ENTITY_TEAM_NAME ಬಾಯರ್ನ್ ಮ್ಯೂನಿಕ್ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಆಟ END ನಿರ್ವಹಿಸುತ್ತದೆ ಮತ್ತು ENTITY_TEAM_NAME ಡಾರ್ಮ್ಸ್ಟಾಡ್ END ಅದನ್ನು ಹರಡುತ್ತದೆ. INTENT_COMMENT
+LANG_KN ENTITY_PLAYER_NAME ನೆಯ್ಮಾರ್ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಗೋಲ್ END ಸೆಟ್ ಅಪ್ ಮಾಡುತ್ತಾನೆ ENTITY_TEAM_NAME ಪ್ಯಾರಿಸ್ ಸೆಂಟ್ ಜರ್ಮೈನ್ END ಅಂತಿಮವಾಗಿ ಗೆಲ್ಲುತ್ತದೆ. INTENT_HIGHLIGHT
+LANG_KN ENTITY_PLAYER_NAME ಸಾಲಾಹ್ END ಅತ್ಯುತ್ತಮ ENTITY_ACTION ಗೋಲ್ END ಹೊಂದಿಸುತ್ತಾನೆ ENTITY_TEAM_NAME ಲಿವರ್ಪೂಲ್ END ಮತ್ತು ಅದು ENTITY_TEAM_NAME ಮ್ಯಾನ್ಚಸ್ಟರ್ ಯುನೈಟೆಡ್ END ವಿರುದ್ಧ ವಿಜಯವನ್ನು ಸಾಧಿಸುತ್ತದೆ. INTENT_RESULT
+LANG_KN ENTITY_ACTION ENTITY_TEST_TYPE ಹೋಮೋಗ್ಲೊಬಿನ್ ಪರೀಕ್ಷೆ END ನಡೆಸಿ END ENTITY_PATIENT_INFO ರೋಗಿ 456 END. INTENT_CONDUCT_TEST
+LANG_KN ENTITY_ACTION ENTITY_SETTING_TYPE ಧ್ವನಿ ಸೆಟ್ಟಿಂಗ್ END ಬದಲಾಯಿಸಿ END ENTITY_DEVICE ಮೈಕ್ರೋಫೋನ್ END. INTENT_CHANGE_SETTING
+LANG_KN ENTITY_ACTION ENTITY_REPORT_TYPE ರಿಪೋರ್ಟ್ ಕಳುಹಿಸಿ END ENTITY_RECIPIENT ಡಾಕ್ಟರ್ END ಗೆ. INTENT_SEND_REPORT
+LANG_KN ENTITY_ACTION ENTITY_APPOINTMENT_TYPE ಹೊಸ ಸಮಯಾನುಸಾರ ಹೊಸ ಹೋಂದಣಿ END ENTITY_PATIENT_INFO ರೋಗಿ 789 END ಅಪ್ಪಾಯಿಂಟ್ END ಸ್ವರೂಪಿಸಿ. INTENT_SCHEDULE_APPOINTMENT
+LANG_KN ENTITY_ACTION ENTITY_PATIENT_INFO ರೋಗಿ ಮಾಹಿತಿ END ನವಿಕರಿಸಿ END ENTITY_DIAGNOSIS ಕಡಿಮೆ ಶಕ್ತಿ END ಹೊಂದಿದ್ದಾರೆ. INTENT_UPDATE_PATIENT_INFO
+LANG_KN ENTITY_ACTION ENTITY_INVENTORY_ITEM ಸ್ಟೋರೇಜ್ END ನಿರ್ವಹಿಸಿ END ENTITY_SUPPLY_TYPE ಪರಿಶೀಲಿಸಿ END. INTENT_MANAGE_INVENTORY
+LANG_KN ENTITY_ACTION ENTITY_MEDICAL_ADVICE ನೀಡಿ END ENTITY_PATIENT_INFO ರೋಗಿ 321 END ಗೆ ENTITY_SYMPTOM ಜ್ವರ ಬರುತ್ತಿದೆ END. INTENT_PROVIDE_MEDICAL_ADVICE
+LANG_KN ENTITY_ACTION ಪ್ಲೇ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_TITLE ಆರೋಗ್ಯದ ಗುರುತು END INTENT_PLAY_MEDIA ENTITY_ACTION ಸೂಚಿಸಿ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_GENRE ಥ್ರಿಲ್ಲರ್ END INTENT_RECOMMEND_CONTENT ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಸಂಗೀತ END ENTITY_ACTION ಅನುಸರಿಸಿ END INTENT_UPDATE_PREFERENCE ENTITY_ACTION ಪ್ಲೇ END ENTITY_MEDIA_TYPE ಟೀವಿ ಶೋ END ENTITY_TITLE ಬಿಗ್ ಬಾಸ್ END INTENT_PLAY_MEDIA ENTITY_ACTION ರಿಮೈಂಡ್ END ENTITY_ACTION ಹೊಂದಿಸಿ END ENTITY_TIME 6 ಗಂಟೆಗಳ ನಂತರ END INTENT_SET_REMINDER ENTITY_ACTION ಸಲಹೆ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_GENRE ಕಾಮೆಡಿ END INTENT_RECOMMEND_CONTENT ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಗೀತೆಗಳು END ENTITY_ACTION ಅನುಸರಿಸಿ END INTENT_UPDATE_PREFERENCE ENTITY_ACTION ಪ್ಲೇ END ENTITY_MEDIA_TYPE ಸರ್ವೆಯರ್ END ENTITY_TITLE ಹ್ಯಾಕ್ಸಾವರ್ END INTENT_PLAY_MEDIA ENTITY_ACTION ರಿಮೈಂಡ್ END ENTITY_ACTION ಹೊಂದಿಸಿ END ENTITY_TIME 3 ಗಂಟೆಗಳ ನಂತರ END INTENT_SET_REMINDER ENTITY_ACTION ಸೂಚಿಸಿ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_GENRE ರೊಮಾಂಟಿಕ್ END INTENT_RECOMMEND_CONTENT ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಆಲ್ಬಮ್‌ಗಳು END ENTITY_ACTION ಅನುಸರಿಸಿ END INTENT_UPDATE_PREFERENCE ENTITY_ACTION ಪ್ಲೇ END ENTITY_MEDIA_TYPE ಡಾಕ್ಯುಮೆಂಟರಿ END ENTITY_TITLE ವಾಯರಸ್ END INTENT_PLAY_MEDIA ENTITY_ACTION ರಿಮೈಂಡ್ END ENTITY_ACTION ಹೊಂದಿಸಿ END ENTITY_TIME 1 ಗಂಟೆಗಳ ನಂತರ END INTENT_SET_REMINDER ENTITY_ACTION ಸೂಚಿಸಿ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_GENRE ಹೊರತು END INTENT_RECOMMEND_CONTENT ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಪಾಟಗಳು END ENTITY_ACTION ಅನುಸರಿಸಿ END INTENT_UPDATE_PREFERENCE ENTITY_ACTION ಪ್ಲೇ END ENTITY_MEDIA_TYPE ಸೀರಿಯಲ್ END ENTITY_TITLE ಗೇಮ್ ಆಫ್ ಥ್ರೋನ್ಸ್ END INTENT_PLAY_MEDIA ENTITY_ACTION ರಿಮೈಂಡ್ END ENTITY_ACTION ಹೊಂದಿಸಿ END ENTITY_TIME 2 ಗಂಟೆಗಳ ನಂತರ END INTENT_SET_REMINDER ENTITY_ACTION ಸೂಚಿಸಿ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_GENRE ಕ್ರೈಮ್ END INTENT_RECOMMEND_CONTENT ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಪಾಟಗಳು END ENTITY_ACTION ಅನುಸರಿಸಿ END INTENT_UPDATE_PREFERENCE ENTITY_ACTION ಪ್ಲೇ END ENTITY_MEDIA_TYPE ಡಾಕ್ಯುಮೆಂಟರಿ END ENTITY_TITLE ಬ್ಲೂ ಪ್ಲ್ಯಾನೆಟ್ END INTENT_PLAY_MEDIA ENTITY_ACTION ರಿಮೈಂಡ್ END ENTITY_ACTION ಹೊಂದಿಸಿ END ENTITY_TIME 4 ಗಂಟೆಗಳ ನಂತರ END INTENT_SET_REMINDER ENTITY_ACTION ಸೂಚಿಸಿ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_GENRE ಹಾಸ್ಯ END INTENT_RECOMMEND_CONTENT ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಆಲ್ಬಮ್‌ಗಳು END ENTITY_ACTION ಅನುಸರಿಸಿ END INTENT_UPDATE_PREFERENCE ENTITY_ACTION ಪ್ಲೇ END ENTITY_MEDIA_TYPE ಸೀರಿಯಲ್ END ENTITY_TITLE ಫ್ರೆಂಡ್ಸ್ END INTENT_PLAY_MEDIA ENTITY_ACTION ರಿಮೈಂಡ್ END ENTITY_ACTION ಹೊಂದಿಸಿ END ENTITY_TIME 5 ಗಂಟೆಗಳ ನಂತರ END INTENT_SET_REMINDER ENTITY_ACTION ಸೂಚಿಸಿ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_GENRE ಥ್ರಿಲ್ಲರ್ END INTENT_RECOMMEND_CONTENT ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಗೀತೆಗಳು END ENTITY_ACTION ಅನುಸರಿಸಿ END INTENT_UPDATE_PREFERENCE ENTITY_ACTION ಪ್ಲೇ END ENTITY_MEDIA_TYPE ಟೀವಿ ಶೋ END ENTITY_TITLE ಬ್ರೇಕಿಂಗ್ ಬ್ಯಾಡ್ END INTENT_PLAY_MEDIA ENTITY_ACTION ರಿಮೈಂಡ್ END ENTITY_ACTION ಹೊಂದಿಸಿ END ENTITY_TIME 7 ಗಂಟೆಗಳ ನಂತರ END INTENT_SET_REMINDER ENTITY_ACTION ಸೂಚಿಸಿ END ENTITY_MEDIA_TYPE ಸಿನಿಮಾ END ENTITY_GENRE ಕಾಮೆಡಿ END INTENT_RECOMMEND_CONTENT ENTITY_ACTION ನನ್ನ END ENTITY_PREFERENCE_TYPE ಆಲ್ಬಮ್‌ಗಳು END ENTITY_ACTION ಅನುಸರಿಸಿ END INTENT_UPDATE_PREFERENCE
+LANG_KN ENTITY_ACTION ನನಗೆ ಪ್ಯಾರಿಸ್‌ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ಪ್ಯಾರಿಸ್ಗೆ ENTITY_DESTINATION ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_DATE ಏಪ್ರಿಲ್ 15ರಂದು END ಪ್ಯಾರಿಸ್ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗೆ ENTITY_TRAVEL_ALERT ಪ್ಯಾರಿಸ್ END ಗ
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ಆರಂಭಿಸಿ END. INTENT_START_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಗೆ ಸ್ಪರ್ಧಿಸಲು END ನನ್ನ ENTITY_FREQUENCY ಪ್ರತಿದಿನ END ಹೊರಗುತ್ತಿರುವ ENTITY_EXERCISE_TYPE ಕ್ರಯಾಮಿತಿಯನ್ನು END ENTITY_MEASUREMENT 10,000 ಹೊರಗುಗಳನ್ನು END ಹೋಲಿಕೆ ಮಾಡಿ END. INTENT_SET_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_PROGRESS_METRIC ಪ್ರಗತಿಯನ್ನು END ಹೋಲಿಕೆ ಮಾಡಿ END. INTENT_RECORD_PROGRESS
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ನನ್ನ ENTITY_FREQUENCY ಪ್ರತಿದಿನ END ಪ್ರಾರಂಭಿಸಿ END. INTENT_START_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಗೆ ಸ್ಪರ್ಧಿಸಲು END ನನ್ನ ENTITY_FREQUENCY ಪ್ರತಿದಿನ END ಹೊರಗುತ್ತಿರುವ ENTITY_EXERCISE_TYPE ಕ್ರಯಾಮಿತಿಯನ್ನು END ENTITY_MEASUREMENT 15,000 ಹೊರಗುಗಳನ್ನು END ಹೋಲಿಕೆ ಮಾಡಿ END. INTENT_SET_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_PROGRESS_METRIC ಪ್ರಗತಿಯನ್ನು END ಹೋಲಿಕೆ ಮಾಡಿ END. INTENT_RECORD_PROGRESS
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ನನ್ನ ENTITY_FREQUENCY ಪ್ರತಿದಿನ END ಪ್ರಾರಂಭಿಸಿ END. INTENT_START_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಗೆ ಸ್ಪರ್ಧಿಸಲು END ನನ್ನ ENTITY_FREQUENCY ಪ್ರತಿದಿನ END ಹೊರಗುತ್ತಿರುವ ENTITY_EXERCISE_TYPE ಕ್ರಯಾಮಿತಿಯನ್ನು END ENTITY_MEASUREMENT 20,000 ಹೊರಗುಗಳನ್ನು END ಹೋಲಿಕೆ ಮಾಡಿ END. INTENT_SET_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_PROGRESS_METRIC ಪ್ರಗತಿಯನ್ನು END ಹೋಲಿಕೆ ಮಾಡಿ END. INTENT_RECORD_PROGRESS
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_WORKOUT_PLAN ನನ್ನ ENTITY_FREQUENCY ಪ್ರತಿದಿನ END ಪ್ರಾರಂಭಿಸಿ END. INTENT_START_WORKOUT
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಗೆ ಸ್ಪರ್ಧಿಸಲು END ನನ್ನ ENTITY_FREQUENCY ಪ್ರತಿದಿನ END ಹೊರಗುತ್ತಿರುವ ENTITY_EXERCISE_TYPE ಕ್ರಯಾಮಿತಿಯನ್ನು END ENTITY_MEASUREMENT 25,000 ಹೊರಗುಗಳನ್ನು END ಹೋಲಿಕೆ ಮಾಡಿ END. INTENT_SET_GOAL
+LANG_KN ENTITY_ACTION ನನ್ನ ENTITY_PROGRESS_METRIC ಪ್ರಗತಿಯನ್ನು END ಹೋಲಿಕೆ ಮಾಡಿ END. INTENT_RECORD_PROGRESS
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಟೊಮೇಟೋ END ENTITY_ITEM ಮತ್ತು END ENTITY_ITEM ಪಿಯರ್ ಫ್ರೂಟ್ END ENTITY_TO ನನ್ನ ENTITY_LIST_TYPE ಶಾಪಿಂಗ್ ಲಿಸ್ಟ್ END INTENT_ADD_TO_LIST
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಬ್ರೆಡ್ END ENTITY_PRICE ೩ ರೂಪಾಯಿ ಗೆ END ENTITY_STORE ದೊಡ್ಡ ಬಜಾರ್ END ನಲ್ಲಿ ENTITY_CHECK INTENT_CHECK_PRICE
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಚಿಕನ್ END ENTITY_QUANTITY ೨ ಕೊಳ್ಳಿ END ENTITY_STORE_SECTION ಮಾಂಸಾಹಾರ ವಿಭಾಗ END ನಲ್ಲಿ ENTITY_FIND INTENT_FIND_ITEM
+LANG_KN ENTITY_ACTION ENTITY_ITEM ಅನಾರ್ಗೆಟ್ END ENTITY_ITEM ಮೇಪಲ್ ಸಿರಪ್ END ENTITY_COMPARE ENTITY_NUTRITIONAL_INFO ಶಕ್ತಿ ಪ್ರಮಾಣ END ಗೆ ENTITY_INTENT_COMPARE_ITEMS
+LANG_KN ENTITY_ACTION ENTITY_STORE_SECTION ಸ್ನಾಕ್ಸ್ END ವಿಭಾಗ END ಅನ್ನು ENTITY_FIND ಮಾಡಿ END ENTITY_ITEM ಪೋಟೇಟೋ ಚಿಪ್ಸ್ END INTENT_FIND_ITEM
+LANG_KN ಹೇಗಿದೆ, ENTITY_ACTION ಡೇಟಾ ಪ್ರದರ್ಶಿಸಲು END ಸ್ಕ್ರೀನ್ ಬ್ರೈಟ್ನೆಸ್ END ENTITY_SETTING_VALUE 50% END. INTENT_DEVICE_CONTROL
+LANG_KN ಮನೆಯ ENTITY_LOCATION ಹಾಲಿನಲ್ಲಿ ENTITY_DEVICE ಬಿಡುಗಡೆಯಾಗಿರುವುದನ್ನು ENTITY_ACTION ಪ್ರದರ್ಶಿಸು END. INTENT_DEVICE_CONTROL
+LANG_KN ಕೋರ್ಟ್ ನಲ್ಲಿ ENTITY_ACTION ಸ್ಪೀಡ್ END ENTITY_SETTING_VALUE 2x END ಹೆಚ್ಚಿಸಿ END. INTENT_DEVICE_CONTROL
+LANG_KN ಕುಡಿಯುವಾಗ ENTITY_DEVICE ಕಿಚನ್ ಬಲ್ಬ್ END ಬ್ರೈಟ್ನೆಸ್ ENTITY_SETTING_VALUE 30% END ಮಾಡು END. INTENT_DEVICE_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಟೀವಿ END ಆನ್ ಮ್ಯೂಟ್ END ಮಾಡಿದ್ದೇನೆ. INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಈ ವಾತಾವರಣ ENTITY_SETTING_TYPE ತಿಳಿಯಿತು END, ENTITY_LOCATION ಬೇಡಿದ್ದರೆ ಹೇಳು. INTENT_GET_STATUS
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಬಲ್ಬ್ END ಆನ್ ಮ್ಯೂಟ್ END ಮಾಡಬಹುದೇ? INTENT_DEVICE_CONTROL
+LANG_KN ನನಗೆ ಈಗ ENTITY_DEVICE ಸ್ಪೀಕರ್ END ವಾಲ್ಯೂಮ್ ENTITY_SETTING_VALUE 60% END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_DEVICE_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಕ್ಯಾಮೆರಾ END ಆನ್ ಆಕ್ಟಿವೇಟ್ END ಮಾಡಿದ್ದೇನೆ. INTENT_DEVICE_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಸ್ಪೀಕರ್ END ಪ್ಲೇ ಆನ್ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ಈಗ ENTITY_DEVICE ಟೀವಿ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ. INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ಈಗ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನೀವು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನಾನು ENTITY_DEVICE ಆನ್ ಮ್ಯೂಸಿಕ್ END ಪ್ಲೇ ಮಾಡಬಹುದೇ? INTENT_MEDIA_CONTROL
+LANG_KN ನನಗೆ ENTITY_DEVICE ಹೋಮ್ ಥಿಯೇಟರ್ END ಆನ್ ಪ್ಲೇ ಮ್ಯೂಸಿಕ್ END ಮಾಡಬೇಕಾಗಿದೆ
+LANG_KN ENTITY_PATIENT_INFO ನಾನು ENTITY_ACTION ನನ್ನ ENTITY_SYMPTOM ಚಿಂತನೆಗಳನ್ನು ENTITY_ACTION ದಾಖಲಿಸಲು END ಬಯಸುತ್ತೇನೆ END . INTENT_DOCUMENT_SYMPTOM
+LANG_KN ENTITY_PATIENT_INFO ನಾವು ENTITY_ACTION ಹೊಸ ENTITY_GOAL_TYPE ಗುರಿ END ಹೊಂದಿಸಬಹುದೇನು ENTITY_ACTIVITY ಧ್ಯಾನ ಅಭ್ಯಾಸ END ENTITY_FREQUENCY ದೈನಂದಿನ END ? INTENT_SET_GOAL
+LANG_KN ENTITY_PATIENT_INFO ನಾನು ENTITY_ACTION ಹಿನ್ನೆಲೆಯನ್ನು ENTITY_THERAPY_TYPE ಚರ್ಚಿಸಲು END ENTITY_DURATION ಹಿಂದಿನ ಮೂರು ತಿಂಗಳ ಮೇಲೆ END . INTENT_REVIEW
+LANG_KN ENTITY_PATIENT_INFO ನಾನು ENTITY_ACTION ನನ್ನ ENTITY_MOOD ಸ್ಥಿತಿಯನ್ನು ENTITY_ACTION ಪರಿಶೀಲಿಸಲು END ಇಚ್ಛಿಸುತ್ತೇನೆ END . INTENT_ASSESS_MOOD
+LANG_KN ENTITY_PATIENT_INFO ನಾವು ENTITY_ACTION ಹೊಸ ENTITY_THERAPY_TYPE ವಿಷಯವನ್ನು ENTITY_ACTION ಪರಿಶೀಲಿಸಬಹುದೆನು END ? INTENT_EXPLORE_TOPIC
+LANG_KN ENTITY_PATIENT_INFO ನಾನು ENTITY_ACTION ನನ್ನ ENTITY_SYMPTOM ಬದಲಾವಣೆಗಳನ್ನು ENTITY_ACTION ಟ್ರ್ಯಾಕ್ ಮಾಡಲು END ಉದ್ದೇಶಿಸುತ್ತೇನೆ END . INTENT_TRACK_SYMPTOMS
+LANG_KN ENTITY_PATIENT_INFO ನಾನು ENTITY_ACTION ನನ್ನ ENTITY_GOAL_TYPE ಪೂರೈಸಲು END ಯಾವ ಮಾರ್ಗವನ್ನು ENTITY_ACTION ಹೊಂದಿದ್ದೇನೆ END ? INTENT_ACHIEVE_GOAL
+LANG_KN ENTITY_PATIENT_INFO ನಾವು ENTITY_ACTION ನಮ್ಮ ENTITY_THERAPY_TYPE ಪ್ರಗತಿಯನ್ನು ENTITY_ACTION ವಿಮರ್ಶಿಸಬಹುದೆನು END ? INTENT_REVIEW_PROGRESS
+LANG_KN ENTITY_PATIENT_INFO ನಾನು ENTITY_ACTION ನನ್ನ ENTITY_SYMPTOM ಪ್ರಕಾರಗಳನ್ನು ENTITY_ACTION ವಿಶ್ಲೇಷಿಸಲು END ಇಚ್ಛಿಸುತ್ತೇನೆ END . INTENT_ANALYZE_SYMPTOMS
+LANG_KN ENTITY_PATIENT_INFO ನಾನು ENTITY_ACTION ನನ್ನ ENTITY_ACTIVITY ಪ್ರಗತಿಯನ್ನು ENTITY_ACTION ನೋಡಲು END ಇಚ್ಛಿಸುತ್ತೇನೆ END . INTENT_VIEW_PROGRESS
