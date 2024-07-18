@@ -6,6 +6,7 @@ import random
 from pydub import AudioSegment
 from pydub.effects import speedup
 from google.cloud import texttospeech
+from pathlib import Path
 
 import glob
 
@@ -89,7 +90,7 @@ def generate_audio(text, mode="train", language="EN"):
     # Seek to the beginning of the buffer so it can be read
     buffer.seek(0)
     
-    speed = random.uniform(0.9, 1.2)
+    speed = random.uniform(0.8, 1.2)
     volume_adjustment = random.uniform(-14.0, 8.0)
     
     # Read the audio content and convert it to the desired sample rate
@@ -204,31 +205,33 @@ def process_files(clean_text_file, tagged_text_file, audio_path,
         for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
             #audio_content = synthesize_speech(line.strip(), voice_name)
             line_len = len(line.strip().split())
+            try:
+                if line_len <= max_len:                    
 
-            if line_len <= max_len:                    
+                    line = " ".join(line.split()[1:])
+                    audio_content = generate_audio(line.strip(), mode=mode, language=language)
 
-                line = " ".join(line.split()[1:])
-                audio_content = generate_audio(line.strip(), mode=mode, language=language)
-
-                audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")                    
-                
-                noise_level = random.uniform(-20, 0)  # Random noise level between -30 dB and -10 dB
-                save_audio_to_file(audio_content, audio_file, noise_level)
-                duration = get_audio_duration(audio_file)
-                
-                entry = {
-                    "audio_filepath": audio_file,
-                    "text": tagged_line.strip(),
-                    "duration": duration
-                }
-                
-                if not first_entry:
-                    manifest_file.write('\n')  # Add a comma before each entry except the first one
-                else:
-                    first_entry = False
-                
-                manifest_file.write(json.dumps(entry, ensure_ascii=False))
+                    audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")                    
                     
+                    noise_level = random.uniform(-20, 0)  # Random noise level between -30 dB and -10 dB
+                    save_audio_to_file(audio_content, audio_file, noise_level)
+                    duration = get_audio_duration(audio_file)
+                    
+                    entry = {
+                        "audio_filepath": audio_file,
+                        "text": tagged_line.strip(),
+                        "duration": duration
+                    }
+                    
+                    if not first_entry:
+                        manifest_file.write('\n')  # Add a comma before each entry except the first one
+                    else:
+                        first_entry = False
+                    
+                    manifest_file.write(json.dumps(entry, ensure_ascii=False))
+            except:
+                continue
+
                     
 
     manifest_file.write('\n')  # End of JSON array
@@ -256,21 +259,30 @@ if __name__ == "__main__":
         print("Usage: python3 script.py <data_path>")
         sys.exit(1)
 
-    clean_text = sys.argv[1]
-    tagged_text = sys.argv[2]
-    manifest_file = sys.argv[3]
-    audio_path = sys.argv[4]
-    mode = sys.argv[5]
-    runs = sys.argv[6]
-    language = sys.argv[7]
+    runs = sys.argv[1]
     
-    language_iso_code = tts_iso_codes[language]
+    language_codes = clone_voices.keys()
     
-    if language == "IT":
-        tts = TTS(model_name="tts_models/multilingual/multi-dataset/your_tts", progress_bar=False).to("cuda")
-    else:
-        tts = TTS("tts_models/"+language_iso_code+"/fairseq/vits", gpu=True)
+    language_codes = ["EN", "ES", "FR", "DE", "IT", "HI", "PA", "BN", "MR", "GU", "TE"]
+    
+    language_codes = ["EN"]
 
-    process_files(clean_text, tagged_text, audio_path, manifest_file, mode=mode, runs=2, language=language)
+    for language in language_codes:
+        
+        language_iso_code = tts_iso_codes[language]
+        
+        input_folder = "/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed"
+        audio_path = "/external2/datasets/synthetic_audio/"
+        clean_text = Path(input_folder + f"/tagged_" + language + "_notag.txt")
+        tagged_text = Path(input_folder + f"/tagged_" + language + "_clean.txt")
+        manifest_file = Path(input_folder + f"/manifest_" + language + ".json")
+        mode = "train"
+        
+        if language == "IT":
+            tts = TTS(model_name="tts_models/multilingual/multi-dataset/your_tts", progress_bar=False).to("cuda")
+        else:
+            tts = TTS("tts_models/"+language_iso_code+"/fairseq/vits", gpu=True)
 
-    #validate_json(manifest_file)
+        process_files(clean_text, tagged_text, audio_path, manifest_file, mode=mode, runs=runs, language=language)
+
+        #validate_json(manifest_file)

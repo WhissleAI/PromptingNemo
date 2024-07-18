@@ -19,7 +19,7 @@ At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type 
 
 Intent_<type> is always capitalized.
 
-Generate exactly 200 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
+Generate exactly 300 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
 
 Output tagged sentences should only be in {lang}
 

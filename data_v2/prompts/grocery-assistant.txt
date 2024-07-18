@@ -1,27 +1,28 @@
 Generate diverse natural spoken language input sentences for a grocery shopping human assistant.
-Each command should involve actions like adding items to a shopping list, checking prices, finding store locations, and setting reminders for shopping.
+Each command should involve actions like adding items to a shopping list, checking prices, finding store locations, setting reminders for shopping, managing coupons, comparing products, providing nutritional information, and offering shopping advice.
 Use generic grocery terms, items, and actions to make the sentences widely applicable.
 Consider scenarios where someone is doing grocery shopping via phone call, web app, or in a large shopping store like Costco.
 
 For each command, provide the tagged text.
 Tags indicate start and end of entity phrase.
-Tags indicate one of these entity types: ACTION, ITEM, QUANTITY, PRICE, STORE, DATE, TIME, LOCATION, USER_INFO, REMINDER_TYPE, LIST_TYPE, PLATFORM, CALL_TYPE, STORE_SECTION.
-Begin of tag becomes ENTITY_<type>, and we use common END tag for all types. <type> is always capitalized.
+Tags indicate one of these entity types: ACTION, ITEM, QUANTITY, PRICE, STORE, DATE, TIME, LOCATION, USER_INFO, REMINDER_TYPE, LIST_TYPE, PLATFORM, CALL_TYPE, STORE_SECTION, BRAND, CATEGORY, OFFER, NUTRITIONAL_INFO, DIETARY_PREFERENCE, RECIPE, COOKING_METHOD, FEEDBACK, PRIORITY, LANGUAGE.
+Begin the tag with ENTITY_<type>, and use a common END tag for all types. <type> is always capitalized.
 
 For example:
 ENTITY_ACTION Add END ENTITY_QUANTITY 1 END ENTITY_ITEM bag of chips END to my ENTITY_LIST_TYPE shopping list END INTENT_ADD_TO_LIST
 ENTITY_ACTION Call END ENTITY_STORE Walmart END and ENTITY_ACTION ask END about the ENTITY_PRICE price END of ENTITY_ITEM ham END INTENT_CALL_STORE
 ENTITY_ACTION Check END if ENTITY_STORE Costco END has ENTITY_ITEM cheddar cheese END in ENTITY_STORE_SECTION the dairy section END INTENT_ITEM_AVAILABILITY
+ENTITY_ACTION Compare END ENTITY_ITEM almond milk END with ENTITY_ITEM soy milk END for ENTITY_NUTRITIONAL_INFO calcium content END INTENT_COMPARE_ITEMS
+ENTITY_ACTION Find END ENTITY_STORE_SECTION organic section END and ENTITY_ACTION look for END ENTITY_ITEM gluten-free bread END INTENT_FIND_ITEM
 
-Example ACTION phrases: 'add', 'check', 'find', 'set', 'remove', 'update', 'list', 'compare', 'buy', 'purchase', 'track', 'note', 'search', 'locate', 'schedule', 'remind', 'notify', 'call', 'talk', 'visit'.
+Example ACTION phrases: 'add', 'check', 'find', 'set', 'remove', 'update', 'list', 'compare', 'buy', 'purchase', 'track', 'note', 'search', 'locate', 'schedule', 'remind', 'notify', 'call', 'talk', 'visit', 'apply', 'recommend', 'suggest', 'look for', 'scan', 'redeem', 'cook', 'prepare', 'choose', 'prefer', 'rate', 'review'.
 
-At the end of sentence, we add INTENT_<type>.  You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
+At the end of each sentence, we add INTENT_<type>. You can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized. We use intent to decide which function we trigger.
 
 Intent_<type> is always capitalized.
 
-Each sentence should be separated by a blank line. Speaker can be have different level of language skills, therefore, grammar should depitch that.
+Each sentence should be separated by a blank line. The speaker can have different levels of language skills; therefore, grammar should reflect that.
 
-Generate exactly 200 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
+Generate exactly 300 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
 
-Output tagged sentences should only be in {lang}
-
+Output tagged sentences should only be in {lang}.

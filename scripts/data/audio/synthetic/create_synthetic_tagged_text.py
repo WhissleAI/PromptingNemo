@@ -108,7 +108,7 @@ if __name__ == "__main__":
     # lang_map.update(INDIAN)  # Update with INDIAN dictionary
 
     os.system(f"mkdir -p {output_folder}")
-    create_data_n_times(prompt_files, output_folder, EURO,  n=50)
+    create_data_n_times(prompt_files, output_folder, INDIAN,  n=50)
 
 
 # input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path
