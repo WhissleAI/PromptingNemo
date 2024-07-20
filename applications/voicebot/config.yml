@@ -1,6 +1,6 @@
 OPENAI:
-  API_KEY: "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"
-MODEL_SHELF_PATH: "/external2/artifacts/whissle/model_shelf"
+  API_KEY: "sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu"
+MODEL_SHELF_PATH: "/disk1/artifacts/whissle/model_shelf"
 DEEPGRAM_API_KEY: "72d2b4e02072dfb42ad630571a889ecda06e3239"
 HF_TOKEN: "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"
 TENSORRT_LLM:

@@ -90,8 +90,8 @@ if DEV_MODE == False:
     xtts_model = TextToSpeech(model_name=xtts_model_path)
 
 
-tts_piper = PiperSynthesizer("/external2/artifacts/whissle/model_shelf/piper/voices/en_US-amy-medium.onnx", 
-                                    "/external2/artifacts/whissle/model_shelf/piper/configs/en_US-amy-medium.onnx.json", 
+tts_piper = PiperSynthesizer(MODEL_SHELF_PATH+"/piper/voices/en_US-amy-medium.onnx", 
+                                    MODEL_SHELF_PATH+"/piper/configs/en_US-amy-medium.onnx.json", 
                                     length_scale=3)
 
 
