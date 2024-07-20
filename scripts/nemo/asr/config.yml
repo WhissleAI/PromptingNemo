@@ -10,7 +10,7 @@ training:
   data_dir: "/external2/datasets/text/synthetic/processed_r3/"
   train_manifest: "train.json"
   test_manifest: "valid.json"
-  batch_size: 20
+  batch_size: 16
   max_steps: 60000
 
 adapter:
