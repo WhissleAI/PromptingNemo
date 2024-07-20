@@ -15,20 +15,20 @@ Build docker from WhissleAI's Nemo branch
 add docker commands
 ```
 
-### 📹 Audio-visual Models
+### 📹 Pretrained models
 Designed for audio-visual applications, these models leverage both audio and visual data for improved ASR performance.
 
-#### 🔊 Noise-aware Audio-visual ASR
+#### 🔊 Noise-aware audio-visual ASR
 - **Data Preparation**: Prepare your data using the [Data Prep Repository](https://github.com/WhissleAI/visual_speech_recognition).
 - **Model Fine-tuning**: Fine-tune your audio-visual models with noise awareness.
 
-#### 🏞️ Scene-aware Audio-visual ASR
+#### 🏞️ Scene-aware audio-visual ASR
 - **Model Fine-tuning**: Develop ASR systems that are aware of the scene context for better performance.
 
-## 🎙️ Speech-only Models
+#### 🎙️ Speech-only aodels
 These models are optimized for applications that rely solely on speech input.
 
-### Synthetic tagged datasets
+### Synthetic tagged dataset creation
 
 #### 🏷️ Tagging Real Audio Data
 - **Using Pretrained Tagger**: Tag real audio data with pretrained models and standard ASR datasets. [Scripts](./scripts/data/real)
@@ -39,7 +39,7 @@ These models are optimized for applications that rely solely on speech input.
 
 #### Tagging Audio-visual data
 
-### 🛠️ ASR Systems Fine-tuning
+### 🛠️ Fine-tuning with new data
 - **Fine-tuning**: Enhance your ASR models with custom fine-tuning processes.
 - **Evaluation**: Evaluate the performance of your fine-tuned models.
 
