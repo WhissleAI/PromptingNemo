@@ -158,8 +158,10 @@ def clean_file(input_file, text_file, text_tagged_file, tags_file):
         tag_dict = load_tag_file(tags_file)
         tagfile = open(tags_file, "a")
     
-    for number, tag in enumerate(all_tags, start=len(tag_dict.keys())+1):
-        if tag not in tag_dict:
+    start = len(tag_dict.keys())
+    all_tags = all_tags - set(tag_dict.keys())
+    all_tags = list(all_tags)
+    for number, tag in enumerate(all_tags, start=start):
             tag_dict[tag] = "T" + str(number)
             tagfile.write(f"{tag} T{number}\n")
     tagfile.close()
@@ -304,7 +306,7 @@ def clean_file_valid(input_file, text_file, text_tagged_file, tags_file):
 def clean_files(input_folder):
     
     input_folder = Path(input_folder)
-    output_folder = Path(input_folder / "processed")
+    output_folder = Path(input_folder / "processed_r2")
     
     input_files = list(input_folder.glob("*.txt"))
     tags_file = output_folder / f"alltags.txt"

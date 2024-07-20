@@ -85,6 +85,7 @@ def generate_audio(text, mode="train", language="EN"):
         text=text,
         file_path=buffer,
         speaker_wav=sample_voice,
+        split_sentences=False,
     )
 
     # Seek to the beginning of the buffer so it can be read
@@ -265,14 +266,14 @@ if __name__ == "__main__":
     
     language_codes = ["EN", "ES", "FR", "DE", "IT", "HI", "PA", "BN", "MR", "GU", "TE"]
     
-    language_codes = ["EN"]
+    language_codes = ["GU"]
 
     for language in language_codes:
         
         language_iso_code = tts_iso_codes[language]
         
-        input_folder = "/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed"
-        audio_path = "/external2/datasets/synthetic_audio/"
+        input_folder = "/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r2/"
+        audio_path = "/external2/datasets/synthetic_audio_r2/"
         clean_text = Path(input_folder + f"/tagged_" + language + "_notag.txt")
         tagged_text = Path(input_folder + f"/tagged_" + language + "_clean.txt")
         manifest_file = Path(input_folder + f"/manifest_" + language + ".json")

@@ -65,7 +65,7 @@ class ASRModelTrainer:
     
     def prepare_data_and_tokens(self):
         taglist = []
-        all_tags_path = os.path.join(self.data_dir, "alltags_v2.txt")
+        all_tags_path = os.path.join(self.data_dir, "alltags.txt")
         with open(all_tags_path, 'r') as f:
             for line in f:
                 word, tag = line.split()
@@ -101,6 +101,7 @@ class ASRModelTrainer:
             self.model.cfg.train_ds.tarred_audio_filepaths = None
             self.model.cfg.validation_ds.manifest_filepath = str(self.test_manifest)
             self.model.cfg.validation_ds.batch_size = self.batch_size
+            self.model.cfg.train_ds.num_workers = 8  # Adding num_workers for training dataloader
 
         self.model.setup_training_data(self.model.cfg.train_ds)
         self.model.setup_multiple_validation_data(self.model.cfg.validation_ds)
@@ -121,8 +122,8 @@ class ASRModelTrainer:
 
         with open_dict(self.model.cfg):
             self.model.cfg.optim.lr = 0.1
-            self.model.cfg.optim.weight_decay = 0.0
-            self.model.cfg.optim.sched.warmup_steps = 100
+            self.model.cfg.optim.weight_decay = 0.001
+            self.model.cfg.optim.sched.warmup_steps = 1000
 
         self.model.setup_optimization(self.model.cfg.optim)
     
@@ -254,4 +255,4 @@ model_trainer.configure_optimization()
 model_trainer.setup_adapters()
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
-#model_trainer.train()
+model_trainer.train()

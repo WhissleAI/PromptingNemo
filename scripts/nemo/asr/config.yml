@@ -1,16 +1,16 @@
 model:
-  model_root: "/external2/models/hf/stt_en_conformer_ctc_large/"
-  model_name: "stt_en_conformer_ctc_large.nemo"
+  model_root: "/external2/karan_exp/experiments/finetune-multidomain-alllang-100k-ctc/2024-07-18_00-21-12/checkpoints/"
+  model_name: "finetune-multidomain-alllang-100k-ctc.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
   proto_file: "proto/file"
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/home/ksingla/workspace/medical-ner/data/"
-  train_manifest: "text_train_cleaned_manifest_v2.json"
-  test_manifest: "text_valid_cleaned_manifest_v2.json"
-  batch_size: 16
+  data_dir: "/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r2/"
+  train_manifest: "train.json"
+  test_manifest: "valid.json"
+  batch_size: 24
   max_steps: 60000
 
 adapter:
@@ -20,8 +20,8 @@ adapter:
   norm_position: "pre"
 
 experiment:
-  exp_dir: "experiments/"
-  exp_name: "encoder:fixed-adapter32-decode:tune-multidomain-v2"
+  exp_dir: "/external2/karan_exp/experiments/"
+  exp_name: "adapater32-alllang-180k-ctc"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true

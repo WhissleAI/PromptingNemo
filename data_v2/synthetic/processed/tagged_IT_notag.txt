@@ -18087,3 +18087,889 @@ LANG_IT Rimuovi cipolle dalla lista della spesa .
 LANG_IT Puoi elencare le informazioni sul contenuto calorico per l' avocado ?
 LANG_IT Suggerisci una ricetta italiana per la cena .
 LANG_IT Traccia lo stock della dispensa per l' olio d'oliva .
+LANG_IT Aggiungi due melanzane alla mia lista della spesa
+LANG_IT Controlla il prezzo di latte al supermercato più vicino
+LANG_IT Trova la posizione di sezione frutta e cerca mele
+LANG_IT Imposta un promemoria per fare la spesa al supermercato domani mattina alle 10:00
+LANG_IT Gestisci i tuoi coupon per pasta
+LANG_IT Confronta biscotti con crackers per le informazioni nutrizionali
+LANG_IT Fornisci consigli per la spesa sana basati sulle tue preferenze alimentari
+LANG_IT Cerca il reparto surgelati per trovare gelato
+LANG_IT Verifica se Costco ha pollo biologico nel reparto carne
+LANG_IT Consiglia un vino rosso da abbinare con formaggio Gorgonzola
+LANG_IT Scansiona codice a barre di cereali integrali per le informazioni nutrizionali
+LANG_IT Applica sconto del 20% su verdure al tuo prossimo acquisto
+LANG_IT Scegli tra Barilla e De Cecco per la tua pasta preferita
+LANG_IT Prepara una lista della spesa per la ricetta di spaghetti alla carbonara
+LANG_IT Consiglia un olio d'oliva di alta qualità per la tua ricetta di insalata greca
+LANG_IT Cerca latte di mandorla per le preferenze alimentari senza lattosio
+LANG_IT Valuta e recensisci il servizio al supermercato che hai visitato
+LANG_IT Controlla le offerte settimanali su prodotti da forno al supermercato
+LANG_IT Trova reparto latticini e chiedi le informazioni nutrizionali su formaggio cheddar
+LANG_IT Cerca farina di grano saraceno per la tua ricetta senza glutine
+LANG_IT Aggiungi tre banane alla lista della spesa
+LANG_IT Controlla il prezzo di pane integrale al supermercato più vicino
+LANG_IT Trova la posizione di sezione carne e cerca pollo
+LANG_IT Imposta un promemoria per fare la spesa al supermercato venerdì pomeriggio alle 15:00
+LANG_IT Gestisci i tuoi coupon per yogurt
+LANG_IT Confronta cereali con muesli per le informazioni nutrizionali
+LANG_IT Fornisci consigli per la spesa sana basati sulle tue preferenze alimentari
+LANG_IT Cerca il reparto surgelati per trovare pesce spada
+LANG_IT Verifica se Costco ha pomodori biologici nel reparto ortaggi
+LANG_IT Consiglia un vino bianco da abbinare con formaggio Brie
+LANG_IT Scansiona codice a barre di marmellata per le informazioni nutrizionali
+LANG_IT Applica sconto del 30% su carne macinata al tuo prossimo acquisto
+LANG_IT Scegli tra Mulino Bianco e Balocco per la tua colazione preferita
+LANG_IT Prepara una lista della spesa per la ricetta di tiramisù
+LANG_IT Consiglia un miele di acacia di alta qualità per la tua ricetta di torta al limone
+LANG_IT Cerca latte di soia per le preferenze alimentari vegano
+LANG_IT Valuta e recensisci il servizio al supermercato che hai visitato
+LANG_IT Controlla le offerte settimanali su prodotti lattiero-caseari al supermercato
+LANG_IT Trova reparto frutta e chiedi le informazioni nutrizionali su fragole
+LANG_IT Cerca pasta di riso per la tua ricetta senza glutine
+LANG_IT Aggiungi cinque arance alla lista della spesa
+LANG_IT Controlla il prezzo di prosciutto crudo al supermercato più vicino
+LANG_IT Trova la posizione di sezione surgelati e cerca gelato alla vaniglia
+LANG_IT Imposta un promemoria per fare la spesa al supermercato sabato mattina alle 11:00
+LANG_IT Gestisci i tuoi coupon per formaggio cheddar
+LANG_IT Confronta yogurt alla frutta con yogurt greco per le informazioni nutrizionali
+LANG_IT Fornisci consigli per la spesa sana basati sulle tue preferenze alimentari
+LANG_IT Cerca il reparto latticini per trovare mozzarella
+LANG_IT Verifica se Costco ha uova biologiche nel reparto uova
+LANG_IT Consiglia un vino rosato da abbinare con formaggio di capra
+LANG_IT Scansiona codice a barre di cioccolato fondente per le informazioni nutrizionali
+LANG_IT Applica sconto del 25% su frutta fresca al tuo prossimo acquisto
+LANG_IT Scegli tra Parmalat e Galbani per il tuo formaggio spalmabile preferito
+LANG_IT Prepara una lista della spesa per la ricetta di pizza margherita
+LANG_IT Consiglia un aceto balsamico di Modena di alta qualità per la tua ricetta di insalata caprese
+LANG_IT Cerca latte di riso per le preferenze alimentari senza lattosio
+LANG_IT Valuta e recensisci il servizio al supermercato che hai visitato
+LANG_IT Controlla le offerte settimanali su prodotti surgelati al supermercato
+LANG_IT Trova reparto ortaggi e chiedi le informazioni nutrizionali su zucchine
+LANG_IT Cerca farina di mais per la tua ricetta senza glutine
+LANG_IT Ho avuto mal di testa ogni settimana per tre mesi e ho preso ibuprofene .
+LANG_IT Mio padre ha diabete da dieci anni e deve monitorare il suo zucchero nel sangue .
+LANG_IT La mia amica ha tosse costantemente da due settimane .
+LANG_IT Ho bruciore di stomaco dopo i pasti e ho assunto antiacidi .
+LANG_IT Ho vertigini occasionalmente durante la giornata .
+LANG_IT Mia sorella ha nausea dopo aver mangiato e ha evitato cibi pesanti .
+LANG_IT Mia cugina ha dolori addominali spesso dopo i pasti .
+LANG_IT Mio suocero ha brividi durante la notte e ha misurato la sua temperatura corporea .
+LANG_IT Mia nipotina ha febbre di notte e ha misurato la sua temperatura corporea .
+LANG_IT Ho sensazione di vertigini durante l'attività fisica e ho fermato l'esercizio .
+LANG_IT Ho sensazione di vertigini durante l'attività fisica e ho fermato l'esercizio .
+LANG_IT Juventus contro Inter è sempre una partita intensa e piena di emozioni .
+LANG_IT Ronaldo si sta dimostrando un vero leader in campo, sempre pericoloso per la difesa avversaria .
+LANG_IT Tiro di Lukaku ! Ma la palla va fuori di poco .
+LANG_IT Rocchi assegna un calcio di punizione per una fallo tattico di Chiellini .
+LANG_IT Che sole splendido oggi al San Siro ! Condizioni perfette per il calcio .
+LANG_IT Conte sembra molto concentrato sulle sue note tattiche, pronto a cambiare l'andamento della partita .
+LANG_IT Cross perfetto di Cuadrado , ma nessun compagno di squadra è riuscito a sfruttarlo .
+LANG_IT Barella si fa valere a centrocampo, recuperando palloni importanti per il suo team .
+LANG_IT Napoli ha mostrato un gioco fluido e veloce, mettendo sotto pressione Roma .
+LANG_IT Un tiro potente di Immobile ! Ma Handanovic è attento e blocca senza problemi .
+LANG_IT Dribbling spettacolare di Insigne , lasciando i difensori avversari a bocca aperta .
+LANG_IT Orsato è molto rigoroso oggi, punendo ogni fallo con decisione .
+LANG_IT Dybala ha un gran feeling con il pallone, creando occasioni per Juventus .
+LANG_IT Milan sta dominando il possesso palla, mostrando un gioco fluido e ben organizzato .
+LANG_IT Tackle deciso di Kolarov , interrompendo un'azione pericolosa di Lazio .
+LANG_IT Pellegrini è un vero motorino a centrocampo, coprendo ogni zona del campo con grande intensità .
+LANG_IT Assist perfetto di Eriksen per Martinez che non sbaglia davanti alla porta! GOAL!
+LANG_IT Fiorentina ha bisogno di trovare più spazio in attacco per mettere in difficoltà Sassuolo .
+LANG_IT Un tiro potente di Mertens ! Ma la palla si stampa sulla traversa . Che sfortuna!
+LANG_IT Maresca sta gestendo bene il match, mantenendo il controllo sulle azioni dei giocatori .
+LANG_IT Atalanta è conosciuta per il suo gioco offensivo e spettacolare . Sarà interessante vedere come si comporterà contro Udinese .
+LANG_IT Cross velenoso di Biraghi , ma la difesa avversaria riesce a liberarsi senza problemi .
+LANG_IT Bonucci guida la difesa di Juventus con esperienza e leadership .
+LANG_IT Bologna ha bisogno di trovare più precisione nei passaggi per creare opportunità in attacco .
+LANG_IT Tackle deciso di De Paul , recuperando palla e avviando un contropiede per Udinese .
+LANG_IT Skriniar è un difensore forte e affidabile, sempre attento alle trame offensive avversarie .
+LANG_IT Verona ha dimostrato grande determinazione e grinta in questa partita, non facendosi intimorire da Napoli .
+LANG_IT Tiro potente di Zlatan ! Ma Musso è reattivo e blocca senza problemi .
+LANG_IT Doveri è molto severo oggi, mostrando poca tolleranza per i falli duri .
+LANG_IT Milinkovic-Savic è un centrocampista completo, capace di difendere e attaccare con la stessa efficacia .
+LANG_IT Cagliari ha bisogno di trovare più coesione difensiva per contrastare Inter .
+LANG_IT Dribbling magico di Chiesa , mettendo in difficoltà la difesa avversaria .
+LANG_IT Acerbi è un difensore elegante e sicuro, capace di leggere anticipare le azioni degli attaccanti avversari .
+LANG_IT Torino ha bisogno di trovare più precisione nei passaggi per creare occasioni da gol .
+LANG_IT Cross preciso di Lazzari , ma nessun compagno di squadra è riuscito a sfruttarlo .
+LANG_IT Koulibaly è un difensore imponente, difficile da superare nel gioco aereo .
+LANG_IT Parma ha mostrato spirito di squadra e determinazione, lottando su ogni pallone contro Genoa .
+LANG_IT Tackle deciso di Gagliardini , fermato un'azione pericolosa di Milan .
+LANG_IT Handanovic è un portiere affidabile, capace di fare interventi decisivi nei momenti chiave .
+LANG_IT Lecce ha bisogno di trovare più equilibrio tra difesa e attacco per competere al meglio .
+LANG_IT Dribbling spettacolare di Politano , superando più difensori con facilità .
+LANG_IT Sampdoria ha bisogno di trovare più continuità nel gioco per ottenere risultati positivi .
+LANG_IT Tiro potente di Caputo ! Ma la palla termina di poco a lato . Che occasione sprecata!
+LANG_IT Mariani sta mantenendo il controllo sulle azioni dei giocatori, evitando che il match diventi troppo fisico .
+LANG_IT Kessie è un centrocampista dinamico, capace di coprire molti metri di campo con grande intensità .
+LANG_IT Assist perfetto di Verdi per Berardi che non sbaglia davanti alla porta! GOAL!
+LANG_IT SPAL ha bisogno di trovare più efficacia in attacco per mettere in difficoltà Fiorentina .
+LANG_IT Un tiro potente di Quagliarella ! Ma la palla viene deviata in corner . Che intervento difensivo!
+LANG_IT Massa è molto attento alle simulazioni, punendo i giocatori che cercano di ingannarlo .
+LANG_IT Brescia ha bisogno di trovare più coesione di squadra per competere al meglio contro Juventus .
+LANG_IT Dribbling magico di Calhanoglu , mettendo in difficoltà la difesa avversaria .
+LANG_IT Acerbi è un difensore elegante e sicuro, capace di leggere anticipare le azioni degli attaccanti avversari .
+LANG_IT Napoli ha bisogno di trovare più equilibrio tra difesa e attacco per ottenere risultati positivi .
+LANG_IT Cross preciso di Lazzari , ma nessun compagno di squadra è riuscito a sfruttarlo .
+LANG_IT Koulibaly è un difensore imponente, difficile da superare nel gioco aereo .
+LANG_IT Parma ha mostrato spirito di squadra e determinazione, lottando su ogni pallone contro Genoa .
+LANG_IT Tackle deciso di Gagliardini , fermato un'azione pericolosa di Milan .
+LANG_IT Handanovic è un portiere affidabile, capace di fare interventi decisivi nei momenti chiave .
+LANG_IT Lecce ha bisogno di trovare più equilibrio tra difesa e attacco per competere al meglio .
+LANG_IT Dribbling spettacolare di Politano , superando più difensori con facilità .
+LANG_IT Sampdoria ha bisogno di trovare più continuità nel gioco per ottenere risultati positivi .
+LANG_IT Tiro potente di Caputo ! Ma la palla termina di poco a lato . Che occasione sprecata!
+LANG_IT Mariani sta mantenendo il controllo sulle azioni dei giocatori, evitando che il match diventi troppo fisico .
+LANG_IT Kessie è un centrocampista dinamico, capace di coprire molti metri di campo con grande intensità .
+LANG_IT Assist perfetto di Verdi per Berardi che non sbaglia davanti alla porta! GOAL!
+LANG_IT SPAL ha bisogno di trovare più efficacia in attacco per mettere in difficoltà Fiorentina .
+LANG_IT Un tiro potente di Quagliarella ! Ma la palla viene deviata in corner . Che intervento difensivo!
+LANG_IT Massa è molto attento alle simulazioni, punendo i giocatori che cercano di ingannarlo .
+LANG_IT Inizia una routine di allenamento di 30 minuti .
+LANG_IT Traccia i tuoi progressi di sollevamento pesi .
+LANG_IT Imposta un obiettivo di perdita di peso di 5 kg .
+LANG_IT Pianifica una sessione di yoga per tre volte a settimana .
+LANG_IT Aggiorna le tue informazioni di peso e altezza nel sistema .
+LANG_IT Analizza il tuo miglioramento nella corsa .
+LANG_IT Visualizza il tuo piano di allenamento settimanale .
+LANG_IT Genera un nuovo programma di esercizi personalizzato .
+LANG_IT Monitora la tua resistenza durante l' allenamento cardio .
+LANG_IT Completa la tua routine di allenamento con esercizi di stretching .
+LANG_IT Riprendi il tuo allenamento dopo la pausa .
+LANG_IT Interrompi il tuo allenamento se avverti dolore .
+LANG_IT Aumenta la intensità del tuo circuito di forza .
+LANG_IT Diminuisci il numero di ripetizioni per l' esercizio di squat .
+LANG_IT Registra il tuo peso corporeo attuale .
+LANG_IT Misura la tua frequenza cardiaca durante l' allenamento HIIT .
+LANG_IT Notifica il completamento di una sessione di allenamento .
+LANG_IT Aggiorna il tuo programma di esercizi con nuove attività fisiche .
+LANG_IT Pianifica una sessione di allenamento all'aperto per domani mattina .
+LANG_IT Controlla i tuoi progressi nel raggiungimento dell'obiettivo di aumento della massa muscolare .
+LANG_IT Registra il tempo impiegato per completare la routine di allenamento .
+LANG_IT Misura la tua circonferenza vita per monitorare i progressi .
+LANG_IT Visualizza il tuo programma di allenamento mensile per pianificare le attività future .
+LANG_IT Genera un nuovo piano di esercizi adatto al tuo livello di fitness attuale .
+LANG_IT Monitora la tua resistenza durante l' corsa sul tapis roulant .
+LANG_IT Completa la tua routine di allenamento con esercizi di rafforzamento muscolare .
+LANG_IT Riprendi il tuo allenamento dopo la breve pausa .
+LANG_IT Interrompi il tuo allenamento se ti senti stanco eccessivamente .
+LANG_IT Aumenta la resistenza durante l' sessione di spinning .
+LANG_IT Diminuisci il peso degli manubri per l' sollevamento pesi .
+LANG_IT Registra il tuo peso corporeo attuale per tenere traccia dei progressi .
+LANG_IT Misura la tua pressione sanguigna prima e dopo l' allenamento cardiovascolare .
+LANG_IT Notifica il completamento della sessione di allenamento al tuo coach .
+LANG_IT Aggiorna il tuo piano di esercizi con nuove attività fisiche per mantenere la varietà .
+LANG_IT Pianifica una sessione di allenamento all'aperto per domani pomeriggio .
+LANG_IT Controlla i tuoi progressi nel raggiungimento dell'obiettivo di dimagrimento .
+LANG_IT Registra il numero di ripetizioni completate per l' serie di push-up .
+LANG_IT Misura la tua circonferenza coscia per valutare i cambiamenti nella composizione corporea .
+LANG_IT Visualizza il tuo programma di allenamento settimanale per organizzare le sessioni .
+LANG_IT Genera un nuovo piano di esercizi adatto al tuo obiettivo di tonificazione muscolare .
+LANG_IT Monitora la tua frequenza cardiaca durante l' allenamento HIIT .
+LANG_IT Completa la tua routine di allenamento con esercizi di flessibilità .
+LANG_IT Riprendi il tuo allenamento dopo la pausa rigenerante .
+LANG_IT Interrompi il tuo allenamento se avverti un dolore insolito .
+LANG_IT Aumenta la velocità durante l' corsa sul tapis roulant .
+LANG_IT Diminuisci il tempo di recupero tra le serie di squat .
+LANG_IT Registra il tuo peso corporeo attuale per monitorare i progressi nel tempo .
+LANG_IT Misura la tua frequenza cardiaca durante l' allenamento aerobico .
+LANG_IT Notifica il completamento della sessione di allenamento al tuo partner di fitness .
+LANG_IT Aggiorna il tuo programma di esercizi con nuove attività fisiche per mantenere la motivazione alta .
+LANG_IT Pianifica una sessione di allenamento all'aperto per domani sera .
+LANG_IT Controlla i tuoi progressi nel raggiungimento dell'obiettivo di aumento della forza muscolare .
+LANG_IT Registra il numero di ripetizioni completate per l' serie di addominali .
+LANG_IT Misura la tua circonferenza braccio per valutare i cambiamenti nella massa muscolare .
+LANG_IT Visualizza il tuo programma di allenamento mensile per pianificare le prossime sfide .
+LANG_IT Genera un nuovo piano di esercizi adatto al tuo livello di fitness attuale .
+LANG_IT Monitora la tua resistenza durante l' nuoto in piscina .
+LANG_IT Completa la tua routine di allenamento con esercizi di equilibrio .
+LANG_IT Riprendi il tuo allenamento dopo la breve pausa .
+LANG_IT Interrompi il tuo allenamento se ti senti stanco eccessivamente .
+LANG_IT Aumenta la resistenza durante l' sessione di spinning .
+LANG_IT Diminuisci il peso degli manubri per l' sollevamento pesi .
+LANG_IT Registra il tuo peso corporeo attuale per tenere traccia dei progressi .
+LANG_IT Misura la tua pressione sanguigna prima e dopo l' allenamento cardiovascolare .
+LANG_IT Notifica il completamento della sessione di allenamento al tuo coach .
+LANG_IT Aggiorna il tuo piano di esercizi con nuove attività fisiche per mantenere la varietà .
+LANG_IT Pianifica una sessione di allenamento all'aperto per domani pomeriggio .
+LANG_IT Controlla i tuoi progressi nel raggiungimento dell'obiettivo di dimagrimento .
+LANG_IT Registra il numero di ripetizioni completate per l' serie di push-up .
+LANG_IT Misura la tua circonferenza coscia per valutare i cambiamenti nella composizione corporea .
+LANG_IT Visualizza il tuo programma di allenamento settimanale per organizzare le sessioni .
+LANG_IT Genera un nuovo piano di esercizi adatto al tuo obiettivo di tonificazione muscolare .
+LANG_IT Monitora la tua frequenza cardiaca durante l' allenamento HIIT .
+LANG_IT Completa la tua routine di allenamento con esercizi di flessibilità .
+LANG_IT Riprendi il tuo allenamento dopo la pausa rigenerante .
+LANG_IT Interrompi il tuo allenamento se avverti un dolore insolito .
+LANG_IT Aumenta la velocità durante l' corsa sul tapis roulant .
+LANG_IT Diminuisci il tempo di recupero tra le serie di squat .
+LANG_IT Registra il tuo peso corporeo attuale per monitorare i progressi nel tempo .
+LANG_IT Misura la tua frequenza cardiaca durante l' allenamento aerobico .
+LANG_IT Notifica il completamento della sessione di allenamento al tuo partner di fitness .
+LANG_IT Aggiorna il tuo programma di esercizi con nuove attività fisiche per mantenere la motivazione alta .
+LANG_IT Pianifica una sessione di allenamento all'aperto per domani sera .
+LANG_IT Controlla i tuoi progressi nel raggiungimento dell'obiettivo di aumento della forza muscolare .
+LANG_IT Registra il numero di ripetizioni completate per l' serie di addominali .
+LANG_IT Misura la tua circonferenza braccio per valutare i cambiamenti nella massa muscolare .
+LANG_IT Ciao, potresti aumentare la luminosità delle luci del salotto ?
+LANG_IT Che temperatura fa nella cucina ?
+LANG_IT Mi piacerebbe che mettessi la termostato a 22 gradi .
+LANG_IT Puoi riprodurre la playlist relax nella camera da letto ?
+LANG_IT Sto per inviare un messaggio a mamma .
+LANG_IT Che luminosità ha la lampada da scrivania ?
+LANG_IT Per favore, blocca la porta d'ingresso .
+LANG_IT Vorrei impostare un promemoria per domani mattina .
+LANG_IT Cosa c'è nella dispensa ?
+LANG_IT Potresti aumentare il volume della TV ?
+LANG_IT Mi piacerebbe ordinare sushi con carta di credito .
+LANG_IT Che temperatura hai impostato per la sala da pranzo ?
+LANG_IT Per favore, attiva la modalità notte .
+LANG_IT Devo inviare un 'email a Marco .
+LANG_IT Che luminosità hai impostato per la lampadario ?
+LANG_IT Potresti mettere la caldaia a modalità risparmio energetico ?
+LANG_IT Vorrei riprodurre la canzone preferita nella sala da pranzo .
+LANG_IT Cosa c'è nella lavanderia ?
+LANG_IT Puoi bloccare la finestra della camera da letto ?
+LANG_IT Vorrei impostare un appuntamento per prossimo venerdì .
+LANG_IT Per favore, disattiva la modalità silenziosa .
+LANG_IT Devo inviare un messaggio a Sara .
+LANG_IT Che luminosità hai impostato per la lampada da lettura ?
+LANG_IT Potresti regolare il volume della soundbar ?
+LANG_IT Mi piacerebbe ordinare un libro con PayPal .
+LANG_IT Che temperatura fa nella cantina ?
+LANG_IT Per favore, attiva la modalità vacanza .
+LANG_IT Devo inviare un 'email a Luca .
+LANG_IT Che luminosità hai impostato per la lampada da terra ?
+LANG_IT Potresti impostare la caldaia a modalità comfort ?
+LANG_IT Vorrei ascoltare la playlist energica nella sala fitness .
+LANG_IT Cosa c'è nella cantina ?
+LANG_IT Puoi chiudere la tenda della camera da letto ?
+LANG_IT Vorrei impostare un riunione per domani pomeriggio .
+LANG_IT Per favore, attiva la modalità silenziosa .
+LANG_IT Devo inviare un messaggio a Paolo .
+LANG_IT Che luminosità hai impostato per la lampadario ?
+LANG_IT Potresti regolare il volume della stereo ?
+LANG_IT Mi piacerebbe ordinare una pizza con contanti .
+LANG_IT Che temperatura hai impostato per la veranda ?
+LANG_IT Per favore, disattiva la modalità notte .
+LANG_IT Devo inviare un 'email a Anna .
+LANG_IT Che luminosità hai impostato per la lampada da tavolo ?
+LANG_IT Potresti mettere la caldaia a modalità risparmio ?
+LANG_IT Vorrei ascoltare la canzone preferita nella sala da pranzo .
+LANG_IT Cosa c'è nella dispensa ?
+LANG_IT Puoi bloccare la finestra della camera da letto ?
+LANG_IT Vorrei impostare un appuntamento per prossimo giovedì .
+LANG_IT Per favore, attiva la modalità relax .
+LANG_IT Devo inviare un messaggio a Giulia .
+LANG_IT Che luminosità hai impostato per la lampada da lettura ?
+LANG_IT Potresti regolare il volume della TV ?
+LANG_IT Mi piacerebbe ordinare sushi con carta di credito .
+LANG_IT Che temperatura hai impostato per la sala da pranzo ?
+LANG_IT Per favore, disattiva la modalità silenziosa .
+LANG_IT Devo inviare un 'email a Marco .
+LANG_IT Che luminosità hai impostato per la lampadario ?
+LANG_IT Potresti mettere la caldaia a modalità risparmio energetico ?
+LANG_IT Vorrei riprodurre la canzone preferita nella sala da pranzo .
+LANG_IT Cosa c'è nella lavanderia ?
+LANG_IT Puoi bloccare la finestra della camera da letto ?
+LANG_IT Vorrei impostare un appuntamento per prossimo venerdì .
+LANG_IT Per favore, attiva la modalità silenziosa .
+LANG_IT Devo inviare un messaggio a Sara .
+LANG_IT Che luminosità hai impostato per la lampada da lettura ?
+LANG_IT Potresti regolare il volume della soundbar ?
+LANG_IT Mi piacerebbe ordinare un libro con PayPal .
+LANG_IT Che temperatura fa nella cantina ?
+LANG_IT Per favore, attiva la modalità vacanza .
+LANG_IT Devo inviare un 'email a Luca .
+LANG_IT Che luminosità hai impostato per la lampada da terra ?
+LANG_IT Potresti impostare la caldaia a modalità comfort ?
+LANG_IT Vorrei ascoltare la playlist energica nella sala fitness .
+LANG_IT Cosa c'è nella cantina ?
+LANG_IT Puoi chiudere la tenda della camera da letto ?
+LANG_IT Vorrei impostare un riunione per domani pomeriggio .
+LANG_IT Per favore, attiva la modalità silenziosa .
+LANG_IT Devo inviare un messaggio a Paolo .
+LANG_IT Che luminosità hai impostato per la lampadario ?
+LANG_IT Potresti regolare il volume della stereo ?
+LANG_IT Mi piacerebbe ordinare una pizza con contanti .
+LANG_IT Che temperatura hai impostato per la veranda ?
+LANG_IT Per favore, disattiva la modalità notte .
+LANG_IT Devo inviare un 'email a Anna .
+LANG_IT Che luminosità hai impostato per la lampada da tavolo ?
+LANG_IT Potresti mettere la caldaia a modalità risparmio ?
+LANG_IT Vorrei ascoltare la canzone preferita nella sala da pranzo .
+LANG_IT Cosa c'è nella dispensa ?
+LANG_IT Puoi bloccare la finestra della camera da letto ?
+LANG_IT Vorrei impostare un appuntamento per prossimo giovedì .
+LANG_IT Per favore, attiva la modalità relax .
+LANG_IT Devo inviare un messaggio a Giulia .
+LANG_IT Prenota un volo per Parigi partendo il 10 marzo .
+LANG_IT Vorrei verificare lo stato del mio volo per Roma .
+LANG_IT Aggiorna il mio itinerario con una visita al Colosseo .
+LANG_IT Mi consigli un posto da visitare a Venezia ?
+LANG_IT Che bello , il terminal dell'aeroporto è molto moderno .
+LANG_IT Come posso cancellare la mia prenotazione di alloggio a Firenze ?
+LANG_IT Consiglia alcune destinazioni di mare per l'estate prossima .
+LANG_IT Mi puoi ricordare di stampare il mio biglietto per il volo per Madrid ?
+LANG_IT Qual è lo stato del volo per Tokyo previsto per domani ?
+LANG_IT Pianifica una visita al Museo del Louvre durante il tuo viaggio a Parigi .
+LANG_IT Ho prenotato un volo per Berlino per la prossima settimana .
+LANG_IT Verifica se ci sono restrizioni di viaggio per l'Italia .
+LANG_IT Mi consigli un posto da visitare a Barcellona per il prossimo weekend .
+LANG_IT Aggiungi un'altra tappa al mio itinerario per visitare la Sagrada Familia .
+LANG_IT Verifica lo stato del volo per Londra previsto per oggi .
+LANG_IT Mi consigli un posto da visitare a New York per il prossimo mese .
+LANG_IT Mi puoi ricordare di fare il check-in online per il mio volo per Tokyo ?
+LANG_IT Cambia la prenotazione di alloggio a Milano per il prossimo weekend .
+LANG_IT Mi consigli un posto da visitare a Roma per la prossima settimana .
+LANG_IT Aggiorna il mio itinerario con una visita al Museo del Prado .
+LANG_IT Verifica se ci sono restrizioni di viaggio per la Spagna .
+LANG_IT Mi consigli un posto da visitare a Parigi per il prossimo weekend .
+LANG_IT Mi puoi ricordare di stampare il mio biglietto per il volo per Barcellona ?
+LANG_IT Pianifica una visita al Acropoli durante il tuo viaggio a Atene .
+LANG_IT Qual è lo stato del volo per Berlino previsto per domani ?
+LANG_IT Aggiungi un'altra tappa al mio itinerario per visitare il Duomo di Milano .
+LANG_IT Verifica lo stato del volo per Parigi previsto per oggi .
+LANG_IT Mi consigli un posto da visitare a Tokyo per il prossimo mese .
+LANG_IT Mi puoi ricordare di fare il check-in online per il mio volo per Londra ?
+LANG_IT Cambia la prenotazione di alloggio a Firenze per il prossimo weekend .
+LANG_IT Mi consigli un posto da visitare a Barcellona per la prossima settimana .
+LANG_IT Aggiorna il mio itinerario con una visita al Parco Güell .
+LANG_IT Verifica se ci sono restrizioni di viaggio per il Portogallo .
+LANG_IT Mi consigli un posto da visitare a Londra per il prossimo weekend .
+LANG_IT Mi puoi ricordare di stampare il mio biglietto per il volo per Berlino ?
+LANG_IT Pianifica una visita al Colosseo durante il tuo viaggio a Roma .
+LANG_IT Qual è lo stato del volo per Parigi previsto per domani ?
+LANG_IT Aggiungi un'altra tappa al mio itinerario per visitare la Torre Eiffel .
+LANG_IT Verifica lo stato del volo per Londra previsto per oggi .
+LANG_IT Mi consigli un posto da visitare a New York per il prossimo mese .
+LANG_IT Mi puoi ricordare di fare il check-in online per il mio volo per Tokyo ?
+LANG_IT Cambia la prenotazione di alloggio a Milano per il prossimo weekend .
+LANG_IT Mi consigli un posto da visitare a Roma per la prossima settimana .
+LANG_IT Aggiorna il mio itinerario con una visita al Musei Vaticani .
+LANG_IT Verifica se ci sono restrizioni di viaggio per la Spagna .
+LANG_IT Mi consigli un posto da visitare a Parigi per il prossimo weekend .
+LANG_IT Mi puoi ricordare di stampare il mio biglietto per il volo per Barcellona ?
+LANG_IT Pianifica una visita al Acropoli durante il tuo viaggio a Atene .
+LANG_IT Qual è lo stato del volo per Berlino previsto per domani ?
+LANG_IT Aggiungi un'altra tappa al mio itinerario per visitare il Duomo di Milano .
+LANG_IT Verifica lo stato del volo per Parigi previsto per oggi .
+LANG_IT Mi consigli un posto da visitare a Tokyo per il prossimo mese .
+LANG_IT Mi puoi ricordare di fare il check-in online per il mio volo per Londra ?
+LANG_IT Cambia la prenotazione di alloggio a Firenze per il prossimo weekend .
+LANG_IT Mi consigli un posto da visitare a Barcellona per la prossima settimana .
+LANG_IT Aggiorna il mio itinerario con una visita al Parco Güell .
+LANG_IT Verifica se ci sono restrizioni di viaggio per il Portogallo .
+LANG_IT Mi consigli un posto da visitare a Londra per il prossimo weekend .
+LANG_IT Mi puoi ricordare di stampare il mio biglietto per il volo per Berlino ?
+LANG_IT Pianifica una visita al Colosseo durante il tuo viaggio a Roma .
+LANG_IT Qual è lo stato del volo per Parigi previsto per domani ?
+LANG_IT Aggiungi un'altra tappa al mio itinerario per visitare la Torre Eiffel .
+LANG_IT Verifica lo stato del volo per Londra previsto per oggi .
+LANG_IT Mi consigli un posto da visitare a New York per il prossimo mese .
+LANG_IT Mi puoi ricordare di fare il check-in online per il mio volo per Tokyo ?
+LANG_IT Cambia la prenotazione di alloggio a Milano per il prossimo weekend .
+LANG_IT Mi consigli un posto da visitare a Roma per la prossima settimana .
+LANG_IT Aggiorna il mio itinerario con una visita al Musei Vaticani .
+LANG_IT Verifica se ci sono restrizioni di viaggio per la Spagna .
+LANG_IT Mi consigli un posto da visitare a Parigi per il prossimo weekend .
+LANG_IT Mi puoi ricordare di stampare il mio biglietto per il volo per Barcellona ?
+LANG_IT Pianifica una visita al Acropoli durante il tuo viaggio a Atene .
+LANG_IT Qual è lo stato del volo per Berlino previsto per domani ?
+LANG_IT Aggiungi un'altra tappa al mio itinerario per visitare il Duomo di Milano .
+LANG_IT Verifica lo stato del volo per Parigi previsto per oggi .
+LANG_IT Mi consigli un posto da visitare a Tokyo per il prossimo mese .
+LANG_IT Mi puoi ricordare di fare il check-in online per il mio volo per Londra ?
+LANG_IT Cambia la prenotazione di alloggio a Firenze per il prossimo weekend .
+LANG_IT Mi consigli un posto da visitare a Barcellona per la prossima settimana .
+LANG_IT Aggiorna il mio itinerario con una visita al Parco Güell .
+LANG_IT Verifica se ci sono restrizioni di viaggio per il Portogallo .
+LANG_IT Mi consigli un posto da visitare a Londra per il prossimo weekend .
+LANG_IT Mi puoi ricordare di stampare il mio biglietto per il volo per Berlino ?
+LANG_IT Pianifica una visita al Colosseo durante il tuo viaggio a Roma .
+LANG_IT Qual è lo stato del volo per Parigi previsto per domani ?
+LANG_IT Aggiungi un'altra tappa al mio itinerario per visitare la Torre Eiffel .
+LANG_IT Qual è il livello di emoglobina per il paziente 567 ?
+LANG_IT Inviate il rapporto di microbiologia al dottore .
+LANG_IT Modificate l' impostazione di temperatura del termometro a 37°C .
+LANG_IT Rivedete il rapporto di urinocoltura del paziente 456 e approvate .
+LANG_IT Aggiornate il inventario con nuovi reagenti .
+LANG_IT Inviate il referto di radiografia al radiologo .
+LANG_IT Modificate l' impostazione di luminosità del microscopio al 50% .
+LANG_IT Raccogliete campioni di urina da paziente 345 .
+LANG_IT Fermate l' analisi del campione e archiviate i risultati .
+LANG_IT Rivedete il rapporto di biopsia del paziente 890 e firmate .
+LANG_IT Aggiornate il inventario con nuovi campioni di tessuto .
+LANG_IT Modificate l' impostazione di zoom del microscopio a 100x .
+LANG_IT Raccogliete campioni di feci da paziente 345 .
+LANG_IT Fermate l' analisi del campione e archiviate i risultati .
+LANG_IT Rivedete il rapporto di urinocoltura del paziente 456 e approvate .
+LANG_IT Aggiornate il inventario con nuovi reagenti .
+LANG_IT Inviate il referto di radiografia al radiologo .
+LANG_IT Modificate l' impostazione di luminosità del microscopio al 50% .
+LANG_IT Raccogliete campioni di urina da paziente 345 .
+LANG_IT Fermate l' analisi del campione e archiviate i risultati .
+LANG_IT Rivedete il rapporto di biopsia del paziente 890 e firmate .
+LANG_IT Aggiornate il inventario con nuovi campioni di tessuto .
+LANG_IT Modificate l' impostazione di zoom del microscopio a 100x .
+LANG_IT Raccogliete campioni di feci da paziente 345 .
+LANG_IT Fermate l' analisi del campione e archiviate i risultati .
+LANG_IT Controlla il saldo del mio conto corrente .
+LANG_IT Trasferisci 100€ dal mio conto risparmio al mio conto corrente .
+LANG_IT Paga le bollette mensili automaticamente .
+LANG_IT Imposta un avviso per le spese mensili .
+LANG_IT Aggiorna le informazioni del mio conto .
+LANG_IT Analizza le spese del mese scorso .
+LANG_IT Analizza le notizie finanziarie più recenti .
+LANG_IT Aggiorna le informazioni del mio portafoglio di investimenti .
+LANG_IT Visualizza il report trimestrale del mio fondo comune di investimento .
+LANG_IT Genera un report dettagliato sulle spese mensili .
+LANG_IT Pianifica un bonifico per la prossima settimana .
+LANG_IT Annulla la transazione con l'ID 123456 .
+LANG_IT Le notizie finanziarie riportano un aumento del mercato azionario .
+LANG_IT Gli esperti finanziari analizzano il comportamento del mercato azionario .
+LANG_IT Le notizie finanziarie riportano un aumento del valore dell' azione .
+LANG_IT Gli analisti finanziari prevedono un calo del mercato azionario .
+LANG_IT Gli esperti finanziari analizzano il comportamento del mercato azionario .
+LANG_IT Trasferisci 200€ dal mio conto corrente al mio conto risparmio .
+LANG_IT Imposta un avviso per le spese mensili .
+LANG_IT Aggiorna le informazioni del mio portafoglio di investimenti .
+LANG_IT Visualizza il report trimestrale del mio fondo comune di investimento .
+LANG_IT Genera un report dettagliato sulle spese mensili .
+LANG_IT Pianifica un bonifico per la prossima settimana .
+LANG_IT Annulla la transazione con l'ID 123456 .
+LANG_IT Le notizie finanziarie riportano un aumento del mercato azionario .
+LANG_IT Gli esperti finanziari analizzano il comportamento del mercato azionario .
+LANG_IT Le notizie finanziarie riportano un aumento del valore dell' azione .
+LANG_IT Gli analisti finanziari prevedono un calo del mercato azionario .
+LANG_IT Gli esperti finanziari analizzano il comportamento del mercato azionario .
+LANG_IT Controlla il saldo del mio conto corrente .
+LANG_IT Trasferisci 100€ dal mio conto risparmio al mio conto corrente .
+LANG_IT Paga le bollette mensili automaticamente .
+LANG_IT Imposta un avviso per le spese mensili .
+LANG_IT Aggiorna le informazioni del mio conto .
+LANG_IT Analizza le spese del mese scorso .
+LANG_IT Analizza le notizie finanziarie più recenti .
+LANG_IT Aggiorna le informazioni del mio portafoglio di investimenti .
+LANG_IT Visualizza il report trimestrale del mio fondo comune di investimento .
+LANG_IT Genera un report dettagliato sulle spese mensili .
+LANG_IT Pianifica un bonifico per la prossima settimana .
+LANG_IT Annulla la transazione con l'ID 123456 .
+LANG_IT Le notizie finanziarie riportano un aumento del mercato azionario .
+LANG_IT Gli esperti finanziari analizzano il comportamento del mercato azionario .
+LANG_IT Le notizie finanziarie riportano un aumento del valore dell' azione .
+LANG_IT Gli analisti finanziari prevedono un calo del mercato azionario .
+LANG_IT Gli esperti finanziari analizzano il comportamento del mercato azionario .
+LANG_IT Posso cercare una ricetta vegetariana per la cena ?
+LANG_IT Che ne dici di impostare un timer 20 minuti per la colazione ?
+LANG_IT Mi serve l'elenco degli ingredienti per la torta di mele .
+LANG_IT Mi piacerebbe monitorare le ricette senza glutine .
+LANG_IT Credo che dobbiamo aggiungere basilico alla lista della spesa .
+LANG_IT Sai come trovare una ricetta vegana ?
+LANG_IT Ricorda di preriscaldare il forno a 180 gradi .
+LANG_IT Mescola le uova fino a quando tuorli e albumi sono ben amalgamati .
+LANG_IT Riprendi la narrazione della ricetta .
+LANG_IT Aggiorna le mie preferenze vegetariane .
+LANG_IT Rimuovi zucchero dalla lista della spesa .
+LANG_IT Puoi elencare le informazioni sulle calorie per l' avocado ?
+LANG_IT Suggerisci una ricetta italiana per la cena .
+LANG_IT Monitora lo stock della dispensa olio d'oliva .
+LANG_IT Aggiungi due confezioni di pasta alla mia lista della spesa
+LANG_IT Controlla il prezzo del latte al supermercato
+LANG_IT Trova il reparto della frutta e cerca mele
+LANG_IT Imposta un promemoria per fare la spesa al supermercato domani mattina
+LANG_IT Gestisci i tuoi coupon e verifica se ce n'è uno per yogurt
+LANG_IT Confronta le banane con le fragole per le informazioni nutrizionali
+LANG_IT Offri consigli per acqua minerale più salutare
+LANG_IT Trova la migliore per pollo tra i vari supermercati
+LANG_IT Fornisci informazioni nutrizionali sul riso integrale
+LANG_IT Scegli tra spaghetti e penne per la tua ricetta di pasta
+LANG_IT Cerca il marchio più economico per latte INTERO
+LANG_IT Consiglia un prodotto sano per la dieta vegana
+LANG_IT Preferisci carne di manzo o carne di maiale per la tua ricetta di grigliata
+LANG_IT Valuta e recensisci il formaggio cheddar che hai acquistato
+LANG_IT Cerca il reparto delle offerte e scopri gli sconti disponibili su cereali
+LANG_IT Applica il coupon per detersivo alla cassa
+LANG_IT Scegli tra uova biologiche e non biologiche per la tua torta
+LANG_IT Trova il produttore di miele locale per supportare i produttori vicini
+LANG_IT Controlla se il olio d'oliva è adatto alla tua dieta senza glutine
+LANG_IT Cerca il prodotto specifico per caffè
+LANG_IT Aggiorna la tua lista della spesa con tre banane
+LANG_IT Cerca il prezzo più conveniente per pomodori al mercato
+LANG_IT Trova il reparto delle verdure e aggiungi un chilo di carote alla lista della spesa
+LANG_IT Consiglia un vino rosso per abbinare con formaggio e salumi
+LANG_IT Cerca il prezzo del tonno in scatola al supermercato
+LANG_IT Trova il reparto dei surgelati e verifica se c'è gelato alla promozione
+LANG_IT Imposta un promemoria per acquistare due litri di latte alla supermercato per sabato prossimo
+LANG_IT Gestisci i tuoi coupon e usa quello per pane integrale prima che scada
+LANG_IT Confronta le mele verdi con le mele rosse per il contenuto di vitamina C
+LANG_IT Offri consigli per snack salutari per i bambini
+LANG_IT Trova la migliore per pollo biologico tra i vari supermercati
+LANG_IT Fornisci informazioni nutrizionali sul salmone affumicato
+LANG_IT Scegli tra spaghetti e tagliatelle per la tua ricetta di pasta al forno
+LANG_IT Cerca il marchio più economico per latte scremato
+LANG_IT Consiglia un prodotto sano per la dieta vegetariana
+LANG_IT Preferisci carne di pollo o carne di tacchino per la tua ricetta di arrosto
+LANG_IT Valuta e recensisci il formaggio mozzarella che hai acquistato
+LANG_IT Cerca il reparto delle offerte e scopri gli sconti disponibili su biscotti
+LANG_IT Applica il coupon per detersivo alla cassa
+LANG_IT Scegli tra uova biologiche e non biologiche per la tua frittata
+LANG_IT Trova il produttore di miele locale per supportare i produttori vicini
+LANG_IT Controlla se il olio d'oliva è adatto alla tua dieta vegetariana
+LANG_IT Cerca il prodotto specifico per tè verde
+LANG_IT Aggiorna la tua lista della spesa con cinque arance
+LANG_IT Cerca il prezzo più conveniente per fragole al mercato
+LANG_IT Trova il reparto delle verdure e aggiungi un chilo di zucchine alla lista della spesa
+LANG_IT Consiglia un vino bianco per abbinare con pesce e insalata
+LANG_IT Cerca il prezzo del salmone fresco al supermercato
+LANG_IT Trova il reparto dei surgelati e verifica se c'è pizza alla promozione
+LANG_IT Imposta un promemoria per acquistare un chilo di carne alla macelleria per sabato prossimo
+LANG_IT Gestisci i tuoi coupon e usa quello per pasta prima che scada
+LANG_IT Confronta le pere con le mele per il contenuto di fibre
+LANG_IT Offri consigli per spuntini salutari per la pausa pranzo
+LANG_IT Trova la migliore per prosciutto crudo tra i vari supermercati
+LANG_IT Fornisci informazioni nutrizionali sul yogurt alla vaniglia
+LANG_IT Scegli tra spaghetti e penne per la tua ricetta di pasta fredda
+LANG_IT Cerca il marchio più economico per latte parzialmente scremato
+LANG_IT Consiglia un prodotto sano per la dieta senza lattosio
+LANG_IT Preferisci carne di manzo o carne di maiale per la tua ricetta di stufato
+LANG_IT Valuta e recensisci il formaggio grana padano che hai acquistato
+LANG_IT Cerca il reparto delle offerte e scopri gli sconti disponibili su cereali per la colazione
+LANG_IT Applica il coupon per detersivo alla cassa
+LANG_IT Scegli tra uova biologiche e non biologiche per la tua torta salata
+LANG_IT Trova il produttore di miele locale per supportare i produttori vicini
+LANG_IT Controlla se il olio d'oliva è adatto alla tua dieta senza glutine
+LANG_IT Cerca il prodotto specifico per caffè in grani
+LANG_IT Aggiorna la tua lista della spesa con due melanzane
+LANG_IT Cerca il prezzo più conveniente per ananas al mercato
+LANG_IT Trova il reparto delle verdure e aggiungi un chilo di pomodori alla lista della spesa
+LANG_IT Consiglia un vino rosato per abbinare con formaggio e salumi
+LANG_IT Cerca il prezzo del tonno sott'olio al supermercato
+LANG_IT Trova il reparto dei surgelati e verifica se c'è gelato alla promozione
+LANG_IT Imposta un promemoria per acquistare tre litri di latte alla supermercato per sabato prossimo
+LANG_IT Gestisci i tuoi coupon e usa quello per pane integrale prima che scada
+LANG_IT Confronta le mele verdi con le mele rosse per il contenuto di vitamina C
+LANG_IT Offri consigli per snack salutari per i bambini
+LANG_IT Trova la migliore per pollo biologico tra i vari supermercati
+LANG_IT Fornisci informazioni nutrizionali sul salmone affumicato
+LANG_IT Scegli tra spaghetti e tagliatelle per la tua ricetta di pasta al forno
+LANG_IT Cerca il marchio più economico per latte scremato
+LANG_IT Consiglia un prodotto sano per la dieta vegetariana
+LANG_IT Preferisci carne di pollo o carne di tacchino per la tua ricetta di arrosto
+LANG_IT Valuta e recensisci il formaggio mozzarella che hai acquistato
+LANG_IT Cerca il reparto delle offerte e scopri gli sconti disponibili su biscotti
+LANG_IT Applica il coupon per detersivo alla cassa
+LANG_IT Scegli tra uova biologiche e non biologiche per la tua frittata
+LANG_IT Trova il produttore di miele locale per supportare i produttori vicini
+LANG_IT Controlla se il olio d'oliva è adatto alla tua dieta vegetariana
+LANG_IT Cerca il prodotto specifico per tè verde
+LANG_IT Aggiorna la tua lista della spesa con cinque arance
+LANG_IT Cerca il prezzo più conveniente per fragole al mercato
+LANG_IT Trova il reparto delle verdure e aggiungi un chilo di zucchine alla lista della spesa
+LANG_IT Consiglia un vino bianco per abbinare con pesce e insalata
+LANG_IT Cerca il prezzo del salmone fresco al supermercato
+LANG_IT Trova il reparto dei surgelati e verifica se c'è pizza alla promozione
+LANG_IT Imposta un promemoria per acquistare un chilo di carne alla macelleria per sabato prossimo
+LANG_IT Gestisci i tuoi coupon e usa quello per pasta prima che scada
+LANG_IT Confronta le pere con le mele per il contenuto di fibre
+LANG_IT Offri consigli per spuntini salutari per la pausa pranzo
+LANG_IT Trova la migliore per prosciutto crudo tra i vari supermercati
+LANG_IT Fornisci informazioni nutrizionali sul yogurt alla vaniglia
+LANG_IT Scegli tra spaghetti e penne per la tua ricetta di pasta fredda
+LANG_IT Cerca il marchio più economico per latte parzialmente scremato
+LANG_IT Consiglia un prodotto sano per la dieta senza lattosio
+LANG_IT Preferisci carne di manzo o carne di maiale per la tua ricetta di stufato
+LANG_IT Valuta e recensisci il formaggio grana padano che hai acquistato
+LANG_IT Cerca il reparto delle offerte e scopri gli sconti disponibili su cereali per la colazione
+LANG_IT Applica il coupon per detersivo alla cassa
+LANG_IT Scegli tra uova biologiche e non biologiche per la tua torta salata
+LANG_IT Ho avuto un intervento chirurgico alla cistifellea due mesi fa
+LANG_IT Mio padre ha la pressione alta regolarmente da diversi anni
+LANG_IT Mi sento stanco costantemente da una settimana
+LANG_IT Ho assunto antibiotici per la mia infezione questa mattina
+LANG_IT Mia gola fa male da tre giorni
+LANG_IT Il mio stomaco brucia dopo mangiato cena
+LANG_IT Ho mal di testa da ieri sera
+LANG_IT Mio figlio ha la febbre da due giorni
+LANG_IT Soffro di vertigini occasionalmente da qualche settimana
+LANG_IT Ho bisogno di fare degli esami del sangue per controllare il mio livello di zucchero la prossima settimana
+LANG_IT Il mio braccio è gonfio dopo aver sollevato pesi in palestra
+LANG_IT Mia nonna ha la tosse costantemente da un mese
+LANG_IT Ho preso antinfiammatori per il mio mal di schiena ieri
+LANG_IT Mio fratello ha la nausea da una settimana
+LANG_IT Mi sento debole da questa mattina
+LANG_IT Ho la pelle arrossata dopo essere stata esposta al sole tutto il giorno
+LANG_IT Il mio stomaco fa male dopo aver mangiato cibi piccanti ieri sera
+LANG_IT Sono affaticato da una settimana a questa parte
+LANG_IT Ho subito un intervento chirurgico alla spalla tre mesi fa
+LANG_IT Mio figlio ha il mal di pancia da ieri
+LANG_IT Il mio ginocchio è gonfio dopo aver corso ieri
+LANG_IT Mia nonna ha il mal di testa da una settimana
+LANG_IT Mi sento stanco costantemente da qualche giorno
+LANG_IT Ho assunto antinfiammatori per il mio dolore alla schiena stamattina
+LANG_IT Mio padre ha la tosse da diversi giorni
+LANG_IT Ho il mal di gola da ieri
+LANG_IT Il mio stomaco è gonfio dopo aver mangiato cibi piccanti ieri sera
+LANG_IT Sono affaticato da una settimana a questa parte
+LANG_IT Ho subito un intervento chirurgico alla spalla tre mesi fa
+LANG_IT Mio figlio ha il mal di pancia da ieri
+LANG_IT Il mio ginocchio è gonfio dopo aver corso ieri
+LANG_IT Mia nonna ha il mal di testa da una settimana
+LANG_IT Mi sento stanco costantemente da qualche giorno
+LANG_IT Ho assunto antinfiammatori per il mio dolore alla schiena stamattina
+LANG_IT Mio padre ha la tosse da diversi giorni
+LANG_IT Ho il mal di gola da ieri
+LANG_IT Il mio stomaco è gonfio dopo aver mangiato cibi piccanti ieri sera
+LANG_IT Sono affaticato da una settimana a questa parte
+LANG_IT Ho subito un intervento chirurgico alla spalla tre mesi fa
+LANG_IT Mio figlio ha il mal di pancia da ieri
+LANG_IT Il mio ginocchio è gonfio dopo aver corso ieri
+LANG_IT Mia nonna ha il mal di testa da una settimana
+LANG_IT Mi sento stanco costantemente da qualche giorno
+LANG_IT Ho assunto antinfiammatori per il mio dolore alla schiena stamattina
+LANG_IT Mio padre ha la tosse da diversi giorni
+LANG_IT Ho il mal di gola da ieri
+LANG_IT Il mio stomaco è gonfio dopo aver mangiato cibi piccanti ieri sera
+LANG_IT Sono affaticato da una settimana a questa parte
+LANG_IT Ho subito un intervento chirurgico alla spalla tre mesi fa
+LANG_IT Mio figlio ha il mal di pancia da ieri
+LANG_IT Il mio ginocchio è gonfio dopo aver corso ieri
+LANG_IT Mia nonna ha il mal di testa da una settimana
+LANG_IT Mi sento stanco costantemente da qualche giorno
+LANG_IT Ho assunto antinfiammatori per il mio dolore alla schiena stamattina
+LANG_IT Mio padre ha la tosse da diversi giorni
+LANG_IT Ho il mal di gola da ieri
+LANG_IT Il mio stomaco è gonfio dopo aver mangiato cibi piccanti ieri sera
+LANG_IT Sono affaticato da una settimana a questa parte
+LANG_IT Ho subito un intervento chirurgico alla spalla tre mesi fa
+LANG_IT Mio figlio ha il mal di pancia da ieri
+LANG_IT Il mio ginocchio è gonfio dopo aver corso ieri
+LANG_IT Mia nonna ha il mal di testa da una settimana
+LANG_IT Mi sento stanco costantemente da qualche giorno
+LANG_IT Ho assunto antinfiammatori per il mio dolore alla schiena stamattina
+LANG_IT Mio padre ha la tosse da diversi giorni
+LANG_IT Ho il mal di gola da ieri
+LANG_IT Il mio stomaco è gonfio dopo aver mangiato cibi piccanti ieri sera
+LANG_IT Sono affaticato da una settimana a questa parte
+LANG_IT Ho subito un intervento chirurgico alla spalla tre mesi fa
+LANG_IT Mio figlio ha il mal di pancia da ieri
+LANG_IT Il mio ginocchio è gonfio dopo aver corso ieri
+LANG_IT Mia nonna ha il mal di testa da una settimana
+LANG_IT Mi sento stanco costantemente da qualche giorno
+LANG_IT Ho assunto antinfiammatori per il mio dolore alla schiena stamattina
+LANG_IT Mio padre ha la tosse da diversi giorni
+LANG_IT Ho il mal di gola da ieri
+LANG_IT Il mio stomaco è gonfio dopo aver mangiato cibi piccanti ieri sera
+LANG_IT Sono affaticato da una settimana a questa parte
+LANG_IT Ho subito un intervento chirurgico alla spalla tre mesi fa
+LANG_IT Mio figlio ha il mal di pancia da ieri
+LANG_IT Il mio ginocchio è gonfio dopo aver corso ieri
+LANG_IT Mia nonna ha il mal di testa da una settimana
+LANG_IT Mi sento stanco costantemente da qualche giorno
+LANG_IT Ho assunto antinfiammatori per il mio dolore alla schiena stamattina
+LANG_IT Mio padre ha la tosse da diversi giorni
+LANG_IT Ho il mal di gola da ieri
+LANG_IT Il mio stomaco è gonfio dopo aver mangiato cibi piccanti ieri sera
+LANG_IT Sono affaticato da una settimana a questa parte
+LANG_IT Ho subito un intervento chirurgico alla spalla tre mesi fa
+LANG_IT Mio figlio ha il mal di pancia da ieri
+LANG_IT Juventus ha vinto la Serie A per la 2021-2022 .
+LANG_IT Ronaldo ha segnato un gol spettacolare con un tiro al volo .
+LANG_IT Che sole splendente oggi al San Siro .
+LANG_IT Pierluigi Collina ha fischiato un rigore discutibile a favore del Inter .
+LANG_IT Chiellini ha subito un infortunio al ginocchio durante un contrasto .
+LANG_IT Conte sembra molto agitato in panchina .
+LANG_IT Insigne ha effettuato un cross perfetto per Mertens .
+LANG_IT Che folla entusiasta al Camp Nou oggi .
+LANG_IT Milan ha pareggiato contro il Roma con un 1-1 .
+LANG_IT Ibrahimovic si è reso protagonista di un dribbling spettacolare .
+LANG_IT Nicola Rizzoli ha mostrato un cartellino giallo a Bonucci per un fallo tattico .
+LANG_IT Napoli ha dominato il primo tempo con un possesso palla del 65% .
+LANG_IT Che vento forte c'è oggi al Anfield .
+LANG_IT Immobile ha segnato un gol decisivo al 90 per la Lazio .
+LANG_IT Vlahovic ha effettuato un tiro potente respinto dall' Handanovic .
+LANG_IT Atalanta ha subito una sostituzione forzata per infortunio .
+LANG_IT Allegri sta dando indicazioni tattiche ai suoi giocatori .
+LANG_IT Lukaku ha segnato un gol da calcio di rigore .
+LANG_IT Che tifo appassionato si sente oggi al Santiago Bernabeu .
+LANG_IT Fiorentina ha vinto contro il Sassuolo con un 2-0 .
+LANG_IT De Paul ha effettuato un assist perfetto per Okaka .
+LANG_IT Daniele Orsato ha annullato un gol per fuorigioco .
+LANG_IT Genoa ha effettuato una sostituzione tattica per rafforzare il centrocampo .
+LANG_IT Che nebbia fitta c'è oggi al Stadio Olimpico .
+LANG_IT Chiesa ha effettuato un cross preciso per Morata che ha segnato di testa .
+LANG_IT Kessie ha effettuato un tackle deciso recuperando palla .
+LANG_IT Verona ha pareggiato contro il Udinese con un 2-2 .
+LANG_IT Belotti ha effettuato un dribbling spettacolare eludendo due difensori .
+LANG_IT Luca Banti ha concesso un rigore dubbio al Torino .
+LANG_IT Bologna ha effettuato una sostituzione offensiva per cercare il pareggio .
+LANG_IT Che pioggia battente c'è oggi al Mapei Stadium .
+LANG_IT Dybala ha effettuato un tiro potente respinto dal Szczesny .
+LANG_IT Pellegrini ha subito un infortunio muscolare durante un sprint .
+LANG_IT Pioli sta incoraggiando i suoi giocatori a tenere alta la pressione .
+LANG_IT Lukaku ha segnato un gol da calcio di rigore .
+LANG_IT Che tifo appassionato si sente oggi al San Paolo .
+LANG_IT Parma ha vinto contro il Cagliari con un 3-1 .
+LANG_IT Berardi ha effettuato un cross preciso per Caputo che ha segnato di testa .
+LANG_IT Luca Pairetto ha concesso un rigore netto al Sampdoria .
+LANG_IT Empoli ha effettuato una sostituzione difensiva per consolidare la retroguardia .
+LANG_IT Che sole splendente c'è oggi al Olimpico di Roma .
+LANG_IT Insigne ha effettuato un dribbling spettacolare eludendo tre difensori .
+LANG_IT Barella ha effettuato un tackle deciso recuperando palla .
+LANG_IT Venezia ha pareggiato contro il Spezia con un 1-1 .
+LANG_IT Zlatan ha effettuato un dribbling spettacolare eludendo due difensori .
+LANG_IT Paolo Valeri ha concesso un rigore dubbio al Fiorentina .
+LANG_IT Genoa ha effettuato una sostituzione offensiva per cercare il pareggio .
+LANG_IT Che pioggia battente c'è oggi al Bentegodi .
+LANG_IT Dybala ha effettuato un tiro potente respinto dal Cragno .
+LANG_IT Pellegrini ha subito un infortunio muscolare durante un sprint .
+LANG_IT Inzaghi sta incoraggiando i suoi giocatori a tenere alta la pressione .
+LANG_IT Lukaku ha segnato un gol da calcio di rigore .
+LANG_IT Che tifo appassionato si sente oggi al San Siro .
+LANG_IT Parma ha vinto contro il Cagliari con un 3-1 .
+LANG_IT Berardi ha effettuato un cross preciso per Caputo che ha segnato di testa .
+LANG_IT Luca Pairetto ha concesso un rigore netto al Sampdoria .
+LANG_IT Empoli ha effettuato una sostituzione difensiva per consolidare la retroguardia .
+LANG_IT Che sole splendente c'è oggi al Olimpico di Roma .
+LANG_IT Insigne ha effettuato un dribbling spettacolare eludendo tre difensori .
+LANG_IT Barella ha effettuato un tackle deciso recuperando palla .
+LANG_IT Venezia ha pareggiato contro il Spezia con un 1-1 .
+LANG_IT Zlatan ha effettuato un dribbling spettacolare eludendo due difensori .
+LANG_IT Paolo Valeri ha concesso un rigore dubbio al Fiorentina .
+LANG_IT Genoa ha effettuato una sostituzione offensiva per cercare il pareggio .
+LANG_IT Che pioggia battente c'è oggi al Bentegodi .
+LANG_IT Dybala ha effettuato un tiro potente respinto dal Cragno .
+LANG_IT Pellegrini ha subito un infortunio muscolare durante un sprint .
+LANG_IT Inzaghi sta incoraggiando i suoi giocatori a tenere alta la pressione .
+LANG_IT Lukaku ha segnato un gol da calcio di rigore .
+LANG_IT Che tifo appassionato si sente oggi al San Siro .
+LANG_IT Parma ha vinto contro il Cagliari con un 3-1 .
+LANG_IT Berardi ha effettuato un cross preciso per Caputo che ha segnato di testa .
+LANG_IT Luca Pairetto ha concesso un rigore netto al Sampdoria .
+LANG_IT Empoli ha effettuato una sostituzione difensiva per consolidare la retroguardia .
+LANG_IT Che sole splendente c'è oggi al Olimpico di Roma .
+LANG_IT Insigne ha effettuato un dribbling spettacolare eludendo tre difensori .
+LANG_IT Barella ha effettuato un tackle deciso recuperando palla .
+LANG_IT Venezia ha pareggiato contro il Spezia con un 1-1 .
+LANG_IT Zlatan ha effettuato un dribbling spettacolare eludendo due difensori .
+LANG_IT Paolo Valeri ha concesso un rigore dubbio al Fiorentina .
+LANG_IT Genoa ha effettuato una sostituzione offensiva per cercare il pareggio .
+LANG_IT Che pioggia battente c'è oggi al Bentegodi .
+LANG_IT Dybala ha effettuato un tiro potente respinto dal Cragno .
+LANG_IT Pellegrini ha subito un infortunio muscolare durante un sprint .
+LANG_IT Inzaghi sta incoraggiando i suoi giocatori a tenere alta la pressione .
+LANG_IT Lukaku ha segnato un gol da calcio di rigore .
+LANG_IT Che tifo appassionato si sente oggi al San Siro .
+LANG_IT Parma ha vinto contro il Cagliari con un 3-1 .
+LANG_IT Berardi ha effettuato un cross preciso per Caputo che ha segnato di testa .
+LANG_IT Luca Pairetto ha concesso un rigore netto al Sampdoria .
+LANG_IT Empoli ha effettuato una sostituzione difensiva per consolidare la retroguardia .
+LANG_IT Che sole splendente c'è oggi al Olimpico di Roma .
+LANG_IT Insigne ha effettuato un dribbling spettacolare eludendo tre difensori .
+LANG_IT Barella ha effettuato un tackle deciso recuperando palla .
+LANG_IT Venezia ha pareggiato contro il Spezia con un 1-1 .
+LANG_IT Zlatan ha effettuato un dribbling spettacolare eludendo due difensori .
+LANG_IT Paolo Valeri ha concesso un rigore dubbio al Fiorentina .
+LANG_IT Genoa ha effettuato una sostituzione offensiva per cercare il pareggio .
+LANG_IT Che pioggia battente c'è oggi al Bentegodi .
+LANG_IT Dybala ha effettuato un tiro potente respinto dal Cragno .
+LANG_IT Pellegrini ha subito un infortunio muscolare durante un sprint .
+LANG_IT Inzaghi sta incoraggiando i suoi giocatori a tenere alta la pressione .
+LANG_IT Lukaku ha segnato un gol da calcio di rigore .
+LANG_IT Che tifo appassionato si sente oggi al San Siro .
+LANG_IT Parma ha vinto contro il Cagliari con un 3-1 .
+LANG_IT Berardi ha effettuato un cross preciso per Caputo che ha segnato di testa .
+LANG_IT Luca Pairetto ha concesso un rigore netto al Sampdoria .
+LANG_IT Empoli ha effettuato una sostituzione difensiva per consolidare la retroguardia .
+LANG_IT Che sole splendente c'è oggi al Olimpico di Roma .
+LANG_IT Insigne ha effettuato un dribbling spettacolare eludendo tre difensori .
+LANG_IT Barella ha effettuato un tackle deciso recuperando palla .
+LANG_IT Venezia ha pareggiato contro il Spezia con un 1-1 .
+LANG_IT Zlatan ha effettuato un dribbling spettacolare eludendo due difensori .
+LANG_IT Paolo Valeri ha concesso un rigore dubbio al Fiorentina .
+LANG_IT Genoa ha effettuato una sostituzione offensiva per cercare il pareggio .
+LANG_IT Che pioggia battente c'è oggi al Bentegodi .
+LANG_IT Dybala ha effettuato un tiro potente respinto dal Cragno .
+LANG_IT Pellegrini ha subito un infortunio muscolare durante un sprint .
+LANG_IT Inzaghi sta incoraggiando i suoi giocatori a tenere alta la pressione .
+LANG_IT Lukaku ha segnato un gol da calcio di rigore .
+LANG_IT Ciao, potresti aumentare il volume altoparlante del salotto ?
+LANG_IT Che luminosità hai impostato per la lampada in cucina ?
+LANG_IT Mi piacerebbe ascoltare la canzone preferita nella camera da letto .
+LANG_IT Posso inviare un messaggio alla mamma ?
+LANG_IT Che temperatura hai impostato per la termostato ?
+LANG_IT Vorrei impostare un promemoria per le 15:00 di domani .
+LANG_IT Potresti chiudere le tende del salotto ?
+LANG_IT Mi puoi informare sulle previsioni del tempo per domani ?
+LANG_IT Vorrei ordinare una pizza con carta di credito .
+LANG_IT Che luminosità hai impostato per la lampadina nel corridoio ?
+LANG_IT Ciao, potresti aumentare il volume televisore ?
+LANG_IT Mi piacerebbe ascoltare un podcast nella cucina .
+LANG_IT Posso inviare una email al collega ?
+LANG_IT Che temperatura hai impostato per la termosifone ?
+LANG_IT Vorrei impostare un promemoria per le 10:00 di domani .
+LANG_IT Potresti chiudere la porta d'ingresso ?
+LANG_IT Mi puoi informare sulle condizioni meteorologiche per la settimana prossima ?
+LANG_IT Vorrei ordinare un regalo con carta di credito .
+LANG_IT Che luminosità hai impostato per la lampada in camera da letto ?
+LANG_IT Ciao, potresti aumentare il volume stereo ?
+LANG_IT Mi piacerebbe ascoltare una playlist rilassante nella sala .
+LANG_IT Posso inviare un messaggio alla sorella ?
+LANG_IT Che temperatura hai impostato per la climatizzatore ?
+LANG_IT Vorrei impostare un promemoria per le 14:00 di domani .
+LANG_IT Potresti chiudere le persiane della camera da letto ?
+LANG_IT Mi puoi informare sulle previsioni del tempo per la prossima settimana ?
+LANG_IT Vorrei ordinare una torta con carta di credito .
+LANG_IT Che luminosità hai impostato per la lampadario in sala da pranzo ?
+LANG_IT Ciao, potresti aumentare il volume radio ?
+LANG_IT Mi piacerebbe ascoltare un audiolibro nella camera da letto .
+LANG_IT Posso inviare una email al amico ?
+LANG_IT Che temperatura hai impostato per la stufa ?
+LANG_IT Vorrei impostare un promemoria per le 16:00 di domani .
+LANG_IT Potresti chiudere la finestra del soggiorno ?
+LANG_IT Mi puoi informare sulle condizioni meteorologiche per il prossimo weekend ?
+LANG_IT Vorrei ordinare un libro con carta di credito .
+LANG_IT Che luminosità hai impostato per la lampada in salotto ?
+LANG_IT Ciao, potresti aumentare il volume altoparlante ?
+LANG_IT Mi piacerebbe ascoltare la mia canzone preferita nella cucina .
+LANG_IT Posso inviare un messaggio alla zia ?
+LANG_IT Che temperatura hai impostato per la termosifone ?
+LANG_IT Vorrei impostare un promemoria per le 11:00 di domani .
+LANG_IT Potresti chiudere la porta del balcone ?
+LANG_IT Mi puoi informare sulle previsioni del tempo per la prossima settimana ?
+LANG_IT Vorrei ordinare una pizza con carta di credito .
+LANG_IT Che luminosità hai impostato per la lampadario in sala da pranzo ?
+LANG_IT Ciao, potresti aumentare il volume stereo ?
+LANG_IT Mi piacerebbe ascoltare una playlist rilassante nella sala .
+LANG_IT Posso inviare un messaggio alla sorella ?
+LANG_IT Che temperatura hai impostato per la climatizzatore ?
+LANG_IT Vorrei impostare un promemoria per le 14:00 di domani .
+LANG_IT Potresti chiudere le persiane della camera da letto ?
+LANG_IT Mi puoi informare sulle previsioni del tempo per la prossima settimana ?
+LANG_IT Vorrei ordinare una torta con carta di credito .
+LANG_IT Che luminosità hai impostato per la lampadario in sala da pranzo ?
+LANG_IT Ciao, potresti aumentare il volume radio ?
+LANG_IT Mi piacerebbe ascoltare un audiolibro nella camera da letto .
+LANG_IT Posso inviare una email al amico ?
+LANG_IT Che temperatura hai impostato per la stufa ?
+LANG_IT Vorrei impostare un promemoria per le 16:00 di domani .
+LANG_IT Potresti chiudere la finestra del soggiorno ?
+LANG_IT Mi puoi informare sulle condizioni meteorologiche per il prossimo weekend ?
+LANG_IT Vorrei ordinare un libro con carta di credito .
+LANG_IT Che luminosità hai impostato per la lampada in salotto ?
+LANG_IT Prenota un volo per Parigi partendo il 10 giugno .
+LANG_IT Controlla lo stato del tuo volo per Tokyo .
+LANG_IT Prenota una stanza di hotel a Roma per il prossimo weekend .
+LANG_IT Imposta un avviso di viaggio per Barcellona il 25 luglio .
+LANG_IT Aggiorna il mio itinerario con una visita all' Colosseo .
+LANG_IT Notificami se ci sono restrizioni di viaggio per Italia .
+LANG_IT Consiglia delle destinazioni balneari per l'estate prossima .
+LANG_IT Conferma il mio biglietto di classe business per il volo a Londra .
+LANG_IT Che stato ha il tuo volo per Miami ?
+LANG_IT Penso che devo cancellare la mia prenotazione di hotel a Milano .
+LANG_IT Come è il clima a Dubai per la prossima settimana ?
+LANG_IT Dovresti ricordarmi di rinnovare il mio passaporto .
+LANG_IT Puoi suggerire alcuni luoghi da visitare a Firenze ?
+LANG_IT Wow , l'aeroporto di Roma è così affollato oggi .
+LANG_IT Ho prenotato un treno per Venezia per domani .
