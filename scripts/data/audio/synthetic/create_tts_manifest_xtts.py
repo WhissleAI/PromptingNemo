@@ -89,7 +89,13 @@ class ProcessFiles:
             if process.returncode != 0:
                 raise RuntimeError(f"sox command failed with error: {process.stderr.decode()}")
             
-            return AudioSegment.from_file(temp_output_path, format="wav")
+            output_audio = AudioSegment.from_file(temp_output_path, format="wav")
+
+        # Clean up the temporary files
+        os.remove(temp_input_path)
+        os.remove(temp_output_path)
+
+        return output_audio
 
 
 

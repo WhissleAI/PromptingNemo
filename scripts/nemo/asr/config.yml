@@ -1,16 +1,16 @@
 model:
-  model_root: "/external2/karan_exp/experiments/finetune-multidomain-alllang-100k-ctc/2024-07-18_00-21-12/checkpoints/"
-  model_name: "finetune-multidomain-alllang-100k-ctc.nemo"
+  model_root: "/external2/models/hf/stt_en_conformer_ctc_large/"
+  model_name: "stt_en_conformer_ctc_large.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
   proto_file: "proto/file"
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r2/"
+  data_dir: "/external2/datasets/text/synthetic/processed_r3/"
   train_manifest: "train.json"
   test_manifest: "valid.json"
-  batch_size: 24
+  batch_size: 20
   max_steps: 60000
 
 adapter:
@@ -21,7 +21,7 @@ adapter:
 
 experiment:
   exp_dir: "/external2/karan_exp/experiments/"
-  exp_name: "adapater32-alllang-180k-ctc"
+  exp_name: "finetune-alllang-130k-ctc-r3"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true
