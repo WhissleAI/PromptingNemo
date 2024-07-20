@@ -10,7 +10,7 @@ messages = conversation_history + messages
 '''
 
 def get_openai_response(text: str, instruction: str, history: list = []):
-    api_key = os.environ.get("OPENAI_API_KEY", "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")
+    api_key = os.environ.get("OPENAI_API_KEY", "sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu")
     temperature = 0.1
 
     client = openai.OpenAI(

@@ -7,7 +7,7 @@ librosa
 pyyaml
 pandas
 gtts    
-TTS
+TTS==0.22
 requests
 Flask-Cors
 deepgram-sdk==2.12.0
@@ -22,3 +22,4 @@ langchain-openai==0.1.9
 duckduckgo_search
 piper-phonemize~=1.1.0
 nemo_text_processing
+sentencepiece~=0.1.99
