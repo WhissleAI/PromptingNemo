@@ -96,8 +96,8 @@ Collect samples from GPT-4
 
 if __name__ == "__main__":
 
-    output_folder = Path("/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/")
-    prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/data_v2/prompts/")
+    output_folder = Path("/external2/datasets/text/synthetic_v2/")
+    prompt_folder = Path("/external2/datasets/text/prompts/generic/")
     prompt_files = list(prompt_folder.glob("*.txt"))
     random.shuffle(prompt_files)
 

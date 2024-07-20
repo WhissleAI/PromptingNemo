@@ -14,6 +14,78 @@ from nemo.core import adapter_mixins
 import sentencepiece as spm
 from nemo.utils import exp_manager
 
+import os
+import json
+import logging
+
+def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_tokens=None, vocab_size=5000):
+    # Configure logging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+    logging.info("Starting the tokenizer training process")
+
+    # Step 1: Read the manifest file and extract text data
+    def read_manifest(manifest_path):
+        with open(manifest_path, 'r') as f:
+            lines = f.readlines()
+        return [json.loads(line)['text'] for line in lines]
+    
+    logging.info("Reading manifest file")
+    text_data = read_manifest(manifest_file)
+    logging.info(f"Extracted {len(text_data)} sentences from the manifest file")
+    
+    # Step 2: Save the extracted text to a temporary file
+    if not os.path.exists(tokenizer_folder):
+        os.makedirs(tokenizer_folder)
+    
+    temp_text_file = os.path.join(tokenizer_folder, 'text_data.txt')
+    logging.info(f"Saving extracted text to {temp_text_file}")
+    with open(temp_text_file, 'w') as f:
+        for sentence in text_data:
+            f.write(sentence + '\n')
+    
+    # Step 3: Train the SentencePiece tokenizer with special tokens if provided
+    model_prefix = os.path.join(tokenizer_folder, 'tokenizer')
+    
+    # Prepare special tokens string
+    if special_tokens:
+        user_defined_symbols = ','.join(special_tokens)
+        logging.info(f"Special tokens provided: {special_tokens}")
+        logging.info("Starting SentencePiece training with special tokens")
+        spm.SentencePieceTrainer.train(
+            input=temp_text_file, 
+            model_prefix=model_prefix, 
+            vocab_size=vocab_size,
+            user_defined_symbols=user_defined_symbols
+        )
+    else:
+        logging.info("Starting SentencePiece training without special tokens")
+        spm.SentencePieceTrainer.train(
+            input=temp_text_file, 
+            model_prefix=model_prefix, 
+            vocab_size=vocab_size
+        )
+    
+    # Step 4: Return the paths to the tokenizer model and vocab files
+    model_file = f"{model_prefix}.model"
+    vocab_file = f"{model_prefix}.vocab"
+
+    logging.info(f"Tokenizer training completed")
+    logging.info(f"Model file: {model_file}")
+    logging.info(f"Vocab file: {vocab_file}")
+
+    # Step 5: Create a vocab.txt file
+    vocab_txt_file = os.path.join(tokenizer_folder, 'vocab.txt')
+    logging.info(f"Creating vocab.txt file at {vocab_txt_file}")
+    with open(vocab_file, 'r') as vf, open(vocab_txt_file, 'w') as vtf:
+        for line in vf:
+            token = line.split('\t')[0]
+            vtf.write(token + '\n')
+    
+    logging.info(f"vocab.txt file created at {vocab_txt_file}")
+    
+    return model_file, vocab_file, vocab_txt_file
+
 class ASRModelTrainer:
     def __init__(self, config_path):
         self.load_config(config_path)
@@ -63,7 +135,7 @@ class ASRModelTrainer:
     def restore_model_with_updated_config(self):
         self.model = ASRModel.restore_from(self.model_path, override_config_path=self.cfg)
     
-    def prepare_data_and_tokens(self):
+    def prepare_data_and_tokens(self, tokenizer_state="extended", vocab_size=2000):
         taglist = []
         all_tags_path = os.path.join(self.data_dir, "alltags.txt")
         with open(all_tags_path, 'r') as f:
@@ -75,7 +147,11 @@ class ASRModelTrainer:
         tokens = taglist + [str(i) for i in range(10)] + punctuations
         is_userdefined = True
 
-        self.edit_spt_model(self.tokenizer_model_file, self.extended_tokenizer_dir, tokens, self.vocab_file, self.vocab_txt_file, is_userdefined)
+        if tokenizer_state == "extended":
+            self.edit_spt_model(self.tokenizer_model_file, self.extended_tokenizer_dir, tokens, self.vocab_file, self.vocab_txt_file, is_userdefined)
+        else:
+            _ = train_sentencepiece_tokenizer(self.train_manifest, self.extended_tokenizer_dir, special_tokens=taglist, vocab_size=vocab_size)
+        
         self.model.change_vocabulary(self.extended_tokenizer_dir, "bpe")
     
     def configure_trainer(self):
@@ -247,12 +323,12 @@ class ASRModelTrainer:
 model_trainer = ASRModelTrainer(config_path='config.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
-model_trainer.prepare_data_and_tokens()
+model_trainer.prepare_data_and_tokens(tokenizer_state="new", vocab_size=2500)
 model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()
 model_trainer.configure_optimization()
-model_trainer.setup_adapters()
+#model_trainer.setup_adapters()
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
 model_trainer.train()
