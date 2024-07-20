@@ -4,286 +4,274 @@ import sys
 import io
 import random
 from pydub import AudioSegment
-from pydub.effects import speedup
-from google.cloud import texttospeech
 from pathlib import Path
-
+import numpy as np
 import glob
 
 from TTS.api import TTS  # Correct import statement for TTS
 
+import subprocess
+import tempfile
+
+class ProcessFiles:
+    def __init__(self, config):
+        self.config = config
+        self.clone_voices = {
+            "EN": glob.glob("/external2/datasets/LibriSpeech/converted-wav/*.wav"),
+            "ES": glob.glob("/external2/datasets/spanish/wav/*.wav"),
+            "FR": glob.glob("/external2/datasets/french/wav/*.wav"),
+            "DE": glob.glob("/external2/datasets/german/wav/*.wav"),
+            "IT": glob.glob("/external2/datasets/italian/wav/*.wav"),
+            "HI": glob.glob("/external2/datasets/hindi/wav/*.wav"),
+            "PA": glob.glob("/external2/datasets/punjabi/corpus/clips_wav/*.wav"),
+            "BN": glob.glob("/external2/datasets/bengali/wav/*.wav"),
+            "MR": glob.glob("/external2/datasets/marathi/wav/*.wav"),
+            "GU": glob.glob("/external2/datasets/gujarati/wav/*.wav"),
+            "TE": glob.glob("/external2/datasets/telugu/wav/*.wav")
+        }
+        self.tts_iso_codes = {
+            "EN": "eng",
+            "ES": "spa",
+            "FR": "fra",
+            "DE": "deu",
+            "IT": "it-IT",
+            "HI": "hin",
+            "PA": "pan",
+            "BN": "ben",
+            "MR": "mar",
+            "GU": "guj",
+            "TE": "tel"
+        }
+        self.all_noise_files = glob.glob("/external2/datasets/noise/smart_speaker_sounds_wav/*.wav")
+        self.tts = None
+
+    def change_speed(self, audio, speed=1.0):
+        return audio._spawn(audio.raw_data, overrides={
+            "frame_rate": int(audio.frame_rate * speed)
+        }).set_frame_rate(audio.frame_rate)
+
+    def adjust_volume(self, audio, volume_adjustment=0.0):
+        return audio + volume_adjustment
+
+    def add_noise(self, speech, noise, snr_db):
+        speech = speech.apply_gain(-speech.max_dBFS)
+        noise = noise.apply_gain(-noise.max_dBFS)
+
+        # Random noise volume adjustment
+        noise_volume_adjustment = random.uniform(self.config['noise_volume_min'], self.config['noise_volume_max'])
+        noise = noise + noise_volume_adjustment
+
+        if len(noise) > len(speech):
+            start = random.randint(0, len(noise) - len(speech))
+            noise = noise[start:start + len(speech)]
+
+        speech_power = speech.dBFS
+        noise_power = speech_power - snr_db
+        noise = noise.apply_gain(noise_power - noise.dBFS)
+        mixed = speech.overlay(noise, loop=True)
+        mixed = mixed.normalize()
+
+        return mixed
+
+    def add_reverb(self, audio):
+        reverberance = random.uniform(self.config['reverberance_min'], self.config['reverberance_max'])
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_input, tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_output:
+            temp_input_path = temp_input.name
+            temp_output_path = temp_output.name
+            audio.export(temp_input_path, format="wav")
+            
+            process = subprocess.run(
+                ['sox', temp_input_path, temp_output_path, 'reverb', str(reverberance)],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE
+            )
+            
+            if process.returncode != 0:
+                raise RuntimeError(f"sox command failed with error: {process.stderr.decode()}")
+            
+            return AudioSegment.from_file(temp_output_path, format="wav")
 
 
-clone_train_voices = glob.glob("/external2/datasets/LibriSpeech/converted-wav/*.wav")
-clone_valid_voices = glob.glob("/external2/datasets/LibriSpeech/test-converted-wav/*.wav")
 
+    def generate_audio(self, text, mode="train", language="EN", mixer=True):
+        language_voices = self.clone_voices[language]
+        sample_voice = random.choice(language_voices)
+        buffer = io.BytesIO()
 
-english_voices = glob.glob("/external2/datasets/LibriSpeech/converted-wav/*.wav")
-spanish_voices = glob.glob("/external2/datasets/spanish/wav/*.wav")
-french_voices = glob.glob("/external2/datasets/french/wav/*.wav")
-german_voices = glob.glob("/external2/datasets/german/wav/*.wav")
-italian_voices = glob.glob("/external2/datasets/italian/wav/*.wav")
-hindi_voices = glob.glob("/external2/datasets/hindi/wav/*.wav")
-punjabi_voices = glob.glob("/external2/datasets/punjabi/corpus/clips_wav/*.wav")
-bengali_voices = glob.glob("/external2/datasets/bengali/wav/*.wav")
-marathi_voices = glob.glob("/external2/datasets/marathi/wav/*.wav")
-gujarati_voices = glob.glob("/external2/datasets/gujarati/wav/*.wav")
-telugu_voices = glob.glob("/external2/datasets/telugu/wav/*.wav")
+        self.tts.tts_to_file(
+            text=text,
+            file_path=buffer,
+            speaker_wav=sample_voice,
+            split_sentences=False,
+        )
+        buffer.seek(0)
+        speed = random.uniform(self.config['speed_min'], self.config['speed_max'])
+        volume_adjustment = random.uniform(self.config['volume_min'], self.config['volume_max'])
+        audio = AudioSegment.from_file(buffer, format="wav")
+        audio = audio.set_frame_rate(16000)
+        audio = self.change_speed(audio, speed)
+        audio = self.adjust_volume(audio, volume_adjustment)
 
-clone_voices = {
-                "EN": english_voices,
-                "ES": spanish_voices,
-                "FR": french_voices,
-                "DE": german_voices,
-                "IT": italian_voices,
-                "HI": hindi_voices,
-                "PA": punjabi_voices,
-                "BN": bengali_voices,
-                "MR": marathi_voices,
-                "GU": gujarati_voices,
-                "TE": telugu_voices,
-}
+        if mixer:
+            noise_file = random.choice(self.all_noise_files)
+            noise = AudioSegment.from_file(noise_file, format="wav")
+            snr = random.uniform(self.config['snr_min'], self.config['snr_max'])
+            audio = self.add_noise(audio, noise, snr)
 
-tts_iso_codes = {
-    "EN": "eng",
-    "ES": "spa",
-    "FR": "fra",
-    "DE": "deu",
-    "IT": "it-IT",
-    "HI": "hin",
-    "PA": "pan",
-    "BN": "ben",
-    "MR": "mar",
-    "GU": "guj",
-    "TE": "tel",
-}
+        audio = self.add_reverb(audio)
+        audio = audio.normalize()
+        volume_adjustment = random.uniform(self.config['volume_min'], 0.0)
+        audio = self.adjust_volume(audio, volume_adjustment)
+        buffer = io.BytesIO()
+        audio.export(buffer, format="wav")
+        buffer.seek(0)
+        return buffer.read()
 
+    def list_available_voices(self):
+        client = texttospeech.TextToSpeechClient()
+        response = client.list_voices()
+        voice_dict = {
+            'EN': [], 'ES': [], 'FR': [], 'DE': [], 'IT': [], 'PT': [], 'NL': [], 'SV': []
+        }
+        language_mapping = {
+            'EN': 'en', 'ES': 'es', 'FR': 'fr', 'DE': 'de',
+            'IT': 'it', 'PT': 'pt', 'NL': 'nl', 'SV': 'sv'
+        }
+        for voice in response.voices:
+            for language_code in voice.language_codes:
+                for key, value in language_mapping.items():
+                    if language_code.startswith(value):
+                        voice_dict[key].append(voice.name)
+        return voice_dict
 
-def change_speed(audio, speed=1.0):
-    if speed == 1.0:
-        return audio
-    new_frame_rate = int(audio.frame_rate * speed)
-    return audio._spawn(audio.raw_data, overrides={'frame_rate': new_frame_rate}).set_frame_rate(audio.frame_rate)
+    def synthesize_speech(self, text, voice_name, language_code='en-US'):
+        client = texttospeech.TextToSpeechClient()
+        input_text = texttospeech.SynthesisInput(text=text)
+        voice = texttospeech.VoiceSelectionParams(
+            language_code=language_code,
+            name=voice_name
+        )
+        audio_config = texttospeech.AudioConfig(
+            audio_encoding=texttospeech.AudioEncoding.LINEAR16,
+            sample_rate_hertz=16000
+        )
+        response = client.synthesize_speech(
+            input=input_text, voice=voice, audio_config=audio_config
+        )
+        return response.audio_content
 
-def adjust_volume(audio, volume):
-    return audio + volume
+    def add_white_noise(self, audio, noise_level):
+        noise = AudioSegment.silent(duration=len(audio)).overlay(
+            AudioSegment.silent(duration=len(audio)).apply_gain(noise_level)
+        )
+        combined = audio.overlay(noise)
+        return combined
 
-def generate_audio(text, mode="train", language="EN"):
-    # Select the appropriate sample voices based on the mode
+    def get_audio_duration(self, audio_file_path):
+        audio = AudioSegment.from_file(audio_file_path)
+        duration = len(audio) / 1000.0
+        return duration
 
-    language_voices = clone_voices[language]
+    def save_audio_to_file(self, audio_content, filename, noise_level):
+        audio = AudioSegment.from_file(io.BytesIO(audio_content), format="wav")
+        audio_with_noise = self.add_white_noise(audio, noise_level)
+        audio_with_noise.export(filename, format="wav")
+        print(f'Audio content written to {filename} with noise level {noise_level} dB')
 
-    # Choose a random sample voice
-    sample_voice = random.choice(language_voices)
+    def process_files(self):
+        runs = int(self.config['runs'])
+        os.makedirs(self.config['audio_path'], exist_ok=True)
+        manifest_file_path = self.config['manifest_file']
+        with open(manifest_file_path, 'w', encoding='utf-8') as manifest_file:
+            first_entry = True
 
-    # Create an in-memory bytes buffer to store the audio
-    buffer = io.BytesIO()
+            with open(self.config['clean_text_file'], 'r') as file:
+                lines = file.readlines()
 
-    # Generate speech and save it to the buffer
-    print("Speaker wav: ", sample_voice)
-    tts.tts_to_file(
-        text=text,
-        file_path=buffer,
-        speaker_wav=sample_voice,
-        split_sentences=False,
-    )
+            with open(self.config['tagged_text_file'], 'r') as file:
+                tagged_lines = file.readlines()
 
-    # Seek to the beginning of the buffer so it can be read
-    buffer.seek(0)
-    
-    speed = random.uniform(0.8, 1.2)
-    volume_adjustment = random.uniform(-14.0, 8.0)
-    
-    # Read the audio content and convert it to the desired sample rate
-    audio = AudioSegment.from_file(buffer, format="wav")
-    audio = audio.set_frame_rate(16000)
+            for n in range(runs):
+                for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
+                    line_len = len(line.strip().split())
+                    if line_len <= self.config['max_len']:
+                        line = " ".join(line.split()[1:])
+                        audio_content = self.generate_audio(line.strip(), self.config['mode'], self.config['language'], self.config['mixer'])
 
-    # Adjust the speed of the audio
-    audio = change_speed(audio, speed)
-    audio = adjust_volume(audio, volume_adjustment)
+                        audio_file = os.path.join(self.config['audio_path'], f"{Path(self.config['clean_text_file']).stem}_line_{i}_run_{n}.wav")
+                        noise_level = random.uniform(self.config['noise_min'], self.config['noise_max'])
+                        self.save_audio_to_file(audio_content, audio_file, noise_level)
+                        duration = self.get_audio_duration(audio_file)
 
+                        entry = {
+                            "audio_filepath": audio_file,
+                            "text": tagged_line.strip(),
+                            "duration": duration
+                        }
 
-    # Save the converted audio back to a bytes buffer
-    buffer = io.BytesIO()
-    audio.export(buffer, format="wav")
-    buffer.seek(0)
-    
-    return buffer.read()
+                        if not first_entry:
+                            manifest_file.write('\n')
+                        else:
+                            first_entry = False
 
-# Set up Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/ksingla/workspace/medical-ner/keys/google-tts-key.json"
+                        manifest_file.write(json.dumps(entry, ensure_ascii=False))
 
-def list_available_voices():
-    # Initialize the Text-to-Speech client
-    client = texttospeech.TextToSpeechClient()
+            manifest_file.write('\n')
+            print(f"Manifest file written to {manifest_file_path}")
 
-    # Performs the list voices request
-    response = client.list_voices()
-
-    # Initialize a dictionary to store voices by language code
-    voice_dict = {
-        'EN': [], 'ES': [], 'FR': [], 'DE': [], 'IT': [], 'PT': [], 'NL': [], 'SV': []
-    }
-
-    # Define the language code mapping
-    language_mapping = {
-        'EN': 'en', 'ES': 'es', 'FR': 'fr', 'DE': 'de',
-        'IT': 'it', 'PT': 'pt', 'NL': 'nl', 'SV': 'sv'
-    }
-
-    # Populate the dictionary with available voices
-    for voice in response.voices:
-        for language_code in voice.language_codes:
-            for key, value in language_mapping.items():
-                if language_code.startswith(value):
-                    voice_dict[key].append(voice.name)
-
-    return voice_dict
-
-google_voices = list_available_voices()
-
-def synthesize_speech(text, voice_name, language_code='en-US'):
-    client = texttospeech.TextToSpeechClient()
-
-    input_text = texttospeech.SynthesisInput(text=text)
-
-    voice = texttospeech.VoiceSelectionParams(
-        language_code=language_code,
-        name=voice_name
-    )
-
-    audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.LINEAR16,
-        sample_rate_hertz=16000
-    )
-
-    response = client.synthesize_speech(
-        input=input_text, voice=voice, audio_config=audio_config
-    )
-
-    return response.audio_content
-
-def add_white_noise(audio, noise_level):
-    noise = AudioSegment.silent(duration=len(audio)).overlay(
-        AudioSegment.silent(duration=len(audio)).apply_gain(noise_level)
-    )
-
-    combined = audio.overlay(noise)
-    return combined
-
-def get_audio_duration(audio_file_path):
-    audio = AudioSegment.from_file(audio_file_path)
-    duration = len(audio) / 1000.0  # pydub returns duration in milliseconds
-    return duration
-
-def save_audio_to_file(audio_content, filename, noise_level):
-    audio = AudioSegment.from_file(io.BytesIO(audio_content), format="wav")
-    audio_with_noise = add_white_noise(audio, noise_level)
-    audio_with_noise.export(filename, format="wav")
-    print(f'Audio content written to {filename} with noise level {noise_level} dB')
-
-def process_files(clean_text_file, tagged_text_file, audio_path,
-                  manifest_file, mode="train",
-                  runs=30, max_len=30, language="EN"):
-    
-    runs = int(runs)
-    
-    os.system(f"mkdir -p {audio_path}")
-    
-    manifest_file = open(manifest_file, 'w', encoding='utf-8')
-    
-    first_entry = True
-
-    with open(clean_text_file, 'r') as file:
-        lines = file.readlines()
-
-    with open(tagged_text_file, 'r') as file:
-        tagged_lines = file.readlines()
-
-
-    for n in range(0,runs):
-        
-        for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
-            #audio_content = synthesize_speech(line.strip(), voice_name)
-            line_len = len(line.strip().split())
-            try:
-                if line_len <= max_len:                    
-
-                    line = " ".join(line.split()[1:])
-                    audio_content = generate_audio(line.strip(), mode=mode, language=language)
-
-                    audio_file = os.path.join(audio_path, f"{os.path.basename(clean_text).replace('.txt', '')}_line_{i}_run_{n}.wav")                    
-                    
-                    noise_level = random.uniform(-20, 0)  # Random noise level between -30 dB and -10 dB
-                    save_audio_to_file(audio_content, audio_file, noise_level)
-                    duration = get_audio_duration(audio_file)
-                    
-                    entry = {
-                        "audio_filepath": audio_file,
-                        "text": tagged_line.strip(),
-                        "duration": duration
-                    }
-                    
-                    if not first_entry:
-                        manifest_file.write('\n')  # Add a comma before each entry except the first one
-                    else:
-                        first_entry = False
-                    
-                    manifest_file.write(json.dumps(entry, ensure_ascii=False))
-            except:
-                continue
-
-                    
-
-    manifest_file.write('\n')  # End of JSON array
-    manifest_file.close()
-    
-    print(f"Manifest file written to {manifest_file}")
-
-def validate_json(json_file):
-    try:
-        with open(json_file, 'r') as file:
-            data = file.read()
-        parsed_json = json.loads(data)
-        print("JSON is valid and parsed successfully")
-        return parsed_json
-    except json.JSONDecodeError as e:
-        print(f"JSONDecodeError: {e}")
-        # Print offending part for debugging
-        start = max(e.pos - 50, 0)
-        end = min(e.pos + 50, len(data))
-        print(f"Error near: {data[start:end]}")
-        return None
+    def validate_json(self, json_file):
+        try:
+            with open(json_file, 'r') as file:
+                data = file.read()
+            parsed_json = json.loads(data)
+            print("JSON is valid and parsed successfully")
+            return parsed_json
+        except json.JSONDecodeError as e:
+            print(f"JSONDecodeError: {e}")
+            start = max(e.pos - 50, 0)
+            end = min(e.pos + 50, len(data))
+            print(f"Error near: {data[start:end]}")
+            return None
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python3 script.py <data_path>")
+        print("Usage: python3 script.py <language_code> <runs>")
         sys.exit(1)
-
-    runs = sys.argv[1]
     
-    language_codes = clone_voices.keys()
-    
-    language_codes = ["EN", "ES", "FR", "DE", "IT", "HI", "PA", "BN", "MR", "GU", "TE"]
-    
-    language_codes = ["GU"]
+    language_code = sys.argv[1]
+    runs = sys.argv[2]
 
-    for language in language_codes:
-        
-        language_iso_code = tts_iso_codes[language]
-        
-        input_folder = "/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r2/"
-        audio_path = "/external2/datasets/synthetic_audio_r2/"
-        clean_text = Path(input_folder + f"/tagged_" + language + "_notag.txt")
-        tagged_text = Path(input_folder + f"/tagged_" + language + "_clean.txt")
-        manifest_file = Path(input_folder + f"/manifest_" + language + ".json")
-        mode = "train"
-        
-        if language == "IT":
-            tts = TTS(model_name="tts_models/multilingual/multi-dataset/your_tts", progress_bar=False).to("cuda")
-        else:
-            tts = TTS("tts_models/"+language_iso_code+"/fairseq/vits", gpu=True)
+    config = {
+        'language': language_code,
+        'runs': runs,
+        'input_folder': "/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r3/",
+        'audio_path': "/external2/datasets/synthetic_audio_r3/",
+        'clean_text_file': f"/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r3/tagged_{language_code}_notag.txt",
+        'tagged_text_file': f"/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r3/tagged_{language_code}_clean.txt",
+        'manifest_file': f"/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r3/manifest_{language_code}.json",
+        'max_len': 30,
+        'mode': 'train',
+        'mixer': True,
+        'speed_min': 0.8,
+        'speed_max': 1.2,
+        'volume_min': -14.0,
+        'volume_max': 8.0,
+        'snr_min': 0,
+        'snr_max': 20,
+        'noise_min': -10,
+        'noise_max': 0,
+        'noise_volume_min': -10.0,  # Minimum noise volume adjustment in dB
+        'noise_volume_max': 10.0,   # Maximum noise volume adjustment in dB
+        'reverberance_min': 10,  # Minimum reverberance percentage
+        'reverberance_max': 50   # Maximum reverberance percentage
+    }
 
-        process_files(clean_text, tagged_text, audio_path, manifest_file, mode=mode, runs=runs, language=language)
+    processor = ProcessFiles(config)
 
-        #validate_json(manifest_file)
+    language_iso_code = processor.tts_iso_codes[language_code]
+    if language_code == "IT":
+        processor.tts = TTS(model_name="tts_models/multilingual/multi-dataset/your_tts", progress_bar=False).to("cuda")
+    else:
+        processor.tts = TTS(f"tts_models/{language_iso_code}/fairseq/vits", gpu=True)
+
+    processor.process_files()
