@@ -20,7 +20,7 @@ make_asr_request() {
     'https://related-wildcat-hugely.ngrok-free.app/transcribe-web2' \
     --header 'Authorization: Bearer random_token' \
     --form 'language_id="EN"' \
-    --form 'audio=@"/home/ksingla/workspace/PromptingNemo/applications/voicebot/demo_audio/EN_karan_angry.wav"')
+    --form 'audio=@"demo_audio/EN_karan_angry.wav"')
   END=$(date +%s%N)
   DURATION=$((END - START))
   echo "$DURATION $RESPONSE" # Return the duration in nanoseconds and the curl total time in seconds

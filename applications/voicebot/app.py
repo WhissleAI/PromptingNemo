@@ -23,12 +23,7 @@ from utils.llm_utils import *
 from utils.tts_utils import *
 from utils.openai_utils import *
 from utils.search_utils import *
-from utils.tensorrtllm_multimodal_utils import multimodal_arguments, MultiModalModelRunner
 from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
-from utils.tensorrtllm_utils import TensorRT_LLM
-from langchain_huggingface import HuggingFaceEmbeddings
-
-hfembeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2", model_kwargs={"device": "cuda"})
 
 app = FastAPI()
 
@@ -65,6 +60,9 @@ ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_sessi
 DEV_MODE = True
 
 if DEV_MODE == False:
+    from utils.tensorrtllm_multimodal_utils import MultiModalModelRunner
+    from utils.tensorrtllm_utils import TensorRT_LLM
+
     multimodal_llm_hf_dir = config['MULTIMODAL_LLM']['hf_model_dir']
     multimodal_llm_engine_dir = config['MULTIMODAL_LLM']['llm_engine_dir']
     multimodal_llm_visual_engine_dir = config['MULTIMODAL_LLM']['visual_engine_dir']
