@@ -53,25 +53,47 @@ class ProcessFiles:
     def adjust_volume(self, audio, volume_adjustment=0.0):
         return audio + volume_adjustment
 
-    def add_noise(self, speech, noise, snr_db):
+    def add_noise(self, speech, noise_files, snr_db):
         speech = speech.apply_gain(-speech.max_dBFS)
-        noise = noise.apply_gain(-noise.max_dBFS)
+        mixed_audio = speech
 
-        # Random noise volume adjustment
-        noise_volume_adjustment = random.uniform(self.config['noise_volume_min'], self.config['noise_volume_max'])
-        noise = noise + noise_volume_adjustment
+        for noise_file in noise_files:
+            noise = AudioSegment.from_file(noise_file, format="wav")
+            noise = noise.apply_gain(-noise.max_dBFS)
 
-        if len(noise) > len(speech):
-            start = random.randint(0, len(noise) - len(speech))
-            noise = noise[start:start + len(speech)]
+            # Random noise volume adjustment
+            noise_volume_adjustment = random.uniform(self.config['noise_volume_min'], self.config['noise_volume_max'])
+            noise = noise + noise_volume_adjustment
 
-        speech_power = speech.dBFS
-        noise_power = speech_power - snr_db
-        noise = noise.apply_gain(noise_power - noise.dBFS)
-        mixed = speech.overlay(noise, loop=True)
-        mixed = mixed.normalize()
+            if len(noise) > len(speech):
+                start = random.randint(0, len(noise) - len(speech))
+                noise = noise[start:start + len(speech)]
+            else:
+                # Loop noise if it's shorter than speech
+                noise = noise * (len(speech) // len(noise) + 1)
+                noise = noise[:len(speech)]
 
-        return mixed
+            # Apply time-varying noise levels
+            duration = len(speech)
+            segments = []
+            for i in range(0, duration, 1000):  # Process in 1-second segments
+                segment_end = min(i + 1000, duration)
+                segment = noise[i:segment_end]
+                segment_volume_adjustment = random.uniform(-5.0, 5.0)
+                segment = segment + segment_volume_adjustment
+                segments.append(segment)
+
+            varied_noise = segments[0]
+            for segment in segments[1:]:
+                varied_noise = varied_noise.append(segment, crossfade=0)
+
+            speech_power = speech.dBFS
+            noise_power = speech_power - snr_db
+            varied_noise = varied_noise.apply_gain(noise_power - varied_noise.dBFS)
+            mixed_audio = mixed_audio.overlay(varied_noise, loop=True)
+        
+        mixed_audio = mixed_audio.normalize()
+        return mixed_audio
 
     def add_reverb(self, audio):
         reverberance = random.uniform(self.config['reverberance_min'], self.config['reverberance_max'])
@@ -119,11 +141,11 @@ class ProcessFiles:
         audio = self.adjust_volume(audio, volume_adjustment)
 
         if mixer:
-            noise_file = random.choice(self.all_noise_files)
-            noise = AudioSegment.from_file(noise_file, format="wav")
+            num_noises = random.randint(1, 4)  # Choose a random number of noise files to mix
+            noise_files = random.sample(self.all_noise_files, num_noises)
             snr = random.uniform(self.config['snr_min'], self.config['snr_max'])
-            audio = self.add_noise(audio, noise, snr)
-
+            audio = self.add_noise(audio, noise_files, snr)
+        
         audio = self.add_reverb(audio)
         audio = audio.normalize()
         volume_adjustment = random.uniform(self.config['volume_min'], 0.0)
@@ -250,11 +272,11 @@ if __name__ == "__main__":
     config = {
         'language': language_code,
         'runs': runs,
-        'input_folder': "/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r3/",
-        'audio_path': "/external2/datasets/synthetic_audio_r3/",
-        'clean_text_file': f"/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r3/tagged_{language_code}_notag.txt",
-        'tagged_text_file': f"/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r3/tagged_{language_code}_clean.txt",
-        'manifest_file': f"/home/ksingla/workspace/PromptingNemo/data_v2/synthetic/processed_r3/manifest_{language_code}.json",
+        'input_folder': "/external2/datasets/text/synthetic_non-command/processed/",
+        'audio_path': "/external2/datasets/synthetic_audio_r4/",
+        'clean_text_file': f"/external2/datasets/text/synthetic_non-command/processed/tagged_{language_code}_notag.txt",
+        'tagged_text_file': f"/external2/datasets/text/synthetic_non-command/processed/tagged_{language_code}_clean.txt",
+        'manifest_file': f"/external2/datasets/text/synthetic_non-command/processed/manifest_{language_code}.json",
         'max_len': 30,
         'mode': 'train',
         'mixer': True,

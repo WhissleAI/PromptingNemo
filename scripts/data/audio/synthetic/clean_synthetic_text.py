@@ -198,11 +198,16 @@ def check_noisy(line):
     pattern = re.compile(r"^(?:.*(?:ENTITY_[A-Z_]+ [^ ]+ END).* )?(?:.*INTENT_[A-Z_]+)$")
     
     # Check if the line contains any ENTITY or INTENT tags with the required space
+    entity_start_pattern = re.compile(r"ENTITY_[A-Z_]+ [^ ]+")
     entity_pattern = re.compile(r"ENTITY_[A-Z_]+ [^ ]+ END")
     intent_pattern = re.compile(r"INTENT_[A-Z_]+")
 
     # Ensure proper spacing around ENTITY and END
     if entity_pattern.search(line) and intent_pattern.search(line):
+        return "CLEAN_LINE"
+    elif entity_start_pattern.search(line):
+        return "NOISY_LINE"
+    elif intent_pattern.search(line):
         return "CLEAN_LINE"
     else:
         return "NOISY_LINE"
@@ -307,7 +312,8 @@ def clean_files(input_folder):
     
     
     input_folder = Path(input_folder)
-    output_folder = Path(input_folder / "processed_r2")
+    output_folder = Path(input_folder / "processed")
+    os.system(f"mkdir -p {output_folder}")
     
     input_files = list(input_folder.glob("*.txt"))
     tags_file = output_folder / f"alltags.txt"
