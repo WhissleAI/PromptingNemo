@@ -17,7 +17,7 @@ class ProcessFiles:
     def __init__(self, config):
         self.config = config
         self.clone_voices = {
-            "EN": glob.glob("/external2/datasets/LibriSpeech/converted-wav/*.wav"),
+            "EN": glob.glob("/external2/datasets/LibriSpeech/test-converted-wav/*.wav"),
             "ES": glob.glob("/external2/datasets/spanish/wav/*.wav"),
             "FR": glob.glob("/external2/datasets/french/wav/*.wav"),
             "DE": glob.glob("/external2/datasets/german/wav/*.wav"),

@@ -1,18 +1,35 @@
-Generate diverse natural language transcription segments of soccer match commentary. Use generic soccer terms, match details, and actions to make the sentences widely applicable. Sentences should have nuances like real soccer commentary, including jokes, discussions, and casual remarks.
+Generate a full game transcription of a soccer match commentary. Use generic soccer terms, match details, and actions to make the sentences widely applicable. Sentences should have nuances like real soccer commentary, including jokes, discussions, and casual remarks. Ensure the sentences are linked to each other to mimic real transcription segments of a soccer match commentary.
 
 For each segment, provide the tagged text. Tags indicate the start and end of the entity phrase. Tags indicate one of these entity types: ACTION, MATCH_TYPE, TEAM_NAME, PLAYER_NAME, STATISTIC_TYPE, HIGHLIGHT_TYPE, DURATION, FREQUENCY, TIME, DATE, EVENT, SCORE, LOCATION, LEAGUE_NAME, SEASON, COMMENT, USER_INFO, COMMAND, ANALYSIS_TYPE, REFEREE_NAME, ASSISTANT_REFEREE_NAME, GOALKEEPER_NAME, FAN_REACTION, COACH_NAME, SUBSTITUTION_REASON, INJURY_TYPE, WEATHER_CONDITION, STADIUM_NAME, CROWD_SIZE, PENALTY_TYPE, OFFSIDE_DECISION, VAR_DECISION.
 
 Begin the tag with ENTITY_<type>, and use a common END tag for all types. <type> is always capitalized.
 
 For example:
-ENTITY_PLAYER_NAME Neymar END ENTITY_ACTION sets up END a perfect goal for ENTITY_TEAM_NAME PSG END in the ENTITY_MATCH_TYPE Champions League END ENTITY_DATE quarterfinals END. INTENT_HIGHLIGHT
-ENTITY_TEAM_NAME Liverpool END ENTITY_ACTION wins END the ENTITY_MATCH_TYPE Champions League END after a ENTITY_SCORE 2-0 END victory over ENTITY_TEAM_NAME Tottenham Hotspur END. INTENT_RESULT
-ENTITY_PLAYER_NAME Suarez END ENTITY_ACTION bites END ENTITY_PLAYER_NAME Chiellini END in the ENTITY_MATCH_TYPE World Cup END ENTITY_DATE 2014 END. INTENT_FOUL
-And it's a brilliant ENTITY_ACTION save END! ENTITY_GOALKEEPER_NAME De Gea END diving to his left. INTENT_SAVE
-What a ENTITY_ACTION pass END from ENTITY_PLAYER_NAME Modric END, absolutely world-class! INTENT_PASS
-ENTITY_REFEREE_NAME Mike Dean END ENTITY_ACTION gives END a ENTITY_PENALTY_TYPE yellow card END to ENTITY_PLAYER_NAME Ramos END. INTENT_DECISION
-The ENTITY_WEATHER_CONDITION rain END is making the pitch slippery. INTENT_COMMENT
-ENTITY_COACH_NAME Klopp END looks frustrated on the sidelines. INTENT_COMMENT
+Welcome to today's match between ENTITY_TEAM_NAME Manchester United END and ENTITY_TEAM_NAME Chelsea END at ENTITY_STADIUM_NAME Old Trafford END. ENTITY_MATCH_TYPE Premier League END action is about to begin. INTENT_INTRODUCTION
+
+ENTITY_PLAYER_NAME Rashford END ENTITY_ACTION kicks off END the game, passing to ENTITY_PLAYER_NAME Bruno Fernandes END. INTENT_START
+
+ENTITY_PLAYER_NAME Kante END ENTITY_ACTION intercepts END the ball and quickly ENTITY_ACTION passes END to ENTITY_PLAYER_NAME Pulisic END. INTENT_PASS
+
+ENTITY_PLAYER_NAME Pulisic END ENTITY_ACTION dribbles END down the wing, looking for an opening. INTENT_DRIBBLE
+
+ENTITY_PLAYER_NAME Maguire END ENTITY_ACTION tackles END ENTITY_PLAYER_NAME Pulisic END, and it's a ENTITY_DECISION foul END. ENTITY_REFEREE_NAME Mike Dean END ENTITY_ACTION gives END a ENTITY_PENALTY_TYPE yellow card END. INTENT_DECISION
+
+ENTITY_TEAM_NAME Manchester United END ENTITY_ACTION takes END the free kick. ENTITY_PLAYER_NAME Bruno Fernandes END ENTITY_ACTION sends END it into the box. INTENT_SET_PIECE
+
+ENTITY_PLAYER_NAME Abraham END ENTITY_ACTION heads END it clear, and ENTITY_TEAM_NAME Chelsea END ENTITY_ACTION looks END to counter-attack. INTENT_DEFENSE
+
+What a ENTITY_ACTION pass END from ENTITY_PLAYER_NAME Jorginho END to ENTITY_PLAYER_NAME Werner END! ENTITY_PLAYER_NAME Werner END ENTITY_ACTION shoots END, but ENTITY_GOALKEEPER_NAME De Gea END ENTITY_ACTION saves END it brilliantly. INTENT_SAVE
+
+The ENTITY_WEATHER_CONDITION rain END is making the pitch slippery, players need to be careful. INTENT_COMMENT
+
+ENTITY_COACH_NAME Solskjaer END looks frustrated on the sidelines as his team struggles to keep possession. INTENT_COMMENT
+
+And it's ENTITY_PLAYER_NAME Rashford END again with the ball, he ENTITY_ACTION shoots END, and it's a ENTITY_SCORE goal END! ENTITY_TEAM_NAME Manchester United END ENTITY_ACTION takes END the lead. INTENT_GOAL
+
+ENTITY_TEAM_NAME Chelsea END ENTITY_ACTION makes END a substitution, ENTITY_PLAYER_NAME Giroud END comes on for ENTITY_PLAYER_NAME Abraham END. INTENT_SUBSTITUTION
+
+ENTITY_REFEREE_NAME Mike Dean END ENTITY_ACTION blows END the final whistle, and ENTITY_TEAM_NAME Manchester United END ENTITY_ACTION wins END 1-0. INTENT_CONCLUSION
 
 Example ACTION phrases: 'scores', 'passes', 'heads', 'dominates', 'sets up', 'saves', 'tackles', 'shoots', 'crosses', 'defends', 'dribbles', 'assists', 'fouls', 'wins', 'loses', 'draws', 'equalizes', 'substitutes', 'injures', 'recovers', 'celebrates', 'signals', 'whistles', 'checks', 'reviews', 'announces'.
 
@@ -22,7 +39,6 @@ Intent_<type> is always capitalized.
 
 Each sentence should be separated by a blank line. Sentences should show many different parts of soccer match commentary, not just highlights.
 
-Generate exactly 300 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
+Generate a full tagged game transcription divided into sentences, with each sentence having a line break.
 
 Output tagged sentences should only be in {lang}.
-
