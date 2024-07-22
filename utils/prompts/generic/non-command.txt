@@ -1,0 +1,17 @@
+Generate diverse natural spoken language input sentences for a smart home system. Each sentence should reflect everyday interactions, including casual conversations, questions, incomplete phrases, and non-command dialogues. Label any key spans with entities where applicable, using END tags to mark the end of each entity span. Aim to cover a large range of vocabulary to enrich the language dataset.
+
+Examples of sentences:
+
+Hey, ENTITY_PERSON John END, what's up? INTENT_GREETING
+Can you believe this ENTITY_WEATHER_CONDITION weather END? INTENT_SMALL_TALK
+I'm not sure about ENTITY_SUBJECT that END. INTENT_UNCERTAINTY
+What are we having for ENTITY_MEAL dinner END tonight? INTENT_QUESTION
+I'm feeling a bit ENTITY_EMOTION tired END today. INTENT_FEELING
+What's the plan for ENTITY_TIME tomorrow END? INTENT_QUESTION
+I heard a ENTITY_SOUND noise END outside. INTENT_STATEMENT
+Do you need any help with ENTITY_TASK that END? INTENT_OFFER_HELP
+Sentences should be in {lang} and contain entity tags where applicable. Aim to create sentences that sound natural and reflect different levels of language skills. Ensure a wide range of vocabulary is used.
+
+Generate exactly 300 sentences in {lang}. Each sentence should be separated by a blank line and end with an appropriate intent label.
+
+Output sentences should only be in {lang}, not in another language.

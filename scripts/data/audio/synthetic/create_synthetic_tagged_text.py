@@ -96,8 +96,8 @@ Collect samples from GPT-4
 
 if __name__ == "__main__":
 
-    output_folder = Path("/external2/datasets/text/synthetic_v2/")
-    prompt_folder = Path("/external2/datasets/text/prompts/generic/")
+    output_folder = Path("/external2/datasets/text/synthetic_non-command/")
+    prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/utils/prompts/generic/")
     prompt_files = list(prompt_folder.glob("*.txt"))
     random.shuffle(prompt_files)
 
@@ -106,6 +106,7 @@ if __name__ == "__main__":
 
     # lang_map = EURO.copy()  # Copy EURO dictionary to avoid modifying the original
     # lang_map.update(INDIAN)  # Update with INDIAN dictionary
+    INDIAN.update(EURO)
 
     os.system(f"mkdir -p {output_folder}")
     create_data_n_times(prompt_files, output_folder, INDIAN,  n=50)
