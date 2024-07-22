@@ -305,6 +305,7 @@ def clean_file_valid(input_file, text_file, text_tagged_file, tags_file):
             
 def clean_files(input_folder):
     
+    
     input_folder = Path(input_folder)
     output_folder = Path(input_folder / "processed_r2")
     

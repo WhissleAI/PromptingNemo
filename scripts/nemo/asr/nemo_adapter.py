@@ -147,12 +147,15 @@ class ASRModelTrainer:
         tokens = taglist + [str(i) for i in range(10)] + punctuations
         is_userdefined = True
 
-        if tokenizer_state == "extended":
-            self.edit_spt_model(self.tokenizer_model_file, self.extended_tokenizer_dir, tokens, self.vocab_file, self.vocab_txt_file, is_userdefined)
-        else:
+        if tokenizer_state == "new":
             _ = train_sentencepiece_tokenizer(self.train_manifest, self.extended_tokenizer_dir, special_tokens=taglist, vocab_size=vocab_size)
+            self.model.change_vocabulary(self.extended_tokenizer_dir, "bpe")
         
-        self.model.change_vocabulary(self.extended_tokenizer_dir, "bpe")
+        elif tokenizer_state == "extended":
+            self.edit_spt_model(self.tokenizer_model_file, self.extended_tokenizer_dir, tokens, self.vocab_file, self.vocab_txt_file, is_userdefined)
+            self.model.change_vocabulary(self.extended_tokenizer_dir, "bpe")
+        else:
+            print("Using the existing tokenizer model and vocab files")
     
     def configure_trainer(self):
         accelerator = 'gpu' if torch.cuda.is_available() else 'cpu'
@@ -323,7 +326,7 @@ class ASRModelTrainer:
 model_trainer = ASRModelTrainer(config_path='config.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
-model_trainer.prepare_data_and_tokens(tokenizer_state="new", vocab_size=2500)
+model_trainer.prepare_data_and_tokens(tokenizer_state="same", vocab_size=2500)
 model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()

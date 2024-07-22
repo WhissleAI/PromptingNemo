@@ -1,6 +1,6 @@
 model:
-  model_root: "/external2/models/hf/stt_en_conformer_ctc_large/"
-  model_name: "stt_en_conformer_ctc_large.nemo"
+  model_root: "/external2/karan_exp/experiments/finetune-alllang-130k-ctc-r3/2024-07-21_17-37-00/checkpoints/"
+  model_name: "finetune-alllang-130k-ctc-r3.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
   proto_file: "proto/file"
@@ -11,7 +11,7 @@ training:
   train_manifest: "train.json"
   test_manifest: "valid.json"
   batch_size: 16
-  max_steps: 60000
+  max_steps: 600000
 
 adapter:
   name: "AN4"
