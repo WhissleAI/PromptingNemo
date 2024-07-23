@@ -207,7 +207,7 @@ class ProcessFiles:
         print(f'Audio content written to {filename} with noise level {noise_level} dB')
 
     def process_files(self):
-        runs = int(self.config['runs'])
+        runs = int(self.config['runs']) + 1
         os.makedirs(self.config['audio_path'], exist_ok=True)
         manifest_file_path = self.config['manifest_file']
         with open(manifest_file_path, 'w', encoding='utf-8') as manifest_file:
@@ -219,7 +219,7 @@ class ProcessFiles:
             with open(self.config['tagged_text_file'], 'r') as file:
                 tagged_lines = file.readlines()
 
-            for n in range(runs):
+            for n in range(1,runs):
                 for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
                     line_len = len(line.strip().split())
                     if line_len <= self.config['max_len']:
@@ -268,6 +268,7 @@ if __name__ == "__main__":
     
     language_code = sys.argv[1]
     runs = sys.argv[2]
+    
 
     config = {
         'language': language_code,
