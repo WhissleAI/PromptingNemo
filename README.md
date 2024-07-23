@@ -25,8 +25,42 @@ Designed for audio-visual applications, these models leverage both audio and vis
 #### 🏞️ Scene-aware audio-visual ASR
 - **Model Fine-tuning**: Develop ASR systems that are aware of the scene context for better performance.
 
+
 #### 🎙️ Speech-only aodels
 These models are optimized for applications that rely solely on speech input.
+
+
+
+
+This repository provides links to various pretrained models available for download and use. These models are valuable resources for a wide range of applications, including natural language processing, computer vision, and more.
+
+## Table of Pretrained Models
+
+| Model Name          | Description                                              | Source         | Link                                                      |
+|---------------------|----------------------------------------------------------|----------------|-----------------------------------------------------------|
+| Cnformer-CTC           | English (3000 hrs), digit seq. recognition                      | Hugging Face   | [BERT Base](https://huggingface.co/bert-base-uncased)     |
+| Cnformer-CTC           | English (1000 hrs), 19 different entities, emotion                      | Hugging Face   | [BERT Base](https://huggingface.co/bert-base-uncased)     |
+| Cnformer-CTC           | EURO (CommonVoice, 5 languages), entities, emotion                      | Hugging Face   | [BERT Base](https://huggingface.co/bert-base-uncased)     |
+
+
+## Usage
+
+To use these pretrained models, follow the instructions provided in the source links. Typically, you'll need to install specific libraries or frameworks, such as TensorFlow, PyTorch, or the Hugging Face Transformers library.
+
+For example, to use the BERT Base model from Hugging Face, you can do the following in Python:
+
+```python
+import nemo.collections.asr as nemo_asr
+asr_model = nemo_asr.models.ASRModel.from_pretrained("WhissleAI/stt_en_conformer_ctc_digits")
+
+transcriptions = asr_model.transcribe(["file.wav"])
+```
+
+
+
+
+
+
 
 ### Synthetic tagged dataset creation
 
