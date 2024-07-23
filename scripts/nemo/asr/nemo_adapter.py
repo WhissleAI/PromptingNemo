@@ -110,12 +110,6 @@ class ASRModelTrainer:
         self.test_manifest = self.data_dir / self.config['training']['test_manifest']
         self.batch_size = self.config['training']['batch_size']
         self.max_steps = self.config['training']['max_steps']
-        self.adapter_cfg = LinearAdapterConfig(
-            in_features=None,  # This will be set later based on the model configuration
-            dim=self.config['adapter']['dim'],
-            activation=self.config['adapter']['activation'],
-            norm_position=self.config['adapter']['norm_position'],
-        )
         self.exp_config = exp_manager.ExpManagerConfig(
             exp_dir=self.config['experiment']['exp_dir'],
             name=self.config['experiment']['exp_name'],
@@ -218,14 +212,24 @@ class ASRModelTrainer:
                     print(tp)
                 print()
 
-        self.adapter_cfg.in_features = self.model.cfg.encoder.d_model  # Set in_features based on model configuration
+        for adapter_name, adapter_config in self.config['adapters'].items():
+            adapter_cfg = LinearAdapterConfig(
+                in_features=self.model.cfg.encoder.d_model,  # Set in_features based on model configuration
+                dim=adapter_config['dim'],
+                activation=adapter_config['activation'],
+                norm_position=adapter_config['norm_position'],
+            )
+            print(f"Adding adapter {adapter_name} with config: {adapter_cfg}")
 
-        print(self.adapter_cfg)
+            self.model.add_adapter(name=adapter_config['name'], cfg=adapter_cfg)
 
-        self.model.add_adapter(name=self.config['adapter']['name'], cfg=self.adapter_cfg)
         self.model.set_enabled_adapters(enabled=False)  # Disable all adapters
-        self.model.set_enabled_adapters(name=self.config['adapter']['name'], enabled=True)  # Enable only the current adapter we want to train
-        self.model.freeze()
+
+        # Enable only the adapters specified in the config
+        for adapter_name, adapter_config in self.config['adapters'].items():
+            self.model.set_enabled_adapters(name=adapter_config['name'], enabled=True)
+
+        #self.model.freeze()
         self.model.unfreeze_enabled_adapters()
         self.model.decoder.unfreeze()
         self.model.summarize()
@@ -267,7 +271,6 @@ class ASRModelTrainer:
 
     @staticmethod
     def edit_spt_model(tokenizer_model_file, extended_tokenizer_dir, tokens, vocab_file, vocab_txt_file, is_userdefined=False):
-        from sentencepiece_model_pb2 import ModelProto  # Ensure this import is after the proto generation
         if not os.path.exists(extended_tokenizer_dir):
             os.makedirs(extended_tokenizer_dir)
         
@@ -326,12 +329,12 @@ class ASRModelTrainer:
 model_trainer = ASRModelTrainer(config_path='config.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
-model_trainer.prepare_data_and_tokens(tokenizer_state="same", vocab_size=2500)
+model_trainer.prepare_data_and_tokens(tokenizer_state="new", vocab_size=3500)
 model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()
 model_trainer.configure_optimization()
-#model_trainer.setup_adapters()
+model_trainer.setup_adapters()
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
 model_trainer.train()

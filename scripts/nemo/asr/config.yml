@@ -1,5 +1,5 @@
 model:
-  model_root: "/external2/karan_exp/experiments/finetune-alllang-130k-ctc-r3/2024-07-21_17-37-00/checkpoints/"
+  model_root: "/external2/karan_exp/experiments/finetune-alllang-130k-ctc-r3/2024-07-22_01-37-14/checkpoints/"
   model_name: "finetune-alllang-130k-ctc-r3.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
@@ -7,23 +7,33 @@ model:
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/external2/datasets/text/synthetic/processed_r3/"
-  train_manifest: "train.json"
+  data_dir: "/external2/datasets/text/synthetic_non-command/processed/"
+  train_manifest: "train_r4.json"
   test_manifest: "valid.json"
   batch_size: 16
   max_steps: 600000
 
-adapter:
-  name: "AN4"
-  dim: 32
-  activation: "swish"
-  norm_position: "pre"
+adapters:
+  LinearAdapter:
+    name: "LinearAdapter"
+    dim: 32
+    activation: "relu"
+    norm_position: "pre"
+  BottleneckAdapter:
+    name: "BottleneckAdapter"
+    dim: 64
+    activation: "gelu"
+    norm_position: "post"
+  AttentionAdapter:
+    name: "AttentionAdapter"
+    dim: 48
+    activation: "swish"
+    norm_position: "pre"
 
 experiment:
   exp_dir: "/external2/karan_exp/experiments/"
-  exp_name: "finetune-alllang-130k-ctc-r3"
+  exp_name: "finetune-alllang-210k-ctc-r4"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true
   save_best_model: true
-
