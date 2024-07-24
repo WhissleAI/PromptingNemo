@@ -224,11 +224,11 @@ class ProcessFiles:
                     line_len = len(line.strip().split())
                     if line_len <= self.config['max_len']:
                         line = " ".join(line.split()[1:])
-                        audio_content = self.generate_audio(line.strip(), self.config['mode'], self.config['language'], self.config['mixer'])
+                        #audio_content = self.generate_audio(line.strip(), self.config['mode'], self.config['language'], self.config['mixer'])
 
                         audio_file = os.path.join(self.config['audio_path'], f"{Path(self.config['clean_text_file']).stem}_line_{i}_run_{n}.wav")
-                        noise_level = random.uniform(self.config['noise_min'], self.config['noise_max'])
-                        self.save_audio_to_file(audio_content, audio_file, noise_level)
+                        #noise_level = random.uniform(self.config['noise_min'], self.config['noise_max'])
+                        #self.save_audio_to_file(audio_content, audio_file, noise_level)
                         duration = self.get_audio_duration(audio_file)
 
                         entry = {
@@ -274,7 +274,7 @@ if __name__ == "__main__":
         'language': language_code,
         'runs': runs,
         'input_folder': "/external2/datasets/text/synthetic_non-command/processed/",
-        'audio_path': "/external2/datasets/synthetic_audio_r4/",
+        'audio_path': "/external2/datasets/synthetic_audio_non-command_5/",
         'clean_text_file': f"/external2/datasets/text/synthetic_non-command/processed/tagged_{language_code}_notag.txt",
         'tagged_text_file': f"/external2/datasets/text/synthetic_non-command/processed/tagged_{language_code}_clean.txt",
         'manifest_file': f"/external2/datasets/text/synthetic_non-command/processed/manifest_{language_code}.json",
