@@ -1,6 +1,6 @@
 model:
-  model_root: "/external2/karan_exp/experiments/finetune-alllang-130k-ctc-r3/2024-07-22_01-37-14/checkpoints/"
-  model_name: "finetune-alllang-130k-ctc-r3.nemo"
+  model_root: "/external2/models/hf/stt_en_conformer_ctc_small/"
+  model_name: "stt_en_conformer_ctc_small.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
   proto_file: "proto/file"
@@ -8,7 +8,7 @@ model:
 
 training:
   data_dir: "/external2/datasets/text/synthetic_non-command/processed/"
-  train_manifest: "train_r4.json"
+  train_manifest: "train_r5.json"
   test_manifest: "valid.json"
   batch_size: 16
   max_steps: 600000
@@ -32,7 +32,7 @@ adapters:
 
 experiment:
   exp_dir: "/external2/karan_exp/experiments/"
-  exp_name: "finetune-alllang-210k-ctc-r4"
+  exp_name: "finetune-alllang-450k-ctc-small-r5"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true

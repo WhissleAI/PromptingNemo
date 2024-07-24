@@ -6,7 +6,7 @@ language_codes=("EN" "ES" "FR" "DE" "HI" "PA" "BN" "MR" "GU" "TE")
 # Function to run the python script for a given language
 run_script() {
   lang=$1
-  python scripts/data/audio/synthetic/create_tts_manifest_xtts.py $lang 1
+  python scripts/data/audio/synthetic/create_tts_manifest_xtts.py $lang 5
 }
 
 # Loop through each language code and run the python script in parallel (two at a time)
