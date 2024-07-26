@@ -161,7 +161,8 @@ class ASRModelTrainer:
             enable_checkpointing=False, 
             logger=False,
             log_every_n_steps=50, 
-            check_val_every_n_epoch=1
+            check_val_every_n_epoch=1,
+            accumulate_grad_batches=4
         )
 
         self.model.set_trainer(self.trainer)
@@ -179,6 +180,8 @@ class ASRModelTrainer:
         self.model.setup_training_data(self.model.cfg.train_ds)
         self.model.setup_multiple_validation_data(self.model.cfg.validation_ds)
         self.model.setup_multiple_test_data(self.model.cfg.validation_ds)
+        
+
 
     def configure_spec_augmentation(self):
         with open_dict(self.model.cfg):
@@ -329,12 +332,12 @@ class ASRModelTrainer:
 model_trainer = ASRModelTrainer(config_path='config.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
-model_trainer.prepare_data_and_tokens(tokenizer_state="new", vocab_size=3500)
+model_trainer.prepare_data_and_tokens(tokenizer_state="same", vocab_size=3500)
 model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()
 model_trainer.configure_optimization()
-model_trainer.setup_adapters()
+#model_trainer.setup_adapters()
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
 model_trainer.train()
