@@ -60,6 +60,18 @@ translation_table = str.maketrans(
     }
 )
 
+def clean_extra(sentence):
+    # Extract ENTITY and INTENT
+    entities = re.findall(r'ENTITY_[A-Z_]+ .*? END', sentence)
+    intent = re.search(r'INTENT_[A-Z_]+', sentence)
+    
+    # Join the extracted parts
+    cleaned_sentence = ' '.join(entities)
+    if intent:
+        cleaned_sentence += ' ' + intent.group()
+    
+    return cleaned_sentence
+
 def load_tag_file(tag_file):
     tag_dict = {}
     with open(tag_file, 'r') as file:
@@ -139,6 +151,7 @@ def clean_file(input_file, text_file, text_tagged_file, tags_file):
                     cleaned_line, tags = clean_data(line)
                     all_tags.update(tags)
                     outfile.write("LANG_"+langid + " " + cleaned_line + "\n")
+                    line = clean_extra(line)
                     valid_sents.append(line)
                 except:
                     print("Error: ", line)
@@ -312,7 +325,7 @@ def clean_files(input_folder):
     
     
     input_folder = Path(input_folder)
-    output_folder = Path(input_folder / "processed")
+    output_folder = Path(input_folder / "processed_v4")
     os.system(f"mkdir -p {output_folder}")
     
     input_files = list(input_folder.glob("*.txt"))

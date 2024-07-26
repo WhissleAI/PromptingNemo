@@ -222,27 +222,32 @@ class ProcessFiles:
             for n in range(1,runs):
                 for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
                     line_len = len(line.strip().split())
-                    if line_len <= self.config['max_len']:
-                        line = " ".join(line.split()[1:])
-                        #audio_content = self.generate_audio(line.strip(), self.config['mode'], self.config['language'], self.config['mixer'])
+                    try:
+                        if line_len <= self.config['max_len']:
+                            line = " ".join(line.split()[1:])
+                            audio_content = self.generate_audio(line.strip(), self.config['mode'], self.config['language'], self.config['mixer'])
 
-                        audio_file = os.path.join(self.config['audio_path'], f"{Path(self.config['clean_text_file']).stem}_line_{i}_run_{n}.wav")
-                        #noise_level = random.uniform(self.config['noise_min'], self.config['noise_max'])
-                        #self.save_audio_to_file(audio_content, audio_file, noise_level)
-                        duration = self.get_audio_duration(audio_file)
+                            audio_file = os.path.join(self.config['audio_path'], f"{Path(self.config['clean_text_file']).stem}_line_{i}_run_{n}.wav")
+                            noise_level = random.uniform(self.config['noise_min'], self.config['noise_max'])
+                            self.save_audio_to_file(audio_content, audio_file, noise_level)
+                            duration = self.get_audio_duration(audio_file)
 
-                        entry = {
-                            "audio_filepath": audio_file,
-                            "text": tagged_line.strip(),
-                            "duration": duration
-                        }
+                            entry = {
+                                "audio_filepath": audio_file,
+                                "text": tagged_line.strip(),
+                                "duration": duration,
+                                "tasks": ["text", "entity", "intent"]
+                            }
 
-                        if not first_entry:
-                            manifest_file.write('\n')
-                        else:
-                            first_entry = False
+                            if not first_entry:
+                                manifest_file.write('\n')
+                            else:
+                                first_entry = False
 
-                        manifest_file.write(json.dumps(entry, ensure_ascii=False))
+                            manifest_file.write(json.dumps(entry, ensure_ascii=False))
+                    
+                    except:
+                        continue
 
             manifest_file.write('\n')
             print(f"Manifest file written to {manifest_file_path}")
@@ -273,11 +278,11 @@ if __name__ == "__main__":
     config = {
         'language': language_code,
         'runs': runs,
-        'input_folder': "/external2/datasets/text/synthetic_non-command/processed/",
-        'audio_path': "/external2/datasets/synthetic_audio_non-command_5/",
-        'clean_text_file': f"/external2/datasets/text/synthetic_non-command/processed/tagged_{language_code}_notag.txt",
-        'tagged_text_file': f"/external2/datasets/text/synthetic_non-command/processed/tagged_{language_code}_clean.txt",
-        'manifest_file': f"/external2/datasets/text/synthetic_non-command/processed/manifest_{language_code}.json",
+        'input_folder': "/external2/datasets/text/synthetic/processed_v4/",
+        'audio_path': "/external2/datasets/synthetic_audio_v4/",
+        'clean_text_file': f"/external2/datasets/text/synthetic/processed_v4/tagged_{language_code}_notag.txt",
+        'tagged_text_file': f"/external2/datasets/text/synthetic/processed_v4/tagged_{language_code}_clean.txt",
+        'manifest_file': f"/external2/datasets/text/synthetic/processed_v4/manifest_{language_code}.json",
         'max_len': 30,
         'mode': 'train',
         'mixer': True,

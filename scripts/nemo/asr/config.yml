@@ -1,6 +1,6 @@
 model:
-  model_root: "/external2/models/hf/stt_en_conformer_ctc_small/"
-  model_name: "stt_en_conformer_ctc_small.nemo"
+  model_root: "/external2/karan_exp/experiments/finetune-alllang-450k-ctc-small-r5/2024-07-24_07-54-52/checkpoints/"
+  model_name: "finetune-alllang-450k-ctc-small-r5.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
   proto_file: "proto/file"
