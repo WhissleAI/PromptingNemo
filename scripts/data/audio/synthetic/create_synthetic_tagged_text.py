@@ -48,7 +48,7 @@ def validate_and_correct_annotations(conll_output):
     return formatted_output
 
 
-def create_data(prompt_files, output_folder, lang_map):
+def create_data(prompt_files, output_folder, lang_map, example_samples):
     
     for prompt_file in prompt_files:
         print("Processing file:", prompt_file)
@@ -60,7 +60,10 @@ def create_data(prompt_files, output_folder, lang_map):
             output_file = open(output_folder / f"tagged_{lang_map[lang]}.txt", 'a')
             prompt = open(prompt_file, 'r').read()
             prompt = prompt.replace("{lang}", lang)
-            print("LANG:", lang)
+            prompt = prompt.replace("{examples}", example_samples)
+            
+            print("Prompt:", prompt)
+            
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
@@ -83,9 +86,13 @@ def create_data(prompt_files, output_folder, lang_map):
             output_file.close()
 
 
-def create_data_n_times(prompt_files, output_folder, lang_map, n=40):
+def create_data_n_times(prompt_files, output_folder, lang_map, examples, n=40):
+    
+    
     for i in range(n):
-        create_data(prompt_files, output_folder, lang_map)
+        example_samples = random.sample(examples, 20)
+        example_samples = "\n".join(example_samples)
+        create_data(prompt_files, output_folder, lang_map, example_samples)
 
 
 
@@ -96,10 +103,17 @@ Collect samples from GPT-4
 
 if __name__ == "__main__":
 
-    output_folder = Path("/external2/datasets/text/synthetic_non-command/")
-    prompt_folder = Path("/home/ksingla/workspace/PromptingNemo/utils/prompts/generic/")
+    output_folder = Path("/external2/datasets/slurp/synthetic/")
+    prompt_folder = Path("/root/workspace/PromptingNemo/datasets/prompts/data_extension/")
     prompt_files = list(prompt_folder.glob("*.txt"))
     random.shuffle(prompt_files)
+    
+    
+    extension_dataset = Path("/external2/datasets/slurp/train-slurp-tagged.txt")
+    examples = []
+    with open(extension_dataset, 'r') as f:
+        examples = f.readlines()
+    
 
     EURO = {"English": "EN", "Spanish": "ES", "French": "FR", "German": "DE", "Italian" : "IT"}
     INDIAN = {"Hindi": "HI", "Punjabi": "PA", "Bengali": "BN", "Marathi": "MR", "Gujrati": "GU", "Kannada": "KN", "Telugu": "TE"}
@@ -109,7 +123,7 @@ if __name__ == "__main__":
     INDIAN.update(EURO)
 
     os.system(f"mkdir -p {output_folder}")
-    create_data_n_times(prompt_files, output_folder, INDIAN,  n=50)
+    create_data_n_times(prompt_files, output_folder, INDIAN, examples, n=50)
 
 
 # input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path

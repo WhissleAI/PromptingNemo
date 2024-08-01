@@ -1,0 +1,19 @@
+Generate annotated sentences for IoT-related intents and entities. Use the following format as examples below.
+
+Examples:
+{examples}
+
+In these examples, we first tag ENTITY spans. We use ENTITY-<type> to mark start of a span and  END tag to mark of annotated span.
+
+After tagging entities towards intent, we add two extra words at the end. 
+
+INTENT_<type>, you can decide a meaningful type for INTENT_<type>. <type> of intent is always capitalized.
+
+Last word is EMOTION_<type>, type is emotional state of the speaker of the sentence.
+
+
+I want more sample sentences to train my system in {lang}.
+
+Generate exactly 300 tagged {lang} sentences. No numbering of sentences and each sentence has a line break.
+
+Output tagged sentences should only be in {lang} script.
