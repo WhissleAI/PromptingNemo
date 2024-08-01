@@ -129,13 +129,28 @@ class ASRModelTrainer:
     def restore_model_with_updated_config(self):
         self.model = ASRModel.restore_from(self.model_path, override_config_path=self.cfg)
     
-    def prepare_data_and_tokens(self, tokenizer_state="extended", vocab_size=2000):
+    def prepare_data_and_tokens(self, tags_type="mapped", tokenizer_state="extended", vocab_size=2000):
         taglist = []
-        all_tags_path = os.path.join(self.data_dir, "alltags.txt")
-        with open(all_tags_path, 'r') as f:
-            for line in f:
-                word, tag = line.split()
-                taglist.append(tag)
+        
+        if tags_type == "mapped":
+            ### here we assume two columns tags file: word \t tag
+            
+            all_tags_path = os.path.join(self.data_dir, "alltags.txt")
+            with open(all_tags_path, 'r') as f:
+                for line in f:
+                    word, tag = line.split()
+                    taglist.append(tag)
+        
+        else:
+             all_tags_path = os.path.join(self.data_dir, "alltags.json")
+             tagdata = open(all_tags_path,'r').read()
+             taglist = json.loads(tagdata)
+            
+            ### just a json readable list of tags
+            
+            
+            
+            
 
         punctuations = ['.', ',', '?', '!', ';', ':', '-', '(', ')', '[', ']', '{', '}', '<', '>', '/', '\\', '|', '@', '#', '$', '%', '^', '&', '*', '+', '=', '~', '`', '_', '"', "'"]
         tokens = taglist + [str(i) for i in range(10)] + punctuations
@@ -232,7 +247,7 @@ class ASRModelTrainer:
         for adapter_name, adapter_config in self.config['adapters'].items():
             self.model.set_enabled_adapters(name=adapter_config['name'], enabled=True)
 
-        #self.model.freeze()
+        self.model.freeze()
         self.model.unfreeze_enabled_adapters()
         self.model.decoder.unfreeze()
         self.model.summarize()
@@ -332,12 +347,12 @@ class ASRModelTrainer:
 model_trainer = ASRModelTrainer(config_path='config.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
-model_trainer.prepare_data_and_tokens(tokenizer_state="same", vocab_size=3500)
+model_trainer.prepare_data_and_tokens(tags_type="solo", tokenizer_state="new", vocab_size=1024)
 model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()
 model_trainer.configure_optimization()
-#model_trainer.setup_adapters()
+model_trainer.setup_adapters()
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
 model_trainer.train()
