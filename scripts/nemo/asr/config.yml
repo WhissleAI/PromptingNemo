@@ -1,15 +1,15 @@
 model:
-  model_root: "/external2/karan_exp/experiments/finetune-alllang-450k-ctc-small-r5/2024-07-24_07-54-52/checkpoints/"
-  model_name: "finetune-alllang-450k-ctc-small-r5.nemo"
+  model_root: "/external2/models/hf/stt_en_conformer_ctc_large/"
+  model_name: "stt_en_conformer_ctc_large.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
   proto_file: "proto/file"
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/external2/datasets/text/synthetic_non-command/processed/"
-  train_manifest: "train_r5.json"
-  test_manifest: "valid.json"
+  data_dir: "/external2/datasets/slurp"
+  train_manifest: "train-slurp-tagged.json"
+  test_manifest: "devel-slurp-tagged.json"
   batch_size: 16
   max_steps: 600000
 
@@ -32,7 +32,7 @@ adapters:
 
 experiment:
   exp_dir: "/external2/karan_exp/experiments/"
-  exp_name: "finetune-alllang-450k-ctc-small-r5"
+  exp_name: "slurp-3adapter-newtokenizer"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true
