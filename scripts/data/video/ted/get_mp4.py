@@ -96,9 +96,7 @@ def verify_file(file_path):
 # Process the CSV file
 with open(filepath, mode='r') as file:
     csv_reader = csv.DictReader(file)
-    flag = 0
     for row in csv_reader:
-        flag = flag + 1
         
         rowid = row['\ufeffid']
         print(rowid)
@@ -121,8 +119,5 @@ with open(filepath, mode='r') as file:
         # Download the combined video
         download_combined_video(url, combined_video_path)
 
-        
-        if flag == 5:
-            break
 
 
