@@ -26,13 +26,13 @@ def normalize(text):
 
 
 ### Define all data path (SLURP here)
-slurp_annotations = Path("/audio_datasets/slurp/dataset/slurp/")
+slurp_annotations = Path("/external2/datasets/slurp/dataset/slurp/")
 train_annotations = slurp_annotations / Path("train.jsonl")
 dev_annotations = slurp_annotations / Path("devel.jsonl")
 test_annotations = slurp_annotations / Path("test.jsonl")
 
-audio_real = Path("/audio_datasets/slurp/audio/slurp_real")
-audio_synth = Path("/audio_datasets/slurp/audio/slurp_synth/")
+audio_real = Path("/external2/datasets/slurp/audio/slurp_real")
+audio_synth = Path("/external2/datasets/slurp/audio/slurp_synth/")
 
 
 ### SLURP tag aligner
@@ -206,6 +206,19 @@ def get_emotion_labels(audio_file, sampling_rate=16000, score=50.0):
 ALL_ENTITIES = {}
 
 
+
+def convert_single_flac_to_wav(audiofile, wavfile):
+
+    # Load the .flac file
+    audio = AudioSegment.from_file(audiofile, format="flac")
+    
+    # Set frame rate to 16kHz
+    audio = audio.set_frame_rate(16000)
+    
+    # Export as .wav file
+    audio.export(wavfile, format="wav")
+
+
 def jsonl_process(jsonlfile, audiofolder, manifestfolder):
 
     wavfolder = str(audiofolder) + "-wav"
@@ -217,7 +230,7 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
     manifest = open(manifestfolder + "/" + jsonlfile.name.replace(jsonlfile.suffix, "") + "-slurp-tagged.json",'w')
 
 
-    taglist = json.load(open(manifestfolder+"/taglistfile.json",'r'))
+    taglist = []
 
     for line in jsonlfileread:
 
@@ -227,8 +240,10 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
         text = line['sentence']
         #text_clean = normalize(text)
         text_clean = text + "."
+
         text_tagged, taglist = convert_entity_format(line['sentence_annotation'], taglist)
         text_tagged = text_tagged + "."
+
         #text_clean_tagged = merge_text_and_tags(text_clean, text_tagged)
         text_clean_tagged = text_tagged
 
@@ -252,37 +267,23 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
             filekey = audiofile.name.replace(audiofile.suffix, "")
             wavfilepath = str(wavfolder) + "/" + filekey + ".wav"
             
+            convert_single_flac_to_wav(audiofilepath, wavfilepath)
+            
             #flac_tmp_audio_data = AudioSegment.from_file(audiofilepath, audiofilepath.suffix[1:])
             #flac_tmp_audio_data.export(wavfilepath, format="wav")        
 
             sample_dict = {}
             sample_dict['audio_filepath'] = wavfilepath
-            sample_dict['text'] = text_clean
-            sample_dict['tasks'] = ["transcription"]
-            sample_dict['instruction'] = "Transcribe what is begin spoken"
-            json.dump(sample_dict, manifest)
-            manifest.write("\n")
 
             emotion_labels = get_emotion_labels(audio_file=wavfilepath, sampling_rate=16000)
             for label in emotion_labels:
                 if label not in taglist:
                     taglist.append(label)
             emotion_labels = ' '.join(emotion_labels)
-            sample_dict['text'] = text_clean + " " + emotion_labels
-            sample_dict['tasks'] = ["transcription", "emotion"]
-            sample_dict['instruction'] = "transcribe and track speaker emotion"
-            json.dump(sample_dict, manifest)
-            manifest.write("\n")
-
-            sample_dict['text'] = text_clean_tagged + " " + intent
-            sample_dict['tasks'] = ["transcription", "entity-towards-intent", "intent"]
-            sample_dict['instruction'] = "transcribe, mark entitites towards an intent, and get intent label"
-            json.dump(sample_dict, manifest)
-            manifest.write("\n")
 
             sample_dict['text'] = text_clean_tagged + " " + intent + " " + emotion_labels
-            sample_dict['tasks'] = ["transcription", "intent","emotion"]
-            sample_dict['instruction'] = "transcribe and track speaker intent and emotion"
+            sample_dict['tasks'] = ["transcription", "entity", "intent","emotion"]
+            sample_dict['instruction'] = "transcribe, track entities, get intent and emotion"
             json.dump(sample_dict, manifest)
             manifest.write("\n")        
     
@@ -293,7 +294,7 @@ def jsonl_process(jsonlfile, audiofolder, manifestfolder):
 
 
 
-manifestfolder = "/audio_datasets/manifests"
+manifestfolder = "/external2/datasets/slurp"
 
 jsonl_process(jsonlfile=train_annotations, audiofolder=audio_real, manifestfolder=manifestfolder)
 jsonl_process(jsonlfile=dev_annotations, audiofolder=audio_real, manifestfolder=manifestfolder)
