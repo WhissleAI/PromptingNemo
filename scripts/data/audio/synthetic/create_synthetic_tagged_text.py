@@ -4,6 +4,7 @@ import os
 import time
 from pathlib import Path
 import random
+import json
 
 openai.api_key = 'sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu'
 
@@ -64,33 +65,96 @@ def create_data(prompt_files, output_folder, lang_map, example_samples):
             
             print("Prompt:", prompt)
             
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": prompt}
-                ],
-                max_tokens=4096,
-                n=1,
-                stop=None,
-                temperature=0.4
-            )
-            
-            tagged_output = response.choices[0].message['content'].strip()
-            tagged_output = validate_and_correct_annotations(tagged_output)
-            for line in tagged_output:
-                line = "LANG_" + lang_map[lang] + " " + line
-                output_file.write(line)
-                output_file.write("\n")
-            
-            output_file.close()
+            try:
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[
+                        {"role": "system", "content": "You are a helpful assistant."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    max_tokens=4096,
+                    n=1,
+                    stop=None,
+                    temperature=0.7,  # Higher value to increase creativity and diversity
+                )
+                            
+                tagged_output = response.choices[0].message['content'].strip()
+                tagged_output = tagged_output.replace("```json\n", "")
+                tagged_output = tagged_output.replace("```", "")
+                #print(tagged_output)
+                tagged_output = json.loads(tagged_output)
+                #tagged_output = validate_and_correct_annotations(tagged_output)
+                for line in tagged_output:
+                    line = "LANG_" + lang_map[lang] + " " + line
+                    output_file.write(line)
+                    output_file.write("\n")
+                
+                output_file.close()
+            except:
+                print("Error in processing prompt")
+                continue
 
+import requests
+
+def create_data_anthropic(prompt_files, output_folder, lang_map, example_samples):
+    
+    api_key = "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"
+    api_url = "https://api.anthropic.com/v1/complete"
+    headers = {
+        "x-api-key": api_key,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json"
+    }
+
+    for prompt_file in prompt_files:
+        print("Processing file:", prompt_file)
+        filename = os.path.basename(prompt_file)  # Get the file name with extension
+        name, ext = os.path.splitext(filename)  # Split the file name and extension
+            
+        for lang in lang_map.keys():
+            
+            output_file_path = output_folder / f"tagged_{lang_map[lang]}.txt"
+            with open(output_file_path, 'a') as output_file:
+                with open(prompt_file, 'r') as file:
+                    prompt = file.read()
+                
+                # Ensure prompt starts with "Human:" and ends with "Assistant:"
+                prompt = prompt.replace("{lang}", lang)
+                prompt = prompt.replace("{examples}", example_samples)
+                
+                if not prompt.startswith("\n\nHuman:"):
+                    prompt = "\n\nHuman:" + prompt
+                
+                if not prompt.endswith("\n\nAssistant:"):
+                    prompt = prompt.strip() + "\n\nAssistant:"
+                
+                #print("Prompt:", prompt)
+                
+                payload = {
+                    "model": "claude-2.1",
+                    "max_tokens_to_sample": 4096,
+                    "prompt": prompt
+                }
+                
+                response = requests.post(api_url, headers=headers, json=payload)
+                
+                if response.status_code == 200:
+                    response_json = response.json()
+                    tagged_output = response_json.get('completion', '').strip()
+                    print(tagged_output)
+                    tagged_output = validate_and_correct_annotations(tagged_output)
+                    
+                    for line in tagged_output.splitlines():
+                        line = "LANG_" + lang_map[lang] + " " + line
+                        output_file.write(line + "\n")
+                else:
+                    print("Error:", response.status_code, response.text)
 
 def create_data_n_times(prompt_files, output_folder, lang_map, examples, n=40):
     
     
     for i in range(n):
-        example_samples = random.sample(examples, 20)
+        example_samples = random.sample(examples, 5)
         example_samples = "\n".join(example_samples)
         create_data(prompt_files, output_folder, lang_map, example_samples)
 
@@ -103,7 +167,7 @@ Collect samples from GPT-4
 
 if __name__ == "__main__":
 
-    output_folder = Path("/external2/datasets/slurp/synthetic/")
+    output_folder = Path("/external2/datasets/slurp/synthetic6/")
     prompt_folder = Path("/root/workspace/PromptingNemo/datasets/prompts/data_extension/")
     prompt_files = list(prompt_folder.glob("*.txt"))
     random.shuffle(prompt_files)
@@ -115,15 +179,15 @@ if __name__ == "__main__":
         examples = f.readlines()
     
 
-    EURO = {"English": "EN", "Spanish": "ES", "French": "FR", "German": "DE", "Italian" : "IT"}
+    EURO = {"English": "EN", "Spanish": "ES", "French": "FR", "German": "DE", "Italian" : "IT", "Dutch": "NL", "Portuguese": "PT"}
     INDIAN = {"Hindi": "HI", "Punjabi": "PA", "Bengali": "BN", "Marathi": "MR", "Gujrati": "GU", "Kannada": "KN", "Telugu": "TE"}
 
     # lang_map = EURO.copy()  # Copy EURO dictionary to avoid modifying the original
     # lang_map.update(INDIAN)  # Update with INDIAN dictionary
-    INDIAN.update(EURO)
+    #INDIAN.update(EURO)
 
     os.system(f"mkdir -p {output_folder}")
-    create_data_n_times(prompt_files, output_folder, INDIAN, examples, n=50)
+    create_data_n_times(prompt_files, output_folder, EURO, examples, n=500)
 
 
 # input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path
