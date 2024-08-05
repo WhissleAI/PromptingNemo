@@ -8,6 +8,10 @@ from pathlib import Path
 import numpy as np
 import glob
 
+import librosa
+import soundfile as sf
+
+
 from TTS.api import TTS  # Correct import statement for TTS
 
 import subprocess
@@ -17,7 +21,7 @@ class ProcessFiles:
     def __init__(self, config):
         self.config = config
         self.clone_voices = {
-            "EN": glob.glob("/external2/datasets/LibriSpeech/test-converted-wav/*.wav"),
+            "EN": glob.glob("/external2/datasets/english/wav/*.wav"),
             "ES": glob.glob("/external2/datasets/spanish/wav/*.wav"),
             "FR": glob.glob("/external2/datasets/french/wav/*.wav"),
             "DE": glob.glob("/external2/datasets/german/wav/*.wav"),
@@ -27,7 +31,9 @@ class ProcessFiles:
             "BN": glob.glob("/external2/datasets/bengali/wav/*.wav"),
             "MR": glob.glob("/external2/datasets/marathi/wav/*.wav"),
             "GU": glob.glob("/external2/datasets/gujarati/wav/*.wav"),
-            "TE": glob.glob("/external2/datasets/telugu/wav/*.wav")
+            "TE": glob.glob("/external2/datasets/telugu/wav/*.wav"),
+            "NL": glob.glob("/external2/datasets/dutch/wav/*.wav"),
+            "PT": glob.glob("/external2/datasets/portugese/wav/*.wav"),
         }
         self.tts_iso_codes = {
             "EN": "eng",
@@ -40,7 +46,9 @@ class ProcessFiles:
             "BN": "ben",
             "MR": "mar",
             "GU": "guj",
-            "TE": "tel"
+            "TE": "tel",
+            "NL": "nld",
+            "PT": "por",
         }
         self.all_noise_files = glob.glob("/external2/datasets/noise/smart_speaker_sounds_wav/*.wav")
         self.tts = None
@@ -52,6 +60,62 @@ class ProcessFiles:
 
     def adjust_volume(self, audio, volume_adjustment=0.0):
         return audio + volume_adjustment
+
+
+    def apply_emotion(self, file_path, emotion):
+        # Define emotion parameters
+        emotion_params = {
+            'happiness': {'pitch_range': (2, 5), 'tempo_range': (1.1, 1.5)},
+            'sadness': {'pitch_range': (-5, -2), 'tempo_range': (0.8, 1.0)},
+            'anger': {'pitch_range': (2, 5), 'tempo_range': (1.0, 1.2)},
+            'calm': {'pitch_range': (-4, -1), 'tempo_range': (0.8, 0.9)},
+            'fear': {'pitch_range': (-2, 5), 'tempo_range': (1.2, 1.5)},
+            'joy': {'pitch_range': (3, 6), 'tempo_range': (1.2, 1.4)},
+            'surprise': {'pitch_range': (1, 7), 'tempo_range': (1.1, 1.3)},
+            'disgust': {'pitch_range': (-3, 2), 'tempo_range': (0.9, 1.1)},
+            'trust': {'pitch_range': (-1, 2), 'tempo_range': (0.9, 1.2)},
+            'anticipation': {'pitch_range': (0, 4), 'tempo_range': (1.0, 1.4)},
+            'boredom': {'pitch_range': (-4, -1), 'tempo_range': (0.8, 0.9)},
+            'confusion': {'pitch_range': (-2, 4), 'tempo_range': (0.9, 1.2)},
+            'guilt': {'pitch_range': (-5, -1), 'tempo_range': (0.8, 1.0)},
+            'pride': {'pitch_range': (2, 5), 'tempo_range': (1.1, 1.3)},
+            'embarrassment': {'pitch_range': (-3, 3), 'tempo_range': (0.9, 1.1)},
+            'contentment': {'pitch_range': (-2, 2), 'tempo_range': (0.9, 1.1)},
+            'frustration': {'pitch_range': (0, 4), 'tempo_range': (1.0, 1.2)},
+            'relief': {'pitch_range': (-2, 3), 'tempo_range': (0.9, 1.1)},
+            'serenity': {'pitch_range': (-4, 1), 'tempo_range': (0.8, 0.9)},
+            'regret': {'pitch_range': (-5, 0), 'tempo_range': (0.8, 1.0)},
+            'neutral': {'pitch_range': (0, 0), 'tempo_range': (1.0, 1.0)}  # No change for neutral
+        }
+        
+        if emotion not in emotion_params:
+            raise ValueError(f"Emotion {emotion} not recognized. Choose from {list(emotion_params.keys())}.")
+        
+        # Load audio file
+        y, sr = librosa.load(file_path, sr=None)
+        
+        # Get emotion parameters
+        params = emotion_params[emotion]
+        
+        if emotion == 'neutral':
+            temp_file = file_path  # No changes for neutral
+        else:
+            # Randomize pitch and tempo within the specified ranges
+            pitch_shift = random.uniform(params['pitch_range'][0], params['pitch_range'][1])
+            tempo_change = random.uniform(params['tempo_range'][0], params['tempo_range'][1])
+            
+            # Apply pitch shift
+            y_pitch = librosa.effects.pitch_shift(y, sr, n_steps=pitch_shift)
+            
+            # Apply tempo change
+            y_tempo = librosa.effects.time_stretch(y_pitch, tempo_change)
+            
+            # Save the modified audio
+            temp_file = 'temp_modified_audio.wav'
+            sf.write(temp_file, y_tempo, sr)
+        
+        return temp_file
+
 
     def add_noise(self, speech, noise_files, snr_db):
         speech = speech.apply_gain(-speech.max_dBFS)
@@ -219,9 +283,10 @@ class ProcessFiles:
             with open(self.config['tagged_text_file'], 'r') as file:
                 tagged_lines = file.readlines()
 
-            for n in range(1,runs):
+            for n in range(0,runs):
                 for i, (line, tagged_line) in enumerate(zip(lines, tagged_lines)):
                     line_len = len(line.strip().split())
+
                     try:
                         if line_len <= self.config['max_len']:
                             line = " ".join(line.split()[1:])
@@ -231,7 +296,7 @@ class ProcessFiles:
                             noise_level = random.uniform(self.config['noise_min'], self.config['noise_max'])
                             self.save_audio_to_file(audio_content, audio_file, noise_level)
                             duration = self.get_audio_duration(audio_file)
-
+                            print(f"Audio file written to {audio_file} with duration {duration} seconds")
                             entry = {
                                 "audio_filepath": audio_file,
                                 "text": tagged_line.strip(),
@@ -245,7 +310,6 @@ class ProcessFiles:
                                 first_entry = False
 
                             manifest_file.write(json.dumps(entry, ensure_ascii=False))
-                    
                     except:
                         continue
 
@@ -278,11 +342,11 @@ if __name__ == "__main__":
     config = {
         'language': language_code,
         'runs': runs,
-        'input_folder': "/external2/datasets/text/synthetic_non-command/processed_v4/",
-        'audio_path': "/external2/datasets/synthetic_audio_non-command_v4/",
-        'clean_text_file': f"/external2/datasets/text/synthetic_non-command/processed_v4/tagged_{language_code}_notag.txt",
-        'tagged_text_file': f"/external2/datasets/text/synthetic_non-command/processed_v4/tagged_{language_code}_clean.txt",
-        'manifest_file': f"/external2/datasets/text/synthetic_non-command/processed_v4/manifest_{language_code}.json",
+        'input_folder': "/external2/datasets/slurp/run_v1/processed/",
+        'audio_path': "/external2/datasets/slurp/audio/extension_synth/",
+        'clean_text_file': f"/external2/datasets/slurp/run_v1/processed/filtered_tagged_{language_code}_notag.txt",
+        'tagged_text_file': f"/external2/datasets/slurp/run_v1/processed/filtered_tagged_{language_code}_clean.txt",
+        'manifest_file': f"/external2/datasets/slurp/run_v1/processed/filtered_manifest_{language_code}.json",
         'max_len': 30,
         'mode': 'train',
         'mixer': True,
