@@ -49,6 +49,7 @@ DEEPGRAM_API_KEY = config['DEEPGRAM_API_KEY']
 dg_client = Deepgram(DEEPGRAM_API_KEY)
 
 ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
+ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_pos, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_pos_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
 #ort_session_euro_ner, model_tokenizer_euro, filterbank_featurizer = create_ort_session(model_name="EURO_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
@@ -157,6 +158,15 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
         elif language_id == "EURO":
             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
+        elif language_id == "EN_IOT":
+            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_iot, model_tokenizer_en_iot, file_path)
+            transcript = transcript.replace("END", " END ")
+        
+            return {
+                'transcript': transcript,
+                'token_timestamps': token_timestamps,
+            }
+
 
         entities_table = extract_entities_web(transcript, token_timestamps, tag="NER")
         transcript = transcript.replace("END", " END ")
@@ -434,7 +444,8 @@ async def llm_response_without_file(content: str = Form(...),
         conversation_history = []
 
     if DEV_MODE:
-        text = "This is a test response."
+        input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
+        text = get_openai_response(input_text, system_instruction, conversation_history)
     else:
         if searchengine == 'duckduckgo':
             urls = search_duckduckgo(content, max_results=2)
