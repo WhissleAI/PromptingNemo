@@ -7,9 +7,9 @@ model:
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/external2/datasets/slurp"
-  train_manifest: "train-slurp-tagged.json"
-  test_manifest: "devel-slurp-tagged.json"
+  data_dir: "/external2/datasets/slurp/run_v1/processed"
+  train_manifest: "train.json"
+  test_manifest: "dev.json"
   batch_size: 16
   max_steps: 600000
 
@@ -32,7 +32,7 @@ adapters:
 
 experiment:
   exp_dir: "/external2/karan_exp/experiments/"
-  exp_name: "slurp-3adapter-newtokenizer"
+  exp_name: "slurp-finetune-newtokenizer-euro-extended"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true

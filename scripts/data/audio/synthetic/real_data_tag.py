@@ -1,5 +1,6 @@
 import re
 import sys
+import json
 
 def load_tag_file(tag_file):
     tag_dict = {}
@@ -34,6 +35,9 @@ def replace_word_with_tags(infile, tags_file, outfile):
     with open(outfile, 'w') as taggedfile:
         for sent in valid_sents:
             
+            sample = json.loads(sent)
+            sent = sample['text']
+            
             sent = sent.replace("END.", "END .")
             sent = "TASK TAGGER " + sent + " EOS"
             #print(sent)
@@ -49,10 +53,12 @@ def replace_word_with_tags(infile, tags_file, outfile):
                     tagged_words.append(word)
             
             tagged_sent = " ".join(tagged_words)
-        
-            #tagged_sent = " ".join(replace_tags(word, tag_dict) for word in words)
-            taggedfile.write(tagged_sent+"\n")
 
+            sample['text'] = tagged_sent
+            taggedfile.write(json.dumps(sample)+"\n")
+            #tagged_sent = " ".join(replace_tags(word, tag_dict) for word in words)
+#            taggedfile.write(tagged_sent+"\n")
+    
 if __name__ == "__main__":
     infile = sys.argv[1]
     tags_file = sys.argv[2]
