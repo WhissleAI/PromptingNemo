@@ -18,7 +18,7 @@ import asyncio
 import shutil
 
 from utils.asr_utils import *
-from utils.rag_utils import *
+#from utils.rag_utils import *
 from utils.llm_utils import *
 from utils.tts_utils import *
 from utils.openai_utils import *
@@ -165,6 +165,7 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
             return {
                 'transcript': transcript,
                 'token_timestamps': token_timestamps,
+                'duration_seconds': audio_segment.duration_seconds
             }
 
 
@@ -173,11 +174,12 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
         cleaned_string, emotion_type = clean_string_and_extract_emotion(transcript)
 
     return {
-        'transcript': cleaned_string,
+        'transcript': transcript,
         'tagged_transcript': transcript,
         'emotion_type': emotion_type,
         'token_timestamps': token_timestamps,
-        'entities_table': entities_table
+        'entities_table': entities_table,
+        'duration_seconds': audio_segment.duration_seconds
     }
 
 # @app.post("/transcribe-web")
@@ -445,7 +447,7 @@ async def llm_response_without_file(content: str = Form(...),
 
     if DEV_MODE:
         input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
-        text = get_openai_response(input_text, system_instruction, conversation_history)
+        text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, conversation_history)
     else:
         if searchengine == 'duckduckgo':
             urls = search_duckduckgo(content, max_results=2)
@@ -455,7 +457,7 @@ async def llm_response_without_file(content: str = Form(...),
         else:
             if model_name == 'openai':
                 input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
-                text = get_openai_response(input_text, system_instruction, conversation_history)
+                text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, conversation_history)
             elif model_name == 'whissle':
                 response = llm_model_tensorrt.generate_response([content], instructions=system_instruction, history=conversation_history, role=role)
                 text = response[0]
@@ -584,7 +586,7 @@ async def llm_response_with_search(content: str = Form(...),
         else:
             if model_name == 'openai':
                 input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
-                text = get_openai_response(input_text, system_instruction, conversation_history)
+                text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, conversation_history)
             elif model_name == 'whissle':
                 response = llm_model_tensorrt.generate_response([content], instructions=system_instruction, history=conversation_history, role=role)
                 text = response[0]
