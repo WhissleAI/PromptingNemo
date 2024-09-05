@@ -1,13 +1,10 @@
-from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Depends, Request, Header, Response
-from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
+from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Header, Response
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 
 from werkzeug.utils import secure_filename
 
 import os
 import re
-import traceback
 import json
 import yaml
 from pydantic import BaseModel
@@ -16,6 +13,8 @@ from pydub import AudioSegment
 from deepgram import Deepgram
 import asyncio
 import shutil
+from concurrent.futures import ThreadPoolExecutor
+
 
 from utils.asr_utils import *
 #from utils.rag_utils import *
@@ -26,6 +25,8 @@ from utils.search_utils import *
 from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
 
 app = FastAPI()
+
+executor = ThreadPoolExecutor(max_workers=os.cpu_count())
 
 # Set up CORS
 app.add_middleware(
@@ -94,37 +95,6 @@ tts_piper = PiperSynthesizer(MODEL_SHELF_PATH+"/piper/voices/en_US-amy-medium.on
                                     MODEL_SHELF_PATH+"/piper/configs/en_US-amy-medium.onnx.json", 
                                     length_scale=3)
 
-
-
-
-
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-@app.get("/", response_class=HTMLResponse)
-async def read_root():
-    with open("templates/index.html") as f:
-        return HTMLResponse(content=f.read())
-
-# @app.get("/get_audio_content/{filename}")
-# async def get_audio_content(filename: str):
-#     audio_path = os.path.join('/external/svanga/demo/advanced-speech-LLM-demo/asr-nl_onnx', 'demo_audio', filename)
-#     return FileResponse(audio_path, media_type='application/octet-stream', filename=filename)
-
-# @app.get("/demo_audio/{filename:path}")
-# async def serve_audio(filename: str):
-#     try:
-#         directory = '/external/svanga/demo/advanced-speech-LLM-demo/asr-nl_onnx/demo_audio'
-#         return FileResponse(os.path.join(directory, filename))
-#     except Exception as e:
-#         traceback.print_exc()  # Print the traceback for debugging
-#         return JSONResponse(content={"error": str(e)}, status_code=500)  # Return the error message and status code
-
-@app.get("/get_files")
-async def get_files(): 
-    folder_path = '/external/svanga/demo/advanced-speech-LLM-demo/asr-nl_onnx/demo_audio'
-    files = os.listdir(folder_path)
-    return {"files": files}
-
 async def transcribe_deepgram(file_path):
     async with dg_client.transcription.prerecorded({'buffer': open(file_path, 'rb'), 'mimetype': 'audio/wav'}, {'punctuate': True}) as response:
         return response
@@ -158,14 +128,17 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
     
     else:
         if model_name == "EN":
-            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
+            loop = asyncio.get_event_loop()
+            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
         elif model_name == "EURO":
-            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
+            loop = asyncio.get_event_loop()
+            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
         elif model_name == "EN-IOT":
-            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_iot, model_tokenizer_en_iot, file_path)
+            loop = asyncio.get_event_loop()
+            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_en_iot, model_tokenizer_en_iot, file_path)
             transcript = transcript.replace("END", " END ")
             emotion = transcript.strip().split()[-1]
-        
+
             return {
                 'transcript': transcript,
                 'token_timestamps': token_timestamps,
@@ -173,7 +146,8 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
                 'emotion_type': emotion
             }
         elif model_name == "EURO-IOT":
-            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_iot, model_tokenizer_euro_iot, file_path)
+            loop = asyncio.get_event_loop()
+            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_euro_iot, model_tokenizer_euro_iot, file_path)
             transcript = transcript.replace("END", " END ")
             emotion = transcript.strip().split()[-1]
         
@@ -197,100 +171,6 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
         'entities_table': entities_table,
         'duration_seconds': audio_segment.duration_seconds
     }
-
-# @app.post("/transcribe-web")
-# async def transcribe_audio_onnx_web(audio: UploadFile = File(...), model_name: str = Form(...), language_id: str = Form(...), Authorization: str = Header(...)):
-#     sessionid = Authorization.replace('Bearer ', '')
-#     audio_file_name = secure_filename(audio.filename)
-    
-#     save_directory = '/root/webaudio'
-#     os.makedirs(save_directory, exist_ok=True)
-#     temp_file_path = os.path.join(save_directory, audio_file_name)
-    
-#     with open(temp_file_path, 'wb') as temp_file:
-#         temp_file.write(await audio.read())
-    
-#     file_path = os.path.join(save_directory, os.path.splitext(audio_file_name)[0] + '.wav')
-#     audio_segment = AudioSegment.from_file(temp_file_path)
-#     audio_segment.export(file_path, format='wav')
-    
-#     if language_id == "EN":
-#         if model_name == "ner_emotion_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
-#         elif model_name == "pos_emotion_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_pos, model_tokenizer_en, file_path)
-#         elif model_name == "ner_noise_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_noise, model_tokenizer_noise, file_path)
-#     elif language_id == "EURO":
-#         transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
-   
-#     if model_name == "ner_emotion_commonvoice":
-#         entities_table = extract_entities_web(transcript, token_timestamps, tag="NER")
-#     else:
-#         entities_table = extract_entities_web(transcript, token_timestamps, tag="POS")
-    
-#     transcript = transcript.replace("END", " END ")
-#     cleaned_string, emotion_type = clean_string_and_extract_emotion(transcript)
-    
-#     return {
-#         'transcript': cleaned_string,
-#         'tagged_transcript': transcript,
-#         'emotion_type': emotion_type,
-#         'token_timestamps': token_timestamps,
-#         'entities_table': entities_table
-#     }
-
-# @app.post("/transcribe")
-# async def transcribe_audio_onnx(audio: UploadFile = File(...), model_name: str = Form(...), language_id: str = Form(...)):
-#     audio_file_name = secure_filename(audio.filename)
-#     file_path = os.path.join('/external/svanga/demo/advanced-speech-LLM-demo/asr-nl_onnx/demo_audio', audio_file_name)
-    
-#     save_directory = os.path.dirname(file_path)
-#     os.makedirs(save_directory, exist_ok=True)
-    
-#     with open(file_path, 'wb') as temp_file:
-#         temp_file.write(await audio.read())
-    
-#     if language_id == "EN":
-#         if model_name == "ner_emotion_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
-#         elif model_name == "pos_emotion_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_pos, model_tokenizer_en, file_path)
-#         elif model_name == "ner_noise_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_noise, model_tokenizer_noise, file_path)
-#     elif language_id == "EURO":
-#         transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
-    
-#     transcript = transcript.replace("END", " END ")
-#     transcript = re.sub(' +', ' ', transcript)
-    
-#     return {'transcript': transcript, 'token_timestamps': token_timestamps}
-
-# @app.post("/transcribe_twilio")
-# async def transcribe_audio_onnx_twilio(audio: UploadFile = File(...), model_name: str = Form(...), language_id: str = Form(...)):
-#     audio_file_name = secure_filename(audio.filename)
-#     file_path = os.path.join('/workspace/advanced-speech-LLM-demo/twilio/user_audio', audio_file_name)
-    
-#     save_directory = os.path.dirname(file_path)
-#     os.makedirs(save_directory, exist_ok=True)
-    
-#     with open(file_path, 'wb') as temp_file:
-#         temp_file.write(await audio.read())
-    
-#     if language_id == "EN":
-#         if model_name == "ner_emotion_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
-#         elif model_name == "pos_emotion_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_pos, model_tokenizer_en, file_path)
-#         elif model_name == "ner_noise_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_noise, model_tokenizer_noise, file_path)
-#     elif language_id == "EURO":
-#         transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
-    
-#     transcript = transcript.replace("END", " END ")
-#     transcript = re.sub(' +', ' ', transcript)
-    
-#     return {'transcript': transcript, 'token_timestamps': token_timestamps}
 
 @app.post("/transcribe-s2s")
 async def transcribe_audio_onnx_s2s(audio: UploadFile = File(...), model_name: str = Form(...), language_id: str = Form(...)):
@@ -331,90 +211,6 @@ class LLMRequest(BaseModel):
     model_name: str
     emotion: str
     instruction: str
-
-# @app.post("/llm_response", response_model=LLMResponse)
-# async def llm_response(request: LLMRequest):
-    
-#     #conversation_history = []
-#     #global conversation_history
-
-
-#     conversation_history = request.get('history', [])
-#     input_text = request.get('content', '')
-#     model_name = request.get('model_name', '')
-#     emotion = request.get('emotion', '')
-#     instruction = request.get('instruction', '')
-    
-#     print("conversation_history", conversation_history)
-#     print("Input Text: ", input_text)    
-#     print("model name", model_name)
-#     print("Emotion", emotion)
-#     print("Instruction", instruction)
-    
-#     conversation_history.append({"role": "user", "content": input_text, "emotion": emotion})
-#     if model_name =='openai':
-#         input_text = clean_tags(input_text) + ' {emotionalstate: '+emotion+'}'
-#         #TODO: needs to recieve and use conversational history
-#         text = get_openai_response(input_text, instruction)
-#     elif model_name == 'tensorrt':
-#         #TODO: convert HF gamma model to tensort and test
-#         #TODO: passing conversation history and emotion tag
-#         text = llm_model_tensorrt.generate_output(input_text)
-#     elif model_name == 'hf-gamma-2b-it':
-#         #TODO: add emotion to input_text
-#         #TODO: needs to recieve and use conversational history
-#         #TODO: can we add instruction
-#         text = llm_model_hfapi._generate(input_text, max_length=50)
-
-#     else:
-#         raise HTTPException(status_code=400, detail="Model not found")
-
-#     print("LLM text", text)
-#     conversation_history.append({"role": "system", "content": text, "emotion": emotion})
-    
-#     return {"response": text, "input_text": input_text}
-
-# class LLMRequestWithRag(BaseModel):
-#     content: str
-#     model_name: str
-#     emotion: str
-#     url: Optional[str] = ""
-
-# @app.post("/llm_response_with_rag", response_model=LLMResponse)
-# async def llm_response_with_rag(request: LLMRequestWithRag):
-#     global conversation_history
-
-#     input_text = request.content
-#     model_name = request.model_name
-#     emotion = request.emotion
-#     url = request.url
-    
-#     print("URL", url)
-#     print("Input Text: ", input_text)    
-#     print("model name", model_name)
-#     print("Emotion", emotion)
-    
-#     if url != '':
-#         rag_response = get_rag_response([url], input_text)
-#         return {"response": rag_response, "input_text": input_text}
-#     else:
-#         conversation_history.append({"role": "user", "content": input_text, "emotion": emotion})
-#         if model_name =='openai':
-#             input_text = clean_tags(input_text) + ' {emotionalstate: '+emotion+'}'
-#             text = get_openai_response(input_text)
-#         elif model_name == 'tensorrt':
-#             text = llm_model_tensorrt.generate_output(input_text)
-#         elif model_name == 'hf-gamma-2b-it':
-#             text = llm_model_hfapi._generate(input_text, max_length=50)
-
-#         else:
-#             raise HTTPException(status_code=400, detail="Model not found")
-
-#         print("LLM text", text)
-#         conversation_history.append({"role": "system", "content": text, "emotion": emotion})
-        
-#         return {"response": text, "input_text": input_text}
-
 
 class LLMRequestWithSearch(BaseModel):
     content: str
@@ -744,30 +540,6 @@ async def process_transcript(request: ProcessTranscriptRequest):
     
     print("Processed Output", processed_output)
     return {"processed_output": processed_output}
-
-# class ProcessLLMS2SRequest(BaseModel):
-#     text: str
-#     model_name: str
-#     timestamps: str
-
-# @app.post("/process_llm-s2s")
-# async def process_llm_s2s(request: ProcessLLMS2SRequest):
-#     input_text = request.text
-#     selected_model = request.model_name
-#     token_timestamps = json.loads(request.timestamps)
-    
-#     if selected_model == "ner_emotion_commonvoice":
-#         processed_output = extract_entities_s2s(input_text, token_timestamps, tag="NER")
-#     else:
-#         processed_output = extract_entities_s2s(input_text, token_timestamps, tag="POS")
-    
-#     return {"processed_output": processed_output}
-
-# @app.post("/clear_history")
-# async def clear_history():
-#     global conversation_history
-#     conversation_history = []
-#     return {"success": True}
 
 def clean_tags(input_text):
     input_text = input_text.split()
