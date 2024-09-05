@@ -476,7 +476,10 @@ def clean_string_and_extract_emotion(input_string):
     emotion_type_match = re.search(r'\bEMOTION_([A-Z]+)\b', input_string)
     emotion_type = emotion_type_match.group(1) if emotion_type_match else None
 
-    return clean_string.strip(), emotion_type.lower()
+    if emotion_type:
+        emotion_type = emotion_type.lower()
+
+    return clean_string.strip(), emotion_type
 
 
 def extract_entities_s2s(input_string, token_timestamps, tag="NER"):

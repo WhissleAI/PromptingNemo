@@ -51,7 +51,8 @@ dg_client = Deepgram(DEEPGRAM_API_KEY)
 ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
 ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_pos, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_pos_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
-#ort_session_euro_ner, model_tokenizer_euro, filterbank_featurizer = create_ort_session(model_name="EURO_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
+ort_session_euro_ner, model_tokenizer_euro, filterbank_featurizer = create_ort_session(model_name="EURO_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
+ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_ort_session(model_name="EURO_IOT_slurp", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
 
 
@@ -129,7 +130,7 @@ async def transcribe_deepgram(file_path):
         return response
 
 @app.post("/transcribe-web2")
-async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: str = Form('whissle'), language_id: str = Form(...), Authorization: str = Header(...)):
+async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: str = Form('whissle'), Authorization: str = Header(...)):
     sessionid = Authorization.replace('Bearer ', '')
     audio_file_name = secure_filename(audio.filename)
     
@@ -146,6 +147,7 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
     
     transcript = ""
     token_timestamps = []
+    
 
     if model_name == "deepgram":
         response = await transcribe_deepgram(file_path)
@@ -153,26 +155,40 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
         cleaned_string = transcript
         emotion_type = "neutral"
         entities_table = ""
+    
     else:
-        if language_id == "EN":
+        if model_name == "EN":
             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
-        elif language_id == "EURO":
+        elif model_name == "EURO":
             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
-        elif language_id == "EN_IOT":
+        elif model_name == "EN-IOT":
             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_iot, model_tokenizer_en_iot, file_path)
             transcript = transcript.replace("END", " END ")
+            emotion = transcript.strip().split()[-1]
         
             return {
                 'transcript': transcript,
                 'token_timestamps': token_timestamps,
-                'duration_seconds': audio_segment.duration_seconds
+                'duration_seconds': audio_segment.duration_seconds,
+                'emotion_type': emotion
             }
+        elif model_name == "EURO-IOT":
+            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_iot, model_tokenizer_euro_iot, file_path)
+            transcript = transcript.replace("END", " END ")
+            emotion = transcript.strip().split()[-1]
+        
+            return {
+                'transcript': transcript,
+                'token_timestamps': token_timestamps,
+                'duration_seconds': audio_segment.duration_seconds,
+                'emotion_type': emotion
+            }
+
 
 
         entities_table = extract_entities_web(transcript, token_timestamps, tag="NER")
         transcript = transcript.replace("END", " END ")
         cleaned_string, emotion_type = clean_string_and_extract_emotion(transcript)
-
     return {
         'transcript': transcript,
         'tagged_transcript': transcript,
@@ -307,6 +323,8 @@ async def transcribe_audio_onnx_s2s(audio: UploadFile = File(...), model_name: s
 class LLMResponse(BaseModel):
     response: str
     input_text: str
+    input_tokens: int
+    output_tokens: int
 
 class LLMRequest(BaseModel):
     content: str
@@ -425,12 +443,14 @@ async def llm_response_without_file(content: str = Form(...),
     print("URL:", url)
     print("Input Text:", content)
     print("Model Name:", model_name)
-    print("Emotion:", emotion)
+    
     print("Search Engine:", searchengine)
     print("Instruction:", system_instruction)
     print("History:", conversation_history)
     
     #role = "therapist"
+    emotion = emotion.replace("EMOTION_", "")
+    print("Emotion:", emotion)
     detailed_instruction = f"Considering your role as a {role} and understanding that the speaker is feeling {emotion}, provide an empathetic and context-aware response."
     
     print(detailed_instruction)
@@ -447,19 +467,21 @@ async def llm_response_without_file(content: str = Form(...),
 
     if DEV_MODE:
         input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
-        text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, conversation_history)
+        text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+        return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
     else:
         if searchengine == 'duckduckgo':
             urls = search_duckduckgo(content, max_results=2)
             print("Fetching URLs:", urls)
-            response = llm_model_tensorrt.generate_response_with_rag([content], instructions=system_instruction, history=conversation_history, urls=urls)
+            response = llm_model_tensorrt.generate_response_with_rag([content], instructions=detailed_instruction, history=conversation_history, urls=urls)
             text = response[0]
         else:
             if model_name == 'openai':
                 input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
                 text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, conversation_history)
+                return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
             elif model_name == 'whissle':
-                response = llm_model_tensorrt.generate_response([content], instructions=system_instruction, history=conversation_history, role=role)
+                response = llm_model_tensorrt.generate_response([content], instructions=detailed_instruction, history=conversation_history, role=role)
                 text = response[0]
                 print("LLM text:", text)
             else:
@@ -690,25 +712,16 @@ async def generate_audio_xtts(model_name: str = Form("piper"), text_to_convert: 
         
         with open(output_filename, "rb") as audio_file:
             audio_content = audio_file.read()
-
+        duration_seconds = AudioSegment(audio_content).duration_seconds
         os.remove(output_filename)  # Clean up the saved file after reading its content
-
-        return Response(content=audio_content, media_type="audio/mpeg")
+        return Response(content=audio_content, media_type="audio/mpeg", headers={"X-Duration": str(duration_seconds)})
     elif model_name == "piper":
         
         text_to_convert = clean_text_for_piper(text_to_convert)
-        audio_data = tts_piper.synthesize(text_to_convert)
+        audio_content = tts_piper.synthesize(text_to_convert)
+        duration_seconds = AudioSegment(audio_content).duration_seconds
+        return Response(content=audio_content, media_type="audio/mpeg", headers={"X-Duration": str(duration_seconds)})
 
-        # Save audio data to a file for testing
-        with open(output_filename, "wb") as f:
-            f.write(audio_data)
-
-        with open(output_filename, "rb") as audio_file:
-            audio_content = audio_file.read()
-
-        os.remove(output_filename)  # Clean up the saved file after reading its content
-
-        return Response(content=audio_content, media_type="audio/mpeg")
 
     #except Exception as e:
     #    raise HTTPException(status_code=500, detail=str(e))
