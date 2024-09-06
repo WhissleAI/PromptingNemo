@@ -1,3 +1,4 @@
+from io import BytesIO
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Header, Response
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -96,31 +97,27 @@ tts_piper = PiperSynthesizer(MODEL_SHELF_PATH+"/piper/voices/en_US-amy-medium.on
                                     length_scale=3)
 
 async def transcribe_deepgram(file_path):
-    async with dg_client.transcription.prerecorded({'buffer': open(file_path, 'rb'), 'mimetype': 'audio/wav'}, {'punctuate': True}) as response:
+    async with dg_client.transcription.prerecorded({'buffer': file_path}, {'punctuate': True}) as response:
         return response
 
 @app.post("/transcribe-web2")
 async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: str = Form('whissle'), Authorization: str = Header(...)):
     sessionid = Authorization.replace('Bearer ', '')
-    audio_file_name = secure_filename(audio.filename)
-    
-    save_directory = '/root/webaudio'
-    os.makedirs(save_directory, exist_ok=True)
-    temp_file_path = os.path.join(save_directory, audio_file_name)
-    
-    with open(temp_file_path, 'wb') as temp_file:
-        temp_file.write(await audio.read())
-    
-    file_path = os.path.join(save_directory, os.path.splitext(audio_file_name)[0] + '.wav')
-    audio_segment = AudioSegment.from_file(temp_file_path)
-    audio_segment.export(file_path, format='wav')
+    message = await audio.read()
+    cmd = ['ffmpeg', '-i', "-", '-ac', '1', '-ar','16000', '-f', 'wav', '-']
+    cmd=" ".join(cmd)
+    proc = await asyncio.create_subprocess_shell(
+        cmd,
+        stdin=asyncio.subprocess.PIPE,
+        stdout=asyncio.subprocess.PIPE,
+    )
+    audio_file,error = await proc.communicate(message)
     
     transcript = ""
     token_timestamps = []
-    
 
     if model_name == "deepgram":
-        response = await transcribe_deepgram(file_path)
+        response = await transcribe_deepgram(BytesIO(audio_file))
         transcript = response['results']['channels'][0]['alternatives'][0]['transcript']
         cleaned_string = transcript
         emotion_type = "neutral"
@@ -129,32 +126,32 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
     else:
         if model_name == "EN":
             loop = asyncio.get_event_loop()
-            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
+            transcript, token_timestamps, duration = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, BytesIO(audio_file))
         elif model_name == "EURO":
             loop = asyncio.get_event_loop()
-            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
+            transcript, token_timestamps, duration = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, BytesIO(audio_file))
         elif model_name == "EN-IOT":
             loop = asyncio.get_event_loop()
-            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_en_iot, model_tokenizer_en_iot, file_path)
+            transcript, token_timestamps, duration = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_en_iot, model_tokenizer_en_iot, BytesIO(audio_file))
             transcript = transcript.replace("END", " END ")
             emotion = transcript.strip().split()[-1]
 
             return {
                 'transcript': transcript,
                 'token_timestamps': token_timestamps,
-                'duration_seconds': audio_segment.duration_seconds,
+                'duration_seconds': duration,
                 'emotion_type': emotion
             }
         elif model_name == "EURO-IOT":
             loop = asyncio.get_event_loop()
-            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_euro_iot, model_tokenizer_euro_iot, file_path)
+            transcript, token_timestamps = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_euro_iot, model_tokenizer_euro_iot, audio_file)
             transcript = transcript.replace("END", " END ")
             emotion = transcript.strip().split()[-1]
         
             return {
                 'transcript': transcript,
                 'token_timestamps': token_timestamps,
-                'duration_seconds': audio_segment.duration_seconds,
+                'duration_seconds': duration,
                 'emotion_type': emotion
             }
 
@@ -169,36 +166,36 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
         'emotion_type': emotion_type,
         'token_timestamps': token_timestamps,
         'entities_table': entities_table,
-        'duration_seconds': audio_segment.duration_seconds
+        'duration_seconds': duration
     }
 
-@app.post("/transcribe-s2s")
-async def transcribe_audio_onnx_s2s(audio: UploadFile = File(...), model_name: str = Form(...), language_id: str = Form(...)):
-    print("-----------------------New-Turn----------------------")
-    audio_file_name = secure_filename(audio.filename)
-    file_path = os.path.join('/workspace/advanced-speech-LLM-demo/voice-assistant/static/audio/input', audio_file_name)
+# @app.post("/transcribe-s2s")
+# async def transcribe_audio_onnx_s2s(audio: UploadFile = File(...), model_name: str = Form(...), language_id: str = Form(...)):
+#     print("-----------------------New-Turn----------------------")
+#     audio_file_name = secure_filename(audio.filename)
+#     file_path = os.path.join('/workspace/advanced-speech-LLM-demo/voice-assistant/static/audio/input', audio_file_name)
 
-    save_directory = os.path.dirname(file_path)
-    os.makedirs(save_directory, exist_ok=True)
+#     save_directory = os.path.dirname(file_path)
+#     os.makedirs(save_directory, exist_ok=True)
     
-    with open(file_path, 'wb') as temp_file:
-        temp_file.write(await audio.read())
+#     with open(file_path, 'wb') as temp_file:
+#         temp_file.write(await audio.read())
 
-    if language_id == "EN":
-        if model_name == "ner_emotion_commonvoice":
-            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
-        elif model_name == "pos_emotion_commonvoice":
-            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_pos, model_tokenizer_en, file_path)
-        elif model_name == "ner_noise_commonvoice":
-            transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_noise, model_tokenizer_noise, file_path)
-    elif language_id == "EURO":
-        transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
+#     if language_id == "EN":
+#         if model_name == "ner_emotion_commonvoice":
+#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
+#         elif model_name == "pos_emotion_commonvoice":
+#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_pos, model_tokenizer_en, file_path)
+#         elif model_name == "ner_noise_commonvoice":
+#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_noise, model_tokenizer_noise, file_path)
+#     elif language_id == "EURO":
+#         transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
     
-    transcript = transcript.replace("END", " END ")
-    transcript = re.sub(' +', ' ', transcript)
-    print("Generated tokens: ", transcript)
+#     transcript = transcript.replace("END", " END ")
+#     transcript = re.sub(' +', ' ', transcript)
+#     print("Generated tokens: ", transcript)
     
-    return {'transcript': transcript, 'token_timestamps': token_timestamps}
+#     return {'transcript': transcript, 'token_timestamps': token_timestamps}
 
 class LLMResponse(BaseModel):
     response: str
