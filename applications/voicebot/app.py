@@ -20,6 +20,7 @@ from concurrent.futures import ThreadPoolExecutor
 from utils.asr_utils import *
 #from utils.rag_utils import *
 from utils.llm_utils import *
+from utils.blip_utils import *
 from utils.tts_utils import *
 from utils.openai_utils import *
 from utils.search_utils import *
@@ -58,7 +59,7 @@ ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_o
 #ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
 
 
-
+vision_model_sess, text_model_sess, processor = create_blip_ort_session()
 ##Visual LLM model
 
 DEV_MODE = True
