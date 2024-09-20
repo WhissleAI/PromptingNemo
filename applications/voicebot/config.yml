@@ -1,6 +1,6 @@
 OPENAI:
   API_KEY: "sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu"
-MODEL_SHELF_PATH: "/disk1/artifacts/whissle/model_shelf"
+MODEL_SHELF_PATH: "/home/ubuntu/artifacts/model_shelf"
 DEEPGRAM_API_KEY: "72d2b4e02072dfb42ad630571a889ecda06e3239"
 HF_TOKEN: "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"
 TENSORRT_LLM:

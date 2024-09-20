@@ -5,18 +5,17 @@ import numpy as np
 import torch
 from transformers import BlipProcessor
 
-def create_blip_ort_session():
-    vision_model_sess = onnxruntime.InferenceSession('vision_model.onnx')
-    text_model_sess = onnxruntime.InferenceSession('text_decoder_model.onnx')
+def create_blip_ort_session(model_name, model_shelf):
+    model_path = model_shelf + '/' + model_name
+    vision_model_sess = onnxruntime.InferenceSession(model_path + '/vision_model.onnx')
+    text_model_sess = onnxruntime.InferenceSession(model_path + '/text_decoder_model.onnx')
     processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 
     return vision_model_sess, text_model_sess, processor
 
-def blip_infer(processor, vision_model_sess, text_model_sess):
+def blip_infer(processor, vision_model_sess, text_model_sess, image):
 
-    img_url = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Feuroweeklynews.com%2Fwp-content%2Fuploads%2F2022%2F08%2Fshutterstock_1840032202-scaled.jpg&f=1&nofb=1&ipt=961ff46ad38864d58e65bdad518f03e8dab27bf8b6184f0ab757f7474cf2349e&ipo=images'
-
-    raw_image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
+    raw_image = Image.open(image).convert('RGB')
 
     new_size = (384, 384)
     raw_image = raw_image.resize(new_size)
@@ -69,4 +68,4 @@ def blip_infer(processor, vision_model_sess, text_model_sess):
         input_ids = np.append(input_ids, [[pred_class[0][-1]]], axis=-1)
         input_id_attention =  np.ones(input_ids.shape).astype(np.int64)
 
-    print(processor.decode(input_ids[0], skip_special_tokens=True))
+    return processor.decode(input_ids[0], skip_special_tokens=True)
