@@ -18,15 +18,16 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 from utils.asr_utils import *
-#from utils.rag_utils import *
+from utils.rag_utils import *
 from utils.llm_utils import *
 from utils.blip_utils import *
 from utils.tts_utils import *
 from utils.openai_utils import *
 from utils.search_utils import *
 from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
+from langchain_huggingface import HuggingFaceEmbeddings
 
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None)
 
 executor = ThreadPoolExecutor(max_workers=os.cpu_count())
 
@@ -59,7 +60,12 @@ ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_o
 #ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
 
 
-vision_model_sess, text_model_sess, processor = create_blip_ort_session()
+vision_model_sess, text_model_sess, blip_processor = create_blip_ort_session(model_name="blip",model_shelf=MODEL_SHELF_PATH)
+model_name = "sentence-transformers/all-mpnet-base-v2"
+model_kwargs = {"device": "cpu"}
+
+embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs=model_kwargs)
+
 ##Visual LLM model
 
 DEV_MODE = True
@@ -100,6 +106,10 @@ tts_piper = PiperSynthesizer(MODEL_SHELF_PATH+"/piper/voices/en_US-amy-medium.on
 async def transcribe_deepgram(file_path):
     async with dg_client.transcription.prerecorded({'buffer': file_path}, {'punctuate': True}) as response:
         return response
+
+@app.get('/')
+async def yoyo():
+    return "site is working!!"
 
 @app.post("/transcribe-web2")
 async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: str = Form('whissle'), Authorization: str = Header(...)):
@@ -170,34 +180,6 @@ async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: 
         'duration_seconds': duration
     }
 
-# @app.post("/transcribe-s2s")
-# async def transcribe_audio_onnx_s2s(audio: UploadFile = File(...), model_name: str = Form(...), language_id: str = Form(...)):
-#     print("-----------------------New-Turn----------------------")
-#     audio_file_name = secure_filename(audio.filename)
-#     file_path = os.path.join('/workspace/advanced-speech-LLM-demo/voice-assistant/static/audio/input', audio_file_name)
-
-#     save_directory = os.path.dirname(file_path)
-#     os.makedirs(save_directory, exist_ok=True)
-    
-#     with open(file_path, 'wb') as temp_file:
-#         temp_file.write(await audio.read())
-
-#     if language_id == "EN":
-#         if model_name == "ner_emotion_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, file_path)
-#         elif model_name == "pos_emotion_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_pos, model_tokenizer_en, file_path)
-#         elif model_name == "ner_noise_commonvoice":
-#             transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_en_noise, model_tokenizer_noise, file_path)
-#     elif language_id == "EURO":
-#         transcript, token_timestamps = infer_audio_file(filterbank_featurizer, ort_session_euro_ner, model_tokenizer_euro, file_path)
-    
-#     transcript = transcript.replace("END", " END ")
-#     transcript = re.sub(' +', ' ', transcript)
-#     print("Generated tokens: ", transcript)
-    
-#     return {'transcript': transcript, 'token_timestamps': token_timestamps}
-
 class LLMResponse(BaseModel):
     response: str
     input_text: str
@@ -264,25 +246,9 @@ async def llm_response_without_file(content: str = Form(...),
         text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
         return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
     else:
-        if searchengine == 'duckduckgo':
-            urls = search_duckduckgo(content, max_results=2)
-            print("Fetching URLs:", urls)
-            response = llm_model_tensorrt.generate_response_with_rag([content], instructions=detailed_instruction, history=conversation_history, urls=urls)
-            text = response[0]
-        else:
-            if model_name == 'openai':
-                input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
-                text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, conversation_history)
-                return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
-            elif model_name == 'whissle':
-                response = llm_model_tensorrt.generate_response([content], instructions=detailed_instruction, history=conversation_history, role=role)
-                text = response[0]
-                print("LLM text:", text)
-            else:
-                raise HTTPException(status_code=400, detail="Model not found")
-
-            print("LLM text:", text)
-
+        response = llm_model_tensorrt.generate_response([content], instructions=detailed_instruction, history=conversation_history, role=role)
+        text = response[0]
+        print("LLM text:", text)
     return {"response": text, "input_text": content}
 
 @app.post("/llm_response_with_file", response_model=LLMResponse)
@@ -305,20 +271,11 @@ async def llm_response_with_file(content: str = Form(...),
     print("History:", conversation_history)
     print("Input File:", input_file)
     
-    detailed_instruction = f"Considering your role as a {role} and understanding that the speaker is feeling {emotion}, provide an empathetic and context-aware response."
+    
+    detailed_instruction = f"Considering your role as a {role} and understanding that the speaker is feeling {emotion}, provide an empathetic and context-aware response"
     
     print(detailed_instruction)
     print("Role:", role)
-
-    # Handle file upload
-    save_directory = '/root/webaudio'
-    os.makedirs(save_directory, exist_ok=True)
-    filename = secure_filename(input_file.filename)
-    file_path = os.path.join(save_directory, filename)
-    with open(file_path, "wb") as buffer:
-        shutil.copyfileobj(input_file.file, buffer)
-    print(f"File saved at {file_path}")
-
     # Parse conversation history
     if conversation_history:
         try:
@@ -327,16 +284,53 @@ async def llm_response_with_file(content: str = Form(...),
             raise HTTPException(status_code=400, detail="Invalid conversation history format")
     else:
         conversation_history = []
-    
+    filename = secure_filename(input_file.filename)
+    file_type = filename.split('.')[-1]
+
     if DEV_MODE:
-        text = f"This is a test response."
-        
+        if file_type == 'pdf':
+            save_directory = '/root/webaudio'
+            os.makedirs(save_directory, exist_ok=True)
+            file_path = os.path.join(save_directory, filename)
+            with open(file_path, "wb") as buffer:
+                shutil.copyfileobj(input_file.file, buffer)
+            print(f"File saved at {file_path}")
+            input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
+            text = get_rag_response(embeddings, input_text, pdf=file_path, instruction=detailed_instruction)
+            return {"response": text, "input_text": content, "input_tokens": 0, "output_tokens": 0}
+        elif file_type in ['mp3', 'wav']:
+            message = await input_file.read()
+            cmd = ['ffmpeg', '-i', "-", '-ac', '1', '-ar','16000', '-f', 'wav', '-']
+            cmd=" ".join(cmd)
+            proc = await asyncio.create_subprocess_shell(
+                cmd,
+                stdin=asyncio.subprocess.PIPE,
+                stdout=asyncio.subprocess.PIPE,
+            )
+            audio_file,_ = await proc.communicate(message)
+            transcript = ""
 
+            loop = asyncio.get_event_loop()
+            transcript, token_timestamps, duration = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, BytesIO(audio_file))
 
-    
-        
+            # update input_text or detailed_instruction
+            input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
+            detailed_instruction += " considering the provided audio context with the following transcript with emotion and entities \n" + transcript
+            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+            return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
+        elif file_type in ['jpeg', 'jpg', 'png']:
+            message = await input_file.read()
+            input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
+            loop = asyncio.get_event_loop()
+            caption = await loop.run_in_executor(executor, blip_infer, blip_processor, vision_model_sess, text_model_sess, BytesIO(message))
+            print(caption)
+            detailed_instruction += " considering the provided image context with the following image caption: {caption}".format(caption=caption)
+            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+            return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
+        else:
+            return 'file format not supported'
+
     else:
-
         # Generate caption for the input image
         test_image = mutlimodal_runner.load_test_image_local(file_path)
         result = mutlimodal_runner.run(test_image, "Question: What's the image about? Answer:")
@@ -348,11 +342,6 @@ async def llm_response_with_file(content: str = Form(...),
     print("LLM text:", text)
 
     return {"response": text, "input_text": content}
-
-
-
-
-
 
 @app.post("/llm_response_with_search", response_model=LLMResponse)
 async def llm_response_with_search(content: str = Form(...),
@@ -548,6 +537,6 @@ if __name__ == '__main__':
     import uvicorn
     from uvicorn import Config, Server
 
-    config = Config(app, host='127.0.0.1', port=5000, workers=10)
+    config = Config(app, host='127.0.0.1', port=5000, workers=1)
     server = Server(config)
     server.run()
