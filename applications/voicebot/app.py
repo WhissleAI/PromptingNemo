@@ -52,6 +52,8 @@ MODEL_SHELF_PATH = config['MODEL_SHELF_PATH']
 DEEPGRAM_API_KEY = config['DEEPGRAM_API_KEY']
 dg_client = Deepgram(DEEPGRAM_API_KEY)
 
+news_llm = HFLanguageModel(model_name_or_path='RedHenLabs/news-reporter-euro-3b')
+
 ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
 ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_pos, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_pos_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
@@ -86,7 +88,6 @@ if DEV_MODE == False:
     tokenizer_dir = config['TENSORRT_LLM']['tokenizer_dir']
     max_output_len = 100
     llm_model_tensorrt = TensorRT_LLM(engine_dir, tokenizer_dir, max_output_len)
-
 
     hf_api_token = config['HF_TOKEN']
     model_id = "google/gemma-2b-it"
@@ -296,6 +297,9 @@ async def llm_response_with_file(content: str = Form(...),
                 shutil.copyfileobj(input_file.file, buffer)
             print(f"File saved at {file_path}")
             input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
+            # if model_name == 'news_llm':
+            #     text = news_llm.generate_rag_response(embeddings, input_text, pdf=file_path, instruction=detailed_instruction)
+            # else:
             text = get_rag_response(embeddings, input_text, pdf=file_path, instruction=detailed_instruction)
             return {"response": text, "input_text": content, "input_tokens": 0, "output_tokens": 0}
         elif file_type in ['mp3', 'wav']:
@@ -315,8 +319,13 @@ async def llm_response_with_file(content: str = Form(...),
 
             # update input_text or detailed_instruction
             input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
+            print(transcript)
             detailed_instruction += " considering the provided audio context with the following transcript with emotion and entities \n" + transcript
-            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+            if model_name == 'news_llm':
+                text = news_llm.generate_response(input_text, detailed_instruction, conversation_history)
+                input_tokens, output_tokens = (0,0)
+            else:
+                text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
             return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
         elif file_type in ['jpeg', 'jpg', 'png']:
             message = await input_file.read()
@@ -325,7 +334,11 @@ async def llm_response_with_file(content: str = Form(...),
             caption = await loop.run_in_executor(executor, blip_infer, blip_processor, vision_model_sess, text_model_sess, BytesIO(message))
             print(caption)
             detailed_instruction += " considering the provided image context with the following image caption: {caption}".format(caption=caption)
-            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+            if model_name == 'news_llm':
+                text = news_llm.generate_response(input_text, detailed_instruction, conversation_history)
+                input_tokens, output_tokens = (0,0)
+            else:
+                text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
             return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
         else:
             return 'file format not supported'
