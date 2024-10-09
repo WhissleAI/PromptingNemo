@@ -6,6 +6,7 @@ import librosa, re
 import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
+import soundfile as sf
 
 CONSTANT = 1e-5
 
@@ -383,6 +384,7 @@ def infer_audio_file(featurizer, ort_session, spm_model, audio_file):
     
     # Load the audio file using librosa
     waveform, sample_rate = librosa.load(audio_file, sr=16000, mono=True)
+    duration = librosa.get_duration(y=waveform, sr=sample_rate)
 
     # Assuming seq_len is the length of the waveform
     seq_len = torch.tensor([waveform.shape[0]], dtype=torch.float)
@@ -405,7 +407,7 @@ def infer_audio_file(featurizer, ort_session, spm_model, audio_file):
     # Construct and print the sentence
     sentence, token_timestamps = construct_sentence(logits, spm_model)
     
-    return sentence, token_timestamps
+    return sentence, token_timestamps, duration
 
 def extract_entities(input_string, token_timestamps, tag="NER"):
     
