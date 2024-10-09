@@ -1,35 +1,69 @@
 from awq import AutoAWQForCausalLM
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, pipeline
 import torch
 import requests
+from langchain.llms import HuggingFacePipeline
+from langchain_community.document_loaders import UnstructuredURLLoader, PyMuPDFLoader
+from langchain.text_splitter import CharacterTextSplitter
+from langchain_community.vectorstores import FAISS
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
 
 
 class HFLanguageModel:
     def __init__(self, model_name_or_path):
         device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-        self.llm_model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True,
-                                                          trust_remote_code=False, safetensors=True).to(device)
-        self.llm_tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=False)
+        self.llm_model = AutoAWQForCausalLM.from_pretrained(model_name_or_path, trust_remote_code=True).to(device)
+        self.llm_tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
+        self.pipeline = pipeline("text-generation", model=self.llm_model, tokenizer=self.llm_tokenizer, device=device, trust_remote_code=True, max_new_tokens=150)
+        self.rag_pipeline = HuggingFacePipeline(pipeline = self.pipeline)
 
-    def generate_response(self, input_text, emotion, conversation_history):
-        prompt_template = f'''system In a heartfelt phone conversation, the user just revealed: "{input_text}" system It's clear that you are feeling {emotion}. I'm here to provide comfort and give an answer in less than 30 words. Let's continue our heartfelt conversation. system The recent conversation history: {conversation_history[-5:]} assistant'''
+    def generate_response(self, input_text, instruction, conversation_history):
+        messages = [{"role": "system", "content": instruction}]
 
-        tokens = self.llm_tokenizer(
-            prompt_template,
-            return_tensors='pt'
-        ).input_ids.cuda()
+        for entry in conversation_history:
+            if entry["query"]:
+                messages.append({"role": "user", "content": entry["query"]})
+            if entry["answer"]:
+                messages.append({"role": "assistant", "content": entry["answer"]})
 
-        generation_output = self.llm_model.generate(
-            tokens,
-            do_sample=True,
-            temperature=0.7,
-            top_p=0.95,
-            top_k=40,
-            max_new_tokens=512
+        messages.append({"role": "user", "content": input_text})
+
+        generation_args = { 
+            "max_new_tokens": 500, 
+            "return_full_text": False, 
+            "temperature": 0.0, 
+            "do_sample": False, 
+        } 
+        response = self.pipeline(messages, **generation_args)
+        return response[0]['generated_text']
+    
+    def generate_rag_response(self, embeddings, query, urls=None, pdf=None, instruction=None):
+        if urls:
+            loader = UnstructuredURLLoader(urls=urls)
+        elif pdf:
+            loader = PyMuPDFLoader(pdf)
+        data = loader.load()
+        text_splitter = CharacterTextSplitter(separator="\n", chunk_size=1000, chunk_overlap=200)
+        data = text_splitter.split_documents(data)
+        print("Length of data:", len(data))
+
+        vectorstore = FAISS.from_documents(data, embedding=embeddings)  
+
+        memory = ConversationBufferMemory(
+            memory_key='chat_history', return_messages=True)
+        conversation_chain = ConversationalRetrievalChain.from_llm(
+                llm=self.rag_pipeline,
+                chain_type="stuff",
+                retriever=vectorstore.as_retriever(),
+                memory=memory
         )
+        if instruction:
+            query = f"{instruction}\n\n{query}"
 
-        response_text = self.llm_tokenizer.decode(generation_output[0])
-        return response_text
+        result = conversation_chain.invoke({"question": query})
+        answer = result["answer"]
+        return answer
 
 import time
 import requests

@@ -2,7 +2,7 @@ fastapi
 uvicorn
 flask
 openai==1.35.3
-autoawq
+autoawq==0.2.6
 librosa
 pyyaml
 pandas
@@ -16,6 +16,6 @@ faiss-gpu==1.7.2
 pydub
 duckduckgo_search
 piper-phonemize~=1.1.0
-nemo_text_processing
 sentencepiece~=0.1.99
 onnxruntime==1.12
+pymupdf

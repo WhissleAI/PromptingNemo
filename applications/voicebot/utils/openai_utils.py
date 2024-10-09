@@ -1,11 +1,11 @@
+from openai import OpenAI
 import openai
 import os
 
 def get_openai_response(text: str, instruction: str, history: list = []):
-    api_key = os.environ.get("OPENAI_API_KEY", "sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu")
     temperature = 0.1
+    client = openai.OpenAI(api_key='sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu') 
 
-    openai.api_key = api_key
 
     messages = [{"role": "system", "content": instruction}]
     
@@ -17,16 +17,17 @@ def get_openai_response(text: str, instruction: str, history: list = []):
     # Append the latest user query
     messages.append({"role": "user", "content": text})
 
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=messages,
         temperature=temperature,
         max_tokens=300,
     )
+    response = dict(response)
 
     print("response", response)
-    response_text = response.choices[0].message['content']
-    input_tokens = response['usage']['prompt_tokens']
-    output_tokens = response['usage']['completion_tokens']
+    response_text = response.get('choices')[0].message.content
+    input_tokens = response.get('usage').prompt_tokens
+    output_tokens = response.get('usage').completion_tokens
 
     return response_text, input_tokens, output_tokens
