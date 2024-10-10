@@ -8,7 +8,7 @@ local_dir = "/external2/karan_exp/experiments/slurp-3adapter"
 nemo_model_path = "/external2/karan_exp/experiments/slurp-3adapter-newtokenizer/2024-08-01_17-47-22/ckpt/slurp-3adapter.nemo"
 
 # Set your Hugging Face access token
-hf_token = "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"
+hf_token = "<YOUR_HF_TOKEN>"
 os.environ["HUGGINGFACE_HUB_TOKEN"] = hf_token
 
 # Create the local directory if it doesn't exist
