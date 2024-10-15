@@ -29,7 +29,7 @@ Build docker from WhissleAI's Nemo branch
 add docker commands
 ```
 
-### 📹 Pretrained Models
+## 📹 Pretrained Models
 
 Currently, we provide models capable of tagging different tokens while transcribing.
 
@@ -43,9 +43,9 @@ Currently, we provide models capable of tagging different tokens while transcrib
 
 ## Usage
 
-To use these pretrained models, follow the instructions provided in the source links. Typically, you'll need to install specific libraries or frameworks, such as TensorFlow, PyTorch, or the Hugging Face Transformers library.
+### Works for <3 min samples.
+This directly fetches the model from hugging-face
 
-For example, to use the BERT Base model from Hugging Face, you can do the following in Python:
 
 ```python
 import nemo.collections.asr as nemo_asr
@@ -53,6 +53,19 @@ asr_model = nemo_asr.models.ASRModel.from_pretrained("WhissleAI/stt_en_conformer
 
 transcriptions = asr_model.transcribe(["file.wav"])
 ```
+
+### Long recording inference
+
+```
+cd scripts/nemo
+python
+```
+
+## Fine-tuning
+
+To-be-written
+
+
 
 
 
