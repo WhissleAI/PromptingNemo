@@ -4,7 +4,7 @@ import openai
 import json
 
 
-openai.api_key = "sk-nDKRYoQG7GGBAl_CHSjtNyG2plOIrUY9CDIHKZWfvzT3BlbkFJ-pgkybJi1A_NRgKygxMyGfVhS2HDpnDZocvWGGsjwA"
+openai.api_key = "<API_KEY>"
 
 import anthropic
 
@@ -28,7 +28,7 @@ def generate_annotations_anthropic(transcripts, prompt, model="claude-2"):
     prompt = prompt.replace("{transcripts_text}", transcripts_text)
 
     # Call the Anthropic Claude API
-    client = anthropic.Client(api_key="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")
+    client = anthropic.Client(api_key="<API_KEY>")
     
     response = client.completions.create(
         prompt=f"{anthropic.HUMAN_PROMPT} You are an expert medical text annotator.\n\n{prompt}{anthropic.AI_PROMPT}",
