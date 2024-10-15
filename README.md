@@ -75,7 +75,7 @@ python nemo_adapter.py
 
 ## Data annotation and preparation
 
-### Annotating exisiting real audio dataset
+### Annotating Using NLP tagger and classifiers
 
 ```
 cd /PromptingNemo/scripts/data/audio/1person/
@@ -83,32 +83,34 @@ cd /PromptingNemo/scripts/data/audio/1person/
 This folder has scripts to process some widely used ASR and SLU datasets
 
 ```
-python process_cv.py ### common-voice dataset
-python process_libre.py ### Multi-lingual Librespeech
+python process_cv.py ### common-voice transcription dataset
+python process_libre.py ### Multi-lingual Librespeech telphonic conversations
+python process_slurp.py ### IOT focused speech focused benchmark
 ```
 
 
+### Annotate using LLMs
 
-### Synthetic audio dataset annotation
+Utilize language models to tag synthetic data. [Scripts](./scripts/data/synthetic)
 
+### Annotate Role-based turn-taking conversations
 
+### Transcribe and annotate
 
+### Synthetic audio and automated annotation
 
-#### 🏷️ Tagging Real Audio Data
-- Using Pretrained Tagger: Tag real audio data with pretrained models and standard ASR datasets. [Scripts](./scripts/data/real)
-- **Using LLM for Tagging**: Utilize language models to tag synthetic data. [Scripts](./scripts/data/synthetic)
-
-#### 🧪 Synthetic Data for ASR-NL System
-- **Data Generation**: Generate synthetic datasets to train ASR and natural language systems.
+ Generate synthetic datasets to train ASR and natural language systems.
 
 #### Tagging Audio-visual data
 
-### 🛠️ Fine-tuning with new data
-- **Fine-tuning**: Enhance your ASR models with custom fine-tuning processes.
-- **Evaluation**: Evaluate the performance of your fine-tuned models.
 
 ### 📤 Model Export
 - **Exporting Nemo Models**: Convert your Nemo models to ONNX and Hugging Face formats for deployment.
+
+```
+python scripts/utils/nemo2hf.py
+python scripts/utils/nemo2onxx.py
+```
 
 ## 🛠️ Applications
 Explore various applications built with PromptingNemo.
