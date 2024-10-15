@@ -38,7 +38,7 @@ Currently, we provide models capable of tagging different tokens while transcrib
 | English             | Transcription, NER, Emotion           | 2500 hrs    | 110M            | [Speech-Tagger-EN-NER](https://huggingface.co/WhissleAI/speech-tagger_en_ner_emotion) |
 | English             | IOT entities and emotion   | 150 hrs    | 115M             | [Speech-Tagger-EN-IOT](https://huggingface.co/WhissleAI/speech-tagger_en_slurp_iot)     |
 | EURO (5 languages)  | Entities, Emotion      | CommonVoice | 115M             | [Speech-Tagger-EURO-NER](https://huggingface.co/bert-base-uncased)     |
-| English  | Role, Entities, Emotion, Intent      | Speech-medical-exams | 115M             | [Speech-Tagger-2person-medical-exams](https://huggingface.co/WhissleAI/speech-tagger_en_2person_medical_exams)     |
+| English  | Role, Entities, Emotion, Intent      | [Speech-medical-exams](https://huggingface.co/datasets/WhissleAI/speech-simulated-medical-exams) | 115M             | [Speech-Tagger-2person-medical-exams](https://huggingface.co/WhissleAI/speech-tagger_en_2person_medical_exams)     |
 
 
 
