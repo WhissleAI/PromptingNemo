@@ -66,15 +66,33 @@ python
 
 Assuming you are in the docker. 
 
-Adjust things in config.yml to point to correct pretrained checkpoint and data manifest
+Adjust things in ```config.yml``` to point to correct pretrained checkpoint and data manifest
 
 ```
 cd /PromptingNemo/scripts/nemo/asr/
 python nemo_adapter.py
 ```
 
+## Data annotation and preparation
 
-### Synthetic tagged dataset creation
+### Annotating exisiting real audio dataset
+
+```
+cd /PromptingNemo/scripts/data/audio/1person/
+```
+This folder has scripts to process some widely used ASR and SLU datasets
+
+```
+python process_cv.py ### common-voice dataset
+python process_libre.py ### Multi-lingual Librespeech
+```
+
+
+
+### Synthetic audio dataset annotation
+
+
+
 
 #### 🏷️ Tagging Real Audio Data
 - Using Pretrained Tagger: Tag real audio data with pretrained models and standard ASR datasets. [Scripts](./scripts/data/real)
