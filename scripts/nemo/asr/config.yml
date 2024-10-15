@@ -1,17 +1,18 @@
 model:
-  model_root: "/external2/models/hf/stt_en_conformer_ctc_large/"
-  model_name: "stt_en_conformer_ctc_large.nemo"
+  model_root: "/projects/whissle/pretrained/stt_hi_conformer_ctc_large/"
+  model_name: "stt_hi_conformer_ctc_large.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
   proto_file: "proto/file"
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/external2/datasets/slurp/run_v1/processed"
+  data_dir: "/projects/whissle/datasets/hindi/hindi_processed"
   train_manifest: "train.json"
-  test_manifest: "dev.json"
-  batch_size: 16
+  test_manifest: "valid.json"
+  batch_size: 4
   max_steps: 600000
+
 
 adapters:
   LinearAdapter:
@@ -31,8 +32,8 @@ adapters:
     norm_position: "pre"
 
 experiment:
-  exp_dir: "/external2/karan_exp/experiments/"
-  exp_name: "slurp-finetune-newtokenizer-euro-extended"
+  exp_dir: "/projects/whissle/experiments/"
+  exp_name: "hindi_adapter-ai4bharat"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true
