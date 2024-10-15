@@ -1,7 +1,7 @@
-# 🎤 PromptingNemo
+# PromptingNemo
 PromptingNemo is a toolkit for fine-tuning end-to-end (E2E) automatic speech recognition (ASR) systems, integrating both audio-visual and speech-only models. 
 
-### 📝 Speech-2-Action
+## Speech-2-Action
 
 Focus on this repository for Speech-2-Action models, built by innovaiton and research over pretrained audio and visual encoders.
 
@@ -16,7 +16,9 @@ We provides tools for exporting Nemo models to ONNX and Hugging Face formats.
 Also checkout our applications on sample usage of Speech-2-Action models
 
 
-### Setting up
+## Setting up
+
+### Using Docker
 
 Use pre-built docker
 ``` 
@@ -27,32 +29,15 @@ Build docker from WhissleAI's Nemo branch
 add docker commands
 ```
 
-### 📹 Pretrained models
-Designed for audio-visual applications, these models leverage both audio and visual data for improved ASR performance.
+### 📹 Pretrained Models
 
-#### 🔊 Noise-aware audio-visual ASR
-- **Data Preparation**: Prepare your data using the [Data Prep Repository](https://github.com/WhissleAI/visual_speech_recognition).
-- **Model Fine-tuning**: Fine-tune your audio-visual models with noise awareness.
+Currently, we provide models capable of tagging different tokens while transcribing.
 
-#### 🏞️ Scene-aware audio-visual ASR
-- **Model Fine-tuning**: Develop ASR systems that are aware of the scene context for better performance.
-
-
-#### 🎙️ Speech-only aodels
-These models are optimized for applications that rely solely on speech input.
-
-
-
-
-This repository provides links to various pretrained models available for download and use. These models are valuable resources for a wide range of applications, including natural language processing, computer vision, and more.
-
-## Table of Pretrained Models
-
-| Model Name          | Description                                              | Source         | Link                                                      |
-|---------------------|----------------------------------------------------------|----------------|-----------------------------------------------------------|
-| Cnformer-CTC           | English (3000 hrs), digit seq. recognition                      | Hugging Face   | [BERT Base](https://huggingface.co/bert-base-uncased)     |
-| Cnformer-CTC           | English (1000 hrs), 19 different entities, emotion                      | Hugging Face   | [BERT Base](https://huggingface.co/bert-base-uncased)     |
-| Cnformer-CTC           | EURO (CommonVoice, 5 languages), entities, emotion                      | Hugging Face   | [BERT Base](https://huggingface.co/bert-base-uncased)     |
+| Model Name            | Token-type                          | #hrs    | HF-link                                                 |
+|-----------------------|--------------------------------------|---------|---------------------------------------------------------|
+| Speech-Tagger-EN-NER-EMOTION | Named Entities, Emotions, Roles | 2500    | [BERT Base](https://huggingface.co/bert-base-uncased)    |
+| Cnformer-CTC          | Named Entities, Emotions            | 1000    | [BERT Base](https://huggingface.co/bert-base-uncased)    |
+| Cnformer-CTC          | Named Entities, Emotions (5 languages) | CommonVoice | [BERT Base](https://huggingface.co/bert-base-uncased) |
 
 
 ## Usage
