@@ -64,20 +64,20 @@ python
 
 ## Fine-tuning
 
-To-be-written
+Assuming you are in the docker. 
 
+Adjust things in config.yml to point to correct pretrained checkpoint and data manifest
 
-
-
-
-
-
+```
+cd /PromptingNemo/scripts/nemo/asr/
+python nemo_adapter.py
+```
 
 
 ### Synthetic tagged dataset creation
 
 #### 🏷️ Tagging Real Audio Data
-- **Using Pretrained Tagger**: Tag real audio data with pretrained models and standard ASR datasets. [Scripts](./scripts/data/real)
+- Using Pretrained Tagger: Tag real audio data with pretrained models and standard ASR datasets. [Scripts](./scripts/data/real)
 - **Using LLM for Tagging**: Utilize language models to tag synthetic data. [Scripts](./scripts/data/synthetic)
 
 #### 🧪 Synthetic Data for ASR-NL System
