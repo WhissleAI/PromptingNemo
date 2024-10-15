@@ -84,8 +84,8 @@ This folder has scripts to process some widely used ASR and SLU datasets
 
 ```
 python process_cv.py ### common-voice transcription dataset
-python process_libre.py ### Multi-lingual Librespeech telphonic conversations
-python process_slurp.py ### IOT focused speech focused benchmark
+python process_libre.py ## Multi-lingual Librespeech telphonic conversations
+python process_slurp.py ## IOT focused speech focused benchmark
 ```
 
 
@@ -93,9 +93,30 @@ python process_slurp.py ### IOT focused speech focused benchmark
 
 Utilize language models to tag synthetic data. [Scripts](./scripts/data/synthetic)
 
+### Transcribe and annotate
+
+
 ### Annotate Role-based turn-taking conversations
 
-### Transcribe and annotate
+```
+cd /PromptingNemo/scripts/data/audio/2person/
+```
+This folder has scripts to process role-based turn-taking conversations.
+
+#### Audio and Role marked transcription available
+When the audio recording is available with role marked transcriptions, you can annotate them and fine-tune a model with it.
+
+```
+python 01_create_manifest_raw.py ## takes folder with transcript and audio files to create a manifest
+python 02_ctm2segments.py ## takes output of nemo forced aligner and organized them to segment level
+python 03_annotate_turns.py ## annotate text using LLMs
+python 04_split_and_emotion.py ## split audio file using timestamps, and get speaker emotion
+```
+
+or follow ```2person.ipynb``` notebook.
+
+#### Transcription not available
+
 
 ### Synthetic audio and automated annotation
 
