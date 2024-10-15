@@ -18,6 +18,8 @@ import os
 import json
 import logging
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "4"
+
 def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_tokens=None, vocab_size=5000):
     # Configure logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -142,9 +144,11 @@ class ASRModelTrainer:
                     taglist.append(tag)
         
         else:
-             all_tags_path = os.path.join(self.data_dir, "alltags.json")
+             all_tags_path = os.path.join(self.data_dir, "keywords.txt")
              tagdata = open(all_tags_path,'r').read()
-             taglist = json.loads(tagdata)
+             for line in tagdata.split('\n'):
+                 taglist.append(line)
+             #taglist = json.loads(tagdata)
             
             ### just a json readable list of tags
             
@@ -247,7 +251,7 @@ class ASRModelTrainer:
         for adapter_name, adapter_config in self.config['adapters'].items():
             self.model.set_enabled_adapters(name=adapter_config['name'], enabled=True)
 
-        #self.model.freeze()
+        self.model.freeze()
         self.model.unfreeze_enabled_adapters()
         self.model.decoder.unfreeze()
         self.model.summarize()
@@ -347,7 +351,7 @@ class ASRModelTrainer:
 model_trainer = ASRModelTrainer(config_path='config.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
-model_trainer.prepare_data_and_tokens(tags_type="mapped", tokenizer_state="new", vocab_size=1536)
+model_trainer.prepare_data_and_tokens(tags_type="unmapped", tokenizer_state="new", vocab_size=1536)
 model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()

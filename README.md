@@ -1,8 +1,20 @@
 # 🎤 PromptingNemo
+PromptingNemo is a toolkit for fine-tuning end-to-end (E2E) automatic speech recognition (ASR) systems, integrating both audio-visual and speech-only models. 
 
+### 📝 Speech-2-Action
 
-### 📝 Overview
-PromptingNemo is a comprehensive toolkit for building and fine-tuning end-to-end (E2E) automatic speech recognition (ASR) systems, integrating both audio-visual and speech-only models. This repository offers scripts and models to facilitate noise-aware and scene-aware ASR, tagging real and synthetic audio data, and fine-tuning ASR systems. Additionally, it provides tools for exporting Nemo models to ONNX and Hugging Face formats.
+Focus on this repository for Speech-2-Action models, built by innovaiton and research over pretrained audio and visual encoders.
+
+These models process streamed audio or video input and output streamed tokens. Tokens are either:
+1. What you speak (standard transcription)
+2. Infered TAGS
+
+For the sample modles we provide, TAGS infered from the context belong to multi-modal language and tonal understanding, visualQA and voice biometrics. 
+
+We provides tools for exporting Nemo models to ONNX and Hugging Face formats.
+
+Also checkout our applications on sample usage of Speech-2-Action models
+
 
 ### Setting up
 
