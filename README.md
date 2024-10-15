@@ -33,11 +33,12 @@ add docker commands
 
 Currently, we provide models capable of tagging different tokens while transcribing.
 
-| Model Name            | Token-type                          | #hrs    | HF-link                                                 |
-|-----------------------|--------------------------------------|---------|---------------------------------------------------------|
-| Speech-Tagger-EN-NER-EMOTION | Named Entities, Emotions, Roles | 2500    | [BERT Base](https://huggingface.co/bert-base-uncased)    |
-| Cnformer-CTC          | Named Entities, Emotions            | 1000    | [BERT Base](https://huggingface.co/bert-base-uncased)    |
-| Cnformer-CTC          | Named Entities, Emotions (5 languages) | CommonVoice | [BERT Base](https://huggingface.co/bert-base-uncased) |
+| Language            | Token-type             | #hrs        | #parameters     | HF-link                                                     |
+|---------------------|------------------------|-------------|----------------|-------------------------------------------------------------|
+| English             | NER, Emotion           | 2500 hrs    | 110M            | [Speech-Tagger-EN](https://huggingface.co/bert-base-uncased) |
+| English             | 19 entities, Emotion   | 1000 hrs    | 85M             | [Cnformer-CTC](https://huggingface.co/bert-base-uncased)     |
+| EURO (5 languages)  | Entities, Emotion      | CommonVoice | 85M             | [Cnformer-CTC](https://huggingface.co/bert-base-uncased)     |
+
 
 
 ## Usage
