@@ -1,14 +1,16 @@
 import os
 import shutil
+import sys
+
 from huggingface_hub import HfApi, upload_file, create_repo
 
 # Define your repository ID and local directory
-repo_id = "WhissleAI/stt_en_conformer_ctc_slurp_iot"
-local_dir = "/external2/karan_exp/experiments/slurp-3adapter"
-nemo_model_path = "/external2/karan_exp/experiments/slurp-3adapter-newtokenizer/2024-08-01_17-47-22/ckpt/slurp-3adapter.nemo"
+repo_id = "WhissleAI/stt_hi_conformer_ctc_entities_age_dialiect_intent"
+local_dir = "/projects/whissle/experiments/hindi-hf"
+nemo_model_path = "/projects/whissle/experiments/hindi_adapter-ai4bharat/2024-10-14_13-22-40/checkpoints/hindi_adapter-ai4bharat.nemo"
 
 # Set your Hugging Face access token
-hf_token = "<YOUR_HF_TOKEN>"
+hf_token = sys.argv[1]
 os.environ["HUGGINGFACE_HUB_TOKEN"] = hf_token
 
 # Create the local directory if it doesn't exist
@@ -26,16 +28,16 @@ except:
 
 # Create a README file with metadata
 readme_text = """
-# 1step ASR-NL for Slurp dataset
+# This speech tagger performs transcription for Hindi, annotates key entities, predict speaker age, dialiect and intent.
 
-This is a NeMo ASR model fine-tuned for ASR tasks. It was trained on [dataset name] and achieves [performance metrics]. This model is suitable for [use cases].
+Model is suitable for voiceAI applications, real-time and offline.
 
 ## Model Details
 
 - **Model type**: NeMo ASR
 - **Architecture**: Conformer CTC
 - **Language**: English
-- **Training data**: Slurp dataset
+- **Training data**: CommonVoice, Gigaspeech
 - **Performance metrics**: [Metrics]
 
 ## Usage
@@ -44,14 +46,37 @@ To use this model, you need to install the NeMo library:
 
 ```bash
 pip install nemo_toolkit
+```
+
+### How to run
+
+```python
+import nemo.collections.asr as nemo_asr
+
+# Step 1: Load the ASR model from Hugging Face
+model_name = 'WhissleAI/stt_hi_conformer_ctc_entities_age_dialiect_intent'
+asr_model = nemo_asr.models.EncDecCTCModel.from_pretrained(model_name)
+
+# Step 2: Provide the path to your audio file
+audio_file_path = '/path/to/your/audio_file.wav'
+
+# Step 3: Transcribe the audio
+transcription = asr_model.transcribe(paths2audio_files=[audio_file_path])
+print(f'Transcription: {transcription[0]}')
+```
+
+Dataset is from AI4Bharat IndicVoices Hindi V1 and V2 dataset.
+
+https://indicvoices.ai4bharat.org/
+
 """
 
 with open(os.path.join(local_dir, "README.md"), "w") as f:
     f.write(readme_text)
     
 upload_file(
-path_or_fileobj=os.path.join(local_dir, "slurp-3adapter.nemo"),
-path_in_repo="slurp-3adapter.nemo",
+path_or_fileobj=os.path.join(local_dir, "hindi_adapter-ai4bharat.nemo"),
+path_in_repo="hindi_adapter-ai4bharat.nemo",
 repo_id=repo_id,
 token=hf_token
 )
