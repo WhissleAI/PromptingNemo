@@ -51,7 +51,7 @@ This directly fetches the model from hugging-face
 
 ```python
 import nemo.collections.asr as nemo_asr
-asr_model = nemo_asr.models.ASRModel.from_pretrained("WhissleAI/stt_en_conformer_ctc_digits")
+asr_model = nemo_asr.models.ASRModel.from_pretrained("WhissleAI/speech-tagger_en_ner_emotion")
 
 transcriptions = asr_model.transcribe(["file.wav"])
 ```
