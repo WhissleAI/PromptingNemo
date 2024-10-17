@@ -3,9 +3,9 @@ import os
 import librosa
 import re
 
-DATA_FOLDER = "/projects/whissle/datasets/hindi/hindi_processed/"
+DATA_FOLDER = "/projects/whissle/datasets/punjabi/"
 AUDIO_FOLDER = os.path.join(DATA_FOLDER, "wavs_train/")
-annotation_file = "annotated_hindi_data_train.json"
+annotation_file = "annotated_data.json"
 output_file_path = os.path.join(DATA_FOLDER, "train_manifest.json")
 
 keyword_file = open(os.path.join(DATA_FOLDER, "keywords.txt"), "w", encoding="utf-8")

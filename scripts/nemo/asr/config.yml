@@ -1,13 +1,13 @@
 model:
-  model_root: "/projects/whissle/pretrained/stt_hi_conformer_ctc_large/"
-  model_name: "stt_hi_conformer_ctc_large.nemo"
+  model_root: "/projects/whissle/pretrained/stt_pb_conformer_ctc_large/"
+  model_name: "stt_pb_conformer_ctc_large.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
   proto_file: "proto/file"
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/projects/whissle/datasets/hindi/hindi_processed"
+  data_dir: "/projects/whissle/datasets/punjabi"
   train_manifest: "train.json"
   test_manifest: "valid.json"
   batch_size: 4
@@ -33,7 +33,7 @@ adapters:
 
 experiment:
   exp_dir: "/projects/whissle/experiments/"
-  exp_name: "hindi_adapter-ai4bharat"
+  exp_name: "punjabi_adapter-ai4bharat"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true
