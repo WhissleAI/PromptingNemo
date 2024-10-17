@@ -92,7 +92,23 @@ python process_slurp.py ## IOT focused speech focused benchmark
 
 ### Annotate using LLMs
 
-Utilize language models to tag synthetic data. [Scripts](./scripts/data/synthetic)
+#### Extend an exisitng tagged text dataset
+
+
+```
+cd PromptingNemo
+python scripts/data/audio/1person/synthetic/create_synthetic_tagged_text.py
+```
+Change ```extension_dataset``` to a file which has a sentence on every line which has capitalized tags along with transcription. 
+
+
+#### Create synthetic audio
+
+Provide a dataset which has audio files, to choose to clone from.
+
+Tagged sentence data in the same language.
+
+
 
 ### Transcribe and annotate
 
