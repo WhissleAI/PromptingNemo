@@ -176,6 +176,12 @@ Run the VoiceBot application using Docker.
     ```bash
     pip install -r requirements.txt
     ```
+## Related Publications
+
+Karan, S., Shahab, J., Yeon-Jun, K., Andrej, L., Moreno, D. A., Srinivas, B., & Benjamin, S. (2023, December). 1-step Speech Understanding and Transcription Using CTC Loss. In Proceedings of the 20th International Conference on Natural Language Processing (ICON) (pp. 370-377).
+
+Karan, S., Mahnoosh, M., Daniel, P., Ryan, P., Srinivas, C. B., Yeon-Jun, K., & Srinivas, B. (2023, December). Combining Pre trained Speech and Text Encoders for Continuous Spoken Language Processing. In Proceedings of the 20th International Conference on Natural Language Processing (ICON) (pp. 832-842).
+
 
 ## 🤝 Contributing
 We welcome contributions to PromptingNemo! Please read our [contribution guidelines](CONTRIBUTING.md) to get started.
