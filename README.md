@@ -35,11 +35,12 @@ Currently, we provide models capable of tagging different tokens while transcrib
 
 | Language            | Token-type             | #hrs        | #parameters     | HF-link                                                     |
 |---------------------|------------------------|-------------|----------------|-------------------------------------------------------------|
-| Hindi             | Transcription, key entities, age, gender, intent, dialect           | 100 hrs    | 110M            | [Speech-Tagger-HI-KEY](https://huggingface.co/WhissleAI/stt_hi_conformer_ctc_entities_age_dialiect_intent) |
+| Punjabi             | Transcription, key entities, age, gender, intent, dialect           | 100 hrs    | 110M            | [Speech-Tagger-PA-KEY](https://huggingface.co/WhissleAI/stt_pa_conformer_ctc_meta) |
+| Hindi             | Transcription, key entities, age, gender, intent, dialect           | 100 hrs    | 110M            | [Speech-Tagger-HI-KEY](https://huggingface.co/WhissleAI/stt_hi_conformer_ctc_meta) |
 | English             | Transcription, NER, Emotion           | 2500 hrs    | 110M            | [Speech-Tagger-EN-NER](https://huggingface.co/WhissleAI/speech-tagger_en_ner_emotion) |
 | English             | IOT entities and emotion   | 150 hrs    | 115M             | [Speech-Tagger-EN-IOT](https://huggingface.co/WhissleAI/speech-tagger_en_slurp_iot)     |
-| EURO (5 languages)  | Entities, Emotion      | CommonVoice | 115M             | [Speech-Tagger-EURO-NER](https://huggingface.co/bert-base-uncased)     |
-| English  | Role, Entities, Emotion, Intent      | [Speech-medical-exams](https://huggingface.co/datasets/WhissleAI/speech-simulated-medical-exams) | 115M             | [Speech-Tagger-2person-medical-exams](https://huggingface.co/WhissleAI/speech-tagger_en_2person_medical_exams)     |
+| EURO (5 languages)  | Transcription, Entities, Emotion      | CommonVoice | 115M             | [Speech-Tagger-EURO-NER](https://huggingface.co/bert-base-uncased)     |
+| English  | Transcription, Role, Entities, Emotion, Intent      | [Speech-medical-exams](https://huggingface.co/datasets/WhissleAI/speech-simulated-medical-exams) | 115M             | [Speech-Tagger-2person-medical-exams](https://huggingface.co/WhissleAI/speech-tagger_en_2person_medical_exams)     |
 
 
 
