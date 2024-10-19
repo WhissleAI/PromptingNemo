@@ -93,7 +93,7 @@ python process_slurp.py ## IOT focused speech focused benchmark
 
 ### Annotate using LLMs
 
-#### Extend an exisitng tagged text dataset
+![Custom Red Text](https://dummyimage.com/500x30/ff0000/ffffff&text=Extend+an+exisitng+tagged+text+dataset)
 
 
 ```
