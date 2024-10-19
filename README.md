@@ -109,6 +109,11 @@ Provide a dataset which has audio files, to choose to clone from.
 
 Tagged sentence data in the same language.
 
+```
+python scripts/data/audio/1person/synthetic/create_tts_manifest_xtts.py
+```
+
+In this one you have to change paths in ```self.clone_voices```  and your noise files data ```self.all_noise_files```  and also set required paths to ```config```
 
 
 ### Transcribe and annotate
