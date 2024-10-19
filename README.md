@@ -103,7 +103,7 @@ python scripts/data/audio/1person/synthetic/create_synthetic_tagged_text.py
 Change ```extension_dataset``` to a file which has a sentence on every line which has capitalized tags along with transcription. 
 
 
-![Custom Red Text](https://dummyimage.com/500x30/ff0000/ffffff&text=Create+synthetic+audio)
+![Custom Red Text](https://dummyimage.com/500x30/ff0000/ffcccc/000000&text=Create+synthetic+audio)
 
 Provide a dataset which has audio files, to choose to clone from.
 
