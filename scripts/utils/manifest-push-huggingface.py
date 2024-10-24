@@ -8,14 +8,14 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 import subprocess
+import time
 
 # Load your NeMo manifest file
 nemo_manifest_path = sys.argv[1]
-alltags_file_path = sys.argv[2]  # Path to the alltags.txt file
-repo_name = sys.argv[3]  # Repository name
+repo_name = sys.argv[2]  # Repository name
 
 # Set a custom cache directory with proper permissions
-os.environ['HF_HOME'] = '/custom_cache_directory'
+os.environ['HF_HOME'] = '/projects/whissle/custom_cache_directory'
 os.makedirs(os.environ['HF_HOME'], exist_ok=True)
 
 with open(nemo_manifest_path, 'r') as f:
@@ -26,7 +26,7 @@ data = {
     'audio': [item['audio_filepath'] for item in nemo_manifest],
     'text': [item['text'] for item in nemo_manifest],
     'duration': [item['duration'] for item in nemo_manifest],
-    'tasks': [item['tasks'] for item in nemo_manifest],
+    'tasks': [["transcription", "entities", "age", "gender", "dialect"] for item in nemo_manifest],
 }
 df = pd.DataFrame(data)
 
@@ -36,9 +36,6 @@ os.makedirs(parquet_path, exist_ok=True)
 parquet_file = os.path.join(parquet_path, "dataset.parquet")
 table = pa.Table.from_pandas(df)
 pq.write_table(table, parquet_file)
-
-# Copy the alltags.txt file to the dataset directory
-shutil.copy(alltags_file_path, os.path.join(parquet_path, "alltags.txt"))
 
 # Create temporary directory for audio files
 audio_files_dir = os.path.join(parquet_path, "audio_files")
@@ -50,7 +47,7 @@ for item in nemo_manifest:
     shutil.copy(audio_file, audio_files_dir)
 
 # Log in to Hugging Face
-token = "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"  # Replace with your actual token
+token = "<add-hf-token>"  # Replace with your actual token
 login(token=token, add_to_git_credential=True)
 
 # Set up git credentials helper
@@ -104,8 +101,9 @@ Include any relevant citation information here.
 with open(os.path.join(parquet_path, "dataset_card.md"), "w") as f:
     f.write(dataset_card_content)
 
-# Function to upload files in batches
+# Function to upload files in batches and skip errors
 def upload_in_batches(files, folder_path, repo_id, token, batch_size=100):
+    skipped_files = []  # Keep track of skipped files
     for i in range(0, len(files), batch_size):
         batch_files = files[i:i+batch_size]
         batch_folder = f"./batch_{i//batch_size}"
@@ -115,22 +113,33 @@ def upload_in_batches(files, folder_path, repo_id, token, batch_size=100):
             dest_path = os.path.join(batch_folder, relative_path)
             os.makedirs(os.path.dirname(dest_path), exist_ok=True)
             shutil.copy(file, dest_path)
-        api.upload_folder(
-            folder_path=batch_folder,
-            path_in_repo=".",
-            repo_id=repo_id,
-            repo_type="dataset",
-            token=token
-        )
-        shutil.rmtree(batch_folder)
-        print(f"Batch {i//batch_size + 1} uploaded successfully.")
+        try:
+            api.upload_folder(
+                folder_path=batch_folder,
+                path_in_repo=".",
+                repo_id=repo_id,
+                repo_type="dataset",
+                token=token
+            )
+            print(f"Batch {i//batch_size + 1} uploaded successfully.")
+        except Exception as e:
+            print(f"Error uploading batch {i//batch_size + 1}: {e}")
+            # Skip this batch or file if the payload is too large
+            skipped_files.extend(batch_files)
+        finally:
+            shutil.rmtree(batch_folder)
+
+    if skipped_files:
+        print("The following files were skipped due to upload errors:")
+        for skipped_file in skipped_files:
+            print(skipped_file)
 
 # Get the list of audio files to be uploaded
 audio_files = [os.path.join(audio_files_dir, os.path.basename(item['audio_filepath'])) for item in nemo_manifest]
 
 # Push the dataset and files to the repository in batches
 try:
-    # Upload the Parquet file and alltags.txt file first
+    # Upload the Parquet file and dataset card first
     api.upload_folder(
         folder_path=parquet_path,
         path_in_repo=".",
@@ -138,10 +147,10 @@ try:
         repo_type="dataset",
         token=token
     )
-    print("Parquet file and alltags.txt file uploaded successfully.")
+    print("Parquet file and dataset card uploaded successfully.")
 
-    # Upload the audio files in batches
-    upload_in_batches(audio_files, audio_files_dir, full_repo_name, token, batch_size=100)
-    print("Audio files successfully pushed to Hugging Face Hub")
+    # Upload the audio files in batches and skip problematic files
+    upload_in_batches(audio_files, audio_files_dir, full_repo_name, token, batch_size=20)
+    print("Audio files successfully pushed to Hugging Face Hub (some files may have been skipped).")
 except Exception as e:
     print(f"An error occurred during upload: {e}")
