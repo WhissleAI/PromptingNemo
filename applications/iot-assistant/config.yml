@@ -1,0 +1,38 @@
+spotify:
+  client_id: "c26ee875b96f4baa8e520fd240554c57"
+  client_secret: "26a48190aea14472b6f771faad7fe727"
+  redirect_uri: "http://localhost:3000"
+  scope: "user-read-playback-state"
+  device_id: "085e2023b9314362c0d7e1dbce0d9ae6878464c9"
+
+openai:
+  api_key: "sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu"
+twilio:
+  account_sid: "your_twilio_account_sid"
+  auth_token: "your_twilio_auth_token"
+  phone_number: "your_twilio_phone_number"
+system:
+  spotify_path: "/Applications/Spotify.app"  # Update this path if Spotify is located elsewhere
+  notes_path: "/Applications/Notes.app"  # Path to the Notes app, if needed
+google:
+  client_secrets_file: "utils/google_client_secret.json"
+  token_file: "utils/token.json"
+  scopes:
+    - "https://www.googleapis.com/auth/gmail.send"
+
+notion:
+  token: "secret_M1dy5X7ZXYtIp1neOOUXB5Juf7jRnhiBJUmdkCE6VIJ"
+  database_id: "de93ef3f513e420da0a7d275f418dfd9"
+
+nvidia:
+  api_url: "https://integrate.api.nvidia.com/v1/chat/completions"
+  api_key: "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"
+weatherapi:
+  api_key: "c55e9869f6c84e1587b165654240708"
+
+alpha_vantage:
+  api_key: "JTVP1AVW9GHGK9T6"
+slack:
+  token: "xoxe.xoxp-1-Mi0yLTU4OTA0OTgxNjQ1NjctNTkwMjExMDQ3NTM4MS03NTI5MTE3Nzk3NzE5LTc1NDM2NjkyMTU2MTgtZTEyNjgwNmIyZDE2YTkzNDM0MTBlZGFlNGZlZjVkMTA4ZDM5ZWZiMDgwZmNmMTAwYTc3ZGFjNmFhMmRiOTY0Zg"
+contacts:
+  file: "utils/contacts.tsv"
