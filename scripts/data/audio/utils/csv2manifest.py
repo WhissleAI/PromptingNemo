@@ -2,13 +2,24 @@ import json
 import os
 import librosa
 import re
+from pathlib import Path
 
-DATA_FOLDER = "/projects/whissle/datasets/punjabi/"
-AUDIO_FOLDER = os.path.join(DATA_FOLDER, "wavs_train/")
-annotation_file = "annotated_data.json"
-output_file_path = os.path.join(DATA_FOLDER, "train_manifest.json")
+language = "marathi"
+DATA_FOLDER = Path("/projects/whissle/datasets/") / language
 
-keyword_file = open(os.path.join(DATA_FOLDER, "keywords.txt"), "w", encoding="utf-8")
+AUDIO_FOLDER = DATA_FOLDER / "wavs_train"
+annotation_file = DATA_FOLDER / "marathi_annotated_data_train.json"
+
+output_file_path = DATA_FOLDER / "train_manifest.json"
+
+keyword_file = open(DATA_FOLDER / "keywords.txt", "w", encoding="utf-8")
+
+
+#AUDIO_FOLDER = os.path.join(DATA_FOLDER, "wavs_train/")
+#annotation_file = "annotated_data.json"
+#output_file_path = os.path.join(DATA_FOLDER, "train_manifest.json")
+
+#keyword_file = open(os.path.join(DATA_FOLDER, "keywords.txt"), "w", encoding="utf-8")
 
 # Open files with UTF-8 encoding
 print("Loading data from", os.path.join(DATA_FOLDER, annotation_file))
