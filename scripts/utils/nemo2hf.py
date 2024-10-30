@@ -1,91 +1,122 @@
 import os
 import shutil
 import sys
+from pathlib import Path
+from huggingface_hub import HfApi, create_repo
+from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
+import time
 
-from huggingface_hub import HfApi, upload_file, create_repo
+def upload_with_retry(api, path, repo_id, path_in_repo, token, max_retries=3, delay=5):
+    """Attempt to upload file with retries on failure"""
+    for attempt in range(max_retries):
+        try:
+            api.upload_file(
+                path_or_fileobj=path,
+                path_in_repo=path_in_repo,
+                repo_id=repo_id,
+                token=token
+            )
+            print(f"Successfully uploaded {path_in_repo}")
+            return True
+        except Exception as e:
+            if attempt < max_retries - 1:
+                print(f"Upload attempt {attempt + 1} failed. Retrying in {delay} seconds...")
+                print(f"Error: {str(e)}")
+                time.sleep(delay)
+                delay *= 2  # Exponential backoff
+            else:
+                print(f"Failed to upload {path_in_repo} after {max_retries} attempts: {str(e)}")
+                return False
 
-# Define your repository ID and local directory
-repo_id = "WhissleAI/speech-tagger_hi_ctc_meta"
-local_dir = "/projects/whissle/experiments/punjabi-hf"
-nemo_model_path = "/projects/whissle/experiments/punjabi_adapter-ai4bharat/2024-10-16_17-51-06/checkpoints/punjabi_adapter-ai4bharat.nemo"
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <huggingface_token>")
+        sys.exit(1)
 
-# Set your Hugging Face access token
-hf_token = sys.argv[1]
-os.environ["HUGGINGFACE_HUB_TOKEN"] = hf_token
+    # Configuration
+    repo_id = "WhissleAI/speech-tagger_be_ctc_meta"
+    local_dir = Path("/projects/whissle/experiments/bengali-hf")
+    nemo_model_path = Path("/projects/whissle/experiments/bengali-adapter-ai4bharat/2024-10-27_23-42-00/checkpoints/bengali-adapter-ai4bharat.nemo")
+    hf_token = sys.argv[1]
 
-# Create the local directory if it doesn't exist
-os.makedirs(local_dir, exist_ok=True)
+    # Set up environment
+    os.environ["HUGGINGFACE_HUB_TOKEN"] = hf_token
+    local_dir.mkdir(parents=True, exist_ok=True)
 
-# Copy the .nemo file to the local directory
-shutil.copy(nemo_model_path, os.path.join(local_dir, "punjabi_adapter-ai4bharat.nemo"))
+    # Initialize Hugging Face API
+    api = HfApi()
 
-# Ensure the repository exists on Hugging Face
-api = HfApi()
-try:
-    api.repo_info(repo_id)
-except:
-    create_repo(repo_id, token=hf_token)
+    # Ensure repository exists
+    try:
+        api.repo_info(repo_id)
+        print(f"Repository {repo_id} already exists")
+    except RepositoryNotFoundError:
+        print(f"Creating new repository: {repo_id}")
+        create_repo(repo_id, token=hf_token, private=False)
+    except Exception as e:
+        print(f"Error checking/creating repository: {str(e)}")
+        sys.exit(1)
 
-# Create a README file with metadata
-readme_text = """
-# This speech tagger performs transcription for Punjabi, annotates key entities, predict speaker age, dialiect and intent.
+    # Copy model file
+    model_dest = local_dir / "bengali-adapter-ai4bharat.nemo"
+    print(f"Copying model file to {model_dest}")
+    shutil.copy2(nemo_model_path, model_dest)
 
-Model is suitable for voiceAI applications, real-time and offline.
+    # Create README
+    readme_path = local_dir / "README.md"
+    readme_content = """# Bengali Speech Tagger - Conformer CTC Model
+
+This speech tagger performs transcription for Bengali, annotates key entities, predicts speaker age, dialect and intent.
 
 ## Model Details
 
-- **Model type**: NeMo ASR
+- **Model Type**: NeMo ASR
 - **Architecture**: Conformer CTC
-- **Language**: Punjabi
-- **Training data**: AI4Bharat IndicVoices Punjabi V1 and V2 dataset
-- **Performance metrics**: [Metrics]
+- **Language**: Bengali
+- **Training Data**: AI4Bharat IndicVoices Bengali V1 and V2 dataset
+- **Task**: Speech Recognition with Entity Tagging
 
 ## Usage
-
-To use this model, you need to install the NeMo library:
-
-```bash
-pip install nemo_toolkit
-```
-
-### How to run
 
 ```python
 import nemo.collections.asr as nemo_asr
 
-# Step 1: Load the ASR model from Hugging Face
-model_name = 'WhissleAI/stt_pa_conformer_ctc_entities_age_dialiect_intent'
-asr_model = nemo_asr.models.EncDecCTCModel.from_pretrained(model_name)
+# Load model
+asr_model = nemo_asr.models.EncDecCTCModel.from_pretrained('WhissleAI/speech-tagger_be_ctc_meta')
 
-# Step 2: Provide the path to your audio file
-audio_file_path = '/path/to/your/audio_file.wav'
-
-# Step 3: Transcribe the audio
-transcription = asr_model.transcribe(paths2audio_files=[audio_file_path])
-print(f'Transcription: {transcription[0]}')
+# Transcribe audio
+transcription = asr_model.transcribe(['path/to/audio.wav'])
+print(transcription[0])
 ```
 
-Dataset is from AI4Bharat IndicVoices Hindi V1 and V2 dataset.
+## Model Training
 
+- Base model: Conformer CTC
+- Fine-tuned on AI4Bharat IndicVoices Marathi dataset
+- Optimized for real-time transcription
+
+## License & Attribution
+
+Please cite AI4Bharat when using this model:
 https://indicvoices.ai4bharat.org/
-
 """
 
-with open(os.path.join(local_dir, "README.md"), "w") as f:
-    f.write(readme_text)
-    
-upload_file(
-path_or_fileobj=os.path.join(local_dir, "punjabi_adapter-ai4bharat.nemo"),
-path_in_repo="punjabi_adapter-ai4bharat.nemo",
-repo_id=repo_id,
-token=hf_token
-)
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write(readme_content)
 
-upload_file(
-path_or_fileobj=os.path.join(local_dir, "README.md"),
-path_in_repo="README.md",
-repo_id=repo_id,
-token=hf_token
-)
+    # Upload files
+    files_to_upload = [
+        (model_dest, "bengali-adapter-ai4bharat.nemo"),
+        (readme_path, "README.md")
+    ]
 
-print("Files uploaded successfully")
+    for file_path, repo_path in files_to_upload:
+        print(f"\nUploading {repo_path}...")
+        if not upload_with_retry(api, file_path, repo_id, repo_path, hf_token):
+            print(f"Failed to upload {repo_path}")
+            sys.exit(1)
+
+    print("\nAll files uploaded successfully!")
+
+if __name__ == "__main__":
+    main()
