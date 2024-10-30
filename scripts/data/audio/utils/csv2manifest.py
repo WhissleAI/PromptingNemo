@@ -4,11 +4,11 @@ import librosa
 import re
 from pathlib import Path
 
-language = "marathi"
+language = "gujarati"
 DATA_FOLDER = Path("/projects/whissle/datasets/") / language
 
 AUDIO_FOLDER = DATA_FOLDER / "wavs_train"
-annotation_file = DATA_FOLDER / "marathi_annotated_data_train.json"
+annotation_file = DATA_FOLDER / "gujarati_annotated_data_train.json"
 
 output_file_path = DATA_FOLDER / "train_manifest.json"
 
