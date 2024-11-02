@@ -348,10 +348,10 @@ class ASRModelTrainer:
         logging.info(f"Updated vocab files: {output_vocab_file}, {output_vocab_txt_file}")
 
 # Usage
-model_trainer = ASRModelTrainer(config_path='config/config_bengali.yml')
+model_trainer = ASRModelTrainer(config_path='config/config_indoaryan.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
-model_trainer.prepare_data_and_tokens(tags_type="unmapped", tokenizer_state="new", vocab_size=1536)
+model_trainer.prepare_data_and_tokens(tags_type="unmapped", tokenizer_state="new", vocab_size=2000)
 model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()
