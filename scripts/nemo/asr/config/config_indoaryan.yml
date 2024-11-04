@@ -1,6 +1,6 @@
 model:
-  model_root: "/projects/whissle/pretrained/stt_hi_conformer_ctc_large/"
-  model_name: "stt_hi_conformer_ctc_large.nemo"
+  model_root: "/projects/whissle/experiments/indoaryan-adapter-ai4bharat2/2024-10-31_15-45-47/checkpoints/"
+  model_name: "indoaryan-adapter-ai4bharat2.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "indoaryan_tokenizer"
   proto_file: "proto/file"

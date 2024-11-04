@@ -128,7 +128,7 @@ def upload_files_parallel(files, repo_id, token, audio_files_dir, max_workers=2,
 
 def save_progress(successful_files, failed_files):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    with open(f"upload_progress_{timestamp}.json", "w") as f:
+    with open(f"/projects/whissle/custom_cache_directory/upload_progress_{timestamp}.json", "w") as f:
         json.dump({
             "successful_files": successful_files,
             "failed_files": failed_files,
@@ -225,7 +225,7 @@ def main():
     df = pd.DataFrame(data)
 
     # Create directories
-    parquet_path = "/projects/whissle/hfdataset_repo"
+    parquet_path = "/projects/whissle/hfdataset_repo_bn"
     os.makedirs(parquet_path, exist_ok=True)
     audio_files_dir = os.path.join(parquet_path, "audio_files")
     os.makedirs(audio_files_dir, exist_ok=True)
