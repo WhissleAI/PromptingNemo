@@ -9,6 +9,7 @@ from fastlang import fastlang
 import nemo.collections.asr as nemo_asr
 import json
 from pathlib import Path
+import numpy as np
 
 import torchaudio
 from speechbrain.inference.classifiers import EncoderClassifier
@@ -31,8 +32,7 @@ class VideoProcessor:
         self.asr_model_fr = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_fr_conformer_ctc_large")
         self.asr_model_de = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_de_conformer_ctc_large")
         self.asr_model_it = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_it_conformer_ctc_large")
-        self.asr_model_ru = nemo_asr.models.EncDecCTCModelBPE.from_pretrained(
-            model_name="nvidia/stt_ru_fastconformer_hybrid_large_pc")
+        self.asr_model_ru = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("nvidia/stt_ru_fastconformer_hybrid_large_pc")
         
         print("Loading language identification model...")
         self.language_id = EncoderClassifier.from_hparams(
@@ -47,47 +47,49 @@ class VideoProcessor:
             classname="CustomEncoderWav2vec2Classifier"
         )
 
-    def extract_audio(self, video_path):
-        """Extract 16kHz PCM WAV audio from video file"""
-        audio_filename = os.path.splitext(os.path.basename(video_path))[0] + ".wav"
-        audio_path = os.path.join(self.audio_dir, audio_filename)
+    def load_audio(self, audio_path):
+        """Load audio file and return signal"""
+        signal, sample_rate = sf.read(audio_path)
+        if sample_rate != 16000:
+            signal = librosa.resample(signal, orig_sr=sample_rate, target_sr=16000)
+        return signal
+
+    def process_audio_chunk(self, chunk, model):
+        """Process a single audio chunk"""
+        with torch.no_grad():
+            logits = model.forward(
+                input_signal=torch.tensor(chunk).unsqueeze(0),
+                input_signal_length=torch.tensor([len(chunk)])
+            )
+            current_hypotheses = model.decoding.ctc_decoder_predictions_tensor(
+                logits, predictions_len=None, return_hypotheses=True
+            )
+            
+        return current_hypotheses[0]
+
+    def merge_word_timestamps(self, chunks_with_timestamps, chunk_duration):
+        """Merge word timestamps from multiple chunks"""
+        merged_words = []
+        time_offset = 0
         
-        if os.path.exists(audio_path):
-            print(f"Audio file already exists: {audio_path}")
-            return audio_path
-        
-        try:
-            # Use FFmpeg to extract audio
-            cmd = [
-                "ffmpeg", "-i", video_path,
-                "-vn",  # Disable video
-                "-acodec", "pcm_s16le",  # PCM 16-bit
-                "-ar", "16000",  # 16kHz sampling rate
-                "-ac", "1",  # Mono
-                "-y",  # Overwrite output
-                audio_path
-            ]
-            subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            return audio_path
-        except subprocess.CalledProcessError as e:
-            print(f"Error extracting audio from {video_path}: {e}")
-            return None
+        for chunk_idx, chunk_result in enumerate(chunks_with_timestamps):
+            for word_info in chunk_result:
+                # Adjust timestamp with chunk offset
+                start_time = word_info['start_time'] + time_offset
+                end_time = word_info['end_time'] + time_offset
+                
+                merged_words.append({
+                    'word': word_info['word'],
+                    'start_time': start_time,
+                    'end_time': end_time
+                })
+            
+            time_offset += chunk_duration
+            
+        return merged_words
 
-    def detect_language(self, audio_path):
-        """Detect language of audio file"""
-        out_prob, score, index, text_lab = self.language_id.classify_file(audio_path)
-        return text_lab[0]
-
-    def detect_emotion(self, audio_path):
-        """Detect emotion in audio file"""
-        out_prob, score, index, text_lab = self.emotion_classifier.classify_file(audio_path)
-        
-        return text_lab[0]
-
-
-
-    def transcribe_audio(self, audio_path, language):
-        """Transcribe audio using appropriate NeMo model"""
+    def transcribe_audio(self, audio_path, language, chunk_duration_ms=8000):
+        """Transcribe audio using chunked inference and get word timestamps"""
         try:
             # Select appropriate model based on language
             if language == 'English':
@@ -106,9 +108,47 @@ class VideoProcessor:
                 print(f"Unsupported language: {language}")
                 return None
             
-            # Transcribe
-            transcription = model.transcribe([audio_path])[0]
-            return transcription
+            # Load audio
+            signal = self.load_audio(audio_path)
+            
+            # Calculate chunk size in samples
+            chunk_size = int(chunk_duration_ms * 16)  # 16 samples per ms at 16kHz
+            
+            # Split audio into chunks
+            chunks = [signal[i:i + chunk_size] for i in range(0, len(signal), chunk_size)]
+            
+            # Process each chunk
+            chunk_results = []
+            for chunk in tqdm(chunks, desc="Processing chunks"):
+                # Pad chunk if necessary
+                if len(chunk) < chunk_size:
+                    chunk = np.pad(chunk, (0, chunk_size - len(chunk)))
+                
+                # Get word timestamps for chunk
+                hypothesis = self.process_audio_chunk(chunk, model)
+                
+                # Extract word timing info
+                words_with_timing = []
+                for word, timing in zip(hypothesis.words, hypothesis.word_timestamps):
+                    words_with_timing.append({
+                        'word': word,
+                        'start_time': timing[0],
+                        'end_time': timing[1]
+                    })
+                
+                chunk_results.append(words_with_timing)
+            
+            # Merge results from all chunks
+            merged_results = self.merge_word_timestamps(chunk_results, chunk_duration_ms / 1000)
+            
+            # Create final result
+            full_text = ' '.join(word_info['word'] for word_info in merged_results)
+            
+            return {
+                'text': full_text,
+                'word_timestamps': merged_results
+            }
+            
         except Exception as e:
             print(f"Error transcribing {audio_path}: {e}")
             return None
@@ -141,9 +181,9 @@ class VideoProcessor:
         if not emotion_result:
             return
         
-        # Transcribe
-        transcription = self.transcribe_audio(audio_path, language)
-        if not transcription:
+        # Transcribe with timestamps
+        transcription_result = self.transcribe_audio(audio_path, language)
+        if not transcription_result:
             return
         
         # Save results
@@ -152,7 +192,8 @@ class VideoProcessor:
             "video_path": video_path,
             "audio_path": audio_path,
             "language": language,
-            "transcription": transcription,
+            "transcription": transcription_result['text'],
+            "word_timestamps": transcription_result['word_timestamps'],
             "emotion_analysis": emotion_result
         }
         
@@ -161,8 +202,8 @@ class VideoProcessor:
         
         print(f"Successfully processed: {video_id}")
         print(f"Detected language: {language}")
-        #print(f"Detected emotion: {emotion_result['emotion']} (confidence: {emotion_result['confidence']:.2f})")
-        print(f"Transcription: {transcription}")
+        print(f"Transcription: {transcription_result['text']}")
+        print(f"Number of words with timestamps: {len(transcription_result['word_timestamps'])}")
 
 def main():
     # Parse command line arguments
