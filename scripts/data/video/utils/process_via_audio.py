@@ -28,11 +28,11 @@ class VideoProcessor:
         # Initialize models
         print("Loading ASR models...")
         self.asr_model_en = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_en_conformer_ctc_large")
-        self.asr_model_es = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_es_conformer_ctc_large")
-        self.asr_model_fr = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_fr_conformer_ctc_large")
-        self.asr_model_de = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_de_conformer_ctc_large")
-        self.asr_model_it = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_it_conformer_ctc_large")
-        self.asr_model_ru = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("nvidia/stt_ru_fastconformer_hybrid_large_pc")
+        # self.asr_model_es = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_es_conformer_ctc_large")
+        # self.asr_model_fr = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_fr_conformer_ctc_large")
+        # self.asr_model_de = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_de_conformer_ctc_large")
+        # self.asr_model_it = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("stt_it_conformer_ctc_large")
+        # self.asr_model_ru = nemo_asr.models.EncDecCTCModelBPE.from_pretrained("nvidia/stt_ru_fastconformer_hybrid_large_pc")
         
         print("Loading language identification model...")
         self.language_id = EncoderClassifier.from_hparams(
@@ -46,6 +46,91 @@ class VideoProcessor:
             pymodule_file="custom_interface.py",
             classname="CustomEncoderWav2vec2Classifier"
         )
+
+    def extract_audio(self, video_path):
+        """Extract audio from video file"""
+        try:
+            video_id = os.path.splitext(os.path.basename(video_path))[0]
+            audio_path = os.path.join(self.audio_dir, f"{video_id}.wav")
+            
+            # Skip if audio already extracted
+            if os.path.exists(audio_path):
+                return audio_path
+            
+            # Extract audio using ffmpeg
+            command = [
+                'ffmpeg',
+                '-i', video_path,
+                '-ac', '1',  # Convert to mono
+                '-ar', '16000',  # Set sample rate to 16kHz
+                '-vn',  # Disable video
+                '-acodec', 'pcm_s16le',  # Output format
+                audio_path
+            ]
+            
+            subprocess.run(command, check=True, capture_output=True)
+            return audio_path
+            
+        except Exception as e:
+            print(f"Error extracting audio from {video_path}: {e}")
+            return None
+
+    def detect_language(self, audio_path):
+        """Detect language of the audio"""
+        try:
+            # Load audio
+            signal = self.load_audio(audio_path)
+            
+            # Convert to tensor and ensure proper shape
+            signal_tensor = torch.tensor(signal).unsqueeze(0)
+            
+            # Get language prediction
+            prediction = self.language_id.classify_batch(signal_tensor)
+            predicted_language = prediction[3][0]  # Get language label
+            
+            # Map SpeechBrain language codes to full names
+            language_map = {
+                'en': 'English',
+                'es': 'Spanish',
+                'fr': 'French',
+                'de': 'German',
+                'it': 'Italian',
+                'ru': 'Russian'
+            }
+            
+            return language_map.get(predicted_language, 'Unknown')
+            
+        except Exception as e:
+            print(f"Error detecting language for {audio_path}: {e}")
+            return None
+
+    def detect_emotion(self, audio_path):
+        """Detect emotion in the audio"""
+        try:
+            # Load audio
+            signal = self.load_audio(audio_path)
+            
+            # Convert to tensor and ensure proper shape
+            signal_tensor = torch.tensor(signal).unsqueeze(0)
+            
+            # Get emotion predictions
+            out_probs, score, index, text_lab = self.emotion_classifier.classify_batch(signal_tensor)
+            
+            # Create emotion analysis result
+            emotion_result = {
+                "predicted_emotion": text_lab[0],
+                "confidence_score": float(score[0]),
+                "probabilities": {
+                    emotion: float(prob)
+                    for emotion, prob in zip(self.emotion_classifier.hparams.label_encoder.ind2lab, out_probs[0])
+                }
+            }
+            
+            return emotion_result
+            
+        except Exception as e:
+            print(f"Error detecting emotion for {audio_path}: {e}")
+            return None
 
     def load_audio(self, audio_path):
         """Load audio file and return signal"""
@@ -209,7 +294,7 @@ def main():
     # Parse command line arguments
     import argparse
     parser = argparse.ArgumentParser(description='Process video files for transcription and emotion analysis')
-    parser.add_argument('--data_path', help='Path to directory containing video files')
+    parser.add_argument('--data_path', required=True, help='Path to directory containing video files')
     parser.add_argument('--output_dir', default='processed_data', help='Output directory for processed files')
     args = parser.parse_args()
 
@@ -217,8 +302,7 @@ def main():
     processor = VideoProcessor(output_dir=args.output_dir)
     
     # Get all video files
-    print(args.data_path)
-    all_videos = glob.glob(args.data_path + "/*.mp4")
+    all_videos = glob.glob(os.path.join(args.data_path, "*.mp4"))
     print(f"Found {len(all_videos)} video files")
     
     # Process each video
