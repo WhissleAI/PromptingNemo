@@ -37,19 +37,27 @@ def sanitize_filename(filename):
     sanitized = re.sub(r'_+', '_', sanitized)
     return sanitized.strip('_')
 
-def upload_to_gcs(bucket_name, source_file_path, destination_blob_name, output_folder):
-    """Uploads a file to the specified Google Cloud Storage bucket and saves the URI."""
+def upload_to_gcs(bucket_name, source_file_path, destination_blob_name, output_folder, dataname="soccer_data"):
+    """Uploads a file to the specified Google Cloud Storage bucket under a folder and saves the URI."""
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
-    blob = bucket.blob(destination_blob_name)
-
+    
+    # Specify the folder within the bucket, e.g., "soccer_data/"
+    folder = dataname + "/"
+    full_destination_blob_name = f"{folder}{destination_blob_name}"
+    
+    blob = bucket.blob(full_destination_blob_name)
     blob.upload_from_filename(source_file_path)
-    gcs_uri = f"gs://{bucket_name}/{destination_blob_name}"
+    
+    gcs_uri = f"gs://{bucket_name}/{full_destination_blob_name}"
     print(f"Uploaded to {gcs_uri}")
 
     # Write the GCS URI to a file in the output folder
+    os.makedirs(output_folder, exist_ok=True)  # Ensure the output folder exists
     with open(os.path.join(output_folder, 'uploaded_files_uris.txt'), 'a') as uri_file:
         uri_file.write(gcs_uri + '\n')
+    
+    os.remove(source_file_path)  # Remove the local file after uploading
 
 def download_content(url, download_folder, bucket_name, format_type='mp4'):
     """
@@ -144,56 +152,58 @@ def main():
 
     # Predefined queries if no single query is provided
     queries = [args.query] if args.query else [
-        "Hollywood movie scenes with intense family dinner discussions",
-        "Classic courtroom scenes with prosecutor, defense, and witness dialogue",
-        "Hollywood therapy session scenes with therapist and patient talking",
-        "Iconic detective interview scenes with multiple suspects",
-        "Hollywood family reunion scenes with siblings and relatives catching up",
-        "Police interrogation scenes with detectives questioning suspects",
-        "Team meeting scenes in action movies with characters planning a heist",
-        "Romantic dinner scenes with couples having heartfelt conversations",
-        "Classroom scenes with teachers and students discussing a topic",
-        "Boardroom negotiation scenes with business executives debating",
-        "Road trip scenes with friends sharing life experiences",
-        "High-stakes poker game scenes with players exchanging banter",
-        "Couples therapy scenes with counselor and couple in heated dialogue",
-        "War room briefings with commanders and soldiers strategizing",
-        "Mentor-mentee scenes with characters discussing life lessons",
-        "Campfire scenes with friends revealing secrets and personal stories",
-        "Hospital emergency room scenes with doctors and patients talking",
-        "Detective partner discussions while examining clues",
-        "Parent-teacher conference scenes with discussions about a student",
-        "Classic diner scenes with friends chatting about relationships",
-        "Celebrity interview scenes with journalists asking tough questions",
-        "Family intervention scenes with relatives expressing concerns",
-        "Teacher-principal discussions about student issues",
-        "Sports locker room scenes with coaches motivating players",
-        "Restaurant scenes with servers and customers discussing orders",
-        "Family vacation scenes with parents and kids sharing experiences",
-        "Town hall meetings with community members discussing issues",
-        "Party scenes with friends discussing their personal lives",
-        "Office scenes with boss and employees discussing project updates",
-        "Detective scenes with suspects talking about alibis",
-        "Spy movie briefings with agents planning a mission",
-        "Group therapy scenes with participants sharing stories",
-        "Reunion scenes with ex-partners discussing their past",
-        "Hotel concierge scenes with staff assisting guests",
-        "Courtroom settlement discussions with lawyers and clients",
-        "Car ride scenes with characters having deep conversations",
-        "Support group meetings with members sharing personal experiences",
-        "Royal court scenes with king, queen, and advisors deliberating",
-        "Prison yard scenes with inmates discussing life beyond bars",
-        "Student-teacher conference scenes discussing academic progress",
-        "Talk show interviews with hosts and guests exchanging insights",
-        "Coffee shop scenes with strangers meeting for the first time",
-        "Military command briefings with generals and soldiers",
-        "Planning scenes for surprise parties with friends",
-        "Hospital waiting room scenes with family discussing treatments",
-        "Airplane scenes with flight attendants and passengers interacting",
-        "Charity gala scenes with philanthropists discussing causes",
-        "Museum scenes with curators explaining exhibits to visitors",
-        "Political debate scenes with candidates discussing policies",
-        "Group dinner party scenes with multiple guests talking",
+
+        "Full soccer game Barcelona vs Real Madrid",
+        "Full match UEFA Champions League Final",
+        "Full soccer game World Cup Final",
+        "Classic full match Brazil vs Argentina",
+        "Premier League full game Manchester United vs Liverpool",
+        "Full match FC Barcelona Champions League",
+        "Full soccer game Chelsea vs Manchester City",
+        "La Liga full game highlights",
+        "Full soccer match World Cup qualifiers",
+        "Full soccer match Arsenal vs Tottenham",
+        "Bundesliga full game Bayern Munich vs Borussia Dortmund",
+        "Full game highlights France vs Germany Euro",
+        "Copa America full match Brazil vs Chile",
+        "Serie A full match Juventus vs AC Milan",
+        "Full game MLS Cup Final",
+        "World Cup qualifying match full replay",
+        "International friendly full game USA vs Mexico",
+        "Africa Cup of Nations full match",
+        "Full game PSG vs Marseille",
+        "EPL full game Chelsea vs Arsenal",
+        "Full soccer match Spain vs Portugal",
+        "Asian Cup full game Japan vs South Korea",
+        "FIFA World Cup full game replay",
+        "Full match Barcelona Champions League",
+        "Euro Cup full game Italy vs England",
+        "Premier League full game Manchester City vs Chelsea",
+        "CONCACAF Gold Cup full match USA vs Canada",
+        "Serie A full match Inter Milan vs Juventus",
+        "El Clasico full match Real Madrid vs Barcelona",
+        "Full game Argentina vs Uruguay Copa America",
+        "Full match English Championship playoff final",
+        "Full game Ligue 1 PSG vs Lyon",
+        "FA Cup final full game Arsenal vs Manchester United",
+        "Women's World Cup full match USA vs Netherlands",
+        "Full soccer game Spain vs Italy",
+        "Full match Manchester United Champions League",
+        "Copa Libertadores full game Boca Juniors vs River Plate",
+        "World Cup group stage full match",
+        "Olympic soccer final full game",
+        "Full soccer game Netherlands vs Germany",
+        "FIFA Club World Cup full match",
+        "Full match Liverpool Champions League",
+        "Full game Premier League Liverpool vs Manchester United",
+        "Full match Real Madrid Champions League",
+        "Women's Euro full game England vs Germany",
+        "Nations League full game Portugal vs France",
+        "Classic World Cup full match Italy vs Brazil",
+        "Full game Barcelona vs Atletico Madrid La Liga",
+        "Full game African Cup of Nations",
+        "Full soccer game Copa America Brazil vs Argentina",
+
     ]
 
     base_output_dir = args.output
