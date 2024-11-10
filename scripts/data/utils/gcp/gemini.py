@@ -44,7 +44,7 @@ Use 'Commentator A', 'Commentator B', etc. to identify speakers.
 # # Specify the GCS URI of your audio file
 # audio_file_uri = f"gs://{bucket_name}/{destination_blob_name}"
 
-data_folder = "/external2/datasets/youtube"
+data_folder = "/external2/datasets/youtube/soccer_data"
 audio_uri_files = glob.glob(data_folder + "/*/uploaded_files_uris.txt")
 
 print(audio_uri_files)
