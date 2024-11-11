@@ -1,12 +1,32 @@
 import os
 import sys
 import re
+import glob
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import subprocess
 
 # Set the path to your Google Cloud service account key file
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/external2/workspace/google_service_account_files/stream2action-773bd306c0f0.json"
+
+import openai  # Requires the OpenAI package
+
+# Set your OpenAI API key
+openai.api_key = "<openai-api-key>"
+
+def generate_queries(prompt, num_queries=10):
+    """Generate a list of YouTube search queries using ChatGPT."""
+    instruction = "Generate YouTube "+ str(num_queries) + " search queries based on a prompt without any numbering"
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": instruction},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    queries = response['choices'][0]['message']['content'].splitlines()
+    return [q for q in queries if q][:num_queries]  # Return up to num_queries results
+
 
 try:
     from youtubesearchpython import VideosSearch
@@ -75,7 +95,7 @@ def convert_to_wav(input_path, output_path):
         print(f"Error converting {input_path} to WAV: {e}")
         return None
 
-def upload_to_gcs(bucket_name, source_file_path, destination_blob_name, output_folder, dataname="soccer_data"):
+def upload_to_gcs(bucket_name, source_file_path, destination_blob_name, output_folder, dataname="movies_data"):
     """Uploads a file to the specified Google Cloud Storage bucket under a folder and saves the URI."""
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
@@ -117,17 +137,21 @@ def download_content(url, download_folder, bucket_name, format_type='mp4'):
             # Convert video to 16kHz WAV PCM audio
             print("\n\n Trimmed path: ", trimmed_path, "\n\n\n")
             
-            audio_path = trimmed_path.replace(".webm", "_16k.wav")
-            trimmer_mp4_path = trimmed_path.replace(".webm", ".mp4")
+            audio_path = trimmed_path.split(".")[0] + "_16k.wav"
             #audio_path = os.path.join(download_folder, sanitize_filename(os.path.splitext(trimmed_path)[0]) + "_16k.wav")
             audio_path = convert_to_wav(trimmed_path, audio_path)
             print("Wave file path: ", audio_path)
+            
+            mp4_path = trimmed_path.split(".")[0] + "*.mp4"
+            mp4_path = glob.glob(mp4_path)
+            mp4_path = mp4_path[0]
+            
             if audio_path:
                 # Upload the WAV audio file to GCS
                 # Upload the video file to GCS
                 upload_to_gcs(bucket_name, trimmed_path, os.path.basename(trimmed_path), download_folder)
                 upload_to_gcs(bucket_name, audio_path, os.path.basename(audio_path), download_folder)
-                upload_to_gcs(bucket_name, trimmer_mp4_path, os.path.basename(audio_path), download_folder)
+                upload_to_gcs(bucket_name, mp4_path, os.path.basename(mp4_path), download_folder)
                 
             #os.remove(trimmed_path)
             #os.remove(audio_path)
@@ -137,7 +161,7 @@ def download_content(url, download_folder, bucket_name, format_type='mp4'):
             #print(f"Downloading {d['_percent_str']} of {d['filename']} at {d['_speed_str']} ETA: {d['_eta_str']}")
 
     ydl_opts = {
-        'format': 'bestvideo[height<=480]+bestaudio/best',  # Limits to best video at 480p or lower with best audio
+        'format': 'best',  # Limits to best video at 480p or lower with best audio
         'merge_output_format': 'mp4',
         'outtmpl': os.path.join(download_folder, '%(title)s.%(ext)s'),
         'quiet': True,
@@ -163,6 +187,7 @@ def search_and_download(query, num_results, download_folder, bucket_name, format
     """Search for and download videos/audio from YouTube, then upload to GCS."""
     query_folder_name = sanitize_filename(query)
     final_download_folder = os.path.join(download_folder, query_folder_name)
+    print("Final download folder: ", final_download_folder)    
     os.makedirs(final_download_folder, exist_ok=True)
     
     try:
@@ -179,80 +204,43 @@ def search_and_download(query, num_results, download_folder, bucket_name, format
                 future.result()
     except Exception as e:
         print(f"Error processing query '{query}': {e}")
-        
+    
+    #print("Final download folder: ", final_download_folder)    
     #os.remove(os.path.join(final_download_folder, '*.mp4'))
+    #os.remove(os.path.join(final_download_folder, '*.webm'))
     #os.remove(os.path.join(final_download_folder, '*.wav'))
 
 def main():
     parser = argparse.ArgumentParser(description='Download YouTube videos or audio and upload to Google Cloud Storage')
     parser.add_argument('format', choices=['mp4', 'mp3'],
-                      help='Download format: mp4 for video, mp3 for audio')
+                        help='Download format: mp4 for video, mp3 for audio')
     parser.add_argument('--results', type=int, default=5,
-                      help='Number of results to download per query (default: 5)')
+                        help='Number of results to download per query (default: 5)')
     parser.add_argument('--workers', type=int, default=5,
-                      help='Number of parallel downloads (default: 5)')
+                        help='Number of parallel downloads (default: 5)')
     parser.add_argument('--output', type=str, default='downloaded_content',
-                      help='Base output directory (default: downloaded_content)')
-    parser.add_argument('--query', type=str,
-                      help='Single search query. If not provided, will use predefined queries list')
+                        help='Base output directory (default: downloaded_content)')
+    parser.add_argument('--query_prompt', type=str,
+                        help='Prompt to generate search queries. If not provided, will use a predefined list.')
     parser.add_argument('--bucket_name', type=str, required=True,
-                      help='Google Cloud Storage bucket name to upload files')
+                        help='Google Cloud Storage bucket name to upload files')
 
     args = parser.parse_args()
 
-    queries = [args.query] if args.query else [
-        "Full soccer game Barcelona vs Real Madrid",
-        "Full soccer match Manchester United vs Liverpool",
-        "Full match UEFA Champions League Final",
-        "Full soccer game World Cup Final",
-        "Full soccer game Brazil vs Argentina",
-        "Full Premier League game Manchester City vs Chelsea",
-        "Full match FC Barcelona Champions League",
-        "Full soccer game Chelsea vs Manchester City",
-        "La Liga full game highlights",
-        "Full soccer match Arsenal vs Tottenham",
-        "Bundesliga full game Bayern Munich vs Borussia Dortmund",
-        "Full game highlights France vs Germany Euro",
-        "Copa America full match Brazil vs Chile",
-        "Serie A full match Juventus vs AC Milan",
-        "Full game MLS Cup Final",
-        "World Cup qualifying match full replay",
-        "International friendly full game USA vs Mexico",
-        "Africa Cup of Nations full match",
-        "Full game PSG vs Marseille",
-        "EPL full game Chelsea vs Arsenal",
-        "Full soccer match Spain vs Portugal",
-        "Asian Cup full game Japan vs South Korea",
-        "FIFA World Cup full game replay",
-        "Full match Barcelona Champions League",
-        "Euro Cup full game Italy vs England",
-        "Premier League full game Manchester City vs Chelsea",
-        "CONCACAF Gold Cup full match USA vs Canada",
-        "Serie A full match Inter Milan vs Juventus",
-        "El Clasico full match Real Madrid vs Barcelona",
-        "Full game Argentina vs Uruguay Copa America",
-        "Full match English Championship playoff final",
-        "Full game Ligue 1 PSG vs Lyon",
-        "FA Cup final full game Arsenal vs Manchester United",
-        "Women's World Cup full match USA vs Netherlands",
-        "Full soccer game Spain vs Italy",
-        "Full match Manchester United Champions League",
-        "Copa Libertadores full game Boca Juniors vs River Plate",
-        "World Cup group stage full match",
-        "Olympic soccer final full game",
-        "Full soccer game Netherlands vs Germany",
-        "FIFA Club World Cup full match",
-        "Full match Liverpool Champions League",
-        "Full game Premier League Liverpool vs Manchester United",
-        "Full match Real Madrid Champions League",
-        "Women's Euro full game England vs Germany",
-        "Nations League full game Portugal vs France",
-        "Classic World Cup full match Italy vs Brazil",
-        "Full game Barcelona vs Atletico Madrid La Liga",
-        "Full game African Cup of Nations",
-        "Full soccer game Copa America Brazil vs Argentina",
-        "Full soccer match World Cup Final 2022",
-    ]
+    # Generate queries using ChatGPT if prompt is provided
+    if args.query_prompt:
+        print(f"Generating queries based on prompt: {args.query_prompt}")
+        queries = generate_queries(args.query_prompt, num_queries=15)
+        print("Generated queries:", queries)
+
+        # Use predefined list if no prompt is provided
+    else:
+        queries = [
+            "Full soccer game Barcelona vs Real Madrid",
+            "Full soccer match Manchester United vs Liverpool",
+            # Add more static queries as fallback
+        ]
+    
 
     base_output_dir = args.output
     os.makedirs(base_output_dir, exist_ok=True)
