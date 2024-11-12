@@ -12,7 +12,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/external2/workspace/google_serv
 import openai  # Requires the OpenAI package
 
 # Set your OpenAI API key
-openai.api_key = "<openai-api-key>"
+openai.api_key = "sk-<your-openai-api-key>"
 
 def generate_queries(prompt, num_queries=10):
     """Generate a list of YouTube search queries using ChatGPT."""
@@ -95,7 +95,7 @@ def convert_to_wav(input_path, output_path):
         print(f"Error converting {input_path} to WAV: {e}")
         return None
 
-def upload_to_gcs(bucket_name, source_file_path, destination_blob_name, output_folder, dataname="movies_data"):
+def upload_to_gcs(bucket_name, source_file_path, destination_blob_name, output_folder, dataname="creative_design"):
     """Uploads a file to the specified Google Cloud Storage bucket under a folder and saves the URI."""
     storage_client = storage.Client()
     bucket = storage_client.bucket(bucket_name)
@@ -106,7 +106,7 @@ def upload_to_gcs(bucket_name, source_file_path, destination_blob_name, output_f
     blob = bucket.blob(full_destination_blob_name)
     blob.upload_from_filename(source_file_path)
     
-    gcs_uri = f"gs://{bucket_name}/{full_destination_blob_name}"
+    gcs_uri = f"gs://{bucket_name}/youtube-videos/{full_destination_blob_name}"
     print(f"Uploaded to {gcs_uri}")
 
     os.makedirs(output_folder, exist_ok=True)
@@ -230,7 +230,7 @@ def main():
     # Generate queries using ChatGPT if prompt is provided
     if args.query_prompt:
         print(f"Generating queries based on prompt: {args.query_prompt}")
-        queries = generate_queries(args.query_prompt, num_queries=15)
+        queries = generate_queries(args.query_prompt, num_queries=50)
         print("Generated queries:", queries)
 
         # Use predefined list if no prompt is provided
@@ -249,7 +249,10 @@ def main():
         uri_file.write("")
 
     for query in queries:
+        query = query.replace(".", "")
+        
         print(f"\nProcessing query: {query}")
+        
         search_and_download(
             query=query,
             num_results=args.results,
