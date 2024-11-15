@@ -257,6 +257,57 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
             checkpoint.write(str(index))
 
     manifest.close()
+    
+def process_manifest(input_manifest_file, manifestfile, taglistfile, checkpoint_file, lang_code):
+    
+    input_manifest_file = open(input_manifest_file, 'r')
+    
+    batch_text = []
+    batch_emotion = []
+    batch_langid = []
+    batch_meta = []
+    
+    output_manifest_file = open(manifestfile, 'w')
+        
+    for sample in input_manifest_file:
+        
+        text = sample['text']
+        audiofile = sample['audio_filepath']
+        
+        emotion_label = detect_emotion(audiofile)
+        
+        batch_text.append(text)
+        batch_emotion.append(emotion_label)
+        batch_langid.append(lang_code)
+        
+        if len(batch_text) == 10:
+            
+            batch_text_annotated = annotate_sentences(batch_text)
+            
+            if len(batch_text_annotated) == len(batch_text):
+                print("Batch Text Annotated:", batch_text_annotated)
+                for i in range(len(batch_text)):
+                    
+                    sample_dict = {}
+                    sample_dict['duration'] = duration
+                    sample_dict['audio_filepath'] = audiofile
+                    sample_dict['text'] = batch_text_annotated[i]
+                    sample_dict['emotion'] = batch_emotion[i]
+                    sample_dict['langid'] = lang_code
+                    sample_dict['meta'] = batch_meta[i]
+                    sample_dict['tasks'] = ["transcription", "keyphrases","speaker-meta"]
+                    sample_dict['instruction'] = "Transcribe and mark keyphrases and speaker metadata"
+                    json.dump(sample_dict, manifest, ensure_ascii=False)
+                    output_manifest_file.write("\n") 
+                
+            batch_text = []
+            batch_emotion = []
+            batch_meta = []
+            batch_langid = []    
+        
+        
+    
+    
 
 #def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, checkpoint_file):
     
