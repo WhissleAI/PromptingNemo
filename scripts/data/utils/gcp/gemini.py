@@ -3,7 +3,7 @@ import glob
 from time import sleep
 import json
 import vertexai
-from google.cloud import storage, speech_v1p1beta1 as speech
+#from google.cloud import storage, speech_v1p1beta1 as speech
 from vertexai.generative_models import GenerativeModel, GenerationConfig, Part
 
 PROJECT_ID = "stream2action"  # Replace with your actual Google Cloud project ID
