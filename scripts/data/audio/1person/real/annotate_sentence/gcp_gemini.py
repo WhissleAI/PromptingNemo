@@ -1,3 +1,9 @@
+import json
+import vertexai
+from vertexai.generative_models import GenerativeModel, GenerationConfig, Part
+import re
+import traceback
+
 def annotate_sentences_vertexAI(sentences):
     """
     Annotates sentences using Google's Vertex AI Gemini model.
