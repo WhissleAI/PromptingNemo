@@ -46,6 +46,9 @@ from transformers.models.wav2vec2.modeling_wav2vec2 import (
 import vertexai
 from vertexai.generative_models import GenerativeModel, GenerationConfig, Part
 
+from annotate_sentence.gcp_custom_llm import annotate_sentences_custom_vertex
+from annotate_sentence.gcp_gemini import annotate_sentences_vertexAI
+
 PROJECT_ID = "stream2action"  # Replace with your actual Google Cloud project ID
 
 # Initialize Vertex AI with the project ID and location
@@ -406,7 +409,8 @@ def process_manifest(input_manifest_file, manifestfile, taglistfile, checkpoint_
         audiofile = sample['audio_filepath']
         duration = sample['duration']
         
-        emotion_label = detect_emotion(audiofile)
+        emotion_label = detect_emotion(audiofile).upper()
+        #emotion_label = "NEUTRAL"
         
         batch_text.append(text)
         batch_emotion.append(emotion_label)
@@ -414,19 +418,28 @@ def process_manifest(input_manifest_file, manifestfile, taglistfile, checkpoint_
         
         signal, sample_rate = sf.read(audiofile)
 
-        print("Audio File:", audiofile)
-        print("detecting age")
+        #print("Audio File:", audiofile)
+        #print("detecting age")
         
         result = process_and_interpret(signal, sample_rate)
         age = str(int(result['age']))
         gender = result['predicted_gender'].upper()
+        #age = "30"
+        #gender = "MALE"
         batch_meta.append("GENDER_"+gender+" AGE_"+age)
         
-        if len(batch_text) == 10:
+        if len(batch_text) == 20:
             print("\n--- Processing Batch ---")
             print("Input Batch Text:", json.dumps(batch_text, indent=2))
             
             try:
+                
+                # batch_text_annotated = annotate_sentences_custom_vertex(
+                #     sentences=batch_text,
+                #     project_id="495570340582",
+                #     endpoint_id="3407238100408074240"
+                # )
+
                 batch_text_annotated = annotate_sentences_vertexAI(batch_text)
                 print("Successfully received annotations")
                 print("Annotated Batch Text:", json.dumps(batch_text_annotated, indent=2))
@@ -734,7 +747,7 @@ if __name__ == "__main__":
                         help='Processing mode: tsv or manifest')
     parser.add_argument('--input-manifest', 
                         help='Path to input manifest file or directory containing manifest files')
-    parser.add_argument('--max-workers', type=int, default=8,
+    parser.add_argument('--max-workers', type=int, default=1,
                         help='Maximum number of parallel processes (default: 4)')
     
     args = parser.parse_args()
