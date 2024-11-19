@@ -13,9 +13,14 @@ model = GenerativeModel("gemini-1.5-flash-002")
 
 # Define your transcription prompt
 prompt = """
-Can you transcribe this interview, in the format of speaker, caption, intent label, emotion label: Happy, Angry, Sad, Neutral, Surprise, Disgust, Trust, Anticipation.
-Use speaker A, speaker B, etc., to identify speakers.
-Output a python list where each turn is a dict with keys: speaker, caption, intent label, emotion label.
+Can you transcribe this interview, in the format of speaker, caption with tags, intent label, emotion label: Happy, Angry, Sad, Neutral, Surprise, Disgust, Trust, Anticipation.
+Use speaker RoleA, speaker RoleB, etc., to identify speakers.
+
+Caption text should be tagged with meaniniful entity tags, for example:
+
+    ENTITY_ACTION Remind END me to ENTITY_ACTION take END my ENTITY_MEDICATION medication END at ENTITY_TIME 9 AM END.
+    
+Output a python list where each turn is a dict with keys: speaker, caption with tags, intent label, emotion label.
 """
 
 # Specify the local folder containing audio files
