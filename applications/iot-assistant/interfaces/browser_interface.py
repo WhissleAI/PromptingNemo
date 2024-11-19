@@ -130,17 +130,17 @@ def switch_to_default_content(driver):
     logging.info("Switched to default content")
 
 def execute_instruction(instruction, driver):
-    type_regex = "^type\s.{1,}$"
-    press_regex = "^press\s(enter|arrowleft|arrowright|arrowup|arrowdown|backspace)$"
-    clickxpath_regex = "^clickxpath\s.{1,}$"
-    clickoption_regex = "^clickoption\s.{1,}$"
-    movemouse_regex = "^movemouse\s.{1,}$"
-    selectinput_regex = "^selectinput\s.{1,}$"
-    navigate_regex = "^navigate\s.{1,}$"
-    scroll_regex = "^scroll\s(up|down)$"
-    scroll_to_element_regex = "^scrolltoelement\s.{1,}$"
-    switch_to_frame_regex = "^switchtoframe\s.{1,}$"
-    switch_to_default_content_regex = "^switchtodefaultcontent$"
+    type_regex = r"^type\s.{1,}$"
+    press_regex = r"^press\s(enter|arrowleft|arrowright|arrowup|arrowdown|backspace)$"
+    clickxpath_regex = r"^clickxpath\s.{1,}$"
+    clickoption_regex = r"^clickoption\s.{1,}$"
+    movemouse_regex = r"^movemouse\s.{1,}$"
+    selectinput_regex = r"^selectinput\s.{1,}$"
+    navigate_regex = r"^navigate\s.{1,}$"
+    scroll_regex = r"^scroll\s(up|down)$"
+    scroll_to_element_regex = r"^scrolltoelement\s.{1,}$"
+    switch_to_frame_regex = r"^switchtoframe\s.{1,}$"
+    switch_to_default_content_regex = r"^switchtodefaultcontent$"
 
     if re.match(type_regex, instruction):
         parts = instruction.split(" ", 2)

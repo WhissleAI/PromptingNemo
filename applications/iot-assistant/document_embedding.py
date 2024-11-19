@@ -2,7 +2,6 @@ import openai
 import csv
 import PyPDF2
 import numpy as np
-from openai.embeddings_utils import cosine_similarity
 from scipy.spatial import distance_matrix
 import docx
 from striprtf.striprtf import rtf_to_text
@@ -17,9 +16,11 @@ import os
 import ast
 import time
 from text_to_speech import text_to_speech
-
-
+import numpy as np
 import yaml
+
+def cosine_similarity(a, b):
+    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
 # Load configuration from YAML file
 with open("config.yml", 'r') as stream:
