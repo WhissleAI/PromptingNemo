@@ -253,7 +253,7 @@ def detect_emotion(audio_path):
             predicted_ids = torch.argmax(logits, dim=-1)
             labels = [emotion_classifier.config.id2label[_id] for _id in predicted_ids.tolist()]
 
-        print("Emotion", labels)
+        #print("Emotion", labels)
         return labels[0]
     except Exception as e:
         print(f"Error detecting emotion for {audio_path}: {e}")
@@ -349,15 +349,32 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         #text = normalize(text)
         batch_text.append(text)
 
-        emotion_label = detect_emotion(str(wavfilepath))
+        emotion_label = detect_emotion(str(wavfilepath)).upper()
+        emotion_label = "EMOTION_"+emotion_label
+        
         print("Emotion Label:", emotion_label)
+        
         batch_emotion.append(emotion_label)
+        
+        signal, sample_rate = sf.read(wavfilepath)
+
+        #print("Audio File:", audiofile)
+        #print("detecting age")
+        
+        #result = process_and_interpret(signal, sample_rate)
+        #age = str(int(result['age']))
+        #gender = result['predicted_gender'].upper()
+        #age = "30"
+        #gender = "MALE"
+        #batch_meta.append("GENDER_"+gender+" AGE_"+age)
+        
         #batch_meta.append(str(row['gender']) + " " + str(row['age']) + " " + str(row['variant']))
     
     
-        if len(batch_text) == 10:
+        if len(batch_text) == 20:
             
-            batch_text_annotated = annotate_sentences(batch_text)
+            batch_text_annotated = annotate_sentences_vertexAI(batch_text)
+            #batch_text_annotated = annotate_sentences(batch_text)
             
             if len(batch_text_annotated) == len(batch_text):
                 print("Batch Text Annotated:", batch_text_annotated)
@@ -373,8 +390,8 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
                     sample_dict['emotion'] = batch_emotion[i]
                     sample_dict['langid'] = lang_code
                     #sample_dict['meta'] = batch_meta[i]
-                    sample_dict['tasks'] = ["transcription", "keyphrases","speaker-meta"]
-                    sample_dict['instruction'] = "Transcribe and mark keyphrases and speaker metadata"
+                    sample_dict['tasks'] = ["transcription", "keyphrases", "intent", "emotion"]
+                    sample_dict['instruction'] = "Transcribe, mark keyphrases, intent and speaker emotion"
                     json.dump(sample_dict, manifest, ensure_ascii=False)
                     manifest.write("\n") 
                 
@@ -407,30 +424,33 @@ def process_manifest(input_manifest_file, manifestfile, taglistfile, checkpoint_
         sample = json.loads(sample)
         text = sample['text']
         audiofile = sample['audio_filepath']
+        audiofile = audiofile.replace("peoples_speech", "people_speech")
         duration = sample['duration']
         
         emotion_label = detect_emotion(audiofile).upper()
+        emotion_label = "EMOTION_"+emotion_label
+        #print("Emotion Label", emotion_label)
         #emotion_label = "NEUTRAL"
         
         batch_text.append(text)
         batch_emotion.append(emotion_label)
         batch_langid.append(lang_code)
         
-        signal, sample_rate = sf.read(audiofile)
+        #signal, sample_rate = sf.read(audiofile)
 
         #print("Audio File:", audiofile)
         #print("detecting age")
         
-        result = process_and_interpret(signal, sample_rate)
-        age = str(int(result['age']))
-        gender = result['predicted_gender'].upper()
+        #result = process_and_interpret(signal, sample_rate)
+        #age = str(int(result['age']))
+        #gender = result['predicted_gender'].upper()
         #age = "30"
         #gender = "MALE"
-        batch_meta.append("GENDER_"+gender+" AGE_"+age)
+        #batch_meta.append("GENDER_"+gender+" AGE_"+age)
         
         if len(batch_text) == 20:
             print("\n--- Processing Batch ---")
-            print("Input Batch Text:", json.dumps(batch_text, indent=2))
+            #print("Input Batch Text:", json.dumps(batch_text, indent=2))
             
             try:
                 
@@ -442,7 +462,7 @@ def process_manifest(input_manifest_file, manifestfile, taglistfile, checkpoint_
 
                 batch_text_annotated = annotate_sentences_vertexAI(batch_text)
                 print("Successfully received annotations")
-                print("Annotated Batch Text:", json.dumps(batch_text_annotated, indent=2))
+                #print("Annotated Batch Text:", json.dumps(batch_text_annotated, indent=2))
                 
                 if not isinstance(batch_text_annotated, list):
                     print("Warning: annotate_sentences did not return a list")
@@ -459,10 +479,10 @@ def process_manifest(input_manifest_file, manifestfile, taglistfile, checkpoint_
                     sample_dict['audio_filepath'] = audiofile
                     sample_dict['text'] = batch_text_annotated[i]
                     sample_dict['emotion'] = batch_emotion[i]
-                    sample_dict['meta'] = batch_meta[i]
+                    #sample_dict['meta'] = batch_meta[i]
                     sample_dict['langid'] = lang_code
-                    sample_dict['tasks'] = ["transcription", "keyphrases","speaker-meta"]
-                    sample_dict['instruction'] = "Transcribe and mark keyphrases and speaker metadata"
+                    sample_dict['tasks'] = ["transcription", "keyphrases", "intent", "emotion"]
+                    sample_dict['instruction'] = "Transcribe, mark keyphrases, intent and speaker emotion"
                     
                     print(f"\nWriting sample {i+1}/{len(batch_text)}:")
                     print(json.dumps(sample_dict, indent=2))
@@ -753,9 +773,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     # Define base paths
-    data_path = PurePath("/projects/whissle/datasets/cv/cv-corpus-15.0-2023-09-08/")
+    data_path = PurePath("/external1/datasets/cv/cv-corpus-15.0-2023-09-08/")
     data_path_lang = data_path / args.lang_code
-    manifestfolder = "/external1/datasets/peoples_speech/manifests_processed"
+    manifestfolder = "/external1/datasets/people_speech/manifests_processed"
     
     # Set up device and models
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -768,7 +788,7 @@ if __name__ == "__main__":
     feature_extractor = Wav2Vec2FeatureExtractor.from_pretrained("superb/wav2vec2-base-superb-er")
     
     # load model from hub
-    device = 'cpu'
+    #device = 'cpu'
     model_name = 'audeering/wav2vec2-large-robust-24-ft-age-gender'
     age_processor = Wav2Vec2Processor.from_pretrained(model_name)
     age_model = AgeGenderModel.from_pretrained(model_name)
