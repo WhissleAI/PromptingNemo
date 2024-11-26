@@ -156,19 +156,54 @@ def process_audio_files(bucket_name: str, output_folder: str):
     model = GenerativeModel("gemini-1.5-flash-002")
     
     # Define the transcription prompt
+    """Process audio files from the bucket using Gemini model."""
+    vertexai.init(project="stream2action", location="us-central1")
+    model = GenerativeModel("gemini-1.5-flash-002")
+    
     prompt = """
-    Can you transcribe this interview, in the format of start-time, end-time, speaker, caption with tags, intent label, emotion label: 
-    Happy, Angry, Sad, Neutral, Surprise, Disgust, Trust, Anticipation. 
-    Use speaker A, speaker B, etc., to identify speakers.
+    Please transcribe this audio with extremely precise word-level timing and accurate speaker changes. Pay special attention to:
+
+    1. Speaker Identification:
+    - Label each unique speaker as Speaker A, Speaker B, etc.
+    - Note speaker changes even during brief interjections
+    - Mark overlapping speech if present
+    - Be consistent with speaker labels throughout the transcript
+
+    2. Timing Requirements:
+    - Provide precise start_time and end_time for each utterance in seconds
+    - Break long utterances into smaller segments at natural pauses (4-8 seconds each)
+    - Ensure timestamps align with word boundaries
+    - Account for pauses between speakers (>0.5 seconds)
+
+    3. Content Formatting:
+    Caption text should be tagged with detailed entity tags, for example:
+    ENTITY_ACTION open END the ENTITY_OBJECT door END at ENTITY_TIME three o'clock END
     
-    Caption text should be tagged with meaningful entity tags, for example:
-    ENTITY_ACTION Remind END me to ENTITY_ACTION take END my ENTITY_MEDICATION medication END at ENTITY_TIME 9 AM END.
-    
-    Output a python list where each turn is a dict with keys: start-time, end-time, speaker, caption with tags, intent label, emotion label.
+    Common entity types include:
+    - ENTITY_ACTION: verbs and activities
+    - ENTITY_OBJECT: physical objects
+    - ENTITY_PERSON: names and roles
+    - ENTITY_LOCATION: places
+    - ENTITY_TIME: temporal expressions
+    - ENTITY_EMOTION: emotional expressions
+
+    4. Additional Labels:
+    - intent_label: Classify the communicative intent (e.g., Question, Statement, Request, Response, Agreement, Disagreement)
+    - emotion_label: [Happy, Angry, Sad, Neutral, Surprise, Disgust, Trust, Anticipation]
+
+    Output a Python list where each segment is a dictionary with these keys:
+    {
+        "start_time": float,
+        "end_time": float,
+        "speaker": str,
+        "caption": str,  # with entity tags
+        "intent_label": str,
+        "emotion_label": str
+    }
     """
     
     # Get list of audio files
-    audio_files = list_mp4_files(bucket_name, "youtube-videos/podcast_data/")
+    audio_files = list_mp4_files(bucket_name, "youtube-videos/meeting_recordings/")
     
     # Create output folder if it doesn't exist
     os.makedirs(output_folder, exist_ok=True)
@@ -214,3 +249,6 @@ if __name__ == "__main__":
     OUTPUT_FOLDER = "/external1/datasets/youtube/"
     
     process_audio_files(BUCKET_NAME, OUTPUT_FOLDER)
+    
+    
+    

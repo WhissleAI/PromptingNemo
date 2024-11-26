@@ -14,3 +14,6 @@ SSL_CERT:
 
 SERVER:
   PORT: 5003
+
+ASR:
+  WEBSOCKET_URL: "wss://api.whissle.ai/socket.io/?EIO=4&transport=websocket"

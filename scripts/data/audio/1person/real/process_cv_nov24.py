@@ -47,7 +47,7 @@ import vertexai
 from vertexai.generative_models import GenerativeModel, GenerationConfig, Part
 
 from annotate_sentence.gcp_custom_llm import annotate_sentences_custom_vertex
-from annotate_sentence.gcp_gemini import annotate_sentences_vertexAI
+#from annotate_sentence.gcp_gemini import annotate_sentences_vertexAI
 
 PROJECT_ID = "stream2action"  # Replace with your actual Google Cloud project ID
 
@@ -352,7 +352,7 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
         emotion_label = detect_emotion(str(wavfilepath)).upper()
         emotion_label = "EMOTION_"+emotion_label
         
-        print("Emotion Label:", emotion_label)
+        #print("Emotion Label:", emotion_label)
         
         batch_emotion.append(emotion_label)
         
@@ -373,27 +373,31 @@ def process_tsv(tsvfile, audioclips, audioclipswav, manifestfile, taglistfile, c
     
         if len(batch_text) == 20:
             
-            batch_text_annotated = annotate_sentences_vertexAI(batch_text)
+            batch_text_annotated, tag = annotate_sentences_vertexAI(batch_text)
+            print("TAG:", tag)
+            print("Batch Text Annotated:", batch_text_annotated)
+            if tag == "annotated":
             #batch_text_annotated = annotate_sentences(batch_text)
-            
-            if len(batch_text_annotated) == len(batch_text):
-                print("Batch Text Annotated:", batch_text_annotated)
-                for i in range(len(batch_text)):
-                    
-            
-                    wavfilepath = str(wavfilepath)
+                print("len of batch_text_annotated", len(batch_text_annotated))
+                
+                if len(batch_text_annotated) == len(batch_text):
+                    #print("Batch Text Annotated:", batch_text_annotated)
+                    for i in range(len(batch_text)):
+                        print("Writing Sample:", i)
+                
+                        wavfilepath = str(wavfilepath)
 
-                    sample_dict = {}
-                    sample_dict['duration'] = duration
-                    sample_dict['audio_filepath'] = wavfilepath
-                    sample_dict['text'] = batch_text_annotated[i]
-                    sample_dict['emotion'] = batch_emotion[i]
-                    sample_dict['langid'] = lang_code
-                    #sample_dict['meta'] = batch_meta[i]
-                    sample_dict['tasks'] = ["transcription", "keyphrases", "intent", "emotion"]
-                    sample_dict['instruction'] = "Transcribe, mark keyphrases, intent and speaker emotion"
-                    json.dump(sample_dict, manifest, ensure_ascii=False)
-                    manifest.write("\n") 
+                        sample_dict = {}
+                        sample_dict['duration'] = duration
+                        sample_dict['audio_filepath'] = wavfilepath
+                        sample_dict['text'] = batch_text_annotated[i]
+                        sample_dict['emotion'] = batch_emotion[i]
+                        sample_dict['langid'] = lang_code
+                        #sample_dict['meta'] = batch_meta[i]
+                        sample_dict['tasks'] = ["transcription", "keyphrases", "intent", "emotion"]
+                        sample_dict['instruction'] = "Transcribe, mark keyphrases, intent and speaker emotion"
+                        json.dump(sample_dict, manifest, ensure_ascii=False)
+                        manifest.write("\n") 
                 
             batch_text = []
             batch_emotion = []
@@ -619,20 +623,20 @@ def annotate_sentences_vertexAI(sentences):
                     print("Falling back to original sentences")
                     return sentences
                     
-                return annotated_sentences
+                return annotated_sentences, "annotated"
             else:
                 print("Warning: Response was not a list after JSON parsing")
-                return sentences
+                return sentences, "original"
                 
         except json.JSONDecodeError as e:
             print(f"JSON parsing error: {str(e)}")
             print("Falling back to original sentences")
-            return sentences
+            return sentences, "original"
             
     except Exception as e:
         print(f"Error during Vertex AI processing: {str(e)}")
         print("Traceback:", traceback.format_exc())
-        return sentences  # Return original sentences as fallback
+        return sentences, "original"  # Return original sentences as fallback
 
 
 
