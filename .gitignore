@@ -9,6 +9,7 @@ __pycache__/
 *.env
 .DS_Store
 node_modules/
+message_logs/
 
 # Virtual environment
 myenv/

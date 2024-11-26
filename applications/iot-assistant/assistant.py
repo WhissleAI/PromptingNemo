@@ -17,13 +17,12 @@ from interfaces.message_interface import message_agent  # Import the message age
 from interfaces.screenshot_interface import screenshot_agent  # Import the screenshot agent
 from interfaces.browser_interface import browser_agent  # Import the browser agent
 from interfaces.notion_interface import notion_agent  # Import the notion agent
+from interfaces.slack_interface import slack_agent # Import the slack agent
 from text_to_speech import text_to_speech
 import yaml
 import requests
 import speech_recognition as sr
 import threading
-from pathlib import Path
-import time
 
 # Load configuration from YAML file
 with open("config.yml", 'r') as stream:
@@ -32,82 +31,33 @@ with open("config.yml", 'r') as stream:
 # Assign variables from the config
 openai.api_key = config['openai']['api_key']
 
-class AudioProcessor:
-    def __init__(self, input_directory="audio_input"):
-        self.input_directory = input_directory
+class WakeWordDetector:
+    def __init__(self, wake_word="hey noddy"):
+        self.wake_word = wake_word.lower()
         self.recognizer = sr.Recognizer()
-        Path(input_directory).mkdir(parents=True, exist_ok=True)
+        self.microphone = sr.Microphone()
+        self.phrase_time_limit = 1.5  # Limit each listen to 2 seconds
 
-    def process_audio_file(audio_file_path):
-        """Process a single audio file and return the transcribed text."""
-        url = "https://related-wildcat-hugely.ngrok-free.app/transcribe-web2"
-        headers = {
-            'Authorization': 'Bearer random_token'
-        }
-        try:
-            with open(audio_file_path, 'rb') as audio_file:
-                files = {
-                    'audio': audio_file,
-                    'language_id': (None, 'EN_IOT')
-                }
-                response = requests.post(url, headers=headers, files=files)
-                if response.status_code == 200:
-                    return response.json().get('transcript', '')
-                else:
-                    print("Error transcribing audio:", response.text)
-                    return None
-        except Exception as e:
-            print(f"Error in transcription: {e}")
-            return None
+    def listen_for_wake_word(self):
+        print("Listening for wake word...")
+        while True:
+            with self.microphone as source:
+                self.recognizer.adjust_for_ambient_noise(source)
+                print("Ready to receive audio")
+                audio = self.recognizer.listen(source, phrase_time_limit=self.phrase_time_limit)
+            try:
+                speech = self.recognizer.recognize_google(audio).lower()
+                print(f"Detected speech: {speech}")
+                if self.wake_word in speech:
+                    print("Wake word detected!")
+                    return True
+            except sr.UnknownValueError:
+                continue
+            except sr.RequestError as e:
+                print(f"Could not request results from Google Speech Recognition service; {e}")
+                return False
 
-    def transcribe_audio(self, audio_file_path):
-        url = "https://related-wildcat-hugely.ngrok-free.app/transcribe-web2"
-        headers = {
-            'Authorization': 'Bearer random_token'
-        }
-        try:
-            with open(audio_file_path, 'rb') as audio_file:
-                files = {
-                    'audio': audio_file,
-                    'language_id': (None, 'EN_IOT')
-                }
-                response = requests.post(url, headers=headers, files=files)
-                if response.status_code == 200:
-                    return response.json().get('transcript', '')
-                else:
-                    print("Error transcribing audio:", response.text)
-                    return None
-        except Exception as e:
-            print(f"Error in transcription: {e}")
-            return None
-
-# class WakeWordDetector:
-#     def __init__(self, wake_word="hey noddy"):
-#         self.wake_word = wake_word.lower()
-#         self.recognizer = sr.Recognizer()
-#         self.microphone = sr.Microphone()
-#         self.phrase_time_limit = 1.5  # Limit each listen to 2 seconds
-
-#     def listen_for_wake_word(self):
-#         print("Listening for wake word...")
-#         while True:
-#             with self.microphone as source:
-#                 self.recognizer.adjust_for_ambient_noise(source)
-#                 print("Ready to receive audio")
-#                 audio = self.recognizer.listen(source, phrase_time_limit=self.phrase_time_limit)
-#             try:
-#                 speech = self.recognizer.recognize_google(audio).lower()
-#                 print(f"Detected speech: {speech}")
-#                 if self.wake_word in speech:
-#                     print("Wake word detected!")
-#                     return True
-#             except sr.UnknownValueError:
-#                 continue
-#             except sr.RequestError as e:
-#                 print(f"Could not request results from Google Speech Recognition service; {e}")
-#                 return False
-
-# wake_word_detector = WakeWordDetector(wake_word="hello")
+wake_word_detector = WakeWordDetector(wake_word="hello")
 
 # Chat agent
 class Chat:
@@ -168,31 +118,12 @@ class Chat:
 def write_message_history_to_file(full_message_history, directory):
     timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     filename = f"message_history_{timestamp}.json"
+    # Create the directory if it doesn't exist
     if not os.path.exists(directory):
         os.makedirs(directory)
     file_path = os.path.join(directory, filename)
     with open(file_path, 'w') as outfile:
         json.dump(full_message_history, outfile, indent=2)
-
-interrupt_speech = False
-
-def text_to_speech_with_interrupt(text):
-    global interrupt_speech
-    interrupt_speech = False
-    def speak():
-        for chunk in text.split('.'):
-            if interrupt_speech:
-                break
-            if chunk.strip():
-                text_to_speech(chunk)
-                time.sleep(0.5)
-    t = threading.Thread(target=speak)
-    t.start()
-    return t
-
-def stop_speech():
-    global interrupt_speech
-    interrupt_speech = True
 
 # Initialize the Nvidia API details
 API_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
@@ -270,7 +201,8 @@ def nvidia_exec(message_history):
                 "screenshot_agent": screenshot_agent,
                 "browser_agent": browser_agent,
                 "duckduckgo_agent": duckduckgo_agent,
-                "reminder_agent": reminder_agent
+                "reminder_agent": reminder_agent,
+                "slack_agent": slack_agent
             }
             
             if command in agent_dict:
@@ -401,95 +333,104 @@ def stop_speech():
     interrupt_speech = True
 
 
-def main():
+def main_text():
     try:
-        # Create necessary directories
-        input_dir = Path("audio_input")
-        input_dir.mkdir(exist_ok=True)
-        
         print("Welcome to the Whissle Assistant interface!")
-        print("Place your audio files in the 'audio_input' directory.")
-        print("Type 'quit' to exit.\n")
-        
+        text_to_speech("Welcome to the Whissle Assistant interface!")
+        text_to_speech("Say 'hello' to start a conversation.")
+        print("Type 'quit' to exit the chat.\n")
         speech = True
         message_history = []
         full_message_history = []
-        system_message = """You are Whissle. Whissle is an AI assistant. Your name is Whissle.
-                        You can chat, send emails, get weather information, interact with Spotify,
-                        send WhatsApp messages, manage calendar events, get stock prices, and manage notes.
-                        You can also interact with Notion to create and search notes or other entries.
-                        Above all, you enjoy having interesting, intellectually stimulating
-                        conversations."""
-        max_history = 100
+        system_message = "You are Whissle. Whissle is an AI assistant. Your name is Whissle. \
+                        You can chat, send emails, get weather information, interact with Spotify, \
+                        send WhatsApp messages, manage calendar events, get stock prices, and manage notes. \
+                        You can also interact with Notion to create and search notes or other entries. \
+                        Above all, you enjoy having interesting, intellectually stimulating \
+                        conversations."
+        max_history = 100  # Adjust this value to limit the number of messages considered
 
-        processed_files = set()
+        recognizer = sr.Recognizer()
+        microphone = sr.Microphone()
+
+        # Initialize the wake word detector
+        #wake_word_detector = WakeWordDetector(wake_word="hello vortex")
 
         while True:
-            # Check for new audio files
-            audio_files = list(input_dir.glob('*.wav'))
-            
-            for audio_file in audio_files:
-                if str(audio_file) not in processed_files:
-                    print(f"\nProcessing audio file: {audio_file}")
-                    
-                    # Process the audio file
-                    user_input = process_audio_file(str(audio_file))
-                    
-                    if user_input:
-                        print(f"Transcribed text: {user_input}")
-                        
-                        if user_input.lower() == 'quit':
-                            return
-                        
-                        message_history.append({"role": "user", "content": user_input})
-                        full_message_history.append({"role": "user", "content": user_input})
-                        
-                        if len(message_history) > max_history:
-                            message_history = [message_history[0]] + message_history[-(max_history - 1):]
-                        
-                        agent_response = nvidia_exec(message_history)
-                        
-                        if agent_response == False:
-                            print("\nWhissle: ", end='', flush=True)
-                            gpt4_chat = Chat("gpt-4", system=system_message, speech=speech)
-                            response = gpt4_chat.stream_chat(message_history)
-                            message_history.append({"role": "assistant", "content": response})
-                            full_message_history.append({"role": "assistant", "content": response})
-                            print("\n")
-                        else:
-                            if isinstance(agent_response, list):
-                                for i, response in enumerate(agent_response):
-                                    message_history.append(response)
-                                    full_message_history.append(response)
-                                    if i == len(agent_response) - 1:
-                                        print(response["content"])
-                                        if speech:
-                                            speech_thread = text_to_speech_with_interrupt(response["content"])
-                            else:
-                                message_history.append({"role": "assistant", "content": agent_response})
-                                full_message_history.append({"role": "assistant", "content": agent_response})
-                                print(agent_response)
+            # Wait for the wake word before listening for user input
+            if not wake_word_detector.listen_for_wake_word():
+                continue
+
+            with microphone as source:
+                print("Listening for your input...")
+                recognizer.adjust_for_ambient_noise(source, duration=1)
+                audio = recognizer.listen(source, timeout=30, phrase_time_limit=5)
+                
+            # Stop any ongoing speech
+            stop_speech()
+
+            # try:
+            with open("input.wav", "wb") as f:
+                f.write(audio.get_wav_data())
+
+            user_input = transcribe_audio("input.wav")
+            print("You:", user_input)
+            if not user_input:
+                print("Sorry, I did not understand that. Please try again.")
+                continue
+
+            print(f"You: {user_input}")
+            # except sr.UnknownValueError:
+            #     print("Sorry, I did not understand that. Please try again.")
+            #     continue
+            # except sr.RequestError:
+            #     print("Sorry, my speech recognition service is down. Please try again later.")
+            #     continue
+
+            if user_input.lower() == 'quit':
+                write_message_history_to_file(full_message_history, "./message_logs")
+                break
+            else:
+                message_history.append({"role": "user", "content": user_input})
+                full_message_history.append({"role": "user", "content": user_input})
+                # Reduces messages when max history exceeded
+                if len(message_history) > max_history:
+                    message_history = [message_history[0]] + message_history[-(max_history - 1):]  # Keep the system message and remove the second message
+                # Check user input, if executive is needed, call executive on user input and return result.
+                
+                print("Message history:", message_history)
+                agent_response = nvidia_exec(message_history)
+                if agent_response == False:
+                    print("\nWhissle: ", end='', flush=True)
+                    gpt4_chat = Chat("gpt-4", system=system_message, speech=speech)
+                    response = gpt4_chat.stream_chat(message_history)
+                    message_history.append({"role": "assistant", "content": response})
+                    full_message_history.append({"role": "assistant", "content": response})
+                    print(f"\n")
+                else:
+                    if isinstance(agent_response, list):  # Handling the case when the agent returns a list of responses
+                        for i, response in enumerate(agent_response):
+                            message_history.append(response)
+                            full_message_history.append(response)
+                            # Print only the most recent answer
+                            if i == len(agent_response) - 1:
+                                print(response["content"])
                                 if speech:
-                                    speech_thread = text_to_speech_with_interrupt(agent_response)
-                    
-                    # Mark file as processed and optionally remove it
-                    processed_files.add(str(audio_file))
-                    try:
-                        audio_file.unlink()  # Remove the processed file
-                    except Exception as e:
-                        print(f"Error removing file {audio_file}: {e}")
-            
-            time.sleep(1)  # Prevent excessive CPU usage
+                                    speech_thread = text_to_speech_with_interrupt(response["content"])
+                    else:  # Handling the case when the agent returns a single response (string)
+                        message_history.append({"role": "assistant", "content": agent_response})
+                        full_message_history.append({"role": "assistant", "content": agent_response})
+                        print(agent_response)
+                        if speech:
+                            speech_thread = text_to_speech_with_interrupt(agent_response)
 
     except KeyboardInterrupt:
         print("\nDetected KeyboardInterrupt. Saving message history and exiting.")
     except Exception as e:
         print(f"\nAn error occurred: {e}. Saving message history and exiting.")
     finally:
-        if 'full_message_history' in locals():
-            write_message_history_to_file(full_message_history, "./message_logs")
-            print("Message history saved.")
+        write_message_history_to_file(full_message_history, "./message_logs")
+        print("Message history saved.")
 
 if __name__ == "__main__":
-    main()
-    
+    main_text()
