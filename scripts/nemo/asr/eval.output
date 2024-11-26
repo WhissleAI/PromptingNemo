@@ -1,0 +1,8 @@
+[NeMo I 2024-11-26 00:52:14 cloud:58] Found existing object /root/.cache/torch/NeMo/NeMo_2.0.0rc0/stt_en_conformer_ctc_large/afb212c5bcf904e326b5e5751e7c7465/stt_en_conformer_ctc_large.nemo.
+[NeMo I 2024-11-26 00:52:14 cloud:64] Re-using file from: /root/.cache/torch/NeMo/NeMo_2.0.0rc0/stt_en_conformer_ctc_large/afb212c5bcf904e326b5e5751e7c7465/stt_en_conformer_ctc_large.nemo
+[NeMo I 2024-11-26 00:52:14 common:815] Instantiating model from pre-trained checkpoint
+[NeMo I 2024-11-26 00:52:15 mixins:172] Tokenizer SentencePieceTokenizer initialized with 128 tokens
+[NeMo I 2024-11-26 00:52:15 features:305] PADDING: 0
+[NeMo I 2024-11-26 00:52:17 save_restore_connector:263] Model EncDecCTCModelBPE was successfully restored from /root/.cache/torch/NeMo/NeMo_2.0.0rc0/stt_en_conformer_ctc_large/afb212c5bcf904e326b5e5751e7c7465/stt_en_conformer_ctc_large.nemo.
+Results saved to asr_results.json
+Word Error Rate (WER): 2.19%

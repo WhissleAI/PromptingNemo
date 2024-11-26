@@ -157,18 +157,12 @@ def process_audio_files(bucket_name: str, output_folder: str):
     
     # Define the transcription prompt
     prompt = """
-    Can you transcribe this interview, in the format of start-time, end-time, speaker, caption with tags, intent label, emotion label: 
-    Happy, Angry, Sad, Neutral, Surprise, Disgust, Trust, Anticipation. 
-    Use speaker A, speaker B, etc., to identify speakers.
-    
-    Caption text should be tagged with meaningful entity tags, for example:
-    ENTITY_ACTION Remind END me to ENTITY_ACTION take END my ENTITY_MEDICATION medication END at ENTITY_TIME 9 AM END.
-    
-    Output a python list where each turn is a dict with keys: start-time, end-time, speaker, caption with tags, intent label, emotion label.
+    Can you transcribe this interview, in the format of timecode, speaker, caption.
+    Use speaker A, speaker B, etc. to identify speakers.
     """
     
     # Get list of audio files
-    audio_files = list_mp4_files(bucket_name, "youtube-videos/podcast_data/")
+    audio_files = list_mp4_files(bucket_name, "youtube-videos/wellness/")
     
     # Create output folder if it doesn't exist
     os.makedirs(output_folder, exist_ok=True)
@@ -188,7 +182,7 @@ def process_audio_files(bucket_name: str, output_folder: str):
             )
             
             # Clean the response data and include audio URI
-            cleaned_data = clean_transcription_output(response.to_dict(), audio_uri)
+            #cleaned_data = clean_transcription_output(response.to_dict(), audio_uri)
             
             # Save cleaned transcription
             out_file = os.path.join(
@@ -197,13 +191,15 @@ def process_audio_files(bucket_name: str, output_folder: str):
             )
             
             with open(out_file, "w", encoding='utf-8') as f:
-                json.dump(cleaned_data, f, indent=2, ensure_ascii=False)
+                f.write(audio_uri+"\n")
+                f.write(response.text)
+            
             
             print(f"Cleaned transcription saved to: {out_file}")
             
             # Rate limiting
-            print("Sleeping for 10 seconds...")
-            sleep(10)
+            print("Sleeping for 3 seconds...")
+            sleep(3)
             
         except Exception as e:
             print(f"Error processing file {file_path}: {e}")
