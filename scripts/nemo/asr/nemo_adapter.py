@@ -18,7 +18,7 @@ import os
 import json
 import logging
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_tokens=None, vocab_size=5000):
     # Configure logging
@@ -348,7 +348,7 @@ class ASRModelTrainer:
         logging.info(f"Updated vocab files: {output_vocab_file}, {output_vocab_txt_file}")
 
 # Usage
-model_trainer = ASRModelTrainer(config_path='config/config_indoaryan.yml')
+model_trainer = ASRModelTrainer(config_path='config/config_kannada.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
 model_trainer.prepare_data_and_tokens(tags_type="unmapped", tokenizer_state="old", vocab_size=2000)
