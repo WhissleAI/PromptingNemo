@@ -53,8 +53,8 @@ import openai
 
 
 
-def get_rag_response(embeddings, query, urls=None, pdf=None, instruction=None):
-    openai.api_key='sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu'
+def get_rag_response(embeddings, query, token, urls=None, pdf=None, instruction=None):
+    openai.api_key=token
     
     if urls:
         loader = UnstructuredURLLoader(urls=urls)
