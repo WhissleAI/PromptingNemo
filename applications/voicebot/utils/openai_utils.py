@@ -2,9 +2,9 @@ from openai import OpenAI
 import openai
 import os
 
-def get_openai_response(text: str, instruction: str, history: list = []):
+def get_openai_response(text: str, instruction: str, token:str, history: list = []):
     temperature = 0.1
-    client = openai.OpenAI(api_key='sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu') 
+    client = openai.OpenAI(api_key=token) 
 
 
     messages = [{"role": "system", "content": instruction}]
