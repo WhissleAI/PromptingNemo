@@ -16,6 +16,7 @@ import asyncio
 import shutil
 from concurrent.futures import ThreadPoolExecutor
 import riva.client
+from google.protobuf.json_format import MessageToDict
 
 from utils.asr_utils import *
 from utils.rag_utils import *
@@ -121,11 +122,14 @@ async def list_available_riva_models():
     return list(asr_models.keys())
 
 @app.post("/transcribe-web-riva")
-async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: str = Form(...), Authorization: str = Header(...)):
+async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: str = Form(...), Authorization: str = Header(...), word_timestamps:bool = Form(0), boosted_lm_words:str = Form('[]'), boosted_lm_score:int = Form(20)):
     sessionid = Authorization.replace('Bearer ', '')
     if model_name not in asr_models.keys():
         raise HTTPException(status_code=400, detail="invalid model name")
+    import ast
+    boosted_lm_words = ast.literal_eval(boosted_lm_words)
 
+    print(word_timestamps, boosted_lm_words, boosted_lm_score)
     message = await audio.read()
     cmd = ['ffmpeg', '-i', "-", '-ac', '1', '-ar','16000', '-f', 'wav', '-']
     cmd=" ".join(cmd)
@@ -147,11 +151,13 @@ async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: s
         auth = riva.client.Auth(uri=model_info['uri'])
         riva_asr = riva.client.ASRService(auth)
         riva_nlp = riva.client.NLPService(auth_nlp)
+        if boosted_lm_words:
+            riva.client.add_word_boosting_to_config(riva_config, boosted_lm_words, boosted_lm_score)
 
         riva_config.max_alternatives = 1
         riva_config.enable_automatic_punctuation = True
         riva_config.audio_channel_count = 1
-        # riva_config.enable_word_time_offsets = True
+        riva_config.enable_word_time_offsets = word_timestamps
         riva_config.model = model_info['model']
         if 'language_code' in model_info: riva_config.language_code = model_info["language_code"]
         response = riva_asr.offline_recognize(audio_file, riva_config)
@@ -163,7 +169,11 @@ async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: s
                 input_strings=final_transcript, model_name="riva-punctuation-en-US", language_code='en-US'
             )
         )
-        # timestamps = [result.alternatives[0].words for result in response.results]
+        timestamps = []
+        if word_timestamps:
+            for result in response.results:
+                timestamps += list(result.alternatives[0].words) 
+            timestamps = [MessageToDict(timestamp) for timestamp in timestamps]
         
     except Exception as e:
         print(e)
@@ -171,7 +181,7 @@ async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: s
     return {
         "transcript" : transcript,
         "duration_seconds": duration_seconds,
-        # "timestamps": sum(timestamps)
+        "timestamps": timestamps
     }
 
 @app.post("/translate-text")
