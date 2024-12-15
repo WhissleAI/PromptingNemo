@@ -268,6 +268,11 @@ class LLMRequest(BaseModel):
     emotion: str
     instruction: str
 
+class LLMSummarizerRequest(BaseModel):
+    content: str
+    model_name: str
+    instruction: str
+
 class LLMRequestWithSearch(BaseModel):
     content: str
     model_name: str
@@ -279,7 +284,22 @@ class LLMRequestWithSearch(BaseModel):
     conversation_history: Optional[List[dict]] = []
     # input_file is removed from here as we handle it separately
 
+@app.post("/llm_text_summarizer", response_model=LLMResponse)
+async def llm_text_summarizer(request: LLMSummarizerRequest):
+    content = request.content
+    model_name = request.model_name
+    instruction = request.instruction
 
+    print("Input Text:", content)
+    print("Model Name:", model_name)
+    print("Instruction:", instruction)
+
+    if model_name == "openai":
+        input_text = clean_tags(content)
+        text, input_tokens, output_tokens = get_openai_response(input_text, instruction, config['OPENAI']['API_KEY'])
+        return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
+    else:
+        return {"response": "Model not found", "input_text": content, "input_tokens": 0, "output_tokens": 0}
 
 # Function without file upload
 @app.post("/llm_response_without_file", response_model=LLMResponse)
