@@ -15,7 +15,8 @@ from deepgram import Deepgram
 import asyncio
 import shutil
 from concurrent.futures import ThreadPoolExecutor
-
+import riva.client
+from google.protobuf.json_format import MessageToDict
 
 from utils.asr_utils import *
 from utils.rag_utils import *
@@ -23,11 +24,12 @@ from utils.llm_utils import *
 from utils.blip_utils import *
 from utils.tts_utils import *
 from utils.openai_utils import *
+from utils.mt_utils import *
 from utils.search_utils import *
 from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
 from langchain_huggingface import HuggingFaceEmbeddings
 
-app = FastAPI(docs_url=None, redoc_url=None)
+app = FastAPI(redoc_url=None)
 
 executor = ThreadPoolExecutor(max_workers=os.cpu_count())
 
@@ -52,7 +54,7 @@ MODEL_SHELF_PATH = config['MODEL_SHELF_PATH']
 DEEPGRAM_API_KEY = config['DEEPGRAM_API_KEY']
 dg_client = Deepgram(DEEPGRAM_API_KEY)
 
-news_llm = HFLanguageModel(model_name_or_path='RedHenLabs/news-reporter-euro-3b')
+# news_llm = HFLanguageModel(model_name_or_path='RedHenLabs/news-reporter-euro-3b')
 
 ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
 ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
@@ -67,6 +69,9 @@ model_name = "sentence-transformers/all-mpnet-base-v2"
 model_kwargs = {"device": "cpu"}
 
 embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs=model_kwargs)
+
+asr_models = json.loads(config['ASR_MODELS'])
+
 
 ##Visual LLM model
 
@@ -96,8 +101,8 @@ if DEV_MODE == False:
     instructions = "Answer the following question accurately and concisely. Do not add additional queries or answers."
     conversation_history = [{"role": "system", "content": instructions}]
 
-    xtts_model_path = "tts_models/multilingual/multi-dataset/xtts_v2"
-    xtts_model = TextToSpeech(model_name=xtts_model_path)
+xtts_model_path = "tts_models/multilingual/multi-dataset/xtts_v2"
+xtts_model = TextToSpeech(model_name=xtts_model_path)
 
 
 tts_piper = PiperSynthesizer(MODEL_SHELF_PATH+"/piper/voices/en_US-amy-medium.onnx", 
@@ -111,6 +116,86 @@ async def transcribe_deepgram(file_path):
 @app.get('/')
 async def yoyo():
     return "site is working!!"
+
+@app.get("/list-riva-models")
+async def list_available_riva_models():
+    return list(asr_models.keys())
+
+@app.post("/transcribe-web-riva")
+async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: str = Form(...), Authorization: str = Header(...), word_timestamps:bool = Form(0), boosted_lm_words:str = Form('[]'), boosted_lm_score:int = Form(20)):
+    sessionid = Authorization.replace('Bearer ', '')
+    if model_name not in asr_models.keys():
+        raise HTTPException(status_code=400, detail="invalid model name")
+    import ast
+    boosted_lm_words = ast.literal_eval(boosted_lm_words)
+
+    print(word_timestamps, boosted_lm_words, boosted_lm_score)
+    message = await audio.read()
+    cmd = ['ffmpeg', '-i', "-", '-ac', '1', '-ar','16000', '-f', 'wav', '-']
+    cmd=" ".join(cmd)
+    proc = await asyncio.create_subprocess_shell(
+        cmd,
+        stdin=asyncio.subprocess.PIPE,
+        stdout=asyncio.subprocess.PIPE,
+    )
+    audio_file,error = await proc.communicate(message)
+
+    if error: raise HTTPException(status_code=400, detail="error parsing uploaded file")
+
+    transcript = ""
+
+    try:
+        auth_nlp = riva.client.Auth(uri=config['NLP_MODEL_URI'])
+        riva_config = riva.client.RecognitionConfig()
+        model_info = asr_models[model_name]
+        auth = riva.client.Auth(uri=model_info['uri'])
+        riva_asr = riva.client.ASRService(auth)
+        riva_nlp = riva.client.NLPService(auth_nlp)
+        if boosted_lm_words:
+            riva.client.add_word_boosting_to_config(riva_config, boosted_lm_words, boosted_lm_score)
+
+        riva_config.max_alternatives = 1
+        riva_config.enable_automatic_punctuation = True
+        riva_config.audio_channel_count = 1
+        riva_config.enable_word_time_offsets = word_timestamps
+        riva_config.model = model_info['model']
+        if 'language_code' in model_info: riva_config.language_code = model_info["language_code"]
+        response = riva_asr.offline_recognize(audio_file, riva_config)
+        transcripts = [result.alternatives[0].transcript for result in response.results]
+        duration_seconds = sum([result.audio_processed for result in response.results] )
+        final_transcript = " ".join(transcripts)
+        transcript = riva.client.nlp.extract_most_probable_transformed_text(
+            riva_nlp.punctuate_text(
+                input_strings=final_transcript, model_name="riva-punctuation-en-US", language_code='en-US'
+            )
+        )
+        timestamps = []
+        if word_timestamps:
+            for result in response.results:
+                timestamps += list(result.alternatives[0].words) 
+            timestamps = [MessageToDict(timestamp) for timestamp in timestamps]
+        
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail=str(e))
+    return {
+        "transcript" : transcript,
+        "duration_seconds": duration_seconds,
+        "timestamps": timestamps
+    }
+
+@app.post("/translate-text")
+async def translate_text(text: str = Form(...), target_language: str = Form(...)):
+    auth = riva.client.Auth(uri=config['MT_MODEL_URI'])
+    riva_nmt_client = riva.client.NeuralMachineTranslationClient(auth)
+    parts = nmt_large_text_split(text)
+    response = riva_nmt_client.translate(parts, "megatronnmt_en_any_500m", 'en', target_language)
+
+    translated_text = " ".join([translation.text for translation in response.translations])
+
+    return {
+        "translated_text": translated_text
+    }
 
 @app.post("/transcribe-web2")
 async def transcribe_audio_onnx_web2(audio: UploadFile = File(...), model_name: str = Form('whissle'), Authorization: str = Header(...)):
@@ -244,7 +329,7 @@ async def llm_response_without_file(content: str = Form(...),
 
     if DEV_MODE:
         input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
-        text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+        text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, config['OPENAI']['API_KEY'], conversation_history)
         return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
     else:
         response = llm_model_tensorrt.generate_response([content], instructions=detailed_instruction, history=conversation_history, role=role)
@@ -300,7 +385,7 @@ async def llm_response_with_file(content: str = Form(...),
             # if model_name == 'news_llm':
             #     text = news_llm.generate_rag_response(embeddings, input_text, pdf=file_path, instruction=detailed_instruction)
             # else:
-            text = get_rag_response(embeddings, input_text, pdf=file_path, instruction=detailed_instruction)
+            text = get_rag_response(embeddings, input_text, config['OPENAI']['API_KEY'], pdf=file_path, instruction=detailed_instruction)
             return {"response": text, "input_text": content, "input_tokens": 0, "output_tokens": 0}
         elif file_type in ['mp3', 'wav']:
             message = await input_file.read()
@@ -321,11 +406,12 @@ async def llm_response_with_file(content: str = Form(...),
             input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
             print(transcript)
             detailed_instruction += " considering the provided audio context with the following transcript with emotion and entities \n" + transcript
-            if model_name == 'news_llm':
-                text = news_llm.generate_response(input_text, detailed_instruction, conversation_history)
-                input_tokens, output_tokens = (0,0)
-            else:
-                text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+            # if model_name == 'news_llm':
+            #     text = news_llm.generate_response(input_text, detailed_instruction, conversation_history)
+            #     input_tokens, output_tokens = (0,0)
+            # else:
+            #     text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, config['OPENAI']['API_KEY'], conversation_history)
             return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
         elif file_type in ['jpeg', 'jpg', 'png']:
             message = await input_file.read()
@@ -334,11 +420,12 @@ async def llm_response_with_file(content: str = Form(...),
             caption = await loop.run_in_executor(executor, blip_infer, blip_processor, vision_model_sess, text_model_sess, BytesIO(message))
             print(caption)
             detailed_instruction += " considering the provided image context with the following image caption: {caption}".format(caption=caption)
-            if model_name == 'news_llm':
-                text = news_llm.generate_response(input_text, detailed_instruction, conversation_history)
-                input_tokens, output_tokens = (0,0)
-            else:
-                text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+            # if model_name == 'news_llm':
+            #     text = news_llm.generate_response(input_text, detailed_instruction, conversation_history)
+            #     input_tokens, output_tokens = (0,0)
+            # else:
+            #     text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
+            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, config['OPENAI']['API_KEY'], conversation_history)
             return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
         else:
             return 'file format not supported'
@@ -404,7 +491,7 @@ async def llm_response_with_search(content: str = Form(...),
         else:
             if model_name == 'openai':
                 input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
-                text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, conversation_history)
+                text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, config['OPENAI']['API_KEY']. conversation_history)
             elif model_name == 'whissle':
                 response = llm_model_tensorrt.generate_response([content], instructions=system_instruction, history=conversation_history, role=role)
                 text = response[0]
@@ -437,7 +524,7 @@ async def rag_file_response(request: RAGFileResponse):
         print("Emotion", emotion)
         print("RAG URL", url)
         
-        rag_response = get_rag_response([url], query)
+        rag_response = get_rag_response([url], query, token=config['OPENAI']['API_KEY'])
         return {"response": rag_response, "input_text": query}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -547,9 +634,8 @@ def clean_tags(input_text):
     return " ".join(new_sent)
 
 if __name__ == '__main__':
-    import uvicorn
     from uvicorn import Config, Server
 
-    config = Config(app, host='127.0.0.1', port=5000, workers=1)
-    server = Server(config)
+    server_config = Config(app, host='127.0.0.1', port=5000, workers=1)
+    server = Server(server_config)
     server.run()
