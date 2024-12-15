@@ -104,9 +104,27 @@ if DEV_MODE == False:
 xtts_model_path = "tts_models/multilingual/multi-dataset/xtts_v2"
 xtts_model = TextToSpeech(model_name=xtts_model_path)
 
+piper_models_config = {
+    "en-US": {
+        "model_path": "/piper/voices/en_US-amy-medium.onnx",
+        "json_path": "/piper/configs/en_US-amy-medium.onnx.json"
+    },
+    "ru": {
+        "model_path": "/piper/voices/ru_RU-dmitri-medium.onnx",
+        "json_path": "/piper/configs/ru_RU-dmitri-medium.onnx.json"
+    },
+    "es": {
+        "model_path": "/piper/voices/es_ES-davefx-medium.onnx",
+        "json_path": "/piper/configs/es_ES-davefx-medium.onnx.json"
+    }
+}
 
-tts_piper = PiperSynthesizer(MODEL_SHELF_PATH+"/piper/voices/en_US-amy-medium.onnx", 
-                                    MODEL_SHELF_PATH+"/piper/configs/en_US-amy-medium.onnx.json", 
+piper_models = {}
+
+for key in piper_models_config:
+    print(MODEL_SHELF_PATH+piper_models_config[key]['json_path'])
+    piper_models[key] = PiperSynthesizer(MODEL_SHELF_PATH+piper_models_config[key]['model_path'], 
+                                    MODEL_SHELF_PATH+piper_models_config[key]['json_path'], 
                                     length_scale=3)
 
 async def transcribe_deepgram(file_path):
@@ -120,6 +138,10 @@ async def yoyo():
 @app.get("/list-riva-models")
 async def list_available_riva_models():
     return list(asr_models.keys())
+
+@app.get("/list-piper-models")
+async def list_available_piper_models():
+    return list(piper_models_config.keys())
 
 @app.post("/transcribe-web-riva")
 async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: str = Form(...), Authorization: str = Header(...), word_timestamps:bool = Form(0), boosted_lm_words:str = Form('[]'), boosted_lm_score:int = Form(20)):
@@ -593,41 +615,38 @@ async def generate_audio_gtts(text_to_convert: str = Form(...), output_filename:
     
     
 @app.post("/generate_audio")
-async def generate_audio_xtts(model_name: str = Form("piper"), text_to_convert: str = Form(...), output_filename: str = Form(...), ref_file: UploadFile = File(None)):
-    
-    print("TTS Model Name", model_name)
-    
-    if model_name == "xtts":
-        if ref_file:
-            audio_file_name = secure_filename(ref_file.filename)
+async def generate_audio_xtts(model_name: str = Form("piper"), text_to_convert: str = Form(...), language: str = Form('en-US'), output_filename: str = Form(...), ref_file: UploadFile = File(None)):
+    try:
+        print("TTS Model Name", model_name, language)
+        
+        if model_name == "xtts":
+            if ref_file:
+                audio_file_name = secure_filename(ref_file.filename)
+                
+                save_directory = '/root/webaudio'
+                os.makedirs(save_directory, exist_ok=True)
+                temp_file_path = os.path.join(save_directory, audio_file_name)
+                
+                with open(temp_file_path, 'wb') as temp_file:
+                    temp_file.write(await ref_file.read())
             
-            save_directory = '/root/webaudio'
-            os.makedirs(save_directory, exist_ok=True)
-            temp_file_path = os.path.join(save_directory, audio_file_name)
+                ref_file_path = os.path.join(save_directory, os.path.splitext(audio_file_name)[0] + '.wav')
+            else:
+                ref_file_path = None
+            xtts_model.infer(text= text_to_convert, language='en', file_path=output_filename, speaker_wav_file_path=ref_file_path)
             
-            with open(temp_file_path, 'wb') as temp_file:
-                temp_file.write(await ref_file.read())
-        
-            ref_file_path = os.path.join(save_directory, os.path.splitext(audio_file_name)[0] + '.wav')
-        else:
-            ref_file_path = None
-        xtts_model.infer(text= text_to_convert, language='en', file_path=output_filename, speaker_wav_file_path=ref_file_path)
-        
-        with open(output_filename, "rb") as audio_file:
-            audio_content = audio_file.read()
-        duration_seconds = AudioSegment(audio_content).duration_seconds
-        os.remove(output_filename)  # Clean up the saved file after reading its content
-        return Response(content=audio_content, media_type="audio/mpeg", headers={"X-Duration": str(duration_seconds)})
-    elif model_name == "piper":
-        
-        text_to_convert = clean_text_for_piper(text_to_convert)
-        audio_content = tts_piper.synthesize(text_to_convert)
-        duration_seconds = AudioSegment(audio_content).duration_seconds
-        return Response(content=audio_content, media_type="audio/mpeg", headers={"X-Duration": str(duration_seconds)})
-
-
-    #except Exception as e:
-    #    raise HTTPException(status_code=500, detail=str(e))
+            with open(output_filename, "rb") as audio_file:
+                audio_content = audio_file.read()
+            duration_seconds = AudioSegment(audio_content).duration_seconds
+            os.remove(output_filename)  # Clean up the saved file after reading its content
+            return Response(content=audio_content, media_type="audio/mpeg", headers={"X-Duration": str(duration_seconds)})
+        elif model_name == "piper":
+            text_to_convert = clean_text_for_piper(text_to_convert)
+            audio_content = piper_models[language].synthesize(text_to_convert)
+            duration_seconds = AudioSegment(audio_content).duration_seconds
+            return Response(content=audio_content, media_type="audio/mpeg", headers={"X-Duration": str(duration_seconds)})
+    except Exception as e:
+       raise HTTPException(status_code=500, detail=str(e))
 
 class ProcessTranscriptRequest(BaseModel):
     text: str
