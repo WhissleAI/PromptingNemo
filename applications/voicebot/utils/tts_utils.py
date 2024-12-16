@@ -1,27 +1,12 @@
-import io, os
+import io
+import os
 from gtts import gTTS
-from TTS.tts.configs.xtts_config import XttsConfig
-from TTS.tts.models.xtts import Xtts
-from TTS.utils.generic_utils import get_user_data_dir
-from TTS.utils.manage import ModelManager
-import torch
-import numpy as np
-import base64
 import wave
+import base64
+import tempfile
+from pydub import AudioSegment
 
-def postprocess(wav):
-    """Post process the output waveform"""
-    if isinstance(wav, list):
-        wav = torch.cat(wav, dim=0)
-    wav = wav.clone().detach().cpu().numpy()
-    wav = wav[None, : int(wav.shape[0])]
-    wav = np.clip(wav, -1, 1)
-    wav = (wav * 32767).astype(np.int16)
-    return wav
-
-def encode_audio_common(
-    frame_input, encode_base64=True, sample_rate=24000, sample_width=2, channels=1
-):
+def encode_audio_common(frame_input, encode_base64=True, sample_rate=24000, sample_width=2, channels=1):
     """Return base64 encoded audio"""
     wav_buf = io.BytesIO()
     with wave.open(wav_buf, "wb") as vfout:
@@ -37,42 +22,59 @@ def encode_audio_common(
     else:
         return wav_buf.read()
 
-
 class TextToSpeech:
     def __init__(self, model_name=None, custom_model_path=None, device="cpu"):
-        if custom_model_path and os.path.exists(custom_model_path) and os.path.isfile(custom_model_path + "/config.json"):
-            model_path = custom_model_path
-            print("Loading custom model from", model_path, flush=True)
-        else:
-            print("Downloading XTTS Model:", model_name, flush=True)
-            ModelManager().download_model(model_name)
-            model_path = os.path.join(get_user_data_dir("tts"), model_name.replace("/", "--"))
-            print("XTTS Model downloaded", flush=True)
-        config = XttsConfig()
-        config.load_json(os.path.join(model_path, "config.json"))
-        self.tts_model = Xtts.init_from_config(config)
-        self.tts_model.load_checkpoint(config, checkpoint_dir=model_path, eval=True, use_deepspeed=True if device == "cuda" else False)
-        self.tts_model.to(device)
+        """Initialize TTS - parameters kept for compatibility"""
+        self.model_name = model_name
+        print("Initialized simplified TTS using gTTS")
 
-    def infer(self, text, language, file_path, speaker_wav_file_path=None):
-        if speaker_wav_file_path:
-            gpt_cond_latent, speaker_embedding = self.tts_model.get_conditioning_latents(
-                speaker_wav_file_path
-            )
-            out = self.tts_model.inference(
-                text,
-                language,
-                gpt_cond_latent,
-                speaker_embedding,
-            )
-            wav = postprocess(torch.tensor(out["wav"]))
-
-            wav = encode_audio_common(wav.tobytes(), encode_base64=False)
+    def infer(self, text, language='en', file_path=None, speaker_wav_file_path=None):
+        """
+        Generate speech from text and save to file
+        Args:
+            text (str): Text to convert to speech
+            language (str): Language code (e.g., 'en' for English)
+            file_path (str): Output file path
+            speaker_wav_file_path (str): Ignored in gTTS implementation
+        """
+        try:
+            # Create gTTS object
+            tts = gTTS(text=text, lang=language, slow=False)
             
-            with open(file_path, 'wb') as f:
-                f.write(wav)
-        else:
-            tts = gTTS(text=text, lang=language)
-            tts.save(file_path)
+            # If no file path is provided, use a temporary file
+            if not file_path:
+                temp_file = tempfile.NamedTemporaryFile(suffix='.mp3', delete=False)
+                file_path = temp_file.name
+                temp_file.close()
 
-        return file_path
+            # Save to MP3 first
+            mp3_path = file_path if file_path.endswith('.mp3') else file_path + '.mp3'
+            tts.save(mp3_path)
+
+            # If the requested output is not MP3, convert it
+            if not file_path.endswith('.mp3'):
+                # Convert to WAV or other format if needed
+                audio = AudioSegment.from_mp3(mp3_path)
+                audio.export(file_path, format=file_path.split('.')[-1])
+                # Clean up temporary MP3
+                os.remove(mp3_path)
+
+            return file_path
+
+        except Exception as e:
+            print(f"Error in TTS generation: {str(e)}")
+            return None
+
+    def tts_to_file_cloning(self, text, speaker_wav_folder, language, output_path):
+        """Maintained for compatibility, falls back to regular TTS"""
+        return self.infer(text, language, output_path)
+
+# Optional: Add these utility functions if needed by your application
+def postprocess(wav):
+    """Dummy function maintained for compatibility"""
+    return wav
+
+def convert_wav_to_mp3(wav_path, mp3_path):
+    """Convert WAV to MP3 if needed"""
+    audio = AudioSegment.from_wav(wav_path)
+    audio.export(mp3_path, format='mp3')

@@ -24,7 +24,19 @@ from utils.blip_utils import *
 from utils.tts_utils import *
 from utils.openai_utils import *
 from utils.search_utils import *
-from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
+try:
+    from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
+except ImportError:
+    from gtts import gTTS
+    def clean_text_for_piper(text): return text
+    class PiperSynthesizer:
+        def __init__(self, *args, **kwargs): pass
+        def synthesize(self, text): 
+            tts = gTTS(text=text)
+            fp = io.BytesIO()
+            tts.write_to_fp(fp)
+            fp.seek(0)
+            return fp.read()
 from langchain_huggingface import HuggingFaceEmbeddings
 
 app = FastAPI(docs_url=None, redoc_url=None)
@@ -52,7 +64,7 @@ MODEL_SHELF_PATH = config['MODEL_SHELF_PATH']
 DEEPGRAM_API_KEY = config['DEEPGRAM_API_KEY']
 dg_client = Deepgram(DEEPGRAM_API_KEY)
 
-news_llm = HFLanguageModel(model_name_or_path='RedHenLabs/news-reporter-euro-3b')
+news_llm = HFLanguageModel(model_name_or_path='RedHenLabs/news-reporter-euro-3b') # changing this model
 
 ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
 ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
