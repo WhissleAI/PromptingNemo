@@ -207,11 +207,16 @@ async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: s
     }
 
 @app.post("/translate-text")
-async def translate_text(text: str = Form(...), target_language: str = Form(...)):
+async def translate_text(text: str = Form(...), source_language: str = Form('en'), target_language: str = Form(...)):
+    if source_language==target_language:
+        return {
+            "translated_text": text
+        }
+
     auth = riva.client.Auth(uri=config['MT_MODEL_URI'])
     riva_nmt_client = riva.client.NeuralMachineTranslationClient(auth)
     parts = nmt_large_text_split(text)
-    response = riva_nmt_client.translate(parts, "megatronnmt_en_any_500m", 'en', target_language)
+    response = riva_nmt_client.translate(parts, "megatronnmt_any_any_1b", source_language, target_language)
 
     translated_text = " ".join([translation.text for translation in response.translations])
 
@@ -632,21 +637,20 @@ async def generate_audio_xtts(model_name: str = Form("piper"), text_to_convert: 
             
                 ref_file_path = os.path.join(save_directory, os.path.splitext(audio_file_name)[0] + '.wav')
             else:
-                ref_file_path = None
-            xtts_model.infer(text= text_to_convert, language='en', file_path=output_filename, speaker_wav_file_path=ref_file_path)
+                raise HTTPException(status_code=400, detail="need ref file for voice cloning")
+            audio_content = xtts_model.infer(text= text_to_convert, language=language, file_path=output_filename, speaker_wav_file_path=ref_file_path)
             
-            with open(output_filename, "rb") as audio_file:
-                audio_content = audio_file.read()
             duration_seconds = AudioSegment(audio_content).duration_seconds
-            os.remove(output_filename)  # Clean up the saved file after reading its content
             return Response(content=audio_content, media_type="audio/mpeg", headers={"X-Duration": str(duration_seconds)})
         elif model_name == "piper":
             text_to_convert = clean_text_for_piper(text_to_convert)
+            if language not in piper_models.keys():
+                raise HTTPException(status_code=400, detail="language isn't supported yet")
             audio_content = piper_models[language].synthesize(text_to_convert)
             duration_seconds = AudioSegment(audio_content).duration_seconds
             return Response(content=audio_content, media_type="audio/mpeg", headers={"X-Duration": str(duration_seconds)})
     except Exception as e:
-       raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
 
 class ProcessTranscriptRequest(BaseModel):
     text: str
