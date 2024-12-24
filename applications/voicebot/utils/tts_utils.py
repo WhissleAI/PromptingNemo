@@ -67,12 +67,6 @@ class TextToSpeech:
             )
             wav = postprocess(torch.tensor(out["wav"]))
 
-            wav = encode_audio_common(wav.tobytes(), encode_base64=False)
-            
-            with open(file_path, 'wb') as f:
-                f.write(wav)
-        else:
-            tts = gTTS(text=text, lang=language)
-            tts.save(file_path)
-
-        return file_path
+            wav = encode_audio_common(wav.tobytes(), encode_base64=False)  
+            return wav
+        return None
