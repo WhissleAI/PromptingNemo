@@ -9,3 +9,10 @@ __pycache__/
 *.env
 .DS_Store
 node_modules/
+
+
+segments/
+*.mp3
+*.wav
+
+*config.yml
