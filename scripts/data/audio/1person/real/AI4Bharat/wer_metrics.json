@@ -1,0 +1,875 @@
+{
+    "WER": 0.28178014454165085,
+    "metrics": {
+        "ENTITY_LOCATION": {
+            "precision": 0.02946650124069479,
+            "recall": 0.020329552749839504,
+            "fscore": 0.024059769532733952
+        },
+        "ENTITY_SERVICE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PRODUCT": {
+            "precision": 0.004658561527099194,
+            "recall": 0.005522629310344827,
+            "fscore": 0.005053929121725732
+        },
+        "ENTITY_STATE": {
+            "precision": 0.0724907063197026,
+            "recall": 0.08450704225352113,
+            "fscore": 0.07803901950975486
+        },
+        "INTENT_DOI___ENTERTAINMENT": {
+            "precision": 0.25,
+            "recall": 0.025,
+            "fscore": 0.045454545454545456
+        },
+        "AGE_30_45": {
+            "precision": 0.02832244008714597,
+            "recall": 0.020933977455716585,
+            "fscore": 0.02407407407407407
+        },
+        "GENDER_MALE": {
+            "precision": 0.07840440165061899,
+            "recall": 0.060767590618336885,
+            "fscore": 0.06846846846846848
+        },
+        "DIALECT_RAJASTHAN": {
+            "precision": 0.02022058823529412,
+            "recall": 0.020599250936329586,
+            "fscore": 0.02040816326530612
+        },
+        "ENTITY_TRIP": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DEVICE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DISTANCE": {
+            "precision": 0.7191011235955056,
+            "recall": 0.40764331210191085,
+            "fscore": 0.5203252032520326
+        },
+        "ENTITY_MEASUREMENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DATE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PLATFORM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DEVICE_NAME": {
+            "precision": 0.13229571984435798,
+            "recall": 0.06924643584521385,
+            "fscore": 0.09090909090909091
+        },
+        "AGE_45_60": {
+            "precision": 0.019184652278177457,
+            "recall": 0.015594541910331383,
+            "fscore": 0.017204301075268817
+        },
+        "ENTITY_PERSON_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_TIME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_WEBSITE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DOI___ART_&_CRAFT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "AGE_60+": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_EVENT": {
+            "precision": 0.0473568281938326,
+            "recall": 0.03547854785478548,
+            "fscore": 0.040566037735849055
+        },
+        "INTENT_DOI___CULTURE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_FOOD_ITEM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PERSON": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DURATION": {
+            "precision": 0.0703781512605042,
+            "recall": 0.11858407079646018,
+            "fscore": 0.08833223467369808
+        },
+        "INTENT_WIKIPEDIA_SENTENCES": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "AGE_18_30": {
+            "precision": 0.011396011396011397,
+            "recall": 0.006802721088435374,
+            "fscore": 0.008519701810436636
+        },
+        "ENTITY_CITY": {
+            "precision": 0.04449838187702265,
+            "recall": 0.07617728531855955,
+            "fscore": 0.056179775280898875
+        },
+        "INTENT_TASK_OF_FIVES": {
+            "precision": 0.024193548387096774,
+            "recall": 0.020833333333333332,
+            "fscore": 0.022388059701492536
+        },
+        "GENDER_FEMALE": {
+            "precision": 0.022429906542056073,
+            "recall": 0.026905829596412557,
+            "fscore": 0.024464831804281342
+        },
+        "INTENT_KEYWORDS_SPOTTING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_COUNTRY": {
+            "precision": 0.045576407506702415,
+            "recall": 0.046703296703296704,
+            "fscore": 0.04613297150610583
+        },
+        "ENTITY_TEMPERATURE": {
+            "precision": 0.30131004366812225,
+            "recall": 0.38333333333333336,
+            "fscore": 0.3374083129584352
+        },
+        "ENTITY_TASK": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___GARDENING": {
+            "precision": 0.1111111111111111,
+            "recall": 0.0625,
+            "fscore": 0.08
+        },
+        "ENTITY_ACTION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PLANT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_SEASON": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_LIGHT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_UMANG_COMMANDS": {
+            "precision": 0.05,
+            "recall": 0.05,
+            "fscore": 0.05000000000000001
+        },
+        "DIALECT_MADHYA_PRADESH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_PRODUCT_REVIEW": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ROOM": {
+            "precision": 0.13533834586466165,
+            "recall": 0.15254237288135594,
+            "fscore": 0.14342629482071712
+        },
+        "INTENT_CONVERSATION": {
+            "precision": 0.06958473625140292,
+            "recall": 0.04889589905362776,
+            "fscore": 0.05743399722093562
+        },
+        "ENTITY_ROOM_NUMBER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PHONE_NUMBER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PRICE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "DIALECT_UTTAR_PRADESH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BATH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ADDRESS": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BATHROOM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_NUMBER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DOI___EDUCATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ORGANIZATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___BASIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_INGREDIENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_QUALITY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BAG": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_WEIGHT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_SYMPTOM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BODY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DISTRICT_SPECIFIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_MEDICATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DOI___HEALTH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ADJECTIVE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DISEASE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_SYSTEM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CELL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DOCTOR": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___COOKING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PAPER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_MEDICINE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_HOSPITAL_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_HOSPITAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ANIMAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DAILY_LIFE": {
+            "precision": 0.1,
+            "recall": 0.05,
+            "fscore": 0.06666666666666667
+        },
+        "ENTITY_MATERIAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DOI___LEGAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DOCUMENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_AREA": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CURRENCY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_HOTEL_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_COMPLAINT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DISCOUNT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_QUESTION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_QUANTITY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_FOOD": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CUISINE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_SWIGGY_PROMPTS": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_JOB_TITLE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DOI___BUSINESS": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DIGITAL_PAYMENT_COMMANDS": {
+            "precision": 0.08333333333333333,
+            "recall": 0.0625,
+            "fscore": 0.07142857142857144
+        },
+        "ENTITY_ORDER_NUMBER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_COUPON": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ORDER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PRONOUN": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BRAND": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_LANGUAGE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_LANGUAGE_SPECIFIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_AGE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___DANCING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DISH_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___PAINTING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_SHAPE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_ALEXA_COMMANDS": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_RELIGION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_BIGBASKET_COMMANDS": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_MEDIA": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CHANNEL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_VEHICLE_TYPE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_MODEL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CHANNEL_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PAYMENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PAYMENT_METHOD": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DAY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CULTURE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_VEHICLE_MODEL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DRINK_ITEM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_SCHOOL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CUSTOM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_RELATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ART": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ACTIVITY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_HOBBY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BODY_PART": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_COLOR": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_OBJECT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_MODEL_NUMBER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_EMOTION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DEITY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_HOTEL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BANK_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_MEAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_TRADITION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_HISTORY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CRAFT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___RUNNING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_GREETING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ACCOUNT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ACCOUNT_NUMBER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_OPERATING_SYSTEM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___YOGA": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_NATURE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_JOB": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_CULTURAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_COMPANY_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_NATIONALITY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PRIORITY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_FUTURE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ZIP_CODE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_GK_QUESTIONS": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_SOFTWARE_APPLICATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PERCENTAGE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_SOFTWARE_VERSION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_ADVERSE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_MEETING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___ROCK_CLIMBING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_WEATHER": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_DOI___GEOGRAPHY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_DEVELOPMENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_RESOURCE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___TRAVELING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_FLAVOR": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_PAYMENT_AMOUNT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___READING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_LIFE": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BOOK_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_BOOK": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "INTENT_KYP___BIRDWATCHING": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_FREQUENCY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "ENTITY_FEEDBACK": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fscore": 0.0
+        },
+        "overall_micro": {
+            "precision": 0.022190695433374378,
+            "recall": 0.016122445010599194,
+            "fscore": 0.01867600842560573
+        },
+        "overall_macro": {
+            "precision": 0.014364252907967756,
+            "recall": 0.010880238506634561,
+            "fscore": 0.01155200011785517
+        }
+    }
+}
