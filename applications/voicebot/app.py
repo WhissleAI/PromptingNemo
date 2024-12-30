@@ -15,19 +15,20 @@ from deepgram import Deepgram
 import asyncio
 import shutil
 from concurrent.futures import ThreadPoolExecutor
-import riva.client
+import riva
 from google.protobuf.json_format import MessageToDict
+import requests
 
-from utils.asr_utils import *
-from utils.rag_utils import *
-from utils.llm_utils import *
-from utils.blip_utils import *
-from utils.tts_utils import *
-from utils.openai_utils import *
-from utils.mt_utils import *
-from utils.search_utils import *
-from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
-from langchain_huggingface import HuggingFaceEmbeddings
+# from utils.asr_utils import *
+# from utils.rag_utils import *
+# from utils.llm_utils import *
+# from utils.blip_utils import *
+# from utils.tts_utils import *
+# from utils.openai_utils import *
+# from utils.mt_utils import *
+# from utils.search_utils import *
+# from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
+# from langchain_huggingface import HuggingFaceEmbeddings
 
 app = FastAPI(redoc_url=None)
 
@@ -56,80 +57,91 @@ dg_client = Deepgram(DEEPGRAM_API_KEY)
 
 # news_llm = HFLanguageModel(model_name_or_path='RedHenLabs/news-reporter-euro-3b')
 
-ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
-ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
-#ort_session_en_pos, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_pos_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
-ort_session_euro_ner, model_tokenizer_euro, filterbank_featurizer = create_ort_session(model_name="EURO_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
-ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_ort_session(model_name="EURO_IOT_slurp", model_shelf=MODEL_SHELF_PATH)
-#ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
+# ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
+# ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
+# #ort_session_en_pos, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_pos_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
+# ort_session_euro_ner, model_tokenizer_euro, filterbank_featurizer = create_ort_session(model_name="EURO_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
+# ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_ort_session(model_name="EURO_IOT_slurp", model_shelf=MODEL_SHELF_PATH)
+# #ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
 
 
-vision_model_sess, text_model_sess, blip_processor = create_blip_ort_session(model_name="blip",model_shelf=MODEL_SHELF_PATH)
-model_name = "sentence-transformers/all-mpnet-base-v2"
-model_kwargs = {"device": "cpu"}
+# vision_model_sess, text_model_sess, blip_processor = create_blip_ort_session(model_name="blip",model_shelf=MODEL_SHELF_PATH)
+# model_name = "sentence-transformers/all-mpnet-base-v2"
+# model_kwargs = {"device": "cpu"}
 
-embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs=model_kwargs)
+# embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs=model_kwargs)
 
 asr_models = json.loads(config['ASR_MODELS'])
 
 
 ##Visual LLM model
 
-DEV_MODE = True
+# DEV_MODE = True
 
-if DEV_MODE == False:
-    from utils.tensorrtllm_multimodal_utils import MultiModalModelRunner
-    from utils.tensorrtllm_utils import TensorRT_LLM
+# if DEV_MODE == False:
+#     from utils.tensorrtllm_multimodal_utils import MultiModalModelRunner
+#     from utils.tensorrtllm_utils import TensorRT_LLM
 
-    multimodal_llm_hf_dir = config['MULTIMODAL_LLM']['hf_model_dir']
-    multimodal_llm_engine_dir = config['MULTIMODAL_LLM']['llm_engine_dir']
-    multimodal_llm_visual_engine_dir = config['MULTIMODAL_LLM']['visual_engine_dir']
+#     multimodal_llm_hf_dir = config['MULTIMODAL_LLM']['hf_model_dir']
+#     multimodal_llm_engine_dir = config['MULTIMODAL_LLM']['llm_engine_dir']
+#     multimodal_llm_visual_engine_dir = config['MULTIMODAL_LLM']['visual_engine_dir']
 
-    mutlimodal_runner = MultiModalModelRunner(multimodal_llm_hf_dir, multimodal_llm_engine_dir, multimodal_llm_visual_engine_dir)
+#     mutlimodal_runner = MultiModalModelRunner(multimodal_llm_hf_dir, multimodal_llm_engine_dir, multimodal_llm_visual_engine_dir)
 
 
-    #llm_model_tensorrt = TensorRT_LLM(tllm_args,config['TENSORRT_LLM'])
-    engine_dir = config['TENSORRT_LLM']['engine_dir']
-    tokenizer_dir = config['TENSORRT_LLM']['tokenizer_dir']
-    max_output_len = 100
-    llm_model_tensorrt = TensorRT_LLM(engine_dir, tokenizer_dir, max_output_len)
+#     #llm_model_tensorrt = TensorRT_LLM(tllm_args,config['TENSORRT_LLM'])
+#     engine_dir = config['TENSORRT_LLM']['engine_dir']
+#     tokenizer_dir = config['TENSORRT_LLM']['tokenizer_dir']
+#     max_output_len = 100
+#     llm_model_tensorrt = TensorRT_LLM(engine_dir, tokenizer_dir, max_output_len)
 
-    hf_api_token = config['HF_TOKEN']
-    model_id = "google/gemma-2b-it"
-    llm_model_hfapi = HuggingFaceAPI(model_id, hf_api_token)
+#     hf_api_token = config['HF_TOKEN']
+#     model_id = "google/gemma-2b-it"
+#     llm_model_hfapi = HuggingFaceAPI(model_id, hf_api_token)
 
-    instructions = "Answer the following question accurately and concisely. Do not add additional queries or answers."
-    conversation_history = [{"role": "system", "content": instructions}]
+#     instructions = "Answer the following question accurately and concisely. Do not add additional queries or answers."
+#     conversation_history = [{"role": "system", "content": instructions}]
 
-xtts_model_path = "tts_models/multilingual/multi-dataset/xtts_v2"
-xtts_model = TextToSpeech(model_name=xtts_model_path)
+# xtts_model_path = "tts_models/multilingual/multi-dataset/xtts_v2"
+# xtts_model = TextToSpeech(model_name=xtts_model_path)
 
-piper_models_config = {
-    "en-US": {
-        "model_path": "/piper/voices/en_US-amy-medium.onnx",
-        "json_path": "/piper/configs/en_US-amy-medium.onnx.json"
-    },
-    "ru": {
-        "model_path": "/piper/voices/ru_RU-dmitri-medium.onnx",
-        "json_path": "/piper/configs/ru_RU-dmitri-medium.onnx.json"
-    },
-    "es": {
-        "model_path": "/piper/voices/es_ES-davefx-medium.onnx",
-        "json_path": "/piper/configs/es_ES-davefx-medium.onnx.json"
-    }
-}
+# piper_models_config = {
+#     "en-US": {
+#         "model_path": "/piper/voices/en_US-amy-medium.onnx",
+#         "json_path": "/piper/configs/en_US-amy-medium.onnx.json"
+#     },
+#     "ru": {
+#         "model_path": "/piper/voices/ru_RU-dmitri-medium.onnx",
+#         "json_path": "/piper/configs/ru_RU-dmitri-medium.onnx.json"
+#     },
+#     "es": {
+#         "model_path": "/piper/voices/es_ES-davefx-medium.onnx",
+#         "json_path": "/piper/configs/es_ES-davefx-medium.onnx.json"
+#     }
+# }
 
-piper_models = {}
+# piper_models = {}
 
-for key in piper_models_config:
-    print(MODEL_SHELF_PATH+piper_models_config[key]['json_path'])
-    piper_models[key] = PiperSynthesizer(MODEL_SHELF_PATH+piper_models_config[key]['model_path'], 
-                                    MODEL_SHELF_PATH+piper_models_config[key]['json_path'], 
-                                    length_scale=3)
+# for key in piper_models_config:
+#     print(MODEL_SHELF_PATH+piper_models_config[key]['json_path'])
+#     piper_models[key] = PiperSynthesizer(MODEL_SHELF_PATH+piper_models_config[key]['model_path'], 
+#                                     MODEL_SHELF_PATH+piper_models_config[key]['json_path'], 
+#                                     length_scale=3)
 
 async def transcribe_deepgram(file_path):
     async with dg_client.transcription.prerecorded({'buffer': file_path}, {'punctuate': True}) as response:
         return response
+    
+
+def get_audio_from_url(url):
+    # Download the audio file
+    response = requests.get(url)
+
+    # Check if the download was successful
+    response.raise_for_status()
+
+    # Return the binary content
+    return response.content
 
 @app.get('/')
 async def yoyo():
@@ -205,6 +217,120 @@ async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: s
         "duration_seconds": duration_seconds,
         "timestamps": timestamps
     }
+
+
+@app.post("/transcribe-json-input-riva")
+async def transcribe_json_input_riva(json_file: UploadFile = File(...)):
+    """
+    Process a JSON file containing transcription requests and return transcription results.
+    
+    Args:
+        json_file: Upload file containing JSON data with transcription parameters
+        
+    Returns:
+        Dictionary containing transcript, duration, and optional timestamps
+    """
+    try:
+        # Parse JSON input
+        message = await json_file.read()
+        json_data = json.loads(message)
+        output = []
+
+        for data in json_data:
+            print(data)
+            # Extract request parameters
+            model_name = data['model_name']
+            audio_file_path = data['audio_file_path']
+            word_timestamps = data['word_timestamps']
+            boosted_lm_words = data['boosted_lm_words']
+            boosted_lm_score = data['boosted_lm_score']
+
+            # Validate model name
+            if model_name not in asr_models:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Invalid model name in JSON: {data}"
+                )
+            
+            audio_message = get_audio_from_url(audio_file_path)
+
+            # Convert audio to WAV format
+            cmd = 'ffmpeg -i - -ac 1 -ar 16000 -f wav -'
+            proc = await asyncio.create_subprocess_shell(
+                cmd,
+                stdin=asyncio.subprocess.PIPE,
+                stdout=asyncio.subprocess.PIPE,
+            )
+            audio_data, error = await proc.communicate(audio_message)
+
+            if error:
+                raise HTTPException(status_code=400, detail="Error converting audio file")
+            try:
+                # Initialize Riva services
+                auth_nlp = riva.client.Auth(uri=config['NLP_MODEL_URI'])
+                model_info = asr_models[model_name]
+                auth = riva.client.Auth(uri=model_info['uri'])
+                riva_asr = riva.client.ASRService(auth)
+                riva_nlp = riva.client.NLPService(auth_nlp)
+
+                # Configure Riva ASR
+                riva_config = riva.client.RecognitionConfig()
+                if boosted_lm_words:
+                    riva.client.add_word_boosting_to_config(
+                        riva_config,
+                        boosted_lm_words,
+                        boosted_lm_score
+                    )
+
+                riva_config.max_alternatives = 1
+                riva_config.enable_automatic_punctuation = True
+                riva_config.audio_channel_count = 1
+                riva_config.enable_word_time_offsets = word_timestamps
+                riva_config.model = model_info['model']
+
+                if 'language_code' in model_info:
+                    riva_config.language_code = model_info['language_code']
+
+                # Perform transcription
+                response = riva_asr.offline_recognize(audio_data, riva_config)
+
+                # Process transcription results
+                transcripts = [result.alternatives[0].transcript for result in response.results]
+                duration_seconds = sum(result.audio_processed for result in response.results)
+                final_transcript = " ".join(transcripts)
+
+                # Apply punctuation
+                transcript = riva.client.nlp.extract_most_probable_transformed_text(
+                    riva_nlp.punctuate_text(
+                        input_strings=final_transcript,
+                        model_name="riva-punctuation-en-US",
+                        language_code='en-US'
+                    )
+                )
+
+                # Process timestamps if requested
+                timestamps = []
+                if word_timestamps:
+                    for result in response.results:
+                        timestamps.extend(list(result.alternatives[0].words))
+                    timestamps = [MessageToDict(timestamp) for timestamp in timestamps]
+
+                # Add results to output
+                output.append({
+                    "transcript": transcript,
+                    "duration_seconds": duration_seconds,
+                    "timestamps": timestamps
+                })
+
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=str(e))
+
+        return output
+
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=400, detail="Invalid JSON format")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/translate-text")
 async def translate_text(text: str = Form(...), source_language: str = Form('en'), target_language: str = Form(...)):
