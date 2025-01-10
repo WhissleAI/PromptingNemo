@@ -17,15 +17,17 @@ import shutil
 from concurrent.futures import ThreadPoolExecutor
 import riva.client
 from google.protobuf.json_format import MessageToDict
+import requests
 
 from utils.asr_utils import *
 from utils.rag_utils import *
-from utils.llm_utils import *
+# from utils.llm_utils import *
 from utils.blip_utils import *
 from utils.tts_utils import *
 from utils.openai_utils import *
 from utils.mt_utils import *
 from utils.search_utils import *
+from utils.riva_utils import get_transcript
 from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
 from langchain_huggingface import HuggingFaceEmbeddings
 
@@ -56,11 +58,11 @@ dg_client = Deepgram(DEEPGRAM_API_KEY)
 
 # news_llm = HFLanguageModel(model_name_or_path='RedHenLabs/news-reporter-euro-3b')
 
-ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
-ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
+# ort_session_en_ner, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
+# ort_session_en_iot, model_tokenizer_en_iot, filterbank_featurizer = create_ort_session(model_name="speech-tagger_en_slurp-iot", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_pos, model_tokenizer_en, filterbank_featurizer = create_ort_session(model_name="EN_pos_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
-ort_session_euro_ner, model_tokenizer_euro, filterbank_featurizer = create_ort_session(model_name="EURO_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
-ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_ort_session(model_name="EURO_IOT_slurp", model_shelf=MODEL_SHELF_PATH)
+# ort_session_euro_ner, model_tokenizer_euro, filterbank_featurizer = create_ort_session(model_name="EURO_ner_emotion_commonvoice", model_shelf=MODEL_SHELF_PATH)
+# ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_ort_session(model_name="EURO_IOT_slurp", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
 
 
@@ -116,7 +118,7 @@ piper_models_config = {
     "es": {
         "model_path": "/piper/voices/es_ES-davefx-medium.onnx",
         "json_path": "/piper/configs/es_ES-davefx-medium.onnx.json"
-    }
+    },
 }
 
 piper_models = {}
@@ -130,6 +132,16 @@ for key in piper_models_config:
 async def transcribe_deepgram(file_path):
     async with dg_client.transcription.prerecorded({'buffer': file_path}, {'punctuate': True}) as response:
         return response
+
+def get_audio_from_url(url):
+    # Download the audio file
+    response = requests.get(url)
+
+    # Check if the download was successful
+    response.raise_for_status()
+
+    # Return the binary content
+    return response.content
 
 @app.get('/')
 async def yoyo():
@@ -151,60 +163,143 @@ async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: s
     import ast
     boosted_lm_words = ast.literal_eval(boosted_lm_words)
 
-    print(word_timestamps, boosted_lm_words, boosted_lm_score)
-    message = await audio.read()
-    cmd = ['ffmpeg', '-i', "-", '-ac', '1', '-ar','16000', '-f', 'wav', '-']
-    cmd=" ".join(cmd)
-    proc = await asyncio.create_subprocess_shell(
-        cmd,
-        stdin=asyncio.subprocess.PIPE,
-        stdout=asyncio.subprocess.PIPE,
-    )
-    audio_file,error = await proc.communicate(message)
-
-    if error: raise HTTPException(status_code=400, detail="error parsing uploaded file")
+    audio_file = await preprocess_audio(audio)
 
     transcript = ""
 
     try:
         auth_nlp = riva.client.Auth(uri=config['NLP_MODEL_URI'])
-        riva_config = riva.client.RecognitionConfig()
         model_info = asr_models[model_name]
-        auth = riva.client.Auth(uri=model_info['uri'])
-        riva_asr = riva.client.ASRService(auth)
         riva_nlp = riva.client.NLPService(auth_nlp)
-        if boosted_lm_words:
-            riva.client.add_word_boosting_to_config(riva_config, boosted_lm_words, boosted_lm_score)
-
-        riva_config.max_alternatives = 1
-        riva_config.enable_automatic_punctuation = True
-        riva_config.audio_channel_count = 1
-        riva_config.enable_word_time_offsets = word_timestamps
-        riva_config.model = model_info['model']
-        if 'language_code' in model_info: riva_config.language_code = model_info["language_code"]
-        response = riva_asr.offline_recognize(audio_file, riva_config)
-        transcripts = [result.alternatives[0].transcript for result in response.results]
-        duration_seconds = sum([result.audio_processed for result in response.results] )
-        final_transcript = " ".join(transcripts)
+        final_transcript, timestamps, duration_seconds = get_transcript(audio_file, model_info, boosted_lm_words, boosted_lm_score, word_timestamps)
+        
         transcript = riva.client.nlp.extract_most_probable_transformed_text(
             riva_nlp.punctuate_text(
                 input_strings=final_transcript, model_name="riva-punctuation-en-US", language_code='en-US'
             )
         )
-        timestamps = []
-        if word_timestamps:
-            for result in response.results:
-                timestamps += list(result.alternatives[0].words) 
-            timestamps = [MessageToDict(timestamp) for timestamp in timestamps]
-        
     except Exception as e:
         print(e)
         raise HTTPException(status_code=500, detail=str(e))
     return {
         "transcript" : transcript,
         "duration_seconds": duration_seconds,
-        "timestamps": timestamps
+        "timestamps": timestamps,
+        "language_code": model_name.split('-')[0]
     }
+
+@app.post("/transcribe-json-input-riva")
+async def transcribe_json_input_riva(json_file: UploadFile = File(...)):
+    """
+    Process a JSON file containing transcription requests and return transcription results.
+    
+    Args:
+        json_file: Upload file containing JSON data with transcription parameters
+        
+    Returns:
+        Dictionary containing transcript, duration, and optional timestamps
+    """
+    try:
+        # Parse JSON input
+        message = await json_file.read()
+        json_data = json.loads(message)
+        output = []
+
+        for data in json_data:
+            print(data)
+            # Extract request parameters
+            model_name = data['model_name']
+            audio_file_path = data['audio_file_path']
+            word_timestamps = data['word_timestamps']
+            boosted_lm_words = data['boosted_lm_words']
+            boosted_lm_score = data['boosted_lm_score']
+
+            # Validate model name
+            if model_name not in asr_models:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Invalid model name in JSON: {data}"
+                )
+
+            audio_message = get_audio_from_url(audio_file_path)
+
+            # Convert audio to WAV format
+            cmd = 'ffmpeg -i - -ac 1 -ar 16000 -f wav -'
+            proc = await asyncio.create_subprocess_shell(
+                cmd,
+                stdin=asyncio.subprocess.PIPE,
+                stdout=asyncio.subprocess.PIPE,
+            )
+            audio_data, error = await proc.communicate(audio_message)
+
+            if error:
+                raise HTTPException(status_code=400, detail="Error converting audio file")
+            try:
+                # Initialize Riva services
+                auth_nlp = riva.client.Auth(uri=config['NLP_MODEL_URI'])
+                model_info = asr_models[model_name]
+                auth = riva.client.Auth(uri=model_info['uri'])
+                riva_asr = riva.client.ASRService(auth)
+                riva_nlp = riva.client.NLPService(auth_nlp)
+
+                # Configure Riva ASR
+                riva_config = riva.client.RecognitionConfig()
+                if boosted_lm_words:
+                    riva.client.add_word_boosting_to_config(
+                        riva_config,
+                        boosted_lm_words,
+                        boosted_lm_score
+                    )
+
+                riva_config.max_alternatives = 1
+                riva_config.enable_automatic_punctuation = True
+                riva_config.audio_channel_count = 1
+                riva_config.enable_word_time_offsets = word_timestamps
+                riva_config.model = model_info['model']
+
+                if 'language_code' in model_info:
+                    riva_config.language_code = model_info['language_code']
+
+                # Perform transcription
+                response = riva_asr.offline_recognize(audio_data, riva_config)
+
+                # Process transcription results
+                transcripts = [result.alternatives[0].transcript for result in response.results]
+                duration_seconds = sum(result.audio_processed for result in response.results)
+                final_transcript = " ".join(transcripts)
+
+                # Apply punctuation
+                transcript = riva.client.nlp.extract_most_probable_transformed_text(
+                    riva_nlp.punctuate_text(
+                        input_strings=final_transcript,
+                        model_name="riva-punctuation-en-US",
+                        language_code='en-US'
+                    )
+                )
+
+                # Process timestamps if requested
+                timestamps = []
+                if word_timestamps:
+                    for result in response.results:
+                        timestamps.extend(list(result.alternatives[0].words))
+                    timestamps = [MessageToDict(timestamp) for timestamp in timestamps]
+
+                # Add results to output
+                output.append({
+                    "transcript": transcript,
+                    "duration_seconds": duration_seconds,
+                    "timestamps": timestamps
+                })
+
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=str(e))
+
+        return output
+
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=400, detail="Invalid JSON format")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/translate-text")
 async def translate_text(text: str = Form(...), source_language: str = Form('en'), target_language: str = Form(...)):
@@ -360,7 +455,7 @@ async def llm_response_without_file(content: str = Form(...),
     #role = "therapist"
     emotion = emotion.replace("EMOTION_", "")
     print("Emotion:", emotion)
-    detailed_instruction = f"Considering your role as a {role} and understanding that the speaker is feeling {emotion}, provide an empathetic and context-aware response."
+    detailed_instruction = system_instruction if system_instruction else f"Considering your role as a {role} and understanding that the speaker is feeling {emotion}, provide an empathetic and context-aware response."
     
     print(detailed_instruction)
     print("Role:", role)
@@ -393,7 +488,8 @@ async def llm_response_with_file(content: str = Form(...),
                                  system_instruction: Optional[str] = Form(""),
                                  role: Optional[str] = Form(""),
                                  conversation_history: Optional[str] = Form(""),
-                                 input_file: UploadFile = File(...)):
+                                 input_file: UploadFile = File(...),
+                                 audio_model_name:str = Form("en-NER")):
 
     print("URL:", url)
     print("Input Text:", content)
@@ -405,7 +501,7 @@ async def llm_response_with_file(content: str = Form(...),
     print("Input File:", input_file)
     
     
-    detailed_instruction = f"Considering your role as a {role} and understanding that the speaker is feeling {emotion}, provide an empathetic and context-aware response"
+    detailed_instruction = system_instruction if system_instruction else f"Considering your role as a {role} and understanding that the speaker is feeling {emotion}, provide an empathetic and context-aware response"
     
     print(detailed_instruction)
     print("Role:", role)
@@ -435,19 +531,12 @@ async def llm_response_with_file(content: str = Form(...),
             text = get_rag_response(embeddings, input_text, config['OPENAI']['API_KEY'], pdf=file_path, instruction=detailed_instruction)
             return {"response": text, "input_text": content, "input_tokens": 0, "output_tokens": 0}
         elif file_type in ['mp3', 'wav']:
-            message = await input_file.read()
-            cmd = ['ffmpeg', '-i', "-", '-ac', '1', '-ar','16000', '-f', 'wav', '-']
-            cmd=" ".join(cmd)
-            proc = await asyncio.create_subprocess_shell(
-                cmd,
-                stdin=asyncio.subprocess.PIPE,
-                stdout=asyncio.subprocess.PIPE,
-            )
-            audio_file,_ = await proc.communicate(message)
+            audio_file = await preprocess_audio(input_file)
             transcript = ""
 
-            loop = asyncio.get_event_loop()
-            transcript, token_timestamps, duration = await loop.run_in_executor(executor, infer_audio_file, filterbank_featurizer, ort_session_en_ner, model_tokenizer_en, BytesIO(audio_file))
+            model_info = asr_models[audio_model_name]
+            transcript, token_timestamps, duration = get_transcript(audio_file, model_info, [], 0, False)
+
 
             # update input_text or detailed_instruction
             input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
@@ -679,6 +768,6 @@ def clean_tags(input_text):
 if __name__ == '__main__':
     from uvicorn import Config, Server
 
-    server_config = Config(app, host='127.0.0.1', port=5000, workers=1)
+    server_config = Config(app, host='0.0.0.0', port=5000, workers=1)
     server = Server(server_config)
     server.run()

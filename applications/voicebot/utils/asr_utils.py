@@ -7,6 +7,8 @@ import numpy as np
 import onnxruntime as ort
 import sentencepiece as spm
 import soundfile as sf
+from fastapi import UploadFile
+import asyncio
 
 CONSTANT = 1e-5
 
@@ -578,3 +580,19 @@ def extract_entities_web(input_string, token_timestamps, tag="NER"):
     print("Entities:", entities)
 
     return entities
+
+
+async def preprocess_audio(audio: UploadFile):
+    message = await audio.read()
+    cmd = ['ffmpeg', '-hide_banner -loglevel error', '-i', "-", '-ac', '1', '-ar','16000', '-f', 'wav', '-']
+    cmd=" ".join(cmd)
+    proc = await asyncio.create_subprocess_shell(
+        cmd,
+        stdin=asyncio.subprocess.PIPE,
+        stdout=asyncio.subprocess.PIPE,
+    )
+    audio_file,error = await proc.communicate(message)
+
+    if error: raise HTTPException(status_code=400, detail="error parsing uploaded file")
+
+    return audio_file
