@@ -7,24 +7,7 @@ from tqdm import tqdm
 import subprocess
 
 # Base path
-BASE_PATH = '/home/compute/hkoduri/AI4Bharat/PromptingNemo/scripts/data/audio/1person/real/AI4Bharat'
-
-# Dataset links for multiple languages
-DATASET_LINKS = {
-    "Malayalam": {
-        "valid": "https://indicvoices.ai4bharat.org/backend/download_dataset/v3_Malayalam_valid.tgz?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzcxMzM0OTYsImlhdCI6MTczNjk2MDY5NiwiZW1haWwiOiJoa29kdXJpQHdoaXNzbGUuYWkifQ.f6OS79DKvHst_gc4nqg888cjOe3qHNIiUcaWAXxxJtE",  # Replace with valid token
-        "train": "https://indicvoices.ai4bharat.org/backend/download_dataset/v3_Malayalam_train.tgz?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzcxMzM0OTYsImlhdCI6MTczNjk2MDY5NiwiZW1haWwiOiJoa29kdXJpQHdoaXNzbGUuYWkifQ.f6OS79DKvHst_gc4nqg888cjOe3qHNIiUcaWAXxxJtE"   # Replace with valid token
-    }
-}
-
-# Ensure required libraries are installed
-def ensure_dependencies():
-    try:
-        import pydub
-        import tqdm
-    except ImportError:
-        print("Installing required libraries...")
-        subprocess.run(["pip", "install", "pydub", "tqdm"], check=True)
+BASE_PATH = '/external1/datasets/indicVoices_v3/hindi'
 
 # Helper function to ensure directories exist
 def ensure_directory(path):
@@ -34,26 +17,18 @@ def ensure_directory(path):
             os.remove(path)
     os.makedirs(path, exist_ok=True)
 
-# Step 1: Download datasets
-def download_datasets(language, links, output_path):
-    for subset, link in links.items():
-        tar_file = os.path.join(output_path, f"v3_{language}_{subset}.tgz")
-        print(f"Downloading {subset} dataset for {language}...")
-        subprocess.run(["wget", "-O", tar_file, link], check=True)
-        print(f"Downloaded {subset} dataset to {tar_file}")
-
-# Step 2: Extract datasets
-def extract_datasets(language, output_path):
+# Step 1: Extract datasets
+def extract_datasets(language, tgz_directory, output_path):
     for subset in ["train", "valid"]:
-        tar_file = os.path.join(output_path, f"v3_{language}_{subset}.tgz")
+        tar_file = os.path.join(tgz_directory, f"v3_{language}_{subset}.tgz")
         extract_path = output_path  # Extract directly into the output_path
         print(f"Extracting {subset} dataset for {language}...")
         subprocess.run(["tar", "-xzvf", tar_file, "-C", extract_path], check=True)
         print(f"Extracted {subset} dataset to {extract_path}")
 
-# Step 3: Process JSON files and create manifests
+# Step 2: Process JSON files and create manifests
 def process_subset(language, subset, output_path):
-    subset_path = os.path.join(output_path, f"{language}/rv3/{subset}")
+    subset_path = os.path.join(output_path, f"{language}/v3/{subset}")
     json_list = glob.glob(os.path.join(subset_path, '*.json'))
     manifest_path = os.path.join(output_path, f"{language}_manifest_{subset}.jsonl")
     wavs_path = os.path.join(output_path, f"{language}_wavs_{subset}")
@@ -88,21 +63,17 @@ def process_subset(language, subset, output_path):
     print(f"Manifest for {subset} saved at {manifest_path}")
 
 # Main processing function
-def process_language(language, links):
+def process_language(language, tgz_directory, output_path):
     print(f"Processing language: {language}")
-    output_path = os.path.join(BASE_PATH, f"{language}_processed")
     ensure_directory(output_path)
 
     # Change working directory to output_path
     os.chdir(output_path)
 
-    # Step 1: Download the datasets
-    download_datasets(language, links, output_path)
+    # Step 1: Extract the datasets
+    extract_datasets(language, tgz_directory, output_path)
 
-    # Step 2: Extract the datasets
-    extract_datasets(language, output_path)
-
-    # Step 3: Process train and valid subsets
+    # Step 2: Process train and valid subsets
     for subset in ["train", "valid"]:
         process_subset(language, subset, output_path)
 
@@ -110,6 +81,11 @@ def process_language(language, links):
 
 # Example usage
 if __name__ == "__main__":
-    ensure_dependencies()
-    for lang, links in DATASET_LINKS.items():
-        process_language(lang, links)
+    
+
+    tgz_directory = '/external1/datasets/indicVoices_v3/hindi'  # Specify the directory containing .tgz files
+    languages = ["Hindi"]  # Add more languages as needed
+
+    for lang in languages:
+        output_path = os.path.join(BASE_PATH, f"{lang}_processed")
+        process_language(lang, tgz_directory, output_path)
