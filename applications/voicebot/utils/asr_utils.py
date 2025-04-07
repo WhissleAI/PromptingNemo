@@ -9,6 +9,12 @@ import sentencepiece as spm
 import soundfile as sf
 from fastapi import UploadFile
 import asyncio
+import wave
+import io
+import webrtcvad
+from pydub import AudioSegment
+import yaml
+
 
 CONSTANT = 1e-5
 
@@ -583,7 +589,6 @@ def extract_entities_web(input_string, token_timestamps, tag="NER"):
 
 
 async def preprocess_audio(audio: UploadFile):
-    message = await audio.read()
     cmd = ['ffmpeg', '-hide_banner -loglevel error', '-i', "-", '-ac', '1', '-ar','16000', '-f', 'wav', '-']
     cmd=" ".join(cmd)
     proc = await asyncio.create_subprocess_shell(
@@ -591,8 +596,85 @@ async def preprocess_audio(audio: UploadFile):
         stdin=asyncio.subprocess.PIPE,
         stdout=asyncio.subprocess.PIPE,
     )
-    audio_file,error = await proc.communicate(message)
+    audio_file,error = await proc.communicate(audio)
 
     if error: raise HTTPException(status_code=400, detail="error parsing uploaded file")
 
     return audio_file
+
+def load_ambernet_model_config(onnx_model_path, config_path):
+    ort_session = ort.InferenceSession(onnx_model_path)
+    filterbank_featurizer = FilterbankFeatures(sample_rate=16000)
+    with open(config_path, "r") as file:
+        data = yaml.safe_load(file)
+    labels = data['train_ds'].get('labels', None)
+    if labels is not None:
+        labels = list(labels)
+
+    return ort_session, filterbank_featurizer, labels
+
+def infer_ambernet_onnx(ort_session, filterbank_featurizer, labels, audio_file):
+    input_names = [input.name for input in ort_session.get_inputs()]
+    output_names = [output.name for output in ort_session.get_outputs()]
+
+    waveform, sample_rate = librosa.load(audio_file, sr=16000, mono=True)
+    seq_len = torch.tensor([waveform.shape[0]], dtype=torch.float)
+
+    features, features_length = filterbank_featurizer.forward(torch.tensor(waveform), seq_len)
+
+    input_data = {
+        input_names[0]: features.cpu().numpy(),
+        input_names[1]: features_length.cpu().numpy()
+    }
+
+    logits = ort_session.run([output_names[0]], input_data)
+
+    probabilities = logits[0]
+
+    label_id = torch.argmax(torch.tensor(probabilities), dim=1)
+
+    return labels[label_id]
+
+def read_wave(path_or_fileobject):
+    """Reads an audio file and converts it to 16kHz, mono, 16-bit PCM."""
+    audio = AudioSegment.from_file(path_or_fileobject)
+    audio = audio.set_frame_rate(16000).set_channels(1).set_sample_width(2)  # 16-bit PCM
+    raw_data = np.array(audio.get_array_of_samples(), dtype=np.int16).tobytes()
+    return raw_data, audio.frame_rate
+
+def write_wave_to_memory(audio_data, sample_rate):
+    """Writes audio data to an in-memory file (BytesIO) as a WAV file."""
+    buffer = io.BytesIO()
+    with wave.open(buffer, 'wb') as wf:
+        wf.setnchannels(1)
+        wf.setsampwidth(2)
+        wf.setframerate(sample_rate)
+        wf.writeframes(audio_data)
+    buffer.seek(0)  # Reset buffer position for reading
+    return buffer
+
+async def extract_first_n_seconds_of_audio(audio, duration_seconds, vad_mode=3):
+    """Extracts the first `duration_seconds` seconds of voiced speech and returns it as a BytesIO object."""
+    vad = webrtcvad.Vad(vad_mode)
+    frame_duration = 30  # ms
+    sample_rate = 16000
+    frame_size = int(sample_rate * frame_duration / 1000) * 2  # 16-bit PCM
+
+    audio = await preprocess_audio(audio)
+    audio_data, _ = read_wave(io.BytesIO(audio))
+    voiced_audio = bytearray()
+    voiced_duration = 0  
+    max_voiced_duration = duration_seconds * 1000  
+
+    for i in range(0, len(audio_data), frame_size):
+        frame = audio_data[i:i + frame_size]
+        if len(frame) < frame_size:
+            break
+        if vad.is_speech(frame, sample_rate):
+            voiced_audio.extend(frame)
+            voiced_duration += frame_duration
+            if voiced_duration >= max_voiced_duration:
+                break
+
+    return write_wave_to_memory(voiced_audio, sample_rate)
+
