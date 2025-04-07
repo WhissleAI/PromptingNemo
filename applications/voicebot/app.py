@@ -21,6 +21,7 @@ import requests
 
 from utils.asr_utils import *
 from utils.rag_utils import *
+from utils.qdrant_rag_utils import *
 # from utils.llm_utils import *
 from utils.blip_utils import *
 from utils.tts_utils import *
@@ -65,6 +66,7 @@ dg_client = Deepgram(DEEPGRAM_API_KEY)
 # ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_ort_session(model_name="EURO_IOT_slurp", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
 
+ort_session_ambernet, filterbank_featurizer, labels = load_ambernet_model_config('/projects/svanga/PromptingNemo/scripts/utils/ambernet_onnx/model.onnx', '/projects/svanga/asr_models/nemo/langid_ambernet_v1.12.0/model_config.yaml')
 
 vision_model_sess, text_model_sess, blip_processor = create_blip_ort_session(model_name="blip",model_shelf=MODEL_SHELF_PATH)
 model_name = "sentence-transformers/all-mpnet-base-v2"
@@ -74,6 +76,11 @@ embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs=model_kwa
 
 asr_models = json.loads(config['ASR_MODELS'])
 
+lang_to_model_map = {
+    'en' : 'en-US-0.6b',
+    'ru' : 'ru-RU-110m',
+    'zh' : 'zh-CN'
+}
 
 ##Visual LLM model
 
@@ -129,6 +136,10 @@ for key in piper_models_config:
                                     MODEL_SHELF_PATH+piper_models_config[key]['json_path'], 
                                     length_scale=3)
 
+vector_db = KnowledgeBaseManager(qdrant_url=config['QDRANT']['URL'],
+                                 qdrant_api_key=config['QDRANT']['API_KEY'],
+                                 openai_api_key=config['OPENAI']['API_KEY'])
+
 async def transcribe_deepgram(file_path):
     async with dg_client.transcription.prerecorded({'buffer': file_path}, {'punctuate': True}) as response:
         return response
@@ -163,6 +174,7 @@ async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: s
     import ast
     boosted_lm_words = ast.literal_eval(boosted_lm_words)
 
+    audio = await audio.read()
     audio_file = await preprocess_audio(audio)
 
     transcript = ""
@@ -531,6 +543,7 @@ async def llm_response_with_file(content: str = Form(...),
             text = get_rag_response(embeddings, input_text, config['OPENAI']['API_KEY'], pdf=file_path, instruction=detailed_instruction)
             return {"response": text, "input_text": content, "input_tokens": 0, "output_tokens": 0}
         elif file_type in ['mp3', 'wav']:
+            input_file = await input_file.read()
             audio_file = await preprocess_audio(input_file)
             transcript = ""
 
@@ -764,6 +777,124 @@ def clean_tags(input_text):
     input_text = input_text.split()
     new_sent = [word for word in input_text if "NER_" not in word and "END" not in word and "EMOTION_" not in word]
     return " ".join(new_sent)
+
+@app.post("/get_audio_language")
+async def get_audio_language(audio: UploadFile = File(...)):
+    audio = await audio.read()
+    audio = await preprocess_audio(audio)
+
+    first_few_seconds_audio = await extract_first_n_seconds_of_audio(audio, 10)
+    return infer_ambernet_onnx(ort_session_ambernet, filterbank_featurizer, labels, first_few_seconds_audio)
+
+@app.post("/transcribe_auto_language")
+async def get_auto_transcription(audio: UploadFile = File(...), word_timestamps:bool = Form(0)):
+    audio_data = await audio.read()
+    audio_data = await preprocess_audio(audio_data)
+
+    first_few_seconds_audio = await extract_first_n_seconds_of_audio(audio_data, 10)
+    lang_id = infer_ambernet_onnx(ort_session_ambernet, filterbank_featurizer, labels, first_few_seconds_audio)
+
+    if lang_id not in lang_to_model_map.keys():
+        raise HTTPException(status_code=400, detail=lang_id+" not supported yet")
+
+    model_name = lang_to_model_map[lang_id]
+    try:
+        model_info = asr_models[model_name]
+        final_transcript, timestamps, duration_seconds = get_transcript(audio_data, model_info, [], 20, word_timestamps)
+        
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail=str(e))
+    return {
+        "transcript" : final_transcript,
+        "duration_seconds": duration_seconds,
+        "timestamps": timestamps,
+        "language_code": model_name.split('-')[0]
+    }
+
+
+# Start of RAG related endpoints for text summarization with Qdrant
+@app.post("/create_knowledge_base")
+async def create_knowledge_base(collection_name: str = Form(...)):
+    try:
+        intitalized = vector_db.initialize_collection(collection_name=collection_name)
+        if intitalized:
+            return {"message": "Collection created successfully"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/add_files_to_knowledge_base")
+async def add_files_to_knowledge_base(
+    files: list[UploadFile] = File(...),
+    collection_name: str = Form(...)
+):
+    try:
+        # Initialize vector database connection once for all files
+        intitalized = vector_db.initialize_collection(
+            collection_name=collection_name)
+        
+        if intitalized:
+            results = []
+            for file in files:
+                try:
+                    # Read file content directly into memory
+                    file_content = await file.read()
+
+                    # Create a BytesIO object to work with the file content in memory
+                    file_stream = BytesIO(file_content)
+
+                    # Process the file and add it to the knowledge base
+                    loaded = vector_db.process_byteio_file(file_stream, file.filename)
+
+                    if loaded:
+                        results.append({
+                            "filename": file.filename,
+                            "status": "success"
+                        })
+                    else:
+                        results.append({
+                            "filename": file.filename,
+                            "status": "failed",
+                        })
+
+                except Exception as file_error:
+                    results.append({
+                        "filename": file.filename,
+                        "status": "failed",
+                        "error": str(file_error)
+                    })
+
+            return {
+                "message": "Files processing completed",
+                "results": results
+            }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+
+@app.post("/query_llm_with_knowledge_base")
+async def query_llm_with_knowledge_base(collection_name: str = Form(...), query: str = Form(...), model_name: str = Form("gpt-3.5-turbo")):
+    try:
+        # Initialize vector database connection once for all files
+        intitalized = vector_db.initialize_collection(
+            collection_name=collection_name)
+
+        if intitalized:
+            # Query the knowledge base
+            response = vector_db.query_documents(
+                query=query,
+                openai_api_key=config['OPENAI']['API_KEY'],
+                model_name=model_name,
+                temperature=0.0,
+                num_documents=3
+            )
+
+            return {
+                "response": response
+            }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == '__main__':
     from uvicorn import Config, Server
