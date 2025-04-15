@@ -331,11 +331,11 @@ def process_data(tsv_path: str, output_path: str, clips_dir: str):
 
 
 # 
-language_code = "fr"  # Change this to the language code you're processing (e.g., 'en', 'it', 'de')
+language_code = "uk"  # Change this to the language code you're processing (e.g., 'en', 'it', 'de')
 base_dir = f"/external4/datasets/cv/cv-corpus-15.0-2023-09-08/{language_code}"
 tsv_path = f"{base_dir}/validated.tsv"
 clips_dir = f"{base_dir}/clips"
-output_path = "/hydra2-prev/home/compute/workspace_himanshu/Processed_Data/gemini_metadata/europeen/cv/french_rem.jsonl" 
+output_path = "/hydra2-prev/home/compute/workspace_himanshu/Processed_Data/gemini_metadata/salvic/ukrainian.jsonl" 
 
 # Call the function with the correct paths
 process_data(tsv_path, output_path, clips_dir)

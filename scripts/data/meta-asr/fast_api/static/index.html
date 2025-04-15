@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Processing Interface</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Important */
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 1em;
+        }
+        .button-transcribe { background-color: #007bff; color: white; }
+        .button-annotate { background-color: #28a745; color: white; }
+        .button-transcribe:hover { background-color: #0056b3; }
+        .button-annotate:hover { background-color: #1e7e34; }
+        #status {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            white-space: pre-wrap; /* Preserve formatting */
+            word-wrap: break-word; /* Wrap long lines */
+        }
+        .loading {
+             font-style: italic;
+             color: #555;
+        }
+        .error { color: red; font-weight: bold; }
+        .success { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Audio Processing Interface</h1>
+    <p>Enter the details below and choose an action.</p>
+
+    <form id="audioForm">
+        <div class="form-group">
+            <label for="directory_path">Audio Directory Path:</label>
+            <input type="text" id="directory_path" name="directory_path" required placeholder="/path/to/your/audio/files">
+        </div>
+
+        <div class="form-group">
+            <label for="model_choice">Transcription Model:</label>
+            <select id="model_choice" name="model_choice" required>
+                <option value="gemini">Gemini</option>
+                <option value="whissle">Whissle</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="output_jsonl_path">Output Manifest Path (.jsonl):</label>
+            <input type="text" id="output_jsonl_path" name="output_jsonl_path" required placeholder="/path/to/output/manifest.jsonl">
+        </div>
+
+        <!-- Buttons will trigger JavaScript functions -->
+        <button type="button" class="button-transcribe" onclick="submitProcessing('transcription')">Create Transcription Manifest</button>
+        <button type="button" class="button-annotate" onclick="submitProcessing('annotation')">Create Annotated Manifest</button>
+    </form>
+
+    <div id="status">
+        <p>Status messages will appear here.</p>
+    </div>
+
+    <script>
+        async function submitProcessing(type) {
+            const form = document.getElementById('audioForm');
+            const statusDiv = document.getElementById('status');
+            const formData = new FormData(form);
+
+            // Basic frontend validation
+            const dirPath = formData.get('directory_path');
+            const outputPath = formData.get('output_jsonl_path');
+            if (!dirPath || !outputPath) {
+                statusDiv.innerHTML = '<p class="error">Error: Please fill in both directory and output paths.</p>';
+                return;
+            }
+             if (!outputPath.toLowerCase().endsWith('.jsonl')) {
+                statusDiv.innerHTML = '<p class="error">Error: Output path must end with .jsonl</p>';
+                return;
+            }
+
+
+            const data = {
+                directory_path: dirPath,
+                model_choice: formData.get('model_choice'),
+                output_jsonl_path: outputPath
+            };
+
+            let endpoint = '';
+            if (type === 'transcription') {
+                endpoint = '/create_transcription_manifest/';
+                statusDiv.innerHTML = '<p class="loading">Starting transcription-only manifest creation...</p>';
+            } else if (type === 'annotation') {
+                endpoint = '/create_annotated_manifest/';
+                statusDiv.innerHTML = '<p class="loading">Starting full annotation manifest creation...</p>';
+            } else {
+                statusDiv.innerHTML = '<p class="error">Error: Invalid processing type.</p>';
+                return;
+            }
+
+            try {
+                // Disable buttons during processing? (Optional)
+                document.querySelectorAll('#audioForm button').forEach(btn => btn.disabled = true);
+
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json' // Indicate we expect JSON back
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                // Check if response is JSON
+                const contentType = response.headers.get("content-type");
+                let result;
+                 if (contentType && contentType.indexOf("application/json") !== -1) {
+                    result = await response.json(); // Parse JSON response
+                 } else {
+                    // Handle non-JSON responses (e.g., HTML error pages from server)
+                    const textResponse = await response.text();
+                    throw new Error(`Server returned non-JSON response (Status ${response.status}): ${textResponse.substring(0, 200)}...`);
+                 }
+
+
+                if (response.ok) {
+                    // Success
+                    let statusHtml = `<p class="success">Success!</p>`;
+                    statusHtml += `<p><strong>Message:</strong> ${result.message}</p>`;
+                    statusHtml += `<p><strong>Output File:</strong> ${result.output_file}</p>`;
+                    statusHtml += `<p><strong>Files Processed:</strong> ${result.processed_files}</p>`;
+                    statusHtml += `<p><strong>Records Saved:</strong> ${result.saved_records}</p>`;
+                    statusHtml += `<p><strong>Files with Errors:</strong> ${result.errors}</p>`;
+                    statusDiv.innerHTML = statusHtml;
+                } else {
+                    // API returned an error (like 4xx or 5xx with JSON detail)
+                    let errorMsg = `API Error (Status ${response.status}): ${result.detail || JSON.stringify(result)}`;
+                    statusDiv.innerHTML = `<p class="error">Error: ${errorMsg}</p>`;
+                }
+
+            } catch (error) {
+                // Network errors or other issues during fetch/parsing
+                console.error("Processing Error:", error);
+                statusDiv.innerHTML = `<p class="error">An error occurred: ${error.message || 'Could not connect to the server or process the request.'}</p>`;
+            } finally {
+                 // Re-enable buttons
+                 document.querySelectorAll('#audioForm button').forEach(btn => btn.disabled = false);
+            }
+        }
+    </script>
+
+</body>
+</html>
