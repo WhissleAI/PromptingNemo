@@ -7,3 +7,4 @@ spark-nlp-display
 johnsnowlabs
 pydantic
 gliner
+wandb
