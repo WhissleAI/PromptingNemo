@@ -5,8 +5,8 @@ from nemo.collections.nlp.models import PunctuationCapitalizationModel
 # Load the pre-trained model
 model = PunctuationCapitalizationModel.from_pretrained("punctuation_en_bert")
 
-input_jsonl_path = "/external3/databases/NPTEL2020-Indian-English-Speech-Dataset/nptel-valid/nptel_valid.jsonl"  # Replace with your input file path
-output_jsonl_path = "/external3/databases/NPTEL2020-Indian-English-Speech-Dataset/nptel-valid/nptel_valid_itn.jsonl"  # Replace with your desired output file path
+input_jsonl_path = "/external3/databases/NPTEL2020-Indian-English-Speech-Dataset/english_190/english_190_processed.jsonl"  # Replace with your input file path
+output_jsonl_path = "/external3/databases/NPTEL2020-Indian-English-Speech-Dataset/english_190/english_190_itn.jsonl"  # Replace with your desired output file path
 
 def process_jsonl():
     # Create output directory if it doesn't exist

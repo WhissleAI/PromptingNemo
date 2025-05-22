@@ -50,22 +50,33 @@ def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_token
     model_prefix = os.path.join(tokenizer_folder, 'tokenizer')
     
     # Prepare special tokens string
-    if special_tokens:
-        user_defined_symbols = ','.join(special_tokens)
-        logging.info(f"Special tokens provided: {special_tokens}")
-        logging.info("Starting SentencePiece training with special tokens")
+    # Filter out any empty strings, None values, or whitespace-only strings from special_tokens
+    filtered_special_tokens = [token for token in special_tokens if token and token.strip()]
+    logging.info(f"Filtered special tokens: {filtered_special_tokens}")
+    
+    # Check if there are any duplicate tokens after case normalization
+    token_set = set()
+    unique_tokens = []
+    for token in filtered_special_tokens:
+        if token.upper() not in token_set:
+            token_set.add(token.upper())
+            unique_tokens.append(token)
+        else:
+            logging.warning(f"Duplicate token after case normalization: {token}")
+    
+
+                
+    print("\n\nMY UNIQUE TOKENS\n\n")
+    print(unique_tokens)
+    if unique_tokens:
+        user_defined_symbols = ','.join(unique_tokens)
+        logging.info(f"Using user_defined_symbols: {user_defined_symbols}")
+
         spm.SentencePieceTrainer.train(
             input=temp_text_file, 
             model_prefix=model_prefix, 
             vocab_size=vocab_size,
             user_defined_symbols=user_defined_symbols
-        )
-    else:
-        logging.info("Starting SentencePiece training without special tokens")
-        spm.SentencePieceTrainer.train(
-            input=temp_text_file, 
-            model_prefix=model_prefix, 
-            vocab_size=vocab_size
         )
     
     # Step 4: Return the paths to the tokenizer model and vocab files
@@ -131,7 +142,7 @@ class ASRModelTrainer:
     def restore_model_with_updated_config(self):
         self.model = ASRModel.restore_from(self.model_path, override_config_path=self.cfg)
     
-    def prepare_data_and_tokens(self, tags_type="auto", tokenizer_state="extended", vocab_size=2000):
+    def prepare_data_and_tokens(self, tags_type="auto", tokenizer_state="extended", vocab_size=2000, add_punctuations=True):
         taglist = []
         
 
@@ -154,16 +165,32 @@ class ASRModelTrainer:
             ### just a json readable list of tags
             
             
-        print(taglist)
+        #print(taglist)
+            # Filter out any empty strings one more time just to be safe
+        filtered_taglist = []
+        for token in taglist:
+            token = token.strip()
+            token = token.replace(".","")
+            token = token.replace(",","")
             
+            if token != "":
+                if token not in filtered_taglist:
+                    filtered_taglist.append(token)    
 
-        punctuations = ['.', ',', '?', '!', ';', ':', '-', '(', ')', '[', ']', '{', '}', '<', '>', '/', '\\', '|', '@', '#', '$', '%', '^', '*', '+', '=', '~', '`', '_', '"', "'"]
-        tokens = taglist + punctuations
+        punctuations = ['_','.','?','!']
+        
+        if add_punctuations == True:
+            tokens = filtered_taglist + punctuations
+        else:
+            tokens = filtered_taglist
+        
+        print("ALL TOKENS")
+        print(tokens)
         #tokens = taglist
         is_userdefined = True
 
         if tokenizer_state == "new":
-            _ = train_sentencepiece_tokenizer(self.train_manifest, self.extended_tokenizer_dir, special_tokens=taglist, vocab_size=vocab_size)
+            _ = train_sentencepiece_tokenizer(self.train_manifest, self.extended_tokenizer_dir, special_tokens=tokens, vocab_size=vocab_size)
             self.model.change_vocabulary(self.extended_tokenizer_dir, "bpe")
         
         elif tokenizer_state == "extended":
@@ -178,11 +205,13 @@ class ASRModelTrainer:
         self.trainer = Trainer(
             accelerator=accelerator, 
             max_steps=self.max_steps,
+            gradient_clip_val=1.0,
+            gradient_clip_algorithm="norm",
             enable_checkpointing=False, 
             logger=False,
             log_every_n_steps=50, 
             check_val_every_n_epoch=1,
-            accumulate_grad_batches=4
+            accumulate_grad_batches=8
         )
 
         self.model.set_trainer(self.trainer)
@@ -195,7 +224,7 @@ class ASRModelTrainer:
             self.model.cfg.train_ds.tarred_audio_filepaths = None
             self.model.cfg.validation_ds.manifest_filepath = str(self.test_manifest)
             self.model.cfg.validation_ds.batch_size = self.batch_size
-            self.model.cfg.train_ds.num_workers = 8  # Adding num_workers for training dataloader
+            self.model.cfg.train_ds.num_workers = 12  # Adding num_workers for training dataloader
 
         self.model.setup_training_data(self.model.cfg.train_ds)
         self.model.setup_multiple_validation_data(self.model.cfg.validation_ds)
@@ -217,8 +246,13 @@ class ASRModelTrainer:
                     if word.startswith("ENTITY_") or word.startswith("AGE_") or word.startswith("GER_") or word.startswith("EMOTION_") or word.startswith("INTENT_"):
                         keywords = word.split("_")
                         for keyword in keywords:
-                            if keyword not in special_tokens:
-                                special_tokens.add(keyword)
+                            # Ensure keyword is not empty or just whitespace before adding
+                            stripped_keyword = keyword.strip()
+                            if stripped_keyword: # Check if keyword is non-empty and not just whitespace after stripping
+                                special_tokens.add(stripped_keyword.upper()) # Add uppercased version
+                
+                if "END" not in special_tokens:
+                    special_tokens.add("END")
 
         return list(special_tokens)
 
@@ -236,9 +270,9 @@ class ASRModelTrainer:
             print(OmegaConf.to_yaml(self.model.cfg.optim))
 
         with open_dict(self.model.cfg):
-            self.model.cfg.optim.lr = 0.1
-            self.model.cfg.optim.weight_decay = 0.001
-            self.model.cfg.optim.sched.warmup_steps = 1000
+            self.model.cfg.optim.lr = 1e-4
+            self.model.cfg.optim.weight_decay = 0.0
+            self.model.cfg.optim.sched.warmup_steps = 500
 
         self.model.setup_optimization(self.model.cfg.optim)
     
@@ -253,6 +287,11 @@ class ASRModelTrainer:
                 for tp in types:
                     print(tp)
                 print()
+
+        if 'adapters' not in self.config or not self.config['adapters']:
+            logging.info("No adapters found in the configuration. Skipping adapter setup.")
+            self.model.summarize()  # Still summarize the model even if no adapters are configured
+            return
 
         for adapter_name, adapter_config in self.config['adapters'].items():
             adapter_cfg = LinearAdapterConfig(
@@ -379,15 +418,15 @@ class ASRModelTrainer:
         logging.info(f"Updated vocab files: {output_vocab_file}, {output_vocab_txt_file}")
 
 # Usage
-model_trainer = ASRModelTrainer(config_path='config/config_vils.yml')
+model_trainer = ASRModelTrainer(config_path='config/config_v1/config_english.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
-model_trainer.prepare_data_and_tokens(tags_type="auto", tokenizer_state="extended", vocab_size=1704)
+model_trainer.prepare_data_and_tokens(tags_type="auto", tokenizer_state="new", vocab_size=2000)
 model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()
 model_trainer.configure_optimization()
-model_trainer.setup_adapters(encoder_freeze=True)
+model_trainer.setup_adapters(encoder_freeze=False)
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
 model_trainer.train()

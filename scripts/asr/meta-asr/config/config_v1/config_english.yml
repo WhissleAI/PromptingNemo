@@ -1,0 +1,47 @@
+model:
+  model_root: "/workspace/pretrained_models/parakeet-ctc-0.6b"
+  model_name: "parakeet-ctc-0.6b.nemo"
+  tokenizer_folder: "tokenizer"
+  new_tokenizer_folder: "english_tokenizer"
+  proto_file: "proto/file"
+  proto_dir: "proto/dir"
+
+
+training:
+  data_dir: "/workspace/manifest_hf/euro/train_valid_en"
+  train_manifest: "train.json"
+  test_manifest: "valid.json"
+  batch_size: 48  # Increase from 8 to 12
+  max_steps: 100000000
+  use_mixed_precision: true  # Add this flag for mixed precision
+
+# adapters:
+#   LinearAdapter:
+#     name: "LinearAdapter"
+#     dim: 64            # 1024 / 16
+#     activation: "relu"
+#     norm_position: "pre"
+
+#   BottleneckAdapter:
+#     name: "BottleneckAdapter"
+#     dim: 128           # 1024 / 8
+#     activation: "gelu"
+#     norm_position: "post"
+
+#   AttentionAdapter:
+#     name: "AttentionAdapter"
+#     dim: 64            # 1024 / 16
+#     activation: "swish"
+#     norm_position: "pre"
+
+wandb:
+  project: "nemo-en-train-parakeet"  # Replace with your W&B project name
+  entity: "whissleai"    # Optional: your W&B username or team name
+
+experiment:
+  exp_dir: "/workspace/experiments/english"
+  exp_name: "parakeet-ctc-0.6b-finetune-english"
+  monitor: "val_wer"
+  mode: "min"
+  always_save_nemo: true
+  save_best_model: true
