@@ -92,7 +92,7 @@ def main():
         sys.exit(1)
 
     # Copy model file
-    model_dest = local_dir / "parakeet-ctc-0.6b-finetune-euro.nemo"
+    model_dest = local_dir / "masr-en-0.6b.nemo"
     print(f"Copying model file to {model_dest}")
     shutil.copy2(nemo_model_path, model_dest)
 
@@ -135,7 +135,7 @@ tags:
 license: cc-by-4.0
 ---
 
-# Meta STT Euro V1
+# Meta ASR English 
 
 This model is a fine-tuned version of NVIDIA's Parakeet CTC 0.6B model, enhanced with entity tagging, speaker attributes, and multi-language support for European languages.
 
@@ -199,7 +199,7 @@ This model is licensed under the [CC-BY-4.0](https://creativecommons.org/license
 
     # Upload files
     files_to_upload = [
-        (model_dest, "parakeet-ctc-0.6b-finetune-euro.nemo"),
+        (model_dest, "masr-en-0.6b.nemo"),
         (readme_path, "README.md"),
         (config_dest, "model_config.yaml"),
         (weights_dest, "model_weights.ckpt")
