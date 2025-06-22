@@ -20,6 +20,7 @@ from concurrent.futures import ThreadPoolExecutor
 import riva.client
 from google.protobuf.json_format import MessageToDict
 import requests
+from dotenv import load_dotenv
 
 from utils.asr_utils import *
 from utils.rag_utils import *
@@ -34,6 +35,9 @@ from utils.riva_utils import get_transcript, transform_riva_output
 from utils.tts_piper_utils import PiperSynthesizer, clean_text_for_piper
 from langchain_huggingface import HuggingFaceEmbeddings
 
+# Load environment variables from .env file
+load_dotenv()
+
 app = FastAPI(redoc_url=None)
 
 executor = ThreadPoolExecutor(max_workers=os.cpu_count())
@@ -47,16 +51,9 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-##checkout model shelf
-def load_config():
-    with open("config.yml", "r") as ymlfile:
-        cfg = yaml.safe_load(ymlfile)
-    return cfg
-
-config = load_config()
-
-MODEL_SHELF_PATH = config['MODEL_SHELF_PATH']
-DEEPGRAM_API_KEY = config['DEEPGRAM_API_KEY']
+# Load configuration from environment variables
+MODEL_SHELF_PATH = os.getenv('MODEL_SHELF_PATH')
+DEEPGRAM_API_KEY = os.getenv('DEEPGRAM_API_KEY')
 dg_client = Deepgram(DEEPGRAM_API_KEY)
 
 # news_llm = HFLanguageModel(model_name_or_path='RedHenLabs/news-reporter-euro-3b')
@@ -76,7 +73,7 @@ model_kwargs = {"device": "cpu"}
 
 embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs=model_kwargs)
 
-asr_models = json.loads(config['ASR_MODELS'])
+asr_models = json.loads(os.getenv('ASR_MODELS'))
 
 lang_to_model_map = {
     'en' : 'en-US-0.6b',
@@ -92,20 +89,20 @@ if DEV_MODE == False:
     from utils.tensorrtllm_multimodal_utils import MultiModalModelRunner
     from utils.tensorrtllm_utils import TensorRT_LLM
 
-    multimodal_llm_hf_dir = config['MULTIMODAL_LLM']['hf_model_dir']
-    multimodal_llm_engine_dir = config['MULTIMODAL_LLM']['llm_engine_dir']
-    multimodal_llm_visual_engine_dir = config['MULTIMODAL_LLM']['visual_engine_dir']
+    multimodal_llm_hf_dir = os.getenv('MULTIMODAL_LLM_HF_MODEL_DIR')
+    multimodal_llm_engine_dir = os.getenv('MULTIMODAL_LLM_LLM_ENGINE_DIR')
+    multimodal_llm_visual_engine_dir = os.getenv('MULTIMODAL_LLM_VISUAL_ENGINE_DIR')
 
     mutlimodal_runner = MultiModalModelRunner(multimodal_llm_hf_dir, multimodal_llm_engine_dir, multimodal_llm_visual_engine_dir)
 
 
     #llm_model_tensorrt = TensorRT_LLM(tllm_args,config['TENSORRT_LLM'])
-    engine_dir = config['TENSORRT_LLM']['engine_dir']
-    tokenizer_dir = config['TENSORRT_LLM']['tokenizer_dir']
+    engine_dir = os.getenv('TENSORRT_LLM_ENGINE_DIR')
+    tokenizer_dir = os.getenv('TENSORRT_LLM_TOKENIZER_DIR')
     max_output_len = 100
     llm_model_tensorrt = TensorRT_LLM(engine_dir, tokenizer_dir, max_output_len)
 
-    hf_api_token = config['HF_TOKEN']
+    hf_api_token = os.getenv('HF_TOKEN')
     model_id = "google/gemma-2b-it"
     llm_model_hfapi = HuggingFaceAPI(model_id, hf_api_token)
 
@@ -143,9 +140,9 @@ for key in piper_models_config:
                                     MODEL_SHELF_PATH+piper_models_config[key]['json_path'], 
                                     length_scale=3)
 
-vector_db = KnowledgeBaseManager(qdrant_url=config['QDRANT']['URL'],
-                                 qdrant_api_key=config['QDRANT']['API_KEY'],
-                                 openai_api_key=config['OPENAI']['API_KEY'])
+vector_db = KnowledgeBaseManager(qdrant_url=os.getenv('QDRANT_URL'),
+                                 qdrant_api_key=os.getenv('QDRANT_API_KEY'),
+                                 openai_api_key=os.getenv('OPENAI_API_KEY'))
 
 async def transcribe_deepgram(file_path):
     async with dg_client.transcription.prerecorded({'buffer': file_path}, {'punctuate': True}) as response:
@@ -187,7 +184,7 @@ async def transcribe_audio_web_riva(audio: UploadFile = File(...), model_name: s
     transcript = ""
 
     try:
-        auth_nlp = riva.client.Auth(uri=config['NLP_MODEL_URI'])
+        auth_nlp = riva.client.Auth(uri=os.getenv('NLP_MODEL_URI'))
         model_info = asr_models[model_name]
         riva_nlp = riva.client.NLPService(auth_nlp)
 
@@ -221,7 +218,7 @@ async def transcribe_diarize_riva(audio: UploadFile = File(...), model_name: str
     transcript = ""
 
     try:
-        auth_nlp = riva.client.Auth(uri=config['NLP_MODEL_URI'])
+        auth_nlp = riva.client.Auth(uri=os.getenv('NLP_MODEL_URI'))
         model_info = asr_models[model_name]
         riva_nlp = riva.client.NLPService(auth_nlp)
         final_transcript, timestamps, duration_seconds = get_transcript(audio_file, model_info, boosted_lm_words, boosted_lm_score, word_timestamps, True, max_speakers)
@@ -291,7 +288,7 @@ async def transcribe_json_input_riva(json_file: UploadFile = File(...)):
                 raise HTTPException(status_code=400, detail="Error converting audio file")
             try:
                 # Initialize Riva services
-                auth_nlp = riva.client.Auth(uri=config['NLP_MODEL_URI'])
+                auth_nlp = riva.client.Auth(uri=os.getenv('NLP_MODEL_URI'))
                 model_info = asr_models[model_name]
                 auth = riva.client.Auth(uri=model_info['uri'])
                 riva_asr = riva.client.ASRService(auth)
@@ -363,7 +360,7 @@ async def translate_text(text: str = Form(...), source_language: str = Form('en'
             "translated_text": text
         }
 
-    auth = riva.client.Auth(uri=config['MT_MODEL_URI'])
+    auth = riva.client.Auth(uri=os.getenv('MT_MODEL_URI'))
     riva_nmt_client = riva.client.NeuralMachineTranslationClient(auth)
     parts = nmt_large_text_split(text)
     response = riva_nmt_client.translate(parts, "megatronnmt_any_any_1b", source_language, target_language)
@@ -483,7 +480,7 @@ async def llm_text_summarizer(request: LLMSummarizerRequest):
 
     if model_name == "openai":
         input_text = clean_tags(content)
-        text, input_tokens, output_tokens = get_openai_response(input_text, instruction, config['OPENAI']['API_KEY'])
+        text, input_tokens, output_tokens = get_openai_response(input_text, instruction, os.getenv('OPENAI_API_KEY'))
         return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
     else:
         return {"response": "Model not found", "input_text": content, "input_tokens": 0, "output_tokens": 0}
@@ -602,7 +599,7 @@ async def llm_response_without_file(content: str = Form(...),
         input_text = clean_tags(content)
         if emotion:
             input_text += f' {{emotionalstate: {emotion}}}'
-        text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, config['OPENAI']['API_KEY'], conversation_history)
+        text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, os.getenv('OPENAI_API_KEY'), conversation_history)
         return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
     else:
         response = llm_model_tensorrt.generate_response([content], instructions=detailed_instruction, history=conversation_history, role=role)
@@ -659,7 +656,7 @@ async def llm_response_with_file(content: str = Form(...),
             # if model_name == 'news_llm':
             #     text = news_llm.generate_rag_response(embeddings, input_text, pdf=file_path, instruction=detailed_instruction)
             # else:
-            text = get_rag_response(embeddings, input_text, config['OPENAI']['API_KEY'], pdf=file_path, instruction=detailed_instruction)
+            text = get_rag_response(embeddings, input_text, os.getenv('OPENAI_API_KEY'), pdf=file_path, instruction=detailed_instruction)
             return {"response": text, "input_text": content, "input_tokens": 0, "output_tokens": 0}
         elif file_type in ['mp3', 'wav']:
             input_file = await input_file.read()
@@ -679,7 +676,7 @@ async def llm_response_with_file(content: str = Form(...),
             #     input_tokens, output_tokens = (0,0)
             # else:
             #     text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
-            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, config['OPENAI']['API_KEY'], conversation_history)
+            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, os.getenv('OPENAI_API_KEY'), conversation_history)
             return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
         elif file_type in ['jpeg', 'jpg', 'png']:
             message = await input_file.read()
@@ -693,7 +690,7 @@ async def llm_response_with_file(content: str = Form(...),
             #     input_tokens, output_tokens = (0,0)
             # else:
             #     text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, conversation_history)
-            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, config['OPENAI']['API_KEY'], conversation_history)
+            text, input_tokens, output_tokens = get_openai_response(input_text, detailed_instruction, os.getenv('OPENAI_API_KEY'), conversation_history)
             return {"response": text, "input_text": content, "input_tokens": input_tokens, "output_tokens": output_tokens}
         else:
             return 'file format not supported'
@@ -747,7 +744,7 @@ async def llm_response_with_search(content: str = Form(...),
         text = f"This is a test response."
     else:
         if url:
-            test_image = mutlimodal_runner.load_test_image(args.hf_model_dir, url)
+            test_image = mutlimodal_runner.load_test_image(multimodal_llm_hf_dir, url)
             result = mutlimodal_runner.run(test_image, "Question: Give a caption for this image. Answer:")
             print("Result:", result)
             text = result
@@ -759,7 +756,7 @@ async def llm_response_with_search(content: str = Form(...),
         else:
             if model_name == 'openai':
                 input_text = clean_tags(content) + f' {{emotionalstate: {emotion}}}'
-                text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, config['OPENAI']['API_KEY']. conversation_history)
+                text, input_tokens, output_tokens = get_openai_response(input_text, system_instruction, os.getenv('OPENAI_API_KEY'), conversation_history)
             elif model_name == 'whissle':
                 response = llm_model_tensorrt.generate_response([content], instructions=system_instruction, history=conversation_history, role=role)
                 text = response[0]
@@ -792,7 +789,7 @@ async def rag_file_response(request: RAGFileResponse):
         print("Emotion", emotion)
         print("RAG URL", url)
         
-        rag_response = get_rag_response([url], query, token=config['OPENAI']['API_KEY'])
+        rag_response = get_rag_response([url], query, token=os.getenv('OPENAI_API_KEY'))
         return {"response": rag_response, "input_text": query}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -897,7 +894,6 @@ def clean_tags(input_text):
     new_sent = [word for word in input_text if "NER_" not in word and "END" not in word and "EMOTION_" not in word]
     return " ".join(new_sent)
 
-<<<<<<< HEAD
 @app.post("/get_audio_language")
 async def get_audio_language(audio: UploadFile = File(...)):
     audio = await audio.read()
@@ -1004,7 +1000,7 @@ async def query_llm_with_knowledge_base(collection_name: str = Form(...), query:
             # Query the knowledge base
             response = vector_db.query_documents(
                 query=query,
-                openai_api_key=config['OPENAI']['API_KEY'],
+                openai_api_key=os.getenv('OPENAI_API_KEY'),
                 model_name=model_name,
                 temperature=0.0,
                 num_documents=3
@@ -1016,9 +1012,6 @@ async def query_llm_with_knowledge_base(collection_name: str = Form(...), query:
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-if __name__ == '__main__':
-    from uvicorn import Config, Server
-=======
 class StandaloneApplication(BaseApplication):
     def __init__(self, app, options=None):
         self.options = options or {}
@@ -1048,5 +1041,4 @@ if __name__ == '__main__':
     }
 
     StandaloneApplication(app, options).run()
->>>>>>> caa00bc (push changes)
 

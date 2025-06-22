@@ -20,3 +20,4 @@ sentencepiece~=0.1.99
 onnxruntime==1.12
 pymupdf
 nvidia-riva-client
+python-dotenv
