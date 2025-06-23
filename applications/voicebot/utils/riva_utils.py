@@ -18,7 +18,7 @@ def get_transcript(audio_file, model_info, boosted_lm_words, boosted_lm_score, w
     
     # Add speaker diarization if enabled
     if enable_diarization:
-        riva.client.add_speaker_diarization_to_config(riva_config, max_speakers)
+        riva.client.add_speaker_diarization_to_config(riva_config, True, diarization_max_speakers=max_speakers)
     
     response = riva_asr.offline_recognize(audio_file, riva_config)
     transcripts = [result.alternatives[0].transcript for result in response.results]
