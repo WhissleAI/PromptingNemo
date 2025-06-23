@@ -16,3 +16,4 @@ segments/
 *.wav
 
 *config.yml
+applications/voicebot/config.yml
