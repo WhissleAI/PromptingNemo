@@ -1,7 +1,8 @@
 from typing import List, Dict, Any, Optional, Tuple
 import os
 from datetime import datetime
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain_openai import ChatOpenAI
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_qdrant import QdrantVectorStore
 from langchain.chains import RetrievalQA
@@ -27,8 +28,8 @@ class KnowledgeBaseManager:
         qdrant_port: int = None,
         qdrant_url: str = None,
         qdrant_api_key: str = None,
-        openai_api_key: str = None,
-        embedding_model: str = "text-embedding-ada-002"
+        embedding_model: str = "sentence-transformers/all-mpnet-base-v2",
+        model_kwargs: Dict[str, Any] = None
     ):
         """
         Initialize VectorDB manager with Qdrant and embedding configurations.
@@ -38,11 +39,19 @@ class KnowledgeBaseManager:
             qdrant_port: Port number for Qdrant server
             qdrant_url: URL for Qdrant server
             qdrant_api_key: API key for Qdrant
-            openai_api_key: API key for OpenAI
-            embedding_model: OpenAI embedding model to use
+            embedding_model: HuggingFace embedding model to use
+            model_kwargs: Additional arguments for the embedding model
         """
         print(f"[{get_timestamp()}] Initializing KnowledgeBaseManager client")
-        self.embeddings = OpenAIEmbeddings(model=embedding_model, api_key=openai_api_key)
+        
+        # Set default model kwargs if not provided
+        if model_kwargs is None:
+            model_kwargs = {"device": "cpu"}
+        
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name=embedding_model, 
+            model_kwargs=model_kwargs
+        )
         self.qdrant_url = qdrant_url
         self.qdrant_api_key = qdrant_api_key
         self.vector_store = None
@@ -83,10 +92,12 @@ class KnowledgeBaseManager:
                 return True
             else:
                 print(f"[{get_timestamp()}] Creating new collection: {self.collection_name}")
+                # Get embedding dimension from the model
+                embedding_dim = self.embeddings.client.get_sentence_embedding_dimension()
                 self.vector_store = self.client.create_collection(
                     collection_name=self.collection_name,
                     vectors_config=VectorParams(
-                        size=1536, distance=Distance.COSINE)
+                        size=embedding_dim, distance=Distance.COSINE)
                 )
                 return True
         except Exception as e:
@@ -310,7 +321,6 @@ class KnowledgeBaseManager:
 #         vector_db = KnowledgeBaseManager(
 #             qdrant_url=os.getenv("QDRANT_HOST"),
 #             qdrant_api_key=os.getenv("QDRANT_API_KEY"),
-#             openai_api_key=os.getenv("OPENAI_API_KEY"),
 #             collection_name="test_pdf_collection"
 #         )
 

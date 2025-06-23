@@ -65,7 +65,7 @@ dg_client = Deepgram(DEEPGRAM_API_KEY)
 # ort_session_euro_iot, model_tokenizer_euro_iot, filterbank_featurizer = create_ort_session(model_name="EURO_IOT_slurp", model_shelf=MODEL_SHELF_PATH)
 #ort_session_en_noise, model_tokenizer_noise, filterbank_featurizer = create_ort_session(model_name="EN_noise_ner_commonvoice_50hrs", model_shelf=MODEL_SHELF_PATH)
 
-ort_session_ambernet, filterbank_featurizer, labels = load_ambernet_model_config('/projects/svanga/PromptingNemo/scripts/utils/ambernet_onnx/model.onnx', '/projects/svanga/asr_models/nemo/langid_ambernet_v1.12.0/model_config.yaml')
+#ort_session_ambernet, filterbank_featurizer, labels = load_ambernet_model_config('/projects/svanga/PromptingNemo/scripts/utils/ambernet_onnx/model.onnx', '/projects/svanga/asr_models/nemo/langid_ambernet_v1.12.0/model_config.yaml')
 
 vision_model_sess, text_model_sess, blip_processor = create_blip_ort_session(model_name="blip",model_shelf=MODEL_SHELF_PATH)
 model_name = "sentence-transformers/all-mpnet-base-v2"
@@ -140,9 +140,9 @@ for key in piper_models_config:
                                     MODEL_SHELF_PATH+piper_models_config[key]['json_path'], 
                                     length_scale=3)
 
-vector_db = KnowledgeBaseManager(qdrant_url=os.getenv('QDRANT_URL'),
-                                 qdrant_api_key=os.getenv('QDRANT_API_KEY'),
-                                 openai_api_key=os.getenv('OPENAI_API_KEY'))
+# vector_db = KnowledgeBaseManager(qdrant_url=os.getenv('QDRANT_URL'),
+#                                  qdrant_api_key=os.getenv('QDRANT_API_KEY'),
+#                                  openai_api_key=os.getenv('OPENAI_API_KEY'))
 
 async def transcribe_deepgram(file_path):
     async with dg_client.transcription.prerecorded({'buffer': file_path}, {'punctuate': True}) as response:
@@ -213,7 +213,8 @@ async def transcribe_diarize_riva(audio: UploadFile = File(...), model_name: str
     import ast
     boosted_lm_words = ast.literal_eval(boosted_lm_words)
 
-    audio_file = await preprocess_audio(audio)
+    audio_data = await audio.read()
+    audio_file = await preprocess_audio(audio_data)
 
     transcript = ""
 
