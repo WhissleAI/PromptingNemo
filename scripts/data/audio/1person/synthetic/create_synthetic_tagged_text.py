@@ -1,4 +1,4 @@
-import openai
+import google.generativeai as genai
 import re
 import os
 import time
@@ -6,7 +6,9 @@ from pathlib import Path
 import random
 import json
 
-openai.api_key = 'sk-proj-wBhxVeSmc5c9wq0MccFNT3BlbkFJPnPgz351rUnyoyLziIRu'
+# Configure Google Gemini API
+GOOGLE_API_KEY = 'AIzaSyCgll5mWwG6XXbS4WjVALEKOmx3-9L2cw0'  # Replace with your actual Google API key
+genai.configure(api_key=GOOGLE_API_KEY)
 
 
 MAP_PROMPT_TO_DOMAIN = {
@@ -51,6 +53,9 @@ def validate_and_correct_annotations(conll_output):
 
 def create_data(prompt_files, output_folder, lang_map, example_samples):
     
+    # Initialize the Gemini model
+    model = genai.GenerativeModel('gemini-1.5-flash')
+    
     for prompt_file in prompt_files:
         print("Processing file:", prompt_file)
         filename = os.path.basename(prompt_file)  # Get the file name with extension
@@ -66,32 +71,35 @@ def create_data(prompt_files, output_folder, lang_map, example_samples):
             print("Prompt:", prompt)
             
             try:
-                response = openai.ChatCompletion.create(
-                    model="gpt-3.5-turbo",
-                    messages=[
-                        {"role": "system", "content": "You are a helpful assistant."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    max_tokens=4096,
-                    n=1,
-                    stop=None,
-                    temperature=0.7,  # Higher value to increase creativity and diversity
+                # Generate content using Gemini
+                response = model.generate_content(
+                    prompt,
+                    generation_config=genai.types.GenerationConfig(
+                        max_output_tokens=4096,
+                        temperature=0.7,  # Higher value to increase creativity and diversity
+                    )
                 )
-                            
-                tagged_output = response.choices[0].message['content'].strip()
+                tagged_output = response.text.strip()
                 tagged_output = tagged_output.replace("```json\n", "")
                 tagged_output = tagged_output.replace("```", "")
-                #print(tagged_output)
-                tagged_output = json.loads(tagged_output)
-                #tagged_output = validate_and_correct_annotations(tagged_output)
-                for line in tagged_output:
-                    line = "LANG_" + lang_map[lang] + " " + line
-                    output_file.write(line)
-                    output_file.write("\n")
+                print("Raw response:", tagged_output[:200] + "..." if len(tagged_output) > 200 else tagged_output)
+                
+                # Process as plain text instead of JSON
+                lines = tagged_output.split('\n')
+                for line in lines:
+                    if line.strip():  # Skip empty lines
+                        formatted_line = "LANG_" + lang_map[lang] + " " + line.strip()
+                        output_file.write(formatted_line)
+                        output_file.write("\n")
                 
                 output_file.close()
-            except:
-                print("Error in processing prompt")
+                
+                # Add a small delay to respect API rate limits
+                time.sleep(1)
+                
+            except Exception as e:
+                print(f"Error in processing prompt: {e}")
+                output_file.close()
                 continue
 
 import requests
@@ -167,13 +175,13 @@ Collect samples from GPT-4
 
 if __name__ == "__main__":
 
-    output_folder = Path("/external2/datasets/slurp/synthetic6/")
-    prompt_folder = Path("/root/workspace/PromptingNemo/datasets/prompts/data_extension/")
+    output_folder = Path(r"E:\Meta_asr\prmopting_nemo_output")
+    prompt_folder = Path(r"E:\Meta_asr\prompt_folder")
     prompt_files = list(prompt_folder.glob("*.txt"))
     random.shuffle(prompt_files)
     
     
-    extension_dataset = Path("/external2/datasets/slurp/train-slurp-tagged.txt")
+    extension_dataset = r"E:\Meta_asr\PromptingNemo\prompts\data_extension\slurp_multilingual.txt"
     examples = []
     with open(extension_dataset, 'r') as f:
         examples = f.readlines()
@@ -187,7 +195,7 @@ if __name__ == "__main__":
     #INDIAN.update(EURO)
 
     os.system(f"mkdir -p {output_folder}")
-    create_data_n_times(prompt_files, output_folder, EURO, examples, n=500)
+    create_data_n_times(prompt_files, output_folder, EURO, examples, n=1)
 
 
 # input_file = str(output_folder / "text_tagged_train_v2.txt")  # replace with your input file path
