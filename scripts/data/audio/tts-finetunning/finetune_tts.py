@@ -24,17 +24,17 @@ import os, tempfile
 os.makedirs('tmp_exec', exist_ok=True)
 tempfile.tempdir = os.path.join(os.getcwd(), 'tmp_exec')
 
-!pip install torch torchvision torchaudio transformers datasets librosa soundfile accelerate wandb phonemizer TTS -q
-!apt-get install -y -q espeak espeak-data libespeak1 libespeak-dev
+# !pip install torch torchvision torchaudio transformers datasets librosa soundfile accelerate wandb phonemizer TTS -q
+# !apt-get install -y -q espeak espeak-data libespeak1 libespeak-dev
 
 # CELL 1: Installations
 # We will NOT specify versions for torch, torchvision, torchaudio, numpy, pandas, scipy initially.
 # Let TTS and transformers guide these.
-!pip install transformers datasets librosa soundfile accelerate wandb phonemizer TTS -q
+# !pip install transformers datasets librosa soundfile accelerate wandb phonemizer TTS -q
 
-# Install espeak for phonemizer backend
-!apt-get update -q
-!apt-get install -y -q espeak-data libespeak-dev # espeak itself should be a dependency
+# # Install espeak for phonemizer backend
+# !apt-get update -q
+# !apt-get install -y -q espeak-data libespeak-dev # espeak itself should be a dependency
 
 # Import necessary libraries
 import os
@@ -59,9 +59,9 @@ from typing import List, Dict, Tuple, Optional
 device = torch.device('cuda')
 print(f"Using device: {device}")
 
-!apt-get update -q
-!apt-get install -y festival festvox-kallpc16k
-!apt-get install -y espeak espeak-data libespeak1 libespeak-dev
+# !apt-get update -q
+# !apt-get install -y festival festvox-kallpc16k
+# !apt-get install -y espeak espeak-data libespeak1 libespeak-dev
 
 # Set environment variable to help with espeak memory issues
 import os
