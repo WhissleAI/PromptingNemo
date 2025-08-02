@@ -1,0 +1,39 @@
+model:
+  model_root: "/projects/whissle/pretrained/stt_hi_conformer_ctc_large/"
+  model_name: "stt_hi_conformer_ctc_large.nemo"
+  tokenizer_folder: "tokenizer"
+  new_tokenizer_folder: "marathi_tokenizer"
+  proto_file: "proto/file"
+  proto_dir: "proto/dir"
+
+training:
+  data_dir: "/projects/whissle/datasets/marathi"
+  train_manifest: "train.json"
+  test_manifest: "valid.json"
+  batch_size: 4
+  max_steps: 600000
+
+adapters:
+  LinearAdapter:
+    name: "LinearAdapter"
+    dim: 32
+    activation: "relu"
+    norm_position: "pre"
+  BottleneckAdapter:
+    name: "BottleneckAdapter"
+    dim: 64
+    activation: "gelu"
+    norm_position: "post"
+  AttentionAdapter:
+    name: "AttentionAdapter"
+    dim: 48
+    activation: "swish"
+    norm_position: "pre"
+
+experiment:
+  exp_dir: "/projects/whissle/experiments/"
+  exp_name: "marathi_adapter-ai4bharat"
+  monitor: "val_wer"
+  mode: "min"
+  always_save_nemo: true
+  save_best_model: true

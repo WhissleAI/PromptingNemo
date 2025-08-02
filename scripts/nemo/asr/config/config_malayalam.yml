@@ -1,0 +1,40 @@
+model:
+  model_root: "/home/compute/workspace/pretrained/malayalam/"
+  model_name: "Conformer-CTC-BPE-Large.nemo"
+  tokenizer_folder: "tokenizer"
+  new_tokenizer_folder: "new_tokenizer"
+  proto_file: "proto/file"
+  proto_dir: "proto/dir"
+
+training:
+  data_dir: "/home/compute/workspace/datasets/AI4Bharat/malayalam"
+  train_manifest: "train.json"
+  test_manifest: "valid.json"
+  batch_size: 8
+  max_steps: 600000
+
+
+adapters:
+  LinearAdapter:
+    name: "LinearAdapter"
+    dim: 32
+    activation: "relu"
+    norm_position: "pre"
+  BottleneckAdapter:
+    name: "BottleneckAdapter"
+    dim: 64
+    activation: "gelu"
+    norm_position: "post"
+  AttentionAdapter:
+    name: "AttentionAdapter"
+    dim: 48
+    activation: "swish"
+    norm_position: "pre"
+
+experiment:
+  exp_dir: "/home/compute/workspace/"
+  exp_name: "kannada_adapter-ai4bharat"
+  monitor: "val_wer"
+  mode: "min"
+  always_save_nemo: true
+  save_best_model: true

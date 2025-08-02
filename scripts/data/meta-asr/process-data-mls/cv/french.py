@@ -312,7 +312,7 @@ def process_data(tsv_path: str, output_path: str, clips_dir: str):
                     "duration": duration
                 }
 
-               
+                # Write each entry as a JSON line (JSONL format)
                 out_file.write(json.dumps(entry) + '\n')
                 processed_files += 1
 
@@ -330,12 +330,12 @@ def process_data(tsv_path: str, output_path: str, clips_dir: str):
         print(f"Total entries skipped: {skipped_files}")
 
 
-# 
+# Update these paths based on your system
 language_code = "fr"  # Change this to the language code you're processing (e.g., 'en', 'it', 'de')
 base_dir = f"/external4/datasets/cv/cv-corpus-15.0-2023-09-08/{language_code}"
 tsv_path = f"{base_dir}/validated.tsv"
 clips_dir = f"{base_dir}/clips"
-output_path = "/hydra2-prev/home/compute/workspace_himanshu/Processed_Data/gemini_metadata/europeen/cv/french_rem.jsonl" 
+output_path = "/external4/datasets/jsonl_data/euro/french_cv.jsonl" # Please change to it_cv.jsonl if you are processing Italian data
 
 # Call the function with the correct paths
 process_data(tsv_path, output_path, clips_dir)

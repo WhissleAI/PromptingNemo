@@ -1,0 +1,39 @@
+model:
+  model_root: "/external1/pretrained_models/stt_en_fastconformer_ctc_large/"
+  model_name: "stt_en_fastconformer_ctc_large.nemo"
+  tokenizer_folder: "tokenizer"
+  new_tokenizer_folder: "vils_meta_tokenizer"
+  proto_file: "proto/file"
+  proto_dir: "proto/dir"
+
+training:
+  data_dir: "/hydra2-prev/home/compute/workspace_himanshu/Processed_Data/gemini_metadata/english/vils"
+  train_manifest: "train.json"
+  test_manifest: "valid.json"
+  batch_size: 4  # Small batch size for testing
+  max_steps: 100000  # Small max_steps for initial testing
+
+# adapters:
+#   LinearAdapter:
+#     name: "LinearAdapter"
+#     dim: 32
+#     activation: "relu"
+#     norm_position: "pre"
+#   BottleneckAdapter:
+#     name: "BottleneckAdapter"
+#     dim: 64
+#     activation: "gelu"
+#     norm_position: "post"
+#   AttentionAdapter:
+#     name: "AttentionAdapter"
+#     dim: 48
+#     activation: "swish"
+#     norm_position: "pre"
+
+experiment:
+  exp_dir: "/external1/experiments/"
+  exp_name: "hi-model-manifest-v3-tokenizer-extended"
+  monitor: "val_wer"
+  mode: "min"
+  always_save_nemo: true
+  save_best_model: true
