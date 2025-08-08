@@ -18,7 +18,7 @@ import os
 import json
 import logging
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"  # Specify the GPUs you want to use
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # Specify the GPUs you want to use
 
 def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_tokens=None, vocab_size=5000):
     # Configure logging
