@@ -6,7 +6,7 @@ from pathlib import Path
 import yaml
 import torch
 from omegaconf import OmegaConf, open_dict
-from pytorch_lightning import Trainer
+from lightning import Trainer
 from nemo.collections.asr.models import ASRModel
 from nemo.collections.common.parts.adapter_modules import LinearAdapterConfig
 from nemo.utils import model_utils
@@ -18,7 +18,7 @@ import os
 import json
 import logging
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"  # Specify the GPUs you want to use
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"  # Specify the GPUs you want to use
 
 def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_tokens=None, vocab_size=5000):
     # Configure logging
@@ -194,8 +194,12 @@ class ASRModelTrainer:
             self.model.cfg.train_ds.batch_size = self.batch_size
             self.model.cfg.train_ds.is_tarred = False
             self.model.cfg.train_ds.tarred_audio_filepaths = None
+            self.model.cfg.train_ds.channel_selector = 0  # Force mono audio by selecting first channel
+            self.model.cfg.train_ds.normalize_transcripts = True
             self.model.cfg.validation_ds.manifest_filepath = str(self.test_manifest)
             self.model.cfg.validation_ds.batch_size = self.batch_size
+            self.model.cfg.validation_ds.channel_selector = 0  # Force mono audio for validation too
+            self.model.cfg.validation_ds.normalize_transcripts = True
             self.model.cfg.train_ds.num_workers = 8  # Adding num_workers for training dataloader
 
         self.model.setup_training_data(self.model.cfg.train_ds)
@@ -269,7 +273,20 @@ class ASRModelTrainer:
         print(f"Experiment log directory: {logdir}")
 
     def train(self):
-        self.trainer.fit(self.model)
+        # Add debugging information
+        print(f"Model type: {type(self.model)}")
+        print(f"Model class: {self.model.__class__}")
+        print(f"Is LightningModule: {hasattr(self.model, 'training_step')}")
+        
+        # Ensure model is in training mode
+        self.model.train()
+        
+        try:
+            self.trainer.fit(self.model)
+        except Exception as s:
+            print(f"Training failed with error: {e}")
+            print(f"Model MRO: {self.model.__class__.__mro__}")
+            raise
 
     def summarize_model(self):
         self.model.summarize()
