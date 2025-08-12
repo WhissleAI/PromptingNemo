@@ -1,17 +1,18 @@
 model:
-  model_root: "/projects/whissle/experiments/indoaryan-adapter-ai4bharat2/2024-10-31_15-45-47/checkpoints/"
-  model_name: "indoaryan-adapter-ai4bharat2.nemo"
+  model_root: "/external1/pretrained_models/stt_en_fastconformer_ctc_large/"
+  model_name: "stt_en_fastconformer_ctc_large.nemo"
   tokenizer_folder: "tokenizer"
-  new_tokenizer_folder: "indoaryan_tokenizer"
+  new_tokenizer_folder: "wellness_tokenizer"
   proto_file: "proto/file"
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/projects/whissle/datasets/indo-aryan"
-  train_manifest: "train.json"
-  test_manifest: "valid.json"
+  data_dir: "/external4/datasets/bucket_data/wellness/jsonl_files"
+  train_manifest: "train.jsonl"
+  test_manifest: "valid.jsonl"
   batch_size: 4
   max_steps: 600000
+
 
 adapters:
   LinearAdapter:
@@ -31,8 +32,8 @@ adapters:
     norm_position: "pre"
 
 experiment:
-  exp_dir: "/projects/whissle/experiments/"
-  exp_name: "indoaryan-adapter-ai4bharat2"
+  exp_dir: "/external4/datasets/bucket_data/wellness/experiments/"
+  exp_name: "wellness_adapter-bucket_data_karan"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true

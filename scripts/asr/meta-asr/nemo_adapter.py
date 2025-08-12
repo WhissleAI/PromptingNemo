@@ -418,7 +418,7 @@ class ASRModelTrainer:
         logging.info(f"Updated vocab files: {output_vocab_file}, {output_vocab_txt_file}")
 
 # Usage
-model_trainer = ASRModelTrainer(config_path='config/config_v1/config_english.yml')
+model_trainer = ASRModelTrainer(config_path='config/config/config_wellness.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
 model_trainer.prepare_data_and_tokens(tags_type="auto", tokenizer_state="new", vocab_size=2000)
@@ -426,7 +426,7 @@ model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()
 model_trainer.configure_optimization()
-model_trainer.setup_adapters(encoder_freeze=False)
+model_trainer.setup_adapters(encoder_freeze=True)
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
 model_trainer.train()
