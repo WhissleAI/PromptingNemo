@@ -6,7 +6,7 @@ from pathlib import Path
 import yaml
 import torch
 from omegaconf import OmegaConf, open_dict
-from pytorch_lightning import Trainer
+import lightning.pytorch as pl
 from nemo.collections.asr.models import ASRModel
 from nemo.collections.common.parts.adapter_modules import LinearAdapterConfig
 from nemo.utils import model_utils
@@ -18,7 +18,7 @@ import os
 import json
 import logging
 
-#os.environ["CUDA_VISIBLE_DEVICES"] = "2"  # Specify the GPUs you want to use
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"  # Specify the GPUs you want to use
 
 def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_tokens=None, vocab_size=5000):
     # Configure logging
@@ -202,16 +202,16 @@ class ASRModelTrainer:
     def configure_trainer(self):
         accelerator = 'gpu' if torch.cuda.is_available() else 'cpu'
 
-        self.trainer = Trainer(
-            accelerator=accelerator, 
+        self.trainer = pl.Trainer(
+            accelerator=accelerator,
             max_steps=self.max_steps,
             gradient_clip_val=1.0,
             gradient_clip_algorithm="norm",
-            enable_checkpointing=False, 
+            enable_checkpointing=False,
             logger=False,
-            log_every_n_steps=50, 
+            log_every_n_steps=50,
             check_val_every_n_epoch=1,
-            accumulate_grad_batches=8
+            accumulate_grad_batches=8,
         )
 
         self.model.set_trainer(self.trainer)
@@ -418,7 +418,7 @@ class ASRModelTrainer:
         logging.info(f"Updated vocab files: {output_vocab_file}, {output_vocab_txt_file}")
 
 # Usage
-model_trainer = ASRModelTrainer(config_path='config/config/config_wellness.yml')
+model_trainer = ASRModelTrainer(config_path='config/config_wellness.yml')
 model_trainer.load_and_update_model_config()
 model_trainer.restore_model_with_updated_config()
 model_trainer.prepare_data_and_tokens(tags_type="auto", tokenizer_state="new", vocab_size=2000)
