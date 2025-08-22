@@ -33,7 +33,7 @@ adapters:
 
 experiment:
   exp_dir: "/external3/databases/wellness-jsonl/experiment"
-  exp_name: "wellness_adapter-bucket_data_himanshu"
+  exp_name: "wellness_adapter-bucket_data_himanshu_v2"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true
