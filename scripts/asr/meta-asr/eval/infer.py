@@ -112,9 +112,9 @@ if __name__ == "__main__":
     # )
 
     # args = parser.parse_args()
-    model_path = "/external3/databases/wellness-jsonl/experiment/wellness_adapter-bucket_data_himanshu/2025-08-13_12-34-29/checkpoints/wellness_adapter-bucket_data_himanshu.nemo"
+    model_path = "/external3/databases/wellness-jsonl/experiment/wellness_adapter-bucket_data_himanshu_v4/2025-08-22_08-20-29/checkpoints/wellness_adapter-bucket_data_himanshu_v4.nemo"
     input_jsonl = "/external3/databases/wellness-jsonl/jsonl_files/data/valid.jsonl"
-    output_jsonl = "/external3/databases/wellness-jsonl/jsonl_files/valid_test.jsonl"
+    output_jsonl = "/external3/databases/wellness-jsonl/jsonl_files/valid_test_v4.jsonl"
     batch_size = 16
     use_gpu = True  # set to False to force CPU
 

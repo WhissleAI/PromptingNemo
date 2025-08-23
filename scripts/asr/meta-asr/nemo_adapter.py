@@ -136,7 +136,7 @@ class ASRModelTrainer:
 
     def load_and_update_model_config(self):
         self.cfg = ASRModel.restore_from(restore_path=self.model_path, return_config=True)
-        self.cfg = self.update_model_config_to_support_adapter(self.cfg)
+        # self.cfg = self.update_model_config_to_support_adapter(self.cfg)
         print(self.cfg)
     
     def restore_model_with_updated_config(self):
@@ -277,45 +277,45 @@ class ASRModelTrainer:
         self.model.setup_optimization(self.model.cfg.optim)
     
     def setup_adapters(self, encoder_freeze=True):
-        if hasattr(self.model, 'adapter_module_names'):
-            print(self.model.adapter_module_names)
+        # if hasattr(self.model, 'adapter_module_names'):
+        #     print(self.model.adapter_module_names)
 
-        for module in self.model.children():
-            if hasattr(module, 'get_accepted_adapter_types'):
-                types = module.get_accepted_adapter_types()
-                print("Module:", module.__class__.__name__)
-                for tp in types:
-                    print(tp)
-                print()
+        # for module in self.model.children():
+        #     if hasattr(module, 'get_accepted_adapter_types'):
+        #         types = module.get_accepted_adapter_types()
+        #         print("Module:", module.__class__.__name__)
+        #         for tp in types:
+        #             print(tp)
+        #         print()
 
-        if 'adapters' not in self.config or not self.config['adapters']:
-            logging.info("No adapters found in the configuration. Skipping adapter setup.")
-            self.model.summarize()  # Still summarize the model even if no adapters are configured
-            return
+        # if 'adapters' not in self.config or not self.config['adapters']:
+        #     logging.info("No adapters found in the configuration. Skipping adapter setup.")
+        #     self.model.summarize()  # Still summarize the model even if no adapters are configured
+        #     return
 
-        for adapter_name, adapter_config in self.config['adapters'].items():
-            adapter_cfg = LinearAdapterConfig(
-                in_features=self.model.cfg.encoder.d_model,  # Set in_features based on model configuration
-                dim=adapter_config['dim'],
-                activation=adapter_config['activation'],
-                norm_position=adapter_config['norm_position'],
-            )
-            print(f"Adding adapter {adapter_name} with config: {adapter_cfg}")
+        # for adapter_name, adapter_config in self.config['adapters'].items():
+        #     adapter_cfg = LinearAdapterConfig(
+        #         in_features=self.model.cfg.encoder.d_model,  # Set in_features based on model configuration
+        #         dim=adapter_config['dim'],
+        #         activation=adapter_config['activation'],
+        #         norm_position=adapter_config['norm_position'],
+        #     )
+        #     print(f"Adding adapter {adapter_name} with config: {adapter_cfg}")
 
-            self.model.add_adapter(name=adapter_config['name'], cfg=adapter_cfg)
+        #     self.model.add_adapter(name=adapter_config['name'], cfg=adapter_cfg)
 
-        self.model.set_enabled_adapters(enabled=False)  # Disable all adapters
+        # self.model.set_enabled_adapters(enabled=False)  # Disable all adapters
 
-        # Enable only the adapters specified in the config
-        for adapter_name, adapter_config in self.config['adapters'].items():
-            self.model.set_enabled_adapters(name=adapter_config['name'], enabled=True)
+        # # Enable only the adapters specified in the config
+        # for adapter_name, adapter_config in self.config['adapters'].items():
+        #     self.model.set_enabled_adapters(name=adapter_config['name'], enabled=True)
 
         if encoder_freeze:
             self.model.encoder.freeze()
         else:
             self.model.encoder.unfreeze()
         
-        self.model.unfreeze_enabled_adapters()
+        # self.model.unfreeze_enabled_adapters()
         self.model.decoder.unfreeze()
         self.model.summarize()
 
@@ -426,7 +426,7 @@ model_trainer.configure_trainer()
 model_trainer.configure_model_for_training()
 model_trainer.configure_spec_augmentation()
 model_trainer.configure_optimization()
-model_trainer.setup_adapters(encoder_freeze=True)
+model_trainer.setup_adapters(encoder_freeze=False)
 model_trainer.prepare_experiment_manager()
 model_trainer.summarize_model()
 model_trainer.train()
