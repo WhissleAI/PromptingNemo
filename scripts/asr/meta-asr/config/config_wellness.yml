@@ -2,7 +2,7 @@ model:
   model_root: "/external1/pretrained_models/stt_en_fastconformer_ctc_large/"
   model_name: "stt_en_fastconformer_ctc_large.nemo"
   tokenizer_folder: "tokenizer"
-  new_tokenizer_folder: "wellness_tokenizer_v5"
+  new_tokenizer_folder: "wellness_tokenizer_v7"
   proto_file: "proto/file"
   proto_dir: "proto/dir"
 
@@ -15,7 +15,7 @@ training:
 
 experiment:
   exp_dir: "/external3/databases/wellness-jsonl/experiment"
-  exp_name: "wellness_adapter-bucket_data_himanshu_v5"
+  exp_name: "wellness_adapter-bucket_data_himanshu_v7"
   monitor: "val_wer"
   mode: "min"
   always_save_nemo: true

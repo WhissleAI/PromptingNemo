@@ -244,12 +244,10 @@ class ASRModelTrainer:
                 for word in text:
                     
                     if word.startswith("ENTITY_") or word.startswith("AGE_") or word.startswith("GER_") or word.startswith("EMOTION_") or word.startswith("INTENT_"):
-                        keywords = word.split("_")
-                        for keyword in keywords:
-                            # Ensure keyword is not empty or just whitespace before adding
-                            stripped_keyword = keyword.strip()
-                            if stripped_keyword: # Check if keyword is non-empty and not just whitespace after stripping
-                                special_tokens.add(stripped_keyword.upper()) # Add uppercased version
+                        # Add the whole word as a special token
+                        stripped_word = word.strip()
+                        if stripped_word:
+                            special_tokens.add(stripped_word.upper())
                 
                 if "END" not in special_tokens:
                     special_tokens.add("END")

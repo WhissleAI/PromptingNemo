@@ -1,10 +1,36 @@
+import os
+import tempfile
+
+# Redirect temporary and cache directories to a larger mount to avoid / running out of space
+# These can be overridden by environment variables if already set.
+_DEFAULT_TMP = "/external3/tmp_nemo"
+_DEFAULT_NEMO = "/external3/.cache/nemo"
+_DEFAULT_HF = "/external3/.cache/huggingface"
+_DEFAULT_TORCH = "/external3/.cache/torch"
+
+# Ensure directories exist
+for _d in [_DEFAULT_TMP, _DEFAULT_NEMO, _DEFAULT_HF, _DEFAULT_TORCH]:
+    try:
+        os.makedirs(_d, exist_ok=True)
+    except Exception as e:
+        print(f"Warning: Could not create {_d}: {e}")
+
+# Set environment variables
+os.environ.setdefault("TMPDIR", _DEFAULT_TMP)
+os.environ.setdefault("NEMO_HOME", _DEFAULT_NEMO)
+os.environ.setdefault("HF_HOME", _DEFAULT_HF)
+os.environ.setdefault("TRANSFORMERS_CACHE", _DEFAULT_HF)
+os.environ.setdefault("TORCH_HOME", _DEFAULT_TORCH)
+
+# Force Python's tempfile module to use our temp directory
+tempfile.tempdir = _DEFAULT_TMP
+
 import json
 import argparse
-import os
-from nemo.collections.asr.models import EncDecCTCModel
 from tqdm import tqdm
 import torch
 from types import SimpleNamespace
+from nemo.collections.asr.models import EncDecCTCModel
 
 def load_jsonl(jsonl_path):
     """
@@ -54,6 +80,10 @@ def main(args):
     # Read manifest entries
     print(f"Loading manifest: {args.input_jsonl}")
     entries = load_jsonl(args.input_jsonl)
+    
+    # Limit to first 10 samples for testing
+    entries = entries[:10]
+    print(f"Processing only first {len(entries)} samples for testing")
 
     # Transcription loop
     print("Transcribing audio files...")
@@ -62,14 +92,17 @@ def main(args):
         batch = entries[i : i + args.batch_size]
         audio_files = [e['audio_filepath'] for e in batch]
 
+        if not audio_files:
+            continue
+
         # Perform inference (pass audio paths positionally)
-    preds = model.transcribe(audio_files, batch_size=len(audio_files), return_hypotheses=False)
+        preds = model.transcribe(audio_files, batch_size=len(audio_files), return_hypotheses=False)
 
         # Collect results
-    for entry, pred in zip(batch, preds):
+        for entry, pred in zip(batch, preds):
             result = {
                 'audio_filepath': entry['audio_filepath'],
-        'predicted_text': _to_text(pred)
+                'predicted_text': _to_text(pred)
             }
             if 'text' in entry:
                 result['text'] = entry['text']
@@ -112,9 +145,9 @@ if __name__ == "__main__":
     # )
 
     # args = parser.parse_args()
-    model_path = "/external3/databases/wellness-jsonl/experiment/wellness_adapter-bucket_data_himanshu_v4/2025-08-22_08-20-29/checkpoints/wellness_adapter-bucket_data_himanshu_v4.nemo"
+    model_path = "/external3/databases/wellness-jsonl/experiment/wellness_adapter-bucket_data_himanshu_v7/2025-08-26_03-25-25/checkpoints/wellness_adapter-bucket_data_himanshu_v7.nemo"
     input_jsonl = "/external3/databases/wellness-jsonl/jsonl_files/data/valid.jsonl"
-    output_jsonl = "/external3/databases/wellness-jsonl/jsonl_files/valid_test_v4.jsonl"
+    output_jsonl = "/external3/databases/wellness-jsonl/jsonl_files/valid_test_v5.jsonl"
     batch_size = 16
     use_gpu = True  # set to False to force CPU
 
