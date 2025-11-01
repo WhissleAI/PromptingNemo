@@ -1,0 +1,214 @@
+model:
+  model_root: /workspace/pretrained/parakeet-ctc-0.6b/
+  model_name: parakeet-600m-encoder-tune-weight-0.5-batch-lang-balance-12k-tokenizer-12m.nemo
+  tokenizer_folder: tokenizer
+  new_tokenizer_folder: multilang_12m_meta_tokenizer_15k_multifamily
+  use_aggregate_tokenizer: true
+  dynamic_tokenizer_params:
+    type: bpe
+    character_coverage: 0.9995
+    dir_prefix: tokenizer_
+    non_special_tokens_per_lang: 512
+  special_token_prefixes:
+  - ENTITY_
+  - INTENT_
+  - EMOTION_
+  - GER_
+  - GENDER_
+  - AGE_
+  - KEYWORD_
+  tokenizer_langs: {}
+  shared_special_tokens: []
+  aggregate_vocabulary: []
+  language_family_map:
+    EN: Germanic
+    RU: Slavic
+    HI: Indo_Aryan
+    ZH: Sino_Tibetan
+    BN: Indo_Aryan
+    DA: Germanic
+    DE: Germanic
+    ES: Romance
+    BE: Slavic
+    FR: Romance
+    PT: Romance
+    IT: Romance
+    GU: Indo_Aryan
+    TE: Dravidian
+    SR: Slavic
+    VI: Singleton_VI
+    MR: Indo_Aryan
+    UK: Slavic
+    TA: Dravidian
+    PA: Indo_Aryan
+    CS: Slavic
+    PL: Slavic
+    KK: Turkic
+    LA: Italic_Latin
+    TL: Austronesian
+    SO: Bantu
+    EU: Others
+    KA: Caucasian
+    BG: Slavic
+    MN: Singleton_MN
+    NN: Germanic
+    ST: Bantu
+    SK: Slavic
+    RO: Romance
+    XH: Bantu
+    SL: Slavic
+    MK: Slavic
+    NL: Germanic
+    SN: Bantu
+    YO: Singleton_YO
+    ET: Finno_Permic
+    EO: Singleton_EO
+    MI: Malayo_Polynesian
+    FI: Uralic
+    NB: Germanic
+    CA: Romance
+    HR: Slavic
+    LV: Baltic
+    CY: Celtic
+    LT: Baltic
+    HU: Uralic
+    AF: Germanic
+    SW: Bantu
+    BS: Singleton_BS
+    TN: Bantu
+    MS: Austronesian
+    GA: Celtic
+    TS: Bantu
+    IS: Germanic
+    ZU: Bantu
+    SQ: Greek_Albanian
+    LG: Malayo_Polynesian
+    ID: Austronesian
+    SV: Germanic
+    TR: Turkic
+    AZ: Turkic
+    JA: East_Asian_Others
+    EL: Singleton_EL
+    HE: Singleton_HE
+    KO: East_Asian_Others
+    UR: Indo_Aryan
+    AR: Singleton_AR
+    FA: Singleton_FA
+  language_families:
+    Germanic:
+    - EN
+    - DE
+    - NL
+    - AF
+    - SV
+    - DA
+    - NB
+    - NN
+    - IS
+    Romance:
+    - FR
+    - ES
+    - PT
+    - IT
+    - RO
+    - CA
+    Slavic:
+    - RU
+    - PL
+    - CS
+    - SK
+    - SL
+    - SR
+    - HR
+    - BG
+    - BE
+    - UK
+    - MK
+    Indo_Aryan:
+    - HI
+    - MR
+    - BN
+    - GU
+    - PA
+    - UR
+    Italic_Latin:
+    - LA
+    Baltic:
+    - LT
+    - LV
+    Uralic:
+    - FI
+    - HU
+    Turkic:
+    - TR
+    - AZ
+    - KK
+    Dravidian:
+    - TA
+    - TE
+    Sino_Tibetan:
+    - ZH
+    Austronesian:
+    - MS
+    - ID
+    - TL
+    Celtic:
+    - GA
+    - CY
+    Bantu:
+    - SW
+    - XH
+    - ZU
+    - ST
+    - TN
+    - TS
+    - SN
+    - SO
+    Finno_Permic:
+    - ET
+    Greek_Albanian:
+    - SQ
+    East_Asian_Others:
+    - JA
+    - KO
+    Caucasian:
+    - KA
+    Malayo_Polynesian:
+    - MI
+    - LG
+    Others:
+    - EU
+  tokenizer_langs_path: tokenizer_langs.yaml
+  shared_special_tokens_path: shared_special_tokens.yaml
+  aggregate_vocabulary_path: aggregate_vocab.txt
+training:
+  data_dir: /workspace/manifests_v2/validated
+  train_manifest: train_all_with_langid.validated.json
+  test_manifest: valid_toy_with_langid.validated.json
+  batch_size: 48
+  max_duration: 30.0
+  max_steps: 1000000
+  use_mixed_precision: true
+  num_workers: 8
+  pin_memory: true
+  keyword_loss_weight: 0.6
+  use_keyword_loss: true
+  keyword_loss_warmup_steps: 1000
+  spec_augment:
+    time_masks: 4
+    time_width: 80
+  optim:
+    lr: 0.0001
+    weight_decay: 0.0
+    sched:
+      warmup_steps: 5000
+  validation_workers: null
+  skip_audio_validation: true
+experiment:
+  exp_dir: /workspace/experiments/
+  exp_name: parakeet-600m-encoder-tune-weight-0.5-batch-langfamily-balance-tokenizer-aggreagated
+  monitor: val_wer
+  mode: min
+  always_save_nemo: true
+  save_top_k: 3
+  every_n_train_steps: 10000
