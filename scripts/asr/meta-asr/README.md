@@ -1,20 +1,46 @@
 # Meta-ASR Pipeline Guide
 
-This directory contains the orchestration scripts for building and fine-tuning
-NeMo ASR models with dynamic, language-family-aware tokenizers. The workflow is
-designed to run inside an NVIDIA NeMo Docker image, but the commands below also
-apply to any Python environment with NeMo, PyTorch Lightning, and the project
-dependencies installed.
+This document describes the end-to-end workflow for preparing multilingual
+speech data, training language-family-aware tokenizers, and fine-tuning NeMo ASR
+models with the meta-ASR scripts in this directory. The tooling is designed for
+NVIDIA's NeMo containers, but the instructions apply to any environment with
+compatible GPU drivers and the required Python dependencies.
 
-## Prerequisites
+---
 
-- NVIDIA GPU with the appropriate drivers.
-- Docker (optional, but recommended).
-- Training manifests in NeMo JSONL format with `audio_filepath`, `text`, and
-  uppercase `lang` fields.
-- Base ASR `.nemo` checkpoint referenced in `config/config_peoplespeech.yml`.
+## Quick Start
 
-### Suggested Docker Command
+```bash
+# 1. Validate manifests
+python main.py --mode validate_data \
+  --config config/config_peoplespeech.yml
+
+# 2. Train the language-family tokenizers + aggregate vocabulary
+python main.py --mode tokenizer \
+  --config config/config_peoplespeech.yml
+
+# 3. Fine-tune the ASR model with the aggregate tokenizer
+python main.py --mode train \
+  --config config/config_peoplespeech.yml
+
+# Run all stages sequentially
+python main.py --mode both \
+  --config config/config_peoplespeech.yml
+```
+
+---
+
+## Environment and Prerequisites
+
+- NVIDIA GPU with up-to-date drivers.
+- Docker (recommended) or a Python environment with NeMo, PyTorch Lightning,
+  and project requirements installed.
+- Training manifests in NeMo JSONL format containing `audio_filepath`, `text`,
+  and uppercase language identifiers (`lang` or the `lang_field` specified in
+  the config).
+- Base `.nemo` checkpoint referenced in `config/config_peoplespeech.yml`.
+
+### Recommended Container Launch
 
 ```bash
 docker run --gpus all -it --rm \
@@ -29,155 +55,134 @@ Inside the container:
 
 ```bash
 cd /workspace/PromptingNemo/scripts/asr/meta_asr
-pip install -r ../../../../requirements.txt  # adjust if needed
+pip install -r ../../../../requirements.txt  # adjust path if needed
 ```
 
-## Workflow Overview
+---
 
-1. **Validate manifests** (new): produce cleaned copies with only decodable audio.
-2. **Train tokenizers**: build SentencePiece tokenizers per language family and
-   assemble the aggregate vocabulary.
-3. **Fine-tune the ASR model** with the aggregate tokenizer and balanced
-   sampling.
+## Pipeline Stages
 
-Each stage is triggered via `nemo_adapter_with_langid.py` by selecting an
-appropriate `--mode`.
+### 1. Manifest Validation
 
-## 1. Manifest Validation
+The validator scans all manifests declared in the YAML configuration (`train`,
+`test`, and any `tokenizer_extra_manifests`). For each manifest it:
 
-The validator scans all manifests referenced in
-`config/config_peoplespeech.yml` (`train_manifest`, `test_manifest`, and any
-entries in `tokenizer_extra_manifests`). For every manifest it:
+- Validates JSON syntax and required fields.
+- Confirms the audio files exist and can be decoded via NeMo's `AudioSegment`.
+- Writes a `<name>.validated.json` companion file containing only valid entries.
+- Logs failures (line number, error, payload) to `<name>.invalid.json`.
 
-- Confirms JSON syntax.
-- Verifies the audio file exists and can be opened with NeMo's
-  `AudioSegment` helpers.
-- Writes a `.validated.json` sibling file containing only the good entries.
-- Logs rejected entries (line number, error, and payload) to
-  `<original>.invalid.json`.
+Use `--no-save-config` to prevent automatic updates of manifest paths inside the
+configuration.
 
-Run validation only:
-
-```bash
-python nemo_adapter_with_langid.py --mode validate_data \
-  --config config/config_peoplespeech.yml
-```
-
-By default the config is updated to point at the validated manifests (use
-`--no-save-config` to keep the YAML unchanged).
-
-### Standalone Validator
-
-Alternatively, use the smaller helper:
+#### Standalone Validator
 
 ```bash
 python validate_data.py --manifest /path/to/manifest.json \
   --output /path/to/manifest.validated.json \
   --log-invalid /path/to/manifest.invalid.json \
   --workers 16
-
-Control parallelism either with the `--workers` flag (standalone script) or by
-setting `training.validation_workers` in the YAML config when using
-`nemo_adapter_with_langid.py`.
 ```
 
-## 2. Tokenizer Training (Language-Family Aware)
+Parallelism can be controlled with the `--workers` flag or by setting
+`training.validation_workers` in the YAML when using the unified CLI.
 
-After validation, retrain tokenizers grouped by language family:
+### 2. Tokenizer Training (Language-Family Aware)
 
-```bash
-python nemo_adapter_with_langid.py --mode tokenizer \
-  --config config/config_peoplespeech.yml
-```
+`--mode tokenizer` trains SentencePiece tokenizers for each configured language
+family, aggregates their vocabularies, and persists the metadata. Prerequisites
+are the validated manifests produced in the previous stage.
 
-> Note: `--mode tokenizer` assumes the manifests referenced in the config are
-> already validated. Run `--mode validate_data` first whenever the manifests
-> change.
+The tokenizer step:
 
-Key features:
+- Groups languages by the `model.language_families` mapping or creates
+  singleton families when no mapping exists.
+- Trains per-family tokenizers with the settings in
+  `model.dynamic_tokenizer_params`.
+- Collects shared special tokens (`special_token_prefixes`).
+- Generates a deduplicated aggregate vocabulary and stores it at
+  `aggregate_vocabulary_path`.
+- Updates the YAML with `tokenizer_langs`, `shared_special_tokens`, and
+  `aggregate_vocabulary` unless `--no-save-config` is supplied.
 
-- **Language family buckets** (e.g., Germanic, Romance, Indo_Aryan, etc.)
-  trained in parallel; singleton families are created when a language lacks an
-  explicit mapping.
-- Shared special tokens collected from manifests.
-- Deduplicated aggregate vocabulary stored alongside the tokenizer metadata.
-- Config automatically records `tokenizer_langs`, `shared_special_tokens`, and
-  `aggregate_vocabulary`.
+### 3. Model Fine-Tuning with Aggregate Tokenizer
 
-## 3. Model Fine-Tuning with Aggregate Tokenizer
+`--mode train` restores the base `.nemo` checkpoint and applies the aggregate
+tokenizer produced above. The training stage:
 
-Launch fine-tuning:
+- Calls `change_vocabulary` to swap in the aggregate tokenizer.
+- Rebuilds the training/validation dataloaders with language-family-aware
+  sampling and optional augmentations.
+- Enables keyword-aware loss when configured.
+- Logs training and validation metrics through a TensorBoard logger.
 
-```bash
-python nemo_adapter_with_langid.py --mode train \
-  --config config/config_peoplespeech.yml
-```
+---
 
-The training step automatically pulls tokenizer metadata from
-`tokenizer_langs_path`, `shared_special_tokens_path`, and
-`aggregate_vocabulary_path` in the config.
+## Feature Highlights
 
-Highlights of the training setup:
+- **Deduplicated Aggregate Tokenizer**: merges per-family tokenizers and
+  maintains a consistent set of shared special tokens.
+- **BalancedLanguageBatchSampler**: performs temperature-controlled,
+  language-family-aware sampling that respects distributed training contexts.
+- **RobustAudioToBPEDataset**: normalizes language identifiers, validates audio
+  files, and skips problematic samples during training.
+- **Keyword Loss (optional)**: emphasizes user-defined token sets with linear
+  warm-up and configurable weighting.
+- **Configurable Augmentation**: injects white noise and time-shift
+  perturbations via `AudioAugmentor`.
+- **Lightning Integration**: uses `lightning.pytorch` for distributed training,
+  gradient accumulation, and experiment management.
 
-- **Aggregate tokenizer** rebuilt from the family tokenizers and applied via
-  `change_vocabulary`.
-- **BalancedLanguageBatchSampler** samples batches by language family with a
-  temperature-controlled schedule, keeping multilingual training balanced.
-- **RobustAudioToBPEDataset** filters manifest entries without `lang`, ensures
-  audio readability, and skips problematic samples on-the-fly during data
-  loading.
-- Optional keyword loss, augmentation, and optimizer tweaks inherited from the
-  config file.
+---
 
-To execute the entire pipeline sequentially (validate → tokenizer → train):
+## Configuration Reference (excerpt)
 
-```bash
-python nemo_adapter_with_langid.py --mode both \
-  --config config/config_peoplespeech.yml
-```
+| YAML Path | Purpose | Notes |
+| --- | --- | --- |
+| `model.model_root` | Base checkpoint directory | Must contain the `.nemo` file referenced by `model_name`. |
+| `model.dynamic_tokenizer_params` | SentencePiece training parameters | `non_special_tokens_per_lang` and overrides control vocab size per family. |
+| `model.language_families` | Language→family mapping | Update to add or regroup languages before tokenizer training. |
+| `training.lang_field` | Manifest key containing the language code | Defaults to `lang`. Must match manifest content. |
+| `training.batch_size` | Per-device batch size | Combine with `accumulate_grad_batches` to control effective batch. |
+| `training.accumulate_grad_batches` | Gradient accumulation | Useful when scaling across GPUs. |
+| `training.keyphrase_oversample_factor` | Sampling boost for key phrases | Values > 0 increase sampling frequency for keyword-rich utterances. |
+| `training.max_steps` | Maximum optimization steps | Set to a large number when using validation-based early stopping. |
+| `training.spec_augment` | SpecAugment parameters | Controls time masking behaviour. |
+| `experiment.exp_dir` / `experiment.exp_name` | Logging and checkpoint root | TensorBoard summaries are written under this path. |
+| `experiment.every_n_train_steps` | Validation frequency | Also used by exp_manager to schedule checkpoints. |
 
-## Configuration Notes
+For a complete list, inspect `config/config_peoplespeech.yml` and the helper
+functions in `nemo_adapter_with_langid.py`.
 
-- `training.data_dir` is treated as the base for relative manifest paths.
-- `training.validation_workers` controls the number of parallel validation
-  workers (defaults to CPU count when omitted).
-- `model.language_families` now defines the language→family mapping consumed by
-  `nemo_adapter_with_langid.py`; adjust this block to change tokenizer buckets.
-- `training.skip_audio_validation` skips per-run audio decoding checks inside
-  the dataset loader (set to `true` when feeds already went through
-  `validate_data`).
-- Validated manifests are written next to the originals with the suffix
-  `.validated.json`. The `.invalid.json` log files are informational; delete
-  them if not needed.
-- Set `--no-save-config` to prevent YAML updates if you prefer to manage the
-  manifest paths manually.
+---
 
 ## Troubleshooting
 
-- **Missing language mapping**: the tokenizer logs any languages without usable
-  samples; ensure manifests contain the expected `lang` codes and family
-  mappings (`LANG_FAMILIES` in `nemo_adapter_with_langid.py`).
-- **Audio decode warnings**: check `<manifest>.invalid.json` for the rejected
-  entries. ffmpeg logs can reveal corrupt or unsupported files.
-- **Batch sampler + DDP**: the trainer forces `use_distributed_sampler=False`
-  because batching is already controlled by the custom sampler. Adjust only if
-  you rework the sampling strategy.
+- **Missing language family mapping**: ensure every language in the manifests is
+  present in `model.language_families`; the tokenizer stage logs any unmapped
+  codes.
+- **Audio decode warnings**: inspect the `.invalid.json` files generated during
+  validation; they include the first 100 characters of the invalid record and
+  the exception message.
+- **Slow multi-GPU throughput**: confirm the custom batch sampler is active.
+  `BalancedLanguageBatchSampler` now refreshes its distributed context each
+  epoch to avoid duplicated batches across ranks.
+- **Logger conflicts**: the trainer instantiates its own TensorBoard logger.
+  When adjusting logging, ensure `experiment` settings align with trainer
+  configuration to avoid exp_manager errors.
 
-## Optional Customization
+---
 
-- Extend `LANG_FAMILIES` for new language groups.
-- Adjust `dynamic_tokenizer_params.non_special_tokens_per_lang` to tune per
-  family vocab sizes.
-- Add more manifests to `training.tokenizer_extra_manifests` to improve special
-  token coverage.
-
-## Support Scripts Summary
+## Support Scripts
 
 | Script | Purpose |
 | --- | --- |
-| `validate_data.py` | Standalone manifest cleaner; keeps only readable audio entries. |
-| `nemo_adapter_with_langid.py` | Unified CLI for data validation, tokenizer training, and model fine-tuning. |
+| `nemo_adapter_with_langid.py` | Unified CLI for validation, tokenizer training, and model fine-tuning. |
+| `validate_data.py` | Standalone manifest cleaner that writes validated copies and rejection logs. |
 
-By running the pipeline in the order above, you can reliably fine-tune NeMo
-models on multilingual datasets with robust tokenization and safe data loading.
+---
+
+Following the steps above will produce validated manifests, language-family
+tokenizers, and a fine-tuned NeMo ASR model tailored to multilingual data while
+keeping the pipeline reproducible and easy to extend.
 

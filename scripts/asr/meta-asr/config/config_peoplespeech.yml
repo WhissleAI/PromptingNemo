@@ -6,188 +6,59 @@ model:
   use_aggregate_tokenizer: true
   dynamic_tokenizer_params:
     type: bpe
-    character_coverage: 0.9995
     dir_prefix: tokenizer_
-    non_special_tokens_per_lang: 512
+    non_special_tokens_per_lang: 1024
+    non_special_tokens_per_lang_overrides:
+      ENGLISH: 1024
+      EUROPEAN: 1024
+      SLAVIC: 512
+      INDO_ARYAN: 512
+      DRAVIDIAN: 512
+      INDIAN_LOW_RESOURCE: 512
+      MANDARIN: 3000
+    character_coverage: null
+    character_coverage_overrides:
+      MANDARIN: 0.991
+    tokenizer_options: null
   special_token_prefixes:
   - ENTITY_
   - INTENT_
   - EMOTION_
-  - GER_
   - GENDER_
   - AGE_
   - KEYWORD_
+  - LANG_
   tokenizer_langs: {}
   shared_special_tokens: []
   aggregate_vocabulary: []
-  language_family_map:
-    EN: Germanic
-    RU: Slavic
-    HI: Indo_Aryan
-    ZH: Sino_Tibetan
-    BN: Indo_Aryan
-    DA: Germanic
-    DE: Germanic
-    ES: Romance
-    BE: Slavic
-    FR: Romance
-    PT: Romance
-    IT: Romance
-    GU: Indo_Aryan
-    TE: Dravidian
-    SR: Slavic
-    VI: Singleton_VI
-    MR: Indo_Aryan
-    UK: Slavic
-    TA: Dravidian
-    PA: Indo_Aryan
-    CS: Slavic
-    PL: Slavic
-    KK: Turkic
-    LA: Italic_Latin
-    TL: Austronesian
-    SO: Bantu
-    EU: Others
-    KA: Caucasian
-    BG: Slavic
-    MN: Singleton_MN
-    NN: Germanic
-    ST: Bantu
-    SK: Slavic
-    RO: Romance
-    XH: Bantu
-    SL: Slavic
-    MK: Slavic
-    NL: Germanic
-    SN: Bantu
-    YO: Singleton_YO
-    ET: Finno_Permic
-    EO: Singleton_EO
-    MI: Malayo_Polynesian
-    FI: Uralic
-    NB: Germanic
-    CA: Romance
-    HR: Slavic
-    LV: Baltic
-    CY: Celtic
-    LT: Baltic
-    HU: Uralic
-    AF: Germanic
-    SW: Bantu
-    BS: Singleton_BS
-    TN: Bantu
-    MS: Austronesian
-    GA: Celtic
-    TS: Bantu
-    IS: Germanic
-    ZU: Bantu
-    SQ: Greek_Albanian
-    LG: Malayo_Polynesian
-    ID: Austronesian
-    SV: Germanic
-    TR: Turkic
-    AZ: Turkic
-    JA: East_Asian_Others
-    EL: Singleton_EL
-    HE: Singleton_HE
-    KO: East_Asian_Others
-    UR: Indo_Aryan
-    AR: Singleton_AR
-    FA: Singleton_FA
   language_families:
-    Germanic:
-    - EN
-    - DE
-    - NL
-    - AF
-    - SV
-    - DA
-    - NB
-    - NN
-    - IS
-    Romance:
-    - FR
-    - ES
-    - PT
-    - IT
-    - RO
-    - CA
-    Slavic:
-    - RU
-    - PL
-    - CS
-    - SK
-    - SL
-    - SR
-    - HR
-    - BG
-    - BE
-    - UK
-    - MK
-    Indo_Aryan:
-    - HI
-    - MR
-    - BN
-    - GU
-    - PA
-    - UR
-    Italic_Latin:
-    - LA
-    Baltic:
-    - LT
-    - LV
-    Uralic:
-    - FI
-    - HU
-    Turkic:
-    - TR
-    - AZ
-    - KK
-    Dravidian:
-    - TA
-    - TE
-    Sino_Tibetan:
-    - ZH
-    Austronesian:
-    - MS
-    - ID
-    - TL
-    Celtic:
-    - GA
-    - CY
-    Bantu:
-    - SW
-    - XH
-    - ZU
-    - ST
-    - TN
-    - TS
-    - SN
-    - SO
-    Finno_Permic:
-    - ET
-    Greek_Albanian:
-    - SQ
-    East_Asian_Others:
-    - JA
-    - KO
-    Caucasian:
-    - KA
-    Malayo_Polynesian:
-    - MI
-    - LG
-    Others:
-    - EU
+  - MANDARIN
+  - ENGLISH
+  - EUROPEAN
+  - SLAVIC
+  - INDO_ARYAN
+  - DRAVIDIAN
+  - INDIAN_LOW_RESOURCE
   tokenizer_langs_path: tokenizer_langs.yaml
   shared_special_tokens_path: shared_special_tokens.yaml
   aggregate_vocabulary_path: aggregate_vocab.txt
+  language_family_map:
+    ENGLISH: ENGLISH
+    SLAVIC: SLAVIC
+    INDO_ARYAN: INDO_ARYAN
+    MANDARIN: MANDARIN
+    EUROPEAN: EUROPEAN
+    INDIAN_LOW_RESOURCE: INDIAN_LOW_RESOURCE
+    DRAVIDIAN: DRAVIDIAN
 training:
+  lang_field: lang_family
   data_dir: /workspace/manifests_v2/validated
-  train_manifest: train_all_with_langid.validated.json
-  test_manifest: valid_toy_with_langid.validated.json
-  batch_size: 48
-  max_duration: 30.0
-  max_steps: 1000000
+  train_manifest: train_all_with_langid_added_langword.validated.json
+  test_manifest: valid_toy_with_langid_added_langword.validated.json
+  batch_size: 76
+  accumulate_grad_batches: 8
+  max_duration: 22.0
+  max_steps: 10000000
   use_mixed_precision: true
   num_workers: 8
   pin_memory: true
@@ -204,11 +75,12 @@ training:
       warmup_steps: 5000
   validation_workers: null
   skip_audio_validation: true
+  keyphrase_oversample_factor: 0.0
 experiment:
   exp_dir: /workspace/experiments/
-  exp_name: parakeet-600m-encoder-tune-weight-0.5-batch-langfamily-balance-tokenizer-aggreagated
+  exp_name: parakeet-600m-encoder-tune-weight-0.5-batch-langfamily-balance-tokenizer-aggregated-new
   monitor: val_wer
   mode: min
   always_save_nemo: true
   save_top_k: 3
-  every_n_train_steps: 10000
+  every_n_train_steps: 5000
