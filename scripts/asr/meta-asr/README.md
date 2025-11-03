@@ -126,12 +126,49 @@ tokenizer produced above. The training stage:
   language-family-aware sampling that respects distributed training contexts.
 - **RobustAudioToBPEDataset**: normalizes language identifiers, validates audio
   files, and skips problematic samples during training.
-- **Keyword Loss (optional)**: emphasizes user-defined token sets with linear
-  warm-up and configurable weighting.
+- **Keyword-Aware Loss (optional)**: blends base CTC with a keyword-focused
+  objective using warm-up and tunable weights.
 - **Configurable Augmentation**: injects white noise and time-shift
   perturbations via `AudioAugmentor`.
 - **Lightning Integration**: uses `lightning.pytorch` for distributed training,
   gradient accumulation, and experiment management.
+
+---
+
+## Loss Customization and Training Tricks
+
+### Keyword-Aware CTC Blending
+
+Setting `training.use_keyword_loss` to `true` activates a blended loss that
+combines the standard CTC objective with an auxiliary term computed on tokens
+tagged with the configured keyword prefixes (typically `KEYWORD_`, set via
+`model.special_token_prefixes`). The blend ratio follows a linear warm-up:
+
+- `training.keyword_loss_weight` defines the target weight applied to the
+  keyword-specific CTC once warm-up completes.
+- `training.keyword_loss_warmup_steps` controls the number of global steps used
+  to ramp the keyword weight from 0 to the configured target, avoiding early
+  training instability.
+
+### Key-Phrase Oversampling
+
+`training.keyphrase_oversample_factor` increases the sampling probability of
+utterances containing keyword tokens. Values greater than `0.0` bias batches
+toward key-phrase-rich audio, which is especially useful when the keyword loss
+is enabled.
+
+### Balanced Language Scheduling
+
+`BalancedLanguageBatchSampler` tempers sampling across language families to
+prevent any single group from dominating multi-lingual training. Critical
+inputs include:
+
+- `model.language_families` for the language-to-family mapping.
+- `training.batch_size` (per device) and `training.accumulate_grad_batches`
+  (global batch sizing).
+- The sampler's temperature parameter (`0.2` by default in code) controls how
+  aggressively it equalizes family frequencies; adjust inside the sampler if a
+  more uniform or skewed schedule is desired.
 
 ---
 
@@ -145,7 +182,10 @@ tokenizer produced above. The training stage:
 | `training.lang_field` | Manifest key containing the language code | Defaults to `lang`. Must match manifest content. |
 | `training.batch_size` | Per-device batch size | Combine with `accumulate_grad_batches` to control effective batch. |
 | `training.accumulate_grad_batches` | Gradient accumulation | Useful when scaling across GPUs. |
-| `training.keyphrase_oversample_factor` | Sampling boost for key phrases | Values > 0 increase sampling frequency for keyword-rich utterances. |
+| `training.use_keyword_loss` | Enable keyword-aware loss blending | Set to `true` to mix keyword CTC with the base loss. |
+| `training.keyword_loss_weight` | Keyword loss mixing weight | Final blend factor applied after warm-up; typical range 0.1–0.7. |
+| `training.keyword_loss_warmup_steps` | Keyword loss warm-up horizon | Number of steps to ramp the keyword weight from 0 to the target. |
+| `training.keyphrase_oversample_factor` | Sampling boost for key phrases | Values > 0 increase sampling frequency for utterances containing keyword tokens. |
 | `training.max_steps` | Maximum optimization steps | Set to a large number when using validation-based early stopping. |
 | `training.spec_augment` | SpecAugment parameters | Controls time masking behaviour. |
 | `experiment.exp_dir` / `experiment.exp_name` | Logging and checkpoint root | TensorBoard summaries are written under this path. |
