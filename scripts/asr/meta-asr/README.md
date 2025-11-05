@@ -219,6 +219,42 @@ functions in `nemo_adapter_with_langid.py`.
 | --- | --- |
 | `nemo_adapter_with_langid.py` | Unified CLI for validation, tokenizer training, and model fine-tuning. |
 | `validate_data.py` | Standalone manifest cleaner that writes validated copies and rejection logs. |
+| `inferece_asr.py` | FastAPI-based web server for interactive and API-driven transcription. |
+
+---
+
+## Interactive Transcription with the Inference Server
+
+This project includes a web-based inference server that provides an interactive UI for transcribing audio files or recording directly from a microphone.
+
+### Prerequisites
+
+Install the required web server and audio processing libraries:
+
+```bash
+pip install fastapi uvicorn python-multipart librosa
+```
+
+### Running the Server
+
+Launch the server by pointing it to your fine-tuned `.nemo` checkpoint.
+
+```bash
+python inferece_asr.py \
+    --model-path /path/to/your/finetuned_model.nemo \
+    --gpu-id 0
+```
+
+- `--model-path`: **(Required)** The full path to your trained `.nemo` model file.
+- `--gpu-id`: The GPU device ID to use for inference (default: `0`).
+
+Once the server is running, you can access the web interface by navigating to `http://localhost:8000` in your browser.
+
+### Production Setup (Nginx and SSL)
+
+For production use, it is highly recommended to run the server behind a reverse proxy like Nginx and to secure it with an SSL certificate (e.g., from Let's Encrypt). This enables HTTPS, which is required by modern browsers for microphone access.
+
+Refer to standard guides for setting up Nginx and Certbot for a FastAPI application on your specific operating system.
 
 ---
 
