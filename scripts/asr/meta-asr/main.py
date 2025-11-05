@@ -19,7 +19,7 @@ from pathlib import Path
 import yaml
 import torch
 from omegaconf import OmegaConf, open_dict
-import pytorch_lightning as pl
+import lightning.pytorch as pl
 from nemo.utils.callbacks import NeMoModelCheckpoint
 from nemo.collections.asr.models import ASRModel
 from nemo.collections.common.parts.adapter_modules import LinearAdapterConfig
@@ -31,12 +31,18 @@ import re
 import os
 import json
 import logging
+import math
 import torch.nn as nn
 import torch.nn.functional as F
 import nemo
 from nemo.collections.asr.data import audio_to_text
+try:
+    from nemo.collections.asr.data.audio_to_text_dali import DALIOutputs
+except ImportError:
+    DALIOutputs = tuple()
 from nemo.collections.asr.models.ctc_bpe_models import EncDecCTCModelBPE
 from nemo.collections.asr.parts.submodules.ctc_decoding import CTCDecodingConfig
+from nemo.collections.asr.metrics.wer import word_error_rate_detail
 # from nemo.collections.asr.parts.utils.transcribe_utils import transcribe_partial_audio
 from nemo.collections.asr.data.audio_to_text import AudioToBPEDataset, _speech_collate_fn
 from nemo.utils import logging as nemo_logging
@@ -48,9 +54,11 @@ from nemo.collections.asr.losses.ctc import CTCLoss
 from torch.utils.data import Dataset, DataLoader, Sampler
 import numpy as np
 import torch.distributed as dist
+from nemo.core.classes.mixins import AccessMixin
+from lightning.pytorch.loggers import TensorBoardLogger
 # No longer need the manifest processor import
 # from nemo.collections.asr.data.audio_to_text import ASRManifestProcessor as ManifestProcessor
-from collections import Counter
+from collections import Counter, defaultdict
 from typing import Dict, IO, List, Set, Union
 
 from scripts.asr.meta_asr.validate_data import (
@@ -70,7 +78,7 @@ LANG_FAMILIES: Dict[str, List[str]] = {}
 LANG_TO_FAMILY: Dict[str, str] = {}
 
 
-def set_language_families(language_families: Dict[str, List[str]]) -> None:
+def set_language_families(language_families) -> None:
     """Configure language family mapping from config."""
 
     if not language_families:
@@ -79,17 +87,43 @@ def set_language_families(language_families: Dict[str, List[str]]) -> None:
     normalized: Dict[str, List[str]] = {}
     mapping: Dict[str, str] = {}
 
-    for family, langs in language_families.items():
-        if not isinstance(langs, list):
-            raise ValueError(f"Expected list of languages for family '{family}', got {type(langs)}")
-        normalized_langs = []
-        for lang in langs:
+    def _register_family(family_name, languages) -> None:
+        if not family_name:
+            return
+        family_key = str(family_name).upper()
+        normalized_langs: List[str] = []
+        if languages is None:
+            languages = [family_key]
+        elif isinstance(languages, (str, bytes)):
+            languages = [languages]
+        elif not isinstance(languages, (list, tuple, set)):
+            raise ValueError(f"Expected iterable of languages for family '{family_name}', got {type(languages)}")
+
+        for lang in languages:
             if not lang:
                 continue
             lang_upper = str(lang).upper()
             normalized_langs.append(lang_upper)
-            mapping[lang_upper] = family
-        normalized[family] = normalized_langs
+            mapping[lang_upper] = family_key
+
+        if not normalized_langs:
+            normalized_langs.append(family_key)
+            mapping[family_key] = family_key
+
+        normalized[family_key] = normalized_langs
+
+    if isinstance(language_families, dict):
+        for family, langs in language_families.items():
+            _register_family(family, langs)
+    elif isinstance(language_families, (list, tuple, set)):
+        for entry in language_families:
+            if isinstance(entry, dict):
+                for family, langs in entry.items():
+                    _register_family(family, langs)
+            else:
+                _register_family(entry, entry)
+    else:
+        raise ValueError(f"Unsupported language_families type: {type(language_families)}")
 
     if not mapping:
         raise ValueError("language_families must include at least one language entry")
@@ -350,21 +384,72 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         self.keyword_loss_weight = self.cfg.get('keyword_loss_weight', 0.3)
         self.keyword_loss_warmup_steps = self.cfg.get('keyword_loss_warmup_steps', 0)
         self.keyword_token_ids = set()
+        self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
+        self._validation_dataset_ref = None
+
+        self.use_family_loss_weights = self.cfg.get('use_family_loss_weights', False)
+        self.family_loss_weights = None
+
+        if self.use_family_loss_weights:
+            logging.info("Using language family weighted loss. Overriding CTC loss reduction to 'none'.")
+            if not hasattr(self, 'loss') or not isinstance(self.loss, CTCLoss):
+                self.loss = CTCLoss(
+                    num_classes=self.decoder.num_classes, zero_infinity=True, reduction='mean_batch'
+                )
+            
+            # Re-create loss with reduction='none' to get per-sample losses
+            self.loss = CTCLoss(
+                num_classes=self.decoder.num_classes,
+                zero_infinity=self.loss.ctc_loss.zero_infinity,
+                reduction='none'
+            )
 
     def set_keyword_token_ids(self, keyword_ids):
         self.keyword_token_ids = set(keyword_ids)
         logging.info(f"Set {len(self.keyword_token_ids)} keyword token IDs for custom loss.")
 
+    def set_family_loss_weights(self, weights: Dict[str, float]):
+        """Stores the pre-computed language family weights."""
+        if self.use_family_loss_weights:
+            self.family_loss_weights = weights
+            logging.info("Successfully set language family loss weights on the model.")
+
     def training_step(self, batch, batch_idx):
-        audio_signal, audio_signal_len, transcript, transcript_len = batch
+        sample_ids = None
+        if len(batch) == 5:  # audio, audio_len, transcript, transcript_len, sample_id
+            audio_signal, audio_signal_len, transcript, transcript_len, sample_ids = batch
+        else:
+            audio_signal, audio_signal_len, transcript, transcript_len = batch
+
         log_probs, encoded_len, greedy_predictions = self.forward(
             input_signal=audio_signal, input_signal_length=audio_signal_len
         )
-
+        
         loss_value = self.loss(
             log_probs=log_probs, targets=transcript, input_lengths=encoded_len, target_lengths=transcript_len
         )
 
+        # --- Language Family Weighted Loss ---
+        if self.use_family_loss_weights:
+            if sample_ids is not None and self.family_loss_weights:
+                # `loss_value` is unreduced here (per-sample)
+                dataset = self._train_dl.dataset
+                batch_weights_list = [
+                    self.family_loss_weights.get(_family_name_for_lang(dataset.language_ids[idx.item()]), 1.0)
+                    for idx in sample_ids
+                ]
+                weights_tensor = torch.tensor(
+                    batch_weights_list, device=loss_value.device, dtype=loss_value.dtype
+                )
+                
+                # Apply weights and then compute the mean
+                loss_value = (loss_value * weights_tensor).mean()
+                self.log('family_weighted_loss', loss_value, on_step=True, on_epoch=False, prog_bar=True)
+            else:
+                # Fallback: if weights or sample_ids are missing, just take the mean
+                loss_value = loss_value.mean()
+        
+        # --- Keyword Loss (applied after family weighting) ---
         if self.use_keyword_loss and self.training and len(self.keyword_token_ids) > 0:
             current_step = self.trainer.global_step
             if self.keyword_loss_warmup_steps > 0 and current_step < self.keyword_loss_warmup_steps:
@@ -414,6 +499,204 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
 
         return {'loss': loss_value}
 
+    def _get_dataset_for_prefix(self, prefix: str):
+        if prefix == 'val':
+            dataset = getattr(self, '_validation_dataset_ref', None)
+            if dataset is None:
+                data_loader = getattr(self, '_validation_dl', None)
+                dataset = getattr(data_loader, 'dataset', None) if data_loader is not None else None
+                self._validation_dataset_ref = dataset
+            return dataset
+        return None
+
+    def on_validation_epoch_start(self):
+        super().on_validation_epoch_start()
+        self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
+
+    def _accumulate_family_wer(self, sample_ids, log_probs, encoded_len, transcript, transcript_len):
+        dataset = self._get_dataset_for_prefix('val')
+        if dataset is None or not hasattr(dataset, 'language_ids') or sample_ids is None:
+            return
+
+        if isinstance(sample_ids, torch.Tensor):
+            sample_indices = sample_ids.detach().cpu().view(-1).tolist()
+        else:
+            sample_indices = [int(idx) for idx in sample_ids]
+
+        if not sample_indices:
+            return
+
+        with torch.no_grad():
+            try:
+                hypotheses = self.decoding.ctc_decoder_predictions_tensor(
+                    decoder_outputs=log_probs.detach(),
+                    decoder_lengths=encoded_len.detach(),
+                    return_hypotheses=False,
+                )
+            except RuntimeError:
+                hypotheses = self.decoding.ctc_decoder_predictions_tensor(
+                    decoder_outputs=log_probs.detach().cpu(),
+                    decoder_lengths=encoded_len.detach().cpu(),
+                    return_hypotheses=False,
+                )
+
+            targets_cpu = transcript.detach().cpu()
+            target_lens_cpu = transcript_len.detach().cpu()
+
+            limit = min(len(sample_indices), len(hypotheses), targets_cpu.size(0))
+
+            for idx in range(limit):
+                sample_index = sample_indices[idx]
+                if sample_index >= len(dataset.language_ids):
+                    continue
+                lang_code = dataset.language_ids[sample_index]
+                family = _family_name_for_lang(lang_code)
+                hyp_obj = hypotheses[idx]
+                hyp_text = hyp_obj.text if hasattr(hyp_obj, 'text') else str(hyp_obj)
+                target_tokens = targets_cpu[idx][: target_lens_cpu[idx]].tolist()
+                reference_text = self._decode_target_tokens(target_tokens)
+                wer_value, words, *_ = word_error_rate_detail(
+                    [hyp_text], [reference_text], use_cer=self.wer.use_cer
+                )
+                if not math.isfinite(wer_value) or words <= 0:
+                    continue
+                errors = wer_value * words
+                stats = self._val_family_stats[family]
+                stats['errors'] += float(errors)
+                stats['words'] += int(round(words))
+
+    def _log_family_metrics(self, prefix: str):
+        if not getattr(self, '_val_family_stats', None):
+            return
+
+        aggregated = {}
+        device = self.device if isinstance(self.device, torch.device) else torch.device('cpu')
+
+        for family, stats in self._val_family_stats.items():
+            tensor = torch.tensor([stats['errors'], stats['words']], dtype=torch.float32, device=device)
+            if dist.is_available() and dist.is_initialized():
+                dist.all_reduce(tensor, op=dist.ReduceOp.SUM)
+            aggregated[family] = tensor.cpu()
+
+        if dist.is_available() and dist.is_initialized() and dist.get_rank() != 0:
+            return
+
+        total_errors = 0.0
+        total_words = 0.0
+        for family, tensor in aggregated.items():
+            errors = float(tensor[0].item())
+            words = float(tensor[1].item())
+            if words <= 0:
+                continue
+            total_errors += errors
+            total_words += words
+            self.log(f"{prefix}_wer_{family}", errors / words, prog_bar=False, sync_dist=False)
+
+        if total_words > 0:
+            self.log(f"{prefix}_wer_combined", total_errors / total_words, prog_bar=False, sync_dist=False)
+
+    def on_validation_epoch_end(self):
+        result = super().on_validation_epoch_end()
+        self._log_family_metrics('val')
+        self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
+        return result
+
+    def _decode_target_tokens(self, token_ids: List[int]) -> str:
+        decoding = getattr(self, 'decoding', None)
+        if decoding is not None:
+            if hasattr(decoding, 'decode_ids_to_str'):
+                return decoding.decode_ids_to_str(token_ids)
+            tokens = None
+            if hasattr(decoding, 'decode_ids_to_tokens'):
+                tokens = decoding.decode_ids_to_tokens(token_ids)
+            if tokens is not None:
+                if tokens and isinstance(tokens[0], str):
+                    return ''.join(tokens).replace('▁', ' ').strip()
+                if hasattr(decoding, 'decode_tokens_to_str'):
+                    return decoding.decode_tokens_to_str(tokens)
+                return ''.join(tokens).replace('▁', ' ').strip()
+        tokenizer = getattr(self, 'tokenizer', None)
+        if tokenizer is not None:
+            if hasattr(tokenizer, 'ids_to_text'):
+                return tokenizer.ids_to_text(token_ids)
+            if hasattr(tokenizer, 'ids_to_tokens'):
+                tokens = tokenizer.ids_to_tokens(token_ids)
+                return ''.join(tokens).replace('▁', ' ').strip()
+        return ' '.join(str(t) for t in token_ids)
+
+    def validation_step(self, batch, batch_idx, dataloader_idx=0):
+        sample_ids = None
+
+        if isinstance(batch, DALIOutputs):
+            signal, signal_len, transcript, transcript_len = batch
+            core_batch = batch
+        else:
+            if len(batch) == 6:
+                signal, signal_len, transcript, transcript_len, _, sample_ids = batch
+            elif len(batch) == 5:
+                signal, signal_len, transcript, transcript_len, extra = batch
+                if torch.is_tensor(extra):
+                    if extra.dtype.is_floating_point:
+                        sample_ids = None
+                    else:
+                        sample_ids = extra
+                elif isinstance(extra, (float, np.floating)):
+                    sample_ids = None
+                else:
+                    sample_ids = extra
+            else:
+                signal, signal_len, transcript, transcript_len = batch
+            core_batch = (signal, signal_len, transcript, transcript_len)
+
+        if self.is_interctc_enabled():
+            AccessMixin.set_access_enabled(access_enabled=True, guid=self.model_guid)
+
+        if isinstance(core_batch, DALIOutputs) and core_batch.has_processed_signal:
+            log_probs, encoded_len, predictions = self.forward(
+                processed_signal=signal, processed_signal_length=signal_len
+            )
+        else:
+            log_probs, encoded_len, predictions = self.forward(
+                input_signal=signal, input_signal_length=signal_len
+            )
+
+        loss_value = self.loss(
+            log_probs=log_probs, targets=transcript, input_lengths=encoded_len, target_lengths=transcript_len
+        )
+        loss_value, metrics = self.add_interctc_losses(
+            loss_value,
+            transcript,
+            transcript_len,
+            compute_wer=True,
+            log_wer_num_denom=True,
+            log_prefix="val_",
+        )
+
+        self.wer.update(
+            predictions=log_probs,
+            targets=transcript,
+            targets_lengths=transcript_len,
+            predictions_lengths=encoded_len,
+        )
+        wer, wer_num, wer_denom = self.wer.compute()
+        self.wer.reset()
+        metrics.update({'val_loss': loss_value, 'val_wer_num': wer_num, 'val_wer_denom': wer_denom, 'val_wer': wer})
+
+        self.log('global_step', torch.tensor(self.trainer.global_step, dtype=torch.float32, device=log_probs.device))
+
+        if AccessMixin.is_access_enabled(self.model_guid):
+            AccessMixin.reset_registry(self)
+
+        if sample_ids is not None:
+            self._accumulate_family_wer(sample_ids, log_probs, encoded_len, transcript, transcript_len)
+
+        if isinstance(self.trainer.val_dataloaders, list) and len(self.trainer.val_dataloaders) > 1:
+            self.validation_step_outputs[dataloader_idx].append(metrics)
+        else:
+            self.validation_step_outputs.append(metrics)
+
+        return metrics
+
 
 class BalancedLanguageBatchSampler(Sampler):
     def __init__(self, dataset, batch_size, temperature=0.2, seed=42, lang_to_family_map: Dict[str, str] = None):
@@ -424,12 +707,10 @@ class BalancedLanguageBatchSampler(Sampler):
         self.epoch = 0
         self.lang_to_family_map = {k.upper(): v for k, v in (lang_to_family_map or {}).items()}
 
-        if not dist.is_available() or not dist.is_initialized():
-            self.world_size = 1
-            self.rank = 0
-        else:
-            self.world_size = dist.get_world_size()
-            self.rank = dist.get_rank()
+        self.num_samples = len(self.dataset)
+        self.world_size = 1
+        self.rank = 0
+        self._refresh_distributed_context()
         
         family_counts: Dict[str, int] = {}
         self.sample_families: List[str] = []
@@ -444,6 +725,12 @@ class BalancedLanguageBatchSampler(Sampler):
         print(self.families)
         print("ALL FAMILY COUNTS")
         print(self.family_counts)
+
+        dataset_weights = getattr(self.dataset, 'sample_keyphrase_weights', None)
+        if dataset_weights is not None and len(dataset_weights) == len(self.dataset.language_ids):
+            self.sample_weights = np.asarray(dataset_weights, dtype=np.float32)
+        else:
+            self.sample_weights = np.ones(len(self.dataset.language_ids), dtype=np.float32)
         
         # Calculate sampling probabilities with temperature
         total_samples = len(self.dataset)
@@ -455,22 +742,27 @@ class BalancedLanguageBatchSampler(Sampler):
             self.family_sample_probs = np.array([])
         
         family_indices_map = {family: [] for family in self.families}
+        family_weight_map = {family: [] for family in self.families}
         for idx, family in enumerate(self.sample_families):
             if family in family_indices_map:
                 family_indices_map[family].append(idx)
+                family_weight_map[family].append(float(self.sample_weights[idx]))
         self.family_indices = {
             family: np.array(indices, dtype=np.uint32) for family, indices in family_indices_map.items()
         }
+        self.family_weights = {
+            family: np.array(weights if weights else [1.0] * len(family_indices_map[family]), dtype=np.float32)
+            for family, weights in family_weight_map.items()
+        }
         
-        self.num_samples = len(self.dataset)
         self.num_batches_per_epoch = self.num_samples // self.batch_size
         
         # Adjust for distributed training
-        self.num_samples_per_rank = self.num_samples // self.world_size
-        if self.num_samples % self.world_size != 0:
-            self.num_samples_per_rank += 1
+        self.num_samples_per_rank = self._calculate_samples_per_rank()
             
     def __iter__(self):
+        self._refresh_distributed_context()
+
         # Seed with epoch to ensure different shuffling each epoch
         g = torch.Generator()
         g.manual_seed(self.seed + self.epoch)
@@ -489,7 +781,22 @@ class BalancedLanguageBatchSampler(Sampler):
             num_family_samples = num_samples_per_family[i]
             if num_family_samples > 0:
                 replace = len(self.family_indices[family]) < num_family_samples
-                indices = np.random.choice(self.family_indices[family], num_family_samples, replace=replace)
+                weights = self.family_weights.get(family)
+                if weights is None or len(weights) == 0:
+                    probs = None
+                else:
+                    weights = weights.astype(np.float64)
+                    total = np.sum(weights)
+                    if total <= 0:
+                        probs = None
+                    else:
+                        probs = weights / total
+                indices = np.random.choice(
+                    self.family_indices[family],
+                    num_family_samples,
+                    replace=replace,
+                    p=probs,
+                )
                 epoch_indices_list.append(indices)
         
         if not epoch_indices_list:
@@ -503,7 +810,7 @@ class BalancedLanguageBatchSampler(Sampler):
 
         # 3. Yield batches for the current rank without creating a list of all batches
         num_batches = len(epoch_indices) // self.batch_size
-        
+
         for batch_idx in range(self.rank, num_batches, self.world_size):
             start_idx = batch_idx * self.batch_size
             end_idx = start_idx + self.batch_size
@@ -512,8 +819,39 @@ class BalancedLanguageBatchSampler(Sampler):
         self.epoch += 1
 
     def __len__(self):
+        self._refresh_distributed_context()
         num_batches = self.num_samples // self.batch_size
-        return num_batches // self.world_size
+        if num_batches == 0:
+            return 0
+        return math.ceil(num_batches / max(self.world_size, 1))
+
+    def _calculate_samples_per_rank(self):
+        world_size = max(self.world_size, 1)
+        if world_size <= 1:
+            return self.num_samples
+        samples = self.num_samples // world_size
+        if self.num_samples % world_size != 0:
+            samples += 1
+        return samples
+
+    def _refresh_distributed_context(self):
+        if not dist.is_available():
+            self.world_size = 1
+            self.rank = 0
+            return
+
+        try:
+            if dist.is_initialized():
+                self.world_size = max(int(dist.get_world_size()), 1)
+                self.rank = int(dist.get_rank())
+            else:
+                self.world_size = 1
+                self.rank = 0
+        except (RuntimeError, ValueError):
+            # During dataloader workers spawn, the default process group might not be ready yet.
+            self.world_size = 1
+            self.rank = 0
+        self.num_samples_per_rank = self._calculate_samples_per_rank()
 
     def _resolve_family(self, lang_id: str) -> str:
         if not lang_id:
@@ -528,15 +866,19 @@ class BalancedLanguageBatchSampler(Sampler):
 
 class RobustAudioToBPEDataset(audio_to_text.AudioToBPEDataset):
     skip_audio_validation_default: bool = False
+    keyphrase_oversample_factor_default: float = 0.0
+    default_lang_field: str = 'lang'
 
     def __init__(self, manifest_filepath, *args, **kwargs):
         allowed_langs = kwargs.pop('allowed_langs', None)
         if allowed_langs is not None:
             allowed_langs = {lang.upper() for lang in allowed_langs}
+        lang_field = kwargs.pop('lang_field', None)
+        if not lang_field:
+            lang_field = getattr(self, 'default_lang_field', 'lang')
 
-        # Build a filtered temporary manifest that keeps only entries with a language tag
+        # Build a normalized temporary manifest that guarantees language casing
         kept_lines = 0
-        skipped_lines = 0
         processed_lines = 0
         tmp_manifest = tempfile.NamedTemporaryFile('w', delete=False, suffix='.json', encoding='utf-8')
         tmp_path = Path(tmp_manifest.name)
@@ -550,70 +892,62 @@ class RobustAudioToBPEDataset(audio_to_text.AudioToBPEDataset):
                     continue
                 try:
                     data = json.loads(raw_line)
-                except json.JSONDecodeError:
-                    logging.warning(f"Skipping malformed manifest line: {raw_line[:100]}...")
-                    skipped_lines += 1
-                    continue
+                except json.JSONDecodeError as exc:
+                    raise RuntimeError(
+                        f"Manifest contains malformed JSON at line {processed_lines}: {raw_line[:100]}"
+                    ) from exc
 
                 audio_file = data.get('audio_filepath')
                 if not audio_file:
-                    logging.warning("Skipping manifest entry without audio_filepath")
-                    skipped_lines += 1
-                    continue
+                    raise RuntimeError("Manifest entry is missing 'audio_filepath'")
 
                 if not skip_audio_validation:
                     audio_path = Path(audio_file)
                     if not audio_path.exists():
-                        logging.warning(f"Skipping missing audio file for manifest entry: {audio_file}")
-                        skipped_lines += 1
-                        continue
+                        raise FileNotFoundError(f"Audio file not found for manifest entry: {audio_file}")
 
-                lang_value = data.get('lang')
+                lang_value = data.get(lang_field)
+                if not lang_value and lang_field != 'lang':
+                    lang_value = data.get('lang')
                 if not lang_value:
-                    skipped_lines += 1
-                    continue
+                    raise RuntimeError(
+                        f"Manifest entry missing language field '{lang_field}' (and fallback 'lang') at line {processed_lines}"
+                    )
 
                 lang_value = str(lang_value).upper()
-                if allowed_langs is not None and lang_value not in allowed_langs:
-                    continue
-
                 data['lang'] = lang_value
+                if lang_field != 'lang':
+                    data[lang_field] = lang_value
                 if not skip_audio_validation:
                     try:
                         AudioSegment.from_file(audio_file)
                     except Exception as audio_exc:
-                        logging.warning(
-                            f"Skipping audio file that failed to decode ({audio_file}): {audio_exc}"
-                        )
-                        skipped_lines += 1
-                        continue
+                        raise RuntimeError(
+                            f"Failed to decode audio file '{audio_file}' referenced in manifest: {audio_exc}"
+                        ) from audio_exc
 
                 tmp_manifest.write(json.dumps(data, ensure_ascii=False) + '\n')
                 kept_lines += 1
 
                 if progress_every > 0 and processed_lines % progress_every == 0:
                     logging.info(
-                        "Manifest prep progress [%s]: processed=%d kept=%d skipped=%d",
+                        "Manifest prep progress [%s]: processed=%d kept=%d",
                         manifest_filepath,
                         processed_lines,
                         kept_lines,
-                        skipped_lines,
                     )
         tmp_manifest.close()
 
         if kept_lines == 0:
             raise RuntimeError(
-                "No usable manifest entries remained after filtering for language IDs. Ensure your manifests contain a 'lang' field for each sample."
+                f"No usable manifest entries remained after filtering for language IDs. Ensure your manifests contain a '{lang_field}' field for each sample."
             )
 
-        if skipped_lines > 0:
-            logging.info(f"Filtered out {skipped_lines} manifest lines without a language tag while preparing aggregate dataset.")
         logging.info(
-            "Finished preparing dataset manifest %s: total_rows=%d kept=%d skipped=%d",
+            "Finished preparing dataset manifest %s: total_rows=%d kept=%d",
             manifest_filepath,
             processed_lines,
             kept_lines,
-            skipped_lines,
         )
 
         # Initialize the parent dataset with the filtered manifest
@@ -621,21 +955,36 @@ class RobustAudioToBPEDataset(audio_to_text.AudioToBPEDataset):
 
         # Track the temporary manifest for optional cleanup
         self._filtered_manifest_path = tmp_path
+        self.lang_field = lang_field
 
         # Build language ids aligned with the filtered manifest collection
         self.language_ids = []
         new_collection = []
         for item in self.manifest_processor.collection:
             lang_id = getattr(item, 'lang', None)
+            if not lang_id and self.lang_field and self.lang_field != 'lang':
+                lang_id = getattr(item, self.lang_field, None)
             if not lang_id:
-                continue
-            if allowed_langs is not None and lang_id.upper() not in allowed_langs:
-                continue
+                raise RuntimeError("Manifest sample is missing language metadata after normalization")
             lang_id = lang_id.upper()
             self.language_ids.append(lang_id)
             new_collection.append(item)
 
         self.manifest_processor.collection = new_collection
+
+        factor = float(self.keyphrase_oversample_factor_default)
+        if factor > 0.0 and new_collection:
+            weights = []
+            for item in new_collection:
+                text = getattr(item, 'text', '') or ''
+                tokens = text.split()
+                entity_count = sum(1 for tok in tokens if tok.upper().startswith('ENTITY_'))
+                end_count = sum(1 for tok in tokens if tok.upper() == 'END')
+                score = entity_count + end_count
+                weights.append(1.0 + factor * score)
+            self.sample_keyphrase_weights = np.array(weights, dtype=np.float32)
+        else:
+            self.sample_keyphrase_weights = np.ones(len(new_collection), dtype=np.float32)
 
     def __del__(self):
         # Attempt to remove the temporary manifest file when the dataset is garbage collected
@@ -673,10 +1022,27 @@ def patched_speech_collate_fn(batch, pad_id):
     mono/stereo audio and pads all signals to a consistent length, and filters out problematic samples.
     """
     has_weight = False
+    has_sample_ids = False
     for item in batch:
-        if item is not None:
-            has_weight = len(item) > 4
+        if item is None:
+            continue
+        tuple_len = len(item)
+        if tuple_len >= 6:
+            has_weight = True
+            has_sample_ids = True
             break
+        if tuple_len >= 5:
+            candidate = item[4]
+            if torch.is_tensor(candidate):
+                if candidate.dtype.is_floating_point:
+                    has_weight = True
+                else:
+                    has_sample_ids = True
+            elif isinstance(candidate, (float, np.floating)):
+                has_weight = True
+            elif isinstance(candidate, (int, np.integer)):
+                has_sample_ids = True
+        break
 
     original_len = len(batch)
     batch = [item for item in batch if item is not None]
@@ -684,28 +1050,22 @@ def patched_speech_collate_fn(batch, pad_id):
         logging.warning(f"Skipped {original_len - len(batch)} samples in a batch.")
 
     if not batch:
+        empty_audio = torch.empty(0, 0, dtype=torch.float32)
+        empty_lengths = torch.tensor([], dtype=torch.long)
+        empty_transcripts = torch.empty(0, 0, dtype=torch.long)
+        outputs = [empty_audio, empty_lengths, empty_transcripts, empty_lengths.clone()]
         if has_weight:
-            return (
-                torch.empty(0, 0, dtype=torch.float32),
-                torch.tensor([], dtype=torch.long),
-                torch.empty(0, 0, dtype=torch.long),
-                torch.tensor([], dtype=torch.long),
-                torch.tensor([], dtype=torch.float32),
-            )
-        else:
-            return (
-                torch.empty(0, 0, dtype=torch.float32),
-                torch.tensor([], dtype=torch.long),
-                torch.empty(0, 0, dtype=torch.long),
-                torch.tensor([], dtype=torch.long),
-            )
+            outputs.append(torch.tensor([], dtype=torch.float32))
+        if has_sample_ids:
+            outputs.append(torch.tensor([], dtype=torch.long))
+        return tuple(outputs)
     
     if isinstance(batch[0], list):
         batch = [item for sublist in batch for item in sublist]
 
     audio_signal, audio_lengths, transcript, transcript_lengths = [], [], [], []
-    if has_weight:
-        weights = []
+    weights = [] if has_weight else None
+    sample_ids = [] if has_sample_ids else None
 
     for i, sample in enumerate(batch):
         sig = sample[0]
@@ -718,8 +1078,26 @@ def patched_speech_collate_fn(batch, pad_id):
         audio_lengths.append(sample[1])
         transcript.append(sample[2])
         transcript_lengths.append(sample[3])
-        if has_weight:
+        if has_weight and has_sample_ids and len(sample) >= 6:
             weights.append(sample[4])
+            sample_idx = sample[5]
+        elif has_weight and len(sample) >= 5 and not has_sample_ids:
+            weights.append(sample[4])
+            sample_idx = None
+        elif has_sample_ids and len(sample) >= 5 and not has_weight:
+            sample_idx = sample[4]
+        else:
+            sample_idx = None
+
+        if has_sample_ids and sample_idx is not None:
+            if torch.is_tensor(sample_idx):
+                sample_idx = int(sample_idx.item())
+            else:
+                sample_idx = int(sample_idx)
+            sample_ids.append(sample_idx)
+        if has_weight and weights is not None and len(weights) > 0:
+            if torch.is_tensor(weights[-1]):
+                weights[-1] = float(weights[-1].item())
 
     # Padding logic for 1D raw audio
     max_len = max(audio_lengths) if audio_lengths else 0
@@ -736,23 +1114,34 @@ def patched_speech_collate_fn(batch, pad_id):
     transcript_lengths = torch.tensor(transcript_lengths, dtype=torch.long)
     transcript = nn.utils.rnn.pad_sequence(transcript, batch_first=True, padding_value=pad_id)
 
+    outputs = [audio_signal, audio_lengths, transcript, transcript_lengths]
     if has_weight:
-        weights = torch.tensor(weights, dtype=torch.float32)
-        return audio_signal, audio_lengths, transcript, transcript_lengths, weights
+        weights_tensor = torch.tensor(weights, dtype=torch.float32)
+        outputs.append(weights_tensor)
+    if has_sample_ids:
+        sample_ids_tensor = torch.tensor(sample_ids, dtype=torch.long)
+        outputs.append(sample_ids_tensor)
 
-    return audio_signal, audio_lengths, transcript, transcript_lengths
+    return tuple(outputs)
 
 
 # Monkey-patch the collate function
 audio_to_text._speech_collate_fn = patched_speech_collate_fn
 
 
-def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_tokens=None, vocab_size=5000, character_coverage=0.9995):
+def train_sentencepiece_tokenizer(
+    manifest_file,
+    tokenizer_folder,
+    special_tokens=None,
+    vocab_size=5000,
+    character_coverage=None,
+    extra_options=None,
+):
     # Configure logging
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
     logging.info("Starting the tokenizer training process")
-    logging.info(f"Requested vocab_size={vocab_size}, character_coverage={character_coverage}")
+    logging.info(f"Requested vocab_size={vocab_size}")
 
     # Step 1: Read the manifest file and extract text data
     def read_manifest(manifest_path):
@@ -802,9 +1191,12 @@ def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_token
     sp_train_kwargs = {
         'input': temp_text_file,
         'model_prefix': model_prefix,
-        'character_coverage': character_coverage,
         'max_sentence_length': 8000,
     }
+    if character_coverage is not None:
+        sp_train_kwargs['character_coverage'] = character_coverage
+    if extra_options:
+        sp_train_kwargs.update(extra_options)
     if user_defined_symbols:
         sp_train_kwargs['user_defined_symbols'] = user_defined_symbols
 
@@ -861,7 +1253,12 @@ def train_sentencepiece_tokenizer(manifest_file, tokenizer_folder, special_token
     return model_file, vocab_file, vocab_txt_file
 
 
-def extract_langs_and_special_tokens(manifest_filepath, special_token_prefixes=None, extra_manifest_paths=None):
+def extract_langs_and_special_tokens(
+    manifest_filepath,
+    special_token_prefixes=None,
+    extra_manifest_paths=None,
+    lang_field: str = 'lang',
+):
     """
     Extracts unique language IDs and special tokens from one or more manifest files.
     """
@@ -883,7 +1280,9 @@ def extract_langs_and_special_tokens(manifest_filepath, special_token_prefixes=N
                 for line in f:
                     data = json.loads(line)
 
-                    lang = data.get('lang')
+                    lang = data.get(lang_field)
+                    if not lang and lang_field != 'lang':
+                        lang = data.get('lang')
                     if lang:
                         langs.add(str(lang).upper())
 
@@ -944,7 +1343,13 @@ def _sanitize_family_name(family: str) -> str:
     return family.replace(' ', '_').lower()
 
 
-def train_aggregate_tokenizer(cfg, langs, special_tokens, extra_manifest_paths: List[str] = None):
+def train_aggregate_tokenizer(
+    cfg,
+    langs,
+    special_tokens,
+    extra_manifest_paths: List[str] = None,
+    lang_field: str = 'lang',
+):
     """
     Trains aggregate tokenizer components by creating one tokenizer per language family.
     Languages that do not belong to a configured family are treated as singleton families.
@@ -986,7 +1391,9 @@ def train_aggregate_tokenizer(cfg, langs, special_tokens, extra_manifest_paths: 
         with open(manifest_filepath, 'r', encoding='utf-8') as f:
             for line in f:
                 data = json.loads(line)
-                lang = data.get('lang')
+                lang = data.get(lang_field)
+                if not lang and lang_field != 'lang':
+                    lang = data.get('lang')
                 if not lang:
                     continue
 
@@ -1001,7 +1408,9 @@ def train_aggregate_tokenizer(cfg, langs, special_tokens, extra_manifest_paths: 
                     with open(extra_path, 'r', encoding='utf-8') as extra_f:
                         for line in extra_f:
                             data = json.loads(line)
-                            lang = data.get('lang')
+                            lang = data.get(lang_field)
+                            if not lang and lang_field != 'lang':
+                                lang = data.get('lang')
                             if not lang:
                                 continue
                             lang_key = str(lang).upper()
@@ -1021,6 +1430,7 @@ def train_aggregate_tokenizer(cfg, langs, special_tokens, extra_manifest_paths: 
     non_special_quota = dynamic_params.get('non_special_tokens_per_lang', 256)
     if non_special_quota < 0:
         non_special_quota = 0
+    non_special_overrides = dynamic_params.get('non_special_tokens_per_lang_overrides', {})
 
     special_tokens_list = sorted(special_tokens)
     logging.info(
@@ -1031,6 +1441,9 @@ def train_aggregate_tokenizer(cfg, langs, special_tokens, extra_manifest_paths: 
 
     tokenizer_langs_config: Dict[str, Dict[str, str]] = {}
     lang_vocab_tokens: Dict[str, List[str]] = {}
+    character_coverage = cfg.model.dynamic_tokenizer_params.get('character_coverage', None)
+    coverage_overrides = cfg.model.dynamic_tokenizer_params.get('character_coverage_overrides', {})
+    tokenizer_options = cfg.model.dynamic_tokenizer_params.get('tokenizer_options') or {}
 
     for family in sorted(family_to_langs.keys()):
         manifest_path = temp_manifest_dir / f"{family}_manifest.json"
@@ -1042,22 +1455,28 @@ def train_aggregate_tokenizer(cfg, langs, special_tokens, extra_manifest_paths: 
         tokenizer_dir_name = f"{cfg.model.dynamic_tokenizer_params.dir_prefix}{_sanitize_family_name(family)}"
         tokenizer_dir = Path(cfg.model.model_root) / tokenizer_dir_name
 
-        target_vocab_size = len(special_tokens_list) + non_special_quota
+        family_quota = non_special_overrides.get(family, non_special_quota)
+        target_vocab_size = len(special_tokens_list) + family_quota
         logging.info(
             "Family %s (languages=%s): target vocab size %d (special=%d, quota=%d)",
             family,
             langs_in_family,
             target_vocab_size,
             len(special_tokens_list),
-            non_special_quota,
+            family_quota,
         )
 
+        family_options = dict(tokenizer_options.get(family, {})) if isinstance(tokenizer_options, dict) else {}
+        if coverage_overrides.get(family, character_coverage) is None and 'character_coverage' in family_options:
+            # allow override to explicitly disable coverage if set to null
+            pass
         train_sentencepiece_tokenizer(
             manifest_file=str(manifest_path),
             tokenizer_folder=str(tokenizer_dir),
             special_tokens=special_tokens_list,
             vocab_size=target_vocab_size,
-            character_coverage=cfg.model.dynamic_tokenizer_params.character_coverage,
+            character_coverage=coverage_overrides.get(family, character_coverage),
+            extra_options=family_options,
         )
 
         vocab_file = tokenizer_dir / 'vocab.txt'
@@ -1221,6 +1640,8 @@ def save_updated_config(cfg, path):
 
 
 def train_model(cfg):
+    lang_field = cfg.training.get('lang_field', 'lang')
+    RobustAudioToBPEDataset.default_lang_field = lang_field
     tokenizer_langs = load_tokenizer_langs(cfg)
     if not isinstance(tokenizer_langs, dict) or not tokenizer_langs:
         raise RuntimeError(
@@ -1289,7 +1710,8 @@ def train_model(cfg):
         base_cfg.train_ds.tarred_audio_filepaths = None
         base_cfg.train_ds.num_workers = cfg.training.num_workers
         base_cfg.train_ds.pin_memory = cfg.training.pin_memory
-        base_cfg.train_ds.lang_field = 'lang'
+        base_cfg.train_ds.lang_field = lang_field
+        base_cfg.train_ds.return_sample_id = True # Needed for family loss weights
 
         base_cfg.validation_ds.manifest_filepath = val_manifest
         base_cfg.validation_ds.batch_size = cfg.training.batch_size
@@ -1297,14 +1719,19 @@ def train_model(cfg):
         base_cfg.validation_ds.shuffle = False
         base_cfg.validation_ds.num_workers = cfg.training.num_workers
         base_cfg.validation_ds.pin_memory = cfg.training.pin_memory
-        base_cfg.validation_ds.lang_field = 'lang'
+        base_cfg.validation_ds.lang_field = lang_field
+        base_cfg.validation_ds.return_sample_id = True
 
         if 'manifest_processor' not in base_cfg.train_ds:
             base_cfg.train_ds.manifest_processor = {}
         if 'additional_fields' not in base_cfg.train_ds.manifest_processor:
             base_cfg.train_ds.manifest_processor.additional_fields = []
-        if 'lang' not in base_cfg.train_ds.manifest_processor.additional_fields:
-            base_cfg.train_ds.manifest_processor.additional_fields.append('lang')
+        fields_to_add = {'lang'}
+        if lang_field:
+            fields_to_add.add(lang_field)
+        for field_name in fields_to_add:
+            if field_name and field_name not in base_cfg.train_ds.manifest_processor.additional_fields:
+                base_cfg.train_ds.manifest_processor.additional_fields.append(field_name)
 
         base_cfg.train_ds.allowed_langs = lang_list
         base_cfg.validation_ds.allowed_langs = lang_list
@@ -1312,13 +1739,12 @@ def train_model(cfg):
         if 'augmentor' in base_cfg.train_ds:
             del base_cfg.train_ds.augmentor
 
-    model = ASRModel.restore_from(str(model_path), override_config_path=base_cfg, strict=True)
-    model.__class__ = CustomEncDecCTCModelBPE
+    model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=True)
     model.setup_custom_loss()
 
     tokenizer_cfg = OmegaConf.create(tokenizer_entry)
-    logging.info("Applying deduplicated aggregate tokenizer via change_vocabulary().")
-    model.change_vocabulary(tokenizer_cfg, 'agg')
+    #logging.info("Applying deduplicated aggregate tokenizer via change_vocabulary().")
+    #model.change_vocabulary(tokenizer_cfg, 'agg')
 
     aggregate_vocab = list(model.decoder.vocabulary)
     store_aggregate_vocabulary(cfg, aggregate_vocab)
@@ -1327,14 +1753,39 @@ def train_model(cfg):
         model.cfg.tokenizer = tokenizer_entry
         model.cfg.train_ds.allowed_langs = lang_list
         model.cfg.validation_ds.allowed_langs = lang_list
-        model.cfg.train_ds.lang_field = 'lang'
-        model.cfg.validation_ds.lang_field = 'lang'
+        model.cfg.train_ds.lang_field = lang_field
+        model.cfg.validation_ds.lang_field = lang_field
+        model.cfg.validation_ds.return_sample_id = True
         model.cfg.decoder.vocabulary = aggregate_vocab
         model.cfg.decoder.num_classes = len(aggregate_vocab)
 
     model.setup_training_data(model.cfg.train_ds)
     model.setup_validation_data(model.cfg.validation_ds)
     model.setup_multiple_test_data(model.cfg.validation_ds)
+    model._validation_dataset_ref = getattr(model._validation_dl, 'dataset', None)
+
+    # --- Calculate and set language family loss weights ---
+    if cfg.training.get('use_family_loss_weights'):
+        logging.info("Calculating language family loss weights...")
+        train_dataset = model._train_dl.dataset
+        family_counts = defaultdict(int)
+        for lang_id in train_dataset.language_ids:
+            family = _family_name_for_lang(lang_id)
+            family_counts[family] += 1
+        
+        total_samples = sum(family_counts.values())
+        num_families = len(family_counts)
+        
+        if total_samples > 0 and num_families > 0:
+            # Normalized inverse frequency weighting
+            weights = {
+                fam: total_samples / (num_families * count)
+                for fam, count in family_counts.items()
+            }
+            logging.info("Calculated language family loss weights: %s", weights)
+            model.set_family_loss_weights(weights)
+        else:
+            logging.warning("Could not calculate family loss weights: no samples or families found.")
 
     train_dataset = model._train_dl.dataset
     train_batch_sampler = BalancedLanguageBatchSampler(
@@ -1391,6 +1842,11 @@ def train_model(cfg):
     else:
         devices = configured_devices if configured_devices is not None else -1
 
+    tensorboard_logger = TensorBoardLogger(
+        save_dir=str(Path(cfg.experiment.exp_dir).expanduser()),
+        name=cfg.experiment.exp_name,
+    )
+
     trainer_kwargs = dict(
         accelerator=accelerator,
         devices=devices,
@@ -1398,7 +1854,7 @@ def train_model(cfg):
         gradient_clip_val=1.0,
         gradient_clip_algorithm="norm",
         enable_checkpointing=False,
-        logger=False,
+        logger=tensorboard_logger,
         log_every_n_steps=50,
         use_distributed_sampler=False,
     )
@@ -1411,6 +1867,10 @@ def train_model(cfg):
     if val_interval and val_interval > 0:
         trainer_kwargs['val_check_interval'] = val_interval
 
+    accumulate_grad_batches = cfg.training.get('accumulate_grad_batches', None)
+    if accumulate_grad_batches and accumulate_grad_batches > 1:
+        trainer_kwargs['accumulate_grad_batches'] = accumulate_grad_batches
+
     trainer = pl.Trainer(**trainer_kwargs)
     model.set_trainer(trainer)
 
@@ -1421,15 +1881,40 @@ def train_model(cfg):
         save_top_k=cfg.experiment.get('save_top_k', 1),
     )
     exp_cfg = exp_manager.ExpManagerConfig(
-        exp_dir=cfg.experiment.exp_dir,
-        name=cfg.experiment.exp_name,
+        exp_dir=None,
+        name=None,
         checkpoint_callback_params=callback_params,
         create_checkpoint_callback=True,
+        create_tensorboard_logger=False,
+        create_wandb_logger=False,
+        create_mlflow_logger=False,
+        create_dllogger_logger=False,
     )
     exp_cfg = OmegaConf.structured(exp_cfg)
     exp_manager.exp_manager(trainer, exp_cfg)
 
     logging.info("Starting model training...")
+    logging.info("Model class: %s", model.__class__)
+    logging.info("LightningModule class from pytorch_lightning: %s", pl.LightningModule)
+    try:
+        import lightning.pytorch as L
+
+        logging.info(
+            "LightningModule class from lightning.pytorch: %s", getattr(L, "LightningModule", None)
+        )
+        logging.info(
+            "isinstance(model, pytorch_lightning.LightningModule): %s",
+            isinstance(model, pl.LightningModule),
+        )
+        lightning_module_cls = getattr(L, "LightningModule", None)
+        if lightning_module_cls is not None:
+            logging.info(
+                "isinstance(model, lightning.pytorch.LightningModule): %s",
+                isinstance(model, lightning_module_cls),
+            )
+    except Exception as exc:
+        logging.warning("Failed to inspect lightning module classes: %s", exc)
+
     trainer.fit(model)
     logging.info("Model training complete.")
 
@@ -1444,11 +1929,14 @@ def main():
     with open(config_file_path, 'r', encoding='utf-8') as f:
         cfg = OmegaConf.create(yaml.safe_load(f))
 
+    lang_field = cfg.training.get('lang_field', 'lang')
+    RobustAudioToBPEDataset.default_lang_field = lang_field
     language_families_cfg = cfg.model.get('language_families')
     language_families = OmegaConf.to_container(language_families_cfg, resolve=True) if language_families_cfg else None
     set_language_families(language_families)
 
     RobustAudioToBPEDataset.skip_audio_validation_default = bool(cfg.training.get('skip_audio_validation', False))
+    RobustAudioToBPEDataset.keyphrase_oversample_factor_default = float(cfg.training.get('keyphrase_oversample_factor', 0.0))
 
     run_validation = args.mode in ('validate_data', 'both')
     run_tokenizers = args.mode in ('both', 'tokenizer')
@@ -1497,12 +1985,14 @@ def main():
                 manifest_path,
                 special_token_prefixes,
                 extra_manifest_paths=extra_manifests,
+                lang_field=lang_field,
             )
             tokenizer_langs_config, shared_special_tokens, aggregate_vocab, language_family_map = train_aggregate_tokenizer(
                 cfg,
                 langs,
                 special_tokens,
                 extra_manifest_paths=extra_manifests,
+                lang_field=lang_field,
             )
             store_tokenizer_langs(cfg, tokenizer_langs_config)
             store_shared_special_tokens(cfg, shared_special_tokens)
@@ -1514,12 +2004,15 @@ def main():
             logging.info("Tokenizer training complete. Continue with model training as needed.")
         else:
             tokenizer_path = os.path.join(cfg.model.model_root, cfg.model.new_tokenizer_folder)
+            character_coverage = cfg.model.get('character_coverage', None)
+            tokenizer_options = cfg.model.get('tokenizer_options') or {}
             train_sentencepiece_tokenizer(
                 manifest_file=os.path.join(cfg.training.data_dir, cfg.training.train_manifest),
                 tokenizer_folder=tokenizer_path,
                 special_tokens=[],
                 vocab_size=cfg.model.get('vocab_size', 1024),
-                character_coverage=cfg.model.get('character_coverage', 0.9995),
+                character_coverage=character_coverage,
+                extra_options=tokenizer_options if isinstance(tokenizer_options, dict) else {},
             )
             logging.info("Tokenizer training complete. Continue with model training as needed.")
 
