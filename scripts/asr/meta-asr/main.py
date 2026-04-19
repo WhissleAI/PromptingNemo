@@ -329,12 +329,6 @@ if nemo_agg is not None:
                 return tokenizer.decode_pieces(tokens)
             return ''.join(tokens).replace('▁', ' ').strip()
 
-        def ids_to_text(self, ids):
-            if isinstance(ids, (np.ndarray, torch.Tensor)):
-                ids = ids.tolist()
-            tokens = [self.vocabulary[i] for i in ids]
-            return ''.join(tokens).replace('▁', ' ')
-
         def token_to_id(self, token, lang_id):
             tokenizer = self.tokenizers_dict[lang_id]
             local_id = tokenizer.token_to_id(token)
@@ -345,11 +339,19 @@ if nemo_agg is not None:
         def ids_to_tokens(self, ids):
             if isinstance(ids, (np.ndarray, torch.Tensor)):
                 ids = ids.tolist()
-            return [self.vocabulary[i] for i in ids]
+            return [self.vocabulary[i] for i in ids if i < len(self.vocabulary)]
+
+        def ids_to_text(self, ids):
+            if isinstance(ids, (np.ndarray, torch.Tensor)):
+                ids = ids.tolist()
+            tokens = [self.vocabulary[i] for i in ids if i < len(self.vocabulary)]
+            return ''.join(tokens).replace('▁', ' ')
 
         def ids_to_text_and_langs(self, ids):
             result = []
             for idx in ids:
+                if idx >= len(self.vocabulary):
+                    continue
                 token = self.vocabulary[idx]
                 lang = self.langs_by_token_id.get(idx)
                 result.append({'char': token.replace('▁', ' ').strip(), 'lang': lang})
@@ -359,6 +361,8 @@ if nemo_agg is not None:
             words_and_langs = []
             current_ids = []
             for idx in ids:
+                if idx >= len(self.vocabulary):
+                    continue
                 token = self.vocabulary[idx]
                 if token.startswith('▁') and current_ids:
                     word = ''.join(self.vocabulary[i] for i in current_ids).replace('▁', ' ').strip()
