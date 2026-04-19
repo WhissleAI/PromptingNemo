@@ -258,6 +258,7 @@ if nemo_agg is not None:
                 self.global_to_lang_local[lang] = {global_id: local_id for local_id, global_id in lang_map.items()}
 
             self.vocab_size = len(self.vocabulary)
+            self._extended_special_tokens: Dict[str, int] = {}
             logging.info(f"Aggregate vocab size (dedup): {self.vocab_size}")
 
             self.tokenizer = DummyTokenizer(self.vocabulary)
@@ -276,15 +277,51 @@ if nemo_agg is not None:
                     self.tokenizers_by_token_id[global_id] = None
                     self.offset_token_ids_by_token_id[global_id] = None
 
+        def extend_vocabulary(self, new_tokens: List[str]):
+            added = []
+            for token in new_tokens:
+                if token in self._token_to_global:
+                    continue
+                global_id = len(self.vocabulary)
+                self.vocabulary.append(token)
+                self._token_to_global[token] = global_id
+                self._extended_special_tokens[token] = global_id
+                self.lang_candidates_by_global[global_id] = set()
+                self.langs_by_token_id[global_id] = None
+                self.tokenizers_by_token_id[global_id] = None
+                self.offset_token_ids_by_token_id[global_id] = None
+                added.append(token)
+            self.vocab_size = len(self.vocabulary)
+            self.tokenizer = DummyTokenizer(self.vocabulary)
+            if added:
+                logging.info(f"Extended tokenizer with {len(added)} new special tokens. Vocab: {self.vocab_size}")
+
         def text_to_tokens(self, text, lang_id):
             tokenizer = self.tokenizers_dict[lang_id]
             return tokenizer.text_to_tokens(text)
 
         def text_to_ids(self, text, lang_id):
             tokenizer = self.tokenizers_dict[lang_id]
-            token_ids = tokenizer.text_to_ids(text)
             lang_map = self.lang_local_to_global[lang_id]
-            return [lang_map[t] for t in token_ids]
+            if not self._extended_special_tokens:
+                token_ids = tokenizer.text_to_ids(text)
+                return [lang_map[t] for t in token_ids]
+            words = text.split()
+            global_ids = []
+            buffer = []
+            for word in words:
+                if word in self._extended_special_tokens:
+                    if buffer:
+                        local_ids = tokenizer.text_to_ids(' '.join(buffer))
+                        global_ids.extend(lang_map[t] for t in local_ids)
+                        buffer = []
+                    global_ids.append(self._extended_special_tokens[word])
+                else:
+                    buffer.append(word)
+            if buffer:
+                local_ids = tokenizer.text_to_ids(' '.join(buffer))
+                global_ids.extend(lang_map[t] for t in local_ids)
+            return global_ids
 
         def tokens_to_text(self, tokens, lang_id=None):
             if lang_id is not None:
@@ -1614,6 +1651,65 @@ def validate_manifests(cfg) -> Dict[str, Dict[str, int]]:
     return results
 
 
+def scan_manifest_for_new_tokens(manifest_path: str, current_vocab: set) -> List[str]:
+    """Scan training manifest for special tokens not in the current vocabulary."""
+    tag_pattern = re.compile(r'^[A-Z][A-Z0-9_]*_[A-Z0-9_]*$|^END$')
+    found = set()
+    with open(manifest_path, encoding='utf-8') as f:
+        for line in f:
+            entry = json.loads(line)
+            for word in entry.get('text', '').split():
+                if tag_pattern.match(word) and word not in current_vocab:
+                    found.add(word)
+    return sorted(found)
+
+
+def extend_decoder_for_new_tokens(model, new_tokens: List[str]):
+    """Extend decoder output layer to accommodate new vocabulary tokens.
+
+    CTC blank is at the last index — new rows are inserted before it so the
+    blank stays at position len(new_vocab).
+    """
+    n_new = len(new_tokens)
+    if n_new == 0:
+        return
+
+    decoder_layer = model.decoder.decoder_layers[0]
+    old_weight = decoder_layer.weight.data  # [old_num_classes, hidden, 1]
+    old_bias = decoder_layer.bias.data      # [old_num_classes]
+    hidden_dim = old_weight.shape[1]
+    old_num_classes = old_weight.shape[0]
+
+    blank_weight = old_weight[-1:, :, :]
+    blank_bias = old_bias[-1:]
+    vocab_weight = old_weight[:-1, :, :]
+    vocab_bias = old_bias[:-1]
+
+    new_weight = torch.randn(n_new, hidden_dim, 1, device=old_weight.device, dtype=old_weight.dtype) * 0.02
+    new_bias = torch.zeros(n_new, device=old_bias.device, dtype=old_bias.dtype)
+
+    extended_weight = torch.cat([vocab_weight, new_weight, blank_weight], dim=0)
+    extended_bias = torch.cat([vocab_bias, new_bias, blank_bias], dim=0)
+
+    decoder_layer.weight = nn.Parameter(extended_weight)
+    decoder_layer.bias = nn.Parameter(extended_bias)
+
+    new_vocab = list(model.decoder.vocabulary) + list(new_tokens)
+    new_num_classes = len(new_vocab) + 1
+    with open_dict(model.cfg):
+        model.cfg.decoder.vocabulary = new_vocab
+        model.cfg.decoder.num_classes = len(new_vocab)
+
+    model.decoder._num_classes = new_num_classes
+    model.decoder._ConvASRDecoder__vocabulary = new_vocab
+
+    logging.info(
+        f"Extended decoder: {old_num_classes} -> {new_num_classes} outputs "
+        f"(+{n_new} tokens, blank repositioned to idx {new_num_classes - 1}). "
+        f"First few new: {new_tokens[:5]}"
+    )
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Train aggregate tokenizers and ASR model")
     parser.add_argument(
@@ -1752,6 +1848,15 @@ def train_model(cfg, ckpt_path=None):
 
     model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=True)
     model.setup_custom_loss()
+
+    current_vocab = set(model.decoder.vocabulary)
+    new_tokens = scan_manifest_for_new_tokens(train_manifest, current_vocab)
+    if new_tokens:
+        logging.info(f"Found {len(new_tokens)} special tokens in training data missing from model vocabulary")
+        extend_decoder_for_new_tokens(model, new_tokens)
+        if hasattr(model, 'tokenizer') and hasattr(model.tokenizer, 'extend_vocabulary'):
+            model.tokenizer.extend_vocabulary(new_tokens)
+        model.setup_custom_loss()
 
     adapter_cfg = cfg.get('adapter', {})
     if adapter_cfg and adapter_cfg.get('enabled', False):
