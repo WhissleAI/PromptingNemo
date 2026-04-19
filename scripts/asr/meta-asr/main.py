@@ -1630,6 +1630,11 @@ def parse_args():
         action="store_true",
         help="Do not persist tokenizer metadata back to the config file after training tokenizers.",
     )
+    parser.add_argument(
+        "--resume_from",
+        default=None,
+        help="Path to a .ckpt checkpoint to resume training from.",
+    )
     return parser.parse_args()
 
 
@@ -1639,7 +1644,7 @@ def save_updated_config(cfg, path):
         yaml.safe_dump(container, f, sort_keys=False)
 
 
-def train_model(cfg):
+def train_model(cfg, ckpt_path=None):
     lang_field = cfg.training.get('lang_field', 'lang')
     RobustAudioToBPEDataset.default_lang_field = lang_field
     tokenizer_langs = load_tokenizer_langs(cfg)
@@ -1915,7 +1920,7 @@ def train_model(cfg):
     except Exception as exc:
         logging.warning("Failed to inspect lightning module classes: %s", exc)
 
-    trainer.fit(model)
+    trainer.fit(model, ckpt_path=ckpt_path)
     logging.info("Model training complete.")
 
 
@@ -2020,7 +2025,7 @@ def main():
             return
 
     if run_training:
-        train_model(cfg)
+        train_model(cfg, ckpt_path=args.resume_from)
 
 
 if __name__ == "__main__":
