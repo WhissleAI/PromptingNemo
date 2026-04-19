@@ -283,8 +283,9 @@ if nemo_agg is not None:
                 if token in self._token_to_global:
                     continue
                 global_id = len(self.vocabulary)
-                self.vocabulary.append(token)
-                self._token_to_global[token] = global_id
+                vocab_token = '▁' + token
+                self.vocabulary.append(vocab_token)
+                self._token_to_global[vocab_token] = global_id
                 self._extended_special_tokens[token] = global_id
                 self.lang_candidates_by_global[global_id] = set()
                 self.langs_by_token_id[global_id] = None
@@ -1698,7 +1699,7 @@ def extend_decoder_for_new_tokens(model, new_tokens: List[str]):
     decoder_layer.weight = nn.Parameter(extended_weight)
     decoder_layer.bias = nn.Parameter(extended_bias)
 
-    new_vocab = list(model.decoder.vocabulary) + list(new_tokens)
+    new_vocab = list(model.decoder.vocabulary) + ['▁' + t for t in new_tokens]
     new_num_classes = len(new_vocab) + 1
     with open_dict(model.cfg):
         model.cfg.decoder.vocabulary = new_vocab
