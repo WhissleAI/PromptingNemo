@@ -1747,6 +1747,27 @@ def train_model(cfg, ckpt_path=None):
     model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=True)
     model.setup_custom_loss()
 
+    adapter_cfg = cfg.get('adapter', {})
+    if adapter_cfg and adapter_cfg.get('enabled', False):
+        adapter_name = adapter_cfg.get('name', 'lang_adapter')
+        adapter_dim = adapter_cfg.get('dim', 128)
+        adapter_act = adapter_cfg.get('activation', 'swish')
+        adapter_norm = adapter_cfg.get('norm_position', 'pre')
+        adapter_config = LinearAdapterConfig(
+            in_features=model.encoder._feat_out,
+            dim=adapter_dim,
+            activation=adapter_act,
+            norm_position=adapter_norm,
+        )
+        model.add_adapter(name=adapter_name, cfg=adapter_config)
+        model.set_enabled_adapters(enabled=True)
+        if adapter_cfg.get('unfreeze_decoder', False):
+            model.encoder.freeze()
+            model.decoder.unfreeze()
+        else:
+            model.freeze()
+        logging.info("Added adapter '%s' (dim=%d) to encoder layers", adapter_name, adapter_dim)
+
     tokenizer_cfg = OmegaConf.create(tokenizer_entry)
     #logging.info("Applying deduplicated aggregate tokenizer via change_vocabulary().")
     #model.change_vocabulary(tokenizer_cfg, 'agg')
