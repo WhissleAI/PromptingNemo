@@ -1703,6 +1703,10 @@ def train_model(cfg, ckpt_path=None):
 
     base_cfg = ASRModel.restore_from(restore_path=str(model_path), return_config=True)
     with open_dict(base_cfg):
+        adapter_cfg_section = cfg.get('adapter', {})
+        if adapter_cfg_section and adapter_cfg_section.get('enabled', False):
+            base_cfg.encoder._target_ = 'nemo.collections.asr.modules.conformer_encoder.ConformerEncoderAdapter'
+
         base_cfg.use_keyword_loss = cfg.training.get('use_keyword_loss', False)
         base_cfg.keyword_loss_weight = cfg.training.get('keyword_loss_weight', 0.3)
         base_cfg.keyword_loss_warmup_steps = cfg.training.get('keyword_loss_warmup_steps', 0)
