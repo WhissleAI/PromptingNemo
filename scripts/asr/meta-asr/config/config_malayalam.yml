@@ -1,5 +1,5 @@
 model:
-  model_root: "/home/compute/workspace/pretrained/malayalam/"
+  model_root: "/mnt/training/models/"
   model_name: "Conformer-CTC-BPE-Large.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
@@ -7,7 +7,7 @@ model:
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/home/compute/workspace/datasets/AI4Bharat/malayalam"
+  data_dir: "/mnt/training/data/malayalam"
   train_manifest: "train.json"
   test_manifest: "valid.json"
   batch_size: 8
@@ -32,7 +32,7 @@ adapters:
     norm_position: "pre"
 
 experiment:
-  exp_dir: "/home/compute/workspace/"
+  exp_dir: "/mnt/training/experiments/"
   exp_name: "kannada_adapter-ai4bharat"
   monitor: "val_wer"
   mode: "min"

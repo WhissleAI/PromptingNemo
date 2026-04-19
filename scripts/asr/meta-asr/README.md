@@ -2,13 +2,48 @@
 
 This document describes the end-to-end workflow for preparing multilingual
 speech data, training language-family-aware tokenizers, and fine-tuning NeMo ASR
-models with the meta-ASR scripts in this directory. The tooling is designed for
-NVIDIA's NeMo containers, but the instructions apply to any environment with
-compatible GPU drivers and the required Python dependencies.
+models with the meta-ASR scripts in this directory.
+
+## Directory Structure
+
+```
+scripts/asr/meta-asr/
+├── main.py                  # Unified CLI: validate, tokenizer, train, or both
+├── validate_data.py         # Standalone manifest validator
+├── config/                  # YAML configs for different languages/experiments
+├── eval/                    # Evaluation and inference scripts
+├── gcp/                     # GCP spot instance training automation (see gcp/README.md)
+├── utils/                   # Data download and preprocessing utilities
+└── notebooks/               # Jupyter notebooks for exploration
+```
+
+## GCP Spot Instance Training (Recommended)
+
+For running experiments on GCP with persistent storage, Docker isolation, and
+spot preemption recovery, see **[gcp/README.md](gcp/README.md)**.
+
+```bash
+# One-time setup
+export GCP_USER=yourname
+./gcp/create-training-disk.sh
+./gcp/launch-experiment.sh --name my-exp --gpu t4
+./gcp/setup-instance.sh
+
+# Download model + data, then train
+./gcp/download-model.sh --model WhissleAI/STT-meta-1B
+./gcp/download-data.sh --dataset WhissleAI/Meta_STT_ZH_AIShell3 --lang MANDARIN
+./gcp/run-finetune.sh --model WhissleAI/STT-meta-1B \
+  --dataset WhissleAI/Meta_STT_ZH_AIShell3 --lang MANDARIN \
+  --mode adapter --name zh-adapter-v1
+```
 
 ---
 
-## Quick Start
+## Local / Manual Pipeline
+
+For running the pipeline manually (without the GCP automation scripts):
+
+### Quick Start
 
 ```bash
 # 1. Validate manifests
@@ -28,9 +63,7 @@ python main.py --mode both \
   --config config/config_peoplespeech.yml
 ```
 
----
-
-## Environment and Prerequisites
+### Prerequisites
 
 - NVIDIA GPU with up-to-date drivers.
 - Docker (recommended) or a Python environment with NeMo, PyTorch Lightning,
@@ -38,24 +71,20 @@ python main.py --mode both \
 - Training manifests in NeMo JSONL format containing `audio_filepath`, `text`,
   and uppercase language identifiers (`lang` or the `lang_field` specified in
   the config).
-- Base `.nemo` checkpoint referenced in `config/config_peoplespeech.yml`.
+- Base `.nemo` checkpoint referenced in the config file.
 
-### Recommended Container Launch
+### Docker Container
+
+The `docker/Dockerfile.nemo-w` provides a ready-to-use image with PyTorch 2.6,
+NeMo 2.7, and all dependencies:
 
 ```bash
+cd PromptingNemo
+docker build -t nemo-training:latest -f docker/Dockerfile.nemo-w docker/
 docker run --gpus all -it --rm \
-  -v /path/to/PromptingNemo:/workspace/PromptingNemo \
-  -v /path/to/datasets:/external/home/ksingla/data \
-  -v /path/to/pretrained:/workspace/pretrained \
-  nvcr.io/nvidia/nemo:24.05.01 \
-  bash
-```
-
-Inside the container:
-
-```bash
-cd /workspace/PromptingNemo/scripts/asr/meta_asr
-pip install -r ../../../../requirements.txt  # adjust path if needed
+  -v $(pwd):/workspace/PromptingNemo \
+  -v /path/to/data:/mnt/training \
+  nemo-training:latest bash
 ```
 
 ---

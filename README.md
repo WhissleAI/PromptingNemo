@@ -20,13 +20,19 @@ Also checkout our applications on sample usage of Speech-2-Action models
 
 ### Using Docker
 
-Use pre-built docker
-``` 
-docker pull WhissleAI:nemo:latest
+Build the training image (PyTorch 2.6, NeMo 2.7, all ASR dependencies):
+
+```bash
+docker build -t nemo-training:latest -f docker/Dockerfile.nemo-w docker/
 ```
-Build docker from WhissleAI's Nemo branch
-```
-add docker commands
+
+Run interactively:
+
+```bash
+docker run --gpus all -it --rm \
+  -v $(pwd):/workspace/PromptingNemo \
+  -e PYTHONPATH=/workspace/PromptingNemo \
+  nemo-training:latest bash
 ```
 
 ## 📹 Pretrained Models
@@ -68,14 +74,40 @@ python
 
 ## Fine-tuning
 
-Assuming you are in the docker. 
+### GCP Spot Instance Training (Recommended)
 
-Adjust things in ```config.yml``` to point to correct pretrained checkpoint and data manifest
+Run fine-tuning experiments on GCP with persistent storage, Docker isolation,
+and automatic spot preemption recovery. See [`scripts/asr/meta-asr/gcp/README.md`](scripts/asr/meta-asr/gcp/README.md) for full details.
 
+```bash
+export GCP_USER=yourname
+cd scripts/asr/meta-asr/gcp
+
+# One-time: create disk + instance
+./create-training-disk.sh
+./launch-experiment.sh --name my-exp --gpu t4
+./setup-instance.sh
+
+# Download, train, benchmark, upload
+./download-model.sh --model WhissleAI/STT-meta-1B
+./download-data.sh --dataset WhissleAI/Meta_STT_ZH_AIShell3 --lang MANDARIN
+./run-finetune.sh --model WhissleAI/STT-meta-1B \
+  --dataset WhissleAI/Meta_STT_ZH_AIShell3 --lang MANDARIN \
+  --mode adapter --name zh-adapter-v1
+./benchmark.sh --name zh-adapter-v1
+./upload-model.sh --name zh-adapter-v1 --hf-repo WhissleAI/STT-meta-1B-zh --hf-token hf_xxx
 ```
-cd /PromptingNemo/scripts/nemo/asr/
-python nemo_adapter.py
+
+### Local / Docker Fine-tuning
+
+Adjust the YAML config in `scripts/asr/meta-asr/config/` to point to your checkpoint and data manifest, then:
+
+```bash
+cd scripts/asr/meta-asr
+python main.py --mode both --config config/config_peoplespeech.yml
 ```
+
+See [`scripts/asr/meta-asr/README.md`](scripts/asr/meta-asr/README.md) for the full pipeline guide.
 
 ## Data annotation and preparation
 

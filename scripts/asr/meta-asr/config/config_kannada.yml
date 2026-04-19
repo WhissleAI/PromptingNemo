@@ -1,5 +1,5 @@
 model:
-  model_root: "/home/compute/workspace/kannada_adapter-ai4bharat/2024-12-11_00-04-54/checkpoints/"
+  model_root: "/mnt/training/models/"
   model_name: "kannada_adapter-ai4bharat.nemo"
   tokenizer_folder: "tokenizer"
   new_tokenizer_folder: "new_tokenizer"
@@ -7,7 +7,7 @@ model:
   proto_dir: "proto/dir"
 
 training:
-  data_dir: "/home/compute/workspace/datasets/AI4Bharat/kannada"
+  data_dir: "/mnt/training/data/kannada"
   train_manifest: "train.json"
   test_manifest: "valid.json"
   batch_size: 8
@@ -32,7 +32,7 @@ adapters:
     norm_position: "pre"
 
 experiment:
-  exp_dir: "/home/compute/workspace/"
+  exp_dir: "/mnt/training/experiments/"
   exp_name: "kannada_adapter-ai4bharat"
   monitor: "val_wer"
   mode: "min"
