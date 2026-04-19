@@ -286,9 +286,11 @@ if nemo_agg is not None:
             lang_map = self.lang_local_to_global[lang_id]
             return [lang_map[t] for t in token_ids]
 
-        def tokens_to_text(self, tokens, lang_id):
-            tokenizer = self.tokenizers_dict[lang_id]
-            return tokenizer.decode_pieces(tokens)
+        def tokens_to_text(self, tokens, lang_id=None):
+            if lang_id is not None:
+                tokenizer = self.tokenizers_dict[lang_id]
+                return tokenizer.decode_pieces(tokens)
+            return ''.join(tokens).replace('▁', ' ').strip()
 
         def ids_to_text(self, ids):
             if isinstance(ids, (np.ndarray, torch.Tensor)):
