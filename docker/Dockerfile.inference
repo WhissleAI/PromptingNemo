@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libsndfile1 ffmpeg && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY . /workspace/PromptingNemo
+WORKDIR /workspace/PromptingNemo
+
+RUN pip install --no-cache-dir -e ".[export]"
+
+WORKDIR /workspace/PromptingNemo

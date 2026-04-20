@@ -1,0 +1,42 @@
+model:
+  model_root: "/external1/pretrained_models/stt_hi_conformer_ctc_large/"
+  model_name: "stt_hi_conformer_ctc_large.nemo"
+  tokenizer_folder: "tokenizer"
+  new_tokenizer_folder: "hindi_meta_tokenizer"
+  proto_file: "proto/file"
+  proto_dir: "proto/dir"
+
+training:
+  data_dir: "/external4/datasets/AI4Bharat/hindi"
+  train_manifest: "nemo_train.jsonl"
+  test_manifest: "nemo_valid.jsonl"
+  batch_size: 16  # Small batch size for testing
+  max_steps: 100000  # Small max_steps for initial testing
+  use_mixed_precision: true  # Add this flag for mixed precision
+
+adapters:
+  LinearAdapter:
+    name: "LinearAdapter"
+    dim: 32
+    activation: "relu"
+    norm_position: "pre"
+  BottleneckAdapter:
+    name: "BottleneckAdapter"
+    dim: 64
+    activation: "gelu"
+    norm_position: "post"
+  AttentionAdapter:
+    name: "AttentionAdapter"
+    dim: 48
+    activation: "swish"
+    norm_position: "pre"
+
+experiment:
+  exp_dir: "/external1/experiments/"
+  exp_name: "hi-ai4bharat-adaptater-encoder-freeze"
+  monitor: "val_wer"
+  mode: "min"
+  always_save_nemo: true
+  save_best_model: true
+  resume_if_exists: true  # New parameter to control checkpoint resumption
+  resume_from_checkpoint: "last"  # Options: "last", "best", or specific path

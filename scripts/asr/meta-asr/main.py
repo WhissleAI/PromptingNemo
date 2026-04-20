@@ -56,7 +56,6 @@ from torch.utils.data import Dataset, DataLoader, Sampler
 import numpy as np
 import torch.distributed as dist
 from nemo.core.classes.mixins import AccessMixin
-from lightning.pytorch.loggers import TensorBoardLogger
 # No longer need the manifest processor import
 # from nemo.collections.asr.data.audio_to_text import ASRManifestProcessor as ManifestProcessor
 from collections import Counter, defaultdict
@@ -1814,6 +1813,44 @@ def slim_decoder_for_training(model, training_families):
         )
 
 
+def scale_down_tag_decoder_weights(model, scale_factor=0.01):
+    """Scale down decoder weights for sentence-level meta-tag tokens.
+
+    Tags like AGE_*, GENDER_*, EMOTION_*, INTENT_*, DIALECT_* should only
+    fire at end-of-utterance positions. Their pretrained weights cause them
+    to dominate at every frame after slim decoder removes competing tokens.
+    Re-initializing to small random values forces them to learn proper
+    positional firing from the CTC loss signal.
+    """
+    SENTENCE_TAG_PREFIXES = (
+        'AGE_', 'GENDER_', 'GER_', 'GGENDER_', 'GENSION_',
+        'EMOTION_', 'INTENT_', 'DIALECT_',
+    )
+
+    vocab = list(model.decoder.vocabulary)
+    decoder_layer = model.decoder.decoder_layers[0]
+    hidden_dim = decoder_layer.weight.shape[1]
+
+    scaled_count = 0
+    scaled_tokens = []
+    for idx, token in enumerate(vocab):
+        clean = token.lstrip('▁')
+        if any(clean.startswith(prefix) for prefix in SENTENCE_TAG_PREFIXES):
+            decoder_layer.weight.data[idx] = torch.randn_like(
+                decoder_layer.weight.data[idx]
+            ) * scale_factor
+            decoder_layer.bias.data[idx] = 0.0
+            scaled_count += 1
+            if len(scaled_tokens) < 20:
+                scaled_tokens.append(clean)
+
+    nemo_logging.info(
+        f"Re-initialized decoder weights for {scaled_count} sentence-level tag tokens "
+        f"(scale={scale_factor}) to prevent mid-utterance spam. "
+        f"Sample: {scaled_tokens}"
+    )
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Train aggregate tokenizers and ASR model")
     parser.add_argument(
@@ -1982,6 +2019,8 @@ def train_model(cfg, ckpt_path=None):
             model.tokenizer.extend_vocabulary(new_tokens)
         model.setup_custom_loss()
 
+    scale_down_tag_decoder_weights(model, scale_factor=0.01)
+
     adapter_cfg = cfg.get('adapter', {})
     if adapter_cfg and adapter_cfg.get('enabled', False):
         adapter_name = adapter_cfg.get('name', 'lang_adapter')
@@ -2116,11 +2155,6 @@ def train_model(cfg, ckpt_path=None):
     else:
         devices = configured_devices if configured_devices is not None else -1
 
-    tensorboard_logger = TensorBoardLogger(
-        save_dir=str(Path(cfg.experiment.exp_dir).expanduser()),
-        name=cfg.experiment.exp_name,
-    )
-
     trainer_kwargs = dict(
         accelerator=accelerator,
         devices=devices,
@@ -2128,7 +2162,7 @@ def train_model(cfg, ckpt_path=None):
         gradient_clip_val=1.0,
         gradient_clip_algorithm="norm",
         enable_checkpointing=False,
-        logger=tensorboard_logger,
+        logger=False,
         log_every_n_steps=50,
         use_distributed_sampler=False,
     )
@@ -2155,6 +2189,7 @@ def train_model(cfg, ckpt_path=None):
         always_save_nemo=cfg.experiment.always_save_nemo,
         save_top_k=cfg.experiment.get('save_top_k', 1),
         every_n_train_steps=every_n_train_steps,
+        every_n_epochs=0 if every_n_train_steps else 1,
     )
     exp_cfg = exp_manager.ExpManagerConfig(
         exp_dir=cfg.experiment.get('exp_dir', None),
@@ -2162,8 +2197,9 @@ def train_model(cfg, ckpt_path=None):
         checkpoint_callback_params=callback_params,
         resume_if_exists=cfg.experiment.get('resume_if_exists', False),
         resume_past_end=cfg.experiment.get('resume_past_end', False),
+        resume_ignore_no_checkpoint=True,
         create_checkpoint_callback=True,
-        create_tensorboard_logger=False,
+        create_tensorboard_logger=True,
         create_wandb_logger=False,
         create_mlflow_logger=False,
         create_dllogger_logger=False,

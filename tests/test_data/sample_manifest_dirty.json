@@ -1,0 +1,5 @@
+{"audio_filepath": "/data/audio/dirty_001.wav", "text": "EMOTION_HAP GER_MALE AGE_60PLUS hello world END", "duration": 3.5, "lang": "EN"}
+{"audio_filepath": "/data/audio/dirty_002.wav", "text": "EMOTION_HAPPYPY GER_FEMALE AGE_30_45 good morning everyone", "duration": 4.2, "lang": "EN"}
+{"audio_filepath": "/data/audio/dirty_003.wav", "text": "EMOTION_NEU GENDER_MALE AGE_NUMBER this is a test sentence", "duration": 5.1, "lang": "EN"}
+{"audio_filepath": "/data/audio/dirty_004.wav", "text": "EMOTION_ANG GER_FEMALE AGE_STATE\", some trailing junk here", "duration": 2.8, "lang": "ES"}
+{"audio_filepath": "/data/audio/dirty_005.wav", "text": "EMOTION_HAP  GER_MALE   AGE_60PLUS   lots of   spaces  here", "duration": 6.0, "lang": "FR"}

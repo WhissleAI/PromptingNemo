@@ -1,249 +1,145 @@
 # PromptingNemo
-PromptingNemo is a toolkit for fine-tuning end-to-end (E2E) automatic speech recognition (ASR) systems, integrating both audio-visual and speech-only models. 
 
-## Speech-2-Action
+**Speech-2-Action: Train ASR models that transcribe and tag in a single pass**
 
-Focus on this repository for Speech-2-Action models, built by innovaiton and research over pretrained audio and visual encoders.
+## What is PromptingNemo?
 
-These models process streamed audio or video input and output streamed tokens. Tokens are either:
-1. What you speak (standard transcription)
-2. Infered TAGS
+PromptingNemo is a training toolkit for building Speech-2-Action models -- automatic speech recognition systems that output both transcription **and** structured meta-tags in a single CTC decoding pass. Instead of piping ASR output through separate NER, emotion classification, and speaker attribute models, PromptingNemo trains a single end-to-end model that emits inline entity tags (`ENTITY_PERSON_NAME John Smith END`), sentence-level attribute tags (`AGE_30_45 GENDER_FEMALE EMOTION_HAPPY`), intent labels, and dialect markers alongside the transcription itself.
 
-For the sample modles we provide, TAGS infered from the context belong to multi-modal language and tonal understanding, visualQA and voice biometrics. 
+The key insight is that CTC models can learn to produce structured tokens interleaved with speech tokens when the training data embeds those tags directly in the transcript text. PromptingNemo provides the full pipeline to make this work at scale: data annotation and normalization, aggregate multi-language tokenizer training, slim decoder pruning for efficient fine-tuning, tag weight initialization to prevent mid-utterance tag spam, and balanced multi-language batch sampling.
 
-We provides tools for exporting Nemo models to ONNX and Hugging Face formats.
+PromptingNemo builds on top of [NeMo-W](https://github.com/WhissleAI/NeMo-W) (WhissleAI's fork of NVIDIA NeMo) and supports models from the FastConformer / Parakeet family. It also provides a bridge recipe for [ESPnet-W](https://github.com/WhissleAI/espnet-w) as an alternative training backend. Pretrained models covering 20+ languages are available on [HuggingFace](https://huggingface.co/WhissleAI).
 
-Also checkout our applications on sample usage of Speech-2-Action models
-
-
-## Setting up
-
-### Using Docker
-
-Build the training image (PyTorch 2.6, NeMo 2.7, all ASR dependencies):
+## Install
 
 ```bash
-docker build -t nemo-training:latest -f docker/Dockerfile.nemo-w docker/
+pip install -e .                    # Core (data prep, normalization, evaluation)
+pip install -e ".[train]"           # + NeMo for GPU training
+pip install -e ".[all]"             # Everything (train + export + dev tools)
 ```
 
-Run interactively:
+**Using Docker** (recommended for training):
 
 ```bash
+# Build the training image (from repo root)
+docker build -t promptingnemo:training -f docker/Dockerfile.training .
+
+# Interactive training shell with GPU
 docker run --gpus all -it --rm \
-  -v $(pwd):/workspace/PromptingNemo \
-  -e PYTHONPATH=/workspace/PromptingNemo \
-  nemo-training:latest bash
+  -v $(pwd)/data:/data \
+  -v $(pwd)/experiments:/experiments \
+  promptingnemo:training bash
+
+# Or use docker compose for training + tensorboard
+DATA_DIR=/path/to/data EXPERIMENTS_DIR=/path/to/experiments \
+  docker compose run --rm training bash
 ```
 
-## 📹 Pretrained Models
+## Quick Start
 
-Currently, we provide models capable of tagging different tokens while transcribing.
+```bash
+# 1. Prepare a tagged manifest (NeMo JSONL format)
+python -c "
+from promptingnemo.data.normalize import normalize_text
+print(normalize_text('hello GER_FEMALE EMOTION_HAP AGE_60PLUS'))
+# -> hello GENDER_FEMALE EMOTION_HAPPY AGE_60+
+"
 
-| Language            | Token-type             | #hrs        | #parameters     | HF-link                                                     |
-|---------------------|------------------------|-------------|----------------|-------------------------------------------------------------|
-| Bengali             | Transcription, key entities, age, gender, intent, dialect           | 100 hrs    | 110M            | [Speech-Tagger-BN-KEY](https://huggingface.co/WhissleAI/stt_bn_conformer_ctc_meta) |
-| Marathi             | Transcription, key entities, age, gender, intent, dialect           | 100 hrs    | 110M            | [Speech-Tagger-MR-KEY](https://huggingface.co/WhissleAI/stt_mr_conformer_ctc_meta) |
-| Punjabi             | Transcription, key entities, age, gender, intent, dialect           | 100 hrs    | 110M            | [Speech-Tagger-PA-KEY](https://huggingface.co/WhissleAI/stt_pa_conformer_ctc_meta) |
-| Hindi             | Transcription, key entities, age, gender, intent, dialect           | 100 hrs    | 110M            | [Speech-Tagger-HI-KEY](https://huggingface.co/WhissleAI/stt_hi_conformer_ctc_meta) |
-| English             | Transcription, NER, Emotion           | 2500 hrs    | 110M            | [Speech-Tagger-EN-NER](https://huggingface.co/WhissleAI/speech-tagger_en_ner_emotion) |
-| English             | IOT entities and emotion   | 150 hrs    | 115M             | [Speech-Tagger-EN-IOT](https://huggingface.co/WhissleAI/speech-tagger_en_slurp_iot)     |
-| EURO (5 languages)  | Transcription, Entities, Emotion      | CommonVoice | 115M             | [Speech-Tagger-EURO-NER](https://huggingface.co/bert-base-uncased)     |
-| English  | Transcription, Role, Entities, Emotion, Intent      | [Speech-medical-exams](https://huggingface.co/datasets/WhissleAI/speech-simulated-medical-exams) | 115M             | [Speech-Tagger-2person-medical-exams](https://huggingface.co/WhissleAI/speech-tagger_en_2person_medical_exams)     |
+# 2. Train a model
+cd recipes/meta_asr
+python train.py --config conf/hindi.yaml --mode both
+```
 
+The `--mode` flag controls which stages to run:
+- `both` -- train tokenizer, then train model (default)
+- `tokenizer` -- train the aggregate tokenizer only
+- `train` -- train the model only (requires tokenizer to exist)
+- `validate_data` -- validate manifests without training
 
+For GCP spot instance training with automatic preemption recovery, see [`recipes/meta_asr/gcp/`](recipes/meta_asr/gcp/).
 
-## Usage
+## Pretrained Models
 
-### Works for <3 min samples.
-This directly fetches the model from hugging-face
+| Model | Languages | Parameters | Link |
+|-------|-----------|------------|------|
+| STT-meta-1B | Multilingual (20+ langs) | 600M | [WhissleAI/STT-meta-1B](https://huggingface.co/WhissleAI/STT-meta-1B) |
+| stt_en_conformer_ctc_large_slurp | English (IoT) | 115M | [WhissleAI/stt_en_conformer_ctc_large_slurp](https://huggingface.co/WhissleAI/stt_en_conformer_ctc_large_slurp) |
+| stt_hi_conformer_ctc_large_with_meta | Hindi | 110M | [WhissleAI/stt_hi_conformer_ctc_large_with_meta](https://huggingface.co/WhissleAI/stt_hi_conformer_ctc_large_with_meta) |
 
+Single-language models are also available for Bengali, Marathi, Punjabi, and others. See the full list on [HuggingFace](https://huggingface.co/WhissleAI).
+
+**Inference:**
 
 ```python
 import nemo.collections.asr as nemo_asr
-asr_model = nemo_asr.models.ASRModel.from_pretrained("WhissleAI/speech-tagger_en_ner_emotion")
 
-transcriptions = asr_model.transcribe(["file.wav"])
+model = nemo_asr.models.ASRModel.from_pretrained("WhissleAI/stt_en_conformer_ctc_large_slurp")
+transcriptions = model.transcribe(["file.wav"])
+# -> "turn on the lights ENTITY_DEVICE lights END INTENT_COMMAND AGE_30_45 GENDER_MALE EMOTION_NEUTRAL"
 ```
 
-### Long recording inference
+## Recipes
+
+| Recipe | Description |
+|--------|-------------|
+| [`recipes/meta_asr/`](recipes/meta_asr/) | Full meta-ASR training pipeline (tokenizer + model). Language configs in `conf/`. |
+| [`recipes/data_prep/`](recipes/data_prep/) | Data preparation and manifest normalization utilities. |
+| [`recipes/espnet_asr/`](recipes/espnet_asr/) | ESPnet-W integration for training meta-ASR with ESPnet's `egs2/` system. |
+
+Additional training scripts and configs are in [`scripts/asr/meta-asr/`](scripts/asr/meta-asr/), including GCP spot instance tooling, evaluation scripts, and per-language YAML configs.
+
+## Tag Schema
+
+PromptingNemo models emit uppercase tag tokens in the transcription stream. There are two categories:
+
+| Category | Format | Example Tags |
+|----------|--------|-------------|
+| **Inline** (entity spans) | `ENTITY_<TYPE> ... END` | `ENTITY_PERSON_NAME`, `ENTITY_ORGANIZATION`, `ENTITY_DATE` |
+| **Sentence-level** (appended) | `<transcript> TAG_VALUE` | `AGE_30_45`, `GENDER_FEMALE`, `EMOTION_HAPPY`, `INTENT_INFORM`, `DIALECT_BIHAR` |
+
+Use `promptingnemo.data.normalize.normalize_text()` to canonicalize legacy tag formats (e.g., `GER_MALE` to `GENDER_MALE`, `EMOTION_HAP` to `EMOTION_HAPPY`).
+
+See [docs/tag_schema.md](docs/tag_schema.md) for the complete tag reference.
+
+## WhissleAI Ecosystem
+
+PromptingNemo is part of a broader set of tools for building Speech-2-Action systems:
+
+| Repository | Description |
+|-----------|-------------|
+| [whissle-annotator](https://github.com/WhissleAI/whissle-annotator) | YAML-driven 10-stage annotation pipeline (ingest, diarize, transcribe, classify, NER, merge) |
+| [NeMo-W](https://github.com/WhissleAI/NeMo-W) | Training backend -- WhissleAI's fork of NVIDIA NeMo with CTC meta-tag support |
+| [espnet-w](https://github.com/WhissleAI/espnet-w) | Alternative training backend -- WhissleAI's fork of ESPnet |
+| [HuggingFace](https://huggingface.co/WhissleAI) | Pretrained models and 34+ tagged speech datasets |
+| [live_assist_js_sdk](https://github.com/WhissleAI/live_assist_js_sdk) | JavaScript SDK with React components for real-time speech processing |
+| [whissle_python_api](https://github.com/WhissleAI/whissle_python_api) | Python SDK for the Whissle speech API |
+
+See [docs/ecosystem.md](docs/ecosystem.md) for details on how these components connect.
+
+## Architecture
 
 ```
-cd scripts/nemo
-python
+promptingnemo/
+  tokenizer/    Aggregate multi-language tokenizer training
+  models/       Custom CTC model with slim decoder and tag weight init
+  data/         Robust dataset loading, balanced sampling, tag normalization
+  training/     Training orchestration and CLI
+  eval/         WER + NER F1 evaluation
+  export/       ONNX and HuggingFace export
 ```
 
-## Fine-tuning
+The training pipeline flows through five stages: data preparation, tokenizer training, model training (with slim decoder and adapter support), evaluation, and export. See [docs/architecture.md](docs/architecture.md) for the full design and key decisions. For a complete walkthrough, see the [Training Guide](docs/training_guide.md).
 
-### GCP Spot Instance Training (Recommended)
+## Publications
 
-Run fine-tuning experiments on GCP with persistent storage, Docker isolation,
-and automatic spot preemption recovery. See [`scripts/asr/meta-asr/gcp/README.md`](scripts/asr/meta-asr/gcp/README.md) for full details.
+Karan, S., Shahab, J., Yeon-Jun, K., Andrej, L., Moreno, D. A., Srinivas, B., & Benjamin, S. (2023, December). *1-step Speech Understanding and Transcription Using CTC Loss.* In Proceedings of the 20th International Conference on Natural Language Processing (ICON) (pp. 370-377).
 
-```bash
-export GCP_USER=yourname
-cd scripts/asr/meta-asr/gcp
+Karan, S., Mahnoosh, M., Daniel, P., Ryan, P., Srinivas, C. B., Yeon-Jun, K., & Srinivas, B. (2023, December). *Combining Pre trained Speech and Text Encoders for Continuous Spoken Language Processing.* In Proceedings of the 20th International Conference on Natural Language Processing (ICON) (pp. 832-842).
 
-# One-time: create disk + instance
-./create-training-disk.sh
-./launch-experiment.sh --name my-exp --gpu t4
-./setup-instance.sh
+## Contributing
 
-# Download, train, benchmark, upload
-./download-model.sh --model WhissleAI/STT-meta-1B
-./download-data.sh --dataset WhissleAI/Meta_STT_ZH_AIShell3 --lang MANDARIN
-./run-finetune.sh --model WhissleAI/STT-meta-1B \
-  --dataset WhissleAI/Meta_STT_ZH_AIShell3 --lang MANDARIN \
-  --mode adapter --name zh-adapter-v1
-./benchmark.sh --name zh-adapter-v1
-./upload-model.sh --name zh-adapter-v1 --hf-repo WhissleAI/STT-meta-1B-zh --hf-token hf_xxx
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, code style, and PR guidelines.
 
-### Local / Docker Fine-tuning
+## License
 
-Adjust the YAML config in `scripts/asr/meta-asr/config/` to point to your checkpoint and data manifest, then:
-
-```bash
-cd scripts/asr/meta-asr
-python main.py --mode both --config config/config_peoplespeech.yml
-```
-
-See [`scripts/asr/meta-asr/README.md`](scripts/asr/meta-asr/README.md) for the full pipeline guide.
-
-## Data annotation and preparation
-
-### Annotating Using NLP tagger and classifiers
-
-```
-cd /PromptingNemo/scripts/data/audio/1person/
-```
-This folder has scripts to process some widely used ASR and SLU datasets
-
-```
-python process_cv.py ### common-voice transcription dataset
-python process_libre.py ## Multi-lingual Librespeech telphonic conversations
-python process_slurp.py ## IOT focused speech focused benchmark
-```
-
-
-### Annotate using LLMs
-
-![Custom Light Red Text](https://dummyimage.com/500x30/ffcccc/000000&text=Extend+an+existing+tagged+text+dataset)
-
-
-```
-cd PromptingNemo
-python scripts/data/audio/1person/synthetic/create_synthetic_tagged_text.py
-```
-Change ```extension_dataset``` to a file which has a sentence on every line which has capitalized tags along with transcription. 
-
-
-![Custom Red Text](https://dummyimage.com/500x30/ffcccc/000000&text=Create+synthetic+audio)
-
-Provide a dataset which has audio files, to choose to clone from.
-
-Tagged sentence data in the same language.
-
-```
-python scripts/data/audio/1person/synthetic/create_tts_manifest_xtts.py
-```
-
-In this one you have to change paths in ```self.clone_voices```  and your noise files data ```self.all_noise_files```  and also set required paths to ```config```
-
-
-### Transcribe and annotate
-
-
-### Annotate Role-based turn-taking conversations
-
-```
-cd /PromptingNemo/scripts/data/audio/2person/
-```
-This folder has scripts to process role-based turn-taking conversations.
-
-#### Audio and Role marked transcription available
-When the audio recording is available with role marked transcriptions, you can annotate them and fine-tune a model with it.
-
-```
-python 01_create_manifest_raw.py ## takes folder with transcript and audio files to create a manifest
-python 02_ctm2segments.py ## takes output of nemo forced aligner and organized them to segment level
-python 03_annotate_turns.py ## annotate text using LLMs
-python 04_split_and_emotion.py ## split audio file using timestamps, and get speaker emotion
-```
-
-or follow ```2person.ipynb``` notebook.
-
-#### Transcription not available
-
-
-### Synthetic audio and automated annotation
-
- Generate synthetic datasets to train ASR and natural language systems.
-
-#### Tagging Audio-visual data
-
-
-### 📤 Model Export
-- **Exporting Nemo Models**: Convert your Nemo models to ONNX and Hugging Face formats for deployment.
-
-```
-python scripts/utils/nemo2hf.py
-python scripts/utils/nemo2onxx.py
-```
-
-## 🛠️ Applications
-Explore various applications built with PromptingNemo.
-
-### 🗣️ VoiceBot: Speech-to-Speech AI Engine
-Run the VoiceBot application using Docker.
-
-#### Running VoiceBot
-1. Build and run the Docker container:
-    ```bash
-    docker ...
-    ```
-2. Inside the Docker container:
-    ```bash
-    cd PromptingNemo/applications/voicebot
-    python app.py
-    ```
-
-#### 📞 Call Routing for VoiceBot
-- **Description**: Implement call-routing functionality within the VoiceBot for efficient handling of calls.
-
-### 🛠️ Data Generator: Generate Synthetic Datasets
-- **Tool**: Use the data generator tool to create synthetic datasets for various ASR applications.
-
-## 🚀 Getting Started
-### Prerequisites
-- 🐳 Docker
-- 🐍 Python 3.x
-- 📦 Necessary Python libraries (listed in `requirements.txt`)
-
-### Installation
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/WhissleAI/PromptingNemo.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd PromptingNemo
-    ```
-3. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-## Related Publications
-
-Karan, S., Shahab, J., Yeon-Jun, K., Andrej, L., Moreno, D. A., Srinivas, B., & Benjamin, S. (2023, December). 1-step Speech Understanding and Transcription Using CTC Loss. In Proceedings of the 20th International Conference on Natural Language Processing (ICON) (pp. 370-377).
-
-Karan, S., Mahnoosh, M., Daniel, P., Ryan, P., Srinivas, C. B., Yeon-Jun, K., & Srinivas, B. (2023, December). Combining Pre trained Speech and Text Encoders for Continuous Spoken Language Processing. In Proceedings of the 20th International Conference on Natural Language Processing (ICON) (pp. 832-842).
-
-
-## 🤝 Contributing
-We welcome contributions to PromptingNemo! Please read our [contribution guidelines](CONTRIBUTING.md) to get started.
-
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](./LICENCE) file for details.
-
-## 🙏 Acknowledgements
-Special thanks to all contributors and the open-source community for their invaluable support.
+This project is licensed under the Apache License 2.0. See [LICENCE](./LICENCE) for details.

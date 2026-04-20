@@ -1,0 +1,5 @@
+{"audio_filepath": "/data/audio/sample_001.wav", "text": "EMOTION_HAPPY GENDER_MALE AGE_30_45 hello world END", "duration": 3.5, "lang": "EN"}
+{"audio_filepath": "/data/audio/sample_002.wav", "text": "EMOTION_NEUTRAL GENDER_FEMALE AGE_18_30 ENTITY_PERSON_NAME john doe END good morning", "duration": 4.2, "lang": "EN"}
+{"audio_filepath": "/data/audio/sample_003.wav", "text": "EMOTION_SAD GENDER_MALE AGE_45_60 ENTITY_LOCATION new york END travel plans", "duration": 5.1, "lang": "EN"}
+{"audio_filepath": "/data/audio/sample_004.wav", "text": "EMOTION_ANGRY GENDER_FEMALE AGE_18_30 this is a test sentence", "duration": 2.8, "lang": "ES"}
+{"audio_filepath": "/data/audio/sample_005.wav", "text": "EMOTION_SURPRISE GENDER_MALE AGE_30_45 ENTITY_ORG_NAME acme corp END revenue report", "duration": 6.0, "lang": "FR"}

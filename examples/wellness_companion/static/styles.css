@@ -1,0 +1,98 @@
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Center the chat container */
+}
+
+#chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.message.user-message {
+    justify-content: flex-end;
+}
+
+.message .icon {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.message.user-message .icon {
+    margin-right: 0;
+    margin-left: 10px;
+    color: #4CAF50;
+}
+
+.message-content {
+    max-width: 80%;
+    background-color: #e1f5fe;
+    border-radius: 10px;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+.user-message .message-content {
+    background-color: #d0f0c0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+#user-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 22px); /* Adjust width to fit within the container */
+    margin-bottom: 10px;
+}
+
+#send-btn {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    width: 100%;
+}
+
+#video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Center the video container */
+}
+
+.youtube-video {
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+    height: 169px;
+}

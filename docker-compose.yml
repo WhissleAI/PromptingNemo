@@ -1,0 +1,51 @@
+services:
+  training:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.training
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/workspace/PromptingNemo
+      - ${DATA_DIR:-./data}:/data
+      - ${EXPERIMENTS_DIR:-./experiments}:/experiments
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    shm_size: "8gb"
+    working_dir: /workspace/PromptingNemo
+
+  dev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/workspace/PromptingNemo
+      - ${DATA_DIR:-./data}:/data
+      - ${EXPERIMENTS_DIR:-./experiments}:/experiments
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    shm_size: "8gb"
+    working_dir: /workspace/PromptingNemo
+    command: bash
+
+  tensorboard:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.training
+    volumes:
+      - ${EXPERIMENTS_DIR:-./experiments}:/experiments:ro
+    ports:
+      - "6006:6006"
+    command: tensorboard --logdir /experiments --host 0.0.0.0 --port 6006

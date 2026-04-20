@@ -1,18 +1,44 @@
-# Ignore Python bytecode
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
 
-# Other possible ignores
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
 .env
 *.env
-.DS_Store
-node_modules/
 
+# Large model files
+*.nemo
+*.onnx
+*.pt
+*.bin
 
+# Audio (generated/downloaded)
 segments/
 *.mp3
 *.wav
 
-*config.yml
+# Data artifacts
+pipeline_output/

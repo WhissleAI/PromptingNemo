@@ -1,0 +1,17 @@
+FROM pytorch/pytorch:2.6.0-cuda12.4-cudnn9-runtime
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git libsndfile1 ffmpeg sox espeak-ng curl vim && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY . /workspace/PromptingNemo
+WORKDIR /workspace/PromptingNemo
+
+RUN pip install --no-cache-dir -e ".[all]"
+
+EXPOSE 6006
+
+WORKDIR /workspace/PromptingNemo

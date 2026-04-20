@@ -80,6 +80,12 @@ def normalize_text(t: str) -> str:
     # Gender typo
     t = t.replace("GER_", "GENDER_")
 
+    # Normalize AGE_60PLUS to AGE_60+ (model vocab canonical form)
+    t = t.replace("AGE_60PLUS", "AGE_60+")
+
+    # Strip trailing ", from tags (JSON escaping artifacts)
+    t = re.sub(r'(?<=\w)",', '', t)
+
     # Collapse funky whitespace (incl. unicode spaces)
     t = " ".join(t.split())
     return t

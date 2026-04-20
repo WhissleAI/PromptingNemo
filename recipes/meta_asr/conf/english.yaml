@@ -1,0 +1,88 @@
+model:
+  model_root: /workspace/pretrained/parakeet-ctc-0.6b/
+  model_name: parakeet-600m-encoder-tune-alllang-hf-ckpt.nemo
+  tokenizer_folder: tokenizer
+  new_tokenizer_folder: multilang_12m_meta_tokenizer_15k_multifamily
+  use_aggregate_tokenizer: true
+  dynamic_tokenizer_params:
+    type: bpe
+    dir_prefix: tokenizer_
+    non_special_tokens_per_lang: 1024
+    non_special_tokens_per_lang_overrides:
+      ENGLISH: 1024
+      EUROPEAN: 1024
+      SLAVIC: 512
+      INDO_ARYAN: 512
+      DRAVIDIAN: 512
+      INDIAN_LOW_RESOURCE: 512
+      MANDARIN: 3000
+    character_coverage: null
+    character_coverage_overrides:
+      MANDARIN: 0.991
+    tokenizer_options: null
+  special_token_prefixes:
+  - ENTITY_
+  - INTENT_
+  - EMOTION_
+  - GENDER_
+  - AGE_
+  - KEYWORD_
+  - LANG_
+  tokenizer_langs: {}
+  shared_special_tokens: []
+  aggregate_vocabulary: []
+  language_families:
+  - MANDARIN
+  - ENGLISH
+  - EUROPEAN
+  - SLAVIC
+  - INDO_ARYAN
+  - DRAVIDIAN
+  - INDIAN_LOW_RESOURCE
+  tokenizer_langs_path: tokenizer_langs.yaml
+  shared_special_tokens_path: shared_special_tokens.yaml
+  aggregate_vocabulary_path: aggregate_vocab.txt
+  language_family_map:
+    ENGLISH: ENGLISH
+    SLAVIC: SLAVIC
+    INDO_ARYAN: INDO_ARYAN
+    MANDARIN: MANDARIN
+    EUROPEAN: EUROPEAN
+    INDIAN_LOW_RESOURCE: INDIAN_LOW_RESOURCE
+    DRAVIDIAN: DRAVIDIAN
+training:
+  lang_field: lang_family
+  data_dir: /workspace/manifests_v2/validated
+  train_manifest: train_eng-eu_with_langid_added_langword.validated.json
+  test_manifest: valid_eng-eu_with_langid_added_langword.validated.json
+  batch_size: 76
+  accumulate_grad_batches: 8
+  max_duration: 22.0
+  max_steps: 10000000
+  use_mixed_precision: true
+  num_workers: 12
+  pin_memory: true
+  keyword_loss_weight: 0.6
+  use_keyword_loss: true
+  keyword_loss_warmup_steps: 1000
+  use_family_loss_weights: true
+  spec_augment:
+    time_masks: 4
+    time_width: 80
+  optim:
+    lr: 0.0001
+    weight_decay: 0.0
+    sched:
+      warmup_steps: 5000
+  validation_workers: null
+  skip_audio_validation: true
+  keyphrase_oversample_factor: 0.0
+  devices: [0, 1, 2, 3, 4, 5, 6]
+experiment:
+  exp_dir: /workspace/experiments/
+  exp_name: parakeet-600m-encoder-tune-alllang-hf-ckpt-en-eu
+  monitor: val_wer
+  mode: min
+  always_save_nemo: true
+  save_top_k: 3
+  every_n_train_steps: 5000

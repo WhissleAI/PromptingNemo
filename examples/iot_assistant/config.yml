@@ -1,0 +1,38 @@
+spotify:
+  client_id: "YOUR_CLIENT_ID_HERE"
+  client_secret: "YOUR_CLIENT_SECRET_HERE"
+  redirect_uri: "http://localhost:3000"
+  scope: "user-read-playback-state"
+  device_id: "YOUR_DEVICE_ID_HERE"
+
+openai:
+  api_key: "YOUR_API_KEY_HERE"
+twilio:
+  account_sid: "your_twilio_account_sid"
+  auth_token: "your_twilio_auth_token"
+  phone_number: "your_twilio_phone_number"
+system:
+  spotify_path: "/Applications/Spotify.app"  # Update this path if Spotify is located elsewhere
+  notes_path: "/Applications/Notes.app"  # Path to the Notes app, if needed
+google:
+  client_secrets_file: "utils/google_client_secret.json"
+  token_file: "utils/token.json"
+  scopes:
+    - "https://www.googleapis.com/auth/gmail.send"
+
+notion:
+  token: "YOUR_NOTION_TOKEN_HERE"
+  database_id: "YOUR_DATABASE_ID_HERE"
+
+nvidia:
+  api_url: "https://integrate.api.nvidia.com/v1/chat/completions"
+  api_key: "YOUR_API_KEY_HERE"
+weatherapi:
+  api_key: "YOUR_API_KEY_HERE"
+
+alpha_vantage:
+  api_key: "YOUR_API_KEY_HERE"
+slack:
+  token: "YOUR_SLACK_TOKEN_HERE"
+contacts:
+  file: "utils/contacts.tsv"

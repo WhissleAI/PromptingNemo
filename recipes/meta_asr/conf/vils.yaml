@@ -1,0 +1,41 @@
+model:
+  model_root: "/external1/pretrained_models/stt_en_conformer_ctc_large_v1.10.0/"
+  model_name: "stt_en_conformer_ctc_large.nemo"
+  tokenizer_folder: "tokenizer"
+  new_tokenizer_folder: "vils_meta_tokenizer"
+  proto_file: "proto/file"
+  proto_dir: "proto/dir"
+
+
+training:
+  data_dir: "/external1/datasets/nemo_manifest/vils"
+  train_manifest: "train.json"
+  test_manifest: "valid.json"
+  batch_size: 6  # Increase from 8 to 12
+  max_steps: 100000
+  use_mixed_precision: true  # Add this flag for mixed precision
+
+# adapters:
+#   LinearAdapter:
+#     name: "LinearAdapter"
+#     dim: 32
+#     activation: "relu"
+#     norm_position: "pre"
+#   BottleneckAdapter:
+#     name: "BottleneckAdapter"
+#     dim: 64
+#     activation: "gelu"
+#     norm_position: "post"
+#   AttentionAdapter:
+#     name: "AttentionAdapter"
+#     dim: 48
+#     activation: "swish"
+#     norm_position: "pre"
+
+experiment:
+  exp_dir: "/external1/experiments/"
+  exp_name: "en-fastconformer-vils-meta-noadapter-encoder-tune-ngc"
+  monitor: "val_wer"
+  mode: "min"
+  always_save_nemo: true
+  save_best_model: true

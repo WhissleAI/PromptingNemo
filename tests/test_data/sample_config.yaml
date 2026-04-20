@@ -1,0 +1,51 @@
+model:
+  model_root: /tmp/test_models
+  model_name: base_model.nemo
+  language_families:
+    INDIC:
+      - HI
+      - BN
+      - TA
+    EUROPEAN:
+      - EN
+      - FR
+      - ES
+  use_aggregate_tokenizer: true
+  new_tokenizer_folder: tokenizers
+  vocab_size: 1024
+  character_coverage: 1.0
+  special_token_prefixes:
+    - EMOTION_
+    - GENDER_
+    - AGE_
+    - ENTITY_
+    - INTENT_
+  dynamic_tokenizer_params:
+    dir_prefix: "tokenizer_"
+    type: bpe
+    non_special_tokens_per_lang: 256
+    non_special_tokens_per_lang_overrides: {}
+    character_coverage: 1.0
+    character_coverage_overrides: {}
+    tokenizer_options: {}
+
+training:
+  data_dir: /tmp/test_data
+  train_manifest: train.json
+  test_manifest: test.json
+  batch_size: 8
+  max_duration: 20.0
+  num_workers: 2
+  pin_memory: true
+  max_steps: 1000
+  lang_field: lang
+  skip_audio_validation: true
+
+experiment:
+  exp_dir: /tmp/test_experiments
+  exp_name: test_run
+  monitor: val_wer
+  mode: min
+  always_save_nemo: true
+  save_top_k: 1
+  every_n_train_steps: 500
