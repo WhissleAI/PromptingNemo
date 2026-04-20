@@ -41,7 +41,8 @@ try:
 except ImportError:
     DALIOutputs = tuple()
 from nemo.collections.asr.models.ctc_bpe_models import EncDecCTCModelBPE
-from nemo.collections.asr.parts.submodules.ctc_decoding import CTCDecodingConfig
+from nemo.collections.asr.parts.submodules.ctc_decoding import CTCDecoding, CTCDecodingConfig
+from nemo.collections.asr.metrics.wer import WER
 from nemo.collections.asr.metrics.wer import word_error_rate_detail
 # from nemo.collections.asr.parts.utils.transcribe_utils import transcribe_partial_audio
 from nemo.collections.asr.data.audio_to_text import AudioToBPEDataset, _speech_collate_fn
@@ -2018,6 +2019,15 @@ def train_model(cfg, ckpt_path=None):
         model.cfg.validation_ds.return_sample_id = True
         model.cfg.decoder.vocabulary = aggregate_vocab
         model.cfg.decoder.num_classes = len(aggregate_vocab)
+
+    decoding_cfg = model.cfg.get('decoding', OmegaConf.create({'strategy': 'greedy'}))
+    model.decoding = CTCDecoding(decoding_cfg=decoding_cfg, vocabulary=aggregate_vocab)
+    model.wer = WER(
+        decoding=model.decoding,
+        use_cer=model._cfg.get('use_cer', False),
+        log_prediction=model._cfg.get('log_prediction', True),
+    )
+    nemo_logging.info(f"Re-initialized decoding/WER with {len(aggregate_vocab)}-token vocabulary")
 
     model.setup_training_data(model.cfg.train_ds)
     model.setup_validation_data(model.cfg.validation_ds)
