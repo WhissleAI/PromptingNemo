@@ -15,17 +15,48 @@ from promptingnemo.tokenizer.dedup_aggregate import DedupAggregateTokenizer
 from promptingnemo.tokenizer.aggregate import _family_name_for_lang
 
 
-def scan_manifest_for_new_tokens(manifest_path: str, current_vocab: set) -> List[str]:
-    """Scan training manifest for special tokens not in the current vocabulary."""
+def scan_manifest_for_new_tokens(
+    manifest_path: str,
+    current_vocab: set,
+    min_count: int = 10,
+    allowed_prefixes: tuple = (
+        'ENTITY_', 'INTENT_', 'EMOTION_', 'GENDER_', 'AGE_',
+        'DIALECT_', 'KEYWORD_', 'LANG_', 'OTHER_',
+    ),
+) -> List[str]:
+    """Scan training manifest for special tokens not in the current vocabulary.
+
+    Only returns tokens that appear at least ``min_count`` times and whose
+    prefix matches one of the ``allowed_prefixes``.  This prevents vocabulary
+    explosion from rare annotation noise.
+    """
     tag_pattern = re.compile(r'^[A-Z][A-Z0-9_]*_[A-Z0-9_<>+.]*$|^END$')
-    found = set()
+    counts: Dict[str, int] = {}
     with open(manifest_path, encoding='utf-8') as f:
         for line in f:
             entry = json.loads(line)
             for word in entry.get('text', '').split():
                 if tag_pattern.match(word) and word not in current_vocab:
-                    found.add(word)
-    return sorted(found)
+                    counts[word] = counts.get(word, 0) + 1
+
+    found = []
+    skipped = 0
+    for token, count in sorted(counts.items()):
+        if count < min_count:
+            skipped += 1
+            continue
+        if allowed_prefixes and not any(token.startswith(p) for p in allowed_prefixes):
+            skipped += 1
+            continue
+        found.append(token)
+
+    if skipped:
+        nemo_logging.info(
+            f"Skipped {skipped} rare/invalid new tokens (min_count={min_count}). "
+            f"Keeping {len(found)} new tokens."
+        )
+
+    return found
 
 
 def extend_decoder_for_new_tokens(model, new_tokens: List[str]):
@@ -173,18 +204,22 @@ def slim_decoder_for_training(model, training_families):
 
 
 def scale_down_tag_decoder_weights(model, scale_factor=0.01):
-    """Scale down decoder weights for sentence-level meta-tag tokens.
+    """Scale down decoder weights for ALL meta-tag tokens.
 
-    Tags like AGE_*, GENDER_*, EMOTION_*, INTENT_*, DIALECT_* should only
-    fire at end-of-utterance positions. Their pretrained weights cause them
-    to dominate at every frame after slim decoder removes competing tokens.
+    Meta-tags (AGE_*, GENDER_*, EMOTION_*, INTENT_*, DIALECT_*, ENTITY_*,
+    OTHER_*, KEYWORD_*, LANG_*, END) should not dominate the logit space.
+    Their pretrained weights can cause them to fire at every frame after
+    slim decoder removes competing transcription tokens from other languages.
+
     Re-initializing to small random values forces them to learn proper
-    positional firing from the CTC loss signal.
+    context-dependent firing from the CTC loss signal.
     """
-    SENTENCE_TAG_PREFIXES = (
+    ALL_TAG_PREFIXES = (
         'AGE_', 'GENDER_', 'GER_', 'GGENDER_', 'GENSION_',
         'EMOTION_', 'INTENT_', 'DIALECT_',
+        'ENTITY_', 'OTHER_', 'KEYWORD_', 'LANG_',
     )
+    EXACT_TAG_TOKENS = {'END'}
 
     vocab = list(model.decoder.vocabulary)
     decoder_layer = model.decoder.decoder_layers[0]
@@ -194,7 +229,11 @@ def scale_down_tag_decoder_weights(model, scale_factor=0.01):
     scaled_tokens = []
     for idx, token in enumerate(vocab):
         clean = token.lstrip('\u2581')
-        if any(clean.startswith(prefix) for prefix in SENTENCE_TAG_PREFIXES):
+        is_tag = (
+            any(clean.startswith(prefix) for prefix in ALL_TAG_PREFIXES)
+            or clean in EXACT_TAG_TOKENS
+        )
+        if is_tag:
             decoder_layer.weight.data[idx] = torch.randn_like(
                 decoder_layer.weight.data[idx]
             ) * scale_factor
@@ -203,8 +242,10 @@ def scale_down_tag_decoder_weights(model, scale_factor=0.01):
             if len(scaled_tokens) < 20:
                 scaled_tokens.append(clean)
 
+    total_vocab = len(vocab)
+    transcription_tokens = total_vocab - scaled_count
     nemo_logging.info(
-        f"Re-initialized decoder weights for {scaled_count} sentence-level tag tokens "
-        f"(scale={scale_factor}) to prevent mid-utterance spam. "
-        f"Sample: {scaled_tokens}"
+        f"Re-initialized {scaled_count}/{total_vocab} tag token decoder weights "
+        f"(scale={scale_factor}), keeping {transcription_tokens} transcription tokens "
+        f"at pretrained weights. Sample tags: {scaled_tokens}"
     )

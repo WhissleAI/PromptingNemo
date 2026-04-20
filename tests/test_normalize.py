@@ -69,10 +69,15 @@ class TestNormalizeText:
         assert "EMOTION_HAPPY" in result
         assert "HAPPYPY" not in result
 
-    def test_age_60plus_to_age_60_plus(self):
+    def test_age_60_plus_to_age_60plus(self):
+        """AGE_60+ in data should be normalized to AGE_60PLUS (pretrained vocab form)."""
+        result = normalize_text("AGE_60+ speaker")
+        assert "AGE_60PLUS" in result
+        assert "AGE_60+" not in result
+
+    def test_age_60plus_unchanged(self):
         result = normalize_text("AGE_60PLUS speaker")
-        assert "AGE_60+" in result
-        assert "AGE_60PLUS" not in result
+        assert "AGE_60PLUS" in result
 
     def test_trailing_quote_comma_cleanup(self):
         """Trailing '", ' after a tag should be stripped."""
@@ -100,11 +105,11 @@ class TestNormalizeText:
         assert result == text
 
     def test_multiple_fixes_combined(self):
-        text = "EMOTION_HAP GER_FEMALE AGE_60PLUS hello"
+        text = "EMOTION_HAP GER_FEMALE AGE_60+ hello"
         result = normalize_text(text)
         assert "EMOTION_HAPPY" in result
         assert "GENDER_FEMALE" in result
-        assert "AGE_60+" in result
+        assert "AGE_60PLUS" in result
 
     def test_emotion_happy_not_double_replaced(self):
         """EMOTION_HAPPY should not be modified by the HAP -> HAPPY rule."""
@@ -124,16 +129,16 @@ class TestExtractTags:
         assert len(emotions) == 2
 
     def test_extracts_age_tags(self):
-        emotions, ages = extract_tags("EMOTION_HAPPY AGE_30_45 hello AGE_60+")
+        emotions, ages = extract_tags("EMOTION_HAPPY AGE_30_45 hello AGE_60PLUS")
         assert "AGE_30_45" in ages
-        assert "AGE_60+" in ages
+        assert "AGE_60PLUS" in ages
         assert len(ages) == 2
 
     def test_normalizes_before_extracting(self):
         """Tags with typos should be normalized then extracted."""
-        emotions, ages = extract_tags("EMOTION_HAP AGE_60PLUS text")
+        emotions, ages = extract_tags("EMOTION_HAP AGE_60+ text")
         assert "EMOTION_HAPPY" in emotions
-        assert "AGE_60+" in ages
+        assert "AGE_60PLUS" in ages
 
     def test_no_tags_returns_empty(self):
         emotions, ages = extract_tags("just regular text here")
