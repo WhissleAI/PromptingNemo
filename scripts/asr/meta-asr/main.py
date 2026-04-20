@@ -1729,7 +1729,7 @@ def slim_decoder_for_training(model, training_families):
     training_families_upper = {f.upper() for f in training_families}
 
     if not hasattr(model.tokenizer, 'tokenizers_dict'):
-        logging.warning("Model tokenizer has no tokenizers_dict — cannot slim decoder")
+        nemo_logging.warning("Model tokenizer has no tokenizers_dict — cannot slim decoder")
         return
 
     all_langs = list(model.tokenizer.tokenizers_dict.keys())
@@ -1740,14 +1740,14 @@ def slim_decoder_for_training(model, training_families):
     }
 
     if not target_tokenizers:
-        logging.warning(
+        nemo_logging.warning(
             "No tokenizers matched training families %s (available: %s). Skipping slim.",
             training_families, all_langs
         )
         return
 
     if len(target_tokenizers) == len(all_langs):
-        logging.info("All language families selected — no decoder slimming needed.")
+        nemo_logging.info("All language families selected — no decoder slimming needed.")
         return
 
     pretrained_vocab = list(model.decoder.vocabulary)
@@ -1793,13 +1793,13 @@ def slim_decoder_for_training(model, training_families):
     model.tokenizer = slim_tokenizer
 
     removed = len(pretrained_vocab) - len(slim_vocab)
-    logging.info(
+    nemo_logging.info(
         f"Slim decoder: {len(pretrained_vocab)+1} -> {n_slim} outputs "
         f"(removed {removed} non-target tokens, copied {copied} pretrained weights). "
         f"Target families: {sorted(training_families_upper)}"
     )
     if missing_tokens:
-        logging.warning(
+        nemo_logging.warning(
             f"{len(missing_tokens)} slim vocab tokens not found in pretrained decoder "
             f"(random init): {missing_tokens[:10]}"
         )
@@ -1962,6 +1962,7 @@ def train_model(cfg, ckpt_path=None):
 
     if language_families:
         slim_decoder_for_training(model, language_families)
+        model.setup_custom_loss()
 
     current_vocab = set(model.decoder.vocabulary)
     new_tokens = scan_manifest_for_new_tokens(train_manifest, current_vocab)
