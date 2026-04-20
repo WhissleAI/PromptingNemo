@@ -10,6 +10,8 @@ Training toolkit for meta-ASR models. Handles tokenizer training, model fine-tun
 ### [NeMo-W](https://github.com/WhissleAI/NeMo-W)
 WhissleAI's fork of NVIDIA NeMo. Contains the base model architectures (FastConformer, Parakeet) and CTC training infrastructure that PromptingNemo builds on top of. The `CustomEncDecCTCModelBPE` in PromptingNemo extends NeMo's `EncDecCTCModelBPE`.
 
+The [`audio-visual-balu`](https://github.com/WhissleAI/NeMo-W/tree/audio-visual-balu/balu_codes) branch contains the original research prototype for Audio-Visual ASR (EMNLP 2025). This prototype demonstrated CLIP-based visual feature fusion for noisy speech recognition and was subsequently productionized into PromptingNemo's `promptingnemo/models/av_ctc_model.py` and `recipes/av_asr/` modules.
+
 ### [espnet-w](https://github.com/WhissleAI/espnet-w)
 WhissleAI's fork of ESPnet. Provides an alternative training backend with the `egs2/` recipe system. PromptingNemo's `recipes/espnet_asr/` provides a bridge recipe for training meta-ASR models using ESPnet's infrastructure.
 
@@ -48,6 +50,8 @@ JavaScript SDK with React components for real-time speech processing in web appl
 | [Meta_STT_ZH_AIShell3](https://huggingface.co/datasets/WhissleAI/Meta_STT_ZH_AIShell3) | Mandarin | Tagged Chinese speech |
 | [Meta_STT_EURO_Set1](https://huggingface.co/datasets/WhissleAI/Meta_STT_EURO_Set1) | European (5 langs) | Multi-language European speech |
 | [Meta_STT_SLAVIC_CommonVoice](https://huggingface.co/datasets/WhissleAI/Meta_STT_SLAVIC_CommonVoice) | Slavic (10 langs) | CommonVoice with meta-tags |
+
+| VANS (Visual-Aware Noisy Speech) | English | AudioSet noise videos mixed with People's Speech clean audio at variable SNRs. Used for Audio-Visual ASR training. |
 
 See [all datasets](https://huggingface.co/WhissleAI) for the complete list (34 datasets).
 

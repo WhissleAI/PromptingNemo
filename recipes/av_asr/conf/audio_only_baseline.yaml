@@ -1,0 +1,193 @@
+# =============================================================================
+# Audio-Only Conformer CTC Baseline Configuration
+# =============================================================================
+# Baseline model: A-UNI-SNR (no video features)
+# From: "Visual-Aware Speech Recognition for Noisy Scenarios" (EMNLP 2025)
+#
+# Same architecture as av_conformer_ctc.yaml but with use_video_modality: false.
+# The av_encoder Transformer fusion module is bypassed and audio encoder output
+# feeds directly into the CTC decoder. Used for ablation experiments to measure
+# the contribution of visual features.
+# =============================================================================
+
+# --- Audio settings ---
+sample_rate: 16000
+
+# --- Base model ---
+a_model_name: "BPE:stt_en_conformer_ctc_large"
+
+# --- Modality flags ---
+use_video_modality: false       # DISABLED -- audio-only baseline
+use_pretrained_dec: false
+labelled_manifest: true         # Manifest still includes noise labels
+
+# =============================================================================
+# Training data
+# =============================================================================
+train_ds:
+  manifest_filepath: ???        # Path to VANS training manifest (NeMo JSONL)
+  batch_size: 96
+  max_duration: 10.0
+  shuffle: true
+  num_workers: 8
+  pin_memory: true
+
+  # Video features disabled for this config
+  video_frame_rate: 5
+  get_vid_feats: false
+  get_zero_vid_feats: false
+
+  # SNR configuration -- uniform random [-5dB, +5dB]
+  override_snr_ratio: "rand"
+  snr_min: -5.0
+  snr_max: 5.0
+
+# =============================================================================
+# Validation data
+# =============================================================================
+validation_ds:
+  manifest_filepath: ???
+  batch_size: 96
+  max_duration: 10.0
+  shuffle: false
+  num_workers: 8
+  pin_memory: true
+
+  video_frame_rate: 5
+  get_vid_feats: false
+  get_zero_vid_feats: false
+  override_snr_ratio: 10.0     # Evaluate at fixed 10dB
+
+# =============================================================================
+# Test data
+# =============================================================================
+test_ds:
+  manifest_filepath: ???
+  batch_size: 96
+  max_duration: 10.0
+  shuffle: false
+  num_workers: 8
+  pin_memory: true
+
+  video_frame_rate: 5
+  get_vid_feats: false
+  get_zero_vid_feats: false
+  override_snr_ratio: 10.0
+
+# =============================================================================
+# Audio encoder (Conformer)
+# =============================================================================
+encoder:
+  _target_: nemo.collections.asr.modules.conformer_encoder.ConformerEncoder
+  feat_in: 80
+  feat_out: -1
+  n_layers: 18
+  d_model: 512
+  subsampling: dw_striding
+  subsampling_factor: 4
+  subsampling_conv_channels: 512
+  ff_expansion_factor: 4
+  self_attention_model: rel_pos
+  n_heads: 8
+  conv_kernel_size: 31
+  dropout: 0.1
+  dropout_pre_encoder: 0.1
+  dropout_emb: 0.0
+
+# =============================================================================
+# Audio-Visual fusion encoder (Transformer)
+# =============================================================================
+# Kept for config compatibility but bypassed when use_video_modality is false.
+# In audio-only mode, the Conformer output is projected directly to the decoder.
+av_encoder:
+  d_model: 512
+  nhead: 8
+  num_layers: 4
+  dropout: 0.1
+  dim_feedforward: 2048
+
+# =============================================================================
+# Visual model (unused in audio-only mode)
+# =============================================================================
+v_model:
+  name: "ViT-L/14"
+  feat_dim: 768
+  freeze: true
+
+# =============================================================================
+# CTC Decoder
+# =============================================================================
+decoder:
+  _target_: nemo.collections.asr.modules.conv_asr.ConvASRDecoder
+  feat_in: 512                  # Audio encoder d_model (no fusion in audio-only)
+  num_classes: -1
+  vocabulary: []
+
+# =============================================================================
+# Tokenizer
+# =============================================================================
+tokenizer:
+  dir: ???
+  type: bpe
+
+# =============================================================================
+# Adapter configuration
+# =============================================================================
+adapter:
+  enabled: true
+  name: linear_adapter
+  dim: 64
+  activation: swish
+  norm_position: pre
+
+# =============================================================================
+# Optimizer
+# =============================================================================
+optim:
+  name: adamw
+  lr: 0.2
+  betas: [0.9, 0.98]
+  weight_decay: 0.001
+  sched:
+    name: NoamAnnealing
+    d_model: 512
+    warmup_steps: 2000
+    min_lr: 1.0e-6
+
+# =============================================================================
+# Spec augmentation
+# =============================================================================
+spec_augment:
+  _target_: nemo.collections.asr.modules.SpectrogramAugmentation
+  freq_masks: 2
+  freq_width: 27
+  time_masks: 10
+  time_width: 0.05
+
+# =============================================================================
+# Trainer
+# =============================================================================
+trainer:
+  devices: 1
+  accelerator: gpu
+  max_steps: 100000
+  accumulate_grad_batches: 1
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: norm
+  val_check_interval: 5000
+  log_every_n_steps: 50
+  precision: "16-mixed"
+
+# =============================================================================
+# Experiment manager
+# =============================================================================
+experiment:
+  exp_dir: ???
+  exp_name: a-uni-snr-baseline
+  monitor: val_wer
+  mode: min
+  always_save_nemo: true
+  save_top_k: 3
+  every_n_train_steps: 5000
+  resume_if_exists: true
+  resume_ignore_no_checkpoint: true

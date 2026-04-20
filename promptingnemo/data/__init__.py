@@ -36,4 +36,20 @@ def __getattr__(name):
             raise ImportError(
                 f"{name} requires NeMo. Install with: pip install promptingnemo[train]"
             ) from None
+    if name == "AVToBPEDataset":
+        try:
+            from promptingnemo.data.av_dataset import AVToBPEDataset
+            return AVToBPEDataset
+        except ImportError:
+            raise ImportError(
+                f"{name} requires NeMo. Install with: pip install promptingnemo[train]"
+            ) from None
+    if name == "av_collate_fn":
+        try:
+            from promptingnemo.data.av_dataset import av_collate_fn
+            return av_collate_fn
+        except ImportError:
+            raise ImportError(
+                f"{name} requires NeMo. Install with: pip install promptingnemo[train]"
+            ) from None
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

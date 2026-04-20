@@ -560,3 +560,24 @@ experiment:
   mode: min
   always_save_nemo: true
 ```
+
+---
+
+## Audio-Visual ASR Training
+
+PromptingNemo includes an Audio-Visual ASR extension for training models that use CLIP visual features from video frames to improve speech recognition in noisy conditions. The AV training pipeline follows three stages:
+
+1. **Data preparation** -- Construct the VANS dataset by mixing clean speech (People's Speech) with noisy video audio (AudioSet) at variable SNRs.
+2. **CLIP feature extraction** -- Pre-extract visual features from noise source video frames using a frozen CLIP ViT-L/14 model.
+3. **Model training** -- Train the `AVEncDecCTCModelBPE` model, which fuses audio and visual features via a 4-layer Transformer encoder before CTC decoding.
+
+Quick start:
+
+```bash
+cd recipes/av_asr
+python train.py --config conf/av_conformer_ctc.yaml
+```
+
+The AV model outputs transcriptions with noise labels appended as the final token (e.g., `the cat sat on the mat <N12>`), enabling simultaneous speech recognition and noise source identification.
+
+For the full architecture description, dataset pipeline details, key results, and ablation findings, see [docs/audio_visual.md](audio_visual.md).

@@ -58,6 +58,19 @@ The `--mode` flag controls which stages to run:
 
 For GCP spot instance training with automatic preemption recovery, see [`recipes/meta_asr/gcp/`](recipes/meta_asr/gcp/).
 
+## Audio-Visual ASR (NEW)
+
+PromptingNemo now includes an Audio-Visual ASR extension for visual-aware noisy speech recognition. Based on the EMNLP 2025 paper by Darur & Singla, this extension uses CLIP visual features from video frames to contextualize noise sources, significantly improving ASR accuracy in noisy conditions. The best model (AV-UNI-SNR, 453M params) achieves 20.71 WER at 10dB SNR versus 26.99 for audio-only Conformer-CTC, and is competitive with Whisper Large V3 (1.55B params).
+
+**Quick start:**
+
+```bash
+cd recipes/av_asr
+python train.py --config conf/av_conformer_ctc.yaml
+```
+
+See [`recipes/av_asr/README.md`](recipes/av_asr/README.md) for the full training guide, and [`docs/audio_visual.md`](docs/audio_visual.md) for the architecture deep dive.
+
 ## Pretrained Models
 
 | Model | Languages | Parameters | Link |
@@ -85,6 +98,7 @@ transcriptions = model.transcribe(["file.wav"])
 | [`recipes/meta_asr/`](recipes/meta_asr/) | Full meta-ASR training pipeline (tokenizer + model). Language configs in `conf/`. |
 | [`recipes/data_prep/`](recipes/data_prep/) | Data preparation and manifest normalization utilities. |
 | [`recipes/espnet_asr/`](recipes/espnet_asr/) | ESPnet-W integration for training meta-ASR with ESPnet's `egs2/` system. |
+| [`recipes/av_asr/`](recipes/av_asr/) | Audio-Visual ASR training with CLIP visual features for noisy speech recognition. |
 
 Additional training scripts and configs are in [`scripts/asr/meta-asr/`](scripts/asr/meta-asr/), including GCP spot instance tooling, evaluation scripts, and per-language YAML configs.
 
@@ -135,6 +149,8 @@ The training pipeline flows through five stages: data preparation, tokenizer tra
 Karan, S., Shahab, J., Yeon-Jun, K., Andrej, L., Moreno, D. A., Srinivas, B., & Benjamin, S. (2023, December). *1-step Speech Understanding and Transcription Using CTC Loss.* In Proceedings of the 20th International Conference on Natural Language Processing (ICON) (pp. 370-377).
 
 Karan, S., Mahnoosh, M., Daniel, P., Ryan, P., Srinivas, C. B., Yeon-Jun, K., & Srinivas, B. (2023, December). *Combining Pre trained Speech and Text Encoders for Continuous Spoken Language Processing.* In Proceedings of the 20th International Conference on Natural Language Processing (ICON) (pp. 832-842).
+
+Darur, B. & Singla, K. (2025). *Visual-Aware Speech Recognition for Noisy Scenarios.* In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP). [https://aclanthology.org/2025.emnlp-main.845/](https://aclanthology.org/2025.emnlp-main.845/)
 
 ## Contributing
 

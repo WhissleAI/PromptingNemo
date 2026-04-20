@@ -70,15 +70,28 @@ ruff format .
 promptingnemo/          # Installable library
   tokenizer/            # Aggregate tokenizer training
   models/               # Custom CTC model, slim decoder
+    ctc_model.py        # CustomEncDecCTCModelBPE (audio-only meta-ASR)
+    av_ctc_model.py     # AVEncDecCTCModelBPE (audio-visual CTC with CLIP fusion)
+    decoder.py          # Slim decoder, vocabulary extension, tag weight init
   data/                 # Dataset, sampler, normalization
+    dataset.py          # RobustAudioToBPEDataset
+    av_dataset.py       # AVToBPEDataset (audio-visual data loading with CLIP features)
+    sampler.py          # BalancedLanguageBatchSampler
+    manifest.py         # Manifest validation
+    normalize.py        # Tag normalization
   training/             # Trainer and CLI
   eval/                 # WER + NER F1 scoring
+    wer.py              # Standard WER with tag-aware scoring
+    av_wer.py           # AVWordErrorRate (WER + noise label accuracy)
+    ner.py              # NER precision/recall/F1
+    inference.py        # Model loading and transcription
   export/               # ONNX and HuggingFace export
 
 recipes/                # Runnable training recipes
   meta_asr/             # Main training entry point + per-language configs
   data_prep/            # Data preparation utilities
   espnet_asr/           # ESPnet-W integration
+  av_asr/               # Audio-Visual ASR training with CLIP visual features
 
 scripts/                # Legacy and utility scripts
   asr/meta-asr/         # Config files, GCP tooling, evaluation

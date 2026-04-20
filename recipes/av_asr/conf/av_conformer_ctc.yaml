@@ -1,0 +1,210 @@
+# =============================================================================
+# Audio-Visual Conformer CTC Configuration
+# =============================================================================
+# Best model configuration: AV-UNI-SNR
+# From: "Visual-Aware Speech Recognition for Noisy Scenarios" (EMNLP 2025)
+#
+# This config trains a Conformer CTC encoder with CLIP visual features fused
+# through a Transformer module. The model jointly transcribes speech and
+# classifies the noise type present in the audio.
+#
+# Key design choices:
+#   - Conformer encoder initialized from NeMo stt_en_conformer_ctc_large
+#   - CLIP ViT-L/14 visual features (768-dim) extracted at 5 fps
+#   - 4-layer Transformer fusion (512-dim, 8 heads)
+#   - CTC loss with noise label as final transcript token
+#   - Uniform SNR sampling [-5dB, +5dB] for robust training
+# =============================================================================
+
+# --- Audio settings ---
+sample_rate: 16000
+
+# --- Base model ---
+# NeMo pretrained model to initialize the Conformer encoder weights.
+# Set to a local .nemo path or a NeMo model name for auto-download.
+a_model_name: "BPE:stt_en_conformer_ctc_large"
+
+# --- Modality flags ---
+use_video_modality: true        # Enable visual feature fusion
+use_pretrained_dec: false       # Do not reuse pretrained decoder (new vocab)
+labelled_manifest: true         # Manifest includes noise labels in text
+
+# =============================================================================
+# Training data
+# =============================================================================
+train_ds:
+  manifest_filepath: ???        # Path to VANS training manifest (NeMo JSONL)
+  batch_size: 96
+  max_duration: 10.0            # VANS segments are trimmed to 10s
+  shuffle: true
+  num_workers: 8
+  pin_memory: true
+
+  # Video feature settings
+  video_frame_rate: 5           # CLIP features extracted at 5 fps
+  get_vid_feats: true           # Load precomputed video features from .npy
+  get_zero_vid_feats: false     # False = use real features; True = zero ablation
+
+  # SNR configuration
+  # "rand" = uniform random sampling from [snr_min, snr_max] (AV-UNI-SNR)
+  # Or set to a float (e.g., 10.0) for fixed SNR training (AV-SNR)
+  override_snr_ratio: "rand"
+  snr_min: -5.0
+  snr_max: 5.0
+
+# =============================================================================
+# Validation data
+# =============================================================================
+validation_ds:
+  manifest_filepath: ???        # Path to VANS validation manifest
+  batch_size: 96
+  max_duration: 10.0
+  shuffle: false
+  num_workers: 8
+  pin_memory: true
+
+  video_frame_rate: 5
+  get_vid_feats: true
+  get_zero_vid_feats: false
+  override_snr_ratio: 10.0     # Evaluate at fixed 10dB for consistency
+
+# =============================================================================
+# Test data
+# =============================================================================
+test_ds:
+  manifest_filepath: ???        # Path to VANS test manifest
+  batch_size: 96
+  max_duration: 10.0
+  shuffle: false
+  num_workers: 8
+  pin_memory: true
+
+  video_frame_rate: 5
+  get_vid_feats: true
+  get_zero_vid_feats: false
+  override_snr_ratio: 10.0
+
+# =============================================================================
+# Audio encoder (Conformer)
+# =============================================================================
+# The encoder is initialized from the pretrained NeMo checkpoint above.
+# These values reflect stt_en_conformer_ctc_large defaults.
+encoder:
+  _target_: nemo.collections.asr.modules.conformer_encoder.ConformerEncoder
+  feat_in: 80                   # Mel spectrogram features
+  feat_out: -1                  # Set automatically
+  n_layers: 18
+  d_model: 512
+  subsampling: dw_striding
+  subsampling_factor: 4
+  subsampling_conv_channels: 512
+  ff_expansion_factor: 4
+  self_attention_model: rel_pos
+  n_heads: 8
+  conv_kernel_size: 31
+  dropout: 0.1
+  dropout_pre_encoder: 0.1
+  dropout_emb: 0.0
+
+# =============================================================================
+# Audio-Visual fusion encoder (Transformer)
+# =============================================================================
+# Fuses projected audio features (from Conformer) with projected video features
+# (from CLIP) via cross-temporal concatenation followed by self-attention.
+av_encoder:
+  d_model: 512                  # Fusion dimension (matches audio encoder d_model)
+  nhead: 8                      # Attention heads
+  num_layers: 4                 # Transformer layers
+  dropout: 0.1
+  dim_feedforward: 2048         # FFN inner dimension (4x d_model)
+
+# =============================================================================
+# Visual model (CLIP feature config)
+# =============================================================================
+# Features are pre-extracted; this section defines the expected dimensions.
+v_model:
+  name: "ViT-L/14"             # CLIP model variant
+  feat_dim: 768                 # CLIP ViT-L/14 output dimension
+  freeze: true                  # CLIP weights are always frozen (features pre-extracted)
+
+# =============================================================================
+# CTC Decoder
+# =============================================================================
+decoder:
+  _target_: nemo.collections.asr.modules.conv_asr.ConvASRDecoder
+  feat_in: 512                  # Matches av_encoder.d_model
+  num_classes: -1               # Determined by tokenizer vocabulary at runtime
+  vocabulary: []                # Populated at runtime from tokenizer
+
+# =============================================================================
+# Tokenizer
+# =============================================================================
+# BPE tokenizer. The vocabulary includes standard English BPE tokens plus
+# NOISE_<class> tokens appended during VANS dataset creation.
+tokenizer:
+  dir: ???                      # Path to tokenizer directory (with tokenizer.model)
+  type: bpe
+
+# =============================================================================
+# Adapter configuration
+# =============================================================================
+# Linear adapters inserted into the Conformer encoder layers.
+# Allows fine-tuning with most encoder weights frozen.
+adapter:
+  enabled: true
+  name: linear_adapter
+  dim: 64
+  activation: swish
+  norm_position: pre
+
+# =============================================================================
+# Optimizer
+# =============================================================================
+optim:
+  name: adamw
+  lr: 0.2
+  betas: [0.9, 0.98]
+  weight_decay: 0.001
+  sched:
+    name: NoamAnnealing
+    d_model: 512                # Must match encoder/fusion d_model for Noam scaling
+    warmup_steps: 2000
+    min_lr: 1.0e-6
+
+# =============================================================================
+# Spec augmentation (applied to mel features during training)
+# =============================================================================
+spec_augment:
+  _target_: nemo.collections.asr.modules.SpectrogramAugmentation
+  freq_masks: 2
+  freq_width: 27
+  time_masks: 10
+  time_width: 0.05              # Fraction of sequence length
+
+# =============================================================================
+# Trainer
+# =============================================================================
+trainer:
+  devices: 1                    # Number of GPUs (or list of GPU IDs)
+  accelerator: gpu
+  max_steps: 100000
+  accumulate_grad_batches: 1
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: norm
+  val_check_interval: 5000      # Validate every N training steps
+  log_every_n_steps: 50
+  precision: "16-mixed"         # Mixed precision training
+
+# =============================================================================
+# Experiment manager
+# =============================================================================
+experiment:
+  exp_dir: ???                  # Root directory for experiment outputs
+  exp_name: av-uni-snr
+  monitor: val_wer
+  mode: min
+  always_save_nemo: true
+  save_top_k: 3
+  every_n_train_steps: 5000
+  resume_if_exists: true
+  resume_ignore_no_checkpoint: true

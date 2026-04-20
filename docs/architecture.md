@@ -73,3 +73,47 @@ After slim decoder pruning, sentence-level tags (AGE_*, GENDER_*, EMOTION_*, etc
 
 ### Balanced Language Sampling
 For multi-language training, `BalancedLanguageBatchSampler` ensures each batch contains proportional representation from all language families, preventing dominant languages from monopolizing training.
+
+---
+
+## Audio-Visual Extension
+
+PromptingNemo includes an Audio-Visual ASR extension that fuses visual context from video frames with audio features to improve speech recognition in noisy environments. This is based on the EMNLP 2025 paper "Visual-Aware Speech Recognition for Noisy Scenarios" by Darur & Singla ([paper](https://aclanthology.org/2025.emnlp-main.845/)).
+
+### AV Model Architecture
+
+The `AVEncDecCTCModelBPE` (in `promptingnemo/models/av_ctc_model.py`) extends the existing `CustomEncDecCTCModelBPE` with a cross-modal fusion pathway. The architecture consists of:
+
+1. **Audio encoder** -- A pretrained Conformer CTC encoder (with optional adapters), producing per-frame audio embeddings.
+2. **Visual encoder** -- A frozen CLIP ViT-L/14 model that extracts visual features from video frames. These features capture the visual scene context (e.g., noise source identification).
+3. **Projection layers** -- Linear projections that map both audio features (`feat_out` -> 512) and CLIP features (768 -> 512) into a shared embedding space, with learned modality embeddings and positional encodings.
+4. **Fusion encoder** -- A 4-layer Transformer encoder that performs cross-modal fusion via multi-head self-attention over concatenated audio and visual tokens.
+5. **CTC decoder** -- After fusion, only the audio-aligned output tokens are extracted and passed to the CTC decoder for transcription. Noise labels are appended as the final token in the transcript (e.g., `<N12>`).
+
+```
+Audio --> Conformer Encoder --> Linear(feat_out, 512)  --+
+                                                         +--> Concat --> Transformer Encoder --> CTC Decoder
+Video --> CLIP ViT-L/14 --> Linear(768, 512)           --+
+                             + Modality Embeddings
+                             + Positional Encodings
+```
+
+The key insight is that visual features provide noise-source context (e.g., a barking dog, traffic, music) that helps the model disambiguate speech from noise. Importantly, models trained with visual awareness also improve audio-only inference -- the visual pathway teaches the encoder better noise-invariant representations even when visual input is absent at test time.
+
+### New Modules
+
+| Module | Location | Purpose |
+|--------|----------|---------|
+| `AVEncDecCTCModelBPE` | `promptingnemo/models/av_ctc_model.py` | Audio-visual CTC model with CLIP fusion |
+| `AVToBPEDataset` | `promptingnemo/data/av_dataset.py` | Dataset class for paired audio-video data with CLIP feature extraction |
+| `AVWordErrorRate` | `promptingnemo/eval/av_wer.py` | WER metric with noise label accuracy scoring |
+
+### How It Extends the Audio-Only Pipeline
+
+The AV extension integrates with the existing PromptingNemo pipeline at three points:
+
+- **Data loading**: `AVToBPEDataset` extends the base dataset to load video frames alongside audio, extracting CLIP features during data loading or from pre-computed feature files.
+- **Model**: `AVEncDecCTCModelBPE` wraps the standard Conformer encoder and adds the visual branch and fusion Transformer. The pretrained audio encoder weights are fully preserved.
+- **Evaluation**: `AVWordErrorRate` extends standard WER computation to additionally score noise label accuracy (the `<N##>` tokens appended to transcripts).
+
+The training recipe lives in `recipes/av_asr/` with its own configs, data pipeline scripts, and training entry point. See [docs/audio_visual.md](audio_visual.md) for the full guide.

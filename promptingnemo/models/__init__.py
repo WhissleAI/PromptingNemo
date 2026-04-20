@@ -10,6 +10,14 @@ def __getattr__(name):
             raise ImportError(
                 f"{name} requires NeMo. Install with: pip install promptingnemo[train]"
             ) from None
+    if name == "AVEncDecCTCModelBPE":
+        try:
+            from promptingnemo.models.av_ctc_model import AVEncDecCTCModelBPE
+            return AVEncDecCTCModelBPE
+        except ImportError:
+            raise ImportError(
+                f"{name} requires NeMo. Install with: pip install promptingnemo[train]"
+            ) from None
     _decoder_names = {
         "scan_manifest_for_new_tokens",
         "extend_decoder_for_new_tokens",
