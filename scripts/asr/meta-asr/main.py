@@ -1658,7 +1658,7 @@ def validate_manifests(cfg) -> Dict[str, Dict[str, int]]:
 
 def scan_manifest_for_new_tokens(manifest_path: str, current_vocab: set) -> List[str]:
     """Scan training manifest for special tokens not in the current vocabulary."""
-    tag_pattern = re.compile(r'^[A-Z][A-Z0-9_]*_[A-Z0-9_]*$|^END$')
+    tag_pattern = re.compile(r'^[A-Z][A-Z0-9_]*_[A-Z0-9_<>+.]*$|^END$')
     found = set()
     with open(manifest_path, encoding='utf-8') as f:
         for line in f:
@@ -1715,6 +1715,96 @@ def extend_decoder_for_new_tokens(model, new_tokens: List[str]):
     )
 
 
+def slim_decoder_for_training(model, training_families):
+    """Remove non-target language transcription tokens from the decoder.
+
+    Keeps all tokens from target language SP tokenizers (which include shared
+    special tokens like ENTITY_*, INTENT_*, EMOTION_*, GENDER_*, AGE_*
+    baked into each SP model). Only removes transcription tokens unique to
+    other language families. All kept tokens reuse pretrained decoder weights.
+    """
+    if not training_families:
+        return
+
+    training_families_upper = {f.upper() for f in training_families}
+
+    if not hasattr(model.tokenizer, 'tokenizers_dict'):
+        logging.warning("Model tokenizer has no tokenizers_dict — cannot slim decoder")
+        return
+
+    all_langs = list(model.tokenizer.tokenizers_dict.keys())
+    target_tokenizers = {
+        lang: model.tokenizer.tokenizers_dict[lang]
+        for lang in all_langs
+        if lang.upper() in training_families_upper
+    }
+
+    if not target_tokenizers:
+        logging.warning(
+            "No tokenizers matched training families %s (available: %s). Skipping slim.",
+            training_families, all_langs
+        )
+        return
+
+    if len(target_tokenizers) == len(all_langs):
+        logging.info("All language families selected — no decoder slimming needed.")
+        return
+
+    pretrained_vocab = list(model.decoder.vocabulary)
+    pretrained_token_to_idx = {t: i for i, t in enumerate(pretrained_vocab)}
+    decoder_layer = model.decoder.decoder_layers[0]
+    old_weight = decoder_layer.weight.data
+    old_bias = decoder_layer.bias.data
+    hidden_dim = old_weight.shape[1]
+
+    slim_tokenizer = DedupAggregateTokenizer(target_tokenizers)
+    slim_vocab = list(slim_tokenizer.vocabulary)
+
+    n_slim = len(slim_vocab) + 1
+    new_weight = torch.zeros(n_slim, hidden_dim, 1, device=old_weight.device, dtype=old_weight.dtype)
+    new_bias = torch.zeros(n_slim, device=old_bias.device, dtype=old_bias.dtype)
+
+    copied = 0
+    missing_tokens = []
+    for new_idx, token in enumerate(slim_vocab):
+        old_idx = pretrained_token_to_idx.get(token)
+        if old_idx is not None:
+            new_weight[new_idx] = old_weight[old_idx]
+            new_bias[new_idx] = old_bias[old_idx]
+            copied += 1
+        else:
+            new_weight[new_idx, :, 0] = torch.randn(
+                hidden_dim, device=old_weight.device, dtype=old_weight.dtype
+            ) * 0.02
+            missing_tokens.append(token)
+
+    new_weight[-1] = old_weight[-1]
+    new_bias[-1] = old_bias[-1]
+
+    decoder_layer.weight = nn.Parameter(new_weight)
+    decoder_layer.bias = nn.Parameter(new_bias)
+
+    with open_dict(model.cfg):
+        model.cfg.decoder.vocabulary = slim_vocab
+        model.cfg.decoder.num_classes = len(slim_vocab)
+    model.decoder._num_classes = n_slim
+    model.decoder._ConvASRDecoder__vocabulary = slim_vocab
+
+    model.tokenizer = slim_tokenizer
+
+    removed = len(pretrained_vocab) - len(slim_vocab)
+    logging.info(
+        f"Slim decoder: {len(pretrained_vocab)+1} -> {n_slim} outputs "
+        f"(removed {removed} non-target tokens, copied {copied} pretrained weights). "
+        f"Target families: {sorted(training_families_upper)}"
+    )
+    if missing_tokens:
+        logging.warning(
+            f"{len(missing_tokens)} slim vocab tokens not found in pretrained decoder "
+            f"(random init): {missing_tokens[:10]}"
+        )
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Train aggregate tokenizers and ASR model")
     parser.add_argument(
@@ -1763,6 +1853,22 @@ def train_model(cfg, ckpt_path=None):
             "Using language family assignments for %d languages",
             len(language_family_map),
         )
+
+    language_families = cfg.model.get('language_families', [])
+    if language_families:
+        families_upper = {f.upper() for f in language_families}
+        all_langs = list(tokenizer_langs.keys())
+        tokenizer_langs = {k: v for k, v in tokenizer_langs.items() if k.upper() in families_upper}
+        if not tokenizer_langs:
+            raise RuntimeError(
+                f"No tokenizer_langs matched language_families {language_families}. "
+                f"Available: {all_langs}"
+            )
+        logging.info(
+            f"Filtered tokenizer_langs to target families {sorted(families_upper)}: "
+            f"{sorted(tokenizer_langs.keys())} (removed {len(all_langs) - len(tokenizer_langs)} non-target)"
+        )
+
     aggregate_vocab = load_aggregate_vocabulary(cfg)
     if not aggregate_vocab:
         logging.warning("Aggregate vocabulary missing from config; rebuilding from tokenizer directories.")
@@ -1853,6 +1959,9 @@ def train_model(cfg, ckpt_path=None):
 
     model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=True)
     model.setup_custom_loss()
+
+    if language_families:
+        slim_decoder_for_training(model, language_families)
 
     current_vocab = set(model.decoder.vocabulary)
     new_tokens = scan_manifest_for_new_tokens(train_manifest, current_vocab)
