@@ -1708,10 +1708,10 @@ def extend_decoder_for_new_tokens(model, new_tokens: List[str]):
     model.decoder._num_classes = new_num_classes
     model.decoder._ConvASRDecoder__vocabulary = new_vocab
 
-    logging.info(
+    nemo_logging.info(
         f"Extended decoder: {old_num_classes} -> {new_num_classes} outputs "
         f"(+{n_new} tokens, blank repositioned to idx {new_num_classes - 1}). "
-        f"First few new: {new_tokens[:5]}"
+        f"New tokens: {new_tokens}"
     )
 
 
@@ -1791,6 +1791,14 @@ def slim_decoder_for_training(model, training_families):
     model.decoder._ConvASRDecoder__vocabulary = slim_vocab
 
     model.tokenizer = slim_tokenizer
+
+    if hasattr(model, 'loss'):
+        old_cfg = getattr(model.loss, 'config', {})
+        model.loss = CTCLoss(
+            num_classes=n_slim,
+            zero_infinity=old_cfg.get('zero_infinity', True),
+            reduction=old_cfg.get('reduction', 'mean_batch'),
+        )
 
     removed = len(pretrained_vocab) - len(slim_vocab)
     nemo_logging.info(
@@ -1967,7 +1975,7 @@ def train_model(cfg, ckpt_path=None):
     current_vocab = set(model.decoder.vocabulary)
     new_tokens = scan_manifest_for_new_tokens(train_manifest, current_vocab)
     if new_tokens:
-        logging.info(f"Found {len(new_tokens)} special tokens in training data missing from model vocabulary")
+        nemo_logging.info(f"Found {len(new_tokens)} special tokens in training data missing from model vocabulary: {new_tokens}")
         extend_decoder_for_new_tokens(model, new_tokens)
         if hasattr(model, 'tokenizer') and hasattr(model.tokenizer, 'extend_vocabulary'):
             model.tokenizer.extend_vocabulary(new_tokens)
