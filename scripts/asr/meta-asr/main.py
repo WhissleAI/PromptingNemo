@@ -2148,16 +2148,20 @@ def train_model(cfg, ckpt_path=None):
     trainer = pl.Trainer(**trainer_kwargs)
     model.set_trainer(trainer)
 
+    every_n_train_steps = cfg.experiment.get('every_n_train_steps', None)
     callback_params = exp_manager.CallbackParams(
         monitor=cfg.experiment.monitor,
         mode=cfg.experiment.mode,
         always_save_nemo=cfg.experiment.always_save_nemo,
         save_top_k=cfg.experiment.get('save_top_k', 1),
+        every_n_train_steps=every_n_train_steps,
     )
     exp_cfg = exp_manager.ExpManagerConfig(
-        exp_dir=None,
-        name=None,
+        exp_dir=cfg.experiment.get('exp_dir', None),
+        name=cfg.experiment.get('exp_name', None),
         checkpoint_callback_params=callback_params,
+        resume_if_exists=cfg.experiment.get('resume_if_exists', False),
+        resume_past_end=cfg.experiment.get('resume_past_end', False),
         create_checkpoint_callback=True,
         create_tensorboard_logger=False,
         create_wandb_logger=False,
