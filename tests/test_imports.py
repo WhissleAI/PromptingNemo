@@ -143,6 +143,7 @@ class TestNemoDependentImports:
         except ImportError:
             pytest.skip("promptingnemo.export.to_onnx requires NeMo + torch")
         assert hasattr(to_onnx, "export_nemo_to_onnx")
+        assert hasattr(to_onnx, "extract_metadata_from_nemo")
 
     def test_import_export_to_hf(self):
         try:

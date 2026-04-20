@@ -406,23 +406,45 @@ cd recipes/meta_asr/gcp
 
 ## 5. Export
 
-### 5.1 ONNX Export
+### 5.1 ONNX Export (Whissle API compatible)
 
-Convert a trained NeMo checkpoint to ONNX for deployment:
+Convert a trained NeMo checkpoint to ONNX for deployment with api.whissle.ai:
+
+```bash
+# CLI (recommended)
+python -m promptingnemo.export.to_onnx \
+    --nemo-model /workspace/experiments/best_model.nemo \
+    --output-dir /workspace/exported/onnx_model
+
+# Metadata only (no GPU needed -- useful for inspecting vocab/config)
+python -m promptingnemo.export.to_onnx \
+    --nemo-model best_model.nemo --output-dir ./exported --metadata-only
+
+# CPU export (lower memory)
+python -m promptingnemo.export.to_onnx \
+    --nemo-model best_model.nemo --output-dir ./exported --cpu
+```
+
+Or from Python:
 
 ```python
 from promptingnemo.export.to_onnx import export_nemo_to_onnx
 
 export_nemo_to_onnx(
     nemo_model_path="/workspace/experiments/best_model.nemo",
-    save_directory="/workspace/exported/onnx_model",
+    output_dir="/workspace/exported/onnx_model",
 )
 ```
 
-This produces:
-- `model.onnx` -- the ONNX model
-- `tokenizer/tokenizer.model` -- the SentencePiece tokenizer
-- `magic.yaml` / `magic.txt` -- preprocessor configuration (sample rate, feature extraction params)
+This produces a directory compatible with the Whissle ASR engine (decoder_onnx):
+- `model.onnx` -- the exported ONNX model
+- `config.json` -- preprocessor configuration (sample rate, mel features, window params)
+- `vocabulary.json` -- vocabulary list, blank_id, tokenizer type, language offsets
+- `tokenizer.model` -- SentencePiece model (single-language)
+- `tokenizer_LANG.model` -- per-language SentencePiece models (aggregate tokenizer)
+
+The exporter handles both single-language and aggregate (multi-language) tokenizers,
+and patches NeMo 1.x configs for NeMo 2.x compatibility automatically.
 
 ### 5.2 HuggingFace Export
 
@@ -453,19 +475,28 @@ cd recipes/meta_asr/gcp
 
 ### 6.1 ONNX Runtime Inference
 
-After exporting to ONNX, serve the model with ONNX Runtime:
+After exporting to ONNX, the model directory can be served directly by the Whissle ASR engine (decoder_onnx) or used standalone with ONNX Runtime:
 
 ```python
+import json
 import onnxruntime as ort
 import numpy as np
 
-session = ort.InferenceSession("model.onnx")
-# Preprocess audio to log-mel features (see magic.yaml for params)
+# Load preprocessor config
+with open("exported/config.json") as f:
+    config = json.load(f)
+
+# Load vocabulary
+with open("exported/vocabulary.json") as f:
+    vocab = json.load(f)
+
+session = ort.InferenceSession("exported/model.onnx")
+# Preprocess audio to log-mel features using config["preprocessor"] params
 # Run inference
 outputs = session.run(None, {"audio_signal": features, "length": lengths})
 ```
 
-The ONNX model is also compatible with the [Whissle unified Docker image](https://github.com/WhissleAI/PromptingNemo/tree/main/docker) which bundles the ASR engine, Python agent server, and nginx gateway.
+The exported directory is directly compatible with the [Whissle unified Docker image](https://github.com/WhissleAI/PromptingNemo/tree/main/docker) which bundles the ASR engine, Python agent server, and nginx gateway. Mount the exported directory as the model path and the engine loads config.json, vocabulary.json, and model.onnx automatically.
 
 ### 6.2 NeMo Inference
 

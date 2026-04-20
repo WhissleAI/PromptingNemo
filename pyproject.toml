@@ -57,6 +57,7 @@ all = ["promptingnemo[train,export,dev]"]
 
 [project.scripts]
 promptingnemo = "promptingnemo.training.cli:main"
+promptingnemo-export = "promptingnemo.export.to_onnx:main"
 
 [project.urls]
 Homepage = "https://github.com/WhissleAI/PromptingNemo"

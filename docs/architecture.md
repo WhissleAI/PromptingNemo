@@ -24,8 +24,8 @@ promptingnemo/
 │   ├── inference.py    Model loading & transcription
 │   ├── wer.py          WER computation with tag-aware scoring
 │   └── ner.py          NER precision/recall/F1 scoring
-└── export/             Model export
-    ├── to_onnx.py      NeMo → ONNX conversion
+└── export/             Model export (Whissle API compatible)
+    ├── to_onnx.py      NeMo → ONNX + config.json + vocabulary.json
     └── to_hf.py        NeMo → HuggingFace format
 ```
 
@@ -56,7 +56,7 @@ promptingnemo/
    └── Compute NER F1 (entity tagging accuracy)
 
 5. Export (promptingnemo/export/)
-   ├── NeMo → ONNX (for deployment)
+   ├── NeMo → ONNX (config.json + vocabulary.json + model.onnx for Whissle API)
    └── NeMo → HuggingFace (for sharing)
 ```
 
