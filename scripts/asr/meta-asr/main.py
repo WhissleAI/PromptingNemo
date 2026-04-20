@@ -1921,8 +1921,6 @@ def train_model(cfg, ckpt_path=None):
 
     base_cfg = ASRModel.restore_from(restore_path=str(model_path), return_config=True)
     with open_dict(base_cfg):
-        base_cfg.tokenizer = tokenizer_entry
-
         adapter_cfg_section = cfg.get('adapter', {})
         if adapter_cfg_section and adapter_cfg_section.get('enabled', False):
             base_cfg.encoder._target_ = 'nemo.collections.asr.modules.conformer_encoder.ConformerEncoderAdapter'
