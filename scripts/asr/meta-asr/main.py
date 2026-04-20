@@ -1994,14 +1994,18 @@ def train_model(cfg, ckpt_path=None):
             activation=adapter_act,
             norm_position=adapter_norm,
         )
-        model.add_adapter(name=adapter_name, cfg=adapter_config)
+        existing = model.get_enabled_adapters() if hasattr(model, 'get_enabled_adapters') else []
+        if adapter_name in existing:
+            nemo_logging.info("Adapter '%s' already exists in checkpoint — reusing", adapter_name)
+        else:
+            model.add_adapter(name=adapter_name, cfg=adapter_config)
+            nemo_logging.info("Added adapter '%s' (dim=%d) to encoder layers", adapter_name, adapter_dim)
         model.set_enabled_adapters(enabled=True)
         if adapter_cfg.get('unfreeze_decoder', False):
             model.encoder.freeze()
             model.decoder.unfreeze()
         else:
             model.freeze()
-        logging.info("Added adapter '%s' (dim=%d) to encoder layers", adapter_name, adapter_dim)
 
     tokenizer_cfg = OmegaConf.create(tokenizer_entry)
     #logging.info("Applying deduplicated aggregate tokenizer via change_vocabulary().")
