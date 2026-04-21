@@ -2047,6 +2047,10 @@ def train_model(cfg, ckpt_path=None):
         if 'tokenizer' not in base_cfg or not base_cfg.get('tokenizer'):
             base_cfg.tokenizer = tokenizer_entry
 
+        if aggregate_vocab and hasattr(base_cfg, 'decoder'):
+            base_cfg.decoder.num_classes = len(aggregate_vocab)
+            base_cfg.decoder.vocabulary = aggregate_vocab
+
     model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=False)
     model.setup_custom_loss()
 
