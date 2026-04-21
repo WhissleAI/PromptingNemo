@@ -2044,7 +2044,10 @@ def train_model(cfg, ckpt_path=None):
         if 'augmentor' in base_cfg.train_ds:
             del base_cfg.train_ds.augmentor
 
-    model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=True)
+        if 'tokenizer' not in base_cfg or not base_cfg.get('tokenizer'):
+            base_cfg.tokenizer = tokenizer_entry
+
+    model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=False)
     model.setup_custom_loss()
 
     if language_families:
