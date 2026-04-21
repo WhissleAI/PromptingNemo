@@ -36,7 +36,7 @@ def process_split(ds_split, split_name: str, output_dir: str):
     with open(manifest_path, "w", encoding="utf-8") as f:
         for i, row in enumerate(ds_split):
             try:
-                audio = row.get("audio")
+                audio = row.get("audio") or row.get("audio_filepath")
                 text = row.get("text", "")
                 if not text or not audio:
                     errors += 1
@@ -46,6 +46,9 @@ def process_split(ds_split, split_name: str, output_dir: str):
                     array = audio.get("array")
                     sr = audio.get("sampling_rate", 16000)
                     orig_path = audio.get("path", f"sample_{i}.wav")
+                elif isinstance(audio, str):
+                    errors += 1
+                    continue
                 else:
                     errors += 1
                     continue
