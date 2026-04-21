@@ -32,4 +32,7 @@ def __getattr__(name):
             raise ImportError(
                 f"{name} requires NeMo. Install with: pip install promptingnemo[train]"
             ) from None
+    if name == "TextCTCTagger":
+        from promptingnemo.models.text_ctc_model import TextCTCTagger
+        return TextCTCTagger
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

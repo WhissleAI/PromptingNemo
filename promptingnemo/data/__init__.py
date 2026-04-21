@@ -52,4 +52,14 @@ def __getattr__(name):
             raise ImportError(
                 f"{name} requires NeMo. Install with: pip install promptingnemo[train]"
             ) from None
+    if name == "TextTaggerDataset":
+        from promptingnemo.data.text_tagger_dataset import TextTaggerDataset
+        return TextTaggerDataset
+    if name == "text_tagger_collate_fn":
+        from promptingnemo.data.text_tagger_dataset import text_tagger_collate_fn
+        return text_tagger_collate_fn
+    if name in ("parse_tagged_text", "strip_tags", "is_tag", "decompose_tag",
+                "build_tag_vocabulary", "build_char_vocabulary"):
+        from promptingnemo.data import tag_parser
+        return getattr(tag_parser, name)
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

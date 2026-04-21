@@ -28,5 +28,7 @@ docs/
 prompts/
 scripts/
 docker-compose.yml
-*.md
+CONTRIBUTING.md
+CHANGELOG.md
+DEVELOPMENT.md
 LICENCE

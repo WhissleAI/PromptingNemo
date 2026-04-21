@@ -1,0 +1,41 @@
+model:
+  embed_dim: 128
+  hidden_dim: 256
+  num_heads: 4
+  num_layers: 6
+  ffn_dim: 1024
+  dropout: 0.1
+  upsample_factor: 3
+  max_text_length: 512
+  causal: false
+
+data:
+  data_dir: /mnt/training/data/text_tagger
+  train_manifest: merged_train.json
+  val_manifest: merged_valid.json
+  hf_datasets:
+    - WhissleAI/Meta_STT_EN_Set1
+    - WhissleAI/Meta_STT_EURO_Set1
+    - WhissleAI/Meta_STT_EN_Set2
+    - WhissleAI/Meta_STT_SLAVIC_CommonVoice
+    - WhissleAI/speech-simulated-medical-exams
+    - WhissleAI/Meta_STT_HI_Set1
+    - WhissleAI/Meta_STT_EN-IN_Tech_Interviews
+
+training:
+  batch_size: 256
+  max_steps: 500000
+  num_workers: 8
+  lr: 0.001
+  weight_decay: 0.01
+  warmup_steps: 5000
+  accumulate_grad_batches: 1
+  gradient_clip_val: 1.0
+  val_check_interval: 5000
+  save_every_n_steps: 5000
+  precision: 16-mixed
+  devices: 1
+
+experiment:
+  exp_dir: /mnt/training/experiments
+  exp_name: text_ctc_tagger_v1
