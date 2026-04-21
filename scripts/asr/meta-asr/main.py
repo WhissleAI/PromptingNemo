@@ -2047,33 +2047,43 @@ def train_model(cfg, ckpt_path=None):
         if 'tokenizer' not in base_cfg or not base_cfg.get('tokenizer'):
             base_cfg.tokenizer = tokenizer_entry
 
+        if aggregate_vocab and hasattr(base_cfg, 'decoder'):
+            orig_num_classes = base_cfg.decoder.get('num_classes', 0)
+            if orig_num_classes != len(aggregate_vocab):
+                logging.info(
+                    "Updating decoder: num_classes %d -> %d (char→BPE conversion)",
+                    orig_num_classes, len(aggregate_vocab),
+                )
+                base_cfg.decoder.num_classes = len(aggregate_vocab)
+                base_cfg.decoder.vocabulary = aggregate_vocab
+
+    needs_encoder_only = False
+    orig_decoder_classes = base_cfg.get('decoder', {}).get('num_classes', 0)
     try:
         model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=False)
-    except RuntimeError as e:
+    except (RuntimeError, Exception) as e:
         if 'size mismatch' in str(e) and 'decoder' in str(e):
-            logging.warning("Decoder size mismatch (char→BPE conversion). Loading encoder only.")
-            orig_cfg = ASRModel.restore_from(restore_path=str(model_path), return_config=True)
-            with open_dict(base_cfg):
-                if aggregate_vocab:
-                    base_cfg.decoder.num_classes = len(aggregate_vocab)
-                    base_cfg.decoder.vocabulary = aggregate_vocab
-            import tempfile, tarfile
-            with tempfile.TemporaryDirectory() as tmpdir:
-                with tarfile.open(str(model_path), 'r:*') as tar:
-                    tar.extractall(tmpdir)
-                import glob as glob_mod
-                ckpt_files = glob_mod.glob(os.path.join(tmpdir, '**', '*.ckpt'), recursive=True)
-                if not ckpt_files:
-                    raise FileNotFoundError("No .ckpt found in .nemo archive")
-                state_dict = torch.load(ckpt_files[0], map_location='cpu')
-                if 'state_dict' in state_dict:
-                    state_dict = state_dict['state_dict']
-            model = CustomEncDecCTCModelBPE(cfg=base_cfg)
-            encoder_state = {k: v for k, v in state_dict.items() if not k.startswith('decoder.')}
-            model.load_state_dict(encoder_state, strict=False)
-            logging.info("Loaded encoder weights from pretrained model. Decoder randomly initialized for new vocab.")
+            needs_encoder_only = True
         else:
             raise
+
+    if needs_encoder_only:
+        logging.warning("Decoder size mismatch (char→BPE conversion). Loading encoder weights only.")
+        import tempfile, tarfile
+        with tempfile.TemporaryDirectory() as tmpdir:
+            with tarfile.open(str(model_path), 'r:*') as tar:
+                tar.extractall(tmpdir)
+            import glob as glob_mod
+            ckpt_files = glob_mod.glob(os.path.join(tmpdir, '**', '*.ckpt'), recursive=True)
+            if not ckpt_files:
+                raise FileNotFoundError("No .ckpt found in .nemo archive")
+            state_dict = torch.load(ckpt_files[0], map_location='cpu')
+            if 'state_dict' in state_dict:
+                state_dict = state_dict['state_dict']
+        model = CustomEncDecCTCModelBPE(cfg=base_cfg)
+        encoder_state = {k: v for k, v in state_dict.items() if not k.startswith('decoder.')}
+        model.load_state_dict(encoder_state, strict=False)
+        logging.info("Loaded encoder weights. Decoder randomly initialized for new %d-token vocab.", len(aggregate_vocab))
     model.setup_custom_loss()
 
     if language_families:
