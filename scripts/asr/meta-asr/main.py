@@ -2125,6 +2125,17 @@ def train_model(cfg, ckpt_path=None):
             model.decoder.unfreeze()
         else:
             model.freeze()
+        # Unfreeze adapter parameters — encoder.freeze() also freezes adapters
+        adapter_trainable = 0
+        for name, param in model.named_parameters():
+            if 'adapter' in name:
+                param.requires_grad = True
+                adapter_trainable += 1
+        trainable_total = sum(1 for p in model.parameters() if p.requires_grad)
+        nemo_logging.info(
+            "Unfroze %d adapter parameter tensors. Total trainable: %d",
+            adapter_trainable, trainable_total,
+        )
 
     tokenizer_cfg = OmegaConf.create(tokenizer_entry)
     #logging.info("Applying deduplicated aggregate tokenizer via change_vocabulary().")

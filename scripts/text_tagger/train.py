@@ -131,7 +131,7 @@ def train(cfg: dict, resume_from: str = None):
             every_n_train_steps=train_cfg.get('save_every_n_steps', 5000),
         ),
         pl.callbacks.LearningRateMonitor(logging_interval='step'),
-        pl.callbacks.RichProgressBar(),
+        pl.callbacks.TQDMProgressBar(refresh_rate=50),
     ]
 
     # Trainer
