@@ -114,6 +114,7 @@ def train(cfg: dict, resume_from: str = None):
 
     # Model
     model = TextCTCTagger(model_cfg)
+    model.set_tokenizer(tokenizer)
 
     # Callbacks
     exp_cfg = cfg.get('experiment', {})

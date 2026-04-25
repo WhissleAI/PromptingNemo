@@ -10,9 +10,22 @@ training:
   data_dir: "/external4/datasets/AI4Bharat/hindi"
   train_manifest: "nemo_train.jsonl"
   test_manifest: "nemo_valid.jsonl"
-  batch_size: 16  # Small batch size for testing
-  max_steps: 100000  # Small max_steps for initial testing
-  use_mixed_precision: true  # Add this flag for mixed precision
+  batch_size: 16
+  accumulate_grad_batches: 4
+  max_steps: 100000
+  max_duration: 20.0
+  num_workers: 4
+  pin_memory: true
+  use_mixed_precision: true
+  use_keyword_loss: false
+  use_family_loss_weights: false
+  skip_audio_validation: false
+  devices: 1
+  optim:
+    lr: 0.0001
+    weight_decay: 0.0
+    sched:
+      warmup_steps: 10000
 
 adapters:
   LinearAdapter:
@@ -38,5 +51,7 @@ experiment:
   mode: "min"
   always_save_nemo: true
   save_best_model: true
-  resume_if_exists: true  # New parameter to control checkpoint resumption
-  resume_from_checkpoint: "last"  # Options: "last", "best", or specific path
+  save_top_k: 3
+  every_n_train_steps: 2000
+  resume_if_exists: true
+  resume_from_checkpoint: "last"

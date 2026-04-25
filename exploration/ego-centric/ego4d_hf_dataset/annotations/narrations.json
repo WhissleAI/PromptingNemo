@@ -1,0 +1,957 @@
+{
+  "version": "v1.0",
+  "date": "2026-04-24",
+  "description": "Dense narration annotations for egocentric video clips",
+  "videos": [
+    {
+      "video_uid": "d120cbcb-0464-5435-b452-4312a4945bf6",
+      "narrations": [
+        {
+          "annotation_uid": "113abd57-7162-41d6-9c11-c963e7cc1815",
+          "video_uid": "d120cbcb-0464-5435-b452-4312a4945bf6",
+          "clip_uid": "853442cb-0c27-57ae-9cce-08195ec57930",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C reaches for the object on the table",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "b7428ce0-da7d-4f44-bce9-f15a3dd7f430",
+          "video_uid": "d120cbcb-0464-5435-b452-4312a4945bf6",
+          "clip_uid": "853442cb-0c27-57ae-9cce-08195ec57930",
+          "timestamp_sec": 5.5,
+          "timestamp_frame": 165,
+          "narration_text": "#C C picks up the object with right hand",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "410d97ca-b1fb-438b-bff9-c0e665da6e0e",
+          "video_uid": "d120cbcb-0464-5435-b452-4312a4945bf6",
+          "clip_uid": "853442cb-0c27-57ae-9cce-08195ec57930",
+          "timestamp_sec": 10.0,
+          "timestamp_frame": 300,
+          "narration_text": "#C C moves the object to the target location",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "7db871d1-1830-4fce-ae16-56036a55b32e",
+          "video_uid": "d120cbcb-0464-5435-b452-4312a4945bf6",
+          "clip_uid": "853442cb-0c27-57ae-9cce-08195ec57930",
+          "timestamp_sec": 15.0,
+          "timestamp_frame": 450,
+          "narration_text": "#C C places the object down carefully",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "c9eca578-2b10-44fd-be31-02e3b7dca13c",
+          "video_uid": "d120cbcb-0464-5435-b452-4312a4945bf6",
+          "clip_uid": "853442cb-0c27-57ae-9cce-08195ec57930",
+          "timestamp_sec": 20.0,
+          "timestamp_frame": 600,
+          "narration_text": "#C C adjusts the object position",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "a4974ea6-ffe2-4606-acdb-1d5640ff03c7",
+          "video_uid": "d120cbcb-0464-5435-b452-4312a4945bf6",
+          "clip_uid": "853442cb-0c27-57ae-9cce-08195ec57930",
+          "timestamp_sec": 25.0,
+          "timestamp_frame": 750,
+          "narration_text": "#C C releases the object",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "ad9506de-9a3f-5ede-b4a6-bc989b40e19c",
+      "narrations": [
+        {
+          "annotation_uid": "23c8b095-78e3-4b72-9804-850fefb8ad68",
+          "video_uid": "ad9506de-9a3f-5ede-b4a6-bc989b40e19c",
+          "clip_uid": "996d71af-d526-5340-a145-6d86a08574e4",
+          "timestamp_sec": 3.0,
+          "timestamp_frame": 90,
+          "narration_text": "#C C looks at the objects on the surface",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "a0cd8af9-b38c-47fb-90e0-17e86d84cd2d",
+          "video_uid": "ad9506de-9a3f-5ede-b4a6-bc989b40e19c",
+          "clip_uid": "996d71af-d526-5340-a145-6d86a08574e4",
+          "timestamp_sec": 7.0,
+          "timestamp_frame": 210,
+          "narration_text": "#C C grasps the item",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "27974075-f168-4201-9b4a-6b5a8f906436",
+          "video_uid": "ad9506de-9a3f-5ede-b4a6-bc989b40e19c",
+          "clip_uid": "996d71af-d526-5340-a145-6d86a08574e4",
+          "timestamp_sec": 12.0,
+          "timestamp_frame": 360,
+          "narration_text": "#C C lifts the item",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "79dd40ca-de1c-480f-8ea2-381a6ab60bd9",
+          "video_uid": "ad9506de-9a3f-5ede-b4a6-bc989b40e19c",
+          "clip_uid": "996d71af-d526-5340-a145-6d86a08574e4",
+          "timestamp_sec": 18.0,
+          "timestamp_frame": 540,
+          "narration_text": "#C C moves hand toward placement area",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "e4eb821c-b02b-469f-88e4-4b3232ecf00b",
+          "video_uid": "ad9506de-9a3f-5ede-b4a6-bc989b40e19c",
+          "clip_uid": "996d71af-d526-5340-a145-6d86a08574e4",
+          "timestamp_sec": 24.0,
+          "timestamp_frame": 720,
+          "narration_text": "#C C sets the item down",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "704c3149-35cb-5b78-9b6c-fb50e8a910a3",
+      "narrations": [
+        {
+          "annotation_uid": "d4793f29-10f8-4aa5-85a7-03aa4447d0ba",
+          "video_uid": "704c3149-35cb-5b78-9b6c-fb50e8a910a3",
+          "clip_uid": "1d670172-f69f-5209-a627-1c460b83927c",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C extends arm toward the object",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "8eb42fea-e1af-4c96-926c-4d5ea7526f02",
+          "video_uid": "704c3149-35cb-5b78-9b6c-fb50e8a910a3",
+          "clip_uid": "1d670172-f69f-5209-a627-1c460b83927c",
+          "timestamp_sec": 8.0,
+          "timestamp_frame": 240,
+          "narration_text": "#C C picks up the object",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "588df490-61bc-4bbe-b984-7b3a316e2a3a",
+          "video_uid": "704c3149-35cb-5b78-9b6c-fb50e8a910a3",
+          "clip_uid": "1d670172-f69f-5209-a627-1c460b83927c",
+          "timestamp_sec": 14.0,
+          "timestamp_frame": 420,
+          "narration_text": "#C C carries the object across the workspace",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "f3cc9bd0-1347-426e-8e34-df5cd8f839a0",
+          "video_uid": "704c3149-35cb-5b78-9b6c-fb50e8a910a3",
+          "clip_uid": "1d670172-f69f-5209-a627-1c460b83927c",
+          "timestamp_sec": 22.0,
+          "timestamp_frame": 660,
+          "narration_text": "#C C places the object at the new location",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "826e7209-b7e1-4430-bc75-8951ea7a03ec",
+          "video_uid": "704c3149-35cb-5b78-9b6c-fb50e8a910a3",
+          "clip_uid": "1d670172-f69f-5209-a627-1c460b83927c",
+          "timestamp_sec": 27.0,
+          "timestamp_frame": 810,
+          "narration_text": "#C C retracts hand",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "a82ac17e-cee3-5cef-8f94-4bc82ef713da",
+      "narrations": [
+        {
+          "annotation_uid": "ab71182d-2346-464c-a305-112959151550",
+          "video_uid": "a82ac17e-cee3-5cef-8f94-4bc82ef713da",
+          "clip_uid": "8cfae786-9a31-51d1-a940-00356573487e",
+          "timestamp_sec": 1.5,
+          "timestamp_frame": 45,
+          "narration_text": "#C C scans the workspace",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "a43f3547-0c88-4a28-bab7-4d5ea4145357",
+          "video_uid": "a82ac17e-cee3-5cef-8f94-4bc82ef713da",
+          "clip_uid": "8cfae786-9a31-51d1-a940-00356573487e",
+          "timestamp_sec": 6.0,
+          "timestamp_frame": 180,
+          "narration_text": "#C C reaches for a small object",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "6942e00a-a4b2-4d8b-b980-a589d2fe3c4e",
+          "video_uid": "a82ac17e-cee3-5cef-8f94-4bc82ef713da",
+          "clip_uid": "8cfae786-9a31-51d1-a940-00356573487e",
+          "timestamp_sec": 12.0,
+          "timestamp_frame": 360,
+          "narration_text": "#C C grasps and lifts the object",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "248125d6-a137-4c19-ac38-43242f9a4592",
+          "video_uid": "a82ac17e-cee3-5cef-8f94-4bc82ef713da",
+          "clip_uid": "8cfae786-9a31-51d1-a940-00356573487e",
+          "timestamp_sec": 19.0,
+          "timestamp_frame": 570,
+          "narration_text": "#C C moves the object to a different spot",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "89a5ea36-fe2a-4fa6-9938-2ecd1a531249",
+          "video_uid": "a82ac17e-cee3-5cef-8f94-4bc82ef713da",
+          "clip_uid": "8cfae786-9a31-51d1-a940-00356573487e",
+          "timestamp_sec": 26.0,
+          "timestamp_frame": 780,
+          "narration_text": "#C C places the object and releases",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "c29ff360-e9ed-5559-b41f-97d2120a20c6",
+      "narrations": [
+        {
+          "annotation_uid": "9cd26891-7754-4b71-a8b9-97caefa64d36",
+          "video_uid": "c29ff360-e9ed-5559-b41f-97d2120a20c6",
+          "clip_uid": "b5bdfb49-a82f-5c8d-8e02-9e6de8db9bc0",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C picks up the object",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "dd9742f8-7f26-49f5-b8a3-9a6139909fdc",
+          "video_uid": "c29ff360-e9ed-5559-b41f-97d2120a20c6",
+          "clip_uid": "b5bdfb49-a82f-5c8d-8e02-9e6de8db9bc0",
+          "timestamp_sec": 8.0,
+          "timestamp_frame": 240,
+          "narration_text": "#C C rotates the object in hand",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "431397b0-fdf8-46f8-9c7b-b145f4651d6c",
+          "video_uid": "c29ff360-e9ed-5559-b41f-97d2120a20c6",
+          "clip_uid": "b5bdfb49-a82f-5c8d-8e02-9e6de8db9bc0",
+          "timestamp_sec": 15.0,
+          "timestamp_frame": 450,
+          "narration_text": "#C C reorients the object to correct position",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "8e26d8be-6cdd-4fe5-a780-0fe26953be81",
+          "video_uid": "c29ff360-e9ed-5559-b41f-97d2120a20c6",
+          "clip_uid": "b5bdfb49-a82f-5c8d-8e02-9e6de8db9bc0",
+          "timestamp_sec": 22.0,
+          "timestamp_frame": 660,
+          "narration_text": "#C C places the reoriented object down",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "a96ea72a-5654-5756-8553-a94613ab162c",
+      "narrations": [
+        {
+          "annotation_uid": "e616469c-5d82-4a9c-9b22-54aaa684a478",
+          "video_uid": "a96ea72a-5654-5756-8553-a94613ab162c",
+          "clip_uid": "58270289-1883-54bc-80d0-5caf7817b019",
+          "timestamp_sec": 3.0,
+          "timestamp_frame": 90,
+          "narration_text": "#C C grasps the item from the surface",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "c1517384-f06c-4af1-a000-a48f13f57475",
+          "video_uid": "a96ea72a-5654-5756-8553-a94613ab162c",
+          "clip_uid": "58270289-1883-54bc-80d0-5caf7817b019",
+          "timestamp_sec": 9.0,
+          "timestamp_frame": 270,
+          "narration_text": "#C C turns the item around",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "644c9c77-ef29-4387-a036-a92ace582880",
+          "video_uid": "a96ea72a-5654-5756-8553-a94613ab162c",
+          "clip_uid": "58270289-1883-54bc-80d0-5caf7817b019",
+          "timestamp_sec": 16.0,
+          "timestamp_frame": 480,
+          "narration_text": "#C C inspects the item orientation",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "c9f5bfa0-bc8e-41d0-a973-faae9347ee73",
+          "video_uid": "a96ea72a-5654-5756-8553-a94613ab162c",
+          "clip_uid": "58270289-1883-54bc-80d0-5caf7817b019",
+          "timestamp_sec": 23.0,
+          "timestamp_frame": 690,
+          "narration_text": "#C C places the item in the target orientation",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "52e2eef9-b432-57a3-a0e3-0b85d344f586",
+      "narrations": [
+        {
+          "annotation_uid": "f320c309-fe10-49bf-abf3-635c4d017930",
+          "video_uid": "52e2eef9-b432-57a3-a0e3-0b85d344f586",
+          "clip_uid": "e7eabcf1-3a63-56b8-b489-3d10afc66696",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C reaches for the object",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "bb1dd8ce-5cbb-4913-ab0e-c801c2462f69",
+          "video_uid": "52e2eef9-b432-57a3-a0e3-0b85d344f586",
+          "clip_uid": "e7eabcf1-3a63-56b8-b489-3d10afc66696",
+          "timestamp_sec": 7.0,
+          "timestamp_frame": 210,
+          "narration_text": "#C C lifts and flips the object",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "8af6d181-676e-4980-8e8d-7f7547f9a15d",
+          "video_uid": "52e2eef9-b432-57a3-a0e3-0b85d344f586",
+          "clip_uid": "e7eabcf1-3a63-56b8-b489-3d10afc66696",
+          "timestamp_sec": 13.0,
+          "timestamp_frame": 390,
+          "narration_text": "#C C adjusts grip to reorient",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "4ed3531f-7dc5-4532-bdd7-881cdab7c39e",
+          "video_uid": "52e2eef9-b432-57a3-a0e3-0b85d344f586",
+          "clip_uid": "e7eabcf1-3a63-56b8-b489-3d10afc66696",
+          "timestamp_sec": 20.0,
+          "timestamp_frame": 600,
+          "narration_text": "#C C places the object with correct orientation",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "8031daea-4662-4825-85eb-59c253fa70f7",
+          "video_uid": "52e2eef9-b432-57a3-a0e3-0b85d344f586",
+          "clip_uid": "e7eabcf1-3a63-56b8-b489-3d10afc66696",
+          "timestamp_sec": 26.0,
+          "timestamp_frame": 780,
+          "narration_text": "#C C confirms placement",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "83398eef-68e0-53c7-b692-85367e00ec67",
+      "narrations": [
+        {
+          "annotation_uid": "5086866c-cf9c-4e96-8265-641a36e84256",
+          "video_uid": "83398eef-68e0-53c7-b692-85367e00ec67",
+          "clip_uid": "a3bce4ba-ad50-5d57-97b9-6db3ae31bf1c",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C reaches with both hands",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "97152aa6-24ef-4c6a-8c4e-bfc6842d6303",
+          "video_uid": "83398eef-68e0-53c7-b692-85367e00ec67",
+          "clip_uid": "a3bce4ba-ad50-5d57-97b9-6db3ae31bf1c",
+          "timestamp_sec": 7.0,
+          "timestamp_frame": 210,
+          "narration_text": "#C C grasps the object with two hands",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "05c60c2f-9ebe-42da-b29e-a3d13d427301",
+          "video_uid": "83398eef-68e0-53c7-b692-85367e00ec67",
+          "clip_uid": "a3bce4ba-ad50-5d57-97b9-6db3ae31bf1c",
+          "timestamp_sec": 14.0,
+          "timestamp_frame": 420,
+          "narration_text": "#C C lifts the object using both hands",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "cef033a4-527b-431b-a514-ac68446e6861",
+          "video_uid": "83398eef-68e0-53c7-b692-85367e00ec67",
+          "clip_uid": "a3bce4ba-ad50-5d57-97b9-6db3ae31bf1c",
+          "timestamp_sec": 21.0,
+          "timestamp_frame": 630,
+          "narration_text": "#C C carries the object bimanually",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "9a47b4e4-8b7a-4521-afd1-8991807cbf44",
+          "video_uid": "83398eef-68e0-53c7-b692-85367e00ec67",
+          "clip_uid": "a3bce4ba-ad50-5d57-97b9-6db3ae31bf1c",
+          "timestamp_sec": 27.0,
+          "timestamp_frame": 810,
+          "narration_text": "#C C places the object down with both hands",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "3ca004a4-9a05-5ff2-ab32-4f1724ef585a",
+      "narrations": [
+        {
+          "annotation_uid": "f0d058b0-97f6-4bcc-a9ae-16d21a50c6d7",
+          "video_uid": "3ca004a4-9a05-5ff2-ab32-4f1724ef585a",
+          "clip_uid": "4bdd5765-4210-5826-8982-79f0f7dcae89",
+          "timestamp_sec": 3.0,
+          "timestamp_frame": 90,
+          "narration_text": "#C C positions both hands around the object",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "4bb66b65-bd46-42f2-a3e6-101733bdd893",
+          "video_uid": "3ca004a4-9a05-5ff2-ab32-4f1724ef585a",
+          "clip_uid": "4bdd5765-4210-5826-8982-79f0f7dcae89",
+          "timestamp_sec": 9.0,
+          "timestamp_frame": 270,
+          "narration_text": "#C C grasps with coordinated bimanual grip",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "d712a6f3-c0b9-4f68-8a31-b557dd22f84f",
+          "video_uid": "3ca004a4-9a05-5ff2-ab32-4f1724ef585a",
+          "clip_uid": "4bdd5765-4210-5826-8982-79f0f7dcae89",
+          "timestamp_sec": 16.0,
+          "timestamp_frame": 480,
+          "narration_text": "#C C moves the object to the target",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "44ecfc53-b7f8-43b7-aaca-762881230c07",
+          "video_uid": "3ca004a4-9a05-5ff2-ab32-4f1724ef585a",
+          "clip_uid": "4bdd5765-4210-5826-8982-79f0f7dcae89",
+          "timestamp_sec": 24.0,
+          "timestamp_frame": 720,
+          "narration_text": "#C C releases the object with both hands",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "5e05bb65-9f45-5edd-854a-45dbcc54c255",
+      "narrations": [
+        {
+          "annotation_uid": "662baa41-1855-43c1-a26f-290105ab0293",
+          "video_uid": "5e05bb65-9f45-5edd-854a-45dbcc54c255",
+          "clip_uid": "2e983e65-510b-5981-beb1-7c5e202eaf55",
+          "timestamp_sec": 2.5,
+          "timestamp_frame": 75,
+          "narration_text": "#C C approaches the object with both hands",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "2f995edc-ecf7-43ed-b664-80ba30645a96",
+          "video_uid": "5e05bb65-9f45-5edd-854a-45dbcc54c255",
+          "clip_uid": "2e983e65-510b-5981-beb1-7c5e202eaf55",
+          "timestamp_sec": 8.0,
+          "timestamp_frame": 240,
+          "narration_text": "#C C coordinates bimanual grasp",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "bbd1a14a-bcdc-439d-a630-a45580846c51",
+          "video_uid": "5e05bb65-9f45-5edd-854a-45dbcc54c255",
+          "clip_uid": "2e983e65-510b-5981-beb1-7c5e202eaf55",
+          "timestamp_sec": 15.0,
+          "timestamp_frame": 450,
+          "narration_text": "#C C transports the object carefully",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "11e12b98-98ad-4685-a42c-beb9849a9147",
+          "video_uid": "5e05bb65-9f45-5edd-854a-45dbcc54c255",
+          "clip_uid": "2e983e65-510b-5981-beb1-7c5e202eaf55",
+          "timestamp_sec": 22.0,
+          "timestamp_frame": 660,
+          "narration_text": "#C C places the object at destination",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "c162ee59-b9dc-574f-9e89-0dcc2123159f",
+      "narrations": [
+        {
+          "annotation_uid": "8d546273-e8e5-4e98-886c-c6537f588b0d",
+          "video_uid": "c162ee59-b9dc-574f-9e89-0dcc2123159f",
+          "clip_uid": "e854b6af-e1af-5eb1-8e21-16b5e34a5a03",
+          "timestamp_sec": 1.0,
+          "timestamp_frame": 30,
+          "narration_text": "#C C looks at the bathroom counter",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "6f920239-f073-4a74-a982-9db45c8753d9",
+          "video_uid": "c162ee59-b9dc-574f-9e89-0dcc2123159f",
+          "clip_uid": "e854b6af-e1af-5eb1-8e21-16b5e34a5a03",
+          "timestamp_sec": 5.0,
+          "timestamp_frame": 150,
+          "narration_text": "#C C picks up a toiletry item",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "156e3810-1fc3-48c4-9220-2afd7de833b4",
+          "video_uid": "c162ee59-b9dc-574f-9e89-0dcc2123159f",
+          "clip_uid": "e854b6af-e1af-5eb1-8e21-16b5e34a5a03",
+          "timestamp_sec": 10.0,
+          "timestamp_frame": 300,
+          "narration_text": "#C C places the item in the organizer",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "9e235fd7-9208-49f6-b002-355e9e8502b9",
+          "video_uid": "c162ee59-b9dc-574f-9e89-0dcc2123159f",
+          "clip_uid": "e854b6af-e1af-5eb1-8e21-16b5e34a5a03",
+          "timestamp_sec": 15.0,
+          "timestamp_frame": 450,
+          "narration_text": "#C C reaches for another item",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "1b3dd559-f661-4ad4-bcd9-979d8a5f7bdd",
+          "video_uid": "c162ee59-b9dc-574f-9e89-0dcc2123159f",
+          "clip_uid": "e854b6af-e1af-5eb1-8e21-16b5e34a5a03",
+          "timestamp_sec": 20.0,
+          "timestamp_frame": 600,
+          "narration_text": "#C C arranges items neatly",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "9651b98a-910f-4cb6-9e0a-18590ca3d2db",
+          "video_uid": "c162ee59-b9dc-574f-9e89-0dcc2123159f",
+          "clip_uid": "e854b6af-e1af-5eb1-8e21-16b5e34a5a03",
+          "timestamp_sec": 25.0,
+          "timestamp_frame": 750,
+          "narration_text": "#C C wipes the counter surface",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "263f777e-3350-55a6-a6e3-10227c788aca",
+      "narrations": [
+        {
+          "annotation_uid": "73954c4f-ccd9-4b21-848e-bececa11cb81",
+          "video_uid": "263f777e-3350-55a6-a6e3-10227c788aca",
+          "clip_uid": "6900fe3a-6f96-5332-9808-5a43dce21b4c",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C picks up bottles from the shelf",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "a636b36d-b809-48e7-ae7e-fe9ef46711dc",
+          "video_uid": "263f777e-3350-55a6-a6e3-10227c788aca",
+          "clip_uid": "6900fe3a-6f96-5332-9808-5a43dce21b4c",
+          "timestamp_sec": 8.0,
+          "timestamp_frame": 240,
+          "narration_text": "#C C rearranges bottles by size",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "6ce86c68-0a77-4044-a7b0-187485ff5a74",
+          "video_uid": "263f777e-3350-55a6-a6e3-10227c788aca",
+          "clip_uid": "6900fe3a-6f96-5332-9808-5a43dce21b4c",
+          "timestamp_sec": 14.0,
+          "timestamp_frame": 420,
+          "narration_text": "#C C cleans the shelf surface",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "846745f1-4b45-484e-91f6-56b04fc3fa71",
+          "video_uid": "263f777e-3350-55a6-a6e3-10227c788aca",
+          "clip_uid": "6900fe3a-6f96-5332-9808-5a43dce21b4c",
+          "timestamp_sec": 20.0,
+          "timestamp_frame": 600,
+          "narration_text": "#C C places bottles back in order",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "38c4250d-a01d-4b19-bcf8-a4ba3112f74e",
+          "video_uid": "263f777e-3350-55a6-a6e3-10227c788aca",
+          "clip_uid": "6900fe3a-6f96-5332-9808-5a43dce21b4c",
+          "timestamp_sec": 26.0,
+          "timestamp_frame": 780,
+          "narration_text": "#C C checks the organized shelf",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "9e2eb3c0-8490-5440-8f42-a09cb07c43b5",
+      "narrations": [
+        {
+          "annotation_uid": "7ed7b59b-6fdc-415b-907d-04e0ffb0580f",
+          "video_uid": "9e2eb3c0-8490-5440-8f42-a09cb07c43b5",
+          "clip_uid": "5bb06123-14a6-583a-86bd-64659ce29ce3",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C picks up clothes from the floor",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "09d33302-de45-436d-a60a-10f8a72affca",
+          "video_uid": "9e2eb3c0-8490-5440-8f42-a09cb07c43b5",
+          "clip_uid": "5bb06123-14a6-583a-86bd-64659ce29ce3",
+          "timestamp_sec": 7.0,
+          "timestamp_frame": 210,
+          "narration_text": "#C C folds a shirt",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "9ab63800-14a6-45ea-91cd-2b3256be0019",
+          "video_uid": "9e2eb3c0-8490-5440-8f42-a09cb07c43b5",
+          "clip_uid": "5bb06123-14a6-583a-86bd-64659ce29ce3",
+          "timestamp_sec": 13.0,
+          "timestamp_frame": 390,
+          "narration_text": "#C C places folded clothes on the bed",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "c921f08c-b141-424a-b9a6-d31ee427a201",
+          "video_uid": "9e2eb3c0-8490-5440-8f42-a09cb07c43b5",
+          "clip_uid": "5bb06123-14a6-583a-86bd-64659ce29ce3",
+          "timestamp_sec": 19.0,
+          "timestamp_frame": 570,
+          "narration_text": "#C C picks up more items",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "2391de21-0700-4622-932b-a720c5d2b3ba",
+          "video_uid": "9e2eb3c0-8490-5440-8f42-a09cb07c43b5",
+          "clip_uid": "5bb06123-14a6-583a-86bd-64659ce29ce3",
+          "timestamp_sec": 25.0,
+          "timestamp_frame": 750,
+          "narration_text": "#C C organizes items on the nightstand",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "c0fb6637-b32c-5bd3-9360-97fad3d669e7",
+      "narrations": [
+        {
+          "annotation_uid": "1cf1443a-5fbd-4683-b42a-b5ca98610397",
+          "video_uid": "c0fb6637-b32c-5bd3-9360-97fad3d669e7",
+          "clip_uid": "309661d9-a026-5f15-bcae-fc17ad1a1ca5",
+          "timestamp_sec": 3.0,
+          "timestamp_frame": 90,
+          "narration_text": "#C C straightens the bedsheets",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "be376c70-7b40-4dc0-91f3-a959c8c6ba6d",
+          "video_uid": "c0fb6637-b32c-5bd3-9360-97fad3d669e7",
+          "clip_uid": "309661d9-a026-5f15-bcae-fc17ad1a1ca5",
+          "timestamp_sec": 9.0,
+          "timestamp_frame": 270,
+          "narration_text": "#C C fluffs a pillow",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "5840c3af-1668-4f07-8bee-368b92c59c05",
+          "video_uid": "c0fb6637-b32c-5bd3-9360-97fad3d669e7",
+          "clip_uid": "309661d9-a026-5f15-bcae-fc17ad1a1ca5",
+          "timestamp_sec": 15.0,
+          "timestamp_frame": 450,
+          "narration_text": "#C C places the pillow on the bed",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "0ded8a4d-03de-4459-b3b0-eed892a33b15",
+          "video_uid": "c0fb6637-b32c-5bd3-9360-97fad3d669e7",
+          "clip_uid": "309661d9-a026-5f15-bcae-fc17ad1a1ca5",
+          "timestamp_sec": 21.0,
+          "timestamp_frame": 630,
+          "narration_text": "#C C picks up items from the floor",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "61852f94-9865-4e21-8825-58c3e762fdd9",
+          "video_uid": "c0fb6637-b32c-5bd3-9360-97fad3d669e7",
+          "clip_uid": "309661d9-a026-5f15-bcae-fc17ad1a1ca5",
+          "timestamp_sec": 27.0,
+          "timestamp_frame": 810,
+          "narration_text": "#C C puts items in the drawer",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "b5d8f6ce-1829-5083-9bf1-0c48c694e143",
+      "narrations": [
+        {
+          "annotation_uid": "81386909-ceb9-4a48-b8a6-c017bfd014fc",
+          "video_uid": "b5d8f6ce-1829-5083-9bf1-0c48c694e143",
+          "clip_uid": "a5ade5e4-8d46-541a-86a1-fbb30ebfb600",
+          "timestamp_sec": 1.5,
+          "timestamp_frame": 45,
+          "narration_text": "#C C collects scattered items",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "ee1de37a-dc65-403b-a6c1-8552270ccf7d",
+          "video_uid": "b5d8f6ce-1829-5083-9bf1-0c48c694e143",
+          "clip_uid": "a5ade5e4-8d46-541a-86a1-fbb30ebfb600",
+          "timestamp_sec": 7.0,
+          "timestamp_frame": 210,
+          "narration_text": "#C C puts items in their proper place",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "4f4e15ff-d39e-43d1-a78d-74e2f2374d49",
+          "video_uid": "b5d8f6ce-1829-5083-9bf1-0c48c694e143",
+          "clip_uid": "a5ade5e4-8d46-541a-86a1-fbb30ebfb600",
+          "timestamp_sec": 13.0,
+          "timestamp_frame": 390,
+          "narration_text": "#C C wipes the surface of a desk",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "e41a4c3c-9cd9-4e3e-8baa-ff79b6311260",
+          "video_uid": "b5d8f6ce-1829-5083-9bf1-0c48c694e143",
+          "clip_uid": "a5ade5e4-8d46-541a-86a1-fbb30ebfb600",
+          "timestamp_sec": 19.0,
+          "timestamp_frame": 570,
+          "narration_text": "#C C organizes books on the shelf",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "707de136-f0a0-434d-8bd0-1d8d2a51cbf3",
+          "video_uid": "b5d8f6ce-1829-5083-9bf1-0c48c694e143",
+          "clip_uid": "a5ade5e4-8d46-541a-86a1-fbb30ebfb600",
+          "timestamp_sec": 25.0,
+          "timestamp_frame": 750,
+          "narration_text": "#C C checks the room for remaining clutter",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "e7efd662-d7f2-517b-94dc-6bd0c55269f5",
+      "narrations": [
+        {
+          "annotation_uid": "1cbf2a45-3395-4e84-85a0-f9becdf8f7e0",
+          "video_uid": "e7efd662-d7f2-517b-94dc-6bd0c55269f5",
+          "clip_uid": "8bade365-ae6e-5ccd-940e-e8817057d45f",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C picks up a blanket from the chair",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "8eb7aa68-fba1-4d8b-ba65-5bc3317618eb",
+          "video_uid": "e7efd662-d7f2-517b-94dc-6bd0c55269f5",
+          "clip_uid": "8bade365-ae6e-5ccd-940e-e8817057d45f",
+          "timestamp_sec": 8.0,
+          "timestamp_frame": 240,
+          "narration_text": "#C C folds the blanket",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "c411289c-1570-405a-a1d9-c9e4a74cc4aa",
+          "video_uid": "e7efd662-d7f2-517b-94dc-6bd0c55269f5",
+          "clip_uid": "8bade365-ae6e-5ccd-940e-e8817057d45f",
+          "timestamp_sec": 14.0,
+          "timestamp_frame": 420,
+          "narration_text": "#C C places the blanket on the bed",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "450cc98e-0bd7-4bb6-9e1b-8cd46ed2e9c9",
+          "video_uid": "e7efd662-d7f2-517b-94dc-6bd0c55269f5",
+          "clip_uid": "8bade365-ae6e-5ccd-940e-e8817057d45f",
+          "timestamp_sec": 20.0,
+          "timestamp_frame": 600,
+          "narration_text": "#C C arranges decorative items",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "c5af989b-2568-43a2-a2a9-1348ca5f5d9b",
+          "video_uid": "e7efd662-d7f2-517b-94dc-6bd0c55269f5",
+          "clip_uid": "8bade365-ae6e-5ccd-940e-e8817057d45f",
+          "timestamp_sec": 26.0,
+          "timestamp_frame": 780,
+          "narration_text": "#C C surveys the tidy room",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "216f11c9-6f38-53e7-8951-48017b3431ae",
+      "narrations": [
+        {
+          "annotation_uid": "d07083c2-daf2-4658-a0ba-0b91754e99b6",
+          "video_uid": "216f11c9-6f38-53e7-8951-48017b3431ae",
+          "clip_uid": "f64d3259-58ee-5bca-bae6-2560e872813e",
+          "timestamp_sec": 1.0,
+          "timestamp_frame": 30,
+          "narration_text": "#C C turns on the faucet",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "3a11c4de-e6fa-4445-ad2f-46904e14d882",
+          "video_uid": "216f11c9-6f38-53e7-8951-48017b3431ae",
+          "clip_uid": "f64d3259-58ee-5bca-bae6-2560e872813e",
+          "timestamp_sec": 4.0,
+          "timestamp_frame": 120,
+          "narration_text": "#C C picks up a dirty dish from the counter",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "bb04f31a-1193-46c0-9df0-9a97515035a0",
+          "video_uid": "216f11c9-6f38-53e7-8951-48017b3431ae",
+          "clip_uid": "f64d3259-58ee-5bca-bae6-2560e872813e",
+          "timestamp_sec": 8.0,
+          "timestamp_frame": 240,
+          "narration_text": "#C C applies soap to the sponge",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "85b60da4-4327-44e9-afbf-e688b1773894",
+          "video_uid": "216f11c9-6f38-53e7-8951-48017b3431ae",
+          "clip_uid": "f64d3259-58ee-5bca-bae6-2560e872813e",
+          "timestamp_sec": 13.0,
+          "timestamp_frame": 390,
+          "narration_text": "#C C scrubs the dish with the sponge",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "a0f4c14d-9824-4ed0-9fe4-8a4479cc742b",
+          "video_uid": "216f11c9-6f38-53e7-8951-48017b3431ae",
+          "clip_uid": "f64d3259-58ee-5bca-bae6-2560e872813e",
+          "timestamp_sec": 19.0,
+          "timestamp_frame": 570,
+          "narration_text": "#C C rinses the dish under running water",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "0990c665-9b80-48dc-8084-9cb36fc659e8",
+          "video_uid": "216f11c9-6f38-53e7-8951-48017b3431ae",
+          "clip_uid": "f64d3259-58ee-5bca-bae6-2560e872813e",
+          "timestamp_sec": 24.0,
+          "timestamp_frame": 720,
+          "narration_text": "#C C places the clean dish on the drying rack",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "5a230b90-5fc9-57f7-8b09-5767e3220c31",
+      "narrations": [
+        {
+          "annotation_uid": "a2732a46-8f41-4576-8cd4-6ee5c7dbcef1",
+          "video_uid": "5a230b90-5fc9-57f7-8b09-5767e3220c31",
+          "clip_uid": "0b580a9c-cb85-5da2-aaca-4caec3509440",
+          "timestamp_sec": 2.0,
+          "timestamp_frame": 60,
+          "narration_text": "#C C picks up a pot from the sink",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "b4742c7f-4001-4e10-93c3-ba180329e3fa",
+          "video_uid": "5a230b90-5fc9-57f7-8b09-5767e3220c31",
+          "clip_uid": "0b580a9c-cb85-5da2-aaca-4caec3509440",
+          "timestamp_sec": 6.0,
+          "timestamp_frame": 180,
+          "narration_text": "#C C scrubs the inside of the pot",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "ecada366-6081-4817-b023-ab6d24a4d8b4",
+          "video_uid": "5a230b90-5fc9-57f7-8b09-5767e3220c31",
+          "clip_uid": "0b580a9c-cb85-5da2-aaca-4caec3509440",
+          "timestamp_sec": 12.0,
+          "timestamp_frame": 360,
+          "narration_text": "#C C rinses the pot",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "641e9054-4017-424c-85a5-e5a0dce31f5e",
+          "video_uid": "5a230b90-5fc9-57f7-8b09-5767e3220c31",
+          "clip_uid": "0b580a9c-cb85-5da2-aaca-4caec3509440",
+          "timestamp_sec": 18.0,
+          "timestamp_frame": 540,
+          "narration_text": "#C C scrubs the outside of the pot",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "3639ec79-a1c2-49ed-a9aa-8f6b481daa57",
+          "video_uid": "5a230b90-5fc9-57f7-8b09-5767e3220c31",
+          "clip_uid": "0b580a9c-cb85-5da2-aaca-4caec3509440",
+          "timestamp_sec": 24.0,
+          "timestamp_frame": 720,
+          "narration_text": "#C C places the clean pot aside",
+          "is_camera_wearer": true
+        }
+      ]
+    },
+    {
+      "video_uid": "e69f7755-bf3a-58c2-87a7-b881e1c66c23",
+      "narrations": [
+        {
+          "annotation_uid": "4a648465-2c2d-49ad-b72a-8e2911938a90",
+          "video_uid": "e69f7755-bf3a-58c2-87a7-b881e1c66c23",
+          "clip_uid": "c5a2ec10-7cbc-5be1-bde5-d04500473441",
+          "timestamp_sec": 1.5,
+          "timestamp_frame": 45,
+          "narration_text": "#C C picks up utensils from the counter",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "370f547f-3448-408a-b775-e68857ef8966",
+          "video_uid": "e69f7755-bf3a-58c2-87a7-b881e1c66c23",
+          "clip_uid": "c5a2ec10-7cbc-5be1-bde5-d04500473441",
+          "timestamp_sec": 6.0,
+          "timestamp_frame": 180,
+          "narration_text": "#C C washes the fork under water",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "141d1608-f11b-4bc8-a97c-64f5bd9fc190",
+          "video_uid": "e69f7755-bf3a-58c2-87a7-b881e1c66c23",
+          "clip_uid": "c5a2ec10-7cbc-5be1-bde5-d04500473441",
+          "timestamp_sec": 11.0,
+          "timestamp_frame": 330,
+          "narration_text": "#C C scrubs the knife with sponge",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "f85371ff-6d8f-4b73-986c-af3b6f7313d0",
+          "video_uid": "e69f7755-bf3a-58c2-87a7-b881e1c66c23",
+          "clip_uid": "c5a2ec10-7cbc-5be1-bde5-d04500473441",
+          "timestamp_sec": 17.0,
+          "timestamp_frame": 510,
+          "narration_text": "#C C rinses all the utensils",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "9b1d4a13-7c24-4055-85a8-11ea0e6552cf",
+          "video_uid": "e69f7755-bf3a-58c2-87a7-b881e1c66c23",
+          "clip_uid": "c5a2ec10-7cbc-5be1-bde5-d04500473441",
+          "timestamp_sec": 23.0,
+          "timestamp_frame": 690,
+          "narration_text": "#C C places utensils in the drying rack",
+          "is_camera_wearer": true
+        },
+        {
+          "annotation_uid": "06cc96c9-87a9-4ec5-9560-ab8078c9ea4a",
+          "video_uid": "e69f7755-bf3a-58c2-87a7-b881e1c66c23",
+          "clip_uid": "c5a2ec10-7cbc-5be1-bde5-d04500473441",
+          "timestamp_sec": 28.0,
+          "timestamp_frame": 840,
+          "narration_text": "#C C turns off the faucet",
+          "is_camera_wearer": true
+        }
+      ]
+    }
+  ]
+}

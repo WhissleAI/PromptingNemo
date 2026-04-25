@@ -1,0 +1,3479 @@
+{
+  "version": "v2",
+  "date": "2024-03-15",
+  "description": "NLQ test annotations (synthetic sample)",
+  "videos": [
+    {
+      "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "4c0a30bf-847e-4cca-b0cf-2f3de7576257",
+          "video_start_sec": 0,
+          "video_end_sec": 315.31,
+          "annotations": [
+            {
+              "annotator_uid": "0efc5bcc-200a-46f3-bcab-605e1d108996",
+              "queries": [
+                {
+                  "clip_uid": "4c0a30bf-847e-4cca-b0cf-2f3de7576257",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 2802,
+                  "clip_start_sec": 59.826,
+                  "clip_end_sec": 88.238,
+                  "clip_start_frame": 1794,
+                  "clip_end_frame": 2647
+                },
+                {
+                  "clip_uid": "4c0a30bf-847e-4cca-b0cf-2f3de7576257",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 1712,
+                  "clip_start_sec": 37.803,
+                  "clip_end_sec": 48.522,
+                  "clip_start_frame": 1134,
+                  "clip_end_frame": 1455
+                },
+                {
+                  "clip_uid": "4c0a30bf-847e-4cca-b0cf-2f3de7576257",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What did I put on the table?",
+                  "query_frame": 504,
+                  "clip_start_sec": 11.196,
+                  "clip_end_sec": 14.008,
+                  "clip_start_frame": 335,
+                  "clip_end_frame": 420
+                },
+                {
+                  "clip_uid": "4c0a30bf-847e-4cca-b0cf-2f3de7576257",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What was I cutting?",
+                  "query_frame": 2793,
+                  "clip_start_sec": 84.667,
+                  "clip_end_sec": 89.078,
+                  "clip_start_frame": 2540,
+                  "clip_end_frame": 2672
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "26feea28-4f6d-4ac0-814a-68cb27d2f3b0",
+          "video_start_sec": 315.31,
+          "video_end_sec": 688.994,
+          "annotations": [
+            {
+              "annotator_uid": "6631377e-2991-44ae-8e41-c2da01ffc907",
+              "queries": [
+                {
+                  "clip_uid": "26feea28-4f6d-4ac0-814a-68cb27d2f3b0",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 5228,
+                  "clip_start_sec": 161.215,
+                  "clip_end_sec": 171.963,
+                  "clip_start_frame": 4836,
+                  "clip_end_frame": 5158
+                },
+                {
+                  "clip_uid": "26feea28-4f6d-4ac0-814a-68cb27d2f3b0",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "Where is the towel?",
+                  "query_frame": 8432,
+                  "clip_start_sec": 254.694,
+                  "clip_end_sec": 277.855,
+                  "clip_start_frame": 7640,
+                  "clip_end_frame": 8335
+                },
+                {
+                  "clip_uid": "26feea28-4f6d-4ac0-814a-68cb27d2f3b0",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "Where is the towel?",
+                  "query_frame": 1542,
+                  "clip_start_sec": 24.305,
+                  "clip_end_sec": 48.771,
+                  "clip_start_frame": 729,
+                  "clip_end_frame": 1463
+                },
+                {
+                  "clip_uid": "26feea28-4f6d-4ac0-814a-68cb27d2f3b0",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "Where is the towel?",
+                  "query_frame": 4480,
+                  "clip_start_sec": 119.171,
+                  "clip_end_sec": 140.336,
+                  "clip_start_frame": 3575,
+                  "clip_end_frame": 4210
+                },
+                {
+                  "clip_uid": "26feea28-4f6d-4ac0-814a-68cb27d2f3b0",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 2228,
+                  "clip_start_sec": 60.606,
+                  "clip_end_sec": 68.872,
+                  "clip_start_frame": 1818,
+                  "clip_end_frame": 2066
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "4a0fbc16-f395-4c1b-8010-ddae258d5f9f",
+          "video_start_sec": 688.994,
+          "video_end_sec": 1137.624,
+          "annotations": [
+            {
+              "annotator_uid": "fd5bd39b-99a0-4f7d-b07e-1c41469390d6",
+              "queries": [
+                {
+                  "clip_uid": "4a0fbc16-f395-4c1b-8010-ddae258d5f9f",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 2753,
+                  "clip_start_sec": 57.58,
+                  "clip_end_sec": 85.263,
+                  "clip_start_frame": 1727,
+                  "clip_end_frame": 2557
+                },
+                {
+                  "clip_uid": "4a0fbc16-f395-4c1b-8010-ddae258d5f9f",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "Where is the towel?",
+                  "query_frame": 4442,
+                  "clip_start_sec": 142.35,
+                  "clip_end_sec": 145.197,
+                  "clip_start_frame": 4270,
+                  "clip_end_frame": 4355
+                },
+                {
+                  "clip_uid": "4a0fbc16-f395-4c1b-8010-ddae258d5f9f",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 3932,
+                  "clip_start_sec": 110.367,
+                  "clip_end_sec": 125.282,
+                  "clip_start_frame": 3311,
+                  "clip_end_frame": 3758
+                },
+                {
+                  "clip_uid": "4a0fbc16-f395-4c1b-8010-ddae258d5f9f",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 8092,
+                  "clip_start_sec": 241.165,
+                  "clip_end_sec": 260.089,
+                  "clip_start_frame": 7234,
+                  "clip_end_frame": 7802
+                },
+                {
+                  "clip_uid": "4a0fbc16-f395-4c1b-8010-ddae258d5f9f",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 1912,
+                  "clip_start_sec": 32.325,
+                  "clip_end_sec": 57.216,
+                  "clip_start_frame": 969,
+                  "clip_end_frame": 1716
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "f7c88b4c-3f7a-4a8c-9f80-efcf8f8b07ad",
+          "video_start_sec": 1137.624,
+          "video_end_sec": 1457.838,
+          "annotations": [
+            {
+              "annotator_uid": "d2d54e37-0426-4ae7-bde0-d932e7ac85ae",
+              "queries": [
+                {
+                  "clip_uid": "f7c88b4c-3f7a-4a8c-9f80-efcf8f8b07ad",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What was I cutting?",
+                  "query_frame": 6077,
+                  "clip_start_sec": 177.623,
+                  "clip_end_sec": 194.54,
+                  "clip_start_frame": 5328,
+                  "clip_end_frame": 5836
+                },
+                {
+                  "clip_uid": "f7c88b4c-3f7a-4a8c-9f80-efcf8f8b07ad",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 2145,
+                  "clip_start_sec": 53.477,
+                  "clip_end_sec": 62.3,
+                  "clip_start_frame": 1604,
+                  "clip_end_frame": 1869
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "20018c95-e847-4409-ab33-4ebe37ea9417",
+          "video_start_sec": 1457.838,
+          "video_end_sec": 1716.012,
+          "annotations": [
+            {
+              "annotator_uid": "bc1714a7-9f9e-47be-99f5-35111aa6c0b1",
+              "queries": [
+                {
+                  "clip_uid": "20018c95-e847-4409-ab33-4ebe37ea9417",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What was I cutting?",
+                  "query_frame": 2024,
+                  "clip_start_sec": 37.633,
+                  "clip_end_sec": 59.067,
+                  "clip_start_frame": 1128,
+                  "clip_end_frame": 1772
+                },
+                {
+                  "clip_uid": "20018c95-e847-4409-ab33-4ebe37ea9417",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 3540,
+                  "clip_start_sec": 102.507,
+                  "clip_end_sec": 114.089,
+                  "clip_start_frame": 3075,
+                  "clip_end_frame": 3422
+                },
+                {
+                  "clip_uid": "20018c95-e847-4409-ab33-4ebe37ea9417",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 3996,
+                  "clip_start_sec": 119.748,
+                  "clip_end_sec": 123.929,
+                  "clip_start_frame": 3592,
+                  "clip_end_frame": 3717
+                },
+                {
+                  "clip_uid": "20018c95-e847-4409-ab33-4ebe37ea9417",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 1259,
+                  "clip_start_sec": 20.661,
+                  "clip_end_sec": 39.351,
+                  "clip_start_frame": 619,
+                  "clip_end_frame": 1180
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "c104fb17-e4aa-40e8-a120-7f84a627f465",
+          "video_start_sec": 1716.012,
+          "video_end_sec": 2131.941,
+          "annotations": [
+            {
+              "annotator_uid": "be2c869f-d1fe-4661-8514-d4b010b8f3f4",
+              "queries": [
+                {
+                  "clip_uid": "c104fb17-e4aa-40e8-a120-7f84a627f465",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 3176,
+                  "clip_start_sec": 89.685,
+                  "clip_end_sec": 103.047,
+                  "clip_start_frame": 2690,
+                  "clip_end_frame": 3091
+                },
+                {
+                  "clip_uid": "c104fb17-e4aa-40e8-a120-7f84a627f465",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What was I cutting?",
+                  "query_frame": 6745,
+                  "clip_start_sec": 199.586,
+                  "clip_end_sec": 218.285,
+                  "clip_start_frame": 5987,
+                  "clip_end_frame": 6548
+                },
+                {
+                  "clip_uid": "c104fb17-e4aa-40e8-a120-7f84a627f465",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 5072,
+                  "clip_start_sec": 143.914,
+                  "clip_end_sec": 164.399,
+                  "clip_start_frame": 4317,
+                  "clip_end_frame": 4931
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "7df35c1d-cefb-49b5-8fea-7f696d5d8a1c",
+          "video_start_sec": 2131.941,
+          "video_end_sec": 2410.108,
+          "annotations": [
+            {
+              "annotator_uid": "a8f705bd-2137-4f97-8640-e921854305e1",
+              "queries": [
+                {
+                  "clip_uid": "7df35c1d-cefb-49b5-8fea-7f696d5d8a1c",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "Where is the towel?",
+                  "query_frame": 5216,
+                  "clip_start_sec": 147.416,
+                  "clip_end_sec": 167.921,
+                  "clip_start_frame": 4422,
+                  "clip_end_frame": 5037
+                },
+                {
+                  "clip_uid": "7df35c1d-cefb-49b5-8fea-7f696d5d8a1c",
+                  "video_uid": "969618c6-1d04-4333-ad9f-0315d15db8c1",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 2958,
+                  "clip_start_sec": 75.936,
+                  "clip_end_sec": 94.118,
+                  "clip_start_frame": 2278,
+                  "clip_end_frame": 2823
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "f3be0db5-88b4-42bc-9513-4d5f7a6007d2",
+          "video_start_sec": 0,
+          "video_end_sec": 365.346,
+          "annotations": [
+            {
+              "annotator_uid": "a2206777-f57c-41b5-ab98-99882129748a",
+              "queries": [
+                {
+                  "clip_uid": "f3be0db5-88b4-42bc-9513-4d5f7a6007d2",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 3278,
+                  "clip_start_sec": 76.655,
+                  "clip_end_sec": 100.897,
+                  "clip_start_frame": 2299,
+                  "clip_end_frame": 3026
+                },
+                {
+                  "clip_uid": "f3be0db5-88b4-42bc-9513-4d5f7a6007d2",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 6369,
+                  "clip_start_sec": 183.57,
+                  "clip_end_sec": 211.193,
+                  "clip_start_frame": 5507,
+                  "clip_end_frame": 6335
+                },
+                {
+                  "clip_uid": "f3be0db5-88b4-42bc-9513-4d5f7a6007d2",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 5360,
+                  "clip_start_sec": 156.384,
+                  "clip_end_sec": 172.676,
+                  "clip_start_frame": 4691,
+                  "clip_end_frame": 5180
+                },
+                {
+                  "clip_uid": "f3be0db5-88b4-42bc-9513-4d5f7a6007d2",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What did I put on the table?",
+                  "query_frame": 1325,
+                  "clip_start_sec": 15.961,
+                  "clip_end_sec": 43.191,
+                  "clip_start_frame": 478,
+                  "clip_end_frame": 1295
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "1dbe0f92-beda-4d74-a4fb-0880fb825793",
+          "video_start_sec": 365.346,
+          "video_end_sec": 738.554,
+          "annotations": [
+            {
+              "annotator_uid": "c1c8453f-72e3-4f13-a167-5893b41d6584",
+              "queries": [
+                {
+                  "clip_uid": "1dbe0f92-beda-4d74-a4fb-0880fb825793",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What did I put on the table?",
+                  "query_frame": 1306,
+                  "clip_start_sec": 28.658,
+                  "clip_end_sec": 38.56,
+                  "clip_start_frame": 859,
+                  "clip_end_frame": 1156
+                },
+                {
+                  "clip_uid": "1dbe0f92-beda-4d74-a4fb-0880fb825793",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 4164,
+                  "clip_start_sec": 112.784,
+                  "clip_end_sec": 131.309,
+                  "clip_start_frame": 3383,
+                  "clip_end_frame": 3939
+                },
+                {
+                  "clip_uid": "1dbe0f92-beda-4d74-a4fb-0880fb825793",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 3725,
+                  "clip_start_sec": 106.074,
+                  "clip_end_sec": 120.259,
+                  "clip_start_frame": 3182,
+                  "clip_end_frame": 3607
+                },
+                {
+                  "clip_uid": "1dbe0f92-beda-4d74-a4fb-0880fb825793",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What was I cutting?",
+                  "query_frame": 4153,
+                  "clip_start_sec": 124.058,
+                  "clip_end_sec": 131.328,
+                  "clip_start_frame": 3721,
+                  "clip_end_frame": 3939
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "7d7541eb-69b6-46d5-bf05-0294026280f5",
+          "video_start_sec": 738.554,
+          "video_end_sec": 1160.94,
+          "annotations": [
+            {
+              "annotator_uid": "b798c28c-9c9f-4907-ab15-6e5c1724cd4c",
+              "queries": [
+                {
+                  "clip_uid": "7d7541eb-69b6-46d5-bf05-0294026280f5",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 3449,
+                  "clip_start_sec": 85.292,
+                  "clip_end_sec": 111.729,
+                  "clip_start_frame": 2558,
+                  "clip_end_frame": 3351
+                },
+                {
+                  "clip_uid": "7d7541eb-69b6-46d5-bf05-0294026280f5",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 986,
+                  "clip_start_sec": 3.431,
+                  "clip_end_sec": 23.586,
+                  "clip_start_frame": 102,
+                  "clip_end_frame": 707
+                },
+                {
+                  "clip_uid": "7d7541eb-69b6-46d5-bf05-0294026280f5",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 6787,
+                  "clip_start_sec": 194.53,
+                  "clip_end_sec": 223.829,
+                  "clip_start_frame": 5835,
+                  "clip_end_frame": 6714
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "30b468ec-decd-4bba-b83f-130e3f2690f5",
+          "video_start_sec": 1160.94,
+          "video_end_sec": 1330.339,
+          "annotations": [
+            {
+              "annotator_uid": "f68e931f-e34a-4a62-99aa-bfcd61b7f800",
+              "queries": [
+                {
+                  "clip_uid": "30b468ec-decd-4bba-b83f-130e3f2690f5",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 4117,
+                  "clip_start_sec": 101.996,
+                  "clip_end_sec": 129.016,
+                  "clip_start_frame": 3059,
+                  "clip_end_frame": 3870
+                },
+                {
+                  "clip_uid": "30b468ec-decd-4bba-b83f-130e3f2690f5",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What was I cutting?",
+                  "query_frame": 2918,
+                  "clip_start_sec": 73.904,
+                  "clip_end_sec": 88.627,
+                  "clip_start_frame": 2217,
+                  "clip_end_frame": 2658
+                },
+                {
+                  "clip_uid": "30b468ec-decd-4bba-b83f-130e3f2690f5",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What was I cutting?",
+                  "query_frame": 1651,
+                  "clip_start_sec": 45.619,
+                  "clip_end_sec": 53.94,
+                  "clip_start_frame": 1368,
+                  "clip_end_frame": 1618
+                },
+                {
+                  "clip_uid": "30b468ec-decd-4bba-b83f-130e3f2690f5",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 3113,
+                  "clip_start_sec": 68.532,
+                  "clip_end_sec": 94.243,
+                  "clip_start_frame": 2055,
+                  "clip_end_frame": 2827
+                },
+                {
+                  "clip_uid": "30b468ec-decd-4bba-b83f-130e3f2690f5",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 2013,
+                  "clip_start_sec": 31.928,
+                  "clip_end_sec": 59.872,
+                  "clip_start_frame": 957,
+                  "clip_end_frame": 1796
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "113ed08b-1ac7-40bc-854b-5a3dc88c21ed",
+          "video_start_sec": 1330.339,
+          "video_end_sec": 1462.386,
+          "annotations": [
+            {
+              "annotator_uid": "208560da-96fe-45e2-a1e7-c089a37650ec",
+              "queries": [
+                {
+                  "clip_uid": "113ed08b-1ac7-40bc-854b-5a3dc88c21ed",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 2503,
+                  "clip_start_sec": 52.515,
+                  "clip_end_sec": 74.252,
+                  "clip_start_frame": 1575,
+                  "clip_end_frame": 2227
+                },
+                {
+                  "clip_uid": "113ed08b-1ac7-40bc-854b-5a3dc88c21ed",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 2967,
+                  "clip_start_sec": 88.896,
+                  "clip_end_sec": 93.138,
+                  "clip_start_frame": 2666,
+                  "clip_end_frame": 2794
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "65e31a56-7672-49cd-9415-02475bc09bde",
+          "video_start_sec": 1462.386,
+          "video_end_sec": 1749.763,
+          "annotations": [
+            {
+              "annotator_uid": "2b09d3f0-ea16-4afa-aeb3-17731658aee9",
+              "queries": [
+                {
+                  "clip_uid": "65e31a56-7672-49cd-9415-02475bc09bde",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 4001,
+                  "clip_start_sec": 105.281,
+                  "clip_end_sec": 124.363,
+                  "clip_start_frame": 3158,
+                  "clip_end_frame": 3730
+                },
+                {
+                  "clip_uid": "65e31a56-7672-49cd-9415-02475bc09bde",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 4612,
+                  "clip_start_sec": 126.867,
+                  "clip_end_sec": 147.452,
+                  "clip_start_frame": 3806,
+                  "clip_end_frame": 4423
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "7af8d058-8461-428a-a598-c7d37387c371",
+          "video_start_sec": 1749.763,
+          "video_end_sec": 1967.672,
+          "annotations": [
+            {
+              "annotator_uid": "31e9f815-3cd9-48d8-a092-2a2c88102438",
+              "queries": [
+                {
+                  "clip_uid": "7af8d058-8461-428a-a598-c7d37387c371",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "Where is the towel?",
+                  "query_frame": 2809,
+                  "clip_start_sec": 81.612,
+                  "clip_end_sec": 83.914,
+                  "clip_start_frame": 2448,
+                  "clip_end_frame": 2517
+                },
+                {
+                  "clip_uid": "7af8d058-8461-428a-a598-c7d37387c371",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 4933,
+                  "clip_start_sec": 138.206,
+                  "clip_end_sec": 156.277,
+                  "clip_start_frame": 4146,
+                  "clip_end_frame": 4688
+                },
+                {
+                  "clip_uid": "7af8d058-8461-428a-a598-c7d37387c371",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 2674,
+                  "clip_start_sec": 53.832,
+                  "clip_end_sec": 83.209,
+                  "clip_start_frame": 1614,
+                  "clip_end_frame": 2496
+                },
+                {
+                  "clip_uid": "7af8d058-8461-428a-a598-c7d37387c371",
+                  "video_uid": "79f849b0-652e-485d-95c3-26e44e37bdc4",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 1595,
+                  "clip_start_sec": 25.551,
+                  "clip_end_sec": 47.012,
+                  "clip_start_frame": 766,
+                  "clip_end_frame": 1410
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "4c1f38fe-2315-4799-b817-646f3585f424",
+          "video_start_sec": 0,
+          "video_end_sec": 381.71,
+          "annotations": [
+            {
+              "annotator_uid": "d38944af-caec-4a40-be94-352179941310",
+              "queries": [
+                {
+                  "clip_uid": "4c1f38fe-2315-4799-b817-646f3585f424",
+                  "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 1005,
+                  "clip_start_sec": 16.411,
+                  "clip_end_sec": 31.659,
+                  "clip_start_frame": 492,
+                  "clip_end_frame": 949
+                },
+                {
+                  "clip_uid": "4c1f38fe-2315-4799-b817-646f3585f424",
+                  "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 5609,
+                  "clip_start_sec": 175.367,
+                  "clip_end_sec": 185.536,
+                  "clip_start_frame": 5261,
+                  "clip_end_frame": 5566
+                },
+                {
+                  "clip_uid": "4c1f38fe-2315-4799-b817-646f3585f424",
+                  "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 2497,
+                  "clip_start_sec": 76.636,
+                  "clip_end_sec": 80.946,
+                  "clip_start_frame": 2299,
+                  "clip_end_frame": 2428
+                },
+                {
+                  "clip_uid": "4c1f38fe-2315-4799-b817-646f3585f424",
+                  "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 7291,
+                  "clip_start_sec": 227.504,
+                  "clip_end_sec": 237.284,
+                  "clip_start_frame": 6825,
+                  "clip_end_frame": 7118
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "547d3740-b104-447a-a9cc-dde6cc845e22",
+          "video_start_sec": 381.71,
+          "video_end_sec": 600.788,
+          "annotations": [
+            {
+              "annotator_uid": "b6536201-4838-404f-a233-0495438f0a60",
+              "queries": [
+                {
+                  "clip_uid": "547d3740-b104-447a-a9cc-dde6cc845e22",
+                  "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 326,
+                  "clip_start_sec": 2.178,
+                  "clip_end_sec": 7.301,
+                  "clip_start_frame": 65,
+                  "clip_end_frame": 219
+                },
+                {
+                  "clip_uid": "547d3740-b104-447a-a9cc-dde6cc845e22",
+                  "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 3566,
+                  "clip_start_sec": 101.085,
+                  "clip_end_sec": 113.438,
+                  "clip_start_frame": 3032,
+                  "clip_end_frame": 3403
+                },
+                {
+                  "clip_uid": "547d3740-b104-447a-a9cc-dde6cc845e22",
+                  "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 4158,
+                  "clip_start_sec": 120.004,
+                  "clip_end_sec": 128.617,
+                  "clip_start_frame": 3600,
+                  "clip_end_frame": 3858
+                },
+                {
+                  "clip_uid": "547d3740-b104-447a-a9cc-dde6cc845e22",
+                  "video_uid": "844a67bc-e2fa-483c-b051-4515420dc0f0",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 4417,
+                  "clip_start_sec": 132.194,
+                  "clip_end_sec": 143.794,
+                  "clip_start_frame": 3965,
+                  "clip_end_frame": 4313
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "4e19d272-0286-4f6c-96cc-83257611466a",
+          "video_start_sec": 0,
+          "video_end_sec": 425.494,
+          "annotations": [
+            {
+              "annotator_uid": "72584d9c-be2a-478f-9878-9565261aa455",
+              "queries": [
+                {
+                  "clip_uid": "4e19d272-0286-4f6c-96cc-83257611466a",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did I put on the table?",
+                  "query_frame": 9525,
+                  "clip_start_sec": 288.802,
+                  "clip_end_sec": 312.34,
+                  "clip_start_frame": 8664,
+                  "clip_end_frame": 9370
+                },
+                {
+                  "clip_uid": "4e19d272-0286-4f6c-96cc-83257611466a",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 8205,
+                  "clip_start_sec": 248.646,
+                  "clip_end_sec": 263.909,
+                  "clip_start_frame": 7459,
+                  "clip_end_frame": 7917
+                },
+                {
+                  "clip_uid": "4e19d272-0286-4f6c-96cc-83257611466a",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What was I cutting?",
+                  "query_frame": 2027,
+                  "clip_start_sec": 51.01,
+                  "clip_end_sec": 60.458,
+                  "clip_start_frame": 1530,
+                  "clip_end_frame": 1813
+                },
+                {
+                  "clip_uid": "4e19d272-0286-4f6c-96cc-83257611466a",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 6135,
+                  "clip_start_sec": 187.476,
+                  "clip_end_sec": 196.349,
+                  "clip_start_frame": 5624,
+                  "clip_end_frame": 5890
+                },
+                {
+                  "clip_uid": "4e19d272-0286-4f6c-96cc-83257611466a",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What was I cutting?",
+                  "query_frame": 7450,
+                  "clip_start_sec": 234.469,
+                  "clip_end_sec": 240.333,
+                  "clip_start_frame": 7034,
+                  "clip_end_frame": 7209
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "6ebebdb9-eb29-4b04-a847-77319859e0f0",
+          "video_start_sec": 425.494,
+          "video_end_sec": 875.981,
+          "annotations": [
+            {
+              "annotator_uid": "91408888-6c0a-4985-a411-e095cd3b7b57",
+              "queries": [
+                {
+                  "clip_uid": "6ebebdb9-eb29-4b04-a847-77319859e0f0",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 9543,
+                  "clip_start_sec": 300.154,
+                  "clip_end_sec": 316.606,
+                  "clip_start_frame": 9004,
+                  "clip_end_frame": 9498
+                },
+                {
+                  "clip_uid": "6ebebdb9-eb29-4b04-a847-77319859e0f0",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 4958,
+                  "clip_start_sec": 139.563,
+                  "clip_end_sec": 163.127,
+                  "clip_start_frame": 4186,
+                  "clip_end_frame": 4893
+                },
+                {
+                  "clip_uid": "6ebebdb9-eb29-4b04-a847-77319859e0f0",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 1378,
+                  "clip_start_sec": 26.734,
+                  "clip_end_sec": 37.549,
+                  "clip_start_frame": 802,
+                  "clip_end_frame": 1126
+                },
+                {
+                  "clip_uid": "6ebebdb9-eb29-4b04-a847-77319859e0f0",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 1338,
+                  "clip_start_sec": 19.383,
+                  "clip_end_sec": 42.64,
+                  "clip_start_frame": 581,
+                  "clip_end_frame": 1279
+                },
+                {
+                  "clip_uid": "6ebebdb9-eb29-4b04-a847-77319859e0f0",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 10313,
+                  "clip_start_sec": 308.319,
+                  "clip_end_sec": 337.76,
+                  "clip_start_frame": 9249,
+                  "clip_end_frame": 10132
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "2d87ddfd-a88b-4d67-bf4b-5e8502591f2d",
+          "video_start_sec": 875.981,
+          "video_end_sec": 1146.931,
+          "annotations": [
+            {
+              "annotator_uid": "da87534e-ceda-4966-820d-02c239a76ca2",
+              "queries": [
+                {
+                  "clip_uid": "2d87ddfd-a88b-4d67-bf4b-5e8502591f2d",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 4463,
+                  "clip_start_sec": 136.853,
+                  "clip_end_sec": 147.636,
+                  "clip_start_frame": 4105,
+                  "clip_end_frame": 4429
+                },
+                {
+                  "clip_uid": "2d87ddfd-a88b-4d67-bf4b-5e8502591f2d",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 5626,
+                  "clip_start_sec": 156.854,
+                  "clip_end_sec": 184.06,
+                  "clip_start_frame": 4705,
+                  "clip_end_frame": 5521
+                },
+                {
+                  "clip_uid": "2d87ddfd-a88b-4d67-bf4b-5e8502591f2d",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 4675,
+                  "clip_start_sec": 132.821,
+                  "clip_end_sec": 147.314,
+                  "clip_start_frame": 3984,
+                  "clip_end_frame": 4419
+                },
+                {
+                  "clip_uid": "2d87ddfd-a88b-4d67-bf4b-5e8502591f2d",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What was I cutting?",
+                  "query_frame": 4905,
+                  "clip_start_sec": 132.286,
+                  "clip_end_sec": 159.141,
+                  "clip_start_frame": 3968,
+                  "clip_end_frame": 4774
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "fbf0cecb-7391-4481-87d1-bd2be8adbd1e",
+          "video_start_sec": 1146.931,
+          "video_end_sec": 1584.082,
+          "annotations": [
+            {
+              "annotator_uid": "af527ef8-8c91-488c-b741-0e8a09a2b21e",
+              "queries": [
+                {
+                  "clip_uid": "fbf0cecb-7391-4481-87d1-bd2be8adbd1e",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 976,
+                  "clip_start_sec": 11.313,
+                  "clip_end_sec": 22.679,
+                  "clip_start_frame": 339,
+                  "clip_end_frame": 680
+                },
+                {
+                  "clip_uid": "fbf0cecb-7391-4481-87d1-bd2be8adbd1e",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 9695,
+                  "clip_start_sec": 303.534,
+                  "clip_end_sec": 313.484,
+                  "clip_start_frame": 9106,
+                  "clip_end_frame": 9404
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "958404e0-6963-43d9-a199-27f50e1083cb",
+          "video_start_sec": 1584.082,
+          "video_end_sec": 1902.725,
+          "annotations": [
+            {
+              "annotator_uid": "ae2d9339-5073-4a09-af37-da2c31b51f9e",
+              "queries": [
+                {
+                  "clip_uid": "958404e0-6963-43d9-a199-27f50e1083cb",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did I put on the table?",
+                  "query_frame": 5422,
+                  "clip_start_sec": 168.859,
+                  "clip_end_sec": 175.34,
+                  "clip_start_frame": 5065,
+                  "clip_end_frame": 5260
+                },
+                {
+                  "clip_uid": "958404e0-6963-43d9-a199-27f50e1083cb",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What was I cutting?",
+                  "query_frame": 2613,
+                  "clip_start_sec": 53.831,
+                  "clip_end_sec": 77.507,
+                  "clip_start_frame": 1614,
+                  "clip_end_frame": 2325
+                },
+                {
+                  "clip_uid": "958404e0-6963-43d9-a199-27f50e1083cb",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 1011,
+                  "clip_start_sec": 24.634,
+                  "clip_end_sec": 28.312,
+                  "clip_start_frame": 739,
+                  "clip_end_frame": 849
+                },
+                {
+                  "clip_uid": "958404e0-6963-43d9-a199-27f50e1083cb",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did I put on the table?",
+                  "query_frame": 4646,
+                  "clip_start_sec": 139.85,
+                  "clip_end_sec": 151.775,
+                  "clip_start_frame": 4195,
+                  "clip_end_frame": 4553
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "608cf9eb-476a-4bab-8407-2d7a1ef70149",
+          "video_start_sec": 1902.725,
+          "video_end_sec": 2184.27,
+          "annotations": [
+            {
+              "annotator_uid": "4be914b6-21a8-46b0-92d1-ece36359b94e",
+              "queries": [
+                {
+                  "clip_uid": "608cf9eb-476a-4bab-8407-2d7a1ef70149",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 3713,
+                  "clip_start_sec": 89.307,
+                  "clip_end_sec": 118.83,
+                  "clip_start_frame": 2679,
+                  "clip_end_frame": 3564
+                },
+                {
+                  "clip_uid": "608cf9eb-476a-4bab-8407-2d7a1ef70149",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 2471,
+                  "clip_start_sec": 69.045,
+                  "clip_end_sec": 79.012,
+                  "clip_start_frame": 2071,
+                  "clip_end_frame": 2370
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "5a2883d0-90bf-4bf4-8e4b-e96e12b8f073",
+          "video_start_sec": 2184.27,
+          "video_end_sec": 2561.437,
+          "annotations": [
+            {
+              "annotator_uid": "f518825d-1972-45f1-a6ab-48412805410c",
+              "queries": [
+                {
+                  "clip_uid": "5a2883d0-90bf-4bf4-8e4b-e96e12b8f073",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 1541,
+                  "clip_start_sec": 27.782,
+                  "clip_end_sec": 44.243,
+                  "clip_start_frame": 833,
+                  "clip_end_frame": 1327
+                },
+                {
+                  "clip_uid": "5a2883d0-90bf-4bf4-8e4b-e96e12b8f073",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What was I cutting?",
+                  "query_frame": 4021,
+                  "clip_start_sec": 119.945,
+                  "clip_end_sec": 126.048,
+                  "clip_start_frame": 3598,
+                  "clip_end_frame": 3781
+                },
+                {
+                  "clip_uid": "5a2883d0-90bf-4bf4-8e4b-e96e12b8f073",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 1034,
+                  "clip_start_sec": 21.635,
+                  "clip_end_sec": 25.376,
+                  "clip_start_frame": 649,
+                  "clip_end_frame": 761
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "59a170c9-dbcd-44b9-8305-21824cc980ca",
+          "video_start_sec": 2561.437,
+          "video_end_sec": 2758.759,
+          "annotations": [
+            {
+              "annotator_uid": "c36377d7-00ab-4538-88a9-75eba8d62804",
+              "queries": [
+                {
+                  "clip_uid": "59a170c9-dbcd-44b9-8305-21824cc980ca",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 2327,
+                  "clip_start_sec": 51.009,
+                  "clip_end_sec": 67.744,
+                  "clip_start_frame": 1530,
+                  "clip_end_frame": 2032
+                },
+                {
+                  "clip_uid": "59a170c9-dbcd-44b9-8305-21824cc980ca",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 4304,
+                  "clip_start_sec": 107.576,
+                  "clip_end_sec": 133.992,
+                  "clip_start_frame": 3227,
+                  "clip_end_frame": 4019
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "27766a55-ed66-46d6-b92a-c88e85f3d764",
+          "video_start_sec": 2758.759,
+          "video_end_sec": 3107.885,
+          "annotations": [
+            {
+              "annotator_uid": "c01f771b-5b97-4755-b464-03398847e992",
+              "queries": [
+                {
+                  "clip_uid": "27766a55-ed66-46d6-b92a-c88e85f3d764",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What was I cutting?",
+                  "query_frame": 6020,
+                  "clip_start_sec": 168.388,
+                  "clip_end_sec": 196.927,
+                  "clip_start_frame": 5051,
+                  "clip_end_frame": 5907
+                },
+                {
+                  "clip_uid": "27766a55-ed66-46d6-b92a-c88e85f3d764",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where is the towel?",
+                  "query_frame": 1321,
+                  "clip_start_sec": 35.277,
+                  "clip_end_sec": 40.836,
+                  "clip_start_frame": 1058,
+                  "clip_end_frame": 1225
+                },
+                {
+                  "clip_uid": "27766a55-ed66-46d6-b92a-c88e85f3d764",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 7678,
+                  "clip_start_sec": 236.576,
+                  "clip_end_sec": 252.945,
+                  "clip_start_frame": 7097,
+                  "clip_end_frame": 7588
+                },
+                {
+                  "clip_uid": "27766a55-ed66-46d6-b92a-c88e85f3d764",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did I put on the table?",
+                  "query_frame": 5644,
+                  "clip_start_sec": 169.72,
+                  "clip_end_sec": 184.472,
+                  "clip_start_frame": 5091,
+                  "clip_end_frame": 5534
+                },
+                {
+                  "clip_uid": "27766a55-ed66-46d6-b92a-c88e85f3d764",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 7530,
+                  "clip_start_sec": 230.719,
+                  "clip_end_sec": 243.06,
+                  "clip_start_frame": 6921,
+                  "clip_end_frame": 7291
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "7d05cd3c-1f31-4beb-8bb9-50d8cea46931",
+          "video_start_sec": 3107.885,
+          "video_end_sec": 3267.606,
+          "annotations": [
+            {
+              "annotator_uid": "77d27434-6d9d-4920-948b-aa362bf34e04",
+              "queries": [
+                {
+                  "clip_uid": "7d05cd3c-1f31-4beb-8bb9-50d8cea46931",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 2101,
+                  "clip_start_sec": 63.926,
+                  "clip_end_sec": 67.054,
+                  "clip_start_frame": 1917,
+                  "clip_end_frame": 2011
+                },
+                {
+                  "clip_uid": "7d05cd3c-1f31-4beb-8bb9-50d8cea46931",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 2318,
+                  "clip_start_sec": 41.532,
+                  "clip_end_sec": 71.281,
+                  "clip_start_frame": 1245,
+                  "clip_end_frame": 2138
+                },
+                {
+                  "clip_uid": "7d05cd3c-1f31-4beb-8bb9-50d8cea46931",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 2599,
+                  "clip_start_sec": 54.329,
+                  "clip_end_sec": 78.483,
+                  "clip_start_frame": 1629,
+                  "clip_end_frame": 2354
+                },
+                {
+                  "clip_uid": "7d05cd3c-1f31-4beb-8bb9-50d8cea46931",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 1114,
+                  "clip_start_sec": 5.439,
+                  "clip_end_sec": 32.478,
+                  "clip_start_frame": 163,
+                  "clip_end_frame": 974
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "ee4d77f8-9585-469e-b6df-73d5bb7cde37",
+          "video_start_sec": 3267.606,
+          "video_end_sec": 3333.978,
+          "annotations": [
+            {
+              "annotator_uid": "4cf83e96-a90f-4095-ab17-0f3553d94330",
+              "queries": [
+                {
+                  "clip_uid": "ee4d77f8-9585-469e-b6df-73d5bb7cde37",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 574,
+                  "clip_start_sec": 0.097,
+                  "clip_end_sec": 17.428,
+                  "clip_start_frame": 2,
+                  "clip_end_frame": 522
+                },
+                {
+                  "clip_uid": "ee4d77f8-9585-469e-b6df-73d5bb7cde37",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 1384,
+                  "clip_start_sec": 19.401,
+                  "clip_end_sec": 37.447,
+                  "clip_start_frame": 582,
+                  "clip_end_frame": 1123
+                },
+                {
+                  "clip_uid": "ee4d77f8-9585-469e-b6df-73d5bb7cde37",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where is the towel?",
+                  "query_frame": 1940,
+                  "clip_start_sec": 41.828,
+                  "clip_end_sec": 61.443,
+                  "clip_start_frame": 1254,
+                  "clip_end_frame": 1843
+                },
+                {
+                  "clip_uid": "ee4d77f8-9585-469e-b6df-73d5bb7cde37",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "Where is the towel?",
+                  "query_frame": 1805,
+                  "clip_start_sec": 35.4,
+                  "clip_end_sec": 51.533,
+                  "clip_start_frame": 1062,
+                  "clip_end_frame": 1545
+                },
+                {
+                  "clip_uid": "ee4d77f8-9585-469e-b6df-73d5bb7cde37",
+                  "video_uid": "07d2247b-cab3-4021-8038-dedd0fafe543",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 1190,
+                  "clip_start_sec": 30.999,
+                  "clip_end_sec": 37.171,
+                  "clip_start_frame": 929,
+                  "clip_end_frame": 1115
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "7decadb7-29c7-49bc-9ccc-edd5412dc300",
+          "video_start_sec": 0,
+          "video_end_sec": 464.625,
+          "annotations": [
+            {
+              "annotator_uid": "6610b4a9-b110-4d56-bdbb-cb9656062a25",
+              "queries": [
+                {
+                  "clip_uid": "7decadb7-29c7-49bc-9ccc-edd5412dc300",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I put on the table?",
+                  "query_frame": 7896,
+                  "clip_start_sec": 244.11,
+                  "clip_end_sec": 260.184,
+                  "clip_start_frame": 7323,
+                  "clip_end_frame": 7805
+                },
+                {
+                  "clip_uid": "7decadb7-29c7-49bc-9ccc-edd5412dc300",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I put on the table?",
+                  "query_frame": 7099,
+                  "clip_start_sec": 214.089,
+                  "clip_end_sec": 230.981,
+                  "clip_start_frame": 6422,
+                  "clip_end_frame": 6929
+                },
+                {
+                  "clip_uid": "7decadb7-29c7-49bc-9ccc-edd5412dc300",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 8199,
+                  "clip_start_sec": 255.883,
+                  "clip_end_sec": 264.751,
+                  "clip_start_frame": 7676,
+                  "clip_end_frame": 7942
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "08281b30-9b5b-4d06-824f-8a5c6d3607c7",
+          "video_start_sec": 464.625,
+          "video_end_sec": 615.099,
+          "annotations": [
+            {
+              "annotator_uid": "b56d8f43-ec69-48f0-85a2-4fd9931afbc5",
+              "queries": [
+                {
+                  "clip_uid": "08281b30-9b5b-4d06-824f-8a5c6d3607c7",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I put on the table?",
+                  "query_frame": 1571,
+                  "clip_start_sec": 42.322,
+                  "clip_end_sec": 45.582,
+                  "clip_start_frame": 1269,
+                  "clip_end_frame": 1367
+                },
+                {
+                  "clip_uid": "08281b30-9b5b-4d06-824f-8a5c6d3607c7",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 1981,
+                  "clip_start_sec": 46.032,
+                  "clip_end_sec": 59.65,
+                  "clip_start_frame": 1380,
+                  "clip_end_frame": 1789
+                },
+                {
+                  "clip_uid": "08281b30-9b5b-4d06-824f-8a5c6d3607c7",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 1459,
+                  "clip_start_sec": 40.238,
+                  "clip_end_sec": 44.787,
+                  "clip_start_frame": 1207,
+                  "clip_end_frame": 1343
+                },
+                {
+                  "clip_uid": "08281b30-9b5b-4d06-824f-8a5c6d3607c7",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 1223,
+                  "clip_start_sec": 30.056,
+                  "clip_end_sec": 37.171,
+                  "clip_start_frame": 901,
+                  "clip_end_frame": 1115
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "1ce7d86e-e874-4f52-88e3-5d3323b10fa5",
+          "video_start_sec": 615.099,
+          "video_end_sec": 845.545,
+          "annotations": [
+            {
+              "annotator_uid": "d1a991a9-11b1-44b6-b788-f9b2432f5403",
+              "queries": [
+                {
+                  "clip_uid": "1ce7d86e-e874-4f52-88e3-5d3323b10fa5",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 3515,
+                  "clip_start_sec": 109.468,
+                  "clip_end_sec": 113.118,
+                  "clip_start_frame": 3284,
+                  "clip_end_frame": 3393
+                },
+                {
+                  "clip_uid": "1ce7d86e-e874-4f52-88e3-5d3323b10fa5",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What was I cutting?",
+                  "query_frame": 320,
+                  "clip_start_sec": 4.383,
+                  "clip_end_sec": 8.021,
+                  "clip_start_frame": 131,
+                  "clip_end_frame": 240
+                },
+                {
+                  "clip_uid": "1ce7d86e-e874-4f52-88e3-5d3323b10fa5",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 2117,
+                  "clip_start_sec": 51.627,
+                  "clip_end_sec": 65.186,
+                  "clip_start_frame": 1548,
+                  "clip_end_frame": 1955
+                },
+                {
+                  "clip_uid": "1ce7d86e-e874-4f52-88e3-5d3323b10fa5",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 2628,
+                  "clip_start_sec": 60.575,
+                  "clip_end_sec": 85.752,
+                  "clip_start_frame": 1817,
+                  "clip_end_frame": 2572
+                },
+                {
+                  "clip_uid": "1ce7d86e-e874-4f52-88e3-5d3323b10fa5",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 1823,
+                  "clip_start_sec": 32.675,
+                  "clip_end_sec": 55.735,
+                  "clip_start_frame": 980,
+                  "clip_end_frame": 1672
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "5eecbc32-95cf-4531-af04-3272b42d574c",
+          "video_start_sec": 845.545,
+          "video_end_sec": 1143.017,
+          "annotations": [
+            {
+              "annotator_uid": "a96925cb-83a3-41fc-8887-05aed394646d",
+              "queries": [
+                {
+                  "clip_uid": "5eecbc32-95cf-4531-af04-3272b42d574c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 6483,
+                  "clip_start_sec": 197.685,
+                  "clip_end_sec": 207.225,
+                  "clip_start_frame": 5930,
+                  "clip_end_frame": 6216
+                },
+                {
+                  "clip_uid": "5eecbc32-95cf-4531-af04-3272b42d574c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I put on the table?",
+                  "query_frame": 3808,
+                  "clip_start_sec": 115.177,
+                  "clip_end_sec": 119.01,
+                  "clip_start_frame": 3455,
+                  "clip_end_frame": 3570
+                },
+                {
+                  "clip_uid": "5eecbc32-95cf-4531-af04-3272b42d574c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I put on the table?",
+                  "query_frame": 4952,
+                  "clip_start_sec": 131.923,
+                  "clip_end_sec": 159.508,
+                  "clip_start_frame": 3957,
+                  "clip_end_frame": 4785
+                },
+                {
+                  "clip_uid": "5eecbc32-95cf-4531-af04-3272b42d574c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 4169,
+                  "clip_start_sec": 115.376,
+                  "clip_end_sec": 133.789,
+                  "clip_start_frame": 3461,
+                  "clip_end_frame": 4013
+                },
+                {
+                  "clip_uid": "5eecbc32-95cf-4531-af04-3272b42d574c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 5558,
+                  "clip_start_sec": 158.876,
+                  "clip_end_sec": 179.119,
+                  "clip_start_frame": 4766,
+                  "clip_end_frame": 5373
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "dfb7589f-993f-4f5c-8d1b-3f3a9e91e26c",
+          "video_start_sec": 1143.017,
+          "video_end_sec": 1343.385,
+          "annotations": [
+            {
+              "annotator_uid": "bcb647fd-f5c3-4345-895c-65f05a4a9c00",
+              "queries": [
+                {
+                  "clip_uid": "dfb7589f-993f-4f5c-8d1b-3f3a9e91e26c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 1049,
+                  "clip_start_sec": 11.769,
+                  "clip_end_sec": 31.571,
+                  "clip_start_frame": 353,
+                  "clip_end_frame": 947
+                },
+                {
+                  "clip_uid": "dfb7589f-993f-4f5c-8d1b-3f3a9e91e26c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 2704,
+                  "clip_start_sec": 52.359,
+                  "clip_end_sec": 81.948,
+                  "clip_start_frame": 1570,
+                  "clip_end_frame": 2458
+                },
+                {
+                  "clip_uid": "dfb7589f-993f-4f5c-8d1b-3f3a9e91e26c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I put on the table?",
+                  "query_frame": 4601,
+                  "clip_start_sec": 134.837,
+                  "clip_end_sec": 152.381,
+                  "clip_start_frame": 4045,
+                  "clip_end_frame": 4571
+                },
+                {
+                  "clip_uid": "dfb7589f-993f-4f5c-8d1b-3f3a9e91e26c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 4464,
+                  "clip_start_sec": 113.979,
+                  "clip_end_sec": 142.89,
+                  "clip_start_frame": 3419,
+                  "clip_end_frame": 4286
+                },
+                {
+                  "clip_uid": "dfb7589f-993f-4f5c-8d1b-3f3a9e91e26c",
+                  "video_uid": "44175784-d88a-48bb-b52e-0437cad26e08",
+                  "query": "What did I put on the table?",
+                  "query_frame": 3224,
+                  "clip_start_sec": 91.596,
+                  "clip_end_sec": 98.283,
+                  "clip_start_frame": 2747,
+                  "clip_end_frame": 2948
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "fedee71a-7f50-4614-a7e0-3e7ca631187d",
+          "video_start_sec": 0,
+          "video_end_sec": 142.624,
+          "annotations": [
+            {
+              "annotator_uid": "e60167dc-bfe1-490c-a089-be1c956d30fd",
+              "queries": [
+                {
+                  "clip_uid": "fedee71a-7f50-4614-a7e0-3e7ca631187d",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What did I put on the table?",
+                  "query_frame": 707,
+                  "clip_start_sec": 2.783,
+                  "clip_end_sec": 16.878,
+                  "clip_start_frame": 83,
+                  "clip_end_frame": 506
+                },
+                {
+                  "clip_uid": "fedee71a-7f50-4614-a7e0-3e7ca631187d",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "Where is the towel?",
+                  "query_frame": 2937,
+                  "clip_start_sec": 83.914,
+                  "clip_end_sec": 92.834,
+                  "clip_start_frame": 2517,
+                  "clip_end_frame": 2785
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "85be7a72-45fa-4d90-a79c-f16096410677",
+          "video_start_sec": 142.624,
+          "video_end_sec": 607.793,
+          "annotations": [
+            {
+              "annotator_uid": "2877f72d-582c-48de-8d05-3194be9848d7",
+              "queries": [
+                {
+                  "clip_uid": "85be7a72-45fa-4d90-a79c-f16096410677",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 8589,
+                  "clip_start_sec": 267.539,
+                  "clip_end_sec": 284.09,
+                  "clip_start_frame": 8026,
+                  "clip_end_frame": 8522
+                },
+                {
+                  "clip_uid": "85be7a72-45fa-4d90-a79c-f16096410677",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 8416,
+                  "clip_start_sec": 252.598,
+                  "clip_end_sec": 271.946,
+                  "clip_start_frame": 7577,
+                  "clip_end_frame": 8158
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "d5b6a762-2601-4039-8d2f-1f636cd80ea0",
+          "video_start_sec": 607.793,
+          "video_end_sec": 936.209,
+          "annotations": [
+            {
+              "annotator_uid": "ae20453e-7964-4cc2-a414-498ba9bad171",
+              "queries": [
+                {
+                  "clip_uid": "d5b6a762-2601-4039-8d2f-1f636cd80ea0",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What was I cutting?",
+                  "query_frame": 7741,
+                  "clip_start_sec": 224.035,
+                  "clip_end_sec": 251.703,
+                  "clip_start_frame": 6721,
+                  "clip_end_frame": 7551
+                },
+                {
+                  "clip_uid": "d5b6a762-2601-4039-8d2f-1f636cd80ea0",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 6842,
+                  "clip_start_sec": 204.623,
+                  "clip_end_sec": 226.037,
+                  "clip_start_frame": 6138,
+                  "clip_end_frame": 6781
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "5b42de96-d380-43cb-bfe7-dfba5fab70e8",
+          "video_start_sec": 936.209,
+          "video_end_sec": 1387.091,
+          "annotations": [
+            {
+              "annotator_uid": "424a4be1-ee88-42d3-a96b-a7b7a305b954",
+              "queries": [
+                {
+                  "clip_uid": "5b42de96-d380-43cb-bfe7-dfba5fab70e8",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What was I cutting?",
+                  "query_frame": 1154,
+                  "clip_start_sec": 17.292,
+                  "clip_end_sec": 36.393,
+                  "clip_start_frame": 518,
+                  "clip_end_frame": 1091
+                },
+                {
+                  "clip_uid": "5b42de96-d380-43cb-bfe7-dfba5fab70e8",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What did I put on the table?",
+                  "query_frame": 1251,
+                  "clip_start_sec": 32.139,
+                  "clip_end_sec": 35.701,
+                  "clip_start_frame": 964,
+                  "clip_end_frame": 1071
+                },
+                {
+                  "clip_uid": "5b42de96-d380-43cb-bfe7-dfba5fab70e8",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 8684,
+                  "clip_start_sec": 268.252,
+                  "clip_end_sec": 281.499,
+                  "clip_start_frame": 8047,
+                  "clip_end_frame": 8444
+                },
+                {
+                  "clip_uid": "5b42de96-d380-43cb-bfe7-dfba5fab70e8",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 2805,
+                  "clip_start_sec": 73.574,
+                  "clip_end_sec": 92.362,
+                  "clip_start_frame": 2207,
+                  "clip_end_frame": 2770
+                },
+                {
+                  "clip_uid": "5b42de96-d380-43cb-bfe7-dfba5fab70e8",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What was I cutting?",
+                  "query_frame": 4824,
+                  "clip_start_sec": 143.104,
+                  "clip_end_sec": 158.102,
+                  "clip_start_frame": 4293,
+                  "clip_end_frame": 4743
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "f23408a5-efc9-4a58-8453-d819b789acdc",
+          "video_start_sec": 1387.091,
+          "video_end_sec": 1629.353,
+          "annotations": [
+            {
+              "annotator_uid": "7a1ed775-e422-463a-9ccb-eb46c537a39d",
+              "queries": [
+                {
+                  "clip_uid": "f23408a5-efc9-4a58-8453-d819b789acdc",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 2730,
+                  "clip_start_sec": 77.004,
+                  "clip_end_sec": 88.193,
+                  "clip_start_frame": 2310,
+                  "clip_end_frame": 2645
+                },
+                {
+                  "clip_uid": "f23408a5-efc9-4a58-8453-d819b789acdc",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 1211,
+                  "clip_start_sec": 17.414,
+                  "clip_end_sec": 36.079,
+                  "clip_start_frame": 522,
+                  "clip_end_frame": 1082
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "6c438a50-f5b7-4037-a80a-3e7c6bf0ab2a",
+          "video_start_sec": 1629.353,
+          "video_end_sec": 2074.926,
+          "annotations": [
+            {
+              "annotator_uid": "c2cff2ea-7523-4d23-b2fb-52740e38ad5f",
+              "queries": [
+                {
+                  "clip_uid": "6c438a50-f5b7-4037-a80a-3e7c6bf0ab2a",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What was I cutting?",
+                  "query_frame": 6515,
+                  "clip_start_sec": 198.795,
+                  "clip_end_sec": 207.971,
+                  "clip_start_frame": 5963,
+                  "clip_end_frame": 6239
+                },
+                {
+                  "clip_uid": "6c438a50-f5b7-4037-a80a-3e7c6bf0ab2a",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 7313,
+                  "clip_start_sec": 226.011,
+                  "clip_end_sec": 240.46,
+                  "clip_start_frame": 6780,
+                  "clip_end_frame": 7213
+                },
+                {
+                  "clip_uid": "6c438a50-f5b7-4037-a80a-3e7c6bf0ab2a",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 7821,
+                  "clip_start_sec": 248.593,
+                  "clip_end_sec": 252.287,
+                  "clip_start_frame": 7457,
+                  "clip_end_frame": 7568
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "5b3aa405-c20f-4acc-98d1-ca6b42fd2571",
+          "video_start_sec": 2074.926,
+          "video_end_sec": 2379.651,
+          "annotations": [
+            {
+              "annotator_uid": "774384cd-6351-444c-91d9-54496b4bdc75",
+              "queries": [
+                {
+                  "clip_uid": "5b3aa405-c20f-4acc-98d1-ca6b42fd2571",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 2899,
+                  "clip_start_sec": 66.379,
+                  "clip_end_sec": 93.165,
+                  "clip_start_frame": 1991,
+                  "clip_end_frame": 2794
+                },
+                {
+                  "clip_uid": "5b3aa405-c20f-4acc-98d1-ca6b42fd2571",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 3789,
+                  "clip_start_sec": 100.153,
+                  "clip_end_sec": 119.046,
+                  "clip_start_frame": 3004,
+                  "clip_end_frame": 3571
+                },
+                {
+                  "clip_uid": "5b3aa405-c20f-4acc-98d1-ca6b42fd2571",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 6762,
+                  "clip_start_sec": 206.966,
+                  "clip_end_sec": 223.461,
+                  "clip_start_frame": 6208,
+                  "clip_end_frame": 6703
+                },
+                {
+                  "clip_uid": "5b3aa405-c20f-4acc-98d1-ca6b42fd2571",
+                  "video_uid": "55a02dcc-a7c8-4f92-b970-4fbf4ee8cbc4",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 2324,
+                  "clip_start_sec": 50.637,
+                  "clip_end_sec": 75.574,
+                  "clip_start_frame": 1519,
+                  "clip_end_frame": 2267
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "80c1244e-9c0a-4d7e-906b-ca63d5d4465f",
+          "video_start_sec": 0,
+          "video_end_sec": 271.942,
+          "annotations": [
+            {
+              "annotator_uid": "0d9fdf6d-03d8-4d0a-a61b-66af6470e838",
+              "queries": [
+                {
+                  "clip_uid": "80c1244e-9c0a-4d7e-906b-ca63d5d4465f",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 6239,
+                  "clip_start_sec": 185.888,
+                  "clip_end_sec": 205.824,
+                  "clip_start_frame": 5576,
+                  "clip_end_frame": 6174
+                },
+                {
+                  "clip_uid": "80c1244e-9c0a-4d7e-906b-ca63d5d4465f",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where is the towel?",
+                  "query_frame": 2770,
+                  "clip_start_sec": 65.018,
+                  "clip_end_sec": 85.718,
+                  "clip_start_frame": 1950,
+                  "clip_end_frame": 2571
+                },
+                {
+                  "clip_uid": "80c1244e-9c0a-4d7e-906b-ca63d5d4465f",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 5584,
+                  "clip_start_sec": 162.188,
+                  "clip_end_sec": 180.039,
+                  "clip_start_frame": 4865,
+                  "clip_end_frame": 5401
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "e80bb71a-9dc0-4d84-93db-89032e69e6a8",
+          "video_start_sec": 271.942,
+          "video_end_sec": 542.672,
+          "annotations": [
+            {
+              "annotator_uid": "5f4e12da-809f-4b7f-96a6-91f2caaef84e",
+              "queries": [
+                {
+                  "clip_uid": "e80bb71a-9dc0-4d84-93db-89032e69e6a8",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did I put on the table?",
+                  "query_frame": 1675,
+                  "clip_start_sec": 19.87,
+                  "clip_end_sec": 46.401,
+                  "clip_start_frame": 596,
+                  "clip_end_frame": 1392
+                },
+                {
+                  "clip_uid": "e80bb71a-9dc0-4d84-93db-89032e69e6a8",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 1457,
+                  "clip_start_sec": 41.58,
+                  "clip_end_sec": 43.684,
+                  "clip_start_frame": 1247,
+                  "clip_end_frame": 1310
+                },
+                {
+                  "clip_uid": "e80bb71a-9dc0-4d84-93db-89032e69e6a8",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where is the towel?",
+                  "query_frame": 3090,
+                  "clip_start_sec": 88.414,
+                  "clip_end_sec": 96.382,
+                  "clip_start_frame": 2652,
+                  "clip_end_frame": 2891
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "3c264cc2-1560-4ea7-ac95-9afd6b8221ee",
+          "video_start_sec": 542.672,
+          "video_end_sec": 953.29,
+          "annotations": [
+            {
+              "annotator_uid": "aad0d804-30d8-4489-a512-a707c2755372",
+              "queries": [
+                {
+                  "clip_uid": "3c264cc2-1560-4ea7-ac95-9afd6b8221ee",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did I put on the table?",
+                  "query_frame": 2200,
+                  "clip_start_sec": 59.015,
+                  "clip_end_sec": 66.174,
+                  "clip_start_frame": 1770,
+                  "clip_end_frame": 1985
+                },
+                {
+                  "clip_uid": "3c264cc2-1560-4ea7-ac95-9afd6b8221ee",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 533,
+                  "clip_start_sec": 2.843,
+                  "clip_end_sec": 14.864,
+                  "clip_start_frame": 85,
+                  "clip_end_frame": 445
+                },
+                {
+                  "clip_uid": "3c264cc2-1560-4ea7-ac95-9afd6b8221ee",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 1871,
+                  "clip_start_sec": 40.931,
+                  "clip_end_sec": 55.262,
+                  "clip_start_frame": 1227,
+                  "clip_end_frame": 1657
+                },
+                {
+                  "clip_uid": "3c264cc2-1560-4ea7-ac95-9afd6b8221ee",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 638,
+                  "clip_start_sec": 12.62,
+                  "clip_end_sec": 15.451,
+                  "clip_start_frame": 378,
+                  "clip_end_frame": 463
+                },
+                {
+                  "clip_uid": "3c264cc2-1560-4ea7-ac95-9afd6b8221ee",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 2508,
+                  "clip_start_sec": 50.055,
+                  "clip_end_sec": 76.846,
+                  "clip_start_frame": 1501,
+                  "clip_end_frame": 2305
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "85239f1c-9339-41db-8b07-ac1f0de7035d",
+          "video_start_sec": 953.29,
+          "video_end_sec": 1378.402,
+          "annotations": [
+            {
+              "annotator_uid": "911e46b4-9a37-4dad-879f-87b0dc097b2e",
+              "queries": [
+                {
+                  "clip_uid": "85239f1c-9339-41db-8b07-ac1f0de7035d",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 1752,
+                  "clip_start_sec": 53.13,
+                  "clip_end_sec": 55.732,
+                  "clip_start_frame": 1593,
+                  "clip_end_frame": 1671
+                },
+                {
+                  "clip_uid": "85239f1c-9339-41db-8b07-ac1f0de7035d",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What was I cutting?",
+                  "query_frame": 902,
+                  "clip_start_sec": 6.247,
+                  "clip_end_sec": 27.216,
+                  "clip_start_frame": 187,
+                  "clip_end_frame": 816
+                },
+                {
+                  "clip_uid": "85239f1c-9339-41db-8b07-ac1f0de7035d",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where is the towel?",
+                  "query_frame": 3409,
+                  "clip_start_sec": 100.696,
+                  "clip_end_sec": 108.583,
+                  "clip_start_frame": 3020,
+                  "clip_end_frame": 3257
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "716482b9-6de3-4650-85e5-47c0bf61c4d0",
+          "video_start_sec": 1378.402,
+          "video_end_sec": 1631.473,
+          "annotations": [
+            {
+              "annotator_uid": "35626c67-4de8-41c3-98a3-4c57749ad147",
+              "queries": [
+                {
+                  "clip_uid": "716482b9-6de3-4650-85e5-47c0bf61c4d0",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 4614,
+                  "clip_start_sec": 117.08,
+                  "clip_end_sec": 145.433,
+                  "clip_start_frame": 3512,
+                  "clip_end_frame": 4362
+                },
+                {
+                  "clip_uid": "716482b9-6de3-4650-85e5-47c0bf61c4d0",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 4879,
+                  "clip_start_sec": 155.606,
+                  "clip_end_sec": 159.437,
+                  "clip_start_frame": 4668,
+                  "clip_end_frame": 4783
+                },
+                {
+                  "clip_uid": "716482b9-6de3-4650-85e5-47c0bf61c4d0",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What was I cutting?",
+                  "query_frame": 4666,
+                  "clip_start_sec": 140.816,
+                  "clip_end_sec": 148.183,
+                  "clip_start_frame": 4224,
+                  "clip_end_frame": 4445
+                },
+                {
+                  "clip_uid": "716482b9-6de3-4650-85e5-47c0bf61c4d0",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 2163,
+                  "clip_start_sec": 56.325,
+                  "clip_end_sec": 70.352,
+                  "clip_start_frame": 1689,
+                  "clip_end_frame": 2110
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "f1759166-2646-4965-b149-8e19c02d0201",
+          "video_start_sec": 1631.473,
+          "video_end_sec": 2026.183,
+          "annotations": [
+            {
+              "annotator_uid": "bfddca95-7418-44d9-bd73-8fdd785ae63f",
+              "queries": [
+                {
+                  "clip_uid": "f1759166-2646-4965-b149-8e19c02d0201",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 7586,
+                  "clip_start_sec": 236.078,
+                  "clip_end_sec": 246.315,
+                  "clip_start_frame": 7082,
+                  "clip_end_frame": 7389
+                },
+                {
+                  "clip_uid": "f1759166-2646-4965-b149-8e19c02d0201",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 2731,
+                  "clip_start_sec": 68.293,
+                  "clip_end_sec": 87.918,
+                  "clip_start_frame": 2048,
+                  "clip_end_frame": 2637
+                },
+                {
+                  "clip_uid": "f1759166-2646-4965-b149-8e19c02d0201",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where is the towel?",
+                  "query_frame": 8068,
+                  "clip_start_sec": 235.267,
+                  "clip_end_sec": 264.382,
+                  "clip_start_frame": 7058,
+                  "clip_end_frame": 7931
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "84c8e751-d562-49a0-a994-e5e2661807da",
+          "video_start_sec": 2026.183,
+          "video_end_sec": 2408.01,
+          "annotations": [
+            {
+              "annotator_uid": "d9c91a5c-71de-4161-96fb-8aec8af5200e",
+              "queries": [
+                {
+                  "clip_uid": "84c8e751-d562-49a0-a994-e5e2661807da",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 7209,
+                  "clip_start_sec": 211.417,
+                  "clip_end_sec": 230.634,
+                  "clip_start_frame": 6342,
+                  "clip_end_frame": 6919
+                },
+                {
+                  "clip_uid": "84c8e751-d562-49a0-a994-e5e2661807da",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 4134,
+                  "clip_start_sec": 103.735,
+                  "clip_end_sec": 130.443,
+                  "clip_start_frame": 3112,
+                  "clip_end_frame": 3913
+                },
+                {
+                  "clip_uid": "84c8e751-d562-49a0-a994-e5e2661807da",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 4668,
+                  "clip_start_sec": 133.262,
+                  "clip_end_sec": 148.261,
+                  "clip_start_frame": 3997,
+                  "clip_end_frame": 4447
+                },
+                {
+                  "clip_uid": "84c8e751-d562-49a0-a994-e5e2661807da",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where is the towel?",
+                  "query_frame": 4951,
+                  "clip_start_sec": 140.449,
+                  "clip_end_sec": 155.981,
+                  "clip_start_frame": 4213,
+                  "clip_end_frame": 4679
+                },
+                {
+                  "clip_uid": "84c8e751-d562-49a0-a994-e5e2661807da",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 2596,
+                  "clip_start_sec": 71.72,
+                  "clip_end_sec": 84.946,
+                  "clip_start_frame": 2151,
+                  "clip_end_frame": 2548
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "9ae04b64-681d-42be-9aab-8f666ba4c5d9",
+          "video_start_sec": 2408.01,
+          "video_end_sec": 2602.602,
+          "annotations": [
+            {
+              "annotator_uid": "0683092d-0b4b-437e-9182-f6a6ebd83637",
+              "queries": [
+                {
+                  "clip_uid": "9ae04b64-681d-42be-9aab-8f666ba4c5d9",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 2290,
+                  "clip_start_sec": 61.58,
+                  "clip_end_sec": 70.143,
+                  "clip_start_frame": 1847,
+                  "clip_end_frame": 2104
+                },
+                {
+                  "clip_uid": "9ae04b64-681d-42be-9aab-8f666ba4c5d9",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 2334,
+                  "clip_start_sec": 57.894,
+                  "clip_end_sec": 70.452,
+                  "clip_start_frame": 1736,
+                  "clip_end_frame": 2113
+                },
+                {
+                  "clip_uid": "9ae04b64-681d-42be-9aab-8f666ba4c5d9",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 1352,
+                  "clip_start_sec": 34.671,
+                  "clip_end_sec": 39.044,
+                  "clip_start_frame": 1040,
+                  "clip_end_frame": 1171
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "6afb5ff1-7d74-4509-ad14-018f159d752c",
+          "video_start_sec": 2602.602,
+          "video_end_sec": 2746.062,
+          "annotations": [
+            {
+              "annotator_uid": "cf41f360-d7f4-4769-9c0c-d0d69d4223e4",
+              "queries": [
+                {
+                  "clip_uid": "6afb5ff1-7d74-4509-ad14-018f159d752c",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 990,
+                  "clip_start_sec": 23.115,
+                  "clip_end_sec": 26.267,
+                  "clip_start_frame": 693,
+                  "clip_end_frame": 788
+                },
+                {
+                  "clip_uid": "6afb5ff1-7d74-4509-ad14-018f159d752c",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What was I cutting?",
+                  "query_frame": 1954,
+                  "clip_start_sec": 42.79,
+                  "clip_end_sec": 57.881,
+                  "clip_start_frame": 1283,
+                  "clip_end_frame": 1736
+                },
+                {
+                  "clip_uid": "6afb5ff1-7d74-4509-ad14-018f159d752c",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "What was I cutting?",
+                  "query_frame": 2792,
+                  "clip_start_sec": 80.79,
+                  "clip_end_sec": 91.667,
+                  "clip_start_frame": 2423,
+                  "clip_end_frame": 2750
+                },
+                {
+                  "clip_uid": "6afb5ff1-7d74-4509-ad14-018f159d752c",
+                  "video_uid": "c2877016-4470-464c-9af3-9bd7f517c7a3",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 1010,
+                  "clip_start_sec": 18.032,
+                  "clip_end_sec": 26.578,
+                  "clip_start_frame": 540,
+                  "clip_end_frame": 797
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "ccf2fdb2-2b1f-43d3-a1ca-b70fbc1ad380",
+          "video_start_sec": 0,
+          "video_end_sec": 444.531,
+          "annotations": [
+            {
+              "annotator_uid": "fb951b95-7f48-4d79-9d0a-024e062245e5",
+              "queries": [
+                {
+                  "clip_uid": "ccf2fdb2-2b1f-43d3-a1ca-b70fbc1ad380",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 8527,
+                  "clip_start_sec": 262.195,
+                  "clip_end_sec": 278.553,
+                  "clip_start_frame": 7865,
+                  "clip_end_frame": 8356
+                },
+                {
+                  "clip_uid": "ccf2fdb2-2b1f-43d3-a1ca-b70fbc1ad380",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 9006,
+                  "clip_start_sec": 288.334,
+                  "clip_end_sec": 293.089,
+                  "clip_start_frame": 8650,
+                  "clip_end_frame": 8792
+                },
+                {
+                  "clip_uid": "ccf2fdb2-2b1f-43d3-a1ca-b70fbc1ad380",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 783,
+                  "clip_start_sec": 11.912,
+                  "clip_end_sec": 19.521,
+                  "clip_start_frame": 357,
+                  "clip_end_frame": 585
+                },
+                {
+                  "clip_uid": "ccf2fdb2-2b1f-43d3-a1ca-b70fbc1ad380",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 3146,
+                  "clip_start_sec": 77.8,
+                  "clip_end_sec": 100.666,
+                  "clip_start_frame": 2334,
+                  "clip_end_frame": 3019
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "d310e509-bbf2-4faa-b670-777d89238c9f",
+          "video_start_sec": 444.531,
+          "video_end_sec": 818.563,
+          "annotations": [
+            {
+              "annotator_uid": "80400057-68a0-43df-998d-0d562b26a9ed",
+              "queries": [
+                {
+                  "clip_uid": "d310e509-bbf2-4faa-b670-777d89238c9f",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 8697,
+                  "clip_start_sec": 261.404,
+                  "clip_end_sec": 284.471,
+                  "clip_start_frame": 7842,
+                  "clip_end_frame": 8534
+                },
+                {
+                  "clip_uid": "d310e509-bbf2-4faa-b670-777d89238c9f",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 614,
+                  "clip_start_sec": 2.234,
+                  "clip_end_sec": 12.619,
+                  "clip_start_frame": 67,
+                  "clip_end_frame": 378
+                },
+                {
+                  "clip_uid": "d310e509-bbf2-4faa-b670-777d89238c9f",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did I put on the table?",
+                  "query_frame": 8450,
+                  "clip_start_sec": 247.635,
+                  "clip_end_sec": 272.647,
+                  "clip_start_frame": 7429,
+                  "clip_end_frame": 8179
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "b3daab16-beb7-425b-a0e4-b6d72664a17c",
+          "video_start_sec": 818.563,
+          "video_end_sec": 1174.035,
+          "annotations": [
+            {
+              "annotator_uid": "029e6643-eef4-4871-a571-c671f1da32f9",
+              "queries": [
+                {
+                  "clip_uid": "b3daab16-beb7-425b-a0e4-b6d72664a17c",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 6983,
+                  "clip_start_sec": 215.355,
+                  "clip_end_sec": 223.727,
+                  "clip_start_frame": 6460,
+                  "clip_end_frame": 6711
+                },
+                {
+                  "clip_uid": "b3daab16-beb7-425b-a0e4-b6d72664a17c",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 2566,
+                  "clip_start_sec": 58.158,
+                  "clip_end_sec": 76.594,
+                  "clip_start_frame": 1744,
+                  "clip_end_frame": 2297
+                },
+                {
+                  "clip_uid": "b3daab16-beb7-425b-a0e4-b6d72664a17c",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 6031,
+                  "clip_start_sec": 179.783,
+                  "clip_end_sec": 194.702,
+                  "clip_start_frame": 5393,
+                  "clip_end_frame": 5841
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "9b719b26-de56-48f2-b940-f537f7aa026b",
+          "video_start_sec": 1174.035,
+          "video_end_sec": 1598.524,
+          "annotations": [
+            {
+              "annotator_uid": "97101291-f21d-4aef-942d-2097ed9db423",
+              "queries": [
+                {
+                  "clip_uid": "9b719b26-de56-48f2-b940-f537f7aa026b",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 7765,
+                  "clip_start_sec": 228.838,
+                  "clip_end_sec": 250.38,
+                  "clip_start_frame": 6865,
+                  "clip_end_frame": 7511
+                },
+                {
+                  "clip_uid": "9b719b26-de56-48f2-b940-f537f7aa026b",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 4641,
+                  "clip_start_sec": 133.706,
+                  "clip_end_sec": 151.343,
+                  "clip_start_frame": 4011,
+                  "clip_end_frame": 4540
+                },
+                {
+                  "clip_uid": "9b719b26-de56-48f2-b940-f537f7aa026b",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did I put on the table?",
+                  "query_frame": 5600,
+                  "clip_start_sec": 171.602,
+                  "clip_end_sec": 177.196,
+                  "clip_start_frame": 5148,
+                  "clip_end_frame": 5315
+                },
+                {
+                  "clip_uid": "9b719b26-de56-48f2-b940-f537f7aa026b",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 8129,
+                  "clip_start_sec": 240.804,
+                  "clip_end_sec": 266.164,
+                  "clip_start_frame": 7224,
+                  "clip_end_frame": 7984
+                },
+                {
+                  "clip_uid": "9b719b26-de56-48f2-b940-f537f7aa026b",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What was I cutting?",
+                  "query_frame": 4555,
+                  "clip_start_sec": 124.546,
+                  "clip_end_sec": 145.747,
+                  "clip_start_frame": 3736,
+                  "clip_end_frame": 4372
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "8cff4bbc-e810-4b74-b97a-9c9f8e41ccfd",
+          "video_start_sec": 1598.524,
+          "video_end_sec": 1835.913,
+          "annotations": [
+            {
+              "annotator_uid": "95245abe-30dc-4b8c-a356-5dbc7d05a608",
+              "queries": [
+                {
+                  "clip_uid": "8cff4bbc-e810-4b74-b97a-9c9f8e41ccfd",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 3024,
+                  "clip_start_sec": 94.315,
+                  "clip_end_sec": 97.217,
+                  "clip_start_frame": 2829,
+                  "clip_end_frame": 2916
+                },
+                {
+                  "clip_uid": "8cff4bbc-e810-4b74-b97a-9c9f8e41ccfd",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 5996,
+                  "clip_start_sec": 162.391,
+                  "clip_end_sec": 192.23,
+                  "clip_start_frame": 4871,
+                  "clip_end_frame": 5766
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "3ab9fc57-c645-463e-b547-c94513629e5d",
+          "video_start_sec": 1835.913,
+          "video_end_sec": 2308.775,
+          "annotations": [
+            {
+              "annotator_uid": "aaac24cc-b627-4fbb-9d2c-00dbf88a13a5",
+              "queries": [
+                {
+                  "clip_uid": "3ab9fc57-c645-463e-b547-c94513629e5d",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What was I cutting?",
+                  "query_frame": 9660,
+                  "clip_start_sec": 314.02,
+                  "clip_end_sec": 317.804,
+                  "clip_start_frame": 9420,
+                  "clip_end_frame": 9534
+                },
+                {
+                  "clip_uid": "3ab9fc57-c645-463e-b547-c94513629e5d",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the towel?",
+                  "query_frame": 5235,
+                  "clip_start_sec": 157.153,
+                  "clip_end_sec": 168.361,
+                  "clip_start_frame": 4714,
+                  "clip_end_frame": 5050
+                },
+                {
+                  "clip_uid": "3ab9fc57-c645-463e-b547-c94513629e5d",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 1193,
+                  "clip_start_sec": 30.863,
+                  "clip_end_sec": 35.784,
+                  "clip_start_frame": 925,
+                  "clip_end_frame": 1073
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "a4c527f3-5b94-42a6-ab14-c5487a31cf4a",
+          "video_start_sec": 2308.775,
+          "video_end_sec": 2440.316,
+          "annotations": [
+            {
+              "annotator_uid": "2ed21562-d299-4107-9124-0b71179c3120",
+              "queries": [
+                {
+                  "clip_uid": "a4c527f3-5b94-42a6-ab14-c5487a31cf4a",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What was I cutting?",
+                  "query_frame": 476,
+                  "clip_start_sec": 2.471,
+                  "clip_end_sec": 10.043,
+                  "clip_start_frame": 74,
+                  "clip_end_frame": 301
+                },
+                {
+                  "clip_uid": "a4c527f3-5b94-42a6-ab14-c5487a31cf4a",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 938,
+                  "clip_start_sec": 18.958,
+                  "clip_end_sec": 29.109,
+                  "clip_start_frame": 568,
+                  "clip_end_frame": 873
+                },
+                {
+                  "clip_uid": "a4c527f3-5b94-42a6-ab14-c5487a31cf4a",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did I put on the table?",
+                  "query_frame": 1742,
+                  "clip_start_sec": 41.865,
+                  "clip_end_sec": 54.187,
+                  "clip_start_frame": 1255,
+                  "clip_end_frame": 1625
+                },
+                {
+                  "clip_uid": "a4c527f3-5b94-42a6-ab14-c5487a31cf4a",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What was I cutting?",
+                  "query_frame": 1836,
+                  "clip_start_sec": 30.089,
+                  "clip_end_sec": 57.564,
+                  "clip_start_frame": 902,
+                  "clip_end_frame": 1726
+                },
+                {
+                  "clip_uid": "a4c527f3-5b94-42a6-ab14-c5487a31cf4a",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What was I cutting?",
+                  "query_frame": 3176,
+                  "clip_start_sec": 91.121,
+                  "clip_end_sec": 96.737,
+                  "clip_start_frame": 2733,
+                  "clip_end_frame": 2902
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "fa0079b7-5e77-4ca8-8ce0-dbd8be36c858",
+          "video_start_sec": 2440.316,
+          "video_end_sec": 2827.847,
+          "annotations": [
+            {
+              "annotator_uid": "f39a4279-6f91-4602-819b-a04cd90a2a4e",
+              "queries": [
+                {
+                  "clip_uid": "fa0079b7-5e77-4ca8-8ce0-dbd8be36c858",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 8694,
+                  "clip_start_sec": 259.091,
+                  "clip_end_sec": 285.331,
+                  "clip_start_frame": 7772,
+                  "clip_end_frame": 8559
+                },
+                {
+                  "clip_uid": "fa0079b7-5e77-4ca8-8ce0-dbd8be36c858",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the towel?",
+                  "query_frame": 3378,
+                  "clip_start_sec": 84.028,
+                  "clip_end_sec": 108.929,
+                  "clip_start_frame": 2520,
+                  "clip_end_frame": 3267
+                },
+                {
+                  "clip_uid": "fa0079b7-5e77-4ca8-8ce0-dbd8be36c858",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 5894,
+                  "clip_start_sec": 163.769,
+                  "clip_end_sec": 192.065,
+                  "clip_start_frame": 4913,
+                  "clip_end_frame": 5761
+                },
+                {
+                  "clip_uid": "fa0079b7-5e77-4ca8-8ce0-dbd8be36c858",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 4857,
+                  "clip_start_sec": 136.307,
+                  "clip_end_sec": 157.482,
+                  "clip_start_frame": 4089,
+                  "clip_end_frame": 4724
+                },
+                {
+                  "clip_uid": "fa0079b7-5e77-4ca8-8ce0-dbd8be36c858",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 474,
+                  "clip_start_sec": 2.019,
+                  "clip_end_sec": 8.014,
+                  "clip_start_frame": 60,
+                  "clip_end_frame": 240
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "7d9166d0-d84b-4daa-adb7-58c937ad84cb",
+          "video_start_sec": 2827.847,
+          "video_end_sec": 3165.593,
+          "annotations": [
+            {
+              "annotator_uid": "e162f4c7-baeb-4a78-ac87-16aefed31b48",
+              "queries": [
+                {
+                  "clip_uid": "7d9166d0-d84b-4daa-adb7-58c937ad84cb",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the towel?",
+                  "query_frame": 4819,
+                  "clip_start_sec": 124.324,
+                  "clip_end_sec": 151.812,
+                  "clip_start_frame": 3729,
+                  "clip_end_frame": 4554
+                },
+                {
+                  "clip_uid": "7d9166d0-d84b-4daa-adb7-58c937ad84cb",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 3551,
+                  "clip_start_sec": 109.391,
+                  "clip_end_sec": 112.485,
+                  "clip_start_frame": 3281,
+                  "clip_end_frame": 3374
+                },
+                {
+                  "clip_uid": "7d9166d0-d84b-4daa-adb7-58c937ad84cb",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 5597,
+                  "clip_start_sec": 152.799,
+                  "clip_end_sec": 180.528,
+                  "clip_start_frame": 4583,
+                  "clip_end_frame": 5415
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "5f198917-894a-4e0b-bab2-94663376cddc",
+          "video_start_sec": 3165.593,
+          "video_end_sec": 3426.385,
+          "annotations": [
+            {
+              "annotator_uid": "f23bdbb6-d887-4326-992a-3bd5ac165fe2",
+              "queries": [
+                {
+                  "clip_uid": "5f198917-894a-4e0b-bab2-94663376cddc",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 2734,
+                  "clip_start_sec": 75.77,
+                  "clip_end_sec": 82.798,
+                  "clip_start_frame": 2273,
+                  "clip_end_frame": 2483
+                },
+                {
+                  "clip_uid": "5f198917-894a-4e0b-bab2-94663376cddc",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 3410,
+                  "clip_start_sec": 83.579,
+                  "clip_end_sec": 111.082,
+                  "clip_start_frame": 2507,
+                  "clip_end_frame": 3332
+                },
+                {
+                  "clip_uid": "5f198917-894a-4e0b-bab2-94663376cddc",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 3119,
+                  "clip_start_sec": 71.845,
+                  "clip_end_sec": 100.324,
+                  "clip_start_frame": 2155,
+                  "clip_end_frame": 3009
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "f56e0fe2-1d17-4d9f-a3c6-419218697870",
+          "video_start_sec": 3426.385,
+          "video_end_sec": 3508.248,
+          "annotations": [
+            {
+              "annotator_uid": "3ca5ce66-aa97-48da-ab9d-4b3f4a5323fc",
+              "queries": [
+                {
+                  "clip_uid": "f56e0fe2-1d17-4d9f-a3c6-419218697870",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 1544,
+                  "clip_start_sec": 38.202,
+                  "clip_end_sec": 42.071,
+                  "clip_start_frame": 1146,
+                  "clip_end_frame": 1262
+                },
+                {
+                  "clip_uid": "f56e0fe2-1d17-4d9f-a3c6-419218697870",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 1625,
+                  "clip_start_sec": 23.568,
+                  "clip_end_sec": 46.9,
+                  "clip_start_frame": 707,
+                  "clip_end_frame": 1407
+                },
+                {
+                  "clip_uid": "f56e0fe2-1d17-4d9f-a3c6-419218697870",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 518,
+                  "clip_start_sec": 4.386,
+                  "clip_end_sec": 9.332,
+                  "clip_start_frame": 131,
+                  "clip_end_frame": 279
+                },
+                {
+                  "clip_uid": "f56e0fe2-1d17-4d9f-a3c6-419218697870",
+                  "video_uid": "7ff354a1-578c-4b9d-8832-0efa1791870c",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 1099,
+                  "clip_start_sec": 25.84,
+                  "clip_end_sec": 34.917,
+                  "clip_start_frame": 775,
+                  "clip_end_frame": 1047
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "dd7b84d6-70bc-4373-9542-062e63deb687",
+          "video_start_sec": 0,
+          "video_end_sec": 302.673,
+          "annotations": [
+            {
+              "annotator_uid": "3fecdb9c-9c3d-4615-905d-4d5a9e0b1394",
+              "queries": [
+                {
+                  "clip_uid": "dd7b84d6-70bc-4373-9542-062e63deb687",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 5084,
+                  "clip_start_sec": 153.604,
+                  "clip_end_sec": 164.325,
+                  "clip_start_frame": 4608,
+                  "clip_end_frame": 4929
+                },
+                {
+                  "clip_uid": "dd7b84d6-70bc-4373-9542-062e63deb687",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 3440,
+                  "clip_start_sec": 89.837,
+                  "clip_end_sec": 108.801,
+                  "clip_start_frame": 2695,
+                  "clip_end_frame": 3264
+                },
+                {
+                  "clip_uid": "dd7b84d6-70bc-4373-9542-062e63deb687",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 4705,
+                  "clip_start_sec": 122.127,
+                  "clip_end_sec": 151.223,
+                  "clip_start_frame": 3663,
+                  "clip_end_frame": 4536
+                },
+                {
+                  "clip_uid": "dd7b84d6-70bc-4373-9542-062e63deb687",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 6178,
+                  "clip_start_sec": 182.723,
+                  "clip_end_sec": 198.196,
+                  "clip_start_frame": 5481,
+                  "clip_end_frame": 5945
+                },
+                {
+                  "clip_uid": "dd7b84d6-70bc-4373-9542-062e63deb687",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "What was I cutting?",
+                  "query_frame": 3144,
+                  "clip_start_sec": 80.027,
+                  "clip_end_sec": 95.207,
+                  "clip_start_frame": 2400,
+                  "clip_end_frame": 2856
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "339d2ba2-822f-4c48-9e0f-c3bd508359de",
+          "video_start_sec": 302.673,
+          "video_end_sec": 642.055,
+          "annotations": [
+            {
+              "annotator_uid": "84284c87-eeac-4aa5-9703-4797832d49b8",
+              "queries": [
+                {
+                  "clip_uid": "339d2ba2-822f-4c48-9e0f-c3bd508359de",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "Where is the towel?",
+                  "query_frame": 6207,
+                  "clip_start_sec": 180.628,
+                  "clip_end_sec": 205.577,
+                  "clip_start_frame": 5418,
+                  "clip_end_frame": 6167
+                },
+                {
+                  "clip_uid": "339d2ba2-822f-4c48-9e0f-c3bd508359de",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 6032,
+                  "clip_start_sec": 181.01,
+                  "clip_end_sec": 194.977,
+                  "clip_start_frame": 5430,
+                  "clip_end_frame": 5849
+                },
+                {
+                  "clip_uid": "339d2ba2-822f-4c48-9e0f-c3bd508359de",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 4591,
+                  "clip_start_sec": 141.396,
+                  "clip_end_sec": 147.674,
+                  "clip_start_frame": 4241,
+                  "clip_end_frame": 4430
+                },
+                {
+                  "clip_uid": "339d2ba2-822f-4c48-9e0f-c3bd508359de",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 3250,
+                  "clip_start_sec": 90.383,
+                  "clip_end_sec": 100.947,
+                  "clip_start_frame": 2711,
+                  "clip_end_frame": 3028
+                },
+                {
+                  "clip_uid": "339d2ba2-822f-4c48-9e0f-c3bd508359de",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 4569,
+                  "clip_start_sec": 133.547,
+                  "clip_end_sec": 149.011,
+                  "clip_start_frame": 4006,
+                  "clip_end_frame": 4470
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "aae30940-5545-4a2e-896a-ecddb892844c",
+          "video_start_sec": 642.055,
+          "video_end_sec": 1019.406,
+          "annotations": [
+            {
+              "annotator_uid": "b9e485b6-19eb-45be-8c1e-2c7c504f3d37",
+              "queries": [
+                {
+                  "clip_uid": "aae30940-5545-4a2e-896a-ecddb892844c",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "What did I put on the table?",
+                  "query_frame": 1731,
+                  "clip_start_sec": 40.87,
+                  "clip_end_sec": 48.18,
+                  "clip_start_frame": 1226,
+                  "clip_end_frame": 1445
+                },
+                {
+                  "clip_uid": "aae30940-5545-4a2e-896a-ecddb892844c",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "What was I cutting?",
+                  "query_frame": 6404,
+                  "clip_start_sec": 192.924,
+                  "clip_end_sec": 205.403,
+                  "clip_start_frame": 5787,
+                  "clip_end_frame": 6162
+                },
+                {
+                  "clip_uid": "aae30940-5545-4a2e-896a-ecddb892844c",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 8552,
+                  "clip_start_sec": 248.372,
+                  "clip_end_sec": 277.546,
+                  "clip_start_frame": 7451,
+                  "clip_end_frame": 8326
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "247e4787-02a0-49ef-8d3d-abb4ac2afb4d",
+          "video_start_sec": 1019.406,
+          "video_end_sec": 1315.644,
+          "annotations": [
+            {
+              "annotator_uid": "35e64463-8f7d-460c-80e9-5a35f82eb3bf",
+              "queries": [
+                {
+                  "clip_uid": "247e4787-02a0-49ef-8d3d-abb4ac2afb4d",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 2862,
+                  "clip_start_sec": 84.769,
+                  "clip_end_sec": 87.856,
+                  "clip_start_frame": 2543,
+                  "clip_end_frame": 2635
+                },
+                {
+                  "clip_uid": "247e4787-02a0-49ef-8d3d-abb4ac2afb4d",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "What was I cutting?",
+                  "query_frame": 6155,
+                  "clip_start_sec": 193.293,
+                  "clip_end_sec": 199.839,
+                  "clip_start_frame": 5798,
+                  "clip_end_frame": 5995
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "d8dcfe88-3872-4578-bbc9-50db86eafade",
+          "video_start_sec": 1315.644,
+          "video_end_sec": 1713.301,
+          "annotations": [
+            {
+              "annotator_uid": "6362268b-c400-497e-af28-3537626dbed0",
+              "queries": [
+                {
+                  "clip_uid": "d8dcfe88-3872-4578-bbc9-50db86eafade",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 4785,
+                  "clip_start_sec": 141.855,
+                  "clip_end_sec": 157.536,
+                  "clip_start_frame": 4255,
+                  "clip_end_frame": 4726
+                },
+                {
+                  "clip_uid": "d8dcfe88-3872-4578-bbc9-50db86eafade",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 6427,
+                  "clip_start_sec": 181.186,
+                  "clip_end_sec": 209.129,
+                  "clip_start_frame": 5435,
+                  "clip_end_frame": 6273
+                },
+                {
+                  "clip_uid": "d8dcfe88-3872-4578-bbc9-50db86eafade",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 4867,
+                  "clip_start_sec": 132.98,
+                  "clip_end_sec": 160.781,
+                  "clip_start_frame": 3989,
+                  "clip_end_frame": 4823
+                },
+                {
+                  "clip_uid": "d8dcfe88-3872-4578-bbc9-50db86eafade",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 6689,
+                  "clip_start_sec": 194.148,
+                  "clip_end_sec": 214.217,
+                  "clip_start_frame": 5824,
+                  "clip_end_frame": 6426
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "f21e1cfa-26e8-4061-a7c8-15992a4a3a72",
+          "video_start_sec": 1713.301,
+          "video_end_sec": 2015.737,
+          "annotations": [
+            {
+              "annotator_uid": "c00bc2a3-6ae3-43d1-be81-6dcd8a7af107",
+              "queries": [
+                {
+                  "clip_uid": "f21e1cfa-26e8-4061-a7c8-15992a4a3a72",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 2216,
+                  "clip_start_sec": 53.834,
+                  "clip_end_sec": 72.694,
+                  "clip_start_frame": 1615,
+                  "clip_end_frame": 2180
+                },
+                {
+                  "clip_uid": "f21e1cfa-26e8-4061-a7c8-15992a4a3a72",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "What was I cutting?",
+                  "query_frame": 1111,
+                  "clip_start_sec": 24.712,
+                  "clip_end_sec": 29.297,
+                  "clip_start_frame": 741,
+                  "clip_end_frame": 878
+                },
+                {
+                  "clip_uid": "f21e1cfa-26e8-4061-a7c8-15992a4a3a72",
+                  "video_uid": "f2c1d51c-ad3d-4741-b21e-bf4131c270da",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 5657,
+                  "clip_start_sec": 149.478,
+                  "clip_end_sec": 178.754,
+                  "clip_start_frame": 4484,
+                  "clip_end_frame": 5362
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+      "split": "test",
+      "clips": [
+        {
+          "clip_uid": "0378d10e-9fc6-4bea-91b4-f40a17e021e1",
+          "video_start_sec": 0,
+          "video_end_sec": 447.582,
+          "annotations": [
+            {
+              "annotator_uid": "3bde5821-4394-4786-ae9a-ef6ba38e8939",
+              "queries": [
+                {
+                  "clip_uid": "0378d10e-9fc6-4bea-91b4-f40a17e021e1",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 2263,
+                  "clip_start_sec": 51.954,
+                  "clip_end_sec": 65.906,
+                  "clip_start_frame": 1558,
+                  "clip_end_frame": 1977
+                },
+                {
+                  "clip_uid": "0378d10e-9fc6-4bea-91b4-f40a17e021e1",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What was I cutting?",
+                  "query_frame": 9895,
+                  "clip_start_sec": 303.182,
+                  "clip_end_sec": 323.62,
+                  "clip_start_frame": 9095,
+                  "clip_end_frame": 9708
+                },
+                {
+                  "clip_uid": "0378d10e-9fc6-4bea-91b4-f40a17e021e1",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 7675,
+                  "clip_start_sec": 229.947,
+                  "clip_end_sec": 253.016,
+                  "clip_start_frame": 6898,
+                  "clip_end_frame": 7590
+                },
+                {
+                  "clip_uid": "0378d10e-9fc6-4bea-91b4-f40a17e021e1",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 6795,
+                  "clip_start_sec": 199.32,
+                  "clip_end_sec": 223.067,
+                  "clip_start_frame": 5979,
+                  "clip_end_frame": 6692
+                },
+                {
+                  "clip_uid": "0378d10e-9fc6-4bea-91b4-f40a17e021e1",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What was I cutting?",
+                  "query_frame": 2951,
+                  "clip_start_sec": 84.286,
+                  "clip_end_sec": 92.153,
+                  "clip_start_frame": 2528,
+                  "clip_end_frame": 2764
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "77bac04c-e1d6-420a-b392-91cc8cfb172e",
+          "video_start_sec": 447.582,
+          "video_end_sec": 569.893,
+          "annotations": [
+            {
+              "annotator_uid": "2eb00585-a6ac-41df-9fa8-fe577506f933",
+              "queries": [
+                {
+                  "clip_uid": "77bac04c-e1d6-420a-b392-91cc8cfb172e",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 2401,
+                  "clip_start_sec": 69.898,
+                  "clip_end_sec": 71.942,
+                  "clip_start_frame": 2096,
+                  "clip_end_frame": 2158
+                },
+                {
+                  "clip_uid": "77bac04c-e1d6-420a-b392-91cc8cfb172e",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What was I cutting?",
+                  "query_frame": 2075,
+                  "clip_start_sec": 44.946,
+                  "clip_end_sec": 65.273,
+                  "clip_start_frame": 1348,
+                  "clip_end_frame": 1958
+                },
+                {
+                  "clip_uid": "77bac04c-e1d6-420a-b392-91cc8cfb172e",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 800,
+                  "clip_start_sec": 15.103,
+                  "clip_end_sec": 22.322,
+                  "clip_start_frame": 453,
+                  "clip_end_frame": 669
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "07e55411-6144-4224-a032-ae887eb9ce13",
+          "video_start_sec": 569.893,
+          "video_end_sec": 865.023,
+          "annotations": [
+            {
+              "annotator_uid": "aa28e51a-127d-441e-a930-d20feb0d78eb",
+              "queries": [
+                {
+                  "clip_uid": "07e55411-6144-4224-a032-ae887eb9ce13",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "When did I last open the fridge?",
+                  "query_frame": 3669,
+                  "clip_start_sec": 93.102,
+                  "clip_end_sec": 117.904,
+                  "clip_start_frame": 2793,
+                  "clip_end_frame": 3537
+                },
+                {
+                  "clip_uid": "07e55411-6144-4224-a032-ae887eb9ce13",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 741,
+                  "clip_start_sec": 12.185,
+                  "clip_end_sec": 19.301,
+                  "clip_start_frame": 365,
+                  "clip_end_frame": 579
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "5fa8a2f9-5e09-4f08-9693-e8b6b43166c9",
+          "video_start_sec": 865.023,
+          "video_end_sec": 1338.884,
+          "annotations": [
+            {
+              "annotator_uid": "6480d023-c4a9-4003-b8b0-c63a4db16810",
+              "queries": [
+                {
+                  "clip_uid": "5fa8a2f9-5e09-4f08-9693-e8b6b43166c9",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 5327,
+                  "clip_start_sec": 146.191,
+                  "clip_end_sec": 173.754,
+                  "clip_start_frame": 4385,
+                  "clip_end_frame": 5212
+                },
+                {
+                  "clip_uid": "5fa8a2f9-5e09-4f08-9693-e8b6b43166c9",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "Where is the knife I was using?",
+                  "query_frame": 1097,
+                  "clip_start_sec": 26.473,
+                  "clip_end_sec": 30.873,
+                  "clip_start_frame": 794,
+                  "clip_end_frame": 926
+                },
+                {
+                  "clip_uid": "5fa8a2f9-5e09-4f08-9693-e8b6b43166c9",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What did I pick up from the counter?",
+                  "query_frame": 998,
+                  "clip_start_sec": 21.316,
+                  "clip_end_sec": 24.147,
+                  "clip_start_frame": 639,
+                  "clip_end_frame": 724
+                },
+                {
+                  "clip_uid": "5fa8a2f9-5e09-4f08-9693-e8b6b43166c9",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What did I put on the table?",
+                  "query_frame": 5588,
+                  "clip_start_sec": 160.94,
+                  "clip_end_sec": 184.235,
+                  "clip_start_frame": 4828,
+                  "clip_end_frame": 5527
+                },
+                {
+                  "clip_uid": "5fa8a2f9-5e09-4f08-9693-e8b6b43166c9",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What did the other person hand me?",
+                  "query_frame": 3561,
+                  "clip_start_sec": 88.26,
+                  "clip_end_sec": 117.006,
+                  "clip_start_frame": 2647,
+                  "clip_end_frame": 3510
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "16daad27-9483-41d7-af5c-442035827537",
+          "video_start_sec": 1338.884,
+          "video_end_sec": 1493.747,
+          "annotations": [
+            {
+              "annotator_uid": "f7afc271-7230-4639-a708-89beffe7ce5b",
+              "queries": [
+                {
+                  "clip_uid": "16daad27-9483-41d7-af5c-442035827537",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "Where did I place the bowl?",
+                  "query_frame": 1996,
+                  "clip_start_sec": 40.724,
+                  "clip_end_sec": 57.286,
+                  "clip_start_frame": 1221,
+                  "clip_end_frame": 1718
+                },
+                {
+                  "clip_uid": "16daad27-9483-41d7-af5c-442035827537",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What was I cutting?",
+                  "query_frame": 2084,
+                  "clip_start_sec": 51.3,
+                  "clip_end_sec": 62.737,
+                  "clip_start_frame": 1539,
+                  "clip_end_frame": 1882
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clip_uid": "5298bd39-c43f-4a02-a1e9-f3a2182c9abb",
+          "video_start_sec": 1493.747,
+          "video_end_sec": 1687.473,
+          "annotations": [
+            {
+              "annotator_uid": "d9d1971e-52de-432c-8c91-f02e9cd5fbb2",
+              "queries": [
+                {
+                  "clip_uid": "5298bd39-c43f-4a02-a1e9-f3a2182c9abb",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 5046,
+                  "clip_start_sec": 135.533,
+                  "clip_end_sec": 160.405,
+                  "clip_start_frame": 4065,
+                  "clip_end_frame": 4812
+                },
+                {
+                  "clip_uid": "5298bd39-c43f-4a02-a1e9-f3a2182c9abb",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "When did I wash my hands?",
+                  "query_frame": 1846,
+                  "clip_start_sec": 51.319,
+                  "clip_end_sec": 54.922,
+                  "clip_start_frame": 1539,
+                  "clip_end_frame": 1647
+                },
+                {
+                  "clip_uid": "5298bd39-c43f-4a02-a1e9-f3a2182c9abb",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "What was I cutting?",
+                  "query_frame": 3443,
+                  "clip_start_sec": 109.337,
+                  "clip_end_sec": 111.423,
+                  "clip_start_frame": 3280,
+                  "clip_end_frame": 3342
+                },
+                {
+                  "clip_uid": "5298bd39-c43f-4a02-a1e9-f3a2182c9abb",
+                  "video_uid": "96af02b7-acba-4d12-aa14-231825192bf4",
+                  "query": "When did I turn on the stove?",
+                  "query_frame": 440,
+                  "clip_start_sec": 3.482,
+                  "clip_end_sec": 8.923,
+                  "clip_start_frame": 104,
+                  "clip_end_frame": 267
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

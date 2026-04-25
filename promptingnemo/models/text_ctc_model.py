@@ -11,6 +11,7 @@ Streaming inference uses causal attention masks, same as streaming meta-ASR.
 
 import logging
 import math
+from collections import defaultdict
 from typing import Dict, List, Optional, Tuple
 
 import torch
@@ -19,6 +20,19 @@ import torch.nn.functional as F
 import lightning.pytorch as pl
 
 log = logging.getLogger(__name__)
+
+TAG_PREFIXES = (
+    'ENTITY_', 'INTENT_', 'EMOTION_', 'GENDER_', 'AGE_',
+    'DIALECT_', 'KEYWORD_', 'LANG_', 'OTHER_', 'ROLE_',
+    'SPEAKER_', 'TURN_', 'FAMILY_',
+)
+EXACT_TAG_TOKENS = {'END', 'TURN_CHANGE'}
+
+
+def _is_tag(word: str) -> bool:
+    if word in EXACT_TAG_TOKENS:
+        return True
+    return any(word.startswith(p) for p in TAG_PREFIXES)
 
 
 class CharacterEmbedding(nn.Module):
@@ -145,9 +159,19 @@ class TextCTCTagger(pl.LightningModule):
 
         self._init_weights()
 
+        self.tokenizer = None
+        self._val_wer_errors = 0
+        self._val_wer_words = 0
+        self._val_tag_tp = 0
+        self._val_tag_fp = 0
+        self._val_tag_fn = 0
+
         total_params = sum(p.numel() for p in self.parameters())
         trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)
         log.info("TextCTCTagger: %d params (%d trainable)", total_params, trainable)
+
+    def set_tokenizer(self, tokenizer):
+        self.tokenizer = tokenizer
 
     def _init_weights(self):
         for p in self.parameters():
@@ -218,7 +242,60 @@ class TextCTCTagger(pl.LightningModule):
 
         self.log('val_loss', loss, on_epoch=True, prog_bar=True)
 
-        return {'val_loss': loss, 'preds': greedy_preds}
+        if self.tokenizer is not None:
+            for i in range(len(greedy_preds)):
+                target_ids = token_ids[i, :token_lengths[i]].tolist()
+                pred_text = self.tokenizer.decode(greedy_preds[i])
+                ref_text = self.tokenizer.decode(target_ids)
+
+                pred_words = [w for w in pred_text.split() if not _is_tag(w)]
+                ref_words = [w for w in ref_text.split() if not _is_tag(w)]
+                errors = self._edit_distance(pred_words, ref_words)
+                self._val_wer_errors += errors
+                self._val_wer_words += max(len(ref_words), 1)
+
+                pred_tags = set(w for w in pred_text.split() if _is_tag(w))
+                ref_tags = set(w for w in ref_text.split() if _is_tag(w))
+                self._val_tag_tp += len(pred_tags & ref_tags)
+                self._val_tag_fp += len(pred_tags - ref_tags)
+                self._val_tag_fn += len(ref_tags - pred_tags)
+
+        return {'val_loss': loss}
+
+    def on_validation_epoch_end(self):
+        if self._val_wer_words > 0:
+            wer = self._val_wer_errors / self._val_wer_words
+            self.log('val_wer', wer, prog_bar=True)
+
+            tp = self._val_tag_tp
+            tag_precision = tp / max(tp + self._val_tag_fp, 1)
+            tag_recall = tp / max(tp + self._val_tag_fn, 1)
+            tag_f1 = 2 * tag_precision * tag_recall / max(tag_precision + tag_recall, 1e-8)
+            self.log('val_tag_f1', tag_f1, prog_bar=True)
+            self.log('val_tag_precision', tag_precision)
+            self.log('val_tag_recall', tag_recall)
+
+            log.info(
+                "Validation @ step %d: val_wer=%.4f, tag_f1=%.4f (P=%.4f R=%.4f)",
+                self.trainer.global_step, wer, tag_f1, tag_precision, tag_recall,
+            )
+
+        self._val_wer_errors = 0
+        self._val_wer_words = 0
+        self._val_tag_tp = 0
+        self._val_tag_fp = 0
+        self._val_tag_fn = 0
+
+    @staticmethod
+    def _edit_distance(hyp: List[str], ref: List[str]) -> int:
+        n, m = len(hyp), len(ref)
+        dp = list(range(m + 1))
+        for i in range(1, n + 1):
+            prev, dp[0] = dp[0], i
+            for j in range(1, m + 1):
+                cost = 0 if hyp[i - 1] == ref[j - 1] else 1
+                prev, dp[j] = dp[j], min(dp[j] + 1, dp[j - 1] + 1, prev + cost)
+        return dp[m]
 
     def _greedy_decode(
         self, log_probs: torch.Tensor, lengths: torch.Tensor

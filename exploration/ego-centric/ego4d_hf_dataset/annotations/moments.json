@@ -1,0 +1,406 @@
+{
+  "version": "v1.0",
+  "date": "2026-04-24",
+  "description": "Temporal activity moment annotations",
+  "clips": [
+    {
+      "clip_uid": "853442cb-0c27-57ae-9cce-08195ec57930",
+      "video_uid": "d120cbcb-0464-5435-b452-4312a4945bf6",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "3d8170b7-09eb-4b1a-9262-cb6286358057",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 2.0,
+              "end_time": 25.0,
+              "start_frame": 60,
+              "end_frame": 750,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "996d71af-d526-5340-a145-6d86a08574e4",
+      "video_uid": "ad9506de-9a3f-5ede-b4a6-bc989b40e19c",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "ae82bf7c-0a0a-49e3-aedd-849f48f1c6e6",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 3.0,
+              "end_time": 24.0,
+              "start_frame": 90,
+              "end_frame": 720,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "1d670172-f69f-5209-a627-1c460b83927c",
+      "video_uid": "704c3149-35cb-5b78-9b6c-fb50e8a910a3",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "a165871e-d6f4-4748-af6b-642890af1904",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 2.0,
+              "end_time": 27.0,
+              "start_frame": 60,
+              "end_frame": 810,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "8cfae786-9a31-51d1-a940-00356573487e",
+      "video_uid": "a82ac17e-cee3-5cef-8f94-4bc82ef713da",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "059a2ab2-aeb3-4d9e-821f-cf38c34e4c79",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 1.5,
+              "end_time": 26.0,
+              "start_frame": 45,
+              "end_frame": 780,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "b5bdfb49-a82f-5c8d-8e02-9e6de8db9bc0",
+      "video_uid": "c29ff360-e9ed-5559-b41f-97d2120a20c6",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "25416dbf-2ce7-4f4b-b278-8f0fa21956b5",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 2.0,
+              "end_time": 22.0,
+              "start_frame": 60,
+              "end_frame": 660,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "58270289-1883-54bc-80d0-5caf7817b019",
+      "video_uid": "a96ea72a-5654-5756-8553-a94613ab162c",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "459b3cde-1945-49bd-9afa-7292adafc5eb",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 3.0,
+              "end_time": 23.0,
+              "start_frame": 90,
+              "end_frame": 690,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "e7eabcf1-3a63-56b8-b489-3d10afc66696",
+      "video_uid": "52e2eef9-b432-57a3-a0e3-0b85d344f586",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "fd01210d-5fe2-4019-9eb2-788a902ae5fc",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 2.0,
+              "end_time": 26.0,
+              "start_frame": 60,
+              "end_frame": 780,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "a3bce4ba-ad50-5d57-97b9-6db3ae31bf1c",
+      "video_uid": "83398eef-68e0-53c7-b692-85367e00ec67",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "26a6908d-9827-422b-a7ae-8a43c9eb972f",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 2.0,
+              "end_time": 27.0,
+              "start_frame": 60,
+              "end_frame": 810,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "4bdd5765-4210-5826-8982-79f0f7dcae89",
+      "video_uid": "3ca004a4-9a05-5ff2-ab32-4f1724ef585a",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "2606e1c2-6abd-42d4-bf53-b80aab0f1b57",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 3.0,
+              "end_time": 24.0,
+              "start_frame": 90,
+              "end_frame": 720,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "2e983e65-510b-5981-beb1-7c5e202eaf55",
+      "video_uid": "5e05bb65-9f45-5edd-854a-45dbcc54c255",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "359c9696-5973-4d31-a746-27d391fd53a9",
+          "labels": [
+            {
+              "label": "arrange_/_organize_other_items",
+              "start_time": 2.5,
+              "end_time": 22.0,
+              "start_frame": 75,
+              "end_frame": 660,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "e854b6af-e1af-5eb1-8e21-16b5e34a5a03",
+      "video_uid": "c162ee59-b9dc-574f-9e89-0dcc2123159f",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "52116206-cd47-42be-9d80-d0209a498f68",
+          "labels": [
+            {
+              "label": "clean_/_wipe_other_surface_or_object",
+              "start_time": 1.0,
+              "end_time": 25.0,
+              "start_frame": 30,
+              "end_frame": 750,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "6900fe3a-6f96-5332-9808-5a43dce21b4c",
+      "video_uid": "263f777e-3350-55a6-a6e3-10227c788aca",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "df75fd9d-d2a0-4a56-af48-ce775d621e2e",
+          "labels": [
+            {
+              "label": "clean_/_wipe_other_surface_or_object",
+              "start_time": 2.0,
+              "end_time": 26.0,
+              "start_frame": 60,
+              "end_frame": 780,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "5bb06123-14a6-583a-86bd-64659ce29ce3",
+      "video_uid": "9e2eb3c0-8490-5440-8f42-a09cb07c43b5",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "ba9ed05c-eaf0-4b96-94c4-83ae0802bcfb",
+          "labels": [
+            {
+              "label": "clean_/_wipe_other_surface_or_object",
+              "start_time": 2.0,
+              "end_time": 25.0,
+              "start_frame": 60,
+              "end_frame": 750,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "309661d9-a026-5f15-bcae-fc17ad1a1ca5",
+      "video_uid": "c0fb6637-b32c-5bd3-9360-97fad3d669e7",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "bf19d0bb-f34a-4c77-af27-dcf065aec5ae",
+          "labels": [
+            {
+              "label": "clean_/_wipe_other_surface_or_object",
+              "start_time": 3.0,
+              "end_time": 27.0,
+              "start_frame": 90,
+              "end_frame": 810,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "a5ade5e4-8d46-541a-86a1-fbb30ebfb600",
+      "video_uid": "b5d8f6ce-1829-5083-9bf1-0c48c694e143",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "a0023d22-b14b-480b-a4e4-e95591e817d0",
+          "labels": [
+            {
+              "label": "clean_/_wipe_other_surface_or_object",
+              "start_time": 1.5,
+              "end_time": 25.0,
+              "start_frame": 45,
+              "end_frame": 750,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "8bade365-ae6e-5ccd-940e-e8817057d45f",
+      "video_uid": "e7efd662-d7f2-517b-94dc-6bd0c55269f5",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "acca719c-254e-45ae-9ebd-65ce90176308",
+          "labels": [
+            {
+              "label": "clean_/_wipe_other_surface_or_object",
+              "start_time": 2.0,
+              "end_time": 26.0,
+              "start_frame": 60,
+              "end_frame": 780,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "f64d3259-58ee-5bca-bae6-2560e872813e",
+      "video_uid": "216f11c9-6f38-53e7-8951-48017b3431ae",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "366f1499-b986-4e55-bdd3-60a60a2c3710",
+          "labels": [
+            {
+              "label": "wash_dishes_/_utensils_/_bakeware_etc.",
+              "start_time": 1.0,
+              "end_time": 24.0,
+              "start_frame": 30,
+              "end_frame": 720,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "0b580a9c-cb85-5da2-aaca-4caec3509440",
+      "video_uid": "5a230b90-5fc9-57f7-8b09-5767e3220c31",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "f02c8f83-1098-42d3-b570-991363b58e2c",
+          "labels": [
+            {
+              "label": "wash_dishes_/_utensils_/_bakeware_etc.",
+              "start_time": 2.0,
+              "end_time": 24.0,
+              "start_frame": 60,
+              "end_frame": 720,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clip_uid": "c5a2ec10-7cbc-5be1-bde5-d04500473441",
+      "video_uid": "e69f7755-bf3a-58c2-87a7-b881e1c66c23",
+      "video_start_sec": 0,
+      "video_end_sec": 30.0,
+      "annotations": [
+        {
+          "annotator_uid": "3bacb045-db22-4367-acff-5cbd4969ce30",
+          "labels": [
+            {
+              "label": "wash_dishes_/_utensils_/_bakeware_etc.",
+              "start_time": 1.5,
+              "end_time": 28.0,
+              "start_frame": 45,
+              "end_frame": 840,
+              "primary": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

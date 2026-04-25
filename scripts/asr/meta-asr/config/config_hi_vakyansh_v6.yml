@@ -1,0 +1,69 @@
+model:
+  model_root: /mnt/nfs/models/vakyansh_hi_conformer_large/
+  model_name: Conformer-CTC-BPE-Large.nemo
+  tokenizer_folder: tokenizer_original
+  new_tokenizer_folder: tokenizer_original
+  use_aggregate_tokenizer: false
+  tokenizer_langs:
+    INDO_ARYAN:
+      dir: /mnt/nfs/models/vakyansh_hi_conformer_large/tokenizer_original
+      type: bpe
+  special_token_prefixes:
+  - ENTITY_
+  - INTENT_
+  - EMOTION_
+  - GENDER_
+  - AGE_
+  - KEYWORD_
+  - LANG_
+  language_families:
+  - INDO_ARYAN
+adapter:
+  enabled: true
+  name: lang_adapter
+  dim: 256
+  activation: swish
+  norm_position: pre
+  unfreeze_decoder: true
+training:
+  data_dir: /mnt/nfs/data/meta_stt_hi_set1
+  train_manifest: train.validated.json
+  test_manifest: valid.validated.json
+  batch_size: 32
+  accumulate_grad_batches: 2
+  max_duration: 16.0
+  max_steps: 100000
+  use_mixed_precision: true
+  num_workers: 4
+  pin_memory: true
+  use_keyword_loss: false
+  use_family_loss_weights: false
+  spec_augment:
+    time_masks: 4
+    time_width: 80
+  optim:
+    lr: 0.001
+    weight_decay: 0.0
+    sched:
+      warmup_steps: 1000
+      min_lr: 1.0e-06
+      max_steps: 100000
+  skip_audio_validation: true
+  devices: 1
+  tag_decoder_scale: 0.01
+  tag_init_bias: -5.0
+experiment:
+  exp_dir: /mnt/nfs/experiments/
+  exp_name: hi-vakyansh-meta-v6
+  monitor: val_wer
+  mode: min
+  always_save_nemo: true
+  save_top_k: 3
+  every_n_train_steps: 500
+tag_classifier:
+  enabled: true
+  weight: 0.1
+  categories:
+  - AGE
+  - GENDER
+  - EMOTION

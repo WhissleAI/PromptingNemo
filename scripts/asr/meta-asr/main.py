@@ -66,6 +66,15 @@ from scripts.asr.meta_asr.validate_data import (
     validate_manifest as run_validate_manifest,
 )
 
+from scripts.asr.meta_asr.tag_classifier import (
+    build_trailing_tag_maps,
+    build_all_special_token_ids,
+    TrailingTagClassifier,
+    strip_trailing_tags_and_get_labels,
+    compute_tag_classification_loss,
+    masked_mean_pool,
+)
+
 try:
     from nemo.collections.common.tokenizers import aggregate_tokenizer as nemo_agg
     from nemo.collections.common import tokenizers as nemo_tokenizers_pkg
@@ -301,7 +310,9 @@ if nemo_agg is not None:
             tokenizer = self.tokenizers_dict[lang_id]
             return tokenizer.text_to_tokens(text)
 
-        def text_to_ids(self, text, lang_id):
+        def text_to_ids(self, text, lang_id=None):
+            if lang_id is None:
+                lang_id = next(iter(self.tokenizers_dict))
             tokenizer = self.tokenizers_dict[lang_id]
             lang_map = self.lang_local_to_global[lang_id]
             if not self._extended_special_tokens:
@@ -448,6 +459,52 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                 reduction='none'
             )
 
+    def setup_tag_classifier(self, encoder_dim, vocabulary, categories=None, weight=0.5,
+                             special_token_prefixes=None):
+        """Set up the trailing tag classification head."""
+        self.use_tag_classifier = True
+        self.tag_classifier_weight = weight
+
+        trailing_tag_ids, category_to_id, category_sizes = build_trailing_tag_maps(
+            vocabulary, categories=categories
+        )
+        self._trailing_tag_ids = trailing_tag_ids
+        self._category_to_id = category_to_id
+        self._category_names = sorted(category_sizes.keys())
+        self._category_sizes = category_sizes
+
+        if special_token_prefixes:
+            self._all_special_token_ids = build_all_special_token_ids(
+                vocabulary, special_token_prefixes
+            )
+        else:
+            self._all_special_token_ids = trailing_tag_ids
+
+        self.tag_classifier = TrailingTagClassifier(encoder_dim, category_sizes)
+        self.tag_classifier.requires_grad_(True)
+
+        def _capture_encoder_output(module, input, output):
+            if isinstance(output, tuple):
+                self._last_encoder_output = output[0]
+            else:
+                self._last_encoder_output = output
+
+        self._encoder_hook = self.encoder.register_forward_hook(_capture_encoder_output)
+
+        self._val_tag_preds = {cat: [] for cat in self._category_names}
+        self._val_tag_labels = {cat: [] for cat in self._category_names}
+
+        total_cls_params = sum(p.numel() for p in self.tag_classifier.parameters())
+        nemo_logging.info(
+            "Tag classifier enabled: %d categories %s, %d total params, weight=%.2f, "
+            "%d trailing tag token IDs removed from CTC targets, "
+            "%d total special token IDs for stripping",
+            len(category_sizes), list(category_sizes.keys()), total_cls_params,
+            weight, len(trailing_tag_ids), len(self._all_special_token_ids),
+        )
+        for cat, size in sorted(category_sizes.items()):
+            nemo_logging.info("  %s: %d classes (including NONE)", cat, size)
+
     def set_keyword_token_ids(self, keyword_ids):
         self.keyword_token_ids = set(keyword_ids)
         logging.info(f"Set {len(self.keyword_token_ids)} keyword token IDs for custom loss.")
@@ -465,12 +522,24 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         else:
             audio_signal, audio_signal_len, transcript, transcript_len = batch
 
+        # --- Dual-head: strip trailing tags from CTC target ---
+        if getattr(self, 'use_tag_classifier', False):
+            ctc_transcript, ctc_transcript_len, tag_labels = strip_trailing_tags_and_get_labels(
+                transcript, transcript_len,
+                self._trailing_tag_ids, self._category_to_id, self._category_names,
+                all_special_ids=self._all_special_token_ids,
+            )
+        else:
+            ctc_transcript = transcript
+            ctc_transcript_len = transcript_len
+            tag_labels = None
+
         log_probs, encoded_len, greedy_predictions = self.forward(
             input_signal=audio_signal, input_signal_length=audio_signal_len
         )
-        
+
         loss_value = self.loss(
-            log_probs=log_probs, targets=transcript, input_lengths=encoded_len, target_lengths=transcript_len
+            log_probs=log_probs, targets=ctc_transcript, input_lengths=encoded_len, target_lengths=ctc_transcript_len
         )
 
         # --- Language Family Weighted Loss ---
@@ -538,6 +607,15 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                         1 - current_keyword_loss_weight
                     ) * loss_value + current_keyword_loss_weight * keyword_loss
 
+        # --- Dual-head: classification loss for trailing tags ---
+        if getattr(self, 'use_tag_classifier', False) and tag_labels is not None:
+            encoder_out = self._last_encoder_output.transpose(1, 2)  # [B, T, D]
+            pooled = masked_mean_pool(encoder_out, encoded_len).detach()
+            tag_logits = self.tag_classifier(pooled)
+            cls_loss = compute_tag_classification_loss(tag_logits, tag_labels)
+            self.log('tag_cls_loss', cls_loss, on_step=True, prog_bar=True)
+            loss_value = loss_value + self.tag_classifier_weight * cls_loss
+
         self.log('train_loss', loss_value)
         self.log('learning_rate', self._optimizer.param_groups[0]['lr'])
 
@@ -556,6 +634,10 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
     def on_validation_epoch_start(self):
         super().on_validation_epoch_start()
         self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
+        if getattr(self, 'use_tag_classifier', False):
+            for cat in self._category_names:
+                self._val_tag_preds[cat] = []
+                self._val_tag_labels[cat] = []
 
     def _accumulate_family_wer(self, sample_ids, log_probs, encoded_len, transcript, transcript_len):
         dataset = self._get_dataset_for_prefix('val')
@@ -639,11 +721,80 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         if total_words > 0:
             self.log(f"{prefix}_wer_combined", total_errors / total_words, prog_bar=False, sync_dist=False)
 
+    def multi_validation_epoch_end(self, outputs, dataloader_idx: int = 0):
+        result = super().multi_validation_epoch_end(outputs, dataloader_idx)
+        if result and 'log' in result:
+            log_vals = result['log']
+            val_loss = log_vals.get('val_loss', None)
+            val_wer = log_vals.get('val_wer', None)
+            step = self.trainer.global_step
+            loss_str = f"{val_loss.item():.4f}" if val_loss is not None else "N/A"
+            wer_str = f"{val_wer.item():.4f}" if val_wer is not None else "N/A"
+            tag_acc_str = ""
+            tag_acc = log_vals.get('val_tag_acc', None)
+            if tag_acc is not None:
+                tag_acc_str = f", val_tag_acc={tag_acc.item():.4f}"
+            nemo_logging.info("Validation @ step %d: val_loss=%s, val_wer=%s%s", step, loss_str, wer_str, tag_acc_str)
+        return result
+
     def on_validation_epoch_end(self):
         result = super().on_validation_epoch_end()
         self._log_family_metrics('val')
         self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
+
+        if getattr(self, 'use_tag_classifier', False) and self._val_tag_preds:
+            self._log_tag_metrics()
+
         return result
+
+    def _log_tag_metrics(self):
+        step = self.trainer.global_step
+        lines = [f"Tag classifier metrics @ step {step}:"]
+        overall_correct = 0
+        overall_total = 0
+
+        for cat_name in self._category_names:
+            preds = self._val_tag_preds.get(cat_name, [])
+            labels = self._val_tag_labels.get(cat_name, [])
+            if not preds:
+                continue
+
+            n_classes = self._category_sizes[cat_name]
+            correct = sum(1 for p, l in zip(preds, labels) if p == l)
+            total = len(preds)
+            acc = correct / max(total, 1)
+            overall_correct += correct
+            overall_total += total
+
+            self.log(f'val_tag_acc_{cat_name}', acc, prog_bar=False)
+
+            confusion = [[0] * n_classes for _ in range(n_classes)]
+            for p, l in zip(preds, labels):
+                if l < n_classes and p < n_classes:
+                    confusion[l][p] += 1
+
+            vocab = list(self.decoder.vocabulary) if hasattr(self, 'decoder') else []
+            cat_to_id = self._category_to_id.get(cat_name, {})
+            id_to_label = {0: 'NONE'}
+            for vid, cls_idx in cat_to_id.items():
+                if vid < len(vocab):
+                    id_to_label[cls_idx] = vocab[vid].lstrip('▁')
+
+            class_labels = [id_to_label.get(i, f'cls_{i}') for i in range(n_classes)]
+            lines.append(f"  {cat_name}: acc={acc:.4f} ({correct}/{total})")
+            header = "    " + "pred→".ljust(12) + "  ".join(f"{cl[:10]:>10}" for cl in class_labels)
+            lines.append(header)
+            for row_idx, row in enumerate(confusion):
+                row_label = class_labels[row_idx] if row_idx < len(class_labels) else f'cls_{row_idx}'
+                row_str = "    " + f"{row_label[:10]:>10}  " + "  ".join(f"{v:>10}" for v in row)
+                lines.append(row_str)
+
+        if overall_total > 0:
+            overall_acc = overall_correct / overall_total
+            self.log('val_tag_acc', overall_acc, prog_bar=True)
+            lines.append(f"  Overall tag accuracy: {overall_acc:.4f}")
+
+        nemo_logging.info("\n".join(lines))
 
     def _decode_target_tokens(self, token_ids: List[int]) -> str:
         decoding = getattr(self, 'decoding', None)
@@ -692,6 +843,18 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                 signal, signal_len, transcript, transcript_len = batch
             core_batch = (signal, signal_len, transcript, transcript_len)
 
+        # --- Dual-head: strip trailing tags for validation ---
+        if getattr(self, 'use_tag_classifier', False):
+            ctc_transcript, ctc_transcript_len, val_tag_labels = strip_trailing_tags_and_get_labels(
+                transcript, transcript_len,
+                self._trailing_tag_ids, self._category_to_id, self._category_names,
+                all_special_ids=self._all_special_token_ids,
+            )
+        else:
+            ctc_transcript = transcript
+            ctc_transcript_len = transcript_len
+            val_tag_labels = None
+
         if self.is_interctc_enabled():
             AccessMixin.set_access_enabled(access_enabled=True, guid=self.model_guid)
 
@@ -705,12 +868,14 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
             )
 
         loss_value = self.loss(
-            log_probs=log_probs, targets=transcript, input_lengths=encoded_len, target_lengths=transcript_len
+            log_probs=log_probs, targets=ctc_transcript, input_lengths=encoded_len, target_lengths=ctc_transcript_len
         )
+        if self.use_family_loss_weights and loss_value.dim() > 0:
+            loss_value = loss_value.mean()
         loss_value, metrics = self.add_interctc_losses(
             loss_value,
-            transcript,
-            transcript_len,
+            ctc_transcript,
+            ctc_transcript_len,
             compute_wer=True,
             log_wer_num_denom=True,
             log_prefix="val_",
@@ -718,12 +883,26 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
 
         self.wer.update(
             predictions=log_probs,
-            targets=transcript,
-            targets_lengths=transcript_len,
+            targets=ctc_transcript,
+            targets_lengths=ctc_transcript_len,
             predictions_lengths=encoded_len,
         )
         wer, wer_num, wer_denom = self.wer.compute()
         self.wer.reset()
+
+        # --- Dual-head: validation classification loss + accumulate for confusion ---
+        if getattr(self, 'use_tag_classifier', False) and val_tag_labels is not None:
+            encoder_out = self._last_encoder_output.transpose(1, 2)
+            pooled = masked_mean_pool(encoder_out, encoded_len).detach()
+            tag_logits = self.tag_classifier(pooled)
+            val_cls_loss = compute_tag_classification_loss(tag_logits, val_tag_labels)
+            metrics['val_tag_cls_loss'] = val_cls_loss
+            for cat_idx, cat_name in enumerate(self._category_names):
+                preds = tag_logits[cat_name].argmax(dim=-1).detach().cpu().tolist()
+                labels = val_tag_labels[:, cat_idx].detach().cpu().tolist()
+                self._val_tag_preds[cat_name].extend(preds)
+                self._val_tag_labels[cat_name].extend(labels)
+
         metrics.update({'val_loss': loss_value, 'val_wer_num': wer_num, 'val_wer_denom': wer_denom, 'val_wer': wer})
 
         self.log('global_step', torch.tensor(self.trainer.global_step, dtype=torch.float32, device=log_probs.device))
@@ -732,7 +911,7 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
             AccessMixin.reset_registry(self)
 
         if sample_ids is not None:
-            self._accumulate_family_wer(sample_ids, log_probs, encoded_len, transcript, transcript_len)
+            self._accumulate_family_wer(sample_ids, log_probs, encoded_len, ctc_transcript, ctc_transcript_len)
 
         if isinstance(self.trainer.val_dataloaders, list) and len(self.trainer.val_dataloaders) > 1:
             self.validation_step_outputs[dataloader_idx].append(metrics)
@@ -1686,7 +1865,7 @@ def scan_manifest_for_new_tokens(
         if count < min_count:
             skipped += 1
             continue
-        if allowed_prefixes and not any(token.startswith(p) for p in allowed_prefixes):
+        if allowed_prefixes and token != "END" and not any(token.startswith(p) for p in allowed_prefixes):
             skipped += 1
             continue
         found.append(token)
@@ -1844,7 +2023,7 @@ def slim_decoder_for_training(model, training_families):
         )
 
 
-def scale_down_tag_decoder_weights(model, scale_factor=0.01):
+def scale_down_tag_decoder_weights(model, scale_factor=0.01, tag_init_bias=-5.0):
     """Scale down decoder weights for ALL meta-tag tokens.
 
     Meta-tags (AGE_*, GENDER_*, EMOTION_*, INTENT_*, DIALECT_*, ENTITY_*,
@@ -1878,7 +2057,7 @@ def scale_down_tag_decoder_weights(model, scale_factor=0.01):
             decoder_layer.weight.data[idx] = torch.randn_like(
                 decoder_layer.weight.data[idx]
             ) * scale_factor
-            decoder_layer.bias.data[idx] = 0.0
+            decoder_layer.bias.data[idx] = tag_init_bias
             scaled_count += 1
             if len(scaled_tokens) < 20:
                 scaled_tokens.append(clean)
@@ -2001,7 +2180,13 @@ def train_model(cfg, ckpt_path=None):
     with open_dict(base_cfg):
         adapter_cfg_section = cfg.get('adapter', {})
         if adapter_cfg_section and adapter_cfg_section.get('enabled', False):
-            base_cfg.encoder._target_ = 'nemo.collections.asr.modules.conformer_encoder.ConformerEncoderAdapter'
+            orig_target = base_cfg.encoder.get('_target_', '')
+            if 'conv_asr' in orig_target or 'ConvASR' in orig_target:
+                base_cfg.encoder._target_ = 'nemo.collections.asr.modules.conv_asr.ConvASREncoderAdapter'
+                nemo_logging.info('Using ConvASREncoderAdapter for Citrinet/Jasper encoder')
+            else:
+                base_cfg.encoder._target_ = 'nemo.collections.asr.modules.conformer_encoder.ConformerEncoderAdapter'
+                nemo_logging.info('Using ConformerEncoderAdapter for Conformer encoder')
 
         base_cfg.use_keyword_loss = cfg.training.get('use_keyword_loss', False)
         base_cfg.keyword_loss_weight = cfg.training.get('keyword_loss_weight', 0.3)
@@ -2044,10 +2229,11 @@ def train_model(cfg, ckpt_path=None):
         if 'augmentor' in base_cfg.train_ds:
             del base_cfg.train_ds.augmentor
 
-        if 'tokenizer' not in base_cfg or not base_cfg.get('tokenizer'):
+        use_agg_tok = cfg.model.get('use_aggregate_tokenizer', False)
+        if 'tokenizer' not in base_cfg or not base_cfg.get('tokenizer') or not use_agg_tok:
             base_cfg.tokenizer = tokenizer_entry
 
-        if aggregate_vocab and hasattr(base_cfg, 'decoder'):
+        if aggregate_vocab and hasattr(base_cfg, 'decoder') and not use_agg_tok:
             orig_num_classes = base_cfg.decoder.get('num_classes', 0)
             if orig_num_classes != len(aggregate_vocab):
                 logging.info(
@@ -2057,12 +2243,29 @@ def train_model(cfg, ckpt_path=None):
                 base_cfg.decoder.num_classes = len(aggregate_vocab)
                 base_cfg.decoder.vocabulary = aggregate_vocab
 
+    # Pre-restore: ensure decoder num_classes matches tokenizer vocabulary size.
+    _tok_vocab_size = None
+    for _lang_cfg in tokenizer_langs.values():
+        _tok_model = Path(_lang_cfg['dir']) / 'tokenizer.model'
+        if _tok_model.exists():
+            _sp = spm.SentencePieceProcessor()
+            _sp.Load(str(_tok_model))
+            _tok_vocab_size = _sp.GetPieceSize()
+            break
+    if _tok_vocab_size is not None:
+        _cur_nc = base_cfg.decoder.get('num_classes', 0)
+        if _cur_nc != _tok_vocab_size and _cur_nc != len(aggregate_vocab or []):
+            logging.info("Pre-restore: decoder num_classes %d -> %d (tokenizer vocab size)",
+                         _cur_nc, _tok_vocab_size)
+            with open_dict(base_cfg):
+                base_cfg.decoder.num_classes = _tok_vocab_size
+
     needs_encoder_only = False
     orig_decoder_classes = base_cfg.get('decoder', {}).get('num_classes', 0)
     try:
         model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=False)
     except (RuntimeError, Exception) as e:
-        if 'size mismatch' in str(e) and 'decoder' in str(e):
+        if 'size mismatch' in str(e) or 'num_classes' in str(e):
             needs_encoder_only = True
         else:
             raise
@@ -2084,6 +2287,15 @@ def train_model(cfg, ckpt_path=None):
         encoder_state = {k: v for k, v in state_dict.items() if not k.startswith('decoder.')}
         model.load_state_dict(encoder_state, strict=False)
         logging.info("Loaded encoder weights. Decoder randomly initialized for new %d-token vocab.", len(aggregate_vocab))
+
+    # Fix decoder num_classes to match vocabulary length
+    if hasattr(base_cfg, 'decoder') and hasattr(base_cfg.decoder, 'vocabulary'):
+        vocab_len = len(base_cfg.decoder.vocabulary)
+        if base_cfg.decoder.get('num_classes', 0) != vocab_len:
+            logging.info("Fixing decoder num_classes: %d -> %d", base_cfg.decoder.num_classes, vocab_len)
+            with open_dict(base_cfg):
+                base_cfg.decoder.num_classes = vocab_len
+
     model.setup_custom_loss()
 
     if language_families:
@@ -2099,7 +2311,12 @@ def train_model(cfg, ckpt_path=None):
             model.tokenizer.extend_vocabulary(new_tokens)
         model.setup_custom_loss()
 
-    scale_down_tag_decoder_weights(model, scale_factor=0.01)
+    tag_scale = cfg.training.get('tag_decoder_scale', 0.01)
+    tag_bias = cfg.training.get('tag_init_bias', -5.0)
+    if tag_scale < 1.0:
+        scale_down_tag_decoder_weights(model, scale_factor=tag_scale, tag_init_bias=tag_bias)
+    else:
+        nemo_logging.info("Skipping tag decoder weight scaling (tag_decoder_scale=%.2f)", tag_scale)
 
     adapter_cfg = cfg.get('adapter', {})
     if adapter_cfg and adapter_cfg.get('enabled', False):
@@ -2135,6 +2352,23 @@ def train_model(cfg, ckpt_path=None):
         nemo_logging.info(
             "Unfroze %d adapter parameter tensors. Total trainable: %d",
             adapter_trainable, trainable_total,
+        )
+
+    # --- Dual-head: setup tag classifier ---
+    tag_cls_cfg = cfg.get('tag_classifier', {})
+    if tag_cls_cfg and tag_cls_cfg.get('enabled', False):
+        tag_cls_categories = tag_cls_cfg.get('categories', None)
+        if tag_cls_categories:
+            tag_cls_categories = [c.upper() for c in tag_cls_categories]
+        tag_cls_weight = tag_cls_cfg.get('weight', 0.1)
+        encoder_dim = model.encoder._feat_out
+        special_prefixes = cfg.model.get('special_token_prefixes', None)
+        model.setup_tag_classifier(
+            encoder_dim=encoder_dim,
+            vocabulary=list(model.decoder.vocabulary),
+            categories=tag_cls_categories,
+            weight=tag_cls_weight,
+            special_token_prefixes=special_prefixes,
         )
 
     tokenizer_cfg = OmegaConf.create(tokenizer_entry)
@@ -2296,6 +2530,13 @@ def train_model(cfg, ckpt_path=None):
         create_dllogger_logger=False,
     )
     exp_cfg = OmegaConf.structured(exp_cfg)
+    logging.info(
+        "Checkpoint callback params: monitor=%s, every_n_train_steps=%s, save_top_k=%s, mode=%s",
+        exp_cfg.checkpoint_callback_params.monitor,
+        exp_cfg.checkpoint_callback_params.every_n_train_steps,
+        exp_cfg.checkpoint_callback_params.save_top_k,
+        exp_cfg.checkpoint_callback_params.mode,
+    )
     exp_manager.exp_manager(trainer, exp_cfg)
 
     logging.info("Starting model training...")

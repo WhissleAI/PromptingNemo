@@ -1,0 +1,194 @@
+"""Dual-head trailing tag classifier for ASR training.
+
+Removes trailing sentence-level tags (AGE, GENDER, EMOTION, INTENT, DIALECT)
+from CTC targets and predicts them via a separate cross-entropy classification
+head on the *pooled* encoder output — one prediction per utterance, not per
+frame — so that tag-classifier gradients cannot interfere with the temporal
+structure the CTC head relies on.
+"""
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from collections import defaultdict
+from typing import Dict, List, Set, Tuple
+
+TRAILING_TAG_PREFIXES = ('AGE_', 'GENDER_', 'EMOTION_', 'INTENT_', 'DIALECT_')
+
+
+def build_all_special_token_ids(vocabulary, prefixes):
+    """Build a set of ALL special token IDs from vocabulary given prefix list.
+
+    Args:
+        vocabulary: list of vocab tokens
+        prefixes: list of prefix strings (e.g. ['ENTITY_', 'INTENT_', 'AGE_'])
+
+    Returns:
+        set of vocab indices for all tokens matching any prefix
+    """
+    prefixes = tuple(p.upper() for p in prefixes)
+    special_ids = set()
+    for idx, token in enumerate(vocabulary):
+        clean = token.lstrip('▁')
+        for prefix in prefixes:
+            if clean.startswith(prefix):
+                special_ids.add(idx)
+                break
+        if clean == 'END':
+            special_ids.add(idx)
+    return special_ids
+
+
+def build_trailing_tag_maps(vocabulary, categories=None):
+    """Build mappings from vocabulary for trailing tag classification.
+
+    Args:
+        vocabulary: list of vocab tokens
+        categories: optional list of category names (e.g. ['AGE', 'GENDER']).
+                    If None, auto-detect from vocabulary.
+
+    Returns:
+        trailing_tag_ids: set of vocab indices that are trailing tags
+        category_to_id: dict of category_name -> {vocab_id: class_index}
+        category_sizes: dict of category_name -> num_classes (including NONE at 0)
+    """
+    if categories:
+        active_prefixes = tuple(f"{cat}_" for cat in categories)
+    else:
+        active_prefixes = TRAILING_TAG_PREFIXES
+
+    category_members = defaultdict(list)
+    for idx, token in enumerate(vocabulary):
+        clean = token.lstrip('▁')
+        for prefix in active_prefixes:
+            if clean.startswith(prefix):
+                cat_name = prefix.rstrip('_')
+                category_members[cat_name].append((idx, clean))
+                break
+
+    trailing_tag_ids = set()
+    category_to_id = {}
+    category_sizes = {}
+
+    for cat_name, members in sorted(category_members.items()):
+        cat_map = {}
+        for class_idx, (vocab_id, _) in enumerate(sorted(members, key=lambda x: x[1])):
+            cat_map[vocab_id] = class_idx + 1  # 0 = NONE
+            trailing_tag_ids.add(vocab_id)
+        category_to_id[cat_name] = cat_map
+        category_sizes[cat_name] = len(members) + 1
+    return trailing_tag_ids, category_to_id, category_sizes
+
+
+class TrailingTagClassifier(nn.Module):
+    """Multi-head classifier for sentence-level trailing tags.
+
+    Receives the *pooled* encoder representation [B, D] (one vector per
+    utterance) and produces per-category logits.
+    """
+
+    def __init__(self, encoder_dim, category_sizes):
+        super().__init__()
+        self.category_names = sorted(category_sizes.keys())
+        self.heads = nn.ModuleDict({
+            cat: nn.Linear(encoder_dim, n_classes)
+            for cat, n_classes in sorted(category_sizes.items())
+        })
+
+    def forward(self, pooled_encoder_output):
+        """
+        Args:
+            pooled_encoder_output: [B, D] mean-pooled encoder representation
+        Returns:
+            dict of category_name -> [B, num_classes] logits
+        """
+        return {cat: head(pooled_encoder_output) for cat, head in self.heads.items()}
+
+
+def strip_trailing_tags_and_get_labels(transcript, transcript_len, trailing_tag_ids,
+                                       category_to_id, category_names,
+                                       all_special_ids=None):
+    """Strip trailing tag tokens from CTC targets and extract classification labels.
+
+    Uses all_special_ids (if provided) to walk past ALL trailing special tokens
+    (INTENT_, ENTITY_, etc.), not just active category tokens. Labels are only
+    extracted for tokens in trailing_tag_ids.
+
+    Returns:
+        clean_transcript: [B, max_len] with trailing tags removed
+        clean_transcript_len: [B] new lengths
+        tag_labels: [B, num_categories] classification labels (0=NONE)
+    """
+    skip_ids = all_special_ids if all_special_ids is not None else trailing_tag_ids
+
+    batch_size = transcript.size(0)
+    num_cats = len(category_names)
+    clean_transcript = transcript.clone()
+    clean_transcript_len = transcript_len.clone()
+    tag_labels = torch.zeros(batch_size, num_cats, dtype=torch.long, device=transcript.device)
+
+    for i in range(batch_size):
+        seq_len = int(transcript_len[i].item())
+        end_pos = seq_len
+        while end_pos > 0:
+            token_id = int(transcript[i, end_pos - 1].item())
+            if token_id in skip_ids:
+                if token_id in trailing_tag_ids:
+                    for cat_idx, cat_name in enumerate(category_names):
+                        if token_id in category_to_id.get(cat_name, {}):
+                            tag_labels[i, cat_idx] = category_to_id[cat_name][token_id]
+                            break
+                end_pos -= 1
+            else:
+                break
+        clean_transcript_len[i] = end_pos
+        if end_pos < seq_len:
+            clean_transcript[i, end_pos:seq_len] = 0
+
+    return clean_transcript, clean_transcript_len, tag_labels
+
+
+def masked_mean_pool(encoder_output, encoded_len):
+    """Mean-pool encoder output over valid (non-padded) time steps.
+
+    Args:
+        encoder_output: [B, D, T] or [B, T, D] raw encoder output
+        encoded_len: [B] valid lengths
+
+    Returns:
+        [B, D] pooled representation
+    """
+    if encoder_output.dim() == 3 and encoder_output.size(1) != encoder_output.size(2):
+        if encoder_output.size(1) > encoder_output.size(2):
+            encoder_output = encoder_output.transpose(1, 2)
+
+    B, T, D = encoder_output.shape
+    time_mask = torch.arange(T, device=encoder_output.device).unsqueeze(0) < encoded_len.unsqueeze(1)
+    time_mask = time_mask.unsqueeze(-1).float()
+    pooled = (encoder_output * time_mask).sum(dim=1) / time_mask.sum(dim=1).clamp(min=1)
+    return pooled
+
+
+def compute_tag_classification_loss(tag_logits, tag_labels):
+    """Compute cross-entropy loss for trailing tags from pooled predictions.
+
+    Args:
+        tag_logits: dict of category_name -> [B, num_classes] logits
+        tag_labels: [B, num_categories] ground truth labels
+
+    Returns:
+        scalar loss averaged across categories
+    """
+    if not tag_logits:
+        return torch.tensor(0.0, requires_grad=True)
+
+    total_loss = torch.tensor(0.0, device=next(iter(tag_logits.values())).device)
+    cat_names = sorted(tag_logits.keys())
+
+    for cat_idx, cat_name in enumerate(cat_names):
+        logits = tag_logits[cat_name]  # [B, num_classes]
+        labels = tag_labels[:, cat_idx]  # [B]
+        loss = F.cross_entropy(logits, labels)
+        total_loss = total_loss + loss
+
+    return total_loss / max(len(cat_names), 1)
