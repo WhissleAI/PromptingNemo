@@ -91,11 +91,15 @@ if nemo_agg is not None:
             if added:
                 logging.info(f"Extended tokenizer with {len(added)} new special tokens. Vocab: {self.vocab_size}")
 
-        def text_to_tokens(self, text, lang_id):
+        def text_to_tokens(self, text, lang_id=None):
+            if lang_id is None:
+                lang_id = next(iter(self.tokenizers_dict))
             tokenizer = self.tokenizers_dict[lang_id]
             return tokenizer.text_to_tokens(text)
 
-        def text_to_ids(self, text, lang_id):
+        def text_to_ids(self, text, lang_id=None):
+            if lang_id is None:
+                lang_id = next(iter(self.tokenizers_dict))
             tokenizer = self.tokenizers_dict[lang_id]
             lang_map = self.lang_local_to_global[lang_id]
             if not self._extended_special_tokens:

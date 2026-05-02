@@ -38,12 +38,12 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
             logging.info("Using language family weighted loss. Overriding CTC loss reduction to 'none'.")
             if not hasattr(self, 'loss') or not isinstance(self.loss, CTCLoss):
                 self.loss = CTCLoss(
-                    num_classes=self.decoder.num_classes, zero_infinity=True, reduction='mean_batch'
+                    num_classes=self.decoder._num_classes - 1, zero_infinity=True, reduction='mean_batch'
                 )
 
             # Re-create loss with reduction='none' to get per-sample losses
             self.loss = CTCLoss(
-                num_classes=self.decoder.num_classes,
+                num_classes=self.decoder._num_classes - 1,
                 zero_infinity=self.loss.ctc_loss.zero_infinity,
                 reduction='none'
             )
@@ -156,6 +156,7 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
     def on_validation_epoch_start(self):
         super().on_validation_epoch_start()
         self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
+        self._val_family_loss_stats = defaultdict(lambda: {'loss_sum': 0.0, 'count': 0})
 
     def _accumulate_family_wer(self, sample_ids, log_probs, encoded_len, transcript, transcript_len):
         dataset = self._get_dataset_for_prefix('val')
@@ -209,40 +210,89 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                 stats['errors'] += float(errors)
                 stats['words'] += int(round(words))
 
-    def _log_family_metrics(self, prefix: str):
-        if not getattr(self, '_val_family_stats', None):
+    def _accumulate_family_loss(self, sample_ids, log_probs, encoded_len, transcript, transcript_len):
+        dataset = self._get_dataset_for_prefix('val')
+        if dataset is None or not hasattr(dataset, 'language_ids') or sample_ids is None:
             return
 
-        aggregated = {}
+        if isinstance(sample_ids, torch.Tensor):
+            sample_indices = sample_ids.detach().cpu().view(-1).tolist()
+        else:
+            sample_indices = [int(idx) for idx in sample_ids]
+
+        with torch.no_grad():
+            import torch.nn.functional as _F
+            per_sample_loss = _F.ctc_loss(
+                log_probs.transpose(0, 1),
+                transcript,
+                encoded_len,
+                transcript_len,
+                blank=log_probs.size(-1) - 1,
+                reduction='none',
+                zero_infinity=True,
+            ).detach().cpu()
+
+        limit = min(len(sample_indices), per_sample_loss.size(0))
+        for idx in range(limit):
+            si = sample_indices[idx]
+            if si >= len(dataset.language_ids):
+                continue
+            family = _family_name_for_lang(dataset.language_ids[si])
+            loss_val = float(per_sample_loss[idx].item())
+            if not math.isfinite(loss_val):
+                continue
+            stats = self._val_family_loss_stats[family]
+            stats['loss_sum'] += loss_val
+            stats['count'] += 1
+
+    def _log_family_metrics(self, prefix: str):
+        has_wer = bool(getattr(self, '_val_family_stats', None))
+        has_loss = bool(getattr(self, '_val_family_loss_stats', None))
+        if not has_wer and not has_loss:
+            return
+
         device = self.device if isinstance(self.device, torch.device) else torch.device('cpu')
 
-        for family, stats in self._val_family_stats.items():
-            tensor = torch.tensor([stats['errors'], stats['words']], dtype=torch.float32, device=device)
-            if dist.is_available() and dist.is_initialized():
-                dist.all_reduce(tensor, op=dist.ReduceOp.SUM)
-            aggregated[family] = tensor.cpu()
+        if has_wer:
+            aggregated = {}
+            for family, stats in self._val_family_stats.items():
+                tensor = torch.tensor([stats['errors'], stats['words']], dtype=torch.float32, device=device)
+                if dist.is_available() and dist.is_initialized():
+                    dist.all_reduce(tensor, op=dist.ReduceOp.SUM)
+                aggregated[family] = tensor.cpu()
 
-        if dist.is_available() and dist.is_initialized() and dist.get_rank() != 0:
-            return
+            is_rank0 = not (dist.is_available() and dist.is_initialized() and dist.get_rank() != 0)
+            if is_rank0:
+                total_errors = 0.0
+                total_words = 0.0
+                for family, tensor in aggregated.items():
+                    errors = float(tensor[0].item())
+                    words = float(tensor[1].item())
+                    if words <= 0:
+                        continue
+                    total_errors += errors
+                    total_words += words
+                    self.log(f"{prefix}_wer_{family}", errors / words, prog_bar=False, sync_dist=False)
+                if total_words > 0:
+                    self.log(f"{prefix}_wer_combined", total_errors / total_words, prog_bar=False, sync_dist=False)
 
-        total_errors = 0.0
-        total_words = 0.0
-        for family, tensor in aggregated.items():
-            errors = float(tensor[0].item())
-            words = float(tensor[1].item())
-            if words <= 0:
-                continue
-            total_errors += errors
-            total_words += words
-            self.log(f"{prefix}_wer_{family}", errors / words, prog_bar=False, sync_dist=False)
-
-        if total_words > 0:
-            self.log(f"{prefix}_wer_combined", total_errors / total_words, prog_bar=False, sync_dist=False)
+        if has_loss:
+            total_loss = 0.0
+            total_count = 0
+            for family, stats in self._val_family_loss_stats.items():
+                if stats['count'] > 0:
+                    avg_loss = stats['loss_sum'] / stats['count']
+                    self.log(f"{prefix}_loss_{family}", avg_loss, prog_bar=False, sync_dist=False)
+                    total_loss += stats['loss_sum']
+                    total_count += stats['count']
+            if total_count > 0:
+                self.log(f"{prefix}_loss_combined", total_loss / total_count, prog_bar=False, sync_dist=False)
 
     def on_validation_epoch_end(self):
         result = super().on_validation_epoch_end()
         self._log_family_metrics('val')
         self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
+        self._val_family_loss_stats = defaultdict(lambda: {'loss_sum': 0.0, 'count': 0})
         return result
 
     def _decode_target_tokens(self, token_ids: List[int]) -> str:
@@ -333,6 +383,7 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
 
         if sample_ids is not None:
             self._accumulate_family_wer(sample_ids, log_probs, encoded_len, transcript, transcript_len)
+            self._accumulate_family_loss(sample_ids, log_probs, encoded_len, transcript, transcript_len)
 
         if isinstance(self.trainer.val_dataloaders, list) and len(self.trainer.val_dataloaders) > 1:
             self.validation_step_outputs[dataloader_idx].append(metrics)

@@ -185,7 +185,7 @@ def slim_decoder_for_training(model, training_families):
     if hasattr(model, 'loss'):
         old_cfg = getattr(model.loss, 'config', {})
         model.loss = CTCLoss(
-            num_classes=n_slim,
+            num_classes=len(slim_vocab),
             zero_infinity=old_cfg.get('zero_infinity', True),
             reduction=old_cfg.get('reduction', 'mean_batch'),
         )

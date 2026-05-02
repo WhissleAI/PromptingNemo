@@ -1,0 +1,122 @@
+model:
+  model_root: /mnt/training/models/stt_meta_1b/
+  model_name: parakeet-600m-encoder-tune-weight-0.5-batch-langfamily-balance-tokenizer-aggregated-new.nemo
+  tokenizer_folder: tokenizer
+  new_tokenizer_folder: euro_meta_tokenizer
+  use_aggregate_tokenizer: true
+  dynamic_tokenizer_params:
+    type: bpe
+    dir_prefix: tokenizer_
+    non_special_tokens_per_lang: 1024
+    non_special_tokens_per_lang_overrides:
+      ENGLISH: 1024
+      EUROPEAN: 1024
+      SLAVIC: 512
+      INDO_ARYAN: 1024
+    character_coverage: 0.995
+    character_coverage_overrides: {}
+    tokenizer_options: null
+  special_token_prefixes:
+  - ENTITY_
+  - INTENT_
+  - EMOTION_
+  - GENDER_
+  - AGE_
+  - KEYWORD_
+  - LANG_
+  tokenizer_langs: {}
+  shared_special_tokens: []
+  aggregate_vocabulary: []
+  language_families:
+  - ENGLISH
+  - EUROPEAN
+  - SLAVIC
+  - INDO_ARYAN
+  tokenizer_langs_path: tokenizer_langs.yaml
+  shared_special_tokens_path: shared_special_tokens.yaml
+  aggregate_vocabulary_path: aggregate_vocab.txt
+  language_family_map:
+    ENGLISH: ENGLISH
+    EUROPEAN: EUROPEAN
+    SLAVIC: SLAVIC
+    INDO_ARYAN: INDO_ARYAN
+
+student_encoder:
+  d_model: 256
+  num_layers: 12
+  n_heads: 4
+  conv_kernel_size: 15
+  ff_expansion_factor: 4
+  subsampling_factor: 8
+  subsampling: dw_striding
+  subsampling_conv_channels: 256
+  self_attention_model: rel_pos
+  pos_emb_max_len: 5000
+
+distillation:
+  teacher_model: WhissleAI/STT-meta-1B
+  use_teacher_decoder: true
+  init_strategy: first_n
+  temperature: 2.0
+  alpha_ctc: 0.7
+  beta_kd_logit: 0.2
+  gamma_hidden: 0.05
+  delta_tag: 0.05
+  anneal_start_step: 30000
+  anneal_end_step: 50000
+  student_match_layers: [2, 5, 8, 11]
+  teacher_match_layers: [4, 10, 16, 22]
+  noise_snr_low: 5.0
+  noise_snr_high: 30.0
+
+tag_classifier:
+  enabled: true
+  categories:
+  - AGE
+  - GENDER
+  - EMOTION
+  weight: 0.1
+
+training:
+  lang_field: lang
+  data_dir: /mnt/training/data/meta_stt_hi_set1/
+  train_manifest: train_100k.json
+  test_manifest: valid_2k.json
+  batch_size: 4
+  accumulate_grad_batches: 8
+  max_duration: 22.0
+  max_steps: 62500
+  use_mixed_precision: true
+  num_workers: 4
+  pin_memory: true
+  keyword_loss_weight: 0.5
+  use_keyword_loss: false
+  keyword_loss_warmup_steps: 2000
+  use_family_loss_weights: true
+  tag_decoder_scale: 0.01
+  tag_init_bias: -5.0
+  spec_augment:
+    time_masks: 6
+    time_width: 80
+  optim:
+    lr: 0.0003
+    weight_decay: 0.000001
+    sched:
+      name: CosineAnnealing
+      warmup_steps: 5000
+      min_lr: 0.000001
+  validation_workers: null
+  skip_audio_validation: true
+  keyphrase_oversample_factor: 0.0
+  devices: 1
+
+experiment:
+  exp_dir: /mnt/training/experiments/
+  exp_name: stt-meta-35m-distill-teacher-dec
+  monitor: val_wer
+  mode: min
+  always_save_nemo: true
+  save_top_k: 3
+  every_n_train_steps: 1000
+  resume_if_exists: true
+  resume_past_end: false

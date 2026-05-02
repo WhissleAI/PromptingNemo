@@ -3,8 +3,9 @@ import argparse
 import json
 import os
 import re
+import sys
 import unicodedata
-from typing import List, Tuple
+from typing import List, Set, Tuple
 
 # --- Canonical sets ---
 ALLOWED_EMOTIONS = {
@@ -146,6 +147,72 @@ def should_keep_line(text: str, debug: bool = False) -> bool:
 
     return True
 
+TAG_PATTERN = re.compile(r'^[A-Z][A-Z0-9_]*_[A-Z0-9_<>+.]*$|^END$')
+
+
+def _load_vocab(vocab_path: str) -> Set[str]:
+    if vocab_path.endswith('.nemo'):
+        import tarfile
+        import yaml
+        with tarfile.open(vocab_path, 'r') as tar:
+            for member in tar.getmembers():
+                if member.name.endswith('model_config.yaml'):
+                    f = tar.extractfile(member)
+                    config = yaml.safe_load(f)
+                    vocab_list = config.get('decoder', {}).get('vocabulary', [])
+                    if vocab_list:
+                        print(f"Loaded {len(vocab_list)} tokens from {member.name}")
+                        return set(vocab_list)
+            for member in tar.getmembers():
+                if member.name.endswith('.vocab'):
+                    f = tar.extractfile(member)
+                    tokens = set(line.decode().strip() for line in f if line.strip())
+                    print(f"Loaded {len(tokens)} tokens from {member.name}")
+                    return tokens
+        raise ValueError(f"Could not extract vocabulary from {vocab_path}")
+    else:
+        with open(vocab_path, encoding='utf-8') as f:
+            tokens = set(line.strip() for line in f if line.strip())
+        print(f"Loaded {len(tokens)} tokens from {vocab_path}")
+        return tokens
+
+
+def filter_manifest_by_vocab(input_path: str, vocab_path: str, output_path: str):
+    vocab = _load_vocab(vocab_path)
+    kept = 0
+    dropped = 0
+    unknown_tag_counts: dict = {}
+
+    with open(input_path, encoding='utf-8') as inf, \
+         open(output_path, 'w', encoding='utf-8') as outf:
+        for line in inf:
+            line = line.strip()
+            if not line:
+                continue
+            entry = json.loads(line)
+            text = normalize_text(entry.get('text', ''))
+            text = text.replace('AGE_60+', 'AGE_60PLUS')
+            unknown_tags = [
+                w for w in text.split()
+                if TAG_PATTERN.match(w) and w not in vocab
+            ]
+            if unknown_tags:
+                dropped += 1
+                for tag in unknown_tags:
+                    unknown_tag_counts[tag] = unknown_tag_counts.get(tag, 0) + 1
+            else:
+                entry['text'] = text
+                outf.write(json.dumps(entry, ensure_ascii=False) + '\n')
+                kept += 1
+
+    print(f"\nResults: kept={kept}, dropped={dropped}")
+    if unknown_tag_counts:
+        print(f"\nUnknown tags that caused drops ({len(unknown_tag_counts)} unique):")
+        for tag, count in sorted(unknown_tag_counts.items(), key=lambda x: -x[1])[:50]:
+            print(f"  {tag}: {count} samples")
+    return kept, dropped
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Clean/filter a JSONL manifest and append LANG_XXX to text."
@@ -186,24 +253,31 @@ def main():
                 continue
 
             langid = data.get("lang")
-            #print(langid)
-            
-            if langid in lang_codes:                  
+
+            known_families = {"ENGLISH", "EUROPEAN", "SLAVIC", "INDO_ARYAN",
+                              "DRAVIDIAN", "MANDARIN", "INDIAN_LOW_RESOURCE"}
+
+            if langid in lang_codes:
                     data["lang_family"] = lang_family[langid]
-                    # Keep line → normalize + append LANG_...
                     del data["lang"]
-                    #data["text"] = append_lang_tag(text, data.get("lang_family"))
+                    outfile.write(json.dumps(data, ensure_ascii=False) + "\n")
+            elif langid in known_families:
+                    data["lang_family"] = langid
+                    del data["lang"]
+                    outfile.write(json.dumps(data, ensure_ascii=False) + "\n")
+            elif langid is None:
+                    data["lang_family"] = "INDIAN_LOW_RESOURCE"
                     outfile.write(json.dumps(data, ensure_ascii=False) + "\n")
             else:
-                if langid == None:
-                    #print("None line adding to INDIAN_LOW_RESOURCE")
-                    data["lang_family"] = "INDIAN_LOW_RESOURCE"
-                    #data["text"] = append_lang_tag(text, data.get("lang_family"))
-                    outfile.write(json.dumps(data, ensure_ascii=False) + "\n")
-                else:
-                    #print("Skipping line, langid not in lang_codes")
-
                     removed.write(json.dumps(data, ensure_ascii=False) + "\n")
 
 if __name__ == "__main__":
-    main()
+    if '--filter-by-vocab' in sys.argv:
+        p = argparse.ArgumentParser(description="Filter manifest by vocabulary")
+        p.add_argument('--filter-by-vocab', required=True, help="Path to vocab file (.txt or .nemo)")
+        p.add_argument('--input', required=True, help="Input JSONL manifest")
+        p.add_argument('--output', required=True, help="Output JSONL manifest (filtered)")
+        a = p.parse_args()
+        filter_manifest_by_vocab(a.input, a.filter_by_vocab, a.output)
+    else:
+        main()

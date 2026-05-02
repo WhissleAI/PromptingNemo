@@ -42,6 +42,14 @@ except ImportError:
     DALIOutputs = tuple()
 from nemo.collections.asr.models.ctc_bpe_models import EncDecCTCModelBPE
 from nemo.collections.asr.parts.submodules.ctc_decoding import CTCDecoding, CTCDecodingConfig
+from typing import List as _List
+
+
+class AggregateCTCDecoding(CTCDecoding):
+    """CTCDecoding subclass that converts ▁ to spaces for aggregate tokenizers."""
+
+    def decode_tokens_to_str(self, tokens: _List[str]) -> str:
+        return ''.join(tokens).replace('▁', ' ').strip()
 from nemo.collections.asr.metrics.wer import WER
 from nemo.collections.asr.metrics.wer import word_error_rate_detail
 # from nemo.collections.asr.parts.utils.transcribe_utils import transcribe_partial_audio
@@ -69,6 +77,8 @@ from scripts.asr.meta_asr.validate_data import (
 from scripts.asr.meta_asr.tag_classifier import (
     build_trailing_tag_maps,
     build_all_special_token_ids,
+    build_sp_boundary_ids,
+    strip_all_special_from_targets,
     TrailingTagClassifier,
     strip_trailing_tags_and_get_labels,
     compute_tag_classification_loss,
@@ -472,6 +482,7 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         self._category_to_id = category_to_id
         self._category_names = sorted(category_sizes.keys())
         self._category_sizes = category_sizes
+        self._sp_boundary_ids = build_sp_boundary_ids(vocabulary)
 
         if special_token_prefixes:
             self._all_special_token_ids = build_all_special_token_ids(
@@ -528,6 +539,7 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                 transcript, transcript_len,
                 self._trailing_tag_ids, self._category_to_id, self._category_names,
                 all_special_ids=self._all_special_token_ids,
+                sp_boundary_ids=getattr(self, '_sp_boundary_ids', None),
             )
         else:
             ctc_transcript = transcript
@@ -849,10 +861,18 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                 transcript, transcript_len,
                 self._trailing_tag_ids, self._category_to_id, self._category_names,
                 all_special_ids=self._all_special_token_ids,
+                sp_boundary_ids=getattr(self, '_sp_boundary_ids', None),
+            )
+            wer_transcript, wer_transcript_len = strip_all_special_from_targets(
+                ctc_transcript, ctc_transcript_len,
+                self._all_special_token_ids,
+                sp_boundary_ids=getattr(self, '_sp_boundary_ids', None),
             )
         else:
             ctc_transcript = transcript
             ctc_transcript_len = transcript_len
+            wer_transcript = transcript
+            wer_transcript_len = transcript_len
             val_tag_labels = None
 
         if self.is_interctc_enabled():
@@ -874,8 +894,8 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
             loss_value = loss_value.mean()
         loss_value, metrics = self.add_interctc_losses(
             loss_value,
-            ctc_transcript,
-            ctc_transcript_len,
+            wer_transcript,
+            wer_transcript_len,
             compute_wer=True,
             log_wer_num_denom=True,
             log_prefix="val_",
@@ -883,12 +903,40 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
 
         self.wer.update(
             predictions=log_probs,
-            targets=ctc_transcript,
-            targets_lengths=ctc_transcript_len,
+            targets=wer_transcript,
+            targets_lengths=wer_transcript_len,
             predictions_lengths=encoded_len,
         )
         wer, wer_num, wer_denom = self.wer.compute()
         self.wer.reset()
+
+        # DEBUG: print a few samples to diagnose WER metric (remove after fix)
+        if batch_idx < 2:
+            with torch.no_grad():
+                try:
+                    hyps = self.decoding.ctc_decoder_predictions_tensor(
+                        decoder_outputs=log_probs.detach(),
+                        decoder_lengths=encoded_len.detach(),
+                        return_hypotheses=False,
+                    )
+                except RuntimeError:
+                    hyps = self.decoding.ctc_decoder_predictions_tensor(
+                        decoder_outputs=log_probs.detach().cpu(),
+                        decoder_lengths=encoded_len.detach().cpu(),
+                        return_hypotheses=False,
+                    )
+                vocab = list(self.decoder.vocabulary)
+                for si in range(min(2, wer_transcript.size(0))):
+                    tgt_ids = wer_transcript[si, :wer_transcript_len[si]].cpu().tolist()
+                    tgt_tokens = [vocab[t] if t < len(vocab) else f'<{t}>' for t in tgt_ids]
+                    ref_text = ''.join(tgt_tokens).replace('▁', ' ').strip()
+                    hyp_obj = hyps[si]
+                    hyp_text = hyp_obj.text if hasattr(hyp_obj, 'text') else str(hyp_obj)
+                    nemo_logging.info(
+                        "WER_DEBUG batch=%d sample=%d | REF: %s | HYP: %s | tgt_len=%d enc_len=%d",
+                        batch_idx, si, ref_text[:150], hyp_text[:150],
+                        int(wer_transcript_len[si]), int(encoded_len[si]),
+                    )
 
         # --- Dual-head: validation classification loss + accumulate for confusion ---
         if getattr(self, 'use_tag_classifier', False) and val_tag_labels is not None:
@@ -2075,9 +2123,9 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Train aggregate tokenizers and ASR model")
     parser.add_argument(
         "--mode",
-        choices=["both", "tokenizer", "train", "validate_data"],
+        choices=["both", "tokenizer", "train", "validate_data", "distill"],
         default="both",
-        help="Choose whether to (re)train tokenizers, the ASR model, or both sequentially.",
+        help="Choose whether to (re)train tokenizers, the ASR model, both sequentially, or distill a student model.",
     )
     parser.add_argument(
         "--config",
@@ -2389,7 +2437,7 @@ def train_model(cfg, ckpt_path=None):
         model.cfg.decoder.num_classes = len(aggregate_vocab)
 
     decoding_cfg = model.cfg.get('decoding', OmegaConf.create({'strategy': 'greedy'}))
-    model.decoding = CTCDecoding(decoding_cfg=decoding_cfg, vocabulary=aggregate_vocab)
+    model.decoding = AggregateCTCDecoding(decoding_cfg=decoding_cfg, vocabulary=aggregate_vocab)
     model.wer = WER(
         decoding=model.decoding,
         use_cer=model._cfg.get('use_cer', False),
@@ -2664,6 +2712,11 @@ def main():
 
         if args.mode == 'tokenizer':
             return
+
+    if args.mode == 'distill':
+        from scripts.asr.meta_asr.distill import distill_model
+        distill_model(cfg, ckpt_path=args.resume_from)
+        return
 
     if run_training:
         train_model(cfg, ckpt_path=args.resume_from)

@@ -39,6 +39,50 @@ def build_all_special_token_ids(vocabulary, prefixes):
     return special_ids
 
 
+def build_sp_boundary_ids(vocabulary):
+    """Find sentencepiece boundary token IDs ('▁' alone) in the vocabulary."""
+    return {idx for idx, token in enumerate(vocabulary) if token == '▁'}
+
+
+def strip_all_special_from_targets(transcript, transcript_len, all_special_ids, sp_boundary_ids=None):
+    """Remove ALL special tokens (inline + trailing) from CTC targets for WER.
+
+    Unlike strip_trailing_tags_and_get_labels which only walks backward from the
+    end, this removes special tokens anywhere in the sequence and compacts what
+    remains. Use this for WER computation so inline ENTITY_/END tokens don't
+    inflate the error count.
+
+    Keeps all sentencepiece boundary tokens ('▁') intact — NeMo's WER metric
+    normalizes whitespace, so extra boundaries are harmless, but removing them
+    concatenates adjacent words and inflates WER.
+
+    Args:
+        transcript: [B, max_len] token IDs
+        transcript_len: [B] valid lengths
+        all_special_ids: set of vocab IDs to remove
+        sp_boundary_ids: unused, kept for call-site compatibility
+
+    Returns:
+        clean_transcript: [B, max_len] compacted
+        clean_transcript_len: [B] new lengths
+    """
+    batch_size, max_len = transcript.shape
+    clean = torch.zeros_like(transcript)
+    clean_len = torch.zeros_like(transcript_len)
+
+    for i in range(batch_size):
+        seq_len = int(transcript_len[i].item())
+        tokens = transcript[i, :seq_len].tolist()
+
+        kept = [tid for tid in tokens if tid not in all_special_ids]
+
+        clean_len[i] = len(kept)
+        for j, tid in enumerate(kept):
+            clean[i, j] = tid
+
+    return clean, clean_len
+
+
 def build_trailing_tag_maps(vocabulary, categories=None):
     """Build mappings from vocabulary for trailing tag classification.
 
@@ -107,12 +151,17 @@ class TrailingTagClassifier(nn.Module):
 
 def strip_trailing_tags_and_get_labels(transcript, transcript_len, trailing_tag_ids,
                                        category_to_id, category_names,
-                                       all_special_ids=None):
+                                       all_special_ids=None,
+                                       sp_boundary_ids=None):
     """Strip trailing tag tokens from CTC targets and extract classification labels.
 
     Uses all_special_ids (if provided) to walk past ALL trailing special tokens
     (INTENT_, ENTITY_, etc.), not just active category tokens. Labels are only
     extracted for tokens in trailing_tag_ids.
+
+    sp_boundary_ids: set of sentencepiece boundary token IDs (e.g. '▁') that
+    appear between special tokens in aggregate tokenizers and should also be
+    skipped during backward walk.
 
     Returns:
         clean_transcript: [B, max_len] with trailing tags removed
@@ -120,6 +169,8 @@ def strip_trailing_tags_and_get_labels(transcript, transcript_len, trailing_tag_
         tag_labels: [B, num_categories] classification labels (0=NONE)
     """
     skip_ids = all_special_ids if all_special_ids is not None else trailing_tag_ids
+    if sp_boundary_ids:
+        skip_ids = skip_ids | sp_boundary_ids
 
     batch_size = transcript.size(0)
     num_cats = len(category_names)
