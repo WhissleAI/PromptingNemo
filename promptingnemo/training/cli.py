@@ -158,3 +158,7 @@ def main():
     if run_training:
         from promptingnemo.training.trainer import train_model
         train_model(cfg, ckpt_path=args.resume_from)
+
+
+if __name__ == "__main__":
+    main()

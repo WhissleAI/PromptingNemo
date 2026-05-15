@@ -1,0 +1,21 @@
+steps:
+  - name: 'bash'
+    script: |
+      mkdir -p /workspace/_docker/scripts
+      cp scripts/asr/meta-asr/gcp/dataprep/Dockerfile /workspace/_docker/
+      cp scripts/asr/meta-asr/utils/download_multilingual_cv.py /workspace/_docker/scripts/
+      cp scripts/asr/meta-asr/utils/download_hf_dataset.py /workspace/_docker/scripts/
+      cp scripts/asr/meta-asr/utils/download_en_people.py /workspace/_docker/scripts/
+      cp scripts/asr/meta-asr/utils/download_zh_datasets.py /workspace/_docker/scripts/
+      cp scripts/asr/meta-asr/utils/download_madasr.py /workspace/_docker/scripts/
+      cp scripts/asr/meta-asr/utils/download_hinglish.py /workspace/_docker/scripts/
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--platform=linux/amd64'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest'
+      - '/workspace/_docker'
+images:
+  - 'us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest'
+timeout: '600s'

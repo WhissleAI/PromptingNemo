@@ -26,7 +26,7 @@ TARGET_SR = 16000
 
 
 def process_and_save(item, idx, audio_dir, target_sr, lang, dataset_prefix, split_name):
-    audio_data = item.get("audio_filepath") or item.get("audio")
+    audio_data = item.get("audio") or item.get("audio_filepath")
     text = item.get("text")
 
     if audio_data is None or text is None:

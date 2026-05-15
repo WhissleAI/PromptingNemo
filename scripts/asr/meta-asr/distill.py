@@ -16,7 +16,10 @@ from typing import Dict, List
 import sentencepiece as spm
 import torch
 import yaml
-import lightning.pytorch as pl
+try:
+    import lightning.pytorch as pl
+except ImportError:
+    import pytorch_lightning as pl
 from omegaconf import OmegaConf, open_dict
 from torch.utils.data import DataLoader
 
@@ -28,7 +31,9 @@ from typing import List as _List
 class AggregateCTCDecoding(CTCDecoding):
     """CTCDecoding subclass that converts ▁ to spaces for aggregate tokenizers."""
 
-    def decode_tokens_to_str(self, tokens: _List[str]) -> str:
+    def decode_tokens_to_str(self, tokens) -> str:
+        if tokens and isinstance(tokens[0], int):
+            tokens = self.decode_ids_to_tokens(tokens)
         return ''.join(tokens).replace('▁', ' ').strip()
 from nemo.collections.asr.metrics.wer import WER
 from nemo.collections.asr.parts.preprocessing.perturb import WhiteNoisePerturbation, ShiftPerturbation
@@ -206,10 +211,17 @@ def _create_student(teacher, cfg) -> DistillCTCModel:
         student.encoder_proj = torch.nn.Conv1d(encoder_dim, teacher_dim, kernel_size=1)
         torch.nn.init.xavier_uniform_(student.encoder_proj.weight)
         torch.nn.init.zeros_(student.encoder_proj.bias)
+        freeze_decoder = distill_cfg.get('freeze_decoder', False)
+        if freeze_decoder:
+            for p in student.decoder.parameters():
+                p.requires_grad = False
+        dec_params = sum(p.numel() for p in student.decoder.parameters())
         logging.info(
-            "Using teacher decoder with encoder_proj: %d → %d (%.1fK params)",
+            "Using teacher decoder with encoder_proj: %d → %d (%.1fK proj params, "
+            "%.1fM decoder params, frozen=%s)",
             encoder_dim, teacher_dim,
             sum(p.numel() for p in student.encoder_proj.parameters()) / 1e3,
+            dec_params / 1e6, freeze_decoder,
         )
     else:
         old_decoder = student.decoder
@@ -439,6 +451,10 @@ def distill_model(cfg, ckpt_path=None):
         trainer_kwargs['accumulate_grad_batches'] = accumulate_grad_batches
 
     trainer = pl.Trainer(**trainer_kwargs)
+    # Workaround: protobuf version mismatch causes hparams logging to fail in some containers
+    for logger in (trainer.loggers if hasattr(trainer, 'loggers') else [trainer.logger]):
+        if logger is not None and hasattr(logger, 'log_hyperparams'):
+            logger.log_hyperparams = lambda *a, **kw: None
     student.set_trainer(trainer)
 
     every_n_train_steps = cfg.experiment.get('every_n_train_steps', None)
@@ -486,6 +502,11 @@ def distill_model(cfg, ckpt_path=None):
     )
     exp_cfg = OmegaConf.structured(exp_cfg)
     exp_manager.exp_manager(trainer, exp_cfg)
+
+    # Workaround: protobuf version mismatch causes hparams logging to fail
+    for logger in (trainer.loggers if hasattr(trainer, 'loggers') else []):
+        if hasattr(logger, 'log_hyperparams'):
+            logger.log_hyperparams = lambda *a, **kw: None
 
     logging.info("Starting distillation training...")
     trainer.fit(student, ckpt_path=ckpt_path)

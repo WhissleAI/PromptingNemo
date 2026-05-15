@@ -1,5 +1,6 @@
 """Model training orchestration: checkpoint loading, data setup, and training loop."""
 
+import json
 import logging
 import os
 from collections import defaultdict
@@ -163,6 +164,13 @@ def train_model(cfg, ckpt_path=None):
             if field_name and field_name not in base_cfg.train_ds.manifest_processor.additional_fields:
                 base_cfg.train_ds.manifest_processor.additional_fields.append(field_name)
 
+        if cfg.training.get('use_tag_classifier', False):
+            tag_categories = cfg.training.get('tag_categories', ['AGE', 'GENDER', 'EMOTION', 'INTENT'])
+            for cat in tag_categories:
+                field_name = f'tag_{cat.lower()}'
+                if field_name not in base_cfg.train_ds.manifest_processor.additional_fields:
+                    base_cfg.train_ds.manifest_processor.additional_fields.append(field_name)
+
         base_cfg.train_ds.allowed_langs = lang_list
         base_cfg.validation_ds.allowed_langs = lang_list
 
@@ -172,20 +180,22 @@ def train_model(cfg, ckpt_path=None):
     model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=True)
     model.setup_custom_loss()
 
-    if language_families:
+    use_tag_classifier = cfg.training.get('use_tag_classifier', False)
+
+    if language_families and not use_tag_classifier:
         slim_decoder_for_training(model, language_families)
         model.setup_custom_loss()
 
-    current_vocab = set(model.decoder.vocabulary)
-    new_tokens = scan_manifest_for_new_tokens(train_manifest, current_vocab)
-    if new_tokens:
-        nemo_logging.info(f"Found {len(new_tokens)} special tokens in training data missing from model vocabulary: {new_tokens}")
-        extend_decoder_for_new_tokens(model, new_tokens)
-        if hasattr(model, 'tokenizer') and hasattr(model.tokenizer, 'extend_vocabulary'):
-            model.tokenizer.extend_vocabulary(new_tokens)
-        model.setup_custom_loss()
-
-    scale_down_tag_decoder_weights(model, scale_factor=0.01)
+    if not use_tag_classifier:
+        current_vocab = set(model.decoder.vocabulary)
+        new_tokens = scan_manifest_for_new_tokens(train_manifest, current_vocab)
+        if new_tokens:
+            nemo_logging.info(f"Found {len(new_tokens)} special tokens in training data missing from model vocabulary: {new_tokens}")
+            extend_decoder_for_new_tokens(model, new_tokens)
+            if hasattr(model, 'tokenizer') and hasattr(model.tokenizer, 'extend_vocabulary'):
+                model.tokenizer.extend_vocabulary(new_tokens)
+            model.setup_custom_loss()
+        scale_down_tag_decoder_weights(model, scale_factor=0.01)
 
     adapter_cfg = cfg.get('adapter', {})
     if adapter_cfg and adapter_cfg.get('enabled', False):
@@ -212,31 +222,39 @@ def train_model(cfg, ckpt_path=None):
         else:
             model.freeze()
 
-    tokenizer_cfg = OmegaConf.create(tokenizer_entry)
-    #logging.info("Applying deduplicated aggregate tokenizer via change_vocabulary().")
-    #model.change_vocabulary(tokenizer_cfg, 'agg')
+    if use_tag_classifier:
+        with open_dict(model.cfg):
+            model.cfg.train_ds.allowed_langs = lang_list
+            model.cfg.validation_ds.allowed_langs = lang_list
+            model.cfg.train_ds.lang_field = lang_field
+            model.cfg.validation_ds.lang_field = lang_field
+            model.cfg.validation_ds.return_sample_id = True
+        orig_vocab = list(model.decoder.vocabulary)
+        nemo_logging.info(f"Dual-head mode: keeping original tokenizer/decoder ({len(orig_vocab)} tokens)")
+    else:
+        tokenizer_cfg = OmegaConf.create(tokenizer_entry)
 
-    aggregate_vocab = list(model.decoder.vocabulary)
-    store_aggregate_vocabulary(cfg, aggregate_vocab)
+        aggregate_vocab = list(model.decoder.vocabulary)
+        store_aggregate_vocabulary(cfg, aggregate_vocab)
 
-    with open_dict(model.cfg):
-        model.cfg.tokenizer = tokenizer_entry
-        model.cfg.train_ds.allowed_langs = lang_list
-        model.cfg.validation_ds.allowed_langs = lang_list
-        model.cfg.train_ds.lang_field = lang_field
-        model.cfg.validation_ds.lang_field = lang_field
-        model.cfg.validation_ds.return_sample_id = True
-        model.cfg.decoder.vocabulary = aggregate_vocab
-        model.cfg.decoder.num_classes = len(aggregate_vocab)
+        with open_dict(model.cfg):
+            model.cfg.tokenizer = tokenizer_entry
+            model.cfg.train_ds.allowed_langs = lang_list
+            model.cfg.validation_ds.allowed_langs = lang_list
+            model.cfg.train_ds.lang_field = lang_field
+            model.cfg.validation_ds.lang_field = lang_field
+            model.cfg.validation_ds.return_sample_id = True
+            model.cfg.decoder.vocabulary = aggregate_vocab
+            model.cfg.decoder.num_classes = len(aggregate_vocab)
 
-    decoding_cfg = model.cfg.get('decoding', OmegaConf.create({'strategy': 'greedy'}))
-    model.decoding = CTCDecoding(decoding_cfg=decoding_cfg, vocabulary=aggregate_vocab)
-    model.wer = WER(
-        decoding=model.decoding,
-        use_cer=model._cfg.get('use_cer', False),
-        log_prediction=model._cfg.get('log_prediction', True),
-    )
-    nemo_logging.info(f"Re-initialized decoding/WER with {len(aggregate_vocab)}-token vocabulary")
+        decoding_cfg = model.cfg.get('decoding', OmegaConf.create({'strategy': 'greedy'}))
+        model.decoding = CTCDecoding(decoding_cfg=decoding_cfg, vocabulary=aggregate_vocab)
+        model.wer = WER(
+            decoding=model.decoding,
+            use_cer=model._cfg.get('use_cer', False),
+            log_prediction=model._cfg.get('log_prediction', True),
+        )
+        nemo_logging.info(f"Re-initialized decoding/WER with {len(aggregate_vocab)}-token vocabulary")
 
     model.setup_training_data(model.cfg.train_ds)
     model.setup_validation_data(model.cfg.validation_ds)
@@ -266,6 +284,56 @@ def train_model(cfg, ckpt_path=None):
         else:
             logging.warning("Could not calculate family loss weights: no samples or families found.")
 
+    if use_tag_classifier:
+        tag_categories = sorted(cfg.training.get('tag_categories', ['AGE', 'GENDER', 'EMOTION', 'INTENT']))
+        tag_weight = cfg.training.get('tag_classifier_weight', 0.5)
+        train_dataset_tmp = model._train_dl.dataset
+        collection = train_dataset_tmp.manifest_processor.collection
+        num_samples = len(collection)
+
+        train_manifest = os.path.join(cfg.training.data_dir, cfg.training.train_manifest)
+        min_dur = cfg.training.get('min_duration', 0.1)
+        max_dur = cfg.training.get('max_duration', None)
+        manifest_tags = []
+        with open(train_manifest, 'r', encoding='utf-8') as mf:
+            for line in mf:
+                line = line.strip()
+                if not line:
+                    continue
+                entry = json.loads(line)
+                dur = float(entry.get('duration', 0))
+                if min_dur is not None and dur < min_dur:
+                    continue
+                if max_dur is not None and dur > max_dur:
+                    continue
+                row = {}
+                for cat in tag_categories:
+                    row[cat] = int(entry.get(f'tag_{cat.lower()}', 0) or 0)
+                manifest_tags.append(row)
+
+        unique_tags = {cat: set() for cat in tag_categories}
+        for row in manifest_tags:
+            for cat in tag_categories:
+                if row[cat] != 0:
+                    unique_tags[cat].add(row[cat])
+
+        category_sizes = {}
+        for cat in tag_categories:
+            category_sizes[cat] = max(unique_tags[cat]) + 1 if unique_tags[cat] else 2
+
+        tag_labels = torch.zeros(num_samples, len(tag_categories), dtype=torch.long)
+        for i in range(min(num_samples, len(manifest_tags))):
+            for j, cat in enumerate(tag_categories):
+                tag_labels[i, j] = manifest_tags[i][cat]
+
+        encoder_dim = model.encoder._feat_out
+        model.setup_tag_classifier(encoder_dim, category_sizes, weight=tag_weight)
+        model.register_buffer('_tag_labels', tag_labels)
+        nemo_logging.info(
+            "Pre-computed %d tag labels for %d categories %s, sizes=%s",
+            num_samples, len(tag_categories), tag_categories, category_sizes,
+        )
+
     train_dataset = model._train_dl.dataset
     train_batch_sampler = BalancedLanguageBatchSampler(
         train_dataset,
@@ -281,11 +349,11 @@ def train_model(cfg, ckpt_path=None):
         )
 
     logging.info("Manually creating and injecting audio augmentor for training.")
-    noise_perturb = WhiteNoisePerturbation(min_level=-90, max_level=-46)
+    noise_perturb = WhiteNoisePerturbation(min_level=-40, max_level=-10)
     shift_perturb = ShiftPerturbation(min_shift_ms=100.0, max_shift_ms=500.0)
     augmentor = AudioAugmentor(perturbations=[
-        (1.0, noise_perturb),
-    (1.0, shift_perturb),
+        (0.7, noise_perturb),
+        (1.0, shift_perturb),
     ])
 
     if hasattr(model, '_train_dl') and model._train_dl is not None:

@@ -138,6 +138,7 @@ class DistillCTCModel(CustomEncDecCTCModelBPE):
         self.anneal_end = distill_cfg.get('anneal_end_step', 150000)
         self.noise_snr_low = distill_cfg.get('noise_snr_low', 5.0)
         self.noise_snr_high = distill_cfg.get('noise_snr_high', 30.0)
+        self.tag_grad_through_encoder = distill_cfg.get('tag_grad_through_encoder', False)
 
         self.student_match_layers = list(distill_cfg.get('student_match_layers', [2, 5, 8, 11]))
         self.teacher_match_layers = list(distill_cfg.get('teacher_match_layers', [4, 10, 16, 22]))
@@ -233,18 +234,36 @@ class DistillCTCModel(CustomEncDecCTCModelBPE):
         beta = self.beta_kd + progress * (target_beta - self.beta_kd)
         return alpha, beta
 
-    def _compute_kd_loss(self, student_logits: torch.Tensor, teacher_logits: torch.Tensor,
+    def _compute_kd_loss(self, student_log_probs: torch.Tensor, teacher_log_probs: torch.Tensor,
                           student_lengths: torch.Tensor, teacher_lengths: torch.Tensor) -> torch.Tensor:
-        """Frame-level KL divergence at temperature T."""
+        """Frame-level KL divergence at temperature T.
+
+        Inputs are log-probabilities (decoder already applies log_softmax).
+        We exponentiate to recover logits (shift-invariant), then apply temperature.
+        """
         T = self.temperature
-        min_len = min(student_logits.size(1), teacher_logits.size(1))
-        s_log = F.log_softmax(student_logits[:, :min_len, :] / T, dim=-1)
-        t_soft = F.softmax(teacher_logits[:, :min_len, :] / T, dim=-1)
+        min_len = min(student_log_probs.size(1), teacher_log_probs.size(1))
+        s_lp = student_log_probs[:, :min_len, :]
+        t_lp = teacher_log_probs[:, :min_len, :]
+        # Align vocab dimension (student may have extra tokens from extension)
+        min_vocab = min(s_lp.size(-1), t_lp.size(-1))
+        s_lp = s_lp[:, :, :min_vocab]
+        t_lp = t_lp[:, :, :min_vocab]
+        # log_probs -> probs, then apply temperature
+        s_probs = s_lp.exp()
+        t_probs = t_lp.exp()
+        # Apply temperature: raise probs to power 1/T and renormalize
+        s_tempered = (s_probs ** (1.0 / T))
+        s_tempered = s_tempered / s_tempered.sum(dim=-1, keepdim=True).clamp(min=1e-10)
+        t_tempered = (t_probs ** (1.0 / T))
+        t_tempered = t_tempered / t_tempered.sum(dim=-1, keepdim=True).clamp(min=1e-10)
+        s_log = torch.log(s_tempered.clamp(min=1e-10))
+        t_soft = t_tempered
 
         # Mask padded frames
-        B = student_logits.size(0)
+        B = student_log_probs.size(0)
         max_len = min_len
-        mask = torch.arange(max_len, device=student_logits.device).unsqueeze(0) < torch.minimum(
+        mask = torch.arange(max_len, device=student_log_probs.device).unsqueeze(0) < torch.minimum(
             student_lengths, teacher_lengths
         ).unsqueeze(1)
         mask = mask.unsqueeze(-1)
@@ -352,7 +371,8 @@ class DistillCTCModel(CustomEncDecCTCModelBPE):
             time_mask = torch.arange(T, device=enc.device).unsqueeze(0) < student_encoded_len.unsqueeze(1)
             time_mask = time_mask.unsqueeze(1).float()  # [B, 1, T]
             pooled = (enc * time_mask).sum(dim=2) / time_mask.sum(dim=2).clamp(min=1)  # [B, D]
-            pooled = pooled.detach()
+            if not getattr(self, 'tag_grad_through_encoder', False):
+                pooled = pooled.detach()
             tag_logits = self.tag_classifier(pooled)
             tag_loss = compute_tag_classification_loss(tag_logits, tag_labels)
 

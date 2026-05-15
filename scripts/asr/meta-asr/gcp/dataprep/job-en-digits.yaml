@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-en-digits
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 86400
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: en-digits
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: downloader
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          args:
+            - /app/scripts/download_en_digits.py
+            - --output-dir=/mnt/nfs/data/english_v1/raw/digits
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+            - name: HF_DATASETS_TRUST_REMOTE_CODE
+              value: "1"
+          resources:
+            requests:
+              cpu: "2"
+              memory: 8Gi
+            limits:
+              cpu: "4"
+              memory: 16Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc

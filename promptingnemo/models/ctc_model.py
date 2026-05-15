@@ -58,12 +58,39 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
             self.family_loss_weights = weights
             logging.info("Successfully set language family loss weights on the model.")
 
+    def setup_tag_classifier(self, encoder_dim, category_sizes, weight=0.5):
+        from scripts.asr.meta_asr.tag_classifier import TrailingTagClassifier
+        self.use_tag_classifier = True
+        self.tag_classifier_weight = weight
+        self._tag_category_names = sorted(category_sizes.keys())
+
+        self.tag_classifier = TrailingTagClassifier(encoder_dim, category_sizes)
+        self.tag_classifier.requires_grad_(True)
+
+        def _capture_encoder_output(module, input, output):
+            if isinstance(output, tuple):
+                self._last_encoder_output = output[0]
+            else:
+                self._last_encoder_output = output
+
+        self._encoder_hook = self.encoder.register_forward_hook(_capture_encoder_output)
+
+        total_cls_params = sum(p.numel() for p in self.tag_classifier.parameters())
+        logging.info(
+            "Tag classifier enabled: %d categories %s, %d params, weight=%.2f",
+            len(category_sizes), list(category_sizes.keys()), total_cls_params, weight,
+        )
+
     def training_step(self, batch, batch_idx):
         sample_ids = None
         if len(batch) == 5:  # audio, audio_len, transcript, transcript_len, sample_id
             audio_signal, audio_signal_len, transcript, transcript_len, sample_ids = batch
         else:
             audio_signal, audio_signal_len, transcript, transcript_len = batch
+
+        tag_labels = None
+        if getattr(self, 'use_tag_classifier', False) and sample_ids is not None:
+            tag_labels = self._tag_labels[sample_ids]
 
         log_probs, encoded_len, greedy_predictions = self.forward(
             input_signal=audio_signal, input_signal_length=audio_signal_len
@@ -137,6 +164,15 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                     loss_value = (
                         1 - current_keyword_loss_weight
                     ) * loss_value + current_keyword_loss_weight * keyword_loss
+
+        if getattr(self, 'use_tag_classifier', False) and tag_labels is not None:
+            from scripts.asr.meta_asr.tag_classifier import masked_mean_pool, compute_tag_classification_loss
+            enc = self._last_encoder_output
+            pooled = masked_mean_pool(enc, encoded_len, input_format='BDT')
+            tag_logits = self.tag_classifier(pooled)
+            tag_loss = compute_tag_classification_loss(tag_logits, tag_labels)
+            loss_value = loss_value + self.tag_classifier_weight * tag_loss
+            self.log('tag_cls_loss', tag_loss, on_step=True, prog_bar=True)
 
         self.log('train_loss', loss_value)
         self.log('learning_rate', self._optimizer.param_groups[0]['lr'])

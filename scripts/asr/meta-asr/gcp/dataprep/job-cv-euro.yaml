@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-cv-euro
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 259200  # 72h hard timeout
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        family: euro
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: downloader
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          args:
+            - /app/scripts/download_multilingual_cv.py
+            - --family=euro
+            - --output-dir=/mnt/nfs/data/multilingual_v1/raw/commonvoice_17/euro
+            - --skip-existing
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "4"
+              memory: 16Gi
+            limits:
+              cpu: "8"
+              memory: 32Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc

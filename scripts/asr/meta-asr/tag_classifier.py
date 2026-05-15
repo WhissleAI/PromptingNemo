@@ -199,19 +199,19 @@ def strip_trailing_tags_and_get_labels(transcript, transcript_len, trailing_tag_
     return clean_transcript, clean_transcript_len, tag_labels
 
 
-def masked_mean_pool(encoder_output, encoded_len):
+def masked_mean_pool(encoder_output, encoded_len, input_format='BDT'):
     """Mean-pool encoder output over valid (non-padded) time steps.
 
     Args:
-        encoder_output: [B, D, T] or [B, T, D] raw encoder output
+        encoder_output: encoder output tensor
         encoded_len: [B] valid lengths
+        input_format: 'BDT' for NeMo convention [B, D, T], 'BTD' for [B, T, D]
 
     Returns:
         [B, D] pooled representation
     """
-    if encoder_output.dim() == 3 and encoder_output.size(1) != encoder_output.size(2):
-        if encoder_output.size(1) > encoder_output.size(2):
-            encoder_output = encoder_output.transpose(1, 2)
+    if input_format == 'BDT':
+        encoder_output = encoder_output.transpose(1, 2)
 
     B, T, D = encoder_output.shape
     time_mask = torch.arange(T, device=encoder_output.device).unsqueeze(0) < encoded_len.unsqueeze(1)
@@ -220,12 +220,13 @@ def masked_mean_pool(encoder_output, encoded_len):
     return pooled
 
 
-def compute_tag_classification_loss(tag_logits, tag_labels):
+def compute_tag_classification_loss(tag_logits, tag_labels, class_weights=None):
     """Compute cross-entropy loss for trailing tags from pooled predictions.
 
     Args:
         tag_logits: dict of category_name -> [B, num_classes] logits
         tag_labels: [B, num_categories] ground truth labels
+        class_weights: optional dict of category_name -> [num_classes] weight tensor
 
     Returns:
         scalar loss averaged across categories
@@ -237,9 +238,12 @@ def compute_tag_classification_loss(tag_logits, tag_labels):
     cat_names = sorted(tag_logits.keys())
 
     for cat_idx, cat_name in enumerate(cat_names):
-        logits = tag_logits[cat_name]  # [B, num_classes]
-        labels = tag_labels[:, cat_idx]  # [B]
-        loss = F.cross_entropy(logits, labels)
+        logits = tag_logits[cat_name]
+        labels = tag_labels[:, cat_idx]
+        w = class_weights.get(cat_name) if class_weights else None
+        if w is not None:
+            w = w.to(logits.device)
+        loss = F.cross_entropy(logits, labels, weight=w)
         total_loss = total_loss + loss
 
     return total_loss / max(len(cat_names), 1)

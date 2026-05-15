@@ -1,0 +1,110 @@
+adapter:
+  activation: swish
+  dim: 256
+  enabled: true
+  name: lang_adapter
+  norm_position: pre
+  unfreeze_decoder: true
+
+experiment:
+  always_save_nemo: true
+  every_n_train_steps: 2000
+  exp_dir: /mnt/nfs/experiments/
+  exp_name: hi-vakyansh-meta-v18-223k
+  mode: min
+  monitor: val_wer
+  resume_if_exists: true
+  save_top_k: 3
+
+model:
+  language_families:
+  - INDO_ARYAN
+  model_name: hi-vakyansh-meta-v17-223k.nemo
+  model_root: /mnt/nfs/experiments/hi-vakyansh-meta-v17-223k/checkpoints/
+  new_tokenizer_folder: hi_meta_tokenizer
+  special_token_prefixes:
+  - ENTITY_
+  - INTENT_
+  - EMOTION_
+  - GENDER_
+  - AGE_
+  - KEYWORD_
+  - LANG_
+  tokenizer_folder: hi_meta_tokenizer
+  tokenizer_langs:
+    INDO_ARYAN:
+      dir: /mnt/nfs/models/vakyansh_hi_conformer_large/hi_meta_tokenizer
+      type: bpe
+  use_aggregate_tokenizer: false
+
+tag_classifier:
+  categories:
+  - AGE
+  - GENDER
+  - EMOTION
+  - INTENT
+  enabled: true
+  weight: 0.3
+
+augmentation:
+  enabled: true
+  prob_clean: 0.15
+  perturbations:
+  - type: ambient_scene
+    prob: 0.5
+    min_snr_db: 5
+    max_snr_db: 25
+  - type: pink_noise
+    prob: 0.15
+    min_snr_db: 10
+    max_snr_db: 30
+  - type: wind
+    prob: 0.1
+    min_snr_db: 8
+    max_snr_db: 25
+  - type: room_reverb
+    prob: 0.2
+    min_decay_sec: 0.3
+    max_decay_sec: 1.5
+  - type: codec
+    prob: 0.1
+  - type: speed
+    prob: 0.3
+    min_speed_rate: 0.9
+    max_speed_rate: 1.1
+  - type: gain
+    prob: 0.5
+    min_gain_dbfs: -6
+    max_gain_dbfs: 3
+  - type: shift
+    prob: 0.3
+    min_shift_ms: 50
+    max_shift_ms: 300
+
+training:
+  accumulate_grad_batches: 3
+  batch_size: 24
+  data_dir: /mnt/nfs/data/meta_stt_hi_set1
+  devices: 1
+  lang_field: lang_family
+  max_duration: 20.0
+  max_steps: 80000
+  min_duration: 0.1
+  num_workers: 4
+  optim:
+    lr: 0.0001
+    sched:
+      max_steps: 80000
+      min_lr: 1.0e-06
+      warmup_steps: 500
+    weight_decay: 0.001
+  pin_memory: true
+  skip_audio_validation: true
+  spec_augment:
+    time_masks: 4
+    time_width: 80
+  test_manifest: valid.cleaned.json
+  train_manifest: train_300k_vocab_filtered.json
+  use_family_loss_weights: false
+  use_keyword_loss: false
+  use_mixed_precision: true

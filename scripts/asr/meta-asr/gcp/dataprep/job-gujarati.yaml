@@ -1,0 +1,480 @@
+# ============================================================================
+# Gujarati ASR Data Pipeline — GKE Jobs
+# Jobs 1-4: Download (parallel)
+# Jobs 5a-5c: Annotation (parallel, wait for respective download)
+# Job 6: Merge & validate (waits for all annotation jobs)
+# ============================================================================
+
+# --- Job 1: IndicVoices Gujarati (raw parquet → WAV + manifest) ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-indicvoices-gu
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 172800
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: indicvoices-gu
+        lang: gujarati
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: downloader
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          args:
+            - /app/scripts/download_indicvoices_raw.py
+            - --dataset=ai4bharat/IndicVoices
+            - --lang=gujarati
+            - --output-dir=/mnt/nfs/data/gujarati_v1/raw/indicvoices
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "4"
+              memory: 16Gi
+            limits:
+              cpu: "8"
+              memory: 32Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
+---
+# --- Job 2: IndicVoices-R Gujarati (train + test splits) ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-indicvoices-r-gu
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 172800
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: indicvoices-r-gu
+        lang: gujarati
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: downloader
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          args:
+            - /app/scripts/download_indicvoices_raw.py
+            - --dataset=ai4bharat/indicvoices_r
+            - --lang=Gujarati
+            - --output-dir=/mnt/nfs/data/gujarati_v1/raw/indicvoices_r
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "2"
+              memory: 8Gi
+            limits:
+              cpu: "4"
+              memory: 16Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
+---
+# --- Job 3: Kathbath Gujarati ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-kathbath-gu
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 172800
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: kathbath-gu
+        lang: gujarati
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: downloader
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          args:
+            - /app/scripts/download_indicvoices_raw.py
+            - --dataset=ai4bharat/Kathbath
+            - --lang=gujarati
+            - --output-dir=/mnt/nfs/data/gujarati_v1/raw/kathbath
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "2"
+              memory: 8Gi
+            limits:
+              cpu: "4"
+              memory: 16Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
+---
+# --- Job 4: FLEURS Gujarati (eval benchmark only) ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-fleurs-gu
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 86400
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: fleurs-gu
+        lang: gujarati
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: downloader
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          args:
+            - /app/scripts/download_indicvoices_raw.py
+            - --dataset=google/fleurs
+            - --lang=gu_in
+            - --output-dir=/mnt/nfs/data/gujarati_v1/raw/fleurs
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "1"
+              memory: 4Gi
+            limits:
+              cpu: "2"
+              memory: 8Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
+---
+# --- Job 5a: Annotate IndicVoices Gujarati ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-annotate-gu-indicvoices
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 259200
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: annotate-gu-indicvoices
+        lang: gujarati
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      initContainers:
+        - name: wait-for-download
+          image: busybox:1.36
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Waiting for IndicVoices download to finish..."
+              while [ ! -f /mnt/nfs/data/gujarati_v1/raw/indicvoices/train.json ]; do
+                sleep 30
+              done
+              echo "Download complete, starting annotation."
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      containers:
+        - name: annotator
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          command: ["bash", "-c"]
+          args:
+            - |
+              python /app/scripts/annotate_indic_meta.py \
+                --manifest /mnt/nfs/data/gujarati_v1/raw/indicvoices/train.json \
+                --output /mnt/nfs/data/gujarati_v1/raw/indicvoices/train_nemo.jsonl \
+                --lang gujarati --batch-size 10 &&
+              python /app/scripts/annotate_indic_meta.py \
+                --manifest /mnt/nfs/data/gujarati_v1/raw/indicvoices/valid.json \
+                --output /mnt/nfs/data/gujarati_v1/raw/indicvoices/valid_nemo.jsonl \
+                --lang gujarati --batch-size 10
+          env:
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: gemini-key
+                  key: key
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "4"
+              memory: 16Gi
+            limits:
+              cpu: "8"
+              memory: 32Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
+---
+# --- Job 5b: Annotate IndicVoices-R Gujarati ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-annotate-gu-indicvoices-r
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 259200
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: annotate-gu-indicvoices-r
+        lang: gujarati
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      initContainers:
+        - name: wait-for-download
+          image: busybox:1.36
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Waiting for IndicVoices-R download to finish..."
+              while [ ! -f /mnt/nfs/data/gujarati_v1/raw/indicvoices_r/train.json ]; do
+                sleep 30
+              done
+              echo "Download complete, starting annotation."
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      containers:
+        - name: annotator
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          command: ["bash", "-c"]
+          args:
+            - |
+              python /app/scripts/annotate_indic_meta.py \
+                --manifest /mnt/nfs/data/gujarati_v1/raw/indicvoices_r/train.json \
+                --output /mnt/nfs/data/gujarati_v1/raw/indicvoices_r/train_nemo.jsonl \
+                --lang gujarati --batch-size 10 &&
+              python /app/scripts/annotate_indic_meta.py \
+                --manifest /mnt/nfs/data/gujarati_v1/raw/indicvoices_r/test.json \
+                --output /mnt/nfs/data/gujarati_v1/raw/indicvoices_r/test_nemo.jsonl \
+                --lang gujarati --batch-size 10
+          env:
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: gemini-key
+                  key: key
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "4"
+              memory: 16Gi
+            limits:
+              cpu: "8"
+              memory: 32Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
+---
+# --- Job 5c: Annotate Kathbath Gujarati ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-annotate-gu-kathbath
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 259200
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: annotate-gu-kathbath
+        lang: gujarati
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      initContainers:
+        - name: wait-for-download
+          image: busybox:1.36
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Waiting for Kathbath download to finish..."
+              while [ ! -f /mnt/nfs/data/gujarati_v1/raw/kathbath/train.json ]; do
+                sleep 30
+              done
+              echo "Download complete, starting annotation."
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      containers:
+        - name: annotator
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          command: ["bash", "-c"]
+          args:
+            - |
+              python /app/scripts/annotate_indic_meta.py \
+                --manifest /mnt/nfs/data/gujarati_v1/raw/kathbath/train.json \
+                --output /mnt/nfs/data/gujarati_v1/raw/kathbath/train_nemo.jsonl \
+                --lang gujarati --batch-size 10 &&
+              python /app/scripts/annotate_indic_meta.py \
+                --manifest /mnt/nfs/data/gujarati_v1/raw/kathbath/valid.json \
+                --output /mnt/nfs/data/gujarati_v1/raw/kathbath/valid_nemo.jsonl \
+                --lang gujarati --batch-size 10
+          env:
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: gemini-key
+                  key: key
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "4"
+              memory: 16Gi
+            limits:
+              cpu: "8"
+              memory: 32Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
+---
+# --- Job 6: Merge all annotated manifests + validate ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-merge-gu
+  namespace: dataprep
+spec:
+  backoffLimit: 2
+  activeDeadlineSeconds: 86400
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: merge-gu
+        lang: gujarati
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      initContainers:
+        - name: wait-for-annotations
+          image: busybox:1.36
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Waiting for all annotation jobs to finish..."
+              for f in \
+                /mnt/nfs/data/gujarati_v1/raw/indicvoices/train_nemo.jsonl \
+                /mnt/nfs/data/gujarati_v1/raw/indicvoices_r/train_nemo.jsonl \
+                /mnt/nfs/data/gujarati_v1/raw/kathbath/train_nemo.jsonl; do
+                echo "  Waiting for $f ..."
+                while [ ! -f "$f" ]; do sleep 60; done
+                echo "  Found $f"
+              done
+              echo "All annotation outputs ready."
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      containers:
+        - name: merger
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          command: ["bash", "-c"]
+          args:
+            - |
+              python /app/scripts/merge_gujarati_manifests.py \
+                --data-root /mnt/nfs/data/gujarati_v1/raw \
+                --output-dir /mnt/nfs/data/gujarati_v1 &&
+              echo "Merge complete. Final manifests:" &&
+              wc -l /mnt/nfs/data/gujarati_v1/train.json /mnt/nfs/data/gujarati_v1/valid.json
+          resources:
+            requests:
+              cpu: "2"
+              memory: 8Gi
+            limits:
+              cpu: "4"
+              memory: 16Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc

@@ -516,6 +516,51 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         for cat, size in sorted(category_sizes.items()):
             nemo_logging.info("  %s: %d classes (including NONE)", cat, size)
 
+    def compute_tag_class_weights(self, manifest_path):
+        """Compute inverse-frequency class weights from training manifest."""
+        if not getattr(self, 'use_tag_classifier', False):
+            return
+
+        vocab = list(self.decoder.vocabulary)
+        counts = {cat: defaultdict(int) for cat in self._category_names}
+
+        with open(manifest_path) as f:
+            for line in f:
+                entry = json.loads(line)
+                text = entry.get('text', '')
+                tokens = text.split()
+                for token in reversed(tokens):
+                    clean = token.lstrip('▁')
+                    matched = False
+                    for cat in self._category_names:
+                        if clean.startswith(f"{cat}_"):
+                            cat_map = self._category_to_id.get(cat, {})
+                            for vid, cid in cat_map.items():
+                                if vocab[vid].lstrip('▁') == clean:
+                                    counts[cat][cid] += 1
+                                    matched = True
+                                    break
+                            if matched:
+                                break
+
+        self._tag_class_weights = {}
+        for cat in self._category_names:
+            n_classes = self._category_sizes[cat]
+            cat_counts = counts[cat]
+            total = sum(cat_counts.values())
+            if total == 0:
+                continue
+            none_count = max(total - sum(cat_counts.values()), 0)
+            weights = torch.ones(n_classes)
+            for cid in range(n_classes):
+                c = cat_counts.get(cid, none_count if cid == 0 else 0)
+                if c > 0:
+                    weights[cid] = total / (n_classes * c)
+            weights = weights.clamp(0.5, 5.0)
+            self._tag_class_weights[cat] = weights
+            nemo_logging.info("  %s class weights: %s", cat,
+                {cid: f"{weights[cid]:.2f}" for cid in range(n_classes)})
+
     def set_keyword_token_ids(self, keyword_ids):
         self.keyword_token_ids = set(keyword_ids)
         logging.info(f"Set {len(self.keyword_token_ids)} keyword token IDs for custom loss.")
@@ -621,10 +666,12 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
 
         # --- Dual-head: classification loss for trailing tags ---
         if getattr(self, 'use_tag_classifier', False) and tag_labels is not None:
-            encoder_out = self._last_encoder_output.transpose(1, 2)  # [B, T, D]
-            pooled = masked_mean_pool(encoder_out, encoded_len).detach()
+            pooled = masked_mean_pool(self._last_encoder_output, encoded_len, input_format='BDT')
             tag_logits = self.tag_classifier(pooled)
-            cls_loss = compute_tag_classification_loss(tag_logits, tag_labels)
+            cls_loss = compute_tag_classification_loss(
+                tag_logits, tag_labels,
+                class_weights=getattr(self, '_tag_class_weights', None),
+            )
             self.log('tag_cls_loss', cls_loss, on_step=True, prog_bar=True)
             loss_value = loss_value + self.tag_classifier_weight * cls_loss
 
@@ -940,8 +987,7 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
 
         # --- Dual-head: validation classification loss + accumulate for confusion ---
         if getattr(self, 'use_tag_classifier', False) and val_tag_labels is not None:
-            encoder_out = self._last_encoder_output.transpose(1, 2)
-            pooled = masked_mean_pool(encoder_out, encoded_len).detach()
+            pooled = masked_mean_pool(self._last_encoder_output, encoded_len, input_format='BDT')
             tag_logits = self.tag_classifier(pooled)
             val_cls_loss = compute_tag_classification_loss(tag_logits, val_tag_labels)
             metrics['val_tag_cls_loss'] = val_cls_loss
@@ -2418,6 +2464,16 @@ def train_model(cfg, ckpt_path=None):
             weight=tag_cls_weight,
             special_token_prefixes=special_prefixes,
         )
+        train_manifest = cfg.training.get('manifest_filepath',
+            cfg.get('train_ds', {}).get('manifest_filepath', ''))
+        if not train_manifest:
+            data_dir = cfg.training.get('data_dir', '')
+            manifest_name = cfg.training.get('train_manifest', '')
+            if data_dir and manifest_name:
+                train_manifest = os.path.join(data_dir, manifest_name)
+        if train_manifest and os.path.exists(train_manifest):
+            nemo_logging.info("Computing tag class weights from %s", train_manifest)
+            model.compute_tag_class_weights(train_manifest)
 
     tokenizer_cfg = OmegaConf.create(tokenizer_entry)
     #logging.info("Applying deduplicated aggregate tokenizer via change_vocabulary().")
@@ -2487,14 +2543,21 @@ def train_model(cfg, ckpt_path=None):
         pin_memory=cfg.training.pin_memory,
         )
         
-    logging.info("Manually creating and injecting audio augmentor for training.")
-    noise_perturb = WhiteNoisePerturbation(min_level=-90, max_level=-46)
-    shift_perturb = ShiftPerturbation(min_shift_ms=100.0, max_shift_ms=500.0)
-    augmentor = AudioAugmentor(perturbations=[
-        (1.0, noise_perturb),
-    (1.0, shift_perturb),
-    ])
-        
+    aug_cfg = cfg.get('augmentation', {})
+    if aug_cfg and aug_cfg.get('enabled', False):
+        from meta_asr.ambient_noise import build_augmentor_from_config
+        logging.info("Building augmentor from config: %d perturbation types",
+                      len(aug_cfg.get('perturbations', [])))
+        augmentor = build_augmentor_from_config(aug_cfg)
+    else:
+        logging.info("Using default audio augmentor (white noise + shift).")
+        noise_perturb = WhiteNoisePerturbation(min_level=-90, max_level=-46)
+        shift_perturb = ShiftPerturbation(min_shift_ms=100.0, max_shift_ms=500.0)
+        augmentor = AudioAugmentor(perturbations=[
+            (1.0, noise_perturb),
+            (1.0, shift_perturb),
+        ])
+
     if hasattr(model, '_train_dl') and model._train_dl is not None:
         model._train_dl.dataset.augmentor = augmentor
     else:
