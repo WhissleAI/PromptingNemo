@@ -1,0 +1,96 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-clean-en-in-tech
+  namespace: dataprep
+spec:
+  backoffLimit: 2
+  activeDeadlineSeconds: 14400
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: clean-en-in-tech
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      initContainers:
+        - name: wait-for-download
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          command: ["bash", "-c"]
+          args:
+            - |
+              echo "Waiting for EN-IN Tech Interviews download..."
+              while [ ! -f /mnt/nfs/data/en_in_tech_interviews/train.json ]; do
+                echo "  train.json not ready. Sleeping 60s..."
+                sleep 60
+              done
+              while [ ! -f /mnt/nfs/data/en_in_tech_interviews/valid.json ]; do
+                echo "  valid.json not ready. Sleeping 60s..."
+                sleep 60
+              done
+              train_count=$(wc -l < /mnt/nfs/data/en_in_tech_interviews/train.json)
+              valid_count=$(wc -l < /mnt/nfs/data/en_in_tech_interviews/valid.json)
+              echo "Download complete: train=$train_count, valid=$valid_count"
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      containers:
+        - name: cleaner
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          command:
+            - bash
+            - -c
+            - |
+              set -e
+              DATA=/mnt/nfs/data/en_in_tech_interviews
+              CLEAN=/mnt/nfs/code/PromptingNemo/scripts/asr/meta-asr/clean_manifest_before_training.py
+
+              echo "=== Step 1: Clean train manifest ==="
+              python $CLEAN \
+                --input-manifest $DATA/train.json \
+                --output-manifest $DATA/train_cleaned.json \
+                --removed-manifest $DATA/train_removed.json \
+                --no-langid-manifest /dev/null
+
+              echo "=== Step 2: Clean valid manifest ==="
+              python $CLEAN \
+                --input-manifest $DATA/valid.json \
+                --output-manifest $DATA/valid_cleaned.json \
+                --removed-manifest $DATA/valid_removed.json \
+                --no-langid-manifest /dev/null
+
+              echo "=== Step 3: Normalize tags in cleaned manifests ==="
+              python /tmp/normalize_tags.py $DATA/train_cleaned.json $DATA/train_dualhead.json
+              python /tmp/normalize_tags.py $DATA/valid_cleaned.json $DATA/valid_dualhead.json
+
+              echo "=== Verify normalization ==="
+              head -1 $DATA/train_dualhead.json | python -c "import json,sys; d=json.load(sys.stdin); print(d['text'][-80:])"
+
+              echo "=== Summary ==="
+              echo "train_cleaned: $(wc -l < $DATA/train_cleaned.json) lines"
+              echo "train_removed: $(wc -l < $DATA/train_removed.json) lines"
+              echo "train_dualhead: $(wc -l < $DATA/train_dualhead.json) lines"
+              echo "valid_dualhead: $(wc -l < $DATA/valid_dualhead.json) lines"
+              echo "=== Done ==="
+          resources:
+            requests:
+              cpu: "2"
+              memory: 8Gi
+            limits:
+              cpu: "4"
+              memory: 16Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+            - name: scripts
+              mountPath: /tmp/normalize_tags.py
+              subPath: normalize_tags.py
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
+        - name: scripts
+          configMap:
+            name: normalize-tags-script

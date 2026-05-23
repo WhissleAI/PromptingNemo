@@ -1,0 +1,62 @@
+model:
+  model_root: /mnt/nfs/models/
+  model_name: stt_en_conformer_ctc_large.nemo
+  tokenizer_folder: tokenizer
+  new_tokenizer_folder: en_meta_tokenizer_4k
+  use_aggregate_tokenizer: false
+  vocab_size: 4096
+  special_token_prefixes:
+  - ENTITY_
+  - INTENT_
+  - EMOTION_
+  - GENDER_
+  - AGE_
+  character_coverage: 1.0
+  language_families:
+  - ENGLISH
+  tokenizer_langs: {}
+  shared_special_tokens: []
+  aggregate_vocabulary: []
+  tokenizer_langs_path: tokenizer_langs.yaml
+  shared_special_tokens_path: shared_special_tokens.yaml
+  aggregate_vocabulary_path: aggregate_vocab.txt
+
+training:
+  lang_field: lang_family
+  data_dir: /mnt/nfs/data/en_in_tech_interviews/
+  train_manifest: train_dualhead.json
+  test_manifest: valid_dualhead.json
+  batch_size: 8
+  accumulate_grad_batches: 16
+  max_duration: 10.0
+  max_steps: 50000
+  use_mixed_precision: true
+  num_workers: 2
+  pin_memory: true
+  skip_audio_validation: true
+  keyphrase_oversample_factor: 0.0
+  use_tag_classifier: true
+  tag_classifier_weight: 0.5
+  tag_categories:
+    - AGE
+    - GENDER
+    - EMOTION
+    - INTENT
+  spec_augment:
+    time_masks: 4
+    time_width: 80
+  optim:
+    lr: 1.0
+    weight_decay: 0.0
+    sched:
+      warmup_steps: 5000
+  devices: [0]
+
+experiment:
+  exp_dir: /mnt/nfs/experiments/
+  exp_name: en-in-tech-interviews-v1
+  monitor: val_wer
+  mode: min
+  always_save_nemo: true
+  save_top_k: 3
+  every_n_train_steps: 500

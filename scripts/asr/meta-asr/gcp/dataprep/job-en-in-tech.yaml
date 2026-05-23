@@ -1,0 +1,48 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dataprep-en-in-tech
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 259200
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: en-in-tech
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: downloader
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          args:
+            - /app/scripts/download_hf_dataset.py
+            - --dataset=WhissleAI/Meta_STT_EN-IN_Tech_Interviews
+            - --output-dir=/mnt/nfs/data/en_in_tech_interviews
+            - --lang=EN
+            - --family=ENGLISH
+          env:
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: token
+            - name: HF_HOME
+              value: /mnt/nfs/.cache/huggingface
+          resources:
+            requests:
+              cpu: "4"
+              memory: 16Gi
+            limits:
+              cpu: "8"
+              memory: 32Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc

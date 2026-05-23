@@ -1,0 +1,108 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: annotate-en-in-tech-misc
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 259200
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: annotate-en-in-tech-misc
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: annotator
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          command: ["bash", "-c"]
+          args:
+            - |
+              set -e
+              DATA=/mnt/nfs/data/en_in_tech_interviews
+              SCRIPT=/mnt/nfs/code/PromptingNemo/scripts/asr/meta-asr/utils/annotate_misc_interview.py
+
+              pip install --quiet google-generativeai 2>&1 | tail -1
+
+              echo "=== Step 1: Annotate train manifest with MISC taxonomy ==="
+              python $SCRIPT \
+                --input $DATA/train_dualhead.json \
+                --output $DATA/train_misc.json \
+                --batch-size 20 \
+                --workers 10
+
+              echo "=== Step 2: Annotate valid manifest with MISC taxonomy ==="
+              python $SCRIPT \
+                --input $DATA/valid_dualhead.json \
+                --output $DATA/valid_misc.json \
+                --batch-size 20 \
+                --workers 10
+
+              echo "=== Step 3: Verify output ==="
+              echo "train_misc: $(wc -l < $DATA/train_misc.json) lines"
+              echo "valid_misc: $(wc -l < $DATA/valid_misc.json) lines"
+
+              echo "=== Sample output ==="
+              head -3 $DATA/train_misc.json | python -c "
+              import json, sys
+              for line in sys.stdin:
+                  d = json.loads(line)
+                  print('TEXT:', d['text'][-150:])
+                  print('ROLE:', d.get('speaker_role'))
+                  print('BEHAVIOR:', d.get('misc_behavior'))
+                  print('EVAL:', d.get('misc_eval'))
+                  print('STAGE:', d.get('interview_stage'))
+                  print('SPEAKER_CHANGES:', d.get('speaker_changes'))
+                  print('ENTITIES:', d.get('entities', []))
+                  print('---')
+              "
+
+              echo "=== Distribution ==="
+              python -c "
+              import json
+              from collections import Counter
+              behaviors = Counter()
+              evals = Counter()
+              roles = Counter()
+              stages = Counter()
+              sc_count = 0
+              with open('$DATA/train_misc.json') as f:
+                  for line in f:
+                      d = json.loads(line)
+                      behaviors[d.get('misc_behavior', 'UNKNOWN')] += 1
+                      evals[d.get('misc_eval', 'UNKNOWN')] += 1
+                      roles[d.get('speaker_role', 'unknown')] += 1
+                      stages[d.get('interview_stage', 'unknown')] += 1
+                      if d.get('speaker_changes'):
+                          sc_count += 1
+              print('ROLES:', dict(roles))
+              print('BEHAVIORS:', dict(behaviors.most_common()))
+              print('EVALS:', dict(evals.most_common()))
+              print('STAGES:', dict(stages))
+              print('SPEAKER_CHANGE segments:', sc_count)
+              "
+
+              echo "=== MISC Annotation Complete ==="
+          env:
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: gemini-key
+                  key: key
+          resources:
+            requests:
+              cpu: "4"
+              memory: 8Gi
+            limits:
+              cpu: "8"
+              memory: 16Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
