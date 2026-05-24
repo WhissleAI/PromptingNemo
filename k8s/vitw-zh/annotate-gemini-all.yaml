@@ -1,0 +1,248 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: annotate-vitw-zh-gemini-all
+  namespace: dataprep
+spec:
+  activeDeadlineSeconds: 604800
+  backoffLimit: 2
+  template:
+    spec:
+      containers:
+      - name: annotate
+        image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:gpu
+        command: ["bash", "-c"]
+        args:
+        - |
+          set -e
+          echo "=== Gemini annotation (ENTITY + INTENT) for Voices-in-the-Wild ZH ==="
+
+          pip install -q google-generativeai
+
+          TRAIN="/mnt/nfs/data/vitw_zh/train.json"
+          VALID="/mnt/nfs/data/vitw_zh/valid.json"
+
+          echo "  train: $(wc -l < "$TRAIN") entries"
+          echo "  valid: $(wc -l < "$VALID") entries"
+
+          cat > /tmp/annotate_gemini_all.py << 'PYSCRIPT'
+          import os
+          import json
+          import re
+          import time
+          import logging
+          import threading
+          from concurrent.futures import ThreadPoolExecutor, as_completed
+
+          import google.generativeai as genai
+
+          logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+          genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+          MODEL = genai.GenerativeModel("gemini-2.5-flash")
+
+          SENTENCE_TAGS_RE = re.compile(r'\b(AGE_\S+|GENDER_\S+|EMOTION_\S+)\b')
+
+          def extract_preserved_tags(text):
+              return set(SENTENCE_TAGS_RE.findall(text))
+
+          def validate_output(original, annotated):
+              orig_tags = extract_preserved_tags(original)
+              anno_tags = extract_preserved_tags(annotated)
+              if not orig_tags.issubset(anno_tags):
+                  return False
+              if not re.search(r'\bINTENT_\w+', annotated):
+                  return False
+              return True
+
+          PROMPT_TEMPLATE = """You are given a list of Chinese sentences with existing tags (AGE_*, GENDER_*, EMOTION_*).
+
+          Your tasks -
+          1. Preserve ALL existing tags exactly as they appear. Do NOT modify, remove, or reorder them.
+          2. Identify named entities and wrap them with ENTITY_<TYPE> entity_text END
+          3. Classify the intent and append INTENT_<TYPE> at the end (after existing tags).
+          4. Return ONLY a JSON array of annotated sentences, one per input.
+
+          RULES -
+          - Do NOT modify existing AGE_*, GENDER_*, EMOTION_* tags in any way.
+          - Entity format is "ENTITY_<TYPE> entity_text END" (with spaces before and after).
+          - Intent tag goes at the very end of the sentence.
+          - If no entities found, just add the INTENT tag.
+
+          Intent types - INFORM, QUESTION, COMMAND, REQUEST, EXCLAIM, OPINION, EXPLAIN, DESCRIBE, STATEMENT
+
+          Entity types -
+          PERSON_NAME, ORGANIZATION, LOCATION, ADDRESS, CITY, STATE, COUNTRY, ZIP_CODE, CURRENCY, PRICE, DATE, TIME, DURATION, APPOINTMENT_DATE, APPOINTMENT_TIME, DEADLINE, DELIVERY_DATE, DELIVERY_TIME, EVENT, MEETING, TASK, PROJECT_NAME, ACTION_ITEM, PRIORITY, FEEDBACK, REVIEW, RATING, COMPLAINT, QUESTION, RESPONSE, NOTIFICATION_TYPE, AGENDA, REMINDER, NOTE, RECORD, ANNOUNCEMENT, UPDATE, SCHEDULE, BOOKING_REFERENCE, APPOINTMENT_NUMBER, ORDER_NUMBER, INVOICE_NUMBER, PAYMENT_METHOD, PAYMENT_AMOUNT, BANK_NAME, ACCOUNT_NUMBER, CREDIT_CARD_NUMBER, TAX_ID, SOCIAL_SECURITY_NUMBER, DRIVER_LICENSE, PASSPORT_NUMBER, INSURANCE_PROVIDER, POLICY_NUMBER, INSURANCE_PLAN, CLAIM_NUMBER, POLICY_HOLDER, BENEFICIARY, RELATIONSHIP, EMERGENCY_CONTACT, PROJECT_PHASE, VERSION, DEVELOPMENT_STAGE, DEVICE_NAME, OPERATING_SYSTEM, SOFTWARE_VERSION, BRAND, MODEL_NUMBER, LICENSE_PLATE, VEHICLE_MAKE, VEHICLE_MODEL, VEHICLE_TYPE, FLIGHT_NUMBER, HOTEL_NAME, ROOM_NUMBER, TRANSACTION_ID, TICKET_NUMBER, SEAT_NUMBER, GATE, TERMINAL, TRANSACTION_TYPE, PAYMENT_STATUS, PAYMENT_REFERENCE, INVOICE_STATUS, SYMPTOM, DIAGNOSIS, MEDICATION, DOSAGE, ALLERGY, PRESCRIPTION, TEST_NAME, TEST_RESULT, MEDICAL_RECORD, HEALTH_STATUS, HEALTH_METRIC, VITAL_SIGN, DOCTOR_NAME, HOSPITAL_NAME, DEPARTMENT, WARD, CLINIC_NAME, WEBSITE, URL, IP_ADDRESS, MAC_ADDRESS, USERNAME, PASSWORD, LANGUAGE, CODE_SNIPPET, DATABASE_NAME, API_KEY, WEB_TOKEN, URL_PARAMETER, SERVER_NAME, ENDPOINT, DOMAIN, PRODUCT, SERVICE, CATEGORY, ORDER_STATUS, DELIVERY_METHOD, RETURN_STATUS, WARRANTY_PERIOD, CANCELLATION_REASON, REFUND_AMOUNT, EXCHANGE_ITEM, GIFT_OPTION, GIFT_MESSAGE, FOOD_ITEM, DRINK_ITEM, CUISINE, MENU_ITEM, DELIVERY_ESTIMATE, RECIPE, INGREDIENT, DISH_NAME, PORTION_SIZE, COOKING_TIME, PREPARATION_METHOD, NATIONALITY, RELIGION, MARITAL_STATUS, OCCUPATION, EDUCATION_LEVEL, DEGREE, SKILL, EXPERIENCE, YEARS_OF_EXPERIENCE, CERTIFICATION, MEASUREMENT, DISTANCE, WEIGHT, HEIGHT, VOLUME, TEMPERATURE, SPEED, CAPACITY, DIMENSION, AREA, SHAPE, COLOR, MATERIAL, TEXTURE, PATTERN, STYLE, WEATHER_CONDITION, TEMPERATURE_SETTING, HUMIDITY_LEVEL, WIND_SPEED, RAIN_INTENSITY, AIR_QUALITY, POLLUTION_LEVEL, UV_INDEX, QUESTION_TYPE, REQUEST_TYPE, SUGGESTION_TYPE, ALERT_TYPE, REMINDER_TYPE, STATUS, ACTION, COMMAND, NUMBER
+
+          Examples -
+          Input - "张三去了北京大学参加毕业典礼。 AGE_18_30 GENDER_MALE EMOTION_HAPPY"
+          Output - "ENTITY_PERSON_NAME 张三 END 去了 ENTITY_ORGANIZATION 北京大学 END 参加 ENTITY_EVENT 毕业典礼 END 。 AGE_18_30 GENDER_MALE EMOTION_HAPPY INTENT_INFORM"
+
+          Input - "那好吧。 AGE_18_30 GENDER_FEMALE EMOTION_NEUTRAL"
+          Output - "那好吧。 AGE_18_30 GENDER_FEMALE EMOTION_NEUTRAL INTENT_STATEMENT"
+
+          Input - "海外网六月三十日报道，据美国有线电视新闻网报道。 AGE_30_45 GENDER_FEMALE EMOTION_SAD"
+          Output - "ENTITY_ORGANIZATION 海外网 END ENTITY_DATE 六月三十日 END 报道，据 ENTITY_ORGANIZATION 美国有线电视新闻网 END 报道。 AGE_30_45 GENDER_FEMALE EMOTION_SAD INTENT_INFORM"
+
+          Sentences to Annotate -
+          """
+
+          def annotate_batch(sentences):
+              prompt = PROMPT_TEMPLATE + json.dumps(sentences, ensure_ascii=False)
+
+              for attempt in range(5):
+                  try:
+                      response = MODEL.generate_content(prompt)
+                      if not hasattr(response, 'text') or not response.text:
+                          logging.warning(f"Empty response (attempt {attempt+1})")
+                          if attempt < 4:
+                              time.sleep(2 ** (attempt + 1))
+                              continue
+                          return sentences
+                      raw = response.text.strip()
+
+                      if raw.startswith("```"):
+                          lines = raw.splitlines()
+                          if lines[0].startswith("```"):
+                              lines = lines[1:]
+                          if lines and lines[-1].startswith("```"):
+                              lines = lines[:-1]
+                          raw = "\n".join(lines).strip()
+
+                      results = json.loads(raw)
+                      if isinstance(results, list) and len(results) == len(sentences):
+                          validated = []
+                          for orig, anno in zip(sentences, results):
+                              if isinstance(anno, str) and validate_output(orig, anno):
+                                  validated.append(anno)
+                              else:
+                                  validated.append(orig + " INTENT_STATEMENT")
+                          return validated
+                      else:
+                          logging.warning(f"Bad result count: got {len(results) if isinstance(results, list) else 'non-list'}, expected {len(sentences)}")
+                          return [s + " INTENT_STATEMENT" for s in sentences]
+                  except json.JSONDecodeError as e:
+                      logging.warning(f"JSON decode error (attempt {attempt+1}): {e}")
+                      if attempt < 4:
+                          time.sleep(2 ** (attempt + 1))
+                      else:
+                          return [s + " INTENT_STATEMENT" for s in sentences]
+                  except Exception as e:
+                      wait = min(2 ** (attempt + 1) * 2, 60)
+                      logging.warning(f"Gemini error (attempt {attempt+1}): {e}, retrying in {wait}s")
+                      time.sleep(wait)
+              return [s + " INTENT_STATEMENT" for s in sentences]
+
+          def process_manifest(input_path, batch_size=20, max_workers=5):
+              logging.info(f"=== {input_path} ===")
+
+              with open(input_path, 'r', encoding='utf-8') as f:
+                  records = [json.loads(line) for line in f]
+
+              total = len(records)
+              total_batches = (total + batch_size - 1) // batch_size
+              logging.info(f"  {total} samples, {total_batches} batches, {max_workers} workers")
+
+              all_batches = []
+              for i in range(0, total, batch_size):
+                  batch = records[i:i + batch_size]
+                  texts = [r.get('text', '') for r in batch]
+                  all_batches.append((i, batch, texts))
+
+              results = [None] * len(all_batches)
+              lock = threading.Lock()
+              completed = [0]
+              errors = [0]
+
+              def process_batch(idx):
+                  _, batch, texts = all_batches[idx]
+                  annotated = annotate_batch(texts)
+                  for record, text in zip(batch, annotated):
+                      record['text'] = text
+                  results[idx] = batch
+                  with lock:
+                      completed[0] += len(batch)
+                      if completed[0] % 5000 < batch_size:
+                          logging.info(f"  Progress: {completed[0]}/{total} ({completed[0]*100//total}%), errors: {errors[0]}")
+
+              with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                  futures = {executor.submit(process_batch, i): i for i in range(len(all_batches))}
+                  for future in as_completed(futures):
+                      try:
+                          future.result()
+                      except Exception as e:
+                          with lock:
+                              errors[0] += 1
+                          logging.error(f"Batch failed: {e}")
+
+              output_tmp = input_path + ".tmp"
+              with open(output_tmp, 'w', encoding='utf-8') as f:
+                  for batch in results:
+                      if batch:
+                          for record in batch:
+                              f.write(json.dumps(record, ensure_ascii=False) + '\n')
+
+              import shutil
+              backup = input_path + ".pre_gemini.bak"
+              if not os.path.exists(backup):
+                  shutil.copy2(input_path, backup)
+              os.replace(output_tmp, input_path)
+
+              logging.info(f"  Done: {completed[0]} annotated, {errors[0]} errors -> {input_path}")
+
+          def main():
+              import sys
+              data_root = sys.argv[1]
+              batch_size = int(sys.argv[2]) if len(sys.argv) > 2 else 20
+              max_workers = int(sys.argv[3]) if len(sys.argv) > 3 else 5
+
+              manifests = []
+              for f in sorted(os.listdir(data_root)):
+                  if f in ('train.json', 'valid.json'):
+                      manifests.append(os.path.join(data_root, f))
+
+              logging.info(f"Found {len(manifests)} manifests")
+              for mf in manifests:
+                  process_manifest(mf, batch_size, max_workers)
+
+              logging.info("All done")
+
+          if __name__ == "__main__":
+              main()
+          PYSCRIPT
+
+          python /tmp/annotate_gemini_all.py \
+            /mnt/nfs/data/vitw_zh \
+            20 \
+            5
+
+          echo "=== Annotation complete ==="
+          head -2 "$TRAIN"
+
+          echo "=== Verification ==="
+          echo "INTENT count: $(grep -c 'INTENT_' "$TRAIN")"
+          echo "ENTITY count: $(grep -c 'ENTITY_' "$TRAIN")"
+          echo "GENDER intact: $(grep -c 'GENDER_' "$TRAIN")"
+        env:
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: gemini-key
+              key: key
+        resources:
+          requests:
+            cpu: "4"
+            memory: 8Gi
+          limits:
+            cpu: "8"
+            memory: 16Gi
+        volumeMounts:
+        - name: nfs-data
+          mountPath: /mnt/nfs
+      restartPolicy: Never
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      volumes:
+      - name: nfs-data
+        persistentVolumeClaim:
+          claimName: nfs-training-pvc

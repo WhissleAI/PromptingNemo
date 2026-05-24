@@ -1,8 +1,8 @@
 # Voices-in-the-Wild Chinese Subset — Data Report
 
 **Dataset:** zhifeixie/Voices-in-the-Wild-2M (Chinese-only filter)
-**Date:** 2026-05-23
-**Pipeline:** Download → GPU annotation (AGE, GENDER, EMOTION) → Gemini annotation (INTENT)
+**Date:** 2026-05-24
+**Pipeline:** Download → GPU annotation (AGE, GENDER, EMOTION) → Gemini annotation (INTENT, ENTITY)
 
 ---
 
@@ -66,9 +66,9 @@ Bulk of samples (76%) fall in the 1–5s range. Very few long utterances (>10s).
 | GENDER | 143,902 (100%) | 12,226 (100%) |
 | EMOTION | 143,902 (100%) | 12,226 (100%) |
 | INTENT | 143,902 (100%) | 12,226 (100%) |
-| ENTITY | 0 (0%) | 0 (0%) |
+| ENTITY | 73,907 (51.4%) | 5,574 (45.6%) |
 
-100% coverage for AGE, GENDER, EMOTION, and INTENT. No named entities were extracted — the short, often fragmented utterances in this dataset lack identifiable named entities.
+100% coverage for AGE, GENDER, EMOTION, and INTENT. ~51% of train and ~46% of valid samples contain at least one named entity. Sentences without entities are typically short utterances or fragments lacking identifiable named entities.
 
 ### AGE Distribution
 
@@ -109,17 +109,39 @@ Only 4 of 7 canonical emotions are present (DISGUST, FEAR, SURPRISE absent), lik
 
 | Tag | Train | Train % | Valid | Valid % |
 |---|---|---|---|---|
-| INTENT_INFORM | 38,450 | 26.7% | 3,253 | 26.6% |
-| INTENT_STATEMENT | 30,946 | 21.5% | 2,641 | 21.6% |
-| INTENT_DESCRIBE | 21,415 | 14.9% | 1,830 | 15.0% |
-| INTENT_OPINION | 14,381 | 10.0% | 1,277 | 10.4% |
-| INTENT_EXPLAIN | 13,971 | 9.7% | 1,149 | 9.4% |
-| INTENT_QUESTION | 9,109 | 6.3% | 750 | 6.1% |
-| INTENT_COMMAND | 6,969 | 4.8% | 617 | 5.0% |
-| INTENT_EXCLAIM | 5,789 | 4.0% | 485 | 4.0% |
-| INTENT_REQUEST | 2,872 | 2.0% | 224 | 1.8% |
+| INTENT_STATEMENT | 52,068 | 36.2% | 2,641 | 21.6% |
+| INTENT_INFORM | 36,936 | 25.7% | 3,253 | 26.6% |
+| INTENT_OPINION | 15,170 | 10.5% | 1,277 | 10.4% |
+| INTENT_DESCRIBE | 10,577 | 7.4% | 1,830 | 15.0% |
+| INTENT_QUESTION | 9,646 | 6.7% | 750 | 6.1% |
+| INTENT_EXPLAIN | 7,920 | 5.5% | 1,149 | 9.4% |
+| INTENT_COMMAND | 5,534 | 3.8% | 617 | 5.0% |
+| INTENT_EXCLAIM | 2,832 | 2.0% | 485 | 4.0% |
+| INTENT_REQUEST | 2,134 | 1.5% | 224 | 1.8% |
 
-Good diversity across 9 intent categories. INFORM and STATEMENT dominate (~48%), consistent with a news/media-heavy dataset. Train and valid distributions are well-matched.
+**Note:** Train and valid intent distributions differ because they were annotated in separate Gemini runs. The train set was re-annotated with the combined ENTITY+INTENT prompt (which shifted some classifications), while the valid set retained its original INTENT labels from an earlier run and only had entities added. The 9 primary intent categories cover >99.5% of samples; a small number of non-canonical intents (COMPLAINT, ANNOUNCEMENT, RESPONSE, etc.) appear in train due to Gemini occasionally using entity types as intents.
+
+### ENTITY Distribution (Top 15)
+
+| Entity Type | Train | Valid |
+|---|---|---|
+| ENTITY_ORGANIZATION | 20,920 | 1,587 |
+| ENTITY_PERSON_NAME | 18,837 | 1,665 |
+| ENTITY_DATE | 9,362 | 798 |
+| ENTITY_NUMBER | 7,210 | 594 |
+| ENTITY_LOCATION | 6,442 | 479 |
+| ENTITY_COUNTRY | 5,948 | 485 |
+| ENTITY_EVENT | 5,769 | 420 |
+| ENTITY_PRODUCT | 4,652 | 283 |
+| ENTITY_CITY | 4,361 | 387 |
+| ENTITY_DURATION | 4,073 | 332 |
+| ENTITY_CATEGORY | 2,419 | — |
+| ENTITY_PRICE | 2,121 | 164 |
+| ENTITY_MEASUREMENT | 1,611 | 112 |
+| ENTITY_PROJECT_NAME | 1,593 | 93 |
+| ENTITY_OCCUPATION | 1,591 | — |
+
+ORGANIZATION and PERSON_NAME are the most common entity types, consistent with news/media content. The 130+ entity type vocabulary from the annotation prompt provides fine-grained NER coverage.
 
 ---
 
@@ -127,16 +149,16 @@ Good diversity across 9 intent categories. INFORM and STATEMENT dominate (~48%),
 
 | Stage | Status | Duration | Tool |
 |---|---|---|---|
-| 1. Download + base manifest | Complete | ~8h | HuggingFace datasets (streaming) |
-| 2. AGE, GENDER, EMOTION | Complete | ~5h | wav2vec2-large-robust-6-ft-age-gender, hubert-large-superb-er (T4 GPU) |
-| 3. INTENT | Complete | ~1h | Gemini 2.5 Flash (20 workers, batch size 30) |
+| 1. Download + base manifest | Complete | ~2h | HuggingFace datasets (streaming) |
+| 2. AGE, GENDER, EMOTION | Complete | ~30m | wav2vec2-large-robust-6-ft-age-gender, hubert-large-superb-er (T4 GPU) |
+| 3. INTENT + ENTITY | Complete | ~9h (train) + ~35m (valid) | Gemini 2.5 Flash (5 workers, batch size 20) |
 
 ---
 
 ## Sample Entries (fully annotated)
 
 ```json
-{"audio_filepath": "/mnt/nfs/data/vitw_zh/audio/vitw_zh_recording_noise_0000045.wav", "text": "海外网六月三十日报道，据美国有线电视新闻网报道。 AGE_30_45 GENDER_FEMALE EMOTION_SAD INTENT_INFORM", "duration": 4.16, "lang": "MANDARIN", "source": "voices_in_the_wild"}
+{"audio_filepath": "/mnt/nfs/data/vitw_zh/audio/vitw_zh_recording_noise_0000045.wav", "text": "ENTITY_ORGANIZATION 海外网 END ENTITY_DATE 六月三十日 END 报道，据 ENTITY_ORGANIZATION 美国有线电视新闻网 END 报道。 AGE_30_45 GENDER_FEMALE EMOTION_SAD INTENT_INFORM", "duration": 4.16, "lang": "MANDARIN", "source": "voices_in_the_wild"}
 {"audio_filepath": "/mnt/nfs/data/vitw_zh/audio/vitw_zh_far_field_noise_0067252.wav", "text": "她也经常在网络上分享生活趣事。 AGE_18_30 GENDER_FEMALE EMOTION_NEUTRAL INTENT_STATEMENT", "duration": 4.116, "lang": "MANDARIN", "source": "voices_in_the_wild"}
 {"audio_filepath": "/mnt/nfs/data/vitw_zh/audio/vitw_zh_distortion_0036251.wav", "text": "我问你。 AGE_45_60 GENDER_MALE EMOTION_NEUTRAL INTENT_COMMAND", "duration": 1.36, "lang": "MANDARIN", "source": "voices_in_the_wild"}
 ```
@@ -147,8 +169,8 @@ Good diversity across 9 intent categories. INFORM and STATEMENT dominate (~48%),
 
 | File | Entries | Size |
 |---|---|---|
-| train.json | 143,902 | 36 MB |
-| valid.json | 12,226 | 3.1 MB |
+| train.json | 143,902 | 39 MB |
+| valid.json | 12,226 | 3.3 MB |
 | dataset_info.json | — | <1 KB |
 | Audio directory | 244,526 WAVs | ~170 GB (on NFS) |
 
