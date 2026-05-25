@@ -533,6 +533,41 @@ def train_model(cfg, ckpt_path=None):
             num_samples, len(tag_categories), tag_categories, category_sizes,
         )
 
+        # --- Tag-based oversampling: boost minority class samples ---
+        oversample_factor = float(cfg.training.get('keyphrase_oversample_factor', 0.0))
+        oversample_categories = cfg.training.get('oversample_categories', ['BEHAVIOR', 'EVAL'])
+        if oversample_factor > 0.0 and manifest_tags:
+            import numpy as np
+            tag_sample_weights = np.ones(num_samples, dtype=np.float32)
+            for cat_name in oversample_categories:
+                if cat_name not in tag_categories:
+                    continue
+                j = tag_categories.index(cat_name)
+                labels_col = tag_labels[:num_samples, j].numpy()
+                counts = np.bincount(labels_col, minlength=category_sizes[cat_name])
+                max_count = float(counts[counts > 0].max()) if counts.any() else 1.0
+                for i in range(num_samples):
+                    c = int(labels_col[i])
+                    if c > 0 and counts[c] > 0:
+                        ratio = max_count / counts[c]
+                        boost = 1.0 + oversample_factor * (np.sqrt(ratio) - 1.0)
+                        tag_sample_weights[i] = max(tag_sample_weights[i], boost)
+            train_dataset_tmp = model._train_dl.dataset
+            existing = getattr(train_dataset_tmp, 'sample_keyphrase_weights', None)
+            if existing is not None and len(existing) == num_samples:
+                train_dataset_tmp.sample_keyphrase_weights = existing * tag_sample_weights
+            else:
+                train_dataset_tmp.sample_keyphrase_weights = tag_sample_weights
+            top5 = sorted(enumerate(tag_sample_weights), key=lambda x: -x[1])[:5]
+            nemo_logging.info(
+                "Tag oversampling (factor=%.1f, cats=%s): "
+                "min=%.2f, max=%.2f, mean=%.2f, top5=%s",
+                oversample_factor, oversample_categories,
+                tag_sample_weights.min(), tag_sample_weights.max(),
+                tag_sample_weights.mean(),
+                [(idx, f"{w:.1f}") for idx, w in top5],
+            )
+
         val_manifest_path = os.path.join(cfg.training.data_dir, cfg.training.test_manifest)
         val_dataset = model._validation_dl.dataset
         val_collection = val_dataset.manifest_processor.collection
@@ -608,8 +643,17 @@ def train_model(cfg, ckpt_path=None):
             if 'weight_decay' in optim_cfg:
                 model.cfg.optim.weight_decay = optim_cfg['weight_decay']
             if 'sched' in optim_cfg and hasattr(model.cfg.optim, 'sched'):
-                if 'warmup_steps' in optim_cfg['sched']:
-                    model.cfg.optim.sched.warmup_steps = optim_cfg['sched']['warmup_steps']
+                sched_override = optim_cfg['sched']
+                if 'name' in sched_override and sched_override['name'] != model.cfg.optim.sched.get('name'):
+                    noam_only_keys = {'d_model'}
+                    for k in noam_only_keys:
+                        if k in model.cfg.optim.sched:
+                            del model.cfg.optim.sched[k]
+                for key in ('name', 'warmup_steps', 'min_lr', 'max_steps', 'warmup_ratio', 'd_model'):
+                    if key in sched_override:
+                        model.cfg.optim.sched[key] = sched_override[key]
+            logging.info("Optimizer config after override: lr=%s, sched=%s",
+                         model.cfg.optim.lr, OmegaConf.to_container(model.cfg.optim.sched))
     model.setup_optimization(model.cfg.optim)
 
     accelerator = 'gpu' if torch.cuda.is_available() else 'cpu'

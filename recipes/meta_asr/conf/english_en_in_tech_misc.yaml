@@ -1,6 +1,6 @@
 model:
-  model_root: /mnt/nfs/experiments/en-meta-v2-400k/2026-05-13_00-47-34/checkpoints/
-  model_name: en-meta-v2-400k.nemo
+  model_root: /mnt/nfs/experiments/en-in-tech-misc-v3/checkpoints/
+  model_name: en-in-tech-misc-v3.nemo
   tokenizer_folder: tokenizer
   new_tokenizer_folder: en_meta_tokenizer_4k
   use_aggregate_tokenizer: false
@@ -41,7 +41,11 @@ training:
   num_workers: 2
   pin_memory: true
   skip_audio_validation: true
-  keyphrase_oversample_factor: 0.0
+  keyphrase_oversample_factor: 3.0
+  oversample_categories:
+    - BEHAVIOR
+    - EVAL
+    - AGE
   use_tag_classifier: true
   tag_classifier_weight: 5.0
   tag_classifier_hidden_dim: 256
@@ -57,15 +61,18 @@ training:
     time_masks: 4
     time_width: 80
   optim:
-    lr: 0.1
+    lr: 0.0003
     weight_decay: 0.0
     sched:
+      name: CosineAnnealing
       warmup_steps: 500
+      min_lr: 1.0e-6
+      max_steps: 20000
   devices: [0]
 
 experiment:
   exp_dir: /mnt/nfs/experiments/
-  exp_name: en-in-tech-misc-v1
+  exp_name: en-in-tech-misc-v4
   monitor: val_wer
   mode: min
   always_save_nemo: true
