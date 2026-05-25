@@ -1,0 +1,48 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: av-meta-download-annotations-v2
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      containers:
+      - name: downloader
+        image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/nemo-training:latest
+        command: ["bash", "-c"]
+        args:
+        - |
+          set -e
+          export PYTHONPATH=/mnt/nfs/code/PromptingNemo:$PYTHONPATH
+          pip install -q huggingface_hub
+
+          cd /mnt/nfs/code/PromptingNemo/recipes/av_meta_asr
+
+          echo "=== Downloading SpeakerVid-5M annotations (~6GB without l_score) ==="
+          python3 -u local/download_annotations.py \
+            --output-dir /mnt/nfs/data/speakervid_5m/annotations
+
+          echo "=== Verifying downloads ==="
+          for d in merged_anno raw_labels/asr raw_labels/anno raw_labels/scene_json raw_labels/speaker_json; do
+            count=$(find /mnt/nfs/data/speakervid_5m/annotations/$d -name "*.json" 2>/dev/null | wc -l)
+            echo "$d: $count JSON files"
+          done
+          du -sh /mnt/nfs/data/speakervid_5m/annotations/
+
+          echo "=== Annotation download complete ==="
+        resources:
+          requests:
+            cpu: "4"
+            memory: "16Gi"
+          limits:
+            cpu: "8"
+            memory: "32Gi"
+        volumeMounts:
+        - name: nfs-volume
+          mountPath: /mnt/nfs
+      restartPolicy: OnFailure
+      volumes:
+      - name: nfs-volume
+        persistentVolumeClaim:
+          claimName: nfs-training-pvc

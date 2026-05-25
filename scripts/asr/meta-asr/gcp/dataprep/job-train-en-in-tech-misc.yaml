@@ -1,10 +1,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: train-en-in-tech-misc
+  name: train-en-in-tech-misc-v9
   namespace: dataprep
 spec:
-  backoffLimit: 6
+  backoffLimit: 10
   activeDeadlineSeconds: 604800
   template:
     metadata:
@@ -14,10 +14,14 @@ spec:
     spec:
       restartPolicy: Never
       nodeSelector:
-        cloud.google.com/gke-nodepool: gpu-pool
+        cloud.google.com/gke-nodepool: a100-pool
       tolerations:
         - key: nvidia.com/gpu
           operator: Exists
+          effect: NoSchedule
+        - key: cloud.google.com/gke-spot
+          operator: Equal
+          value: "true"
           effect: NoSchedule
       initContainers:
         - name: wait-for-misc-data
@@ -25,7 +29,7 @@ spec:
           command: ["bash", "-c"]
           args:
             - |
-              echo "Waiting for MISC-annotated training data..."
+              echo "Waiting for split MISC-annotated training data..."
               while [ ! -f /mnt/nfs/data/en_in_tech_interviews/train_misc.json ]; do
                 echo "  train_misc.json not ready. Sleeping 60s..."
                 sleep 60
@@ -51,6 +55,10 @@ spec:
                   print('ERROR: BEHAVIOR_ tags missing!')
                   sys.exit(1)
               "
+
+              # Verify no SPEAKER_CHANGE tokens remain
+              sc_count=$(grep -c 'SPEAKER_CHANGE' /mnt/nfs/data/en_in_tech_interviews/train_misc.json || true)
+              echo "SPEAKER_CHANGE tokens remaining: $sc_count (should be 0)"
           volumeMounts:
             - name: nfs
               mountPath: /mnt/nfs
@@ -67,11 +75,12 @@ spec:
 
               echo "=== Verifying GPU ==="
               python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}, devices: {torch.cuda.device_count()}')"
+              nvidia-smi
 
               echo "=== Base model: en-meta-v2-400k (already fine-tuned with tags) ==="
               ls -lh /mnt/nfs/experiments/en-meta-v2-400k/2026-05-13_00-47-34/checkpoints/en-meta-v2-400k.nemo
 
-              echo "=== Starting MISC training (BEHAVIOR + EVAL + SPEAKER_CHANGE) ==="
+              echo "=== Starting MISC training (BEHAVIOR + EVAL) on A100 ==="
               python -m promptingnemo.training.cli \
                 --config /mnt/nfs/code/PromptingNemo/recipes/meta_asr/conf/english_en_in_tech_misc.yaml \
                 --mode train
@@ -89,17 +98,23 @@ spec:
               value: "0"
           resources:
             requests:
-              cpu: "4"
-              memory: 16Gi
-              nvidia.com/gpu: "1"
-            limits:
               cpu: "8"
               memory: 32Gi
+              nvidia.com/gpu: "1"
+            limits:
+              cpu: "12"
+              memory: 64Gi
               nvidia.com/gpu: "1"
           volumeMounts:
             - name: nfs
               mountPath: /mnt/nfs
+            - name: dshm
+              mountPath: /dev/shm
       volumes:
         - name: nfs
           persistentVolumeClaim:
             claimName: nfs-training-pvc
+        - name: dshm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 16Gi

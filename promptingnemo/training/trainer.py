@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader
 
 from nemo.collections.asr.models import ASRModel
 from nemo.collections.common.parts.adapter_modules import LinearAdapterConfig
-from nemo.collections.asr.parts.submodules.ctc_decoding import CTCDecoding, CTCDecodingConfig
+from nemo.collections.asr.parts.submodules.ctc_decoding import CTCDecoding, CTCDecodingConfig, CTCBPEDecoding
 from nemo.collections.asr.metrics.wer import WER
 from nemo.collections.asr.parts.preprocessing.perturb import WhiteNoisePerturbation, ShiftPerturbation
 from nemo.collections.asr.parts.preprocessing.features import AudioAugmentor
@@ -48,6 +48,87 @@ def save_updated_config(cfg, path):
     container = OmegaConf.to_container(cfg, resolve=True)
     with open(path, "w", encoding="utf-8") as f:
         yaml.safe_dump(container, f, sort_keys=False)
+
+
+def _restore_checkpoint_decoder(model, connector, ckpt_decoder_vocab):
+    """Replace model's decoder with the checkpoint's original decoder.
+
+    After restore_from with FlexibleSaveRestoreConnector, the decoder may have
+    been created with the wrong vocabulary size (from the tokenizer). This
+    function rebuilds the decoder using the checkpoint's actual vocabulary and
+    weights, extends the tokenizer to match, and re-initialises decoding/loss.
+    """
+    from nemo.collections.asr.modules.conv_asr import ConvASRDecoder
+    from nemo.collections.asr.losses.ctc import CTCLoss
+
+    skipped = getattr(connector, '_skipped_state', {})
+    decoder_weights = {}
+    for key, tensor in skipped.items():
+        if key.startswith('decoder.'):
+            decoder_weights[key.replace('decoder.', '', 1)] = tensor
+
+    if not decoder_weights:
+        current_vocab = list(model.decoder.vocabulary)
+        if len(current_vocab) == len(ckpt_decoder_vocab):
+            logging.info("Decoder already matches checkpoint (%d tokens) — no replacement needed", len(current_vocab))
+            return
+        logging.warning("No skipped decoder weights found and vocab sizes differ (%d vs %d)", len(current_vocab), len(ckpt_decoder_vocab))
+        return
+
+    feat_in = model.encoder._feat_out
+    ckpt_num_classes = len(ckpt_decoder_vocab)
+
+    new_decoder = ConvASRDecoder(
+        feat_in=feat_in,
+        num_classes=ckpt_num_classes,
+        vocabulary=ckpt_decoder_vocab,
+    )
+    new_decoder.load_state_dict(decoder_weights, strict=True)
+    model.decoder = new_decoder
+
+    with open_dict(model.cfg):
+        model.cfg.decoder.vocabulary = ckpt_decoder_vocab
+        model.cfg.decoder.num_classes = ckpt_num_classes
+
+    if hasattr(model, 'tokenizer') and hasattr(model.tokenizer, 'extend_vocabulary'):
+        tokenizer_vocab_set = set()
+        if hasattr(model.tokenizer, 'vocabulary'):
+            tokenizer_vocab_set = set(model.tokenizer.vocabulary)
+        elif hasattr(model.tokenizer, 'tokenizer') and hasattr(model.tokenizer.tokenizer, 'get_vocab'):
+            tokenizer_vocab_set = set(model.tokenizer.tokenizer.get_vocab().keys())
+        spm_size = len(tokenizer_vocab_set)
+        extra_tokens_raw = []
+        for tok in ckpt_decoder_vocab:
+            if tok not in tokenizer_vocab_set:
+                raw = tok.lstrip('▁')
+                extra_tokens_raw.append(raw)
+        if extra_tokens_raw:
+            model.tokenizer.extend_vocabulary(extra_tokens_raw)
+            logging.info(
+                "Extended tokenizer from %d to %d tokens (+%d from decoder vocabulary)",
+                spm_size, spm_size + len(extra_tokens_raw), len(extra_tokens_raw),
+            )
+
+    decoding_cfg = model.cfg.get('decoding', OmegaConf.create({'strategy': 'greedy'}))
+    model.decoding = CTCBPEDecoding(decoding_cfg=decoding_cfg, tokenizer=model.tokenizer)
+    model.wer = WER(
+        decoding=model.decoding,
+        use_cer=model._cfg.get('use_cer', False),
+        log_prediction=model._cfg.get('log_prediction', True),
+    )
+
+    model.loss = CTCLoss(
+        num_classes=ckpt_num_classes,
+        zero_infinity=True,
+        reduction='mean_batch',
+    )
+
+    logging.info(
+        "Restored checkpoint decoder: %d classes (+1 blank), "
+        "loaded %d weight tensors, decoder weights shape: %s",
+        ckpt_num_classes, len(decoder_weights),
+        {k: list(v.shape) for k, v in decoder_weights.items()},
+    )
 
 
 def train_model(cfg, ckpt_path=None):
@@ -123,7 +204,32 @@ def train_model(cfg, ckpt_path=None):
     if shared_special_tokens:
         tokenizer_entry['special_tokens'] = shared_special_tokens
 
+    use_tag_classifier = cfg.training.get('use_tag_classifier', False)
+
     base_cfg = ASRModel.restore_from(restore_path=str(model_path), return_config=True)
+
+    ckpt_decoder_vocab = list(base_cfg.decoder.vocabulary) if hasattr(base_cfg.decoder, 'vocabulary') else []
+    if ckpt_decoder_vocab:
+        logging.info("Checkpoint decoder vocabulary: %d tokens", len(ckpt_decoder_vocab))
+
+    if use_tag_classifier and ckpt_decoder_vocab:
+        import tarfile
+        ckpt_tok_dir = model_root / '_ckpt_tokenizer'
+        if not (ckpt_tok_dir / 'tokenizer.model').exists():
+            ckpt_tok_dir.mkdir(parents=True, exist_ok=True)
+            target_suffixes = ('tokenizer.model', 'tokenizer.vocab', 'vocab.txt')
+            with tarfile.open(str(model_path), 'r') as tar:
+                for member in tar.getmembers():
+                    basename = os.path.basename(member.name)
+                    for suffix in target_suffixes:
+                        if basename.endswith(suffix):
+                            f = tar.extractfile(member)
+                            if f:
+                                with open(ckpt_tok_dir / suffix, 'wb') as dst:
+                                    dst.write(f.read())
+                            break
+            logging.info("Extracted checkpoint tokenizer to %s: %s", ckpt_tok_dir, os.listdir(ckpt_tok_dir))
+
     with open_dict(base_cfg):
         adapter_cfg_section = cfg.get('adapter', {})
         if adapter_cfg_section and adapter_cfg_section.get('enabled', False):
@@ -142,7 +248,7 @@ def train_model(cfg, ckpt_path=None):
         base_cfg.train_ds.num_workers = cfg.training.num_workers
         base_cfg.train_ds.pin_memory = cfg.training.pin_memory
         base_cfg.train_ds.lang_field = lang_field
-        base_cfg.train_ds.return_sample_id = True  # Needed for family loss weights
+        base_cfg.train_ds.return_sample_id = True
 
         base_cfg.validation_ds.manifest_filepath = val_manifest
         base_cfg.validation_ds.batch_size = cfg.training.batch_size
@@ -164,7 +270,7 @@ def train_model(cfg, ckpt_path=None):
             if field_name and field_name not in base_cfg.train_ds.manifest_processor.additional_fields:
                 base_cfg.train_ds.manifest_processor.additional_fields.append(field_name)
 
-        if cfg.training.get('use_tag_classifier', False):
+        if use_tag_classifier:
             tag_categories = cfg.training.get('tag_categories', ['AGE', 'GENDER', 'EMOTION', 'INTENT'])
             for cat in tag_categories:
                 field_name = f'tag_{cat.lower()}'
@@ -177,10 +283,78 @@ def train_model(cfg, ckpt_path=None):
         if 'augmentor' in base_cfg.train_ds:
             del base_cfg.train_ds.augmentor
 
-    model = CustomEncDecCTCModelBPE.restore_from(str(model_path), override_config_path=base_cfg, strict=True)
+        if use_tag_classifier and ckpt_decoder_vocab:
+            if hasattr(base_cfg, 'tokenizer') and hasattr(base_cfg.tokenizer, 'langs'):
+                for lang in base_cfg.tokenizer.langs:
+                    lang_entry = base_cfg.tokenizer.langs[lang]
+                    lang_entry.dir = str(ckpt_tok_dir)
+                    lang_entry.type = 'bpe'
+            else:
+                base_cfg.tokenizer = OmegaConf.create({
+                    'type': 'agg',
+                    'langs': {'ENGLISH': {'type': 'bpe', 'dir': str(ckpt_tok_dir)}},
+                })
+            base_cfg.decoder.num_classes = -1
+            logging.info(
+                "Dual-head mode: using checkpoint's %d-token tokenizer, "
+                "decoder.num_classes=-1 (will restore %d-class decoder after loading)",
+                len(os.listdir(ckpt_tok_dir)), len(ckpt_decoder_vocab),
+            )
+        else:
+            if hasattr(base_cfg, 'tokenizer') and hasattr(base_cfg.tokenizer, 'langs'):
+                for lang in base_cfg.tokenizer.langs:
+                    lang_entry = base_cfg.tokenizer.langs[lang]
+                    if not lang_entry.get('type'):
+                        lang_entry.type = tokenizer_langs.get(lang, {}).get('type', 'bpe')
+            else:
+                base_cfg.tokenizer = OmegaConf.create(tokenizer_entry)
+
+            if hasattr(base_cfg, 'decoder'):
+                base_cfg.decoder.num_classes = cfg.model.vocab_size
+
+    from promptingnemo.models.ctc_model import FlexibleSaveRestoreConnector
+    connector = FlexibleSaveRestoreConnector()
+    model = CustomEncDecCTCModelBPE.restore_from(
+        str(model_path), override_config_path=base_cfg, strict=False,
+        save_restore_connector=connector,
+    )
     model.setup_custom_loss()
 
-    use_tag_classifier = cfg.training.get('use_tag_classifier', False)
+    if use_tag_classifier and ckpt_decoder_vocab:
+        _restore_checkpoint_decoder(model, connector, ckpt_decoder_vocab)
+
+        current_vocab = set(model.decoder.vocabulary)
+        new_tokens = scan_manifest_for_new_tokens(
+            train_manifest, current_vocab,
+            allowed_prefixes=(
+                'ENTITY_', 'INTENT_', 'EMOTION_', 'GENDER_', 'AGE_',
+                'DIALECT_', 'KEYWORD_', 'LANG_', 'OTHER_',
+                'ROLE_', 'BEHAVIOR_', 'EVAL_',
+            ),
+        )
+        if new_tokens:
+            nemo_logging.info(
+                "Extending decoder/tokenizer with %d new tags from training data: %s",
+                len(new_tokens), new_tokens,
+            )
+            extend_decoder_for_new_tokens(model, new_tokens)
+            if hasattr(model, 'tokenizer') and hasattr(model.tokenizer, 'extend_vocabulary'):
+                model.tokenizer.extend_vocabulary(new_tokens)
+            updated_vocab = list(model.decoder.vocabulary)
+            decoding_cfg = model.cfg.get('decoding', OmegaConf.create({'strategy': 'greedy'}))
+            model.decoding = CTCBPEDecoding(decoding_cfg=decoding_cfg, tokenizer=model.tokenizer)
+            model.wer = WER(
+                decoding=model.decoding,
+                use_cer=model._cfg.get('use_cer', False),
+                log_prediction=model._cfg.get('log_prediction', True),
+            )
+            from nemo.collections.asr.losses.ctc import CTCLoss as _CTCLoss
+            model.loss = _CTCLoss(
+                num_classes=len(updated_vocab),
+                zero_infinity=True,
+                reduction='mean_batch',
+            )
+        model.setup_custom_loss()
 
     if language_families and not use_tag_classifier:
         slim_decoder_for_training(model, language_families)
@@ -326,12 +500,68 @@ def train_model(cfg, ckpt_path=None):
             for j, cat in enumerate(tag_categories):
                 tag_labels[i, j] = manifest_tags[i][cat]
 
+        class_weights = {}
+        for j, cat in enumerate(tag_categories):
+            labels_col = tag_labels[:num_samples, j]
+            counts = torch.bincount(labels_col, minlength=category_sizes[cat])
+            total = counts.sum().float()
+            n_classes = len(counts)
+            weights = torch.zeros(n_classes)
+            for c in range(n_classes):
+                if counts[c] > 0:
+                    weights[c] = torch.sqrt(total / (n_classes * counts[c].float()))
+                else:
+                    weights[c] = 0.0
+            class_weights[cat] = weights
+            nemo_logging.info(
+                "  %s class weights: %s (counts: %s)",
+                cat, {c: f"{w:.3f}" for c, w in enumerate(weights.tolist())},
+                {c: int(v) for c, v in enumerate(counts.tolist())},
+            )
+
         encoder_dim = model.encoder._feat_out
-        model.setup_tag_classifier(encoder_dim, category_sizes, weight=tag_weight)
+        tag_hidden_dim = cfg.training.get('tag_classifier_hidden_dim', 256)
+        tag_dropout = cfg.training.get('tag_classifier_dropout', 0.3)
+        model.setup_tag_classifier(
+            encoder_dim, category_sizes, weight=tag_weight,
+            hidden_dim=tag_hidden_dim, dropout=tag_dropout,
+        )
         model.register_buffer('_tag_labels', tag_labels)
+        model._tag_class_weights = class_weights
         nemo_logging.info(
             "Pre-computed %d tag labels for %d categories %s, sizes=%s",
             num_samples, len(tag_categories), tag_categories, category_sizes,
+        )
+
+        val_manifest_path = os.path.join(cfg.training.data_dir, cfg.training.test_manifest)
+        val_dataset = model._validation_dl.dataset
+        val_collection = val_dataset.manifest_processor.collection
+        val_num = len(val_collection)
+        val_manifest_tags = []
+        with open(val_manifest_path, 'r', encoding='utf-8') as mf:
+            for line in mf:
+                line = line.strip()
+                if not line:
+                    continue
+                entry = json.loads(line)
+                dur = float(entry.get('duration', 0))
+                if min_dur is not None and dur < min_dur:
+                    continue
+                if max_dur is not None and dur > max_dur:
+                    continue
+                row = {}
+                for cat in tag_categories:
+                    row[cat] = int(entry.get(f'tag_{cat.lower()}', 0) or 0)
+                val_manifest_tags.append(row)
+
+        val_tag_labels = torch.zeros(val_num, len(tag_categories), dtype=torch.long)
+        for i in range(min(val_num, len(val_manifest_tags))):
+            for j, cat in enumerate(tag_categories):
+                val_tag_labels[i, j] = val_manifest_tags[i][cat]
+        model.register_buffer('_val_tag_labels', val_tag_labels)
+        nemo_logging.info(
+            "Pre-computed %d validation tag labels for %d categories",
+            val_num, len(tag_categories),
         )
 
     train_dataset = model._train_dl.dataset

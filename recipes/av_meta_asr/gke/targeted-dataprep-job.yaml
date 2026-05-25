@@ -1,0 +1,106 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: av-meta-targeted-dataprep-v2
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 172800
+  template:
+    spec:
+      containers:
+      - name: dataprep
+        image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/nemo-training:latest
+        command: ["bash", "-c"]
+        args:
+        - |
+          set -e
+          export PYTHONPATH=/mnt/nfs/code/PromptingNemo:$PYTHONPATH
+
+          pip install -q transformers av Pillow huggingface_hub
+
+          cd /mnt/nfs/code/PromptingNemo/recipes/av_meta_asr
+
+          echo "=== Stage 1: Targeted annotation extraction ==="
+          echo "Re-downloading tar.gz to local SSD and extracting ONLY our clips..."
+          python3 -u local/extract_targeted_annotations.py \
+            --annotations-dir /mnt/nfs/data/speakervid_5m/annotations \
+            --videos-dir /mnt/nfs/data/speakervid_5m/videos \
+            --subdirs merged_anno raw_labels/asr raw_labels/anno \
+            --tmp-dir /tmp/anno_tars
+
+          echo "=== Stage 2: Extract clips ==="
+          python3 -u local/extract_clips.py \
+            --annotations-dir /mnt/nfs/data/speakervid_5m/annotations \
+            --videos-dir /mnt/nfs/data/speakervid_5m/videos \
+            --output-dir /mnt/nfs/data/speakervid_5m/clips \
+            --workers 8
+
+          echo "Clips extracted:"
+          ls /mnt/nfs/data/speakervid_5m/clips/*.mp4 2>/dev/null | wc -l
+
+          echo "=== Stage 3: Extract audio ==="
+          python3 -u local/extract_audio.py \
+            --clips-dir /mnt/nfs/data/speakervid_5m/clips \
+            --output-dir /mnt/nfs/data/speakervid_5m/audio \
+            --workers 8
+
+          echo "=== Stage 4: Extract SigLIP 2 features ==="
+          python3 -u local/extract_clip_features.py \
+            --clips-dir /mnt/nfs/data/speakervid_5m/clips \
+            --output-dir /mnt/nfs/data/speakervid_5m/siglip_features \
+            --model-name google/siglip2-so400m-patch14-384 \
+            --fps 5 \
+            --batch-size 16
+
+          echo "=== Stage 5: Parse annotations ==="
+          python3 -u local/parse_annotations.py \
+            --annotations-dir /mnt/nfs/data/speakervid_5m/annotations \
+            --output /mnt/nfs/data/speakervid_5m/metadata/parsed_annotations.jsonl \
+            --workers 8
+
+          echo "=== Stage 6: Build manifests ==="
+          python3 -u local/build_manifest.py \
+            --annotations /mnt/nfs/data/speakervid_5m/metadata/parsed_annotations.jsonl \
+            --audio-dir /mnt/nfs/data/speakervid_5m/audio \
+            --clips-dir /mnt/nfs/data/speakervid_5m/clips \
+            --features-dir /mnt/nfs/data/speakervid_5m/siglip_features \
+            --output-dir /mnt/nfs/data/speakervid_5m/manifests
+
+          echo "=== Storage report ==="
+          du -sh /mnt/nfs/data/speakervid_5m/*/
+          echo "=== Manifest stats ==="
+          cat /mnt/nfs/data/speakervid_5m/manifests/manifest_stats.json 2>/dev/null
+          echo ""
+          wc -l /mnt/nfs/data/speakervid_5m/manifests/*.json 2>/dev/null
+          echo "=== ALL STAGES COMPLETE ==="
+        resources:
+          requests:
+            cpu: "8"
+            memory: "48Gi"
+            nvidia.com/gpu: 1
+          limits:
+            cpu: "11"
+            memory: "64Gi"
+            nvidia.com/gpu: 1
+        volumeMounts:
+        - name: nfs-volume
+          mountPath: /mnt/nfs
+        - name: dshm
+          mountPath: /dev/shm
+      nodeSelector:
+        cloud.google.com/gke-accelerator: nvidia-tesla-a100
+      restartPolicy: OnFailure
+      tolerations:
+      - key: nvidia.com/gpu
+        operator: Equal
+        value: present
+        effect: NoSchedule
+      volumes:
+      - name: nfs-volume
+        persistentVolumeClaim:
+          claimName: nfs-training-pvc
+      - name: dshm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 16Gi

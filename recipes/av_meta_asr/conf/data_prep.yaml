@@ -1,0 +1,56 @@
+# =============================================================================
+# Data Preparation Configuration for AV-Meta-ASR
+# =============================================================================
+# Paths and parameters for the SpeakerVid-5M data pipeline.
+# Used by run_data_prep.sh to orchestrate all stages.
+# =============================================================================
+
+# --- Base paths ---
+base_dir: /mnt/nfs/data/speakervid_5m
+annotations_dir: ${base_dir}/annotations
+videos_dir: ${base_dir}/videos
+clips_dir: ${base_dir}/clips
+audio_dir: ${base_dir}/audio
+features_dir: ${base_dir}/siglip_features
+manifests_dir: ${base_dir}/manifests
+metadata_dir: ${base_dir}/metadata
+
+# --- HuggingFace dataset ---
+hf_dataset: dorni/SpeakerVid-5M-Dataset
+
+# --- Download settings ---
+download:
+  workers: 16
+  video_format: "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4/best"
+  video_timeout: 300
+
+# --- Clip extraction ---
+clips:
+  workers: 8
+  min_duration: 0.5
+  max_duration: 20.0
+
+# --- Audio extraction ---
+audio:
+  workers: 16
+  sample_rate: 16000
+
+# --- SigLIP feature extraction ---
+features:
+  model_name: "google/siglip2-so400m-patch14-384"
+  fps: 5
+  batch_size: 16
+  cls_only: false  # Set true to skip patch tokens (saves disk)
+
+# --- Annotation parsing ---
+parse:
+  workers: 8
+
+# --- Manifest building ---
+manifest:
+  min_duration: 0.5
+  max_duration: 20.0
+  min_asr_confidence: 0.3
+  train_ratio: 0.8
+  val_ratio: 0.1
+  seed: 42

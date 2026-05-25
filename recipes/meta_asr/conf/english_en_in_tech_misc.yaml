@@ -14,11 +14,14 @@ model:
   - AGE_
   - ROLE_
   - KEYWORD_
-  - SPEAKER_CHANGE
   character_coverage: 1.0
   language_families:
   - ENGLISH
-  tokenizer_langs: {}
+  tokenizer_langs:
+    ENGLISH:
+      type: bpe
+      dir: /mnt/nfs/experiments/en-meta-v2-400k/2026-05-13_00-47-34/checkpoints/en_meta_tokenizer_4k
+      vocab_size: 4096
   shared_special_tokens: []
   aggregate_vocabulary: []
   tokenizer_langs_path: tokenizer_langs.yaml
@@ -30,17 +33,19 @@ training:
   data_dir: /mnt/nfs/data/en_in_tech_interviews/
   train_manifest: train_misc.json
   test_manifest: valid_misc.json
-  batch_size: 8
-  accumulate_grad_batches: 16
-  max_duration: 10.0
-  max_steps: 50000
+  batch_size: 16
+  accumulate_grad_batches: 8
+  max_duration: 20.0
+  max_steps: 20000
   use_mixed_precision: true
   num_workers: 2
   pin_memory: true
   skip_audio_validation: true
   keyphrase_oversample_factor: 0.0
   use_tag_classifier: true
-  tag_classifier_weight: 0.5
+  tag_classifier_weight: 5.0
+  tag_classifier_hidden_dim: 256
+  tag_classifier_dropout: 0.3
   tag_categories:
     - AGE
     - GENDER
@@ -52,10 +57,10 @@ training:
     time_masks: 4
     time_width: 80
   optim:
-    lr: 0.5
+    lr: 0.1
     weight_decay: 0.0
     sched:
-      warmup_steps: 2000
+      warmup_steps: 500
   devices: [0]
 
 experiment:
@@ -66,3 +71,5 @@ experiment:
   always_save_nemo: true
   save_top_k: 3
   every_n_train_steps: 500
+  resume_if_exists: true
+  resume_past_end: false

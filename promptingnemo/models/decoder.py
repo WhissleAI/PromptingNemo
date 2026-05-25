@@ -31,12 +31,13 @@ def scan_manifest_for_new_tokens(
     explosion from rare annotation noise.
     """
     tag_pattern = re.compile(r'^[A-Z][A-Z0-9_]*_[A-Z0-9_<>+.]*$|^END$')
+    normalized_vocab = current_vocab | {tok.lstrip('▁') for tok in current_vocab}
     counts: Dict[str, int] = {}
     with open(manifest_path, encoding='utf-8') as f:
         for line in f:
             entry = json.loads(line)
             for word in entry.get('text', '').split():
-                if tag_pattern.match(word) and word not in current_vocab:
+                if tag_pattern.match(word) and word not in normalized_vocab:
                     counts[word] = counts.get(word, 0) + 1
 
     found = []

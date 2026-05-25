@@ -125,28 +125,52 @@ def build_trailing_tag_maps(vocabulary, categories=None):
 
 
 class TrailingTagClassifier(nn.Module):
-    """Multi-head classifier for sentence-level trailing tags.
+    """Multi-head classifier for sentence-level tags with attention pooling.
 
-    Receives the *pooled* encoder representation [B, D] (one vector per
-    utterance) and produces per-category logits.
+    Uses self-attention to pool encoder frames (learns which frames matter),
+    then a shared 2-layer MLP before per-category classification heads.
     """
 
-    def __init__(self, encoder_dim, category_sizes):
+    def __init__(self, encoder_dim, category_sizes, hidden_dim=256, dropout=0.3):
         super().__init__()
         self.category_names = sorted(category_sizes.keys())
+
+        self.attention = nn.Sequential(
+            nn.Linear(encoder_dim, 128),
+            nn.Tanh(),
+            nn.Linear(128, 1),
+        )
+
+        self.feature_extractor = nn.Sequential(
+            nn.Linear(encoder_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+        )
+
         self.heads = nn.ModuleDict({
-            cat: nn.Linear(encoder_dim, n_classes)
+            cat: nn.Linear(hidden_dim, n_classes)
             for cat, n_classes in sorted(category_sizes.items())
         })
 
-    def forward(self, pooled_encoder_output):
+    def forward(self, encoder_output, encoded_len):
         """
         Args:
-            pooled_encoder_output: [B, D] mean-pooled encoder representation
+            encoder_output: [B, T, D] encoder output (time-major)
+            encoded_len: [B] valid frame counts
         Returns:
             dict of category_name -> [B, num_classes] logits
         """
-        return {cat: head(pooled_encoder_output) for cat, head in self.heads.items()}
+        attn_scores = self.attention(encoder_output).squeeze(-1)
+        mask = torch.arange(encoder_output.size(1), device=encoder_output.device).unsqueeze(0) < encoded_len.unsqueeze(1)
+        attn_scores = attn_scores.masked_fill(~mask, float('-inf'))
+        attn_weights = F.softmax(attn_scores, dim=1).unsqueeze(-1)
+        pooled = (encoder_output * attn_weights).sum(dim=1)
+
+        features = self.feature_extractor(pooled)
+        return {cat: head(features) for cat, head in self.heads.items()}
 
 
 def strip_trailing_tags_and_get_labels(transcript, transcript_len, trailing_tag_ids,

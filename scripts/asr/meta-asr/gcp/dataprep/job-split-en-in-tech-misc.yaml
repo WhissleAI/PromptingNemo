@@ -1,0 +1,89 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: split-en-in-tech-misc
+  namespace: dataprep
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 43200
+  template:
+    metadata:
+      labels:
+        app: dataprep
+        dataset: split-en-in-tech-misc
+    spec:
+      restartPolicy: OnFailure
+      nodeSelector:
+        cloud.google.com/gke-nodepool: dataprep-pool
+      containers:
+        - name: splitter
+          image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:latest
+          command: ["bash", "-c"]
+          args:
+            - |
+              set -e
+              DATA=/mnt/nfs/data/en_in_tech_interviews
+              SCRIPT=/mnt/nfs/code/PromptingNemo/scripts/asr/meta-asr/utils/split_multi_speaker.py
+
+              pip install --quiet google-generativeai 2>&1 | tail -1
+
+              echo "=== Step 1: Split train manifest ==="
+              python $SCRIPT \
+                --input $DATA/train_misc.json \
+                --output $DATA/train_misc_split.json \
+                --batch-size 20 \
+                --workers 10
+
+              echo "=== Step 2: Split valid manifest ==="
+              python $SCRIPT \
+                --input $DATA/valid_misc.json \
+                --output $DATA/valid_misc_split.json \
+                --batch-size 20 \
+                --workers 10
+
+              echo "=== Step 3: Verify ==="
+              echo "train_misc_split: $(wc -l < $DATA/train_misc_split.json) lines (was $(wc -l < $DATA/train_misc.json))"
+              echo "valid_misc_split: $(wc -l < $DATA/valid_misc_split.json) lines (was $(wc -l < $DATA/valid_misc.json))"
+
+              echo "=== Sample split output ==="
+              head -3 $DATA/train_misc_split.json | python -c "
+              import json, sys
+              for line in sys.stdin:
+                  d = json.loads(line)
+                  print('TEXT:', d['text'][-150:])
+                  print('ROLE:', d.get('speaker_role'), ' BEHAVIOR:', d.get('misc_behavior'), ' EVAL:', d.get('misc_eval'))
+                  print('OFFSET:', d.get('offset', 0), ' DURATION:', d.get('duration'))
+                  print('---')
+              "
+
+              # Rename split files to be the training files
+              mv $DATA/train_misc.json $DATA/train_misc_presplit.json
+              mv $DATA/valid_misc.json $DATA/valid_misc_presplit.json
+              mv $DATA/train_misc_split.json $DATA/train_misc.json
+              mv $DATA/valid_misc_split.json $DATA/valid_misc.json
+
+              echo "=== Final training files ==="
+              echo "train_misc.json: $(wc -l < $DATA/train_misc.json) lines"
+              echo "valid_misc.json: $(wc -l < $DATA/valid_misc.json) lines"
+
+              echo "=== Speaker Split Complete ==="
+          env:
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: gemini-key
+                  key: key
+          resources:
+            requests:
+              cpu: "4"
+              memory: 8Gi
+            limits:
+              cpu: "8"
+              memory: 16Gi
+          volumeMounts:
+            - name: nfs
+              mountPath: /mnt/nfs
+      volumes:
+        - name: nfs
+          persistentVolumeClaim:
+            claimName: nfs-training-pvc
