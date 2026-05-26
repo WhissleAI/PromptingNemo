@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: av-meta-download-videos-3k
+  name: av-meta-download-videos-100k
   namespace: dataprep
 spec:
   backoffLimit: 3
@@ -20,23 +20,23 @@ spec:
 
           cd /mnt/nfs/code/PromptingNemo/recipes/av_meta_asr
 
-          echo "=== Downloading YouTube videos (3K videos ≈ ~150-200K clips) ==="
+          echo "=== Downloading YouTube videos (100K limit) ==="
           python3 -u local/download_videos.py \
             --annotations-dir /mnt/nfs/data/speakervid_5m/annotations \
             --output-dir /mnt/nfs/data/speakervid_5m/videos \
             --workers 16 \
-            --limit 3000
+            --limit 100000
 
           echo "=== Video download complete ==="
           echo "Videos downloaded:" && ls /mnt/nfs/data/speakervid_5m/videos/*.mp4 2>/dev/null | wc -l
           du -sh /mnt/nfs/data/speakervid_5m/videos/
         resources:
           requests:
-            cpu: "2"
-            memory: "4Gi"
+            cpu: "16"
+            memory: "16Gi"
           limits:
-            cpu: "4"
-            memory: "8Gi"
+            cpu: "32"
+            memory: "32Gi"
         volumeMounts:
         - name: nfs-volume
           mountPath: /mnt/nfs

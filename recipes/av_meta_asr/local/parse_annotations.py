@@ -126,11 +126,6 @@ def parse_args():
     parser.add_argument("--output", type=str, required=True)
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--limit", type=int, default=0)
-    parser.add_argument(
-        "--clips-dir", type=str, default=None,
-        help="If set, derive clip names from files in this directory instead of "
-             "globbing merged_anno/ (avoids NFS hang on million-file directories)",
-    )
     return parser.parse_args()
 
 
@@ -339,13 +334,7 @@ def main():
         logger.error("Neither merged_anno/ nor merge_anno/ found in %s", annotations_dir)
         return
 
-    if args.clips_dir:
-        clips_path = Path(args.clips_dir)
-        clip_names = sorted([f.stem for f in clips_path.iterdir() if f.suffix in (".mp4", ".wav")])
-        logger.info("Deriving clip names from %s (%d files)", args.clips_dir, len(clip_names))
-    else:
-        logger.info("Globbing %s for clip names (may be slow on NFS)...", merge_dir)
-        clip_names = sorted([f.stem for f in merge_dir.glob("*.json")])
+    clip_names = sorted([f.stem for f in merge_dir.glob("*.json")])
     if args.limit > 0:
         clip_names = clip_names[:args.limit]
 
@@ -365,7 +354,7 @@ def main():
                 result = future.result()
                 completed += 1
 
-                if result is not None:
+                if result is not None and result.get("transcript"):
                     fout.write(json.dumps(result, ensure_ascii=False) + "\n")
                     written += 1
 

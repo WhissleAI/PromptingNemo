@@ -57,8 +57,6 @@ def parse_args():
     parser.add_argument("--min-duration", type=float, default=0.5)
     parser.add_argument("--max-duration", type=float, default=20.0)
     parser.add_argument("--min-asr-confidence", type=float, default=0.3)
-    parser.add_argument("--no-transcript-filter", action="store_true",
-                        help="Allow entries without ASR transcript (visual tags only)")
     parser.add_argument("--train-ratio", type=float, default=0.8)
     parser.add_argument("--val-ratio", type=float, default=0.1)
     parser.add_argument("--seed", type=int, default=42)
@@ -73,12 +71,15 @@ def build_tagged_text(entry: dict) -> str:
         "hello <LAUGH> world <NOD> how are you VISUAL_TALKING VISUAL_FACING_FRONT SCENE_INDOOR NOISE_CLEAN"
     """
     transcript = entry.get("transcript", "").strip()
+    if not transcript:
+        return ""
 
-    # Insert inline event tokens after transcript text
+    # Insert inline event tokens at the end of transcript (before trailing tags)
+    # Since we don't have precise timestamps for inline events from MLLM captions,
+    # we append them right after the transcript text
     inline_events = entry.get("inline_events", [])
     if inline_events:
-        event_str = " ".join(inline_events)
-        transcript = f"{transcript} {event_str}" if transcript else event_str
+        transcript = transcript + " " + " ".join(inline_events)
 
     # Append trailing metadata tags
     trailing_tags = []
@@ -88,10 +89,9 @@ def build_tagged_text(entry: dict) -> str:
             trailing_tags.append(val)
 
     if trailing_tags:
-        tag_str = " ".join(trailing_tags)
-        transcript = f"{transcript} {tag_str}" if transcript else tag_str
+        transcript = transcript + " " + " ".join(trailing_tags)
 
-    return transcript.strip()
+    return transcript
 
 
 def build_manifest_entry(entry: dict, audio_dir: Path, clips_dir: Path,
@@ -198,18 +198,17 @@ def main():
         confidence = entry.get("asr_confidence", 0)
         transcript = entry.get("transcript", "")
 
-        if not args.no_transcript_filter:
-            if not transcript.strip():
-                filter_stats["empty_transcript"] += 1
-                continue
-            if confidence < args.min_asr_confidence:
-                filter_stats["low_confidence"] += 1
-                continue
+        if not transcript.strip():
+            filter_stats["empty_transcript"] += 1
+            continue
         if duration < args.min_duration:
             filter_stats["too_short"] += 1
             continue
         if duration > args.max_duration:
             filter_stats["too_long"] += 1
+            continue
+        if confidence < args.min_asr_confidence:
+            filter_stats["low_confidence"] += 1
             continue
         filtered.append(entry)
 

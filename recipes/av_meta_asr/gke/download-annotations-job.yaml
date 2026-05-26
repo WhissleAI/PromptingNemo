@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: av-meta-download-annotations-v2
+  name: av-meta-download-annotations
   namespace: dataprep
 spec:
   backoffLimit: 3
@@ -19,15 +19,15 @@ spec:
 
           cd /mnt/nfs/code/PromptingNemo/recipes/av_meta_asr
 
-          echo "=== Downloading SpeakerVid-5M annotations (~6GB without l_score) ==="
+          echo "=== Downloading SpeakerVid-5M annotations (~59GB) ==="
           python3 -u local/download_annotations.py \
             --output-dir /mnt/nfs/data/speakervid_5m/annotations
 
           echo "=== Verifying downloads ==="
-          for d in merged_anno raw_labels/asr raw_labels/anno raw_labels/scene_json raw_labels/speaker_json; do
-            count=$(find /mnt/nfs/data/speakervid_5m/annotations/$d -name "*.json" 2>/dev/null | wc -l)
-            echo "$d: $count JSON files"
-          done
+          echo "merge_anno files:" && ls /mnt/nfs/data/speakervid_5m/annotations/merge_anno/ 2>/dev/null | wc -l
+          echo "asr files:" && ls /mnt/nfs/data/speakervid_5m/annotations/asr/ 2>/dev/null | wc -l
+          echo "anno files:" && ls /mnt/nfs/data/speakervid_5m/annotations/anno/ 2>/dev/null | wc -l
+          echo "l_score files:" && ls /mnt/nfs/data/speakervid_5m/annotations/l_score/ 2>/dev/null | wc -l
           du -sh /mnt/nfs/data/speakervid_5m/annotations/
 
           echo "=== Annotation download complete ==="

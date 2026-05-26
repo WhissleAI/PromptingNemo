@@ -1,0 +1,64 @@
+hydra:
+  run:
+    dir: ${ckpts.save_dir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+datasets:
+  name: /mnt/nfs/data/meta_tts_test
+  batch_size_per_gpu: 9600
+  batch_size_type: frame
+  max_samples: 32
+  num_workers: 4
+
+optim:
+  epochs: 2
+  learning_rate: 1.0e-5
+  num_warmup_updates: 50
+  grad_accumulation_steps: 1
+  max_grad_norm: 1.0
+  bnb_optimizer: false
+
+model:
+  name: MetaTTS_test
+  tokenizer: custom
+  tokenizer_path: /mnt/nfs/data/meta_tts_test/vocab.txt
+  backbone: DiT
+  arch:
+    dim: 1024
+    depth: 22
+    heads: 16
+    ff_mult: 2
+    text_dim: 512
+    text_mask_padding: true
+    qk_norm: null
+    conv_layers: 4
+    pe_attn_head: null
+    attn_backend: torch
+    attn_mask_enabled: false
+    checkpoint_activations: true
+  mel_spec:
+    target_sample_rate: 24000
+    n_mel_channels: 100
+    hop_length: 256
+    win_length: 1024
+    n_fft: 1024
+    mel_spec_type: vocos
+  vocoder:
+    is_local: false
+    local_path: null
+
+ckpts:
+  logger: wandb
+  wandb_project: Meta-TTS-Test
+  wandb_run_name: ${model.name}_test
+  wandb_resume_id: null
+  log_samples: false
+  save_per_updates: 500
+  keep_last_n_checkpoints: 2
+  last_per_updates: 200
+  save_dir: /mnt/nfs/experiments/meta-tts-test
+
+meta_tts:
+  pretrained_ckpt: null
+  use_ema: false
+  freeze_vocoder: true
+  tag_tokens_in_text: true

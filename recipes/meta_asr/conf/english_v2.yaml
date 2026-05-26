@@ -25,7 +25,7 @@ training:
   lang_field: lang
   data_dir: /mnt/nfs/data/english_v1/
   train_manifest: train_dualhead.json
-  test_manifest: valid_dualhead.json
+  test_manifest: valid_dualhead_10k.json
   batch_size: 32
   accumulate_grad_batches: 4
   max_duration: 16.0
@@ -37,6 +37,7 @@ training:
   keyphrase_oversample_factor: 0.0
   use_tag_classifier: true
   tag_classifier_weight: 0.5
+  tag_class_weights: auto
   tag_categories:
     - AGE
     - GENDER

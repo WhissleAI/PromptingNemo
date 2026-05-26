@@ -339,6 +339,14 @@ def distill_model(cfg, ckpt_path=None):
             special_token_prefixes=special_prefixes,
         )
 
+    # --- Entity-aware CTC weighting ---
+    entity_weight = cfg.training.get('entity_sample_weight', 0.0)
+    if entity_weight > 1.0:
+        student.setup_entity_weighting(
+            vocabulary=list(student.decoder.vocabulary),
+            weight=entity_weight,
+        )
+
     # --- Setup tokenizer config on student ---
     tokenizer_entry = {'type': 'agg', 'langs': tokenizer_langs}
     if shared_special_tokens:
@@ -509,7 +517,21 @@ def distill_model(cfg, ckpt_path=None):
             logger.log_hyperparams = lambda *a, **kw: None
 
     logging.info("Starting distillation training...")
-    trainer.fit(student, ckpt_path=ckpt_path)
+    if ckpt_path:
+        ckpt = torch.load(ckpt_path, map_location='cpu', weights_only=False)
+        result = student.load_state_dict(ckpt.get('state_dict', {}), strict=False)
+        logging.info(
+            "Loaded weights from resume checkpoint %s (strict=False). "
+            "Missing keys: %d, Unexpected keys: %d",
+            os.path.basename(ckpt_path),
+            len(result.missing_keys), len(result.unexpected_keys),
+        )
+        if result.missing_keys:
+            logging.info("Missing keys (new params, will train from scratch): %s", result.missing_keys[:20])
+        del ckpt
+        trainer.fit(student)
+    else:
+        trainer.fit(student)
     logging.info("Distillation training complete.")
 
 

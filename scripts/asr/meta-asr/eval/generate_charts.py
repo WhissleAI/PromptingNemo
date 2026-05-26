@@ -26,20 +26,17 @@ GRID_COLOR = '#2a2a4e'
 WHISSLE_RED = '#e63946'
 DEEPGRAM_GREEN = '#2ec4b6'
 GEMINI_BLUE = '#457b9d'
-SARVAM_ORANGE = '#f4845f'
 
 SYSTEM_COLORS = {
     'whissle': WHISSLE_RED,
     'deepgram': DEEPGRAM_GREEN,
     'gemini': GEMINI_BLUE,
-    'sarvam': SARVAM_ORANGE,
 }
 
 SYSTEM_LABELS = {
     'whissle': 'Whissle v18',
     'deepgram': 'Deepgram Nova-2',
     'gemini': 'Gemini 2.5 Flash',
-    'sarvam': 'Sarvam Saaras v3',
 }
 
 
@@ -61,26 +58,21 @@ def setup_style():
 
 def chart_wer_comparison(summary, output_dir):
     """Grouped bar chart: WER by system, grouped by test set."""
-    fig, ax = plt.subplots(figsize=(12, 6))
+    fig, ax = plt.subplots(figsize=(10, 6))
 
     test_sets = list(summary.keys())
-    all_systems = ['whissle', 'deepgram', 'gemini', 'sarvam']
-    systems = [s for s in all_systems if any(s in summary[ts] for ts in test_sets)]
+    systems = ['whissle', 'deepgram', 'gemini']
     n_sets = len(test_sets)
     n_sys = len(systems)
-    bar_width = 0.8 / n_sys
+    bar_width = 0.22
     x = np.arange(n_sets)
-    offset_start = -(n_sys - 1) / 2 * bar_width
 
     for i, sys_key in enumerate(systems):
         wers = []
         for ts in test_sets:
-            if sys_key in summary[ts]:
-                wers.append(summary[ts][sys_key]['wer'] * 100)
-            else:
-                wers.append(0)
+            wers.append(summary[ts][sys_key]['wer'] * 100)
         bars = ax.bar(
-            x + offset_start + i * bar_width,
+            x + i * bar_width - bar_width,
             wers,
             bar_width,
             label=SYSTEM_LABELS[sys_key],
@@ -89,15 +81,14 @@ def chart_wer_comparison(summary, output_dir):
             zorder=3,
         )
         for bar, val in zip(bars, wers):
-            if val > 0:
-                ax.text(
-                    bar.get_x() + bar.get_width() / 2,
-                    bar.get_height() + 0.5,
-                    f'{val:.1f}%',
-                    ha='center', va='bottom',
-                    fontsize=9, fontweight='bold',
-                    color=SYSTEM_COLORS[sys_key],
-                )
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                bar.get_height() + 0.5,
+                f'{val:.1f}%',
+                ha='center', va='bottom',
+                fontsize=10, fontweight='bold',
+                color=SYSTEM_COLORS[sys_key],
+            )
 
     test_labels = {
         'in_house': 'In-House (5K)',
@@ -138,7 +129,7 @@ def chart_tag_accuracy(summary, output_dir):
     bars1 = ax.bar(x - bar_width / 2, accuracies, bar_width, label='Accuracy',
                    color=WHISSLE_RED, edgecolor='none', zorder=3)
     bars2 = ax.bar(x + bar_width / 2, macro_f1s, bar_width, label='Macro F1',
-                   color='#a8dadc', edgecolor='none', zorder=3)
+                   color='#f4845f', edgecolor='none', zorder=3)
 
     for bar, val in zip(bars1, accuracies):
         ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.8,
@@ -147,7 +138,7 @@ def chart_tag_accuracy(summary, output_dir):
     for bar, val in zip(bars2, macro_f1s):
         ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.8,
                 f'{val:.1f}%', ha='center', va='bottom', fontsize=10, fontweight='bold',
-                color='#a8dadc')
+                color='#f4845f')
 
     ax.set_xticks(x)
     ax.set_xticklabels(categories, fontsize=13)
@@ -167,27 +158,21 @@ def chart_tag_accuracy(summary, output_dir):
 
 def chart_latency(summary, output_dir):
     """Bar chart: average latency per sample per system."""
-    fig, ax = plt.subplots(figsize=(12, 6))
+    fig, ax = plt.subplots(figsize=(10, 6))
 
-    all_systems = ['whissle', 'deepgram', 'gemini', 'sarvam']
+    systems = ['whissle', 'deepgram', 'gemini']
     test_sets = list(summary.keys())
-    systems = [s for s in all_systems if any(s in summary[ts] for ts in test_sets)]
-    n_sys = len(systems)
-    bar_width = 0.8 / n_sys
 
     x = np.arange(len(test_sets))
-    offset_start = -(n_sys - 1) / 2 * bar_width
+    bar_width = 0.22
 
     for i, sys_key in enumerate(systems):
         latencies = []
         for ts in test_sets:
-            if sys_key in summary[ts]:
-                latencies.append(summary[ts][sys_key]['avg_latency_sec'])
-            else:
-                latencies.append(0)
+            latencies.append(summary[ts][sys_key]['avg_latency_sec'])
 
         bars = ax.bar(
-            x + offset_start + i * bar_width,
+            x + i * bar_width - bar_width,
             latencies,
             bar_width,
             label=SYSTEM_LABELS[sys_key],

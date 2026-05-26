@@ -120,6 +120,20 @@ class DistillCTCModel(CustomEncDecCTCModelBPE):
             len(category_sizes), list(category_sizes.keys()), total_cls_params, weight,
         )
 
+    def setup_entity_weighting(self, vocabulary, weight=2.0):
+        """Set up per-sample CTC loss upweighting for entity-containing utterances."""
+        self._entity_token_ids = set()
+        for idx, token in enumerate(vocabulary):
+            clean = token.lstrip('▁')
+            if clean.startswith('ENTITY_') or clean == 'END':
+                self._entity_token_ids.add(idx)
+        self._entity_sample_weight = weight
+        self.use_entity_weighting = True
+        logging.info(
+            "Entity weighting enabled: %d entity token IDs, sample weight=%.1f",
+            len(self._entity_token_ids), weight,
+        )
+
     def setup_distillation(self, teacher: CustomEncDecCTCModelBPE, distill_cfg):
         """Attach frozen teacher and configure distillation losses."""
         # Store teacher outside nn.Module system so its weights are excluded
@@ -346,13 +360,32 @@ class DistillCTCModel(CustomEncDecCTCModelBPE):
             input_signal=noisy_audio, input_signal_length=audio_signal_len
         )
 
-        # --- Loss 1: CTC on hard labels ---
-        ctc_loss = self.loss(
-            log_probs=student_log_probs, targets=ctc_transcript,
-            input_lengths=student_encoded_len, target_lengths=ctc_transcript_len,
-        )
-        if ctc_loss.dim() > 0:
-            ctc_loss = ctc_loss.mean()
+        # --- Loss 1: CTC on hard labels (with optional entity weighting) ---
+        if getattr(self, 'use_entity_weighting', False):
+            per_sample_ctc = F.ctc_loss(
+                student_log_probs.transpose(0, 1),
+                ctc_transcript,
+                student_encoded_len,
+                ctc_transcript_len,
+                blank=student_log_probs.size(-1) - 1,
+                reduction='none',
+                zero_infinity=True,
+            )
+            per_sample_ctc = per_sample_ctc / ctc_transcript_len.float().clamp(min=1)
+            entity_ids = self._entity_token_ids
+            weights = torch.ones(per_sample_ctc.size(0), device=per_sample_ctc.device)
+            for i in range(ctc_transcript.size(0)):
+                seq = ctc_transcript[i, :ctc_transcript_len[i]].tolist()
+                if any(t in entity_ids for t in seq):
+                    weights[i] = self._entity_sample_weight
+            ctc_loss = (per_sample_ctc * weights).sum() / weights.sum().clamp(min=1)
+        else:
+            ctc_loss = self.loss(
+                log_probs=student_log_probs, targets=ctc_transcript,
+                input_lengths=student_encoded_len, target_lengths=ctc_transcript_len,
+            )
+            if ctc_loss.dim() > 0:
+                ctc_loss = ctc_loss.mean()
 
         # --- Loss 2: KL divergence (logit-level KD) ---
         kd_loss = self._compute_kd_loss(
@@ -396,6 +429,8 @@ class DistillCTCModel(CustomEncDecCTCModelBPE):
         self.log('beta_kd', beta, on_step=True)
         if tag_loss.item() > 0:
             self.log('tag_cls_loss', tag_loss, on_step=True, prog_bar=True)
+        if getattr(self, 'use_entity_weighting', False):
+            self.log('entity_ctc_weight', float(weights.mean()), on_step=True)
         self.log('learning_rate', self._optimizer.param_groups[0]['lr'])
 
         self._student_hiddens.clear()

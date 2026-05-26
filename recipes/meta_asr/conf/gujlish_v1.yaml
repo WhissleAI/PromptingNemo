@@ -28,15 +28,13 @@ model:
   shared_special_tokens_path: shared_special_tokens.yaml
   aggregate_vocabulary_path: aggregate_vocab.txt
   language_family_map:
-    GUJARATI: INDO_ARYAN
     ENGLISH: ENGLISH
-    EN: ENGLISH
-
+    INDO_ARYAN: INDO_ARYAN
 training:
   lang_field: lang_family
   data_dir: /mnt/nfs/data/gujlish_v1/
-  train_manifest: train.json
-  test_manifest: valid.json
+  train_manifest: train.validated.json
+  test_manifest: valid.validated.json
   batch_size: 16
   accumulate_grad_batches: 8
   max_duration: 16.0
@@ -55,8 +53,8 @@ training:
     weight_decay: 0.0
     sched:
       warmup_steps: 3000
-  devices: [0]
-
+  devices:
+  - 0
 experiment:
   exp_dir: /mnt/nfs/experiments/
   exp_name: gujlish-meta-1b-v1

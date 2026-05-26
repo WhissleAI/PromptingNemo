@@ -19,7 +19,7 @@ from pathlib import Path
 import yaml
 import torch
 from omegaconf import OmegaConf, open_dict
-import lightning.pytorch as pl
+import pytorch_lightning as pl
 from nemo.utils.callbacks import NeMoModelCheckpoint
 from nemo.collections.asr.models import ASRModel
 from nemo.collections.common.parts.adapter_modules import LinearAdapterConfig
