@@ -125,27 +125,19 @@ def build_trailing_tag_maps(vocabulary, categories=None):
 
 
 class TrailingTagClassifier(nn.Module):
-    """Multi-head classifier for sentence-level tags with attention pooling.
-
-    Uses self-attention to pool encoder frames (learns which frames matter),
-    then a shared 2-layer MLP before per-category classification heads.
-    """
+    """Multi-head classifier for sentence-level tags with mean pooling."""
 
     def __init__(self, encoder_dim, category_sizes, hidden_dim=256, dropout=0.3):
         super().__init__()
         self.category_names = sorted(category_sizes.keys())
 
-        self.attention = nn.Sequential(
-            nn.Linear(encoder_dim, 128),
-            nn.Tanh(),
-            nn.Linear(128, 1),
-        )
-
         self.feature_extractor = nn.Sequential(
             nn.Linear(encoder_dim, hidden_dim),
+            nn.LayerNorm(hidden_dim),
             nn.ReLU(),
             nn.Dropout(dropout),
             nn.Linear(hidden_dim, hidden_dim),
+            nn.LayerNorm(hidden_dim),
             nn.ReLU(),
             nn.Dropout(dropout),
         )
@@ -156,19 +148,9 @@ class TrailingTagClassifier(nn.Module):
         })
 
     def forward(self, encoder_output, encoded_len):
-        """
-        Args:
-            encoder_output: [B, T, D] encoder output (time-major)
-            encoded_len: [B] valid frame counts
-        Returns:
-            dict of category_name -> [B, num_classes] logits
-        """
-        attn_scores = self.attention(encoder_output).squeeze(-1)
-        mask = torch.arange(encoder_output.size(1), device=encoder_output.device).unsqueeze(0) < encoded_len.unsqueeze(1)
-        attn_scores = attn_scores.masked_fill(~mask, float('-inf'))
-        attn_weights = F.softmax(attn_scores, dim=1).unsqueeze(-1)
-        pooled = (encoder_output * attn_weights).sum(dim=1)
-
+        mask = torch.arange(encoder_output.size(1), device=encoder_output.device) < encoded_len.unsqueeze(1)
+        mask_f = mask.unsqueeze(-1).float()
+        pooled = (encoder_output * mask_f).sum(dim=1) / mask_f.sum(dim=1).clamp(min=1.0)
         features = self.feature_extractor(pooled)
         return {cat: head(features) for cat, head in self.heads.items()}
 
@@ -245,29 +227,21 @@ def masked_mean_pool(encoder_output, encoded_len, input_format='BDT'):
 
 
 def compute_tag_classification_loss(tag_logits, tag_labels, class_weights=None):
-    """Compute cross-entropy loss for trailing tags from pooled predictions.
-
-    Args:
-        tag_logits: dict of category_name -> [B, num_classes] logits
-        tag_labels: [B, num_categories] ground truth labels
-        class_weights: optional dict of category_name -> [num_classes] weight tensor
-
-    Returns:
-        scalar loss averaged across categories
-    """
-    if not tag_logits:
-        return torch.tensor(0.0, requires_grad=True)
-
-    total_loss = torch.tensor(0.0, device=next(iter(tag_logits.values())).device)
-    cat_names = sorted(tag_logits.keys())
-
+    import torch
+    import torch.nn.functional as F
+    cat_names = list(tag_logits.keys())
+    total_loss = 0
     for cat_idx, cat_name in enumerate(cat_names):
         logits = tag_logits[cat_name]
         labels = tag_labels[:, cat_idx]
         w = class_weights.get(cat_name) if class_weights else None
         if w is not None:
-            w = w.to(logits.device)
-        loss = F.cross_entropy(logits, labels, weight=w)
-        total_loss = total_loss + loss
-
+            w = w.to(logits.device).float()
+        loss = F.cross_entropy(logits.float(), labels, weight=w, ignore_index=-1)
+        if torch.isfinite(loss):
+            total_loss = total_loss + loss
+    if isinstance(total_loss, int):
+        device = next(iter(tag_logits.values())).device
+        return torch.zeros(1, device=device, dtype=torch.float32, requires_grad=True).squeeze()
     return total_loss / max(len(cat_names), 1)
+

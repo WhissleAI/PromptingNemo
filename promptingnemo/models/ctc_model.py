@@ -193,13 +193,16 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
 
         if getattr(self, 'use_tag_classifier', False) and tag_labels is not None:
             from scripts.asr.meta_asr.tag_classifier import compute_tag_classification_loss
-            enc = self._last_encoder_output.transpose(1, 2)  # BDT → BTD
-            tag_logits = self.tag_classifier(enc, encoded_len)
-            tag_loss = compute_tag_classification_loss(
-                tag_logits, tag_labels,
-                class_weights=getattr(self, '_tag_class_weights', None),
-            )
-            loss_value = loss_value + self.tag_classifier_weight * tag_loss
+            with torch.cuda.amp.autocast(enabled=False):
+                enc = self._last_encoder_output.float().transpose(1, 2)
+                tag_logits = self.tag_classifier(enc, encoded_len)
+                tag_loss = compute_tag_classification_loss(
+                    tag_logits, tag_labels,
+                    class_weights=getattr(self, '_tag_class_weights', None),
+                )
+            if torch.isfinite(tag_loss):
+                tag_loss = tag_loss.clamp(max=10.0)
+                loss_value = loss_value + self.tag_classifier_weight * tag_loss
             self.log('tag_cls_loss', tag_loss, on_step=True, prog_bar=True)
 
         self.log('train_loss', loss_value)
@@ -471,8 +474,8 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
             val_tag_labels = getattr(self, '_val_tag_labels', None)
             if val_tag_labels is not None:
                 batch_tag_labels = val_tag_labels[sample_ids]
-                with torch.no_grad():
-                    enc = self._last_encoder_output.transpose(1, 2)
+                with torch.no_grad(), torch.cuda.amp.autocast(enabled=False):
+                    enc = self._last_encoder_output.float().transpose(1, 2)
                     tag_logits = self.tag_classifier(enc, encoded_len)
                     from scripts.asr.meta_asr.tag_classifier import compute_tag_classification_loss
                     tag_loss = compute_tag_classification_loss(
@@ -485,8 +488,11 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                         if cat_name in tag_logits:
                             preds = tag_logits[cat_name].argmax(dim=-1)
                             labels = batch_tag_labels[:, cat_idx]
-                            correct = (preds == labels).sum().item()
-                            total = labels.size(0)
+                            valid_mask = labels >= 0
+                            preds_v = preds[valid_mask]
+                            labels_v = labels[valid_mask]
+                            correct = (preds_v == labels_v).sum().item()
+                            total = labels_v.size(0)
                             self._val_tag_correct[cat_name] += correct
                             self._val_tag_total[cat_name] += total
                             for c in range(tag_logits[cat_name].size(1)):

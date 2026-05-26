@@ -3,6 +3,7 @@
 import json
 import logging
 import os
+import sys
 from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List
@@ -393,6 +394,13 @@ def train_model(cfg, ckpt_path=None):
         if adapter_cfg.get('unfreeze_decoder', False):
             model.encoder.freeze()
             model.decoder.unfreeze()
+        elif adapter_cfg.get('unfreeze_encoder', False):
+            model.freeze()
+            model.encoder.unfreeze()
+            nemo_logging.info('Unfreezing encoder (unfreeze_encoder=True)')
+            trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
+            total = sum(p.numel() for p in model.parameters())
+            nemo_logging.info(f'After encoder unfreeze: {trainable:,} trainable / {total:,} total params')
         else:
             model.freeze()
 
@@ -503,7 +511,8 @@ def train_model(cfg, ckpt_path=None):
         class_weights = {}
         for j, cat in enumerate(tag_categories):
             labels_col = tag_labels[:num_samples, j]
-            counts = torch.bincount(labels_col, minlength=category_sizes[cat])
+            valid_mask = labels_col >= 0
+            counts = torch.bincount(labels_col[valid_mask], minlength=category_sizes[cat])
             total = counts.sum().float()
             n_classes = len(counts)
             weights = torch.zeros(n_classes)
@@ -613,13 +622,23 @@ def train_model(cfg, ckpt_path=None):
         pin_memory=cfg.training.pin_memory,
         )
 
-    logging.info("Manually creating and injecting audio augmentor for training.")
-    noise_perturb = WhiteNoisePerturbation(min_level=-40, max_level=-10)
-    shift_perturb = ShiftPerturbation(min_shift_ms=100.0, max_shift_ms=500.0)
-    augmentor = AudioAugmentor(perturbations=[
-        (0.7, noise_perturb),
-        (1.0, shift_perturb),
-    ])
+    aug_cfg = cfg.get('augmentation', {})
+    if aug_cfg and aug_cfg.get('enabled', False):
+        _meta_asr_dir = '/mnt/nfs/code/PromptingNemo/scripts/asr/meta-asr'
+        if _meta_asr_dir not in sys.path:
+            sys.path.insert(0, _meta_asr_dir)
+        from ambient_noise import build_augmentor_from_config
+        logging.info("Building augmentor from config: %d perturbation types",
+                      len(aug_cfg.get('perturbations', [])))
+        augmentor = build_augmentor_from_config(aug_cfg)
+    else:
+        logging.info("Using default audio augmentor (white noise + shift).")
+        noise_perturb = WhiteNoisePerturbation(min_level=-90, max_level=-46)
+        shift_perturb = ShiftPerturbation(min_shift_ms=100.0, max_shift_ms=500.0)
+        augmentor = AudioAugmentor(perturbations=[
+            (1.0, noise_perturb),
+            (1.0, shift_perturb),
+        ])
 
     if hasattr(model, '_train_dl') and model._train_dl is not None:
         model._train_dl.dataset.augmentor = augmentor
