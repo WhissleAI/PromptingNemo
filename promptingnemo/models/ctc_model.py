@@ -64,7 +64,6 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                     num_classes=self.decoder._num_classes - 1, zero_infinity=True, reduction='mean_batch'
                 )
 
-            # Re-create loss with reduction='none' to get per-sample losses
             self.loss = CTCLoss(
                 num_classes=self.decoder._num_classes - 1,
                 zero_infinity=self.loss.ctc_loss.zero_infinity,
@@ -76,47 +75,16 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         logging.info(f"Set {len(self.keyword_token_ids)} keyword token IDs for custom loss.")
 
     def set_family_loss_weights(self, weights: Dict[str, float]):
-        """Stores the pre-computed language family weights."""
         if self.use_family_loss_weights:
             self.family_loss_weights = weights
             logging.info("Successfully set language family loss weights on the model.")
 
-    def setup_tag_classifier(self, encoder_dim, category_sizes, weight=0.5,
-                             hidden_dim=256, dropout=0.3):
-        from scripts.asr.meta_asr.tag_classifier import TrailingTagClassifier
-        self.use_tag_classifier = True
-        self.tag_classifier_weight = weight
-        self._tag_category_names = sorted(category_sizes.keys())
-
-        self.tag_classifier = TrailingTagClassifier(
-            encoder_dim, category_sizes, hidden_dim=hidden_dim, dropout=dropout,
-        )
-        self.tag_classifier.requires_grad_(True)
-
-        def _capture_encoder_output(module, input, output):
-            if isinstance(output, tuple):
-                self._last_encoder_output = output[0]
-            else:
-                self._last_encoder_output = output
-
-        self._encoder_hook = self.encoder.register_forward_hook(_capture_encoder_output)
-
-        total_cls_params = sum(p.numel() for p in self.tag_classifier.parameters())
-        logging.info(
-            "Tag classifier enabled: %d categories %s, %d params, weight=%.2f",
-            len(category_sizes), list(category_sizes.keys()), total_cls_params, weight,
-        )
-
     def training_step(self, batch, batch_idx):
         sample_ids = None
-        if len(batch) == 5:  # audio, audio_len, transcript, transcript_len, sample_id
+        if len(batch) == 5:
             audio_signal, audio_signal_len, transcript, transcript_len, sample_ids = batch
         else:
             audio_signal, audio_signal_len, transcript, transcript_len = batch
-
-        tag_labels = None
-        if getattr(self, 'use_tag_classifier', False) and sample_ids is not None:
-            tag_labels = self._tag_labels[sample_ids]
 
         log_probs, encoded_len, greedy_predictions = self.forward(
             input_signal=audio_signal, input_signal_length=audio_signal_len
@@ -126,10 +94,8 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
             log_probs=log_probs, targets=transcript, input_lengths=encoded_len, target_lengths=transcript_len
         )
 
-        # --- Language Family Weighted Loss ---
         if self.use_family_loss_weights:
             if sample_ids is not None and self.family_loss_weights:
-                # `loss_value` is unreduced here (per-sample)
                 dataset = self._train_dl.dataset
                 batch_weights_list = [
                     self.family_loss_weights.get(_family_name_for_lang(dataset.language_ids[idx.item()]), 1.0)
@@ -138,15 +104,11 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                 weights_tensor = torch.tensor(
                     batch_weights_list, device=loss_value.device, dtype=loss_value.dtype
                 )
-
-                # Apply weights and then compute the mean
                 loss_value = (loss_value * weights_tensor).mean()
                 self.log('family_weighted_loss', loss_value, on_step=True, on_epoch=False, prog_bar=True)
             else:
-                # Fallback: if weights or sample_ids are missing, just take the mean
                 loss_value = loss_value.mean()
 
-        # --- Keyword Loss (applied after family weighting) ---
         if self.use_keyword_loss and self.training and len(self.keyword_token_ids) > 0:
             current_step = self.trainer.global_step
             if self.keyword_loss_warmup_steps > 0 and current_step < self.keyword_loss_warmup_steps:
@@ -191,20 +153,6 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                         1 - current_keyword_loss_weight
                     ) * loss_value + current_keyword_loss_weight * keyword_loss
 
-        if getattr(self, 'use_tag_classifier', False) and tag_labels is not None:
-            from scripts.asr.meta_asr.tag_classifier import compute_tag_classification_loss
-            with torch.cuda.amp.autocast(enabled=False):
-                enc = self._last_encoder_output.float().transpose(1, 2)
-                tag_logits = self.tag_classifier(enc, encoded_len)
-                tag_loss = compute_tag_classification_loss(
-                    tag_logits, tag_labels,
-                    class_weights=getattr(self, '_tag_class_weights', None),
-                )
-            if torch.isfinite(tag_loss):
-                tag_loss = tag_loss.clamp(max=10.0)
-                loss_value = loss_value + self.tag_classifier_weight * tag_loss
-            self.log('tag_cls_loss', tag_loss, on_step=True, prog_bar=True)
-
         self.log('train_loss', loss_value)
         self.log('learning_rate', self._optimizer.param_groups[0]['lr'])
 
@@ -224,11 +172,6 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         super().on_validation_epoch_start()
         self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
         self._val_family_loss_stats = defaultdict(lambda: {'loss_sum': 0.0, 'count': 0})
-        if getattr(self, 'use_tag_classifier', False):
-            self._val_tag_correct = defaultdict(int)
-            self._val_tag_total = defaultdict(int)
-            self._val_tag_per_class_correct = defaultdict(lambda: defaultdict(int))
-            self._val_tag_per_class_total = defaultdict(lambda: defaultdict(int))
 
     def _accumulate_family_wer(self, sample_ids, log_probs, encoded_len, transcript, transcript_len):
         dataset = self._get_dataset_for_prefix('val')
@@ -365,19 +308,6 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         self._log_family_metrics('val')
         self._val_family_stats = defaultdict(lambda: {'errors': 0.0, 'words': 0})
         self._val_family_loss_stats = defaultdict(lambda: {'loss_sum': 0.0, 'count': 0})
-
-        if getattr(self, 'use_tag_classifier', False) and getattr(self, '_val_tag_total', None):
-            for cat_name in self._tag_category_names:
-                total = self._val_tag_total.get(cat_name, 0)
-                if total > 0:
-                    acc = self._val_tag_correct[cat_name] / total
-                    self.log(f'val_tag_acc_{cat_name}', acc, prog_bar=False)
-                    per_class = self._val_tag_per_class_total.get(cat_name, {})
-                    for c, c_total in sorted(per_class.items()):
-                        if c_total > 0:
-                            c_acc = self._val_tag_per_class_correct[cat_name][c] / c_total
-                            self.log(f'val_tag_acc_{cat_name}_c{c}', c_acc, prog_bar=False)
-
         return result
 
     def _decode_target_tokens(self, token_ids: List[int]) -> str:
@@ -390,17 +320,17 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
                 tokens = decoding.decode_ids_to_tokens(token_ids)
             if tokens is not None:
                 if tokens and isinstance(tokens[0], str):
-                    return ''.join(tokens).replace('\u2581', ' ').strip()
+                    return ''.join(tokens).replace('▁', ' ').strip()
                 if hasattr(decoding, 'decode_tokens_to_str'):
                     return decoding.decode_tokens_to_str(tokens)
-                return ''.join(tokens).replace('\u2581', ' ').strip()
+                return ''.join(tokens).replace('▁', ' ').strip()
         tokenizer = getattr(self, 'tokenizer', None)
         if tokenizer is not None:
             if hasattr(tokenizer, 'ids_to_text'):
                 return tokenizer.ids_to_text(token_ids)
             if hasattr(tokenizer, 'ids_to_tokens'):
                 tokens = tokenizer.ids_to_tokens(token_ids)
-                return ''.join(tokens).replace('\u2581', ' ').strip()
+                return ''.join(tokens).replace('▁', ' ').strip()
         return ' '.join(str(t) for t in token_ids)
 
     def validation_step(self, batch, batch_idx, dataloader_idx=0):
@@ -469,37 +399,6 @@ class CustomEncDecCTCModelBPE(EncDecCTCModelBPE):
         if sample_ids is not None:
             self._accumulate_family_wer(sample_ids, log_probs, encoded_len, transcript, transcript_len)
             self._accumulate_family_loss(sample_ids, log_probs, encoded_len, transcript, transcript_len)
-
-        if getattr(self, 'use_tag_classifier', False) and sample_ids is not None:
-            val_tag_labels = getattr(self, '_val_tag_labels', None)
-            if val_tag_labels is not None:
-                batch_tag_labels = val_tag_labels[sample_ids]
-                with torch.no_grad(), torch.cuda.amp.autocast(enabled=False):
-                    enc = self._last_encoder_output.float().transpose(1, 2)
-                    tag_logits = self.tag_classifier(enc, encoded_len)
-                    from scripts.asr.meta_asr.tag_classifier import compute_tag_classification_loss
-                    tag_loss = compute_tag_classification_loss(
-                        tag_logits, batch_tag_labels,
-                        class_weights=getattr(self, '_tag_class_weights', None),
-                    )
-                    metrics['val_tag_cls_loss'] = tag_loss
-                    self.log('val_tag_cls_loss', tag_loss, prog_bar=True)
-                    for cat_idx, cat_name in enumerate(self._tag_category_names):
-                        if cat_name in tag_logits:
-                            preds = tag_logits[cat_name].argmax(dim=-1)
-                            labels = batch_tag_labels[:, cat_idx]
-                            valid_mask = labels >= 0
-                            preds_v = preds[valid_mask]
-                            labels_v = labels[valid_mask]
-                            correct = (preds_v == labels_v).sum().item()
-                            total = labels_v.size(0)
-                            self._val_tag_correct[cat_name] += correct
-                            self._val_tag_total[cat_name] += total
-                            for c in range(tag_logits[cat_name].size(1)):
-                                mask = labels == c
-                                if mask.any():
-                                    self._val_tag_per_class_total[cat_name][c] += mask.sum().item()
-                                    self._val_tag_per_class_correct[cat_name][c] += (preds[mask] == c).sum().item()
 
         if isinstance(self.trainer.val_dataloaders, list) and len(self.trainer.val_dataloaders) > 1:
             self.validation_step_outputs[dataloader_idx].append(metrics)

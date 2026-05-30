@@ -56,7 +56,7 @@ The `--mode` flag controls which stages to run:
 - `train` -- train the model only (requires tokenizer to exist)
 - `validate_data` -- validate manifests without training
 
-For GCP spot instance training with automatic preemption recovery, see [`recipes/meta_asr/gcp/`](recipes/meta_asr/gcp/).
+See the [Training Guide](docs/training_guide.md) for multi-GPU and cloud training tips.
 
 ## Audio-Visual ASR (NEW)
 
@@ -100,7 +100,7 @@ transcriptions = model.transcribe(["file.wav"])
 | [`recipes/espnet_asr/`](recipes/espnet_asr/) | ESPnet-W integration for training meta-ASR with ESPnet's `egs2/` system. |
 | [`recipes/av_asr/`](recipes/av_asr/) | Audio-Visual ASR training with CLIP visual features for noisy speech recognition. |
 
-Additional training scripts and configs are in [`scripts/asr/meta-asr/`](scripts/asr/meta-asr/), including GCP spot instance tooling, evaluation scripts, and per-language YAML configs.
+Additional training scripts and data tools are in [`scripts/asr/meta-asr/`](scripts/asr/meta-asr/), including evaluation scripts, data download utilities, and per-language YAML configs.
 
 ## Tag Schema
 
