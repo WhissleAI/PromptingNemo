@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-pydantic
-openai==0.28.0
-sentence-transformers
-faiss-cpu
-pandas
-numpy
