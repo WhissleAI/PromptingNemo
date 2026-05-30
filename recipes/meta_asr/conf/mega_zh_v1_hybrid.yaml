@@ -77,7 +77,7 @@ training:
   - 0
 experiment:
   exp_dir: /mnt/nfs/experiments/
-  exp_name: mega-zh-v1-ctc-dualhead
+  exp_name: mega-zh-v1-hybrid
   monitor: val_wer
   mode: min
   always_save_nemo: true

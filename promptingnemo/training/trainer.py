@@ -132,6 +132,65 @@ def _restore_checkpoint_decoder(model, connector, ckpt_decoder_vocab):
     )
 
 
+
+class ValidationMetricsPrinter(pl.Callback):
+    """Print full validation metrics to stdout at each validation epoch end."""
+
+    INTENT_NAMES = {
+        0: 'GREETING', 1: 'IDENTITY_VERIFY', 2: 'PAYMENT_REMINDER',
+        3: 'PAYMENT_INSTRUCTION', 4: 'CLAIMS_PAID', 5: 'PROMISE_TO_PAY',
+        6: 'PAYMENT_QUERY', 7: 'AMOUNT_DISPUTE', 8: 'FINANCIAL_HARDSHIP',
+        9: 'COMPLAINT', 10: 'URGENCY_PRESSURE', 11: 'ACKNOWLEDGMENT', 12: 'OTHER',
+    }
+    EMOTION_NAMES = {0: 'NEUTRAL', 1: 'HAPPY', 2: 'SAD', 3: 'ANGRY', 4: 'FEAR'}
+    ROLE_NAMES = {0: 'OTHER', 1: 'AGENT', 2: 'CUSTOMER'}
+    AGE_NAMES = {0: 'CHILD', 1: 'ADULT', 2: 'SENIOR'}
+    GENDER_NAMES = {0: 'MALE', 1: 'FEMALE'}
+
+    CAT_CLASS_NAMES = {
+        'AGE': AGE_NAMES, 'GENDER': GENDER_NAMES, 'EMOTION': EMOTION_NAMES,
+        'INTENT': INTENT_NAMES, 'ROLE': ROLE_NAMES,
+    }
+
+    def on_validation_epoch_end(self, trainer, pl_module):
+        metrics = trainer.callback_metrics
+        step = trainer.global_step
+        lines = []
+        lines.append('')
+        lines.append('=' * 70)
+        lines.append(f'  VALIDATION METRICS @ step {step}')
+        lines.append('=' * 70)
+
+        val_wer = metrics.get('val_wer')
+        if val_wer is not None:
+            lines.append(f'  WER:           {float(val_wer)*100:.2f}%')
+        val_loss = metrics.get('val_loss')
+        if val_loss is not None:
+            lines.append(f'  Loss:          {float(val_loss):.4f}')
+        tag_loss = metrics.get('val_tag_cls_loss')
+        if tag_loss is not None:
+            lines.append(f'  Tag cls loss:  {float(tag_loss):.4f}')
+
+        for cat, names in [('AGE', self.AGE_NAMES), ('GENDER', self.GENDER_NAMES),
+                           ('EMOTION', self.EMOTION_NAMES), ('INTENT', self.INTENT_NAMES),
+                           ('ROLE', self.ROLE_NAMES)]:
+            acc_key = f'val_tag_acc_{cat}'
+            acc = metrics.get(acc_key)
+            if acc is not None:
+                lines.append(f'')
+                lines.append(f'  {cat} accuracy: {float(acc)*100:.1f}%')
+                for c in sorted(names.keys()):
+                    ck = f'val_tag_acc_{cat}_c{c}'
+                    cv = metrics.get(ck)
+                    if cv is not None:
+                        v = float(cv) * 100
+                        marker = ' ***' if v > 0 and v < 100 else ''
+                        lines.append(f'    {c} ({names[c]:20s}): {v:6.1f}%{marker}')
+
+        lines.append('=' * 70)
+        logging.info(chr(10).join(lines))
+
+
 def train_model(cfg, ckpt_path=None):
     lang_field = cfg.training.get('lang_field', 'lang')
     RobustAudioToBPEDataset.default_lang_field = lang_field
@@ -210,8 +269,28 @@ def train_model(cfg, ckpt_path=None):
     base_cfg = ASRModel.restore_from(restore_path=str(model_path), return_config=True)
 
     ckpt_decoder_vocab = list(base_cfg.decoder.vocabulary) if hasattr(base_cfg.decoder, 'vocabulary') else []
+    if not ckpt_decoder_vocab and hasattr(base_cfg, 'aux_ctc') and hasattr(base_cfg.aux_ctc, 'decoder') and hasattr(base_cfg.aux_ctc.decoder, 'vocabulary'):
+        ckpt_decoder_vocab = list(base_cfg.aux_ctc.decoder.vocabulary)
+        logging.info("Using aux_ctc decoder vocabulary for Hybrid model: %d tokens", len(ckpt_decoder_vocab))
     if ckpt_decoder_vocab:
         logging.info("Checkpoint decoder vocabulary: %d tokens", len(ckpt_decoder_vocab))
+
+    # For Hybrid RNN-T/CTC models, convert config to pure CTC
+    is_hybrid = hasattr(base_cfg, 'aux_ctc') and hasattr(base_cfg.aux_ctc, 'decoder')
+    if is_hybrid:
+        logging.info("Hybrid model detected: converting config to pure CTC (swapping decoder with aux_ctc.decoder)")
+        with open_dict(base_cfg):
+            base_cfg.decoder = base_cfg.aux_ctc.decoder.copy()
+            if hasattr(base_cfg, 'joint'):
+                del base_cfg.joint
+            if hasattr(base_cfg, 'aux_ctc'):
+                del base_cfg.aux_ctc
+            if hasattr(base_cfg, 'interctc'):
+                del base_cfg.interctc
+            for rk in ['prednet', 'random_state_sampling', 'blank_as_pad']:
+                if hasattr(base_cfg.decoder, rk):
+                    del base_cfg.decoder[rk]
+            base_cfg.decoder._target_ = 'nemo.collections.asr.modules.conv_asr.ConvASRDecoder'
 
     if use_tag_classifier and ckpt_decoder_vocab:
         import tarfile
@@ -239,6 +318,12 @@ def train_model(cfg, ckpt_path=None):
         base_cfg.use_keyword_loss = cfg.training.get('use_keyword_loss', False)
         base_cfg.keyword_loss_weight = cfg.training.get('keyword_loss_weight', 0.3)
         base_cfg.keyword_loss_warmup_steps = cfg.training.get('keyword_loss_warmup_steps', 0)
+
+        # Disable Lhotse dataloader (incompatible with tag classifier manifest_processor)
+        if hasattr(base_cfg.train_ds, 'use_lhotse'):
+            base_cfg.train_ds.use_lhotse = False
+        if hasattr(base_cfg.validation_ds, 'use_lhotse'):
+            base_cfg.validation_ds.use_lhotse = False
 
         base_cfg.train_ds.manifest_filepath = train_manifest
         base_cfg.train_ds.batch_size = cfg.training.batch_size
@@ -291,9 +376,11 @@ def train_model(cfg, ckpt_path=None):
                     lang_entry.dir = str(ckpt_tok_dir)
                     lang_entry.type = 'bpe'
             else:
+                # Use language from config instead of hardcoded ENGLISH
+                _lang_key = lang_list[0] if lang_list else 'ENGLISH'
                 base_cfg.tokenizer = OmegaConf.create({
                     'type': 'agg',
-                    'langs': {'ENGLISH': {'type': 'bpe', 'dir': str(ckpt_tok_dir)}},
+                    'langs': {_lang_key: {'type': 'bpe', 'dir': str(ckpt_tok_dir)}},
                 })
             base_cfg.decoder.num_classes = -1
             logging.info(
@@ -706,7 +793,7 @@ def train_model(cfg, ckpt_path=None):
     if accumulate_grad_batches and accumulate_grad_batches > 1:
         trainer_kwargs['accumulate_grad_batches'] = accumulate_grad_batches
 
-    trainer = pl.Trainer(**trainer_kwargs)
+    trainer = pl.Trainer(**trainer_kwargs, callbacks=[ValidationMetricsPrinter()])
     model.set_trainer(trainer)
 
     every_n_train_steps = cfg.experiment.get('every_n_train_steps', None)

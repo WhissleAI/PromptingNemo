@@ -42,3 +42,6 @@ segments/
 
 # Data artifacts
 pipeline_output/
+*.bak
+*.bak_*
+*.bak[0-9]*
