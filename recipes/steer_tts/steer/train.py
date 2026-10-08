@@ -92,8 +92,11 @@ def init_from(model, path, stats, dev):
             own[k] = v; copied += 1
         else:
             skipped.append(k)
+    fresh = [k for k in own if k not in src]
     model.load_state_dict(own)
-    print(f"init from {path}: {copied} tensors copied, skipped {skipped}", flush=True)
+    print(f"init from {path} (step {ck.get('step', '?')}): {copied} tensors copied, skipped {skipped}, "
+          f"{len(fresh)} new tensors left at their init", flush=True)
+    return ck.get("step", 0)
 
 
 def main():
@@ -110,6 +113,14 @@ def main():
     ap.add_argument("--init", type=str, default="", help="checkpoint to initialise weights from")
     ap.add_argument("--cons", type=float, default=0.0, help="weight of stage-2 control-consistency loss")
     ap.add_argument("--cons_every", type=int, default=1)
+    ap.add_argument("--enc_mixer", default="attn", choices=["attn", "mamba3", "hybrid"],
+                    help="encoder token mixer; hybrid = attention + zero-init bidirectional Mamba-3 branch")
+    ap.add_argument("--dec_mixer", default="attn", choices=["attn", "mamba3", "hybrid"])
+    ap.add_argument("--ssm_state", type=int, default=32, help="Mamba-3 state size N")
+    ap.add_argument("--init_continue", action="store_true",
+                    help="fine-tune: continue the init checkpoint's step count (LR / bin-loss schedules, TB x-axis)")
+    ap.add_argument("--rewarm", type=int, default=1000,
+                    help="with --init_continue: linear LR re-warm over this many steps (new params have no Adam state)")
     ap.add_argument("--ckpt_every", type=int, default=1000, help="overwrite last.pt this often (crash recovery)")
     ap.add_argument("--harness_every", type=int, default=20000, help="steerability harness interval (0 = off)")
     ap.add_argument("--harness_voices", type=int, default=2)
@@ -135,7 +146,8 @@ def main():
     va_dl = DataLoader(va_ds, batch_sampler=FrameBucketSampler(va.n_frames, args.max_frames, shuffle=False),
                        collate_fn=collate, num_workers=4)
 
-    model = SteerTTS(len(stats["speakers"]), len(stats["tags"])).to(dev)
+    model = SteerTTS(len(stats["speakers"]), len(stats["tags"]), enc_mixer=args.enc_mixer,
+                     dec_mixer=args.dec_mixer, ssm_state=args.ssm_state).to(dev)
     n_params = sum(p.numel() for n, p in model.named_parameters() if not n.startswith("aligner"))
     n_align = sum(p.numel() for p in model.aligner.parameters())
     print(f"params (inference path) {n_params / 1e6:.2f}M | aligner {n_align / 1e6:.2f}M"
@@ -146,8 +158,13 @@ def main():
         ck = torch.load(out / "last.pt", map_location=dev)
         model.load_state_dict(ck["model"]); opt.load_state_dict(ck["opt"]); step = ck["step"]
         print("resumed at", step, flush=True)
+    start_step = 0
     if args.init and not (args.resume and step):
-        init_from(model, args.init, stats, dev)
+        init_step = init_from(model, args.init, stats, dev)
+        if args.init_continue:
+            step = start_step = init_step
+    elif args.init and args.init_continue:  # resumed: recover where the fine-tune started, for the re-warm
+        start_step = torch.load(args.init, map_location="cpu", weights_only=False).get("step", 0)
     cons = None
     if args.cons > 0:
         from .consistency import Consistency
@@ -170,7 +187,8 @@ def main():
         for batch in tr_dl:
             batch = to(batch, dev)
             for gp in opt.param_groups:
-                gp["lr"] = lr_at(step, args.lr, total=args.steps)
+                gp["lr"] = lr_at(step, args.lr, total=args.steps) * (
+                    min(1.0, (step - start_step + 1) / args.rewarm) if args.init_continue else 1.0)
             with torch.autocast("cuda", dtype=torch.bfloat16):
                 losses, _ = model(batch, step)
             loss = sum(W[k] * losses[k] for k in W) + bin_weight(step) * losses["bin"]
@@ -221,7 +239,7 @@ def main():
                 vocos = evaluate(model, va_dl, va_ds, stats, step, out, tb, dev, vocos)
                 save_last(model, opt, step, stats, out)
                 if step % (args.eval_every * 4) == 0:
-                    torch.save(dict(model=model.state_dict(), step=step, n_speakers=len(stats["speakers"]),
+                    torch.save(dict(model=model.state_dict(), step=step, arch=model.arch, n_speakers=len(stats["speakers"]),
                                     n_tags=len(stats["tags"])), out / f"step{step}.pt")
                 if args.harness_every and (step % args.harness_every == 0 or step == args.steps):
                     steer_eval(out / "last.pt", stats, step, out, tb, args)
@@ -234,7 +252,7 @@ def main():
 
 def save_last(model, opt, step, stats, out):
     tmp = out / "last.pt.tmp"  # write-then-rename so a crash mid-save never corrupts last.pt
-    torch.save(dict(model=model.state_dict(), opt=opt.state_dict(), step=step,
+    torch.save(dict(model=model.state_dict(), opt=opt.state_dict(), step=step, arch=model.arch,
                     n_speakers=len(stats["speakers"]), n_tags=len(stats["tags"])), tmp)
     os.replace(tmp, out / "last.pt")
 

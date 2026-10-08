@@ -6,6 +6,8 @@ LayerNorm on g = MLP([speaker, style tag, control z-vector * mask, mask]).
 Durations come from a jointly trained RAD-TTS-style aligner (forward-sum + binarisation, MAS).
 """
 import math
+import sys
+from pathlib import Path
 
 import numba
 import numpy as np
@@ -15,6 +17,9 @@ import torch.nn.functional as F
 
 from .config import N_MELS, CONTROL_DIMS
 from .text import SYMBOLS, PAD
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))  # PromptingNemo repo root, for promptingnemo.*
+from promptingnemo.models.mamba3 import Mamba3Layer, scan_forward_ssd  # noqa: E402
 
 N_CTRL = len(CONTROL_DIMS)
 
@@ -54,11 +59,59 @@ class AdaLN(nn.Module):
         return self.ln(x) * (1 + s) + b
 
 
-class FFTBlock(nn.Module):
-    def __init__(self, d, heads, ffn, k, g_dim, p=0.1):
+class BiMamba3(nn.Module):
+    """Bidirectional Mamba-3 token mixer: a forward and a backward Mamba3Layer, summed.
+
+    TTS sees the whole utterance, so the causal cell runs both ways. The backward pass reverses
+    each sequence within its OWN length, so padding comes after the valid frames in both
+    directions and never enters the state. Runs the SSD fast path in fp32 (the chunk decays are
+    exp of log-cumsums, which bf16 autocast would quantise). zero_init zeroes both out_proj so the
+    block starts as an exact no-op - used when adding it to an already-trained model.
+    """
+
+    def __init__(self, d, d_state=32, head_dim=32, rank=1, chunk=64, zero_init=False):
         super().__init__()
+        self.fwd = Mamba3Layer(d, d_state=d_state, rank=rank, head_dim=head_dim)
+        self.bwd = Mamba3Layer(d, d_state=d_state, rank=rank, head_dim=head_dim)
+        self.chunk = chunk
+        if zero_init:
+            for l in (self.fwd, self.bwd):
+                nn.init.zeros_(l.out_proj.weight)
+                nn.init.zeros_(l.out_proj.bias)
+
+    def forward(self, x, mask):  # x [B,T,d], mask [B,T] True=valid
+        T = x.shape[1]
+        t = torch.arange(T, device=x.device)[None]
+        lens = mask.sum(1, keepdim=True)
+        rev = torch.where(t < lens, lens - 1 - t, t)[..., None].expand(-1, -1, x.shape[2])  # an involution
+        with torch.autocast(x.device.type, enabled=False):
+            x = (x * mask[..., None]).float()
+            y = scan_forward_ssd(self.fwd, x, self.chunk, vectorized=True)
+            y = y + torch.gather(scan_forward_ssd(self.bwd, torch.gather(x, 1, rev), self.chunk, vectorized=True), 1, rev)
+        return y * mask[..., None]
+
+
+class FFTBlock(nn.Module):
+    """Pre-norm block: token mixer + conv FFN, all norms adaptive on g.
+
+    mixer: "attn"   multi-head self-attention (the original FastPitch block)
+           "mamba3" bidirectional Mamba-3 in place of attention
+           "hybrid" attention, then a zero-initialised bidirectional Mamba-3 branch (fine-tuning: the
+                    block is exactly the attention block at init and learns the SSM path on top)
+    """
+
+    def __init__(self, d, heads, ffn, k, g_dim, p=0.1, mixer="attn", ssm_state=32):
+        super().__init__()
+        assert mixer in ("attn", "mamba3", "hybrid"), mixer
+        self.mixer = mixer
         self.n1 = AdaLN(d, g_dim)
-        self.att = nn.MultiheadAttention(d, heads, dropout=p, batch_first=True)
+        if mixer == "mamba3":
+            self.mix = BiMamba3(d, d_state=ssm_state)
+        else:
+            self.att = nn.MultiheadAttention(d, heads, dropout=p, batch_first=True)
+        if mixer == "hybrid":
+            self.n_ssm = AdaLN(d, g_dim)
+            self.ssm = BiMamba3(d, d_state=ssm_state, zero_init=True)
         self.n2 = AdaLN(d, g_dim)
         self.c1 = nn.Conv1d(d, ffn, k, padding=k // 2)
         self.c2 = nn.Conv1d(ffn, d, 1)
@@ -66,8 +119,13 @@ class FFTBlock(nn.Module):
 
     def forward(self, x, mask, g):  # mask [B,T] True=valid
         h = self.n1(x, g)
-        h, _ = self.att(h, h, h, key_padding_mask=~mask, need_weights=False)
+        if self.mixer == "mamba3":
+            h = self.mix(h, mask)
+        else:
+            h, _ = self.att(h, h, h, key_padding_mask=~mask, need_weights=False)
         x = x + self.drop(h)
+        if self.mixer == "hybrid":
+            x = x + self.drop(self.ssm(self.n_ssm(x, g), mask))
         h = self.n2(x, g).transpose(1, 2)
         h = self.c2(F.gelu(self.c1(h))).transpose(1, 2)
         x = x + self.drop(h)
@@ -75,10 +133,10 @@ class FFTBlock(nn.Module):
 
 
 class Stack(nn.Module):
-    def __init__(self, n, d, heads, ffn, k, g_dim, p):
+    def __init__(self, n, d, heads, ffn, k, g_dim, p, mixer="attn", ssm_state=32):
         super().__init__()
         self.pos = SinusoidalPos(d)
-        self.layers = nn.ModuleList([FFTBlock(d, heads, ffn, k, g_dim, p) for _ in range(n)])
+        self.layers = nn.ModuleList([FFTBlock(d, heads, ffn, k, g_dim, p, mixer, ssm_state) for _ in range(n)])
         self.out_norm = AdaLN(d, g_dim)
 
     def forward(self, x, mask, g):
@@ -204,14 +262,16 @@ def average_over_durations(frame_vals, dur, voiced_only=None):
 # ----------------------------------------------------------------------------- model
 class SteerTTS(nn.Module):
     def __init__(self, n_speakers, n_tags, d=192, heads=2, ffn=384, k=3, enc_layers=4, dec_layers=4, g_dim=128,
-                 spk_dim=64, tag_dim=32, p=0.1):
+                 spk_dim=64, tag_dim=32, p=0.1, enc_mixer="attn", dec_mixer="attn", ssm_state=32):
         super().__init__()
+        # saved in checkpoints so synthesis rebuilds the same architecture
+        self.arch = dict(enc_mixer=enc_mixer, dec_mixer=dec_mixer, ssm_state=ssm_state)
         self.emb = nn.Embedding(len(SYMBOLS), d, padding_idx=PAD)
         self.spk = nn.Embedding(n_speakers + 1, spk_dim)  # last index = unknown speaker
         self.tag = nn.Embedding(n_tags, tag_dim)  # index 0 = 'none'
         self.cond = nn.Sequential(nn.Linear(spk_dim + tag_dim + 2 * N_CTRL, 256), nn.SiLU(), nn.Linear(256, g_dim))
-        self.encoder = Stack(enc_layers, d, heads, ffn, k, g_dim, p)
-        self.decoder = Stack(dec_layers, d, heads, ffn, k, g_dim, p)
+        self.encoder = Stack(enc_layers, d, heads, ffn, k, g_dim, p, enc_mixer, ssm_state)
+        self.decoder = Stack(dec_layers, d, heads, ffn, k, g_dim, p, dec_mixer, ssm_state)
         self.dur_pred = VariancePredictor(d, g_dim)
         self.pitch_pred = VariancePredictor(d, g_dim)
         self.energy_pred = VariancePredictor(d, g_dim)

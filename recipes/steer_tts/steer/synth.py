@@ -21,7 +21,7 @@ class Synth:
         self.dev = device
         ck = torch.load(ckpt, map_location=device)
         self.stats = json.load(open(META / "control_stats.json"))
-        self.model = SteerTTS(ck["n_speakers"], ck["n_tags"]).to(device).eval()
+        self.model = SteerTTS(ck["n_speakers"], ck["n_tags"], **ck.get("arch", {})).to(device).eval()
         self.model.load_state_dict(ck["model"])
         self.spk2i = {s: i for i, s in enumerate(self.stats["speakers"])}
         self.tag2i = {t: i for i, t in enumerate(self.stats["tags"])}
