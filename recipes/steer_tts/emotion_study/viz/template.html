@@ -1,0 +1,759 @@
+<title>Emotion in the Voice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single left-aligned "signal notebook" column; each section is a pipeline stage
+   labelled in mono (listen / hears / measures / convinces / machine / where / maps / actors / decides). */
+:root {
+  --bg: #f7f6f6;
+  --card: #ffffff;
+  --ink: #02140e;
+  --ink-2: #3b3434;
+  --muted: #5a5050;
+  --faint: #8c8585;
+  --rule: #e6e2e2;
+  --grid: #eeebeb;
+  --brand: #124e3f;
+  --brand-wash: #e7f2ee;
+  --accent: #f14e52;
+  --div-neg: #124e3f;
+  --div-mid: #f1f0f0;
+  --div-pos: #d9474b;
+  --seq-lo: #f1f5f3;
+  --seq-hi: #124e3f;
+  --emo-ANG: #e34948; --emo-SAD: #2a78d6; --emo-HAP: #eda100; --emo-FEA: #4a3aa7; --emo-DIS: #008300; --emo-NEU: #898781;
+  --font-display: "Sora", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --step--1: 0.8125rem; --step-0: 1rem; --step-1: 1.25rem; --step-2: 1.75rem; --step-3: clamp(2.2rem, 5vw, 3.4rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1f1b1b; --card: #282323; --ink: #f1f0f0; --ink-2: #d6d3d3; --muted: #adafb4; --faint: #8a8585;
+    --rule: #3d3636; --grid: #332d2d; --brand: #7fd9c2; --brand-wash: #1f3a33; --accent: #f7a8aa;
+    --div-neg: #7fd9c2; --div-mid: #332d2d; --div-pos: #f07275; --seq-lo: #2c2727; --seq-hi: #7fd9c2;
+    --emo-ANG: #e66767; --emo-SAD: #3987e5; --emo-HAP: #c98500; --emo-FEA: #9085e9; --emo-DIS: #008300; --emo-NEU: #898781;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1f1b1b; --card: #282323; --ink: #f1f0f0; --ink-2: #d6d3d3; --muted: #adafb4; --faint: #8a8585;
+  --rule: #3d3636; --grid: #332d2d; --brand: #7fd9c2; --brand-wash: #1f3a33; --accent: #f7a8aa;
+  --div-neg: #7fd9c2; --div-mid: #332d2d; --div-pos: #f07275; --seq-lo: #2c2727; --seq-hi: #7fd9c2;
+  --emo-ANG: #e66767; --emo-SAD: #3987e5; --emo-HAP: #c98500; --emo-FEA: #9085e9; --emo-DIS: #008300; --emo-NEU: #898781;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+.page { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 80px; display: grid; gap: 56px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; margin: 0; }
+h1 { font-size: var(--step-3); line-height: 1.05; }
+h2 { font-size: var(--step-2); line-height: 1.15; }
+h3 { font-size: var(--step-1); line-height: 1.25; font-weight: 500; }
+p { margin: 0; max-width: 68ch; }
+.mono, .stage, .eyebrow, .tick, .num { font-family: var(--font-mono); }
+.eyebrow { font-size: 12px; letter-spacing: 0.08em; text-transform: lowercase; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.eyebrow b { color: var(--brand); font-weight: 500; }
+header { display: grid; gap: 20px; }
+.dek { font-size: 1.125rem; color: var(--ink-2); max-width: 62ch; }
+.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.figures > div { padding: 16px 16px 16px 0; display: grid; gap: 4px; align-content: start; }
+.figures > div + div { padding-left: 16px; border-left: 1px solid var(--rule); }
+.figures .v { font-family: var(--font-display); font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+.figures .l { font-size: var(--step--1); color: var(--muted); }
+@media (max-width: 720px) { .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); } .figures > div:nth-child(3) { padding-left: 0; border-left: 0; } .figures > div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
+section { display: grid; gap: 18px; }
+.sec-head { display: grid; gap: 8px; }
+.stage { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); display: flex; align-items: center; gap: 10px; }
+.stage::after { content: ""; height: 1px; background: var(--rule); flex: 1; }
+.lede { color: var(--ink-2); }
+.panel { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; display: grid; gap: 14px; min-width: 0; align-content: start; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 820px) { .grid-2 { grid-template-columns: minmax(0, 1fr); } .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .grid-3 { grid-template-columns: minmax(0, 1fr); } }
+.chart { width: 100%; min-width: 0; position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.cap { font-size: var(--step--1); color: var(--muted); max-width: 72ch; }
+.cap b { color: var(--ink-2); font-weight: 600; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
+.swl { width: 16px; height: 2px; display: inline-block; border-radius: 2px; flex: none; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.controls label.l { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-right: 4px; }
+button.chip, select { font: inherit; font-size: 13px; color: var(--ink); background: var(--card); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+select { border-radius: 8px; padding-right: 28px; }
+button.chip[aria-pressed="true"] { border-color: var(--brand); background: var(--brand-wash); }
+button.chip:hover { border-color: var(--faint); }
+button.chip:focus-visible, select:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.play-ico { width: 0; height: 0; border-left: 7px solid currentColor; border-top: 4.5px solid transparent; border-bottom: 4.5px solid transparent; }
+.player { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 18px; }
+@media (max-width: 820px) { .player { grid-template-columns: minmax(0, 1fr); } }
+.heard { display: grid; gap: 8px; align-content: start; }
+.heard .row { display: grid; grid-template-columns: 36px minmax(0, 1fr) 38px; gap: 8px; align-items: center; font-size: 12.5px; }
+.heard .bar { height: 8px; background: var(--grid); border-radius: 4px; overflow: hidden; }
+.heard .bar i { display: block; height: 100%; border-radius: 0 4px 4px 0; }
+.heard .k { font-family: var(--font-mono); color: var(--ink-2); }
+.heard .v { font-family: var(--font-mono); color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.quote { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; letter-spacing: -0.01em; }
+.meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.tip { position: fixed; pointer-events: none; z-index: 10; background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; line-height: 1.4; box-shadow: 0 6px 20px rgba(0,0,0,.12); max-width: 260px; }
+.tip .t { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.callout { border-left: 2px solid var(--brand); padding: 4px 0 4px 14px; color: var(--ink-2); max-width: 72ch; }
+.scroll-x { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--font-mono); font-weight: 500; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tfoot td { font-weight: 600; }
+ol.steps { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; max-width: 72ch; }
+.arch { display: grid; gap: 10px; }
+.arch-row { display: grid; grid-template-columns: 150px minmax(0, 1fr) 70px; gap: 12px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.arch-row .n { font-family: var(--font-mono); font-size: 12px; color: var(--brand); }
+.arch-row .p { font-family: var(--font-mono); font-size: 13px; text-align: right; font-variant-numeric: tabular-nums; }
+.arch-row .d { color: var(--ink-2); font-size: 14px; }
+@media (max-width: 560px) { .arch-row { grid-template-columns: minmax(0, 1fr) 60px; } .arch-row .d { grid-column: 1 / -1; } }
+.budget { height: 14px; display: flex; gap: 2px; border-radius: 4px; overflow: hidden; }
+.budget i { display: block; height: 100%; }
+footer { font-size: 12px; color: var(--muted); display: grid; gap: 6px; border-top: 1px solid var(--rule); padding-top: 16px; }
+footer a { color: var(--brand); }
+svg text { font-family: var(--font-mono); font-size: 11px; fill: var(--muted); }
+svg .ink { fill: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="page">
+<header>
+  <div class="eyebrow"><b>whissle research</b><span>emotion study 01</span><span>crema-d · 7,442 clips · 91 actors</span><span>oct 2026</span></div>
+  <h1>Emotion in the Voice</h1>
+  <p class="dek">What actors put into their voice, what listeners actually hear, and which acoustic cues carry the difference. The groundwork for a small, expressive Whissle TTS that is trained on perceived emotion, not acted labels.</p>
+  <div class="figures" id="figs"></div>
+</header>
+
+<section id="listen">
+  <div class="sec-head">
+    <div class="stage">listen</div>
+    <h2>One sentence, six ways</h2>
+    <p class="lede">The same actor reads the same line in each emotion. Press a take to hear it. The lines show pitch (semitones) and loudness (dB) relative to that actor's own neutral voice, with neutral drawn in gray for comparison.</p>
+  </div>
+  <div class="panel">
+    <div class="controls" id="exPick"><label class="l">speaker</label></div>
+    <div class="quote" id="exText"></div>
+    <div class="controls" id="takePick"></div>
+    <div class="player">
+      <div class="grid-2" style="grid-template-columns:minmax(0,1fr);gap:6px">
+        <div class="chart" id="exF0"></div>
+        <div class="chart" id="exInt"></div>
+      </div>
+      <div class="heard" id="exHeard"></div>
+    </div>
+  </div>
+</section>
+
+<section id="hears">
+  <div class="sec-head">
+    <div class="stage">hears</div>
+    <h2>Listeners recognise the acted emotion 41.5% of the time</h2>
+    <p class="lede">About ten crowd raters per clip judged the emotion from the voice alone. Rows are what the actor was asked to perform; columns are the crowd's majority. Sad and happy are mostly heard as neutral.</p>
+  </div>
+  <div class="grid-2">
+    <div class="panel"><h3>Acted → heard</h3><div class="chart" id="confusion"></div>
+      <p class="cap">Share of each acted emotion's clips by crowd majority. <b>mix</b> = tie between labels.</p></div>
+    <div class="panel"><h3>Share of raters choosing the acted emotion</h3><div class="chart" id="pacted"></div>
+      <p class="cap">Mean over clips. This is the soft label we train on instead of the acted tag.</p></div>
+  </div>
+</section>
+
+<section id="measures">
+  <div class="sec-head">
+    <div class="stage">measures</div>
+    <h2>Each emotion has its own acoustic fingerprint</h2>
+    <p class="lede">Every emotional clip is compared with the same actor reading the same sentence neutrally (the parallel-reference method of Bou-Ghazale &amp; Hansen, 1995). Cells show the effect size of that difference: mean change divided by its spread.</p>
+  </div>
+  <div class="panel">
+    <div class="legend" id="divLegend"></div>
+    <div class="scroll-x"><div class="chart" id="finger" style="min-width:560px"></div></div>
+    <p class="cap"><b>Angry</b> is loud with a flat spectral tilt and a raised first formant (the mouth opens wider). <b>Fear</b> stands out on CPPS, an irregular, less periodic voice. <b>Sad</b> is slow, quiet and breathy (H1–H2 up). Hover a cell for the raw change in its own units.</p>
+  </div>
+</section>
+
+<section id="convinces">
+  <div class="sec-head">
+    <div class="stage">convinces</div>
+    <h2>What makes a listener believe it</h2>
+    <p class="lede">Within each emotion, a logistic model predicts whether at least half the raters heard the intended emotion from the twelve parallel cues (actor-disjoint cross-validation). Bars are standardised weights: right means more of this cue makes the emotion more convincing.</p>
+  </div>
+  <div class="grid-3" id="drivers"></div>
+  <p class="callout">Happy is sold by pitch <em>range</em>, not pitch level: the contour shape matters. Anger is sold by loudness. For sad, none of these cues predicts belief (AUC 0.50), so it needs stronger cues in the data we record.</p>
+</section>
+
+<section id="machine">
+  <div class="sec-head">
+    <div class="stage">machine</div>
+    <h2>Models hear more than people do</h2>
+    <p class="lede">Six-way recognition of the acted emotion on actors never seen in training (unweighted average recall, chance 0.167). Actors leave consistent traces that listeners often miss, so a TTS must exaggerate cues past "acted" to be heard.</p>
+  </div>
+  <div class="grid-2">
+    <div class="panel"><h3>Recognition by method</h3><div class="chart" id="ladder"></div>
+      <p class="cap">Speaker normalisation is worth +0.09 on its own. WavLM probes subtract each actor's mean embedding, which uses that actor's other clips, so read its score as an upper bound.</p></div>
+    <div class="panel"><h3>WavLM-base+ by layer</h3><div class="legend" id="layerLegend"></div><div class="chart" id="layers"></div>
+      <p class="cap">Emotion peaks in the middle layers (5–7). Crowd-agreed clips are easier. Sentence identity is near-perfect from layer 2, so the representation carries content too.</p></div>
+  </div>
+</section>
+
+<section id="where">
+  <div class="sec-head">
+    <div class="stage">where</div>
+    <h2>Emotion gathers at the end of the sentence</h2>
+    <p class="lede">Average contours over all 91 actors on a word-normalised time axis (each word stretched to equal width), relative to each actor's neutral voice.</p>
+  </div>
+  <div class="panel">
+    <div class="controls"><label class="l" for="sentSel">sentence</label><select id="sentSel"></select></div>
+    <div class="legend" id="ctLegend"></div>
+    <div class="grid-2">
+      <div><h3 style="font-size:1rem">Pitch, semitones</h3><div class="chart" id="ctF0"></div></div>
+      <div><h3 style="font-size:1rem">Loudness, dB</h3><div class="chart" id="ctInt"></div></div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="panel"><h3>Pitch change by word position</h3><div class="chart" id="posF0"></div></div>
+    <div class="panel"><h3>Loudness change by word position</h3><div class="chart" id="posInt"></div></div>
+  </div>
+  <p class="callout">Angry adds +9.5 dB on the first word and +15.7 dB on the last; happy adds +2.9 semitones first and +5.3 last. Expressive control has to act per word, with the most room at phrase end.</p>
+</section>
+
+<section id="maps">
+  <div class="sec-head">
+    <div class="stage">maps</div>
+    <h2>Arousal is audible; valence is not</h2>
+    <p class="lede">Each clip scored by a dimensional emotion model (audeering wav2vec2, MSP-Podcast). One panel per acted emotion, all clips in gray behind. Filled dots were heard as intended.</p>
+  </div>
+  <div class="controls" id="mapPick"><label class="l">view</label></div>
+  <div class="grid-3" id="mapGrid"></div>
+  <p class="cap" id="mapCap"></p>
+</section>
+
+<section id="actors">
+  <div class="sec-head">
+    <div class="stage">actors</div>
+    <h2>Some actors are four times easier to read</h2>
+    <p class="lede">Mean share of raters who heard each actor's intended emotion, across their emotional clips. Data selection by speaker matters as much as model choice.</p>
+  </div>
+  <div class="panel"><div class="legend" id="actLegend"></div><div class="chart" id="actorStrip"></div></div>
+</section>
+
+<section id="decides">
+  <div class="sec-head">
+    <div class="stage">decides</div>
+    <h2>The plan for a ≤10M-parameter expressive TTS</h2>
+    <p class="lede">Decisions taken from the findings above. The TTS does not guess emotion from text; it renders a style plan, and it is trained and judged on what listeners hear.</p>
+  </div>
+  <div class="grid-2">
+    <div class="panel"><h3>Annotation, per utterance and per word</h3>
+      <div class="scroll-x"><table>
+        <thead><tr><th>field</th><th>source</th></tr></thead>
+        <tbody>
+          <tr><td>perceived emotion (6-way soft)</td><td>crowd votes where they exist; otherwise the Whissle ear (below) trained on those votes</td></tr>
+          <tr><td>perceived intensity 0–1</td><td>crowd intensity ratings → regression head</td></tr>
+          <tr><td>arousal, dominance</td><td>dimensional model; valence left to text and context</td></tr>
+          <tr><td>per-word pitch level, range, slope</td><td>F0 in semitones vs the speaker's neutral median</td></tr>
+          <tr><td>per-word loudness, duration</td><td>vs the speaker's neutral; phone alignment by MFA</td></tr>
+          <tr><td>per-word tilt, CPPS, H1–H2</td><td>voice quality, the cues that separate fear and sad</td></tr>
+          <tr><td>emphasis / phrase-final flag</td><td>derived from the deltas; feeds the planner</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="panel"><h3>Data</h3>
+      <div class="scroll-x"><table>
+        <thead><tr><th>set</th><th>role</th></tr></thead>
+        <tbody>
+          <tr><td>LibriTTS-R, 150 h subset</td><td>pretraining: clean 24 kHz speech, many voices</td></tr>
+          <tr><td>ESD English, 10 speakers</td><td>emotion training: 350 sentences in neutral + 4 emotions, so every take has a parallel neutral</td></tr>
+          <tr><td>CREMA-D</td><td>not TTS audio; trains the Whissle ear on crowd soft labels</td></tr>
+          <tr><td>Whissle voice, 6–10 h</td><td>final voice: agent phrases recorded neutral + 5 emotions × 3 intensities; keep only takes the ear and a listener panel hear as intended</td></tr>
+        </tbody>
+      </table></div>
+      <p class="cap">ESD and Expresso are research-licensed; the shipped voice comes only from Whissle-recorded data.</p>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>Model budget</h3>
+    <div class="budget" id="budget"></div>
+    <div class="arch" id="arch"></div>
+    <p class="cap">Non-autoregressive, single pass, chunk-streamable. Context lives outside the budget: Whissle's speech understanding (emotion and intent of the user's turn) and the reply planner emit the style plan, a fixed tag set of emotion soft-vector, intensity and per-word emphasis. That fixed tag set is the controlled vocabulary.</p>
+  </div>
+  <div class="grid-2">
+    <div class="panel"><h3>Training signals</h3>
+      <ol class="steps">
+        <li>Spectrogram and adversarial losses for the decoder and vocoder.</li>
+        <li>Per-word prosody targets for the planner, phone-level targets for the variance adaptor.</li>
+        <li>A heard-as-intended loss: a frozen mel-domain copy of the Whissle ear scores the generated speech against the requested emotion and intensity.</li>
+        <li>Intensity calibrated so 1.0 matches the best real takes; Bou-Ghazale's perturbed speech overshot real speech (92% vs 85% heard as loud).</li>
+      </ol>
+    </div>
+    <div class="panel"><h3>How we will judge it</h3>
+      <ol class="steps">
+        <li>Heard-as-intended rate from the Whissle ear and a listener panel.</li>
+        <li>Pairwise listening test: which is more angry, both, or neither.</li>
+        <li>Intensity monotonicity: 0.3 → 0.6 → 0.9 must rank correctly.</li>
+        <li>Intelligibility (Whissle ASR WER) and naturalness at the neutral baseline; CPU real-time factor.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="panel"><h3>Next steps, in order</h3>
+    <ol class="steps">
+      <li>Phone-level forced alignment (MFA) for CREMA-D and ESD; the CTC word timings used here are too coarse for duration work.</li>
+      <li>Train the Whissle ear on WavLM layer 6: crowd soft emotion, perceived intensity, arousal and dominance.</li>
+      <li>Annotate ESD and the LibriTTS-R subset with the schema above.</li>
+      <li>Train the 9.6M acoustic model and vocoder; ablate the heard-as-intended loss.</li>
+      <li>Write the Whissle recording script from these findings and record the production voice.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div>Data: CREMA-D (Cao et al., 2014), Open Database License. Crowd labels use voice-only responses. Features: Praat (pitch, intensity, formants, HNR, CPPS, jitter, shimmer) and eGeMAPS-style spectral measures. Method after Bou-Ghazale &amp; Hansen, "Improving recognition and synthesis of stressed speech via feature perturbation in a source generator framework", ESCA-NATO Speech under Stress, 1995.</div>
+  <div>Code: workspace/emotion_study (s01–s06).</div>
+</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const D = __DATA__;
+const AUDIO = __AUDIO__;
+const EMOS = ["NEU","ANG","SAD","HAP","FEA","DIS"];
+const EMO5 = ["ANG","SAD","HAP","FEA","DIS"];
+const EMO_NAME = {NEU:"neutral",ANG:"angry",SAD:"sad",HAP:"happy",FEA:"fear",DIS:"disgust",MIX:"mix"};
+const NS = "http://www.w3.org/2000/svg";
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const ec = e => css("--emo-" + e);
+const fmt = (v, k = 2) => v == null || isNaN(v) ? "–" : (+v).toFixed(k);
+const sgn = (v, k = 1) => v == null || isNaN(v) ? "–" : (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(k);
+
+function S(tag, attrs = {}, parent) {
+  const el = document.createElementNS(NS, tag);
+  for (const k in attrs) el.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(el);
+  return el;
+}
+function svgIn(host, w, h) {
+  host.innerHTML = "";
+  return S("svg", { viewBox: `0 0 ${w} ${h}`, role: "img" }, host);
+}
+const lin = (d0, d1, r0, r1) => v => r0 + (v - d0) / (d1 - d0) * (r1 - r0);
+const W = el => Math.max(260, el.clientWidth || 600);
+
+// tooltip
+const tip = document.getElementById("tip");
+function showTip(ev, html) {
+  tip.innerHTML = html; tip.hidden = false;
+  const x = Math.min(ev.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
+  const y = Math.min(ev.clientY + 14, window.innerHeight - tip.offsetHeight - 8);
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function hideTip() { tip.hidden = true; }
+function hover(el, html) {
+  el.addEventListener("pointermove", ev => showTip(ev, typeof html === "function" ? html() : html));
+  el.addEventListener("pointerleave", hideTip);
+}
+
+// colour mixing for heatmaps
+function hex2rgb(h) { h = h.replace("#", ""); if (h.length === 3) h = h.split("").map(c => c + c).join(""); return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)); }
+function mix(a, b, t) { const A = hex2rgb(a), B = hex2rgb(b); return `rgb(${A.map((x, i) => Math.round(x + (B[i] - x) * t)).join(",")})`; }
+function lum(c) { const m = c.match(/\d+/g).map(Number).map(v => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }); return .2126 * m[0] + .7152 * m[1] + .0722 * m[2]; }
+const divColor = (v, max) => { const t = Math.max(-1, Math.min(1, v / max)); return t >= 0 ? mix(css("--div-mid"), css("--div-pos"), t) : mix(css("--div-mid"), css("--div-neg"), -t); };
+const seqColor = t => mix(css("--seq-lo"), css("--seq-hi"), Math.max(0, Math.min(1, t)));
+const inkOn = fill => lum(fill) > 0.32 ? "#02140e" : "#f1f0f0";
+
+function axisY(svg, y, ticks, x0, x1, fmtT = v => v) {
+  ticks.forEach(t => {
+    S("line", { x1: x0, x2: x1, y1: y(t), y2: y(t), stroke: css("--grid"), "stroke-width": 1 }, svg);
+    const tx = S("text", { x: x0 - 6, y: y(t) + 3.5, "text-anchor": "end" }, svg); tx.textContent = fmtT(t);
+  });
+}
+function niceTicks(lo, hi, n = 4) {
+  const span = hi - lo, step0 = span / n, mag = 10 ** Math.floor(Math.log10(step0));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => s >= step0);
+  const out = []; for (let v = Math.floor(lo / step) * step; v < hi + step - 1e-9; v += step) out.push(+v.toFixed(6));
+  return out;
+}
+
+/* ---------------- header figures ---------------- */
+function figures() {
+  const best = Math.max(...D.wavlm.map(r => r.emotion));
+  const items = [
+    ["7,442", "clips from 91 actors, 12 sentences"],
+    [(D.labels.perceived_eq_acted * 100).toFixed(1) + "%", "heard as the acted emotion, voice only"],
+    [fmt(D.classify["human crowd (voice only)"].acted_all), "human recall of the acted emotion"],
+    [fmt(best), "WavLM probe recall, unseen actors"],
+  ];
+  document.getElementById("figs").innerHTML = items.map(([v, l]) => `<div><span class="v">${v}</span><span class="l">${l}</span></div>`).join("");
+}
+
+/* ---------------- listen ---------------- */
+let exIdx = 0, takeEmo = "ANG", audio = new Audio(), raf = 0, playhead = [];
+function buildListen() {
+  const pick = document.getElementById("exPick");
+  D.examples.forEach((ex, i) => {
+    const b = document.createElement("button"); b.className = "chip"; b.id = "ex" + i;
+    b.textContent = `actor ${ex.actor} · ${ex.sex.toLowerCase()}, ${ex.age}`;
+    b.setAttribute("aria-pressed", i === exIdx);
+    b.onclick = () => { exIdx = i; stop(); [...pick.querySelectorAll("button")].forEach((x, j) => x.setAttribute("aria-pressed", j === i)); renderListen(); };
+    pick.appendChild(b);
+  });
+  const tp = document.getElementById("takePick");
+  EMOS.forEach(e => {
+    const b = document.createElement("button"); b.className = "chip"; b.id = "take" + e; b.dataset.e = e;
+    b.innerHTML = `<span class="play-ico" aria-hidden="true"></span><span class="sw" style="background:var(--emo-${e})"></span>${EMO_NAME[e]}`;
+    b.onclick = () => { takeEmo = e; renderListen(); play(); };
+    tp.appendChild(b);
+  });
+}
+function stop() { audio.pause(); cancelAnimationFrame(raf); playhead.forEach(p => p.setAttribute("opacity", 0)); }
+function play() {
+  stop();
+  const ex = D.examples[exIdx], tk = ex.takes[takeEmo];
+  audio = new Audio(AUDIO[tk.clip]);
+  audio.play().catch(() => {});
+  const tick = () => {
+    playhead.forEach(p => { p.setAttribute("opacity", 1); p.setAttribute("transform", `translate(${p.__x(audio.currentTime)},0)`); });
+    if (!audio.paused && !audio.ended) raf = requestAnimationFrame(tick); else playhead.forEach(p => p.setAttribute("opacity", 0));
+  };
+  raf = requestAnimationFrame(tick);
+}
+function renderListen() {
+  const ex = D.examples[exIdx], tk = ex.takes[takeEmo], neu = ex.takes.NEU;
+  document.getElementById("exText").textContent = "“" + ex.text + "”";
+  document.querySelectorAll("#takePick button").forEach(b => b.setAttribute("aria-pressed", b.dataset.e === takeEmo));
+  const tmax = Math.max(...EMOS.map(e => ex.takes[e].f0.length)) * 0.01;
+  playhead = [];
+  [["exF0", "f0", "pitch, st vs neutral"], ["exInt", "int", "loudness, dB vs neutral"]].forEach(([id, key, lab], k) => {
+    const host = document.getElementById(id), w = W(host), h = k ? 150 : 170, m = { l: 40, r: 10, t: 18, b: k ? 34 : 8 };
+    const svg = svgIn(host, w, h);
+    const vals = EMOS.flatMap(e => ex.takes[e][key]).filter(v => v != null);
+    let lo = Math.min(...vals), hi = Math.max(...vals);
+    if (key === "int") lo = Math.max(lo, hi - 45);
+    const ticks = niceTicks(lo, hi, 4);
+    const x = lin(0, tmax, m.l, w - m.r), y = lin(ticks[0], ticks[ticks.length - 1], h - m.b, m.t);
+    axisY(svg, y, ticks, m.l, w - m.r, v => (v > 0 ? "+" : "") + v);
+    const lt = S("text", { x: m.l, y: 10 }, svg); lt.textContent = lab;
+    const path = (arr, color, width, op) => {
+      let d = "", pen = false;
+      arr.forEach((v, i) => {
+        if (v == null || (key === "int" && v < ticks[0])) { pen = false; return; }
+        d += (pen ? "L" : "M") + x(i * 0.01).toFixed(1) + "," + y(v).toFixed(1); pen = true;
+      });
+      S("path", { d, fill: "none", stroke: color, "stroke-width": width, "stroke-linejoin": "round", "stroke-linecap": "round", opacity: op }, svg);
+    };
+    if (takeEmo !== "NEU") path(neu[key], css("--emo-NEU"), 1.5, 0.9);
+    path(tk[key], ec(takeEmo), 2, 1);
+    if (k === 1) tk.words.forEach(wd => {
+      const cx = x((wd.s + wd.e) / 2);
+      S("line", { x1: x(wd.s), x2: x(wd.s), y1: h - m.b + 4, y2: h - m.b + 9, stroke: css("--faint") }, svg);
+      const t = S("text", { x: cx, y: h - 10, "text-anchor": "middle", class: "ink" }, svg); t.textContent = wd.w;
+    });
+    const ph = S("line", { x1: 0, x2: 0, y1: m.t, y2: h - m.b, stroke: css("--ink"), "stroke-width": 1, opacity: 0 }, svg);
+    ph.__x = x; playhead.push(ph);
+  });
+  const H = document.getElementById("exHeard");
+  const order = [...EMOS].sort((a, b) => tk.heard[b] - tk.heard[a]);
+  H.innerHTML = `<div class="meta">${tk.n} raters heard${tk.intensity != null ? ` · intensity ${tk.intensity}/100` : ""}</div>` +
+    order.map(e => `<div class="row"><span class="k">${EMO_NAME[e].slice(0, 4)}</span><span class="bar"><i style="width:${tk.heard[e] * 100}%;background:var(--emo-${e})"></i></span><span class="v">${Math.round(tk.heard[e] * 100)}%</span></div>`).join("") +
+    `<div class="meta">${tk.clip}</div>`;
+}
+
+/* ---------------- hears ---------------- */
+function confusion() {
+  const host = document.getElementById("confusion"), w = W(host);
+  const cols = [...EMOS, "MIX"], rows = EMOS, m = { l: 62, t: 28, r: 4, b: 4 };
+  const cw = (w - m.l - m.r) / cols.length, chh = Math.min(38, cw * 0.8), h = m.t + chh * rows.length + m.b;
+  const svg = svgIn(host, w, h);
+  cols.forEach((c, j) => { const t = S("text", { x: m.l + cw * (j + .5), y: 16, "text-anchor": "middle", class: "ink" }, svg); t.textContent = EMO_NAME[c].slice(0, 4); });
+  rows.forEach((r, i) => {
+    const t = S("text", { x: m.l - 8, y: m.t + chh * (i + .5) + 4, "text-anchor": "end", class: "ink" }, svg); t.textContent = EMO_NAME[r];
+    cols.forEach((c, j) => {
+      const v = (D.labels.confusion[c] || {})[r] || 0, fill = seqColor(v / 0.8);
+      const g = S("g", {}, svg);
+      S("rect", { x: m.l + cw * j + 1, y: m.t + chh * i + 1, width: cw - 2, height: chh - 2, rx: 3, fill }, g);
+      if (v >= 0.005) { const tx = S("text", { x: m.l + cw * (j + .5), y: m.t + chh * (i + .5) + 4, "text-anchor": "middle", style: `fill:${inkOn(fill)}` }, g); tx.textContent = Math.round(v * 100); }
+      if (r === c) S("rect", { x: m.l + cw * j + 1, y: m.t + chh * i + 1, width: cw - 2, height: chh - 2, rx: 3, fill: "none", stroke: css("--ink"), "stroke-width": 1.2 }, g);
+      hover(g, `<div class="t">acted ${EMO_NAME[r]} → heard ${EMO_NAME[c]}</div>${(v * 100).toFixed(1)}% of clips`);
+    });
+  });
+}
+function pacted() {
+  const host = document.getElementById("pacted"), w = W(host), m = { l: 62, r: 44, t: 6, b: 22 };
+  const bh = 22, gap = 12, h = m.t + EMOS.length * (bh + gap) + m.b, svg = svgIn(host, w, h);
+  const x = lin(0, 1, m.l, w - m.r);
+  [0, .25, .5, .75, 1].forEach(t => { S("line", { x1: x(t), x2: x(t), y1: m.t, y2: h - m.b, stroke: css("--grid") }, svg); const tx = S("text", { x: x(t), y: h - 6, "text-anchor": "middle" }, svg); tx.textContent = t * 100 + "%"; });
+  const order = [...EMOS].sort((a, b) => D.labels.by_emo.p_acted[b] - D.labels.by_emo.p_acted[a]);
+  order.forEach((e, i) => {
+    const v = D.labels.by_emo.p_acted[e], y0 = m.t + i * (bh + gap);
+    const lb = S("text", { x: m.l - 8, y: y0 + bh / 2 + 4, "text-anchor": "end", class: "ink" }, svg); lb.textContent = EMO_NAME[e];
+    const g = S("g", {}, svg);
+    S("path", { d: barPath(x(0), y0, x(v) - x(0), bh), fill: ec(e) }, g);
+    const vt = S("text", { x: x(v) + 6, y: y0 + bh / 2 + 4, class: "ink" }, g); vt.textContent = Math.round(v * 100) + "%";
+    hover(g, `<div class="t">${EMO_NAME[e]}</div>${(v * 100).toFixed(1)}% of raters chose it · agreement ${fmt(D.labels.by_emo.agreement[e])} · intensity ${fmt(D.labels.by_emo.perc_int[e], 0)}/100`);
+  });
+}
+function barPath(x0, y0, len, th, r = 4) {
+  if (len <= 0) return `M${x0},${y0}h0v${th}h0z`;
+  r = Math.min(r, len, th / 2);
+  return `M${x0},${y0}h${len - r}a${r},${r} 0 0 1 ${r},${r}v${th - 2 * r}a${r},${r} 0 0 1 ${-r},${r}h${-(len - r)}z`;
+}
+function hbar(x0, xv, y0, th, r = 4) { // signed horizontal bar, rounded at the data end
+  if (xv >= x0) return barPath(x0, y0, xv - x0, th, r);
+  const len = x0 - xv; r = Math.min(r, len, th / 2);
+  return `M${x0},${y0}h${-(len - r)}a${r},${r} 0 0 0 ${-r},${r}v${th - 2 * r}a${r},${r} 0 0 0 ${r},${r}h${len - r}z`;
+}
+
+/* ---------------- measures ---------------- */
+const FEATS = [
+  ["pitch", "dF0_st", "pitch level", "st", 1], ["pitch", "dF0range_st", "pitch range", "st", 1],
+  ["loudness", "dInt_dB", "loudness", "dB", 1], ["loudness", "dIntRange_dB", "loudness range", "dB", 1],
+  ["timing", "dDur_pct", "duration", "%", 0], ["timing", "dRate_pct", "speaking rate", "%", 0], ["timing", "dVoiced", "voiced share", "", 2],
+  ["spectrum", "dAlpha_dB", "alpha ratio", "dB", 1], ["spectrum", "dSlope0_500", "slope 0–500 Hz", "dB/kHz", 1], ["spectrum", "dCent_pct", "spectral centroid", "%", 0], ["spectrum", "dF1_pct", "first formant", "%", 0],
+  ["voice quality", "dH1H2_dB", "H1–H2 breathiness", "dB", 1], ["voice quality", "dCPPS_dB", "CPPS periodicity", "dB", 2], ["voice quality", "dHNR_dB", "harmonics-to-noise", "dB", 1], ["voice quality", "dJitter_pct", "jitter", "%", 0], ["voice quality", "dShimmer_pct", "shimmer", "%", 0],
+];
+const statOf = (f, e, sub = "all") => D.deltas.stats.find(s => s.feat === f && s.emo === e && s.subset === sub);
+function fingerprint() {
+  const host = document.getElementById("finger"), w = Math.max(560, W(host)), m = { l: 210, t: 28, r: 4, b: 4 };
+  const cw = (w - m.l - m.r) / EMO5.length, ch = 26, groupGap = 10;
+  const groups = [...new Set(FEATS.map(f => f[0]))];
+  const h = m.t + FEATS.length * ch + (groups.length - 1) * groupGap + m.b, svg = svgIn(host, w, h);
+  EMO5.forEach((e, j) => {
+    const cx = m.l + cw * (j + .5);
+    S("circle", { cx: cx - 26, cy: 12, r: 4, fill: ec(e) }, svg);
+    const t = S("text", { x: cx - 18, y: 16, class: "ink" }, svg); t.textContent = EMO_NAME[e];
+  });
+  let y = m.t, prev = null;
+  FEATS.forEach(([grp, key, name, unit, k]) => {
+    if (prev && grp !== prev) y += groupGap;
+    if (grp !== prev) { const gt = S("text", { x: 0, y: y + ch / 2 + 4, style: `fill:${css("--brand")}` }, svg); gt.textContent = grp; }
+    prev = grp;
+    const nt = S("text", { x: m.l - 8, y: y + ch / 2 + 4, "text-anchor": "end", class: "ink" }, svg); nt.textContent = name;
+    EMO5.forEach((e, j) => {
+      const s = statOf(key, e); if (!s) return;
+      const fill = divColor(s.d || 0, 1.6), g = S("g", {}, svg);
+      S("rect", { x: m.l + cw * j + 1, y: y + 1, width: cw - 2, height: ch - 2, rx: 3, fill }, g);
+      const tx = S("text", { x: m.l + cw * (j + .5), y: y + ch / 2 + 4, "text-anchor": "middle", style: `fill:${inkOn(fill)}` }, g); tx.textContent = sgn(s.d, 1);
+      const mean = key === "dVoiced" ? s.mean * 100 : s.mean, u = key === "dVoiced" ? " pts" : (unit ? " " + unit : "");
+      hover(g, `<div class="t">${EMO_NAME[e]} vs neutral · ${name}</div>mean change ${sgn(mean, k)}${u} (±${fmt(key === "dVoiced" ? s.ci * 100 : s.ci, k)})<br>effect size ${sgn(s.d, 2)} · n=${s.n}`);
+    });
+    y += ch;
+  });
+  const lg = document.getElementById("divLegend");
+  lg.innerHTML = `<span><i class="sw" style="background:${divColor(-1.6, 1.6)};border-radius:3px"></i>lower than neutral</span><span><i class="sw" style="background:${divColor(0, 1.6)};border-radius:3px;outline:1px solid var(--rule)"></i>no change</span><span><i class="sw" style="background:${divColor(1.6, 1.6)};border-radius:3px"></i>higher than neutral</span><span class="mono" style="color:var(--muted)">effect size, saturates at ±1.6</span>`;
+}
+
+/* ---------------- convinces ---------------- */
+const KEY_NAME = { dF0_st: "pitch level", dF0range_st: "pitch range", dInt_dB: "loudness", dRate_pct: "speaking rate", dAlpha_dB: "alpha ratio", dH1H2_dB: "H1–H2", dCPPS_dB: "CPPS", dHNR_dB: "HNR", dF1_pct: "F1", dVoiced: "voiced share", dPause_s: "pause time", dF0final: "final pitch slope" };
+function drivers() {
+  const grid = document.getElementById("drivers"); grid.innerHTML = "";
+  const all = EMO5.flatMap(e => Object.values(D.drivers.by_emo[e].coef)), mx = Math.max(...all.map(Math.abs));
+  EMO5.forEach(e => {
+    const dv = D.drivers.by_emo[e], p = document.createElement("div"); p.className = "panel"; grid.appendChild(p);
+    p.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><h3 style="font-size:1rem;display:flex;align-items:center;gap:8px"><span class="sw" style="background:var(--emo-${e})"></span>${EMO_NAME[e]}</h3><span class="meta">AUC ${fmt(dv.auc)} · ${Math.round(dv.base_rate * 100)}% convincing</span></div>`;
+    const host = document.createElement("div"); host.className = "chart"; p.appendChild(host);
+    const items = Object.entries(dv.coef).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 6);
+    const w = W(host), m = { l: 104, r: 8, t: 4, b: 18 }, bh = 14, gap = 8, h = m.t + items.length * (bh + gap) + m.b, svg = svgIn(host, w, h);
+    const x = lin(-mx, mx, m.l, w - m.r);
+    S("line", { x1: x(0), x2: x(0), y1: m.t, y2: h - m.b, stroke: css("--faint") }, svg);
+    [-1, 0, 1].forEach(t => { if (Math.abs(t) <= mx) { const tt = S("text", { x: x(t), y: h - 4, "text-anchor": "middle" }, svg); tt.textContent = t; } });
+    items.forEach(([k, v], i) => {
+      const y0 = m.t + i * (bh + gap), g = S("g", {}, svg);
+      const lb = S("text", { x: m.l - 8, y: y0 + bh / 2 + 4, "text-anchor": "end", class: "ink" }, svg); lb.textContent = KEY_NAME[k];
+      S("path", { d: hbar(x(0), x(v), y0, bh), fill: ec(e), opacity: dv.auc < 0.55 ? 0.45 : 1 }, g);
+      hover(g, `<div class="t">${EMO_NAME[e]} · ${KEY_NAME[k]}</div>weight ${sgn(v, 2)}<br>corr. with rated intensity ${sgn(dv.int_corr[k], 2)}`);
+    });
+  });
+}
+
+/* ---------------- machine ---------------- */
+function ladder() {
+  const host = document.getElementById("ladder"), w = W(host);
+  const best = D.wavlm.reduce((a, b) => b.emotion > a.emotion ? b : a);
+  const rows = [
+    ["human listeners", D.classify["human crowd (voice only)"].acted_all, "--faint"],
+    ["24 cues, raw", D.classify["raw features"].acted_all, "--brand"],
+    ["24 cues, vs neutral", D.classify["actor neutral-referenced"].acted_all, "--brand"],
+    ["24 cues, speaker-normalised", D.classify["actor z-norm"].acted_all, "--brand"],
+    [`WavLM layer ${best.layer}`, best.emotion, "--brand"],
+  ];
+  const m = { l: 170, r: 44, t: 6, b: 22 }, bh = 20, gap = 12, h = m.t + rows.length * (bh + gap) + m.b, svg = svgIn(host, w, h);
+  const x = lin(0, 1, m.l, w - m.r);
+  [0, .25, .5, .75, 1].forEach(t => { S("line", { x1: x(t), x2: x(t), y1: m.t, y2: h - m.b, stroke: css("--grid") }, svg); const tx = S("text", { x: x(t), y: h - 6, "text-anchor": "middle" }, svg); tx.textContent = t; });
+  S("line", { x1: x(1 / 6), x2: x(1 / 6), y1: m.t, y2: h - m.b, stroke: css("--accent"), "stroke-width": 1 }, svg);
+  rows.forEach(([lab, v, col], i) => {
+    const y0 = m.t + i * (bh + gap), g = S("g", {}, svg);
+    const lb = S("text", { x: m.l - 8, y: y0 + bh / 2 + 4, "text-anchor": "end", class: "ink" }, svg); lb.textContent = lab;
+    S("path", { d: barPath(x(0), y0, x(v) - x(0), bh), fill: css(col) }, g);
+    const vt = S("text", { x: x(v) + 6, y: y0 + bh / 2 + 4, class: "ink" }, g); vt.textContent = fmt(v);
+    hover(g, `<div class="t">${lab}</div>UAR ${fmt(v, 3)} (chance 0.167)`);
+  });
+}
+function layers() {
+  const host = document.getElementById("layers"), w = W(host), h = 220, m = { l: 36, r: 12, t: 10, b: 26 }, svg = svgIn(host, w, h);
+  const ser = [["emotion", "all clips", "--brand"], ["emotion_agreed", "crowd-agreed clips", "--emo-SAD"], ["sentence", "sentence identity", "--faint"]];
+  const x = lin(0, 12, m.l, w - m.r), y = lin(0.6, 1, h - m.b, m.t);
+  axisY(svg, y, [0.6, 0.7, 0.8, 0.9, 1.0], m.l, w - m.r, v => v.toFixed(1));
+  [0, 2, 4, 6, 8, 10, 12].forEach(l => { const t = S("text", { x: x(l), y: h - 8, "text-anchor": "middle" }, svg); t.textContent = l; });
+  ser.forEach(([k, lab, col]) => {
+    S("path", { d: D.wavlm.map((r, i) => (i ? "L" : "M") + x(r.layer) + "," + y(r[k])).join(""), fill: "none", stroke: css(col), "stroke-width": 2, "stroke-linejoin": "round" }, svg);
+    D.wavlm.forEach(r => { const c = S("circle", { cx: x(r.layer), cy: y(r[k]), r: 4, fill: css(col), stroke: css("--card"), "stroke-width": 2 }, svg); hover(c, `<div class="t">layer ${r.layer} · ${lab}</div>UAR ${fmt(r[k], 3)}`); });
+  });
+  document.getElementById("layerLegend").innerHTML = ser.map(([, lab, col]) => `<span><i class="swl" style="background:var(${col})"></i>${lab}</span>`).join("");
+}
+
+/* ---------------- where ---------------- */
+function buildWhere() {
+  const sel = document.getElementById("sentSel");
+  const names = Object.keys(D.contours.by_sent);
+  names.forEach(s => { const o = document.createElement("option"); o.value = s; o.textContent = D.contours.words[s].join(" "); sel.appendChild(o); });
+  sel.value = "TIE"; sel.onchange = contours;
+  document.getElementById("ctLegend").innerHTML = EMOS.map(e => `<span><i class="swl" style="background:var(--emo-${e})"></i>${EMO_NAME[e]}</span>`).join("");
+}
+function smooth(a) {
+  return a.map((v, i) => { const w = [a[i - 1], v, a[i + 1]].filter(u => u != null); return v == null || w.length < 2 ? v : w.reduce((p, q) => p + q, 0) / w.length; });
+}
+function contours() {
+  const s = document.getElementById("sentSel").value, C = D.contours.by_sent[s], words = D.contours.words[s], P = D.contours.pts_per_word;
+  [["ctF0", "f0"], ["ctInt", "int"]].forEach(([id, key]) => {
+    const host = document.getElementById(id), w = W(host), h = 240, m = { l: 34, r: 10, t: 8, b: 40 }, svg = svgIn(host, w, h);
+    const SM = {}; EMOS.forEach(e => { if (C[e]) SM[e] = smooth(C[e][key]); });
+    const vals = EMOS.flatMap(e => SM[e] || []).filter(v => v != null);
+    const ticks = niceTicks(Math.min(...vals), Math.max(...vals), 4);
+    const n = words.length * P, x = lin(0, n - 1, m.l, w - m.r), y = lin(ticks[0], ticks[ticks.length - 1], h - m.b, m.t);
+    axisY(svg, y, ticks, m.l, w - m.r, v => (v > 0 ? "+" : "") + v);
+    words.forEach((wd, i) => {
+      const xs = x(i * P - 0.5 < 0 ? 0 : i * P - 0.5);
+      if (i) S("line", { x1: xs, x2: xs, y1: m.t, y2: h - m.b, stroke: css("--grid") }, svg);
+      const t = S("text", { x: x(i * P + (P - 1) / 2), y: h - m.b + 16 + (i % 2) * 13, "text-anchor": "middle", class: "ink" }, svg); t.textContent = wd.toLowerCase();
+    });
+    EMOS.forEach(e => {
+      if (!C[e]) return;
+      let d = "", pen = false;
+      SM[e].forEach((v, i) => { if (v == null) { pen = false; return; } d += (pen ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1); pen = true; });
+      const p = S("path", { d, fill: "none", stroke: ec(e), "stroke-width": e === "NEU" ? 1.5 : 2, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+      const last = SM[e].length - 1 - [...SM[e]].reverse().findIndex(v => v != null);
+      S("circle", { cx: x(last), cy: y(SM[e][last]), r: 4, fill: ec(e), stroke: css("--card"), "stroke-width": 2 }, svg);
+    });
+    // crosshair
+    const ov = S("rect", { x: m.l, y: m.t, width: w - m.l - m.r, height: h - m.t - m.b, fill: "transparent" }, svg);
+    const vl = S("line", { y1: m.t, y2: h - m.b, stroke: css("--faint"), opacity: 0 }, svg);
+    ov.addEventListener("pointermove", ev => {
+      const r = svg.getBoundingClientRect(), px = (ev.clientX - r.left) * (w / r.width);
+      const i = Math.max(0, Math.min(n - 1, Math.round((px - m.l) / (w - m.l - m.r) * (n - 1))));
+      vl.setAttribute("x1", x(i)); vl.setAttribute("x2", x(i)); vl.setAttribute("opacity", 1);
+      const rows = EMOS.filter(e => C[e]).map(e => [e, SM[e][i]]).sort((a, b) => (b[1] == null ? -99 : b[1]) - (a[1] == null ? -99 : a[1]));
+      showTip(ev, `<div class="t">“${words[Math.floor(i / P)].toLowerCase()}” · ${key === "f0" ? "semitones" : "dB"} vs neutral</div>` + rows.map(([e, v]) => `<div style="display:flex;gap:8px;align-items:center"><span class="sw" style="background:var(--emo-${e})"></span>${EMO_NAME[e]}<span class="mono" style="margin-left:auto">${sgn(v, 1)}</span></div>`).join(""));
+    });
+    ov.addEventListener("pointerleave", () => { vl.setAttribute("opacity", 0); hideTip(); });
+  });
+}
+function position() {
+  [["posF0", "dF0_st", "st"], ["posInt", "dInt_dB", "dB"]].forEach(([id, key, u]) => {
+    const host = document.getElementById(id), w = W(host), h = 220, m = { l: 34, r: 70, t: 10, b: 26 }, svg = svgIn(host, w, h);
+    const pos = ["first", "middle", "last"], get = (e, p) => (D.word_pos.find(r => r.emo === e && r.pos === p) || {})[key];
+    const vals = EMO5.flatMap(e => pos.map(p => get(e, p)));
+    const ticks = niceTicks(Math.min(0, ...vals), Math.max(...vals), 4);
+    const x = lin(0, 2, m.l + 20, w - m.r), y = lin(ticks[0], ticks[ticks.length - 1], h - m.b, m.t);
+    axisY(svg, y, ticks, m.l, w - m.r + 10, v => (v > 0 ? "+" : "") + v);
+    S("line", { x1: m.l, x2: w - m.r + 10, y1: y(0), y2: y(0), stroke: css("--faint") }, svg);
+    pos.forEach((p, i) => { const t = S("text", { x: x(i), y: h - 6, "text-anchor": "middle", class: "ink" }, svg); t.textContent = p + " word"; });
+    const ends = [];
+    EMO5.forEach(e => {
+      S("path", { d: pos.map((p, i) => (i ? "L" : "M") + x(i) + "," + y(get(e, p))).join(""), fill: "none", stroke: ec(e), "stroke-width": 2 }, svg);
+      pos.forEach((p, i) => { const c = S("circle", { cx: x(i), cy: y(get(e, p)), r: 4, fill: ec(e), stroke: css("--card"), "stroke-width": 2 }, svg); hover(c, `<div class="t">${EMO_NAME[e]} · ${p} word</div>median ${sgn(get(e, p), 1)} ${u} vs neutral`); });
+      ends.push([e, y(get(e, "last"))]);
+    });
+    // end labels with simple collision avoidance + leader lines
+    ends.sort((a, b) => a[1] - b[1]);
+    let lastY = -1e9; ends.forEach(o => { o[2] = Math.max(o[1], lastY + 13); lastY = o[2]; });
+    ends.forEach(([e, y0, yl]) => {
+      if (Math.abs(yl - y0) > 2) S("line", { x1: x(2) + 6, y1: y0, x2: x(2) + 14, y2: yl, stroke: css("--faint") }, svg);
+      const t = S("text", { x: x(2) + 16, y: yl + 4, class: "ink" }, svg); t.textContent = EMO_NAME[e];
+    });
+  });
+}
+
+/* ---------------- maps ---------------- */
+let mapView = "avd";
+function buildMaps() {
+  const pick = document.getElementById("mapPick");
+  [["avd", "arousal × valence"], ["umap", "WavLM map"]].forEach(([k, lab]) => {
+    const b = document.createElement("button"); b.className = "chip"; b.id = "map-" + k; b.textContent = lab;
+    b.setAttribute("aria-pressed", k === mapView);
+    b.onclick = () => { mapView = k; pick.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.id === "map-" + k)); maps(); };
+    pick.appendChild(b);
+  });
+}
+function maps() {
+  const grid = document.getElementById("mapGrid"); grid.innerHTML = "";
+  const avd = mapView === "avd";
+  const pts = avd ? D.avd.points.map(p => ({ x: p.a, y: p.v, e: p.e, ok: p.ok })) : D.umap.points;
+  const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
+  const [x0, x1] = avd ? [0, 1] : [Math.min(...xs), Math.max(...xs)], [y0, y1] = avd ? [0.1, 0.8] : [Math.min(...ys), Math.max(...ys)];
+  EMOS.forEach(e => {
+    const p = document.createElement("div"); p.className = "panel"; p.style.padding = "12px"; grid.appendChild(p);
+    const mean = avd ? `arousal ${fmt(D.avd.by_emo.arousal[e])} · valence ${fmt(D.avd.by_emo.valence[e])}` : `${pts.filter(q => q.e === e).length} clips`;
+    p.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:baseline;gap:6px"><span style="display:flex;gap:6px;align-items:center;font-weight:500"><span class="sw" style="background:var(--emo-${e})"></span>${EMO_NAME[e]}</span><span class="meta">${mean}</span></div>`;
+    const host = document.createElement("div"); host.className = "chart"; p.appendChild(host);
+    const w = W(host), h = Math.round(w * 0.78), m = { l: avd ? 28 : 6, r: 6, t: 6, b: avd ? 22 : 6 }, svg = svgIn(host, w, h);
+    const x = lin(x0, x1, m.l, w - m.r), y = lin(y0, y1, h - m.b, m.t);
+    if (avd) {
+      [0, .5, 1].forEach(t => { S("line", { x1: x(t), x2: x(t), y1: m.t, y2: h - m.b, stroke: css("--grid") }, svg); const tt = S("text", { x: x(t), y: h - 6, "text-anchor": "middle" }, svg); tt.textContent = t; });
+      [.2, .5, .8].forEach(t => { S("line", { x1: m.l, x2: w - m.r, y1: y(t), y2: y(t), stroke: css("--grid") }, svg); const tt = S("text", { x: m.l - 4, y: y(t) + 3.5, "text-anchor": "end" }, svg); tt.textContent = t; });
+    }
+    pts.forEach(q => { if (q.e !== e) S("circle", { cx: x(q.x), cy: y(q.y), r: 1.6, fill: css("--faint"), opacity: 0.18 }, svg); });
+    pts.forEach(q => { if (q.e === e) S("circle", { cx: x(q.x), cy: y(q.y), r: 2.6, fill: q.ok ? ec(e) : "none", stroke: ec(e), "stroke-width": 1, opacity: 0.85 }, svg); });
+  });
+  document.getElementById("mapCap").innerHTML = avd
+    ? "x: <b>arousal</b>, y: <b>valence</b> (0–1). Arousal orders the emotions cleanly, sad lowest and angry highest. Valence barely moves, so it has to come from text and context, which is the job of the planner, not the TTS."
+    : `2-D UMAP of WavLM layer ${D.umap.layer} after removing each actor's mean. High-arousal emotions separate from the low-arousal group; filled dots were heard as intended.`;
+}
+
+/* ---------------- actors ---------------- */
+function actorStrip() {
+  const host = document.getElementById("actorStrip"), w = W(host), h = 150, m = { l: 36, r: 8, t: 10, b: 24 }, svg = svgIn(host, w, h);
+  const A = D.labels.actor, x = lin(0, A.length - 1, m.l + 4, w - m.r - 4), y = lin(0.1, 0.6, h - m.b, m.t);
+  axisY(svg, y, [0.1, 0.2, 0.3, 0.4, 0.5, 0.6], m.l, w - m.r, v => Math.round(v * 100) + "%");
+  const ex = D.examples.map(e => e.actor);
+  A.forEach((a, i) => {
+    const hl = ex.includes(a.actor), fem = a.sex === "Female";
+    const c = S("circle", { cx: x(i), cy: y(a.p), r: hl ? 5 : 3.6, fill: fem ? css("--brand") : css("--card"), stroke: css("--brand"), "stroke-width": 1.5 }, svg);
+    hover(c, `<div class="t">actor ${a.actor} · ${a.sex.toLowerCase()}, ${a.age}</div>${(a.p * 100).toFixed(1)}% of raters heard the intended emotion${hl ? "<br>used in “listen” above" : ""}`);
+    if (hl) { const t = S("text", { x: x(i) + 8, y: y(a.p) + 4, class: "ink" }, svg); t.textContent = a.actor; }
+  });
+  const t1 = S("text", { x: x(0), y: h - 6 }, svg); t1.textContent = "easiest to read";
+  const t2 = S("text", { x: x(A.length - 1), y: h - 6, "text-anchor": "end" }, svg); t2.textContent = "hardest";
+  document.getElementById("actLegend").innerHTML = `<span><i class="sw" style="background:var(--brand)"></i>female</span><span><i class="sw" style="border:1.5px solid var(--brand)"></i>male</span><span class="mono" style="color:var(--muted)">91 actors, sorted</span>`;
+}
+
+/* ---------------- decides ---------------- */
+const ARCH = [
+  ["phoneme encoder", "6 conv-transformer blocks, width 192, espeak phonemes", 2.8],
+  ["expression conditioner", "emotion soft-vector, intensity, arousal, dominance, speaker and 64-d context; FiLM into every block", 0.3],
+  ["word prosody planner", "predicts per-word pitch level, range, loudness, duration, tilt, CPPS; an external plan can override it", 0.9],
+  ["phone variance adaptor", "duration, pitch, energy and tilt per phone", 0.8],
+  ["mel decoder", "conv decoder to 80-band mel", 2.6],
+  ["vocoder", "Vocos-style iSTFT head, 24 kHz", 2.2],
+];
+function decides() {
+  const tot = ARCH.reduce((s, a) => s + a[2], 0), cols = ["--brand", "--emo-SAD", "--emo-HAP", "--emo-FEA", "--emo-DIS", "--emo-ANG"];
+  document.getElementById("budget").innerHTML = ARCH.map((a, i) => `<i style="width:${a[2] / tot * 100}%;background:var(${cols[i]})" title="${a[0]} ${a[2]}M"></i>`).join("");
+  document.getElementById("arch").innerHTML = ARCH.map((a, i) => `<div class="arch-row"><span class="n" style="display:flex;gap:8px;align-items:center"><span class="sw" style="background:var(${cols[i]});border-radius:2px"></span>${a[0]}</span><span class="d">${a[1]}</span><span class="p">${a[2].toFixed(1)}M</span></div>`).join("") +
+    `<div class="arch-row"><span class="n">total</span><span class="d">under the 10M budget</span><span class="p"><b>${tot.toFixed(1)}M</b></span></div>`;
+}
+
+/* ---------------- boot ---------------- */
+function renderAll() {
+  figures(); renderListen(); confusion(); pacted(); fingerprint(); drivers(); ladder(); layers(); contours(); position(); maps(); actorStrip(); decides();
+}
+buildListen(); buildWhere(); buildMaps(); renderAll();
+let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(renderAll, 150); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
+new MutationObserver(renderAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+</script>
