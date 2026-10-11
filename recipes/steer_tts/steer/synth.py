@@ -37,6 +37,11 @@ class Synth:
         self.model = SteerTTS(ck["n_speakers"], ck["n_tags"], **ck.get("arch", {})).to(device).eval()
         self.model.load_state_dict(ck["model"])
         self.spk2i = {s: i for i, s in enumerate(self.stats["speakers"])}
+        # abs_z ablation checkpoints take corpus-wide z-scores: requests (speaker-relative z, like every other model)
+        # are mapped through the voice's absolute neutral level (_abs_anchor)
+        self.gstats, self._anchor = None, {}
+        if ck.get("arch", {}).get("ctrl_norm") == "global":
+            self.gstats = json.load(open(Path(ckpt).parent / "abs_stats.json"))
         self.tag2i = {t: i for i, t in enumerate(self.stats["tags"])}
         # reference-conditioned checkpoints: known voices use their stored mean neutral vector (spk_ref.npz);
         # any other voice can be cloned from a reference clip via ref_wav=
@@ -93,13 +98,44 @@ class Synth:
             pm[:, nb:] = pm[:, nb - 1:nb] + (shape[:, nb:] - shape[:, nb - 1:nb])
         return pm
 
-    def control_tensors(self, ctrl: dict):
+    def control_tensors(self, ctrl: dict, speaker=None, ref_wav=None):
         c = torch.zeros(1, len(CONTROL_DIMS), device=self.dev)
         m = torch.zeros(1, len(CONTROL_DIMS), device=self.dev)
+        anchor = self._abs_anchor(speaker, ref_wav) if (self.gstats is not None and ctrl) else None
         for k, v in (ctrl or {}).items():
             i = CONTROL_DIMS.index(k)
-            c[0, i], m[0, i] = float(v), 1.0
+            v = float(v)
+            if anchor is not None:  # speaker-relative z -> raw -> corpus-wide z (what the abs_z model was trained on)
+                v = (anchor[k] + v * self.stats["pooled_sd"][k] - self.gstats["mu"][k]) / self.gstats["sd"][k]
+                v = float(np.clip(v, -5, 5))
+            c[0, i], m[0, i] = v, 1.0
         return c, m
+
+    def _abs_anchor(self, speaker, ref_wav):
+        """abs_z: raw neutral level of this voice per dim. Training voices: their stored neutral mean; a cloned voice:
+        measured on its reference clip (steer.features.measure, no transcript: rate falls back to the mean neutral
+        rate over training speakers, as does any dim the clip leaves undefined)."""
+        key = str(ref_wav) if isinstance(ref_wav, (str, Path)) else (None if ref_wav is not None else speaker)
+        if key is not None and key in self._anchor:
+            return self._anchor[key]
+        fb = {k: float(np.nanmean([v[k] for v in self.stats["spk_mean"].values()])) for k in CONTROL_DIMS}
+        if ref_wav is None and speaker in self.stats.get("spk_mean", {}):
+            a = {k: (fb[k] if v is None or not np.isfinite(v) else float(v)) for k, v in self.stats["spk_mean"][speaker].items()}
+        elif ref_wav is not None:
+            from .features import measure
+            y = ref_wav
+            if isinstance(ref_wav, (str, Path)):
+                import soxr
+                y, sr = sf.read(str(ref_wav), dtype="float32")
+                y = y.mean(1) if y.ndim > 1 else y
+                y = soxr.resample(y, sr, SR) if sr != SR else y
+            ctl = measure(np.asarray(y, np.float32), n_phones=None, want_mel=False)["controls"]
+            a = {k: (float(x) if np.isfinite(x) else fb[k]) for k, x in zip(CONTROL_DIMS, ctl)}
+        else:
+            a = fb
+        if key is not None:
+            self._anchor[key] = a
+        return a
 
     @torch.no_grad()
     def speaker_vector(self, speaker=None, ref_wav=None):
@@ -135,7 +171,7 @@ class Synth:
             ids, widx = [ids[k] for k in keep], [widx[k] for k in keep]
         ids_t = torch.tensor([ids], device=self.dev)
         widx_t = torch.tensor([widx], device=self.dev)
-        c, m = self.control_tensors(ctrl)
+        c, m = self.control_tensors(ctrl, speaker, ref_wav)
         spk = torch.tensor([self.spk2i.get(speaker, len(self.spk2i))], device=self.dev)  # unknown -> last row
         spk_vec = self.speaker_vector(speaker, ref_wav) if self.spk_ref is not None else None
         tg = torch.tensor([self.tag2i.get(tag, 0)], device=self.dev)

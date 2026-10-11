@@ -35,6 +35,9 @@ CONTROL_DIMS = [
     "h1h2",      # H1-H2, dB (breathy -> high)
 ]
 
+# the timing / level / pitch subset (prosody_only ablation); the rest are voice-quality dims
+PROSODY_DIMS = CONTROL_DIMS[:6]
+
 # unified style tag vocabulary across corpora ("none" = unknown / unspecified)
 EARS_STYLES = ["regular", "loud", "whisper", "highpitch", "lowpitch", "fast", "slow"]
 EARS_EMOTIONS = ["adoration", "amazement", "amusement", "anger", "confusion", "contentment", "cuteness", "desire",

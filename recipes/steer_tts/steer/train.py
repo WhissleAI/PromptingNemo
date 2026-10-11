@@ -30,7 +30,7 @@ import torch
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
-from .config import RUNS, SR
+from .config import PROSODY_DIMS, RUNS, SR
 from .data import TTSData, FrameBucketSampler, PairSampler, collate, load_meta, pair_delta_loss, pair_pool, split
 from .model import SteerTTS
 from .text import SYMBOLS
@@ -158,13 +158,30 @@ def main():
                     help="nv: only in-voice nonverbal splices ([laugh] [cough] ... in the speaker's own voice); scenes, "
                          "rooms, phone and environmental events are rendered by mixing at inference instead (v2: the L1 "
                          "decoder cannot learn stochastic textures - AST found 0/24 events and 0/13 scenes)")
+    # control-space ablations (NAACL claim C3); defaults reproduce the full system
+    ap.add_argument("--ctrl_norm", default="spk", choices=["spk", "global"],
+                    help="abs_z ablation: global = controls z-scored corpus-wide instead of vs each speaker's neutral speech")
+    ap.add_argument("--no_mask", action="store_true",
+                    help="no_mask ablation: availability mask not an input (all-ones); unspecified dims are z = 0")
+    ap.add_argument("--ctrl_dims", default="all", choices=["all", "prosody", "none"],
+                    help="prosody: only rate/loud/f0_med/f0_iqr/f0_end/pause (prosody_only); none: no control vector "
+                         "(tag_only)")
+    ap.add_argument("--no_level_norm", action="store_true",
+                    help="no_level_norm ablation: spk_enc runs keep each speaker's raw mel level (no LEVEL_DB shift)")
     args = ap.parse_args()
 
-    dev = "cuda"
+    dev = "cuda" if torch.cuda.is_available() else "cpu"  # cpu: smoke tests only
     out = RUNS / args.run
     (out / "samples").mkdir(parents=True, exist_ok=True)
     df, stats = load_meta()
     tr, va = split(df)
+    gstats = None
+    if args.ctrl_norm == "global":
+        from .data import global_control_stats
+        gstats = global_control_stats(df, stats)  # also needed at synthesis (steer.synth)
+        json.dump(gstats, open(out / "abs_stats.json", "w"), indent=1)
+        print(f"abs_z: corpus-wide control stats {gstats}", flush=True)
+    dkw = dict(gstats=gstats, **({"level_norm": False} if args.no_level_norm else {}))
     json.dump(dict(vars(args), n_train=len(tr), n_val=len(va)), open(out / "args.json", "w"), indent=1)
     json.dump(stats, open(out / "control_stats.json", "w"))  # speaker/tag order of this run's checkpoints
 
@@ -190,8 +207,8 @@ def main():
         env_dim = ENV_DIM
         print(f"noise augmentation p={args.noise}: scenes {sorted(aug.bg)}, events {sorted(aug.ev)}, "
               f"nonverbal speakers {len(aug.nv)}, rirs { {k: len(v) for k, v in aug.rir.items()} }", flush=True)
-    tr_ds = TTSData(tr, stats, train=True, xvec=xvec, aug=aug, env_dim=env_dim)
-    va_ds = TTSData(va, stats, train=False, xvec=xvec, env_dim=env_dim)
+    tr_ds = TTSData(tr, stats, train=True, xvec=xvec, aug=aug, env_dim=env_dim, **dkw)
+    va_ds = TTSData(va, stats, train=False, xvec=xvec, env_dim=env_dim, **dkw)
     tr_dl = DataLoader(tr_ds, batch_sampler=FrameBucketSampler(tr.n_frames, args.max_frames, weights=weights),
                        collate_fn=collate, num_workers=args.workers, pin_memory=True, persistent_workers=True,
                        prefetch_factor=4)
@@ -201,7 +218,8 @@ def main():
     if args.pair_w > 0:
         pairs = pair_pool(tr)
         # full conditioning (no control / tag dropout) and no augmentation: the delta is between the two real renders
-        pair_ds = TTSData(tr, stats, train=True, p_dim_drop=0.0, p_all_drop=0.0, p_tag_drop=0.0, xvec=xvec, env_dim=env_dim)
+        pair_ds = TTSData(tr, stats, train=True, p_dim_drop=0.0, p_all_drop=0.0, p_tag_drop=0.0, xvec=xvec, env_dim=env_dim,
+                          **dkw)
         # EARS style pairs (~3% of the pool, the only same-sentence pitch / loudness / whisper / rate contrasts)
         # are drawn ~30% of the time
         is_ears = (tr.corpus.to_numpy()[[a for a, _ in pairs]] == "ears")
@@ -214,7 +232,9 @@ def main():
     model = SteerTTS(len(stats["speakers"]), len(stats["tags"]), d=args.d_model, ffn=args.ffn, heads=args.heads,
                      enc_mixer=args.enc_mixer,
                      dec_mixer=args.dec_mixer, ssm_state=args.ssm_state, spk_enc_dim=DIM if args.spk_enc else 0,
-                     n_symbols=len(SYMBOLS) if env_dim else None, n_env=env_dim).to(dev)
+                     n_symbols=len(SYMBOLS) if env_dim else None, n_env=env_dim,
+                     ctrl_dims={"all": None, "prosody": PROSODY_DIMS, "none": []}[args.ctrl_dims], no_mask=args.no_mask,
+                     ctrl_norm=args.ctrl_norm, level_norm=not args.no_level_norm).to(dev)
     if args.compile:
         from .model import BiMamba3
         BiMamba3.enable_compile()
@@ -251,7 +271,8 @@ def main():
     rew = None
     if args.reward > 0:
         from .rewards import RewardLoss
-        rew = RewardLoss(stats, dev, json.loads(args.reward_w), level_norm=args.spk_enc, k=args.reward_k)
+        rew = RewardLoss(stats, dev, json.loads(args.reward_w), level_norm=args.spk_enc and not args.no_level_norm,
+                         k=args.reward_k)
         if json.loads(args.reward_w).get("anchor"):
             # trust-region reference: a frozen copy of the STARTING checkpoint (--init), also after a resume
             import copy
@@ -276,7 +297,8 @@ def main():
     vocos = None
     t0, agg, cnt = time.time(), {}, {}
     perf = dict(t=time.time(), frames=0, utts=0, skipped=0, gn=0.0)
-    torch.cuda.reset_peak_memory_stats()
+    if dev == "cuda":
+        torch.cuda.reset_peak_memory_stats()
     # Nothing in the step reads a GPU value back (no float()/isfinite on the host), so the CPU can queue the
     # next step while the GPU runs this one: losses / grad norm / skips accumulate on device and sync once
     # per --log_every. A non-finite grad norm skips the update on device via the fused optimizer's found_inf.
@@ -361,13 +383,13 @@ def main():
                 tb.add_scalar("perf/mel_frames_per_s", perf["frames"] / dt, step)
                 tb.add_scalar("perf/utts_per_batch", perf["utts"] / n, step)
                 tb.add_scalar("perf/skipped_steps", perf["skipped"], step)
-                tb.add_scalar("perf/peak_gpu_mem_gb", torch.cuda.max_memory_allocated() / 2**30, step)
+                tb.add_scalar("perf/peak_gpu_mem_gb", (torch.cuda.max_memory_allocated() / 2**30 if dev == "cuda" else 0.0), step)
                 tb.add_scalar("perf/host_rss_gb", host_rss_gb(), step)
                 print(f"step {step} | {msg} | gn {perf['gn'] / n_ok:.2f} | {n / dt:.1f} it/s | {time.time() - t0:.0f}s",
                       flush=True)
                 agg, cnt = {}, {}
                 perf = dict(t=time.time(), frames=0, utts=0, skipped=0, gn=0.0)
-                torch.cuda.reset_peak_memory_stats()
+                torch.cuda.reset_peak_memory_stats() if dev == "cuda" else None
             if step % args.ckpt_every == 0 and step % args.eval_every != 0:
                 save_last(model, opt, step, stats, out)
             if step % args.eval_every == 0 or step == args.steps:

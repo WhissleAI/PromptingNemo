@@ -36,6 +36,27 @@ def load_meta():
     return df, stats
 
 
+def raw_controls(df, stats):
+    """Raw (un-normalised) control measurements [N, 12] recovered from the speaker-relative z-scores:
+    x = speaker neutral mean + z * pooled SD (z was clipped to +-5 in build_controls; NaN stays NaN)."""
+    sd = np.array([stats["pooled_sd"][k] for k in CONTROL_DIMS], np.float64)
+    mu = np.array([[stats["spk_mean"][s][k] for k in CONTROL_DIMS] for s in df.speaker], np.float64)
+    return mu + df[ZCOLS].to_numpy(np.float64) * sd
+
+
+def global_control_stats(df, stats):
+    """Corpus-wide mean / SD of every raw control (the abs_z ablation's normaliser)."""
+    x = raw_controls(df, stats)
+    return dict(mu={k: float(np.nanmean(x[:, i])) for i, k in enumerate(CONTROL_DIMS)},
+                sd={k: float(np.nanstd(x[:, i])) for i, k in enumerate(CONTROL_DIMS)})
+
+
+def global_z(x, gstats):
+    """Raw controls [..., 12] -> corpus-wide z-scores, clipped like the speaker-relative ones."""
+    mu = np.array([gstats["mu"][k] for k in CONTROL_DIMS]); sd = np.array([gstats["sd"][k] for k in CONTROL_DIMS])
+    return np.clip((np.asarray(x, np.float64) - mu) / sd, -5, 5)
+
+
 def split(df, val_frac=0.02, seed=0):
     rng = np.random.default_rng(seed)
     is_val = rng.random(len(df)) < val_frac
@@ -44,12 +65,13 @@ def split(df, val_frac=0.02, seed=0):
 
 class TTSData(Dataset):
     def __init__(self, df, stats, train=True, p_dim_drop=0.35, p_all_drop=0.15, p_tag_drop=0.3, xvec=None, aug=None,
-                 env_dim=0):
+                 env_dim=0, gstats=None, level_norm=None):
         """xvec: optional {id: speaker vector}. Then each item also carries spk_vec, the vector of a DIFFERENT
         utterance of the same speaker, drawn from its neutral speech (the reference the speaker-relative controls
         are defined against; LibriTTS-R counts as neutral). Validation uses a fixed reference per speaker."""
         self.df = df
-        self.level_norm = xvec is not None
+        # level_norm=False: the no_level_norm ablation (spk_enc run trained on raw-level mels)
+        self.level_norm = (xvec is not None) if level_norm is None else bool(level_norm)
         self.xvec = None
         if xvec is not None:
             # one f16 matrix + a row index, not a dict of arrays: forked DataLoader workers share the matrix pages
@@ -70,6 +92,8 @@ class TTSData(Dataset):
         self.train = train
         self.p_dim, self.p_all, self.p_tag = p_dim_drop, p_all_drop, p_tag_drop
         self.Z = df[ZCOLS].to_numpy(np.float32)
+        if gstats is not None:  # abs_z ablation: corpus-wide instead of speaker-relative normalisation
+            self.Z = global_z(raw_controls(df, stats), gstats).astype(np.float32)
         # acoustic environment (steer.acoustic): aug = Augmenter applied to a share of TRAIN items; env_dim > 0 makes
         # every item carry an environment vector (all zeros = clean, which is what un-augmented items teach)
         self.aug, self.env_dim = aug, env_dim

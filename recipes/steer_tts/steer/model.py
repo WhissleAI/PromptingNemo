@@ -311,7 +311,7 @@ def average_over_durations(frame_vals, dur, voiced_only=None):
 class SteerTTS(nn.Module):
     def __init__(self, n_speakers, n_tags, d=192, heads=2, ffn=384, k=3, enc_layers=4, dec_layers=4, g_dim=128,
                  spk_dim=64, tag_dim=32, p=0.1, enc_mixer="attn", dec_mixer="attn", ssm_state=32, spk_enc_dim=0,
-                 n_symbols=None, n_env=0):
+                 n_symbols=None, n_env=0, ctrl_dims=None, no_mask=False, ctrl_norm="spk", level_norm=True):
         super().__init__()
         # n_symbols: N_BASE (phonemes + punctuation) for every checkpoint before sound events; len(SYMBOLS) adds the
         # inline event tokens ([laugh], [dog], ...). n_env: size of the acoustic-environment vector (steer.acoustic),
@@ -320,6 +320,29 @@ class SteerTTS(nn.Module):
         # saved in checkpoints so synthesis rebuilds the same architecture
         self.arch = dict(enc_mixer=enc_mixer, dec_mixer=dec_mixer, ssm_state=ssm_state, spk_enc_dim=spk_enc_dim,
                          n_symbols=n_symbols, n_env=n_env, d=d, heads=heads, ffn=ffn)
+        # control-space ablations (NAACL C3; all default off, and only non-default values enter arch so existing
+        # checkpoints / code paths are unchanged):
+        #   ctrl_dims  list of control-dim names the model may see (None = all 12); the others are always masked
+        #              (prosody_only = the 6 timing/level/pitch dims, [] = tag_only: no control vector at all)
+        #   no_mask    the availability mask is not an input (fed as all-ones): unspecified dims look like z = 0
+        #   ctrl_norm  "global": controls were z-scored corpus-wide instead of per-speaker neutral (data / synth only)
+        #   level_norm False: training mels were not level-normalised per speaker (data only)
+        self.no_mask = bool(no_mask)
+        if ctrl_dims is None:
+            self.ctrl_keep = None
+        else:
+            unknown = set(ctrl_dims) - set(CONTROL_DIMS)
+            assert not unknown, unknown
+            self.register_buffer("ctrl_keep", torch.tensor([float(k in ctrl_dims) for k in CONTROL_DIMS]),
+                                 persistent=False)
+            self.arch["ctrl_dims"] = list(ctrl_dims)
+        if self.no_mask:
+            self.arch["no_mask"] = True
+        if ctrl_norm != "spk":
+            assert ctrl_norm == "global", ctrl_norm
+            self.arch["ctrl_norm"] = ctrl_norm
+        if not level_norm:
+            self.arch["level_norm"] = False
         self.emb = nn.Embedding(n_symbols, d, padding_idx=PAD)
         self.spk = nn.Embedding(n_speakers + 1, spk_dim)  # last index = unknown speaker
         # reference-conditioned voice (spk_enc_dim > 0): a frozen speaker-verification vector of a reference clip
@@ -345,9 +368,11 @@ class SteerTTS(nn.Module):
         self.to_mel = nn.Linear(d, N_MELS)
 
     def condition(self, spk, tag, ctrl, cmask, spk_vec=None, env=None):
+        if self.ctrl_keep is not None:
+            cmask = cmask * self.ctrl_keep
         c = torch.nan_to_num(ctrl) * cmask
         s = self.spk_proj(spk_vec) if (self.spk_proj is not None and spk_vec is not None) else self.spk(spk)
-        g = self.cond(torch.cat([s, self.tag(tag), c, cmask], -1))
+        g = self.cond(torch.cat([s, self.tag(tag), c, torch.ones_like(cmask) if self.no_mask else cmask], -1))
         if self.env_proj is not None and env is not None:
             g = g + self.env_proj(env)
         return g
