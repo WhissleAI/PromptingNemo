@@ -168,7 +168,12 @@ def main():
                          "(tag_only)")
     ap.add_argument("--no_level_norm", action="store_true",
                     help="no_level_norm ablation: spk_enc runs keep each speaker's raw mel level (no LEVEL_DB shift)")
+    ap.add_argument("--seed", type=int, default=None,
+                    help="extra seeds for repeat runs: seeds torch / numpy and the batch sampler (default: unseeded init, "
+                         "sampler seed 0, as before)")
     args = ap.parse_args()
+    if args.seed is not None:
+        torch.manual_seed(args.seed); np.random.seed(args.seed)
 
     dev = "cuda" if torch.cuda.is_available() else "cpu"  # cpu: smoke tests only
     out = RUNS / args.run
@@ -209,7 +214,8 @@ def main():
               f"nonverbal speakers {len(aug.nv)}, rirs { {k: len(v) for k, v in aug.rir.items()} }", flush=True)
     tr_ds = TTSData(tr, stats, train=True, xvec=xvec, aug=aug, env_dim=env_dim, **dkw)
     va_ds = TTSData(va, stats, train=False, xvec=xvec, env_dim=env_dim, **dkw)
-    tr_dl = DataLoader(tr_ds, batch_sampler=FrameBucketSampler(tr.n_frames, args.max_frames, weights=weights),
+    tr_dl = DataLoader(tr_ds, batch_sampler=FrameBucketSampler(tr.n_frames, args.max_frames, weights=weights,
+                                                                       seed=args.seed or 0),
                        collate_fn=collate, num_workers=args.workers, pin_memory=True, persistent_workers=True,
                        prefetch_factor=4)
     va_dl = DataLoader(va_ds, batch_sampler=FrameBucketSampler(va.n_frames, args.max_frames, shuffle=False),
