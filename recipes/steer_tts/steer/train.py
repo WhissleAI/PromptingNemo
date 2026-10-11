@@ -168,6 +168,9 @@ def main():
                          "(tag_only)")
     ap.add_argument("--no_level_norm", action="store_true",
                     help="no_level_norm ablation: spk_enc runs keep each speaker's raw mel level (no LEVEL_DB shift)")
+    ap.add_argument("--all_symbols", action="store_true",
+                    help="text embedding over the full symbol table incl. inline event tokens (META v2 has NonverbalTTS "
+                         "items with event tokens; without --noise the table stops at N_BASE and those ids overflow it)")
     ap.add_argument("--seed", type=int, default=None,
                     help="extra seeds for repeat runs: seeds torch / numpy and the batch sampler (default: unseeded init, "
                          "sampler seed 0, as before)")
@@ -238,7 +241,7 @@ def main():
     model = SteerTTS(len(stats["speakers"]), len(stats["tags"]), d=args.d_model, ffn=args.ffn, heads=args.heads,
                      enc_mixer=args.enc_mixer,
                      dec_mixer=args.dec_mixer, ssm_state=args.ssm_state, spk_enc_dim=DIM if args.spk_enc else 0,
-                     n_symbols=len(SYMBOLS) if env_dim else None, n_env=env_dim,
+                     n_symbols=len(SYMBOLS) if (env_dim or args.all_symbols) else None, n_env=env_dim,
                      ctrl_dims={"all": None, "prosody": PROSODY_DIMS, "none": []}[args.ctrl_dims], no_mask=args.no_mask,
                      ctrl_norm=args.ctrl_norm, level_norm=not args.no_level_norm).to(dev)
     if args.compile:
