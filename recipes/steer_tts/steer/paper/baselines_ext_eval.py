@@ -54,8 +54,35 @@ EXT_DIRS = {"kokoro": ROOT / "runs/bench/_ext/kokoro", "piper": ROOT / "runs/ben
 TB_SCORE = Path.home() / "anaconda3/envs/tb_score/bin/python"
 
 
+# reference rows that are not TTS systems (rendered here, scored like everything else)
+PSEUDO = {"vocos_copysyn": dict(group="reference", voice="default", controls=[], params_M=13.5,
+                                checkpoint="charactr/vocos-mel-24khz: ground-truth 24 kHz audio -> its own 100-bin mel "
+                                           "-> Vocos (vocoder upper bound for SteerTTS, which predicts the same mel)")}
+
+
 def cfg(s):
-    return SYSTEMS[s]
+    return SYSTEMS[s] if s in SYSTEMS else PSEUDO[s]
+
+
+def cmd_copysyn():
+    """Vocos copy-synthesis of the 500 LibriTTS-R GT clips (CPU)."""
+    import soundfile as sf
+    import torch
+    from vocos import Vocos
+    torch.set_num_threads(4)
+    voc = Vocos.from_pretrained("charactr/vocos-mel-24khz").eval()
+    lib, _, _, _ = bench()
+    d = WORK / "vocos_copysyn" / "libritts"
+    d.mkdir(parents=True, exist_ok=True)
+    for i, r in lib.iterrows():
+        f = d / f"{i:04d}.wav"
+        if f.exists():
+            continue
+        y = torch.from_numpy(C.load24(r.gt_path))[None]
+        with torch.no_grad():
+            out = voc.decode(voc.feature_extractor(y))[0].numpy()
+        sf.write(f, out, 24000)
+    print("copysyn", len(list(d.glob("*.wav"))))
 
 
 def gender_rule(f0, calib):
@@ -200,9 +227,9 @@ def cmd_score(systems, sets):
                 pairs += [(it["path"], it["ref"]) for it in its]
     print(f"score: {len(paths)} wavs, {len(psc_paths)} psc, {len(pairs)} sim pairs", flush=True)
     if paths:
-        C.transcribe(sorted(set(paths)), SC / "asr_v3.jsonl")
+        C.transcribe(sorted(set(paths)), SC / "asr_v3.jsonl", batch=8)  # <6 GB peak (eval lane)
     if psc_paths:
-        C.transcribe(sorted(set(psc_paths)), SC / "asr_dl2.jsonl", model="distil-whisper/distil-large-v2")
+        C.transcribe(sorted(set(psc_paths)), SC / "asr_dl2.jsonl", model="distil-whisper/distil-large-v2", batch=8)
     q = [p for p in paths if "/steer/" not in p]
     if q:
         utmos(sorted(set(q)), SC / "utmos.json")
@@ -264,7 +291,7 @@ def cmd_dnsmos(systems):
         paths += v
     lst = SC / "dnsmos_list.txt"
     lst.write_text("\n".join(sorted(set(paths))) + "\n")
-    subprocess.run([str(TB_SCORE), "-s", str(Path(__file__).with_name("dnsmos_score.py")), str(lst), str(SC / "dnsmos.json")],
+    subprocess.run([str(TB_SCORE), "-s", str(Path(__file__).with_name("dnsmos_score.py")), str(lst), str(SC / "dnsmos.json"), "8"],
                    check=True, env={"PYTHONNOUSERSITE": "1", "PATH": "/usr/bin:/bin", "HOME": str(Path.home()),
                                     "OMP_NUM_THREADS": "1"})
 
@@ -274,14 +301,14 @@ def cmd_measure(systems):
         its = present(rendered(s, "steer"))
         if not its:
             continue
-        M = C.measure_many([(it["path"], it["path"], it["text"]) for it in its])
+        M = C.measure_many([(it["path"], it["path"], it["text"]) for it in its], procs=8)
         M.to_parquet(WORK / s / "steer_measures.parquet")
         print("measured", s, len(M), flush=True)
 
 
 # ------------------------------------------------------------------------------------------------------ analysis
 def _row(metric, v, n, src, scorer, split, s, **kw):
-    return C.row(metric, v, n, src, scorer, split, system=s, group=kw.pop("group", cfg(s)["group"] if s in SYSTEMS else "ours"), **kw)
+    return C.row(metric, v, n, src, scorer, split, system=s, group=kw.pop("group", cfg(s)["group"] if (s in SYSTEMS or s in PSEUDO) else "ours"), **kw)
 
 
 def quality_rows(s, st, hyps, ut, dn, sims, src):
@@ -338,7 +365,7 @@ def psc_rows(s, hyps, hyps_dl2, ut, dn, src):
     df["utmos"] = df.path.map(ut)
     df["dnsmos_ovrl"] = df.path.map(lambda p: dn.get(p, {}).get("ovrl", np.nan))
     R = []
-    for sub_name, sub in (("all", df), ("no_leak", df[~df.leak.astype(bool)])):
+    for sub_name, sub in (("all", df), ("voxceleb", df[df.source == "voxceleb"]), ("no_leak", df[~df.leak.astype(bool)])):
         split = f"paraspeechcaps_test246_{sub_name}"
         for key, H, scorer in (("wer_v3", hyps, "whisper-large-v3 fp16 + EnglishTextNormalizer"),
                                ("wer_dl2", hyps_dl2, "distil-whisper-large-v2 fp16 + EnglishTextNormalizer")):
@@ -350,7 +377,9 @@ def psc_rows(s, hyps, hyps_dl2, ut, dn, src):
                               src, scorer, split, s, condition="psc"))
         for col in ("gender_ok", "pitch_ok", "rate_ok"):
             R.append(_row(col.replace("_ok", "_acc"), C.boot_ci(list(sub[col].astype(float)), lambda u: float(np.mean(u))),
-                          len(sub), src, "benchmark objective estimator (calibration.json)", split, s, condition="psc"))
+                          len(sub), src, "benchmark objective estimator (calibration.json)", split, s, condition="psc",
+                          **({"flag": "uninformative: equals the constant 'high-pitched' base rate of the labels"}
+                             if col == "pitch_ok" else {})))
         for col, scorer in (("utmos", "SpeechMOS utmos22_strong"), ("dnsmos_ovrl", "DNSMOS P.835 OVRL")):
             v = list(sub[col].dropna())
             if v:
@@ -381,7 +410,7 @@ def steer_rows(s, hyps):
     sd = pd.Series(stats["pooled_sd"])
     M = pd.read_parquet(f).set_index("key")
     df = pd.DataFrame(present(rendered(s, "steer")))
-    df = df.join(M, on="path")
+    df = df.rename(columns={"rate": "knob_rate", "pitch": "knob_pitch"}).join(M, on="path")
     df["hyp"] = df.path.map(hyps)
     ew = [C.word_errors(t, h) if isinstance(h, str) else (np.nan, np.nan) for t, h in zip(df.text, df.hyp)]
     df["err"], df["nwords"] = [e for e, _ in ew], [n for _, n in ew]
@@ -394,9 +423,11 @@ def steer_rows(s, hyps):
     split = "harness_texts8_" + ("heldout16" if cfg(s)["voice"] == "clone" else "default_voices2")
     R = []
     knob_target = {"rate": "rate", "pitch": "f0_med"}
-    units = sorted({(v, t) for v, t in zip(df.vid, df.text_id)})
+    # bootstrap on a slim numeric frame (the full frame with string columns made each resample very slow)
+    slim = df[["vid", "text_id", "dim", "req_z", "err", "nwords"] + [f"dz_{d}" for d in CONTROL_DIMS]].copy()
+    slim["vid"] = slim.vid.astype("category").cat.codes
     for k, tgt in knob_target.items():
-        sub = df[df.dim == k]
+        sub = slim[slim.dim == k].drop(columns="dim")
         if sub.empty:
             continue
         cond = dict(condition="native_knob", knob=k, target_dim=tgt, extractor="ours",
@@ -417,11 +448,11 @@ def steer_rows(s, hyps):
                           len(g), src, "steer.features.measure", split, s, **c2))
             R.append(_row("leak_mean_abs_dz_other", C.boot_df(g, ["vid", "text_id"], lambda x: float(np.nanmean(np.abs(x[others].values)))),
                           len(g), src, "steer.features.measure", split, s, **c2))
-            gw = g[g.hyp.notna()]
+            gw = g[g.err.notna()]
             if len(gw):
                 R.append(_row("wer", C.boot_df(gw, ["vid", "text_id"], lambda x: 100 * x.err.sum() / x.nwords.sum()), len(gw), src,
                               "whisper-large-v3 fp16 + whisper EnglishTextNormalizer", split, s, **c2))
-    b = df[(df.dim == "baseline") & df.hyp.notna()]
+    b = slim[(slim.dim == "baseline") & df.hyp.notna().values]
     if len(b):
         R.append(_row("wer", C.boot_df(b, ["vid", "text_id"], lambda x: 100 * x.err.sum() / x.nwords.sum()), len(b), src,
                       "whisper-large-v3 fp16 + whisper EnglishTextNormalizer", split, s, condition="native_knob_neutral"))
@@ -458,7 +489,7 @@ def cmd_analyze():
         sims.update(read_sim(f))
     R, raws = [], []
     src = f"{C.RES}/baselines_quality_raw.csv"
-    for s in SYSTEMS:
+    for s in list(SYSTEMS) + list(PSEUDO):
         for st in ("libritts",) + (("clone",) if cfg(s)["voice"] == "clone" else ()):
             r, d = quality_rows(s, st, hyps, ut, dn, sims, src)
             R += r; raws += d
@@ -475,7 +506,10 @@ def cmd_analyze():
     for s in SYSTEMS:
         r, d = psc_rows(s, hyps, dl2, ut, dn, f"{C.RES}/baselines_psc_raw.csv")
         R += r; raws += d
-    write("baselines_psc", R, raws, meta_common())
+    write("baselines_psc", R, raws, dict(meta_common(), note="ASR judge: Whisper-large-v3 fp16 + Whisper EnglishTextNormalizer "
+          "(wer_v3; distil-large-v2 kept as wer_dl2 for the old table); same gender/pitch/rate estimator and calibration as "
+          "steer.benchmark. Subsets: all 246, voxceleb (source==voxceleb), no_leak (excludes Expresso-sourced prompts that "
+          "overlap SteerTTS training). Prompt-blind systems get the oracle gender only."))
     R = []
     for s in SYSTEMS:
         R += seedtts_rows(s)
@@ -489,14 +523,45 @@ def cmd_analyze():
                                            hit_rate="share of units with sign(level)*delta > 0.5 z (as X1)"))
 
 
+def cmd_knobs():
+    """results/baselines_native_knobs.json: native-knob dose-response for every system with probe measurements, plus
+    the matching SteerTTS rows of results/steer_heldout.json (ours extractor) for side-by-side reading."""
+    hyps = asr_cache("asr_v3.jsonl")
+    R, raws, units = [], [], {}
+    for s in SYSTEMS:
+        r, d = steer_rows(s, hyps)
+        R += r; raws += d
+        if d:
+            units[s] = dict(n_units=int(d[0][["vid", "text_id"]].drop_duplicates().shape[0]),
+                            voices=int(d[0].vid.nunique()), texts=int(d[0].text_id.nunique()))
+    ours = [dict(x, system="steertts_base", group="ours") for x in load_json(C.RES / "steer_heldout.json").get("rows", [])
+            if x.get("extractor") == "ours" and x.get("target_dim") in ("rate", "f0_med") and x.get("condition") == "single_control"
+            and x["metric"] in ("spearman_rho", "slope_dz_per_reqz", "mean_delta_z", "hit_rate", "direction_acc",
+                                "leak_mean_abs_dz_other")]
+    write("baselines_native_knobs", R + ours, raws, dict(
+        meta_common(), units=units,
+        units_note="native-knob baselines: default-voice systems = 2 default voices (F/M) x 8 harness texts = 16 "
+                   "(voice,text) units per level; cloning systems = 16 held-out LibriTTS-R voices x 8 texts = 128. "
+                   "SteerTTS rows (system=steertts_base, copied from steer_heldout.json): 16 held-out voices x 8 texts "
+                   "= 128 units per level.",
+        gain="slope_dz_per_level: OLS slope through 0 of measured delta z on the requested level in {-2,-1,1,2}, "
+             "knob values z-matched (rate_levels/pitch_levels); ours: slope_dz_per_reqz",
+        leak="mean |delta z| over the other 11 control dims (steer.features.measure)",
+        delta="knob render minus the knob-neutral render of the same voice/text, in SteerTTS training pooled SD"))
+
+
+def load_json(f):
+    return json.load(open(f)) if Path(f).exists() else {}
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["plan", "score", "dnsmos", "seedtts", "measure", "analyze", "table"])
+    ap.add_argument("cmd", choices=["plan", "score", "dnsmos", "seedtts", "measure", "analyze", "knobs", "copysyn", "table"])
     ap.add_argument("--system")
     ap.add_argument("--systems", default="")
     ap.add_argument("--sets", default="libritts")
     a = ap.parse_args()
-    systems = list(SYSTEMS) if a.systems == "all" else [x for x in a.systems.split(",") if x]
+    systems = list(SYSTEMS) + list(PSEUDO) if a.systems == "all" else [x for x in a.systems.split(",") if x]
     sets = a.sets.split(",")
     if a.cmd == "plan":
         cmd_plan(a.system, sets)
@@ -510,6 +575,10 @@ def main():
         cmd_measure(systems)
     elif a.cmd == "analyze":
         cmd_analyze()
+    elif a.cmd == "knobs":
+        cmd_knobs()
+    elif a.cmd == "copysyn":
+        cmd_copysyn()
     else:
         from .baselines_ext_table import main as table
         table()

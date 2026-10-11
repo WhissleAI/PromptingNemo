@@ -10,7 +10,7 @@ numpy 2 for python3.10 that breaks compiled extensions in these envs.
 Registry: SYSTEMS[name] = dict(env, group ("closest"|"advanced"), params_M (acoustic model, counted from the loaded
 checkpoints 2026-10-11; vocoder listed separately; StyleTTS2 = inference modules only (no discriminators, aligner,
 pitch extractor); ParaStyleTTS excludes its 109M all-mpnet-base-v2 prompt encoder; CosyVoice2 = LLM 505.8 + flow
-112.5; XTTS = GPT 441.0; Piper from its ONNX size; Kokoro / Parler-mini from their model cards),
+112.5; XTTS = GPT 441.0; Piper from its ONNX size; Kokoro / Parler-mini / Paradee / Kitten from their model cards),
 vocoder, controls (native knobs; "prompt" = free-text description), voice ("default"|"clone"|"prompt"),
 checkpoint, load).  `load(device)` loads the model ONCE in-process and returns
     fn(text, gender="female", desc=None, ref=None, ref_text=None, rate=1.0, pitch=0.0) -> (wav float32 np.ndarray, sr)
@@ -164,11 +164,24 @@ def load_parastyle(device="cuda"):
     finally:
         os.chdir(cwd)
 
+    import re
+    from num2words import num2words
+
+    def norm(t):
+        """The released g2p has no text normaliser (digits/symbols crash it): spell out numbers and common symbols,
+        drop other non-letters. Applied to ParaStyleTTS only (every other system has its own frontend)."""
+        t = re.sub(r"\$(\d+(?:\.\d+)?)", lambda m: m.group(1) + " dollars", t)
+        t = t.replace("%", " percent").replace("&", " and ")
+        t = re.sub(r"(\d+)(st|nd|rd|th)\b", lambda m: num2words(int(m.group(1)), to="ordinal"), t)
+        t = re.sub(r"\d+(?:\.\d+)?", lambda m: num2words(float(m.group(0)) if "." in m.group(0) else int(m.group(0))), t)
+        t = t.replace("-", " ")
+        return re.sub(r"[^a-zA-Z' ,.?!]", " ", t)
+
     def fn(text, gender="female", desc=None, ref=None, ref_text=None, rate=1.0, pitch=0.0):
         _knobs("parastyle", rate, pitch)
         prompt = desc or f"A adult {gender} speaking English with neutral emotion"
         with torch.inference_mode():
-            phon, tone = mix_to_ipa(text.lower())
+            phon, tone = mix_to_ipa(norm(text).lower())
             x = torch.tensor([ipa_to_idx(phon)], device=device)
             t = torch.tensor([tone], device=device)
             s = enc.encode([prompt], convert_to_tensor=True, show_progress_bar=False).to(device)
@@ -294,6 +307,32 @@ def load_xtts(device="cuda"):
     return fn
 
 
+def load_paradee(device="cpu"):
+    """Paradee-8M v1.0 (Mahendrakar 2026, arXiv 2610.06817): 8.07M-param single-voice (af_heart) distillation of
+    Kokoro-82M; official `paradee` package (misaki g2p + int8 ONNX, CPU onnxruntime; `device` ignored).
+    Knob: speed (= rate)."""
+    from paradee import Paradee, SAMPLE_RATE
+    m = Paradee()
+
+    def fn(text, gender="female", desc=None, ref=None, ref_text=None, rate=1.0, pitch=0.0):
+        _knobs("paradee", rate, pitch)
+        return _np(m(text, speed=rate)), SAMPLE_RATE
+    return fn
+
+
+def load_kitten(device="cpu"):
+    """Kitten TTS nano 0.8 (KittenML, fp32 ONNX, 15M) via `kittenml` installed --no-deps (no PyTorch); voices Bella (F)
+    / Jasper (M); its own text cleaner on (numbers, currencies). CPU onnxruntime. Knob: speed (= rate)."""
+    from kittenml import KittenTTS
+    m = KittenTTS("KittenML/kitten-tts-nano-0.8-fp32")
+    voice = dict(female="Bella", male="Jasper")
+
+    def fn(text, gender="female", desc=None, ref=None, ref_text=None, rate=1.0, pitch=0.0):
+        _knobs("kitten", rate, pitch)
+        return _np(m.generate(text, voice=voice[gender], speed=rate, clean_text=True)), 24000
+    return fn
+
+
 # ------------------------------------------------------------------------------------------------------ registry
 def _py(env):
     return str(ENVS / env / "bin/python")
@@ -312,6 +351,12 @@ SYSTEMS = {
                   checkpoint="rhasspy/piper-voices en_US-lessac-medium / en_US-ryan-medium"),
     "kokoro": dict(env="ttsbase", group="closest", params_M=82.0, vocoder="iSTFTNet (built in)",
                    controls=["speed"], voice="default", load=load_kokoro, checkpoint="hexgrad/Kokoro-82M v1.0"),
+    "paradee": dict(env="tb_onnxtts", group="closest", params_M=8.07, vocoder="iSTFTNet (built in, Kokoro-style)",
+                    controls=["speed"], voice="default", load=load_paradee,
+                    checkpoint="sahilmahendrakar/Paradee-8M-v1.0 (int8 ONNX; single voice af_heart)"),
+    "kitten": dict(env="tb_onnxtts", group="closest", params_M=15.0, vocoder="built in (end-to-end ONNX)",
+                   controls=["speed"], voice="default", load=load_kitten,
+                   checkpoint="KittenML/kitten-tts-nano-0.8-fp32 (voices Bella / Jasper)"),
     "styletts2": dict(env="tb_styletts2", group="closest", params_M=135.8, vocoder="iSTFTNet/HiFi-GAN (built in)",
                       controls=["reference_style"], voice="clone", load=load_styletts2,
                       checkpoint="yl4579/StyleTTS2-LibriTTS epochs_2nd_00020.pth"),

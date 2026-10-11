@@ -13,21 +13,42 @@ from multiprocessing import Pool
 os.environ.setdefault("OMP_NUM_THREADS", "1")
 
 
+_M = None
+
+
+def _model():
+    """speechmos' DNSMOS class with single-threaded ONNX sessions (its default sessions spin up one thread per core in
+    every worker, which took ~45 cores)."""
+    global _M
+    if _M is None:
+        import onnxruntime as ort
+        from speechmos import dnsmos
+        so = ort.SessionOptions()
+        so.intra_op_num_threads = so.inter_op_num_threads = 1
+        d = os.path.join(os.path.dirname(dnsmos.__file__), "dnsmos_models")
+        m = dnsmos.DNSMOS.__new__(dnsmos.DNSMOS)
+        m.primary_model_path = os.path.join(d, "sig_bak_ovr.onnx")
+        m.onnx_sess = ort.InferenceSession(m.primary_model_path, so, providers=["CPUExecutionProvider"])
+        m.p808_onnx_sess = ort.InferenceSession(os.path.join(d, "model_v8.onnx"), so, providers=["CPUExecutionProvider"])
+        _M = m
+    return _M
+
+
 def one(p):
     import soundfile as sf
     import soxr
-    from speechmos import dnsmos
     y, sr = sf.read(p, dtype="float32")
     y = y.mean(1) if y.ndim > 1 else y
     if sr != 16000:
         y = soxr.resample(y, sr, 16000)
-    r = dnsmos.run(y, 16000)
+    y = y.clip(-1.0, 1.0)  # resampling overshoot; the package rejects |x| > 1
+    r = _model()(y, 16000, False)
     return p, dict(ovrl=float(r["ovrl_mos"]), sig=float(r["sig_mos"]), bak=float(r["bak_mos"]), p808=float(r["p808_mos"]))
 
 
 def main():
     lst, cache = sys.argv[1], sys.argv[2]
-    procs = int(sys.argv[3]) if len(sys.argv) > 3 else 16
+    procs = int(sys.argv[3]) if len(sys.argv) > 3 else 8
     res = json.load(open(cache)) if os.path.exists(cache) else {}
     paths = [l.strip() for l in open(lst) if l.strip()]
     todo = [p for p in paths if p not in res and os.path.exists(p)]
