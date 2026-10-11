@@ -14,8 +14,9 @@ so, and the equivalence tests at the bottom are how that claim is checked.
 
         h_t = alpha_t h_{t-1} + beta_t B_{t-1} x_{t-1} + gamma_t B_t x_t
 
-   with alpha_t = exp(Delta_t A), beta_t = (Delta_t/2) alpha_t,
-   gamma_t = Delta_t/2. That two-tap dependence IS the implicit convolution
+   with alpha_t = exp(Delta_t A), beta_t = (1 - lambda_t) Delta_t alpha_t,
+   gamma_t = lambda_t Delta_t and a data-dependent lambda_t = sigmoid(.)
+   (lambda = 1/2 is the classical trapezoid, initialised here). That two-tap dependence IS the implicit convolution
    the paper describes - it is why Mamba-3 can drop the short causal conv
    that Mamba-1/2 carry as a separate component (Sec 3.1, and eq 7's
    factorisation of L into a 1-semiseparable matrix times a 2-band matrix).
@@ -205,14 +206,20 @@ class Mamba3Layer(nn.Module):
         The recurrence itself lives in the shared `ssm_scan` (paper eq 11), so
         callers cannot drift. Here the per-step write is the
         single-stream outer product S_t = B_t x_t^T.
+
+        state: None or the (h, S_last) pair returned by a previous call with
+        return_state=True. Segment-wise streaming must carry S_last as well as
+        h: the first step of the next segment needs beta_t B_{t-1} x_{t-1}^T,
+        the trapezoidal term, and carrying h alone silently drops it.
         """
         nu = self.norm(u)
         alpha, beta, gamma, Bm, Cm, x, theta = self._coeffs(nu)
         S = Bm @ x.transpose(-1, -2)                    # (B,T,H,N,P)
-        y_flat, h, _ = ssm_scan(alpha, beta, gamma, theta, S, Cm, self.P,
-                                state=state)
+        h0, prev_S = (None, None) if state is None else state
+        y_flat, h, S_last = ssm_scan(alpha, beta, gamma, theta, S, Cm, self.P,
+                                     state=h0, prev_S=prev_S)
         out = self.gate_and_proj(y_flat, nu)
-        return (out, h) if return_state else out
+        return (out, (h, S_last)) if return_state else out
 
     def step(self, u_t: torch.Tensor, state, prev_bx=None):
         """One timestep, constant memory. The deployment path.

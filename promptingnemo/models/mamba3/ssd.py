@@ -80,9 +80,10 @@ def ssd_pytorch(alpha, Beff, xeff, Ctil, chunk: int = 64):
         d = torch.exp(cl)                                  # (B,L,H)  prod_{s0..t} alpha
         # intra-chunk decay L[t,s] = exp(cl_t - cl_s) for s<=t else 0
         rel = cl.unsqueeze(2) - cl.unsqueeze(1)            # (B,L(t),L(s),H)
+        # mask the exponent BEFORE exp: above the diagonal rel > 0 can overflow, and where() of an inf
+        # still back-propagates NaN into alpha (non-finite grads once a chunk's decay exceeds ~88 nats)
         tril = torch.tril(torch.ones(L, L, dtype=torch.bool, device=Beff.device))
-        Ldec = torch.where(tril.view(1, L, L, 1), torch.exp(rel),
-                           torch.zeros((), dtype=Beff.dtype, device=Beff.device))
+        Ldec = torch.exp(rel.masked_fill(~tril.view(1, L, L, 1), float("-inf")))
         # scores G[t,s] = Ctil_t^T Beff_s over N -> (B,H,L,L,R,K)
         G = torch.einsum('blhnr,bmhnk->bhlmrk', Cc, Bc)
         # intra y_t = sum_{s<=t} Ldec[t,s] G[t,s] xeff_s^T
@@ -137,10 +138,11 @@ def ssd_vectorized(alpha, Beff, xeff, Ctil, chunk: int = 64):
     return y.reshape(B, C * L, H, R, P)[:, :T]
 
 
-def scan_forward_ssd(layer, u: torch.Tensor, chunk: int = 64, vectorized: bool = False):
+def scan_forward_ssd(layer, u: torch.Tensor, chunk: int = 64, vectorized: bool = True):
     """Drop-in for scan.scan_forward, via the SSD reduction (PyTorch stage).
 
-    vectorized=True uses ssd_vectorized (no per-chunk Python loop; much faster at long T)."""
+    vectorized=True (default) uses ssd_vectorized (no per-chunk Python loop; much faster at long T);
+    False runs the chunk loop of ssd_pytorch, kept as the readable reference."""
     Bsz, T, _ = u.shape
     H, R, P = layer.H, layer.R, layer.P
     nu = layer.norm(u)

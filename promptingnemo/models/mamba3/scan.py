@@ -96,9 +96,10 @@ def chunked_scan(alpha: torch.Tensor, w: torch.Tensor, chunk: int = 64,
         d = torch.exp(cl)                                  # decay from chunk start
         # (d_t / d_s) for s<=t, lower triangular, exp of a difference of logs
         rel = cl.unsqueeze(2) - cl.unsqueeze(1)            # (B,L,L,H)  log d_t - log d_s
+        # mask before exp (see ssd.ssd_pytorch): exp of the positive upper triangle overflows and where()
+        # of an inf back-propagates NaN
         mask = torch.tril(torch.ones(L, L, device=w.device, dtype=torch.bool))
-        M = torch.where(mask.view(1, L, L, 1), torch.exp(rel),
-                        torch.zeros((), device=w.device, dtype=w.dtype))
+        M = torch.exp(rel.masked_fill(~mask.view(1, L, L, 1), float("-inf")))
         # intra-chunk: sum_s M[t,s] * w_s  -> one batched matmul over (L,L) x (L, N*P)
         wf = w[:, s:e].reshape(B, L, H, N * P).permute(0, 2, 1, 3)   # (B,H,L,NP)
         Mp = M.permute(0, 3, 1, 2)                                   # (B,H,L,L)
