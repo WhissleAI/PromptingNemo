@@ -576,6 +576,64 @@ def bench_scaling(a):
         save_rows(rows, a.out)
 
 
+# ------------------------------------------------------------------------------------------------ FLOP counting
+# Two counts for every component and system (reviewer R3: matmul-only counts flatter recurrences / scans):
+#   matmul : torch.utils.flop_counter (matmul, bmm, conv, SDPA; 2 FLOPs per multiply-add)
+#   full   : matmul + every other arithmetic aten op at 1 FLOP per output element (add, mul, exp, cumsum, norms'
+#            reductions, activations ...), softmax / log_softmax at 5 per element (max, sub, exp, sum, div), FFTs at
+#            5 n log2 n per transform; pure data movement (view/copy/cat/gather/pad/index/fill/creation) is free.
+_MOVE = {"view", "_unsafe_view", "reshape", "expand", "transpose", "permute", "t", "slice", "select", "unsqueeze",
+         "squeeze", "as_strided", "detach", "alias", "clone", "copy_", "_to_copy", "to", "contiguous", "cat", "stack",
+         "gather", "scatter", "index", "index_select", "index_put_", "constant_pad_nd", "reflection_pad1d",
+         "replication_pad1d", "fill_", "zero_", "zeros", "zeros_like", "ones", "ones_like", "empty", "empty_like",
+         "empty_strided", "new_zeros", "new_empty", "new_ones", "full", "full_like", "arange", "lift_fresh",
+         "_local_scalar_dense", "split", "split_with_sizes", "unbind", "chunk", "narrow", "flip", "roll", "repeat",
+         "embedding", "masked_fill", "masked_fill_", "where", "_reshape_alias", "unfold", "set_", "resize_",
+         "randn", "rand", "randint", "normal_", "uniform_", "bernoulli_", "lift", "view_as_real", "view_as_complex",
+         "_conj", "conj", "resolve_conj", "resolve_neg", "item", "nonzero", "sort", "topk", "argmax", "max_pool1d",
+         "eq", "ne", "lt", "le", "gt", "ge", "logical_and", "logical_or", "logical_not", "bitwise_not", "bitwise_and",
+         "_unsafe_index", "unsqueeze_", "squeeze_", "transpose_", "t_", "split_copy", "slice_scatter",
+         "select_scatter", "diagonal", "tril", "triu", "_assert_async", "sym_size", "sym_stride", "is_nonzero"}
+
+
+def flop_count(f):
+    """-> (matmul_flops, full_flops, result) for calling f() (see the convention above)."""
+    import math
+    import torch
+    from torch.utils.flop_counter import FlopCounterMode, flop_registry
+    from torch.utils._python_dispatch import TorchDispatchMode
+    from torch.nn.attention import sdpa_kernel, SDPBackend
+
+    class Elementwise(TorchDispatchMode):
+        def __init__(self):
+            super().__init__()
+            self.n = 0
+
+        def __torch_dispatch__(self, func, types, args=(), kwargs=None):
+            out = func(*args, **(kwargs or {}))
+            pk = func.overloadpacket
+            name = pk.__name__.split(".")[-1]
+            if pk in flop_registry or name.rstrip("_") in _MOVE or name in _MOVE:
+                return out
+            outs = [o for o in (out if isinstance(out, (tuple, list)) else [out]) if isinstance(o, torch.Tensor)]
+            n = sum(o.numel() for o in outs)
+            if "softmax" in name:
+                n *= 5
+            elif name.startswith("_fft") or name.startswith("fft"):
+                x = args[0]
+                dims = args[1] if len(args) > 1 and isinstance(args[1], (list, tuple)) else [-1]
+                size = max(int(np.prod([x.shape[d] for d in dims])), 2)
+                n = 5 * x.numel() * math.log2(size)
+            self.n += n
+            return out
+
+    ew = Elementwise()
+    with sdpa_kernel(SDPBackend.MATH), FlopCounterMode(display=False) as fc, ew:
+        r = f()
+    mm = fc.get_total_flops()
+    return mm, mm + ew.n, r
+
+
 # ------------------------------------------------------------------------------------------------ FLOPs
 def bench_flops(a):
     """FLOPs per second of generated audio per component (torch.utils.flop_counter: matmul/conv/SDPA/bmm only -
@@ -591,10 +649,14 @@ def bench_flops(a):
 
     from torch.nn.attention import sdpa_kernel, SDPBackend
 
-    def count(f):  # MATH backend: the CPU flash-attention kernel has no FLOP formula (would count 0)
-        with sdpa_kernel(SDPBackend.MATH), FlopCounterMode(display=False) as fc:
-            r = f()
-        return fc.get_total_flops(), r
+    FULL = {}
+
+    def count(f, key=None):  # MATH backend: the CPU flash-attention kernel has no FLOP formula (would count 0)
+        mm, full, r = flop_count(f)
+        if key:
+            FULL[key] = full
+        count.last_full = full
+        return mm, r
 
     from steer.model import seq_mask, length_regulate
     from steer.text import to_phonemes
@@ -609,31 +671,47 @@ def bench_flops(a):
             c, mk = S.control_tensors(None)
             g = m.condition(torch.zeros(1, dtype=torch.long), torch.zeros(1, dtype=torch.long), c, mk, spk_vec)
             N = ids_t.shape[1]
-            f_enc, (_, h, tmask) = count(lambda: m.encode(ids_t, torch.tensor([N]), g))
+            f_enc, (_, h, tmask) = count(lambda: m.encode(ids_t, torch.tensor([N]), g), "encoder")
             def var():
                 lp, p, e = m.dur_pred(h, tmask, g), m.pitch_pred(h, tmask, g), m.energy_pred(h, tmask, g)
                 return lp, m.pitch_emb(p[:, None]).transpose(1, 2) + m.energy_emb(e[:, None]).transpose(1, 2)
-            f_var, (lp, pe) = count(var)
+            f_var, (lp, pe) = count(var, "variance")
             dur = torch.round((torch.exp(lp) - 1).clamp_min(0)).long(); dur[:, 0] = dur[:, 0].clamp_min(1)
             x, lens = length_regulate(h + pe, dur)
-            f_dec, mel = count(lambda: m.to_mel(m.decoder(x, seq_mask(lens, x.shape[1]), g)).transpose(1, 2))
-            f_flow1, _ = count(lambda: S.flow.sample(mel, g, steps=1, temp=0.4, seed=0))
-            f_voc, wav = count(lambda: S.vocos.decode(mel))
+            f_dec, mel = count(lambda: m.to_mel(m.decoder(x, seq_mask(lens, x.shape[1]), g)).transpose(1, 2),
+                               "decoder")
+            f_flow1, _ = count(lambda: S.flow.sample(mel, g, steps=1, temp=0.4, seed=0), "flow_per_step")
+            f_voc, wav = count(lambda: S.vocos.decode(mel), "vocos")
             aud = wav.shape[-1] / 24000
             # Mamba-3 share of the stacks: count with the SSM branches only
-            ssm_f = 0
+            ssm_f, ssm_full = 0, 0
             for blk in list(m.encoder.layers):
                 hh = torch.randn(1, N, m.emb.embedding_dim)
                 f, _ = count(lambda: blk.ssm(hh, torch.ones(1, N, dtype=torch.bool))) if hasattr(blk, "ssm") else (0, 0)
                 ssm_f += f
+                ssm_full += count.last_full if hasattr(blk, "ssm") else 0
             for blk in list(m.decoder.layers):
                 hh = torch.randn(1, x.shape[1], m.emb.embedding_dim)
                 f, _ = count(lambda: blk.ssm(hh, torch.ones(1, x.shape[1], dtype=torch.bool))) if hasattr(blk, "ssm") else (0, 0)
                 ssm_f += f
+                ssm_full += count.last_full if hasattr(blk, "ssm") else 0
         comps = dict(encoder=f_enc, variance=f_var, decoder=f_dec, flow_per_step=f_flow1, flow_10_steps=10 * f_flow1,
                      vocos=f_voc, mamba3_branches=ssm_f, acoustic_total=f_enc + f_var + f_dec,
                      base_plus_vocos=f_enc + f_var + f_dec + f_voc,
                      with_flow10=f_enc + f_var + f_dec + 10 * f_flow1 + f_voc)
+        F = FULL
+        full = dict(encoder=F["encoder"], variance=F["variance"], decoder=F["decoder"],
+                    flow_per_step=F["flow_per_step"], flow_10_steps=10 * F["flow_per_step"], vocos=F["vocos"],
+                    mamba3_branches=ssm_full, acoustic_total=F["encoder"] + F["variance"] + F["decoder"],
+                    base_plus_vocos=F["encoder"] + F["variance"] + F["decoder"] + F["vocos"],
+                    with_flow10=F["encoder"] + F["variance"] + F["decoder"] + 10 * F["flow_per_step"] + F["vocos"])
+        for k, f in full.items():
+            rows.append(dict(metric="gflops_full_per_audio_s", value=f / 1e9 / aud, p10=None, p90=None, n=1,
+                             device="cpu", threads=None, system="steertts", component=k, set=s, length_s=aud,
+                             tokens=N, frames=int(mel.shape[-1]), source_file="steer/paper/speed.py flops",
+                             notes="matmul + elementwise/reduction/scan at 1 FLOP per output element, softmax 5, "
+                                   "FFT 5 n log2 n"))
+        print(f"[flops-full {s}] " + "  ".join(f"{k} {v / 1e9 / aud:.2f}" for k, v in full.items()), flush=True)
         for k, f in comps.items():
             rows.append(dict(metric="gflops_per_audio_s", value=f / 1e9 / aud, p10=None, p90=None, n=1, device="cpu",
                              threads=None, system="steertts", component=k, set=s, length_s=aud, tokens=N,
@@ -647,6 +725,11 @@ def bench_flops(a):
         for L in [5.0, 30.0, 120.0]:
             T = int(round(L * 93.75)); N = int(round(L * TOK_PER_S))
             f, _ = count(lambda: acoustic_fixed(mm, N, T, "cpu"))
+            rows.append(dict(metric="gflops_full_per_audio_s", value=count.last_full / 1e9 / L, p10=None, p90=None,
+                             n=1, device="cpu", threads=None, system=arch, component="acoustic_total", set=None,
+                             length_s=L, tokens=N, frames=T, variant="random_init",
+                             source_file="steer/paper/speed.py flops", notes="full count (see flop_count)"))
+            print(f"[flops-full {arch}] {L}s {count.last_full / 1e9 / L:.2f} GFLOP per audio second", flush=True)
             rows.append(dict(metric="gflops_per_audio_s", value=f / 1e9 / L, p10=None, p90=None, n=1, device="cpu",
                              threads=None, system=arch, component="acoustic_total", set=None, length_s=L, tokens=N,
                              frames=T, variant="random_init", source_file="steer/paper/speed.py flops",
@@ -814,11 +897,13 @@ def bench_ext(a):
             torch.backends.mha.set_fastpath_enabled(False)  # fused MHA is invisible to the counter
             fr = []
             for s in ["medium"]:
-                from torch.nn.attention import sdpa_kernel, SDPBackend
-                with sdpa_kernel(SDPBackend.MATH), FlopCounterMode(display=False) as fc:
-                    y, sr = fn(TEXTS[s][0])
+                mmf, fullf, (y, sr) = flop_count(lambda: fn(TEXTS[s][0]))
                 aud = len(np.asarray(y).reshape(-1)) / sr
-                fr.append(dict(metric="gflops_per_audio_s", value=fc.get_total_flops() / 1e9 / aud, p10=None,
+                fr.append(dict(metric="gflops_full_per_audio_s", value=fullf / 1e9 / aud, p10=None, p90=None, n=1,
+                               device=dev, threads=a.threads, system=a.system, set=s, length_s=aud,
+                               component="end_to_end", source_file="steer/paper/speed.py ext --flops",
+                               notes="full count (see flop_count); torch ops only", **info))
+                fr.append(dict(metric="gflops_per_audio_s", value=mmf / 1e9 / aud, p10=None,
                                p90=None, n=1, device=dev, threads=a.threads, system=a.system, set=s, length_s=aud,
                                component="end_to_end", source_file="steer/paper/speed.py ext --flops",
                                notes="torch.utils.flop_counter over one call (matmul/conv/SDPA; LSTM/RNN, elementwise, FFT and "
@@ -844,9 +929,12 @@ def bench_hifigan(a):
     params = nparams(g) / 1e6
     rows = []
     with torch.no_grad():
-        with FlopCounterMode(display=False) as fc:
-            y = g(torch.randn(1, 80, 86, device=dev))
-        rows.append(dict(metric="gflops_per_audio_s", value=fc.get_total_flops() / 1e9 / (y.shape[-1] / 22050),
+        mmf, fullf, y = flop_count(lambda: g(torch.randn(1, 80, 86, device=dev)))
+        rows.append(dict(metric="gflops_full_per_audio_s", value=fullf / 1e9 / (y.shape[-1] / 22050),
+                         p10=None, p90=None, n=1, device=dev, threads=a.threads, system="hifigan-v1",
+                         component="vocoder", set=None, length_s=y.shape[-1] / 22050, params_M=params,
+                         source_file="steer/paper/speed.py hifigan", notes="full count; random weights"))
+        rows.append(dict(metric="gflops_per_audio_s", value=mmf / 1e9 / (y.shape[-1] / 22050),
                          p10=None, p90=None, n=1, device=dev, threads=a.threads, system="hifigan-v1",
                          component="vocoder", set=None, length_s=y.shape[-1] / 22050, params_M=params,
                          source_file="steer/paper/speed.py hifigan", notes="random weights; 22.05 kHz, hop 256"))

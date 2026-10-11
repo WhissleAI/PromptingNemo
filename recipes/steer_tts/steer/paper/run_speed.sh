@@ -13,7 +13,9 @@ cd $W
 SP="-m steer.paper.speed"
 STAGE=${STAGE:-all}
 T0=$(date +%s)
-log() { echo "=== $* [$(date +%T), +$(( $(date +%s) - T0 ))s, load $(cut -d' ' -f1-3 /proc/loadavg)]"; }
+# CPU stage: never overlap the GPU speed job (its batch-1 timings are CPU-launch-bound)
+waitgpu() { [[ $STAGE == cpu ]] || return 0; while ls /home/karan/Desktop/whissle/workspace/steer_tts/logs/gpu_queue/running 2>/dev/null | grep -q speed; do sleep 30; done; }
+log() { waitgpu; echo "=== $* [$(date +%T), +$(( $(date +%s) - T0 ))s, load $(cut -d' ' -f1-3 /proc/loadavg)]"; }
 nvidia-smi --query-gpu=name,driver_version,memory.used,utilization.gpu,clocks.sm --format=csv
 nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv
 $PY -c "import torch; print('torch', torch.__version__, 'cuda', torch.version.cuda)"
@@ -38,11 +40,11 @@ done
 if [ -f $R/steer/paper/baselines_ext.py ]; then
   $PY $R/steer/paper/speed_ext_list.py > /tmp/speed_ext_list.txt
   cat /tmp/speed_ext_list.txt
-  while read -r name py; do
+  while read -r name py grp; do
     case $name in kokoro|piper|parler_mini|"") continue;; esac
     [ -x "$py" ] || { echo "skip $name: no python $py"; continue; }
-    log "ext GPU $name"
-    timeout 600 $py $SP ext --system $name --device cuda --n_runs 20 --budget 40 --flops --out $P/speed_baselines.json
+    log "ext GPU $name ($grp)"
+    PYTHONNOUSERSITE=1 timeout 600 $py $SP ext --system $name --device cuda --n_runs 20 --budget 40 --flops --out $P/speed_baselines.json
   done < /tmp/speed_ext_list.txt
 fi
 log "training-step compile ablation (300 steps each, hybrid, spk_enc config, supervised only)"
@@ -71,6 +73,15 @@ for th in 8 1; do
       --sets short,medium,long --out $P/speed_baselines.json
   done
 done
+# closest-method systems registered by the baselines agent, CPU 8 threads (short + medium sets)
+$PY $R/steer/paper/speed_ext_list.py > /tmp/speed_ext_list_cpu.txt 2>/dev/null
+while read -r name py grp; do
+  case $name in kokoro|piper|parler_mini|"") continue;; esac
+  [ "$grp" = closest ] && [ -x "$py" ] || continue
+  log "ext CPU $name threads=8"
+  BASELINE_THREADS=8 PYTHONNOUSERSITE=1 timeout 400 taskset -c ${CPU8:-16-23} $py $SP ext --system $name --device cpu \
+    --threads 8 --n_runs 10 --budget 15 --sets short,medium --out $P/speed_baselines.json
+done < /tmp/speed_ext_list_cpu.txt
 log "parler_mini CPU threads=8"
 timeout 300 taskset -c ${CPU8:-16-23} $BPY $SP ext --system parler_mini --device cpu --threads 8 --n_runs 3 --min_runs 3 \
   --budget 30 --sets short --out $P/speed_baselines.json

@@ -22,22 +22,25 @@ def main():
                 if any(isinstance(t, ast.Name) and t.id == "SYSTEMS" for t in tgts) and isinstance(node.value, ast.Dict):
                     for k, v in zip(node.value.keys, node.value.values):
                         if isinstance(k, ast.Constant) and isinstance(v, ast.Dict):
-                            env = None
+                            env, grp = None, "advanced"
                             for kk, vv in zip(v.keys, v.values):
-                                if isinstance(kk, ast.Constant) and kk.value == "env" and isinstance(vv, ast.Constant):
-                                    env = vv.value
-                            out[k.value] = env
+                                if isinstance(kk, ast.Constant) and isinstance(vv, ast.Constant):
+                                    if kk.value == "env":
+                                        env = vv.value
+                                    elif kk.value == "group":
+                                        grp = vv.value
+                            out[k.value] = (env, grp)
     except Exception as e:  # noqa: BLE001
         print("# ast failed:", e, file=sys.stderr)
     if not out:
         try:
             sys.path.insert(0, str(SRC.parents[2]))
             from steer.paper import baselines_ext as be
-            out = {n: e.get("env") for n, e in be.SYSTEMS.items()}
+            out = {n: (e.get("env"), e.get("group", "advanced")) for n, e in be.SYSTEMS.items()}
         except Exception as e:  # noqa: BLE001
             print("# import failed:", e, file=sys.stderr)
-    for n, env in out.items():
-        print(n, py_of(env))
+    for n, (env, grp) in out.items():
+        print(n, py_of(env), grp)
 
 
 if __name__ == "__main__":
