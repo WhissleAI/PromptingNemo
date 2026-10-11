@@ -1,6 +1,6 @@
 """Corpus -> trimmed 24 kHz mono wavs + manifest rows.
 
-python -m steer.prep ears|expresso|libritts [nproc]
+python -m steer.prep ears|expresso|libritts|libritts360|libritts500 [nproc]
 Writes data/wav24/<corpus>/<id>.wav and data/meta/manifest_<corpus>.jsonl with
 {id, corpus, speaker, text, raw_style, tag, wav, dur}. Re-runnable: existing wavs are kept.
 """
@@ -95,6 +95,40 @@ def parquet_jobs(corpus, files, text_col, spk_col, style_col, id_col):
     return rows, jobs
 
 
+# NonverbalTTS (deepvk, VoxCeleb + Expresso speech with inline nonverbal annotations, 17 h): emoji markers -> our
+# inline event tokens; markers we have no token for are dropped. Corpus "nvtts"; VoxCeleb part is 16 kHz audio.
+NVTTS_EMOJI = {"🌬️": "breath", "🌬": "breath", "🤣": "laugh", "😂": "laugh", "😷": "cough", "🤧": "sneeze",
+               "😮‍💨": "sigh", "👃": "sniff", "🗣️": "throat", "🗣": "throat", "😭": "cry"}
+NVTTS_EMO = {"angry": "anger", "happy": "happiness", "sad": "sadness", "fearful": "fear", "disgusted": "disgust",
+             "surprised": "amazement", "neutral": "neutral"}
+
+
+def nvtts_text(t):
+    import re
+    for e, tok in sorted(NVTTS_EMOJI.items(), key=lambda x: -len(x[0])):
+        t = t.replace(e, f" [{tok}] ")
+    t = re.sub(r"[\U0001F000-\U0001FFFF\u2600-\u27BF\uFE0F\u200D]", " ", t)  # unmapped markers
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def nvtts_jobs():
+    import pyarrow.parquet as pq
+    root = Path("/external1/karan/steer_tts/noise_raw/nonverbaltts/default")
+    rows, jobs = [], []
+    for fp in sorted(root.glob("*/*.parquet")):
+        if fp.parent.name == "test":  # held out for evaluation
+            continue
+        for r in pq.read_table(fp).to_pylist():
+            if not r.get("Result") or r["Result"] == "None":
+                continue
+            uid = "nvtts_" + r["index"].replace("/", "_")
+            raw = (r.get("Emotion") or "neutral").lower()
+            rows.append(dict(id=uid, corpus="nvtts", speaker=f"nvtts_{r['speaker_id']}", text=nvtts_text(r["Result"]),
+                             raw_style=raw, tag=NVTTS_EMO.get(raw, "none"), group=r.get("data_name")))
+            jobs.append((uid, "nvtts", r["audio"]["bytes"], "bytes"))
+    return rows, jobs
+
+
 def main():
     corpus = sys.argv[1]
     nproc = int(sys.argv[2]) if len(sys.argv) > 2 else 32
@@ -103,9 +137,13 @@ def main():
     elif corpus == "expresso":
         files = sorted((RAW / "expresso" / "read").glob("*.parquet"))
         rows, jobs = parquet_jobs("expresso", files, "text", "speaker_id", "style", "id")
-    elif corpus == "libritts":
-        files = sorted((RAW / "libritts_r" / "data" / "train.clean.100").glob("*.parquet"))
+    elif corpus in ("libritts", "libritts360", "libritts500"):  # 360/500 = train.clean.360 / train.other.500:
+        # same corpus label, ids and wav dir as train.clean.100, own manifest (speaker coverage for spk_enc)
+        split = {"libritts": "train.clean.100", "libritts360": "train.clean.360", "libritts500": "train.other.500"}[corpus]
+        files = sorted((RAW / "libritts_r" / "data" / split).glob("*.parquet"))
         rows, jobs = parquet_jobs("libritts", files, "text_normalized", "speaker_id", None, "id")
+    elif corpus == "nvtts":
+        rows, jobs = nvtts_jobs()
     else:
         raise SystemExit(corpus)
     print(corpus, len(rows), "utterances")
@@ -114,7 +152,7 @@ def main():
     out = META / f"manifest_{corpus}.jsonl"
     with open(out, "w") as f:
         for r in rows:
-            r["wav"] = str(WAV24 / corpus / f"{r['id']}.wav")
+            r["wav"] = str(WAV24 / r["corpus"] / f"{r['id']}.wav")  # libritts360/500 write to wav24/libritts
             r["dur"] = round(durs[r["id"]], 3)
             f.write(json.dumps(r) + "\n")
     tot = sum(durs.values()) / 3600

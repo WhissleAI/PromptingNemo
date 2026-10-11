@@ -49,6 +49,8 @@ def main():
     df.loc[unv, ["f0_med", "f0_iqr", "f0_end", "h1h2"]] = np.nan
 
     neu = df[(df.tag == "neutral") | (df.corpus == "libritts")]
+    if "speed" in df:  # cartesia: only the default-setting neutral renders, not neutral-emotion speed/volume variants
+        neu = neu[neu.speed.fillna(1.0).eq(1.0) & neu.volume.fillna(1.0).eq(1.0)]
     spk_mean = neu.groupby("speaker")[CONTROL_DIMS].mean()
     # speakers with no neutral speech fall back to their overall mean
     missing = set(df.speaker) - set(spk_mean.index)
@@ -61,7 +63,8 @@ def main():
 
     Z = (df[CONTROL_DIMS] - spk_mean.loc[df.speaker].values) / pooled_sd.values
     Z = Z.clip(-5, 5)
-    out = df[["id", "corpus", "speaker", "tag", "raw_style", "text", "dur", "n_frames"]].copy()
+    out = df[["id", "corpus", "speaker", "tag", "raw_style", "text", "dur", "n_frames"]
+             + [c for c in ("speed", "volume") if c in df]].copy()  # cartesia render settings (NaN elsewhere)
     for k in CONTROL_DIMS:
         out[f"z_{k}"] = Z[k].astype("float32")
     # speaker reference for frame-level pitch/energy normalisation (f0_med is semitones re 100 Hz)

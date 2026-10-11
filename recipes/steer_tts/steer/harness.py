@@ -63,9 +63,9 @@ def zmeasure(wav, text, speaker, stats):
     return (raw - mu) / sd
 
 
-def run(ckpt, voices, out=None, texts=TEXTS):
+def run(ckpt, voices, out=None, texts=TEXTS, guidance=1.0):
     """Returns (summary DataFrame, audio) where audio maps direction -> wav for the first voice/text."""
-    s = Synth(ckpt)
+    s = Synth(ckpt, guidance=guidance)
     stats = s.stats
     rows, audio = [], {}
     for v in voices:

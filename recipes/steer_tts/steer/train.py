@@ -20,6 +20,8 @@ import argparse
 import json
 import math
 import os
+import subprocess
+import sys
 import time
 
 import numpy as np
@@ -29,8 +31,9 @@ from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
 from .config import RUNS, SR
-from .data import TTSData, FrameBucketSampler, collate, load_meta, split
+from .data import TTSData, FrameBucketSampler, PairSampler, collate, load_meta, pair_delta_loss, pair_pool, split
 from .model import SteerTTS
+from .text import SYMBOLS
 
 W = dict(mel=1.0, dur=0.1, pitch=0.1, energy=0.1, align=1.0)
 N_VAL_SAMPLES = 4
@@ -88,6 +91,11 @@ def init_from(model, path, stats, dev):
                 w[-1] = v[-1]  # 'unknown speaker' row
             own[k] = w
             print(f"init {k}: {hit}/{len(names_new)} rows copied by name", flush=True)
+        elif k == "emb.weight" and own[k].shape[0] > v.shape[0] and own[k].shape[1:] == v.shape[1:]:
+            w = own[k].clone(); w[: v.shape[0]] = v  # vocabulary grew (sound-event tokens appended): keep old rows
+            w[v.shape[0]:] = v[1].clone() + 0.02 * torch.randn_like(w[v.shape[0]:])  # new rows start near <sp>
+            own[k] = w; copied += 1
+            print(f"init emb.weight: {v.shape[0]} rows copied, {w.shape[0] - v.shape[0]} new event tokens", flush=True)
         elif own[k].shape == v.shape:
             own[k] = v; copied += 1
         else:
@@ -117,14 +125,39 @@ def main():
                     help="encoder token mixer; hybrid = attention + zero-init bidirectional Mamba-3 branch")
     ap.add_argument("--dec_mixer", default="attn", choices=["attn", "mamba3", "hybrid"])
     ap.add_argument("--ssm_state", type=int, default=32, help="Mamba-3 state size N")
+    ap.add_argument("--d_model", type=int, default=192, help="block width (param-matched mixer comparisons)")
+    ap.add_argument("--ffn", type=int, default=384, help="conv FFN width")
+    ap.add_argument("--heads", type=int, default=2)
     ap.add_argument("--init_continue", action="store_true",
                     help="fine-tune: continue the init checkpoint's step count (LR / bin-loss schedules, TB x-axis)")
     ap.add_argument("--rewarm", type=int, default=1000,
                     help="with --init_continue: linear LR re-warm over this many steps (new params have no Adam state)")
     ap.add_argument("--ckpt_every", type=int, default=1000, help="overwrite last.pt this often (crash recovery)")
+    ap.add_argument("--keep_every", type=int, default=0, help="keep a numbered step<N>.pt this often (0 = 4x eval_every)")
     ap.add_argument("--harness_every", type=int, default=20000, help="steerability harness interval (0 = off)")
     ap.add_argument("--harness_voices", type=int, default=2)
     ap.add_argument("--harness_texts", type=int, default=4)
+    ap.add_argument("--spk_enc", action="store_true",
+                    help="condition the voice on a reference clip's speaker vector (steer.xvec) instead of the id table")
+    ap.add_argument("--reward", type=float, default=0.0, help="weight of the reward fine-tuning loss (steer.rewards); 0 = off")
+    ap.add_argument("--reward_every", type=int, default=2, help="reward step every N steps (each is ~2-3x a normal step)")
+    ap.add_argument("--reward_k", type=int, default=4, help="items per reward step")
+    ap.add_argument("--reward_w", type=str, default='{"control":1.0,"emotion":0.5,"ctc":0.2,"utmos":0.1,"spk":0.5}',
+                    help="json weights of the individual rewards")
+    ap.add_argument("--compile", action="store_true", help="torch.compile the Mamba-3 mixers (step is launch-bound)")
+    ap.add_argument("--pair_w", type=float, default=0.0,
+                    help="weight of the paired-intervention delta loss (data.pair_delta_loss); 0 = off")
+    ap.add_argument("--pair_k", type=int, default=8, help="pairs per step for the delta loss")
+    ap.add_argument("--pcgrad", action="store_true",
+                    help="reward steps: drop the part of the reward gradient that conflicts with the supervised one")
+    ap.add_argument("--noise", type=float, default=0.0,
+                    help="share of train items re-rendered in a sampled acoustic environment (steer.acoustic); > 0 also "
+                         "adds the sound-event tokens and the environment conditioning to the model")
+    ap.add_argument("--noise_lib", type=str, default="", help="noise library jsonl (default data/meta/noise_lib.jsonl)")
+    ap.add_argument("--noise_mode", default="all", choices=["all", "nv"],
+                    help="nv: only in-voice nonverbal splices ([laugh] [cough] ... in the speaker's own voice); scenes, "
+                         "rooms, phone and environmental events are rendered by mixing at inference instead (v2: the L1 "
+                         "decoder cannot learn stochastic textures - AST found 0/24 events and 0/13 scenes)")
     args = ap.parse_args()
 
     dev = "cuda"
@@ -138,33 +171,94 @@ def main():
     weights = None
     if args.oversample:
         ow = json.loads(args.oversample)
-        weights = tr.corpus.map(lambda c: ow.get(c, 1.0)).to_numpy()
-    tr_ds, va_ds = TTSData(tr, stats, train=True), TTSData(va, stats, train=False)
+        # EARS freeform (spontaneous) clips share corpus "ears"; key "earsff" weights them separately
+        key = tr.corpus.where(~tr.id.str.contains("_freeform_"), "earsff")
+        weights = key.map(lambda c: ow.get(c, ow.get("ears", 1.0) if c == "earsff" else 1.0)).to_numpy()
+    xvec = None
+    if args.spk_enc:
+        from .xvec import load_all, DIM
+        xvec = load_all()
+        missing = (~tr.id.isin(xvec)).sum()
+        print(f"speaker vectors: {len(xvec)} loaded, {missing} train utts without one (dropped)", flush=True)
+        tr, va = tr[tr.id.isin(xvec)].reset_index(drop=True), va[va.id.isin(xvec)].reset_index(drop=True)
+        save_spk_refs(tr, xvec, out)
+    aug, env_dim = None, 0
+    if args.noise > 0:
+        from .acoustic import Augmenter, ENV_DIM
+        kw = dict(p_bg=0.0, p_room=0.0, p_phone=0.0, p_event=0.0, p_nv=1.0) if args.noise_mode == "nv" else {}
+        aug = Augmenter(*([args.noise_lib] if args.noise_lib else []), p=args.noise, **kw)
+        env_dim = ENV_DIM
+        print(f"noise augmentation p={args.noise}: scenes {sorted(aug.bg)}, events {sorted(aug.ev)}, "
+              f"nonverbal speakers {len(aug.nv)}, rirs { {k: len(v) for k, v in aug.rir.items()} }", flush=True)
+    tr_ds = TTSData(tr, stats, train=True, xvec=xvec, aug=aug, env_dim=env_dim)
+    va_ds = TTSData(va, stats, train=False, xvec=xvec, env_dim=env_dim)
     tr_dl = DataLoader(tr_ds, batch_sampler=FrameBucketSampler(tr.n_frames, args.max_frames, weights=weights),
                        collate_fn=collate, num_workers=args.workers, pin_memory=True, persistent_workers=True,
                        prefetch_factor=4)
     va_dl = DataLoader(va_ds, batch_sampler=FrameBucketSampler(va.n_frames, args.max_frames, shuffle=False),
                        collate_fn=collate, num_workers=4)
+    pair_it = None
+    if args.pair_w > 0:
+        pairs = pair_pool(tr)
+        # full conditioning (no control / tag dropout) and no augmentation: the delta is between the two real renders
+        pair_ds = TTSData(tr, stats, train=True, p_dim_drop=0.0, p_all_drop=0.0, p_tag_drop=0.0, xvec=xvec, env_dim=env_dim)
+        # EARS style pairs (~3% of the pool, the only same-sentence pitch / loudness / whisper / rate contrasts)
+        # are drawn ~30% of the time
+        is_ears = (tr.corpus.to_numpy()[[a for a, _ in pairs]] == "ears")
+        pw = np.where(is_ears, 0.3 / max(is_ears.mean(), 1e-6), 0.7 / max(1 - is_ears.mean(), 1e-6))
+        pair_it = iter(DataLoader(pair_ds, batch_sampler=PairSampler(pairs, args.pair_k, weights=pw), collate_fn=collate,
+                                  num_workers=3, pin_memory=True, prefetch_factor=4, persistent_workers=True))
+        print(f"paired-intervention pairs: {len(pairs)} ({tr.loc[[p[0] for p in pairs], 'corpus'].value_counts().to_dict()})",
+              flush=True)
 
-    model = SteerTTS(len(stats["speakers"]), len(stats["tags"]), enc_mixer=args.enc_mixer,
-                     dec_mixer=args.dec_mixer, ssm_state=args.ssm_state).to(dev)
+    model = SteerTTS(len(stats["speakers"]), len(stats["tags"]), d=args.d_model, ffn=args.ffn, heads=args.heads,
+                     enc_mixer=args.enc_mixer,
+                     dec_mixer=args.dec_mixer, ssm_state=args.ssm_state, spk_enc_dim=DIM if args.spk_enc else 0,
+                     n_symbols=len(SYMBOLS) if env_dim else None, n_env=env_dim).to(dev)
+    if args.compile:
+        from .model import BiMamba3
+        BiMamba3.enable_compile()
     n_params = sum(p.numel() for n, p in model.named_parameters() if not n.startswith("aligner"))
     n_align = sum(p.numel() for p in model.aligner.parameters())
     print(f"params (inference path) {n_params / 1e6:.2f}M | aligner {n_align / 1e6:.2f}M"
           f" | train {len(tr)} val {len(va)}", flush=True)
-    opt = torch.optim.AdamW(model.parameters(), lr=args.lr, betas=(0.9, 0.98), weight_decay=1e-6)
+    # fused: one kernel for the whole update instead of ~10 per parameter tensor
+    # newly added modules (environment projection) learn at 10x: they start from zero late in the LR schedule
+    fresh = [p for n, p in model.named_parameters() if n.startswith("env_proj")]
+    rest = [p for n, p in model.named_parameters() if not n.startswith("env_proj")]
+    groups = [dict(params=rest, lr_mult=1.0)] + ([dict(params=fresh, lr_mult=10.0)] if fresh else [])
+    opt = torch.optim.AdamW(groups, lr=args.lr, betas=(0.9, 0.98), weight_decay=1e-6, fused=True)
     step = 0
     if args.resume and (out / "last.pt").exists():
         ck = torch.load(out / "last.pt", map_location=dev)
         model.load_state_dict(ck["model"]); opt.load_state_dict(ck["opt"]); step = ck["step"]
+        for g in opt.param_groups:  # checkpoints from before fused=True carry fused=None/foreach in their groups
+            g["fused"], g["foreach"] = True, False
+        for st in opt.state.values():
+            st["step"] = st["step"].to(dev, torch.float32)
         print("resumed at", step, flush=True)
     start_step = 0
     if args.init and not (args.resume and step):
         init_step = init_from(model, args.init, stats, dev)
+        # least-squares spk_proj only when the init has none (from a table-only model); an spk_enc init keeps its
+        # trained projection (copied by init_from)
+        if args.spk_enc and "spk_proj.weight" not in torch.load(args.init, map_location="cpu", weights_only=False)["model"]:
+            fit_spk_proj(model, args.init, out)
         if args.init_continue:
             step = start_step = init_step
     elif args.init and args.init_continue:  # resumed: recover where the fine-tune started, for the re-warm
         start_step = torch.load(args.init, map_location="cpu", weights_only=False).get("step", 0)
+    rew = None
+    if args.reward > 0:
+        from .rewards import RewardLoss
+        rew = RewardLoss(stats, dev, json.loads(args.reward_w), level_norm=args.spk_enc, k=args.reward_k)
+        if json.loads(args.reward_w).get("anchor"):
+            # trust-region reference: a frozen copy of the STARTING checkpoint (--init), also after a resume
+            import copy
+            rew.ref = copy.deepcopy(model)
+            if args.init:
+                init_from(rew.ref, args.init, stats, dev)
+            rew.ref.eval().requires_grad_(False)
     cons = None
     if args.cons > 0:
         from .consistency import Consistency
@@ -180,14 +274,19 @@ def main():
     tb.add_text("config/data", f"train {len(tr)} / val {len(va)} utterances\n\n```\n" + comp.to_string() + "\n```", step)
 
     vocos = None
-    t0, agg = time.time(), {}
+    t0, agg, cnt = time.time(), {}, {}
     perf = dict(t=time.time(), frames=0, utts=0, skipped=0, gn=0.0)
     torch.cuda.reset_peak_memory_stats()
+    # Nothing in the step reads a GPU value back (no float()/isfinite on the host), so the CPU can queue the
+    # next step while the GPU runs this one: losses / grad norm / skips accumulate on device and sync once
+    # per --log_every. A non-finite grad norm skips the update on device via the fused optimizer's found_inf.
     while step < args.steps:
         for batch in tr_dl:
+            perf["frames"] += int(batch["mel_lens"].sum())  # CPU tensors, before the copy
+            perf["utts"] += len(batch["mel_lens"])
             batch = to(batch, dev)
             for gp in opt.param_groups:
-                gp["lr"] = lr_at(step, args.lr, total=args.steps) * (
+                gp["lr"] = gp.get("lr_mult", 1.0) * lr_at(step, args.lr, total=args.steps) * (
                     min(1.0, (step - start_step + 1) / args.rewarm) if args.init_continue else 1.0)
             with torch.autocast("cuda", dtype=torch.bfloat16):
                 losses, _ = model(batch, step)
@@ -197,26 +296,62 @@ def main():
                     cl = cons(model, batch)
                 loss = loss + args.cons * (cl["cons_ac"] + cl["cons_t"])
                 losses.update(cl)
-            losses["total"] = loss
+            if pair_it is not None:
+                pb = to(next(pair_it), dev)
+                with torch.autocast("cuda", dtype=torch.bfloat16):
+                    pl, po = model(pb, step)
+                    pd = pair_delta_loss(po, pb)
+                loss = loss + 0.5 * (sum(W[k] * pl[k] for k in W) + bin_weight(step) * pl["bin"])  # pairs are data too
+                if pd is not None:
+                    loss = loss + args.pair_w * pd["pair_total"]
+                    losses.update(pd)
+            rl = None
+            if rew is not None and step % args.reward_every == 0:
+                with torch.autocast("cuda", dtype=torch.bfloat16):
+                    rl = rew(model, batch)
+                if rl is not None:  # None: no short-enough item in this batch (rewards.__call__)
+                    losses.update(rl)
             opt.zero_grad(set_to_none=True)
-            loss.backward()
-            gn = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
-            if torch.isfinite(gn):
-                opt.step()
-                perf["gn"] += float(gn)
+            if rl is not None and args.pcgrad:
+                # gradient surgery (PCGrad, Yu et al. 2020): the reward gradient keeps only its component that does
+                # not oppose the supervised gradient, so to first order a reward step cannot increase the data loss
+                # (the mel / duration / pitch drift of reward attempts 1-2). Computed on device, no host sync.
+                params = [p for p in model.parameters() if p.requires_grad]
+                loss.backward()
+                gs = [p.grad.detach().clone() if p.grad is not None else torch.zeros_like(p) for p in params]
+                opt.zero_grad(set_to_none=True)
+                (args.reward * rl["reward_total"]).backward()
+                gr = [p.grad if p.grad is not None else torch.zeros_like(p) for p in params]
+                dot = sum((a * b).sum() for a, b in zip(gs, gr))
+                nn2 = sum((a * a).sum() for a in gs)
+                coef = torch.clamp(dot, max=0.0) / (nn2 + 1e-12)
+                losses["pc_conflict"] = (dot < 0).float()
+                for p, a, b in zip(params, gs, gr):
+                    p.grad = a + b - coef * a
+                loss = loss + args.reward * rl["reward_total"].detach()
             else:
-                perf["skipped"] += 1
+                if rl is not None:
+                    loss = loss + args.reward * rl["reward_total"]
+                loss.backward()
+            losses["total"] = loss.detach()
+            gn = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            ok = torch.isfinite(gn)
+            opt.found_inf = (~ok).float()
+            opt.step()
+            perf["gn"] += torch.where(ok, gn, 0.0)
+            perf["skipped"] += (~ok).int()
             step += 1
-            perf["frames"] += int(batch["mel_lens"].sum())
-            perf["utts"] += len(batch["mel_lens"])
-            for k, v in losses.items():
-                agg[k] = agg.get(k, 0.0) + float(v.detach())
+            for k, v in losses.items():  # per-key counts: reward/consistency terms only occur every Nth step
+                agg[k] = agg.get(k, 0.0) + v.detach().float()
+                cnt[k] = cnt.get(k, 0) + 1
             agg["n"] = agg.get("n", 0) + 1
             if step % args.log_every == 0:
                 n = agg.pop("n")
-                msg = " ".join(f"{k} {v / n:.4f}" for k, v in agg.items())
+                agg = {k: float(v) / cnt[k] for k, v in agg.items()}
+                perf["gn"], perf["skipped"] = float(perf["gn"]), int(perf["skipped"])
+                msg = " ".join(f"{k} {v:.4f}" for k, v in agg.items())
                 for k, v in agg.items():
-                    tb.add_scalar(f"train/{k}", v / n, step)
+                    tb.add_scalar(f"train/{k}", v, step)
                 tb.add_scalar("train/lr", opt.param_groups[0]["lr"], step)
                 tb.add_scalar("train/bin_weight", bin_weight(step), step)
                 n_ok = max(n - perf["skipped"], 1)
@@ -230,7 +365,7 @@ def main():
                 tb.add_scalar("perf/host_rss_gb", host_rss_gb(), step)
                 print(f"step {step} | {msg} | gn {perf['gn'] / n_ok:.2f} | {n / dt:.1f} it/s | {time.time() - t0:.0f}s",
                       flush=True)
-                agg = {}
+                agg, cnt = {}, {}
                 perf = dict(t=time.time(), frames=0, utts=0, skipped=0, gn=0.0)
                 torch.cuda.reset_peak_memory_stats()
             if step % args.ckpt_every == 0 and step % args.eval_every != 0:
@@ -238,16 +373,54 @@ def main():
             if step % args.eval_every == 0 or step == args.steps:
                 vocos = evaluate(model, va_dl, va_ds, stats, step, out, tb, dev, vocos)
                 save_last(model, opt, step, stats, out)
-                if step % (args.eval_every * 4) == 0:
+                if step % (args.keep_every or args.eval_every * 4) == 0:
                     torch.save(dict(model=model.state_dict(), step=step, arch=model.arch, n_speakers=len(stats["speakers"]),
                                     n_tags=len(stats["tags"])), out / f"step{step}.pt")
                 if args.harness_every and (step % args.harness_every == 0 or step == args.steps):
                     steer_eval(out / "last.pt", stats, step, out, tb, args)
+                    tb.flush()  # results tables (TEXT tab) for this run + the cross-run leaderboard, off the training process
+                    subprocess.Popen([sys.executable, "-m", "steer.tb_report", args.run], stdout=subprocess.DEVNULL,
+                                     stderr=subprocess.DEVNULL)
                 tb.flush()
                 perf["t"] = time.time()  # don't count evaluation time against throughput
             if step >= args.steps:
                 break
     tb.close()
+
+
+def save_spk_refs(tr, xvec, out):
+    """Per-speaker reference vector = mean of its neutral-utterance vectors (renormalised): the default voice
+    prompt for known speakers at synthesis time (runs/<run>/spk_ref.npz; Synth loads it)."""
+    neu = tr[(tr.tag == "neutral") | (tr.corpus == "libritts")]
+    if "speed" in tr:  # cartesia: default-setting renders only
+        neu = neu[neu.speed.fillna(1.0).eq(1.0) & neu.volume.fillna(1.0).eq(1.0)]
+    spks, vecs = [], []
+    for spk, g in tr.groupby("speaker"):
+        ids = neu[neu.speaker == spk].id.tolist() or g.id.tolist()
+        v = np.mean([xvec[i] for i in ids], 0)
+        spks.append(spk); vecs.append(v / (np.linalg.norm(v) + 1e-8))
+    np.savez(out / "spk_ref.npz", speakers=np.array(spks), vec=np.stack(vecs).astype(np.float32))
+    print(f"spk_ref.npz: {len(spks)} speakers", flush=True)
+
+
+def fit_spk_proj(model, init_path, out, ridge=0.1):
+    """Least-squares init of spk_proj so that proj(mean neutral vector of s) ~= the init checkpoint's table row for
+    every speaker the init knew: known voices start where they were, new ones start at a sensible point in the same
+    space instead of from a random projection."""
+    from pathlib import Path
+    old = json.load(open(Path(init_path).parent / "control_stats.json"))["speakers"]
+    z = np.load(out / "spk_ref.npz")
+    ref = dict(zip(z["speakers"].tolist(), z["vec"]))
+    tab = model.spk.weight.detach().float().cpu().numpy()  # already copied by name from the init in init_from
+    own = {n: i for i, n in enumerate(json.load(open(out / "control_stats.json"))["speakers"])}
+    names = [n for n in old if n in ref and n in own]
+    X = np.stack([ref[n] for n in names]); X1 = np.hstack([X, np.ones((len(X), 1))])
+    Y = np.stack([tab[own[n]] for n in names])
+    W = np.linalg.solve(X1.T @ X1 + ridge * np.eye(X1.shape[1]), X1.T @ Y)
+    with torch.no_grad():
+        model.spk_proj.weight.copy_(torch.from_numpy(W[:-1].T)); model.spk_proj.bias.copy_(torch.from_numpy(W[-1]))
+    r2 = 1 - ((X1 @ W - Y) ** 2).sum() / ((Y - Y.mean(0)) ** 2).sum()
+    print(f"spk_proj least-squares init on {len(names)} known speakers: R^2 {r2:.3f}", flush=True)
 
 
 def save_last(model, opt, step, stats, out):
@@ -297,7 +470,8 @@ def evaluate(model, va_dl, va_ds, stats, step, out, tb, dev, vocos):
         x = va_ds[j * max(1, len(va_ds) // N_VAL_SAMPLES)]
         ids = torch.from_numpy(x["ids"])[None].to(dev)
         mel, _ = model.infer(ids, torch.tensor([x["spk"]], device=dev), torch.tensor([x["tag"]], device=dev),
-                             torch.from_numpy(x["ctrl"])[None].to(dev), torch.from_numpy(x["cmask"])[None].to(dev))
+                             torch.from_numpy(x["ctrl"])[None].to(dev), torch.from_numpy(x["cmask"])[None].to(dev),
+                             spk_vec=torch.from_numpy(x["spk_vec"])[None].to(dev) if "spk_vec" in x else None)
         wav = vocos.decode(mel.float()).squeeze().cpu().numpy()
         sf.write(out / "samples" / f"{step:07d}_{x['id']}.wav", wav, SR)
         tag = f"{j}_{x['id']}"
