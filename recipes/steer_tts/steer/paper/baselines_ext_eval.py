@@ -365,7 +365,9 @@ def psc_rows(s, hyps, hyps_dl2, ut, dn, src):
     df["utmos"] = df.path.map(ut)
     df["dnsmos_ovrl"] = df.path.map(lambda p: dn.get(p, {}).get("ovrl", np.nan))
     R = []
-    for sub_name, sub in (("all", df), ("voxceleb", df[df.source == "voxceleb"]), ("no_leak", df[~df.leak.astype(bool)])):
+    clean = set(json.load(open(WORK / "psc_clean214_idx.json")))  # dedup.json: 32 contaminated rows removed
+    for sub_name, sub in (("all", df), ("voxceleb", df[df.source == "voxceleb"]), ("no_leak", df[~df.leak.astype(bool)]),
+                          ("clean214", df[df.i.isin(clean)])):
         split = f"paraspeechcaps_test246_{sub_name}"
         for key, H, scorer in (("wer_v3", hyps, "whisper-large-v3 fp16 + EnglishTextNormalizer"),
                                ("wer_dl2", hyps_dl2, "distil-whisper-large-v2 fp16 + EnglishTextNormalizer")):
@@ -508,8 +510,9 @@ def cmd_analyze():
         R += r; raws += d
     write("baselines_psc", R, raws, dict(meta_common(), note="ASR judge: Whisper-large-v3 fp16 + Whisper EnglishTextNormalizer "
           "(wer_v3; distil-large-v2 kept as wer_dl2 for the old table); same gender/pitch/rate estimator and calibration as "
-          "steer.benchmark. Subsets: all 246, voxceleb (source==voxceleb), no_leak (excludes Expresso-sourced prompts that "
-          "overlap SteerTTS training). Prompt-blind systems get the oracle gender only."))
+          "steer.benchmark. Subsets: all 246, voxceleb (source==voxceleb), no_leak (excludes the 23 Expresso read-speech prompts of the old "
+          "leak flag), clean214 (dedup.json: also drops 7 Expresso conversational + 2 VoxCeleb same-segment rows; index list "
+          "runs/paper/baselines_ext/psc_clean214_idx.json, derived from steer.paper.dedup ids, reproduces clean_rows=214). Prompt-blind systems get the oracle gender only."))
     R = []
     for s in SYSTEMS:
         R += seedtts_rows(s)
