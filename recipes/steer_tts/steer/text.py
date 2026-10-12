@@ -46,8 +46,10 @@ def _expand(text: str) -> str:
     text = re.sub(r"(\d)\s*[-–]\s*(\d)", r"\1 to \2", text)                     # ranges: 1990-1995, 10-20
     text = re.sub(r"(\d+)\s*[x×]\s*(\d+)", r"\1 by \2", text)                   # 4x4, 1920x1080
     text = re.sub(r"(?<=[A-Za-z0-9])[-‐/](?=[A-Za-z0-9])", " ", text)           # compounds: pay-per-view, Il-76, and/or
-    text = re.sub(r"([$£€])\s?(\d[\d,]*(?:\.\d+)?)\s*(million|billion|thousand)?",
-                  lambda m: f"{m.group(2)} {m.group(3) or ''} {_CURRENCY[m.group(1)]}", text)
+    # the amount ends on a digit (a trailing comma is punctuation), and the space after it is only consumed together
+    # with a following "million/billion/thousand" (2026-10-11: "$3,000, 20%" read "three thousand, dollars20")
+    text = re.sub(r"([$£€])\s?(\d(?:[\d,]*\d)?(?:\.\d+)?)(?:\s*(million|billion|thousand)\b)?",
+                  lambda m: f"{m.group(2)} {m.group(3) + ' ' if m.group(3) else ''}{_CURRENCY[m.group(1)]}", text)
     text = re.sub(r"(\d[\d,]*(?:\.\d+)?)\s?%", r"\1 percent", text)
     for u in sorted(_UNITS, key=len, reverse=True):                            # 165 km h (after the / split) / 165 km/h
         pat = re.escape(u).replace("/", "[ /]")

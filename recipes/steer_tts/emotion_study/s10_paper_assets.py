@@ -62,10 +62,10 @@ for i in range(len(EMO)):
     for j in range(len(CONTROLS)):
         if sig[i, j] and abs(M[i, j]) >= 0.2:
             v = M[i, j]
-            ax.text(j, i, f"{v:.1f}".replace("-", "−"), ha="center", va="center", fontsize=5.2,
+            ax.text(j, i, f"{v:.1f}".replace("-", "−"), ha="center", va="center", fontsize=6.5,
                     color="white" if abs(v) > 1.3 else "black")
 cb = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02, ticks=[-2, -1, 0, 1, 2])
-cb.ax.tick_params(labelsize=6, length=1.5)
+cb.ax.tick_params(labelsize=6.5, length=1.5)
 cb.outline.set_visible(False)
 cb.set_label(r"$d$ vs. same-actor neutral", fontsize=6.5)
 ax.set_title("(a) parallel deltas in control units", fontsize=7.5, loc="left")

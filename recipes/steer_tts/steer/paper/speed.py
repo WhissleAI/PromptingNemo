@@ -218,6 +218,8 @@ FLOW = "runs/flow_v3/step100000.pt"
 PFLOW = "runs/flow_v4pa/step40000.pt"
 VOICE = "voice_4223"
 REF_WAV = "/home/karan/Desktop/whissle/workspace/seedtts/data/seedtts_testset/en/prompt-wavs/common_voice_en_1004470.wav"
+STEER_REQ = {"f0_iqr": 2.0}  # a request for the steered / guided timing variants (duration-neutral control)
+GUIDE_S = 2.0  # guidance scale for the guided variant (cost is the same for any s != 1)
 PROMPTS = ["Speak slowly in a calm, low voice.", "An excited young woman talking fast and loud.",
            "Whisper this sadly.", "A deep, serious narrator voice with long pauses."]
 
@@ -333,15 +335,28 @@ def bench_steer(a):
         elif v == "clone":
             S.flow = None
             fn = lambda t: (S(t, VOICE, ref_wav=REF_WAV), 24000)
+        elif v == "steered":  # a request (one control) at s = 1: same single pass as base
+            S.flow = None
+            fn = lambda t: (S(t, VOICE, ctrl=STEER_REQ, guidance=1.0), 24000)
+        elif v == "guided":  # the same request with guidance s = 2: adds the null-request pass (eq. guidance)
+            S.flow = None
+            fn = lambda t: (S(t, VOICE, ctrl=STEER_REQ, guidance=GUIDE_S), 24000)
         else:
             continue
         sets = a.sets.split(",") if a.sets else None
-        if v != "base" and dev == "cpu":  # flow / cloning on CPU: short + medium only (time budget)
+        if v in ("flow", "clone") and dev == "cpu":  # flow / cloning on CPU: short + medium only (time budget)
             sets = [x for x in (sets or SET_ORDER) if x in ("short", "medium")]
+        note = "Synth.__call__ end to end (g2p..Vocos, audio on host); default voice; guidance off"
+        if v in ("steered", "guided"):
+            note = (f"Synth.__call__ end to end; default voice; request ctrl={STEER_REQ}; guidance s="
+                    f"{1.0 if v == 'steered' else GUIDE_S}")
         rows = time_system(fn, device=dev, threads=a.threads, n_runs=a.n_runs, system=sysname(v), sets=sets,
                            budget_s=budget, min_runs=a.min_runs, extra=dict(group="ours", variant=v, **pinfo),
-                           notes="Synth.__call__ end to end (g2p..Vocos, audio on host); default voice; guidance off")
+                           notes=note)
         save_rows(rows, out)
+        if v in ("steered", "guided"):  # no component breakdown for these (same stages as base)
+            S.flow = flow_saved
+            continue
         # component breakdown (sync after each stage), on the medium + long sets
         comp_rows = []
         for s in (["medium", "long", "longform"] if dev.startswith("cuda") else ["medium", "long"]):
@@ -967,9 +982,65 @@ def bench_hifigan(a):
     save_rows(rows, a.out)
 
 
+def bench_llm(a):
+    """LLM front end (language section): time the few-shot Ollama call of steer.paper.adapter_llm exactly as used
+    for the paper's predictions (CPU, num_thread=8, greedy, JSON-constrained). Ollama's own per-call durations are
+    recorded (load / prompt eval / generation) next to the client wall time. The Ollama server is NOT pinned with
+    taskset (it is a separate process); the load average is recorded per row."""
+    from steer.paper.adapter_llm import SYSTEM, SHOTS, all_prompts
+    import urllib.request
+    model = a.system or "qwen2.5:3b"
+    host = "http://localhost:11434"
+    msgs0 = [{"role": "system", "content": SYSTEM}]
+    for p, ans in SHOTS:
+        msgs0 += [{"role": "user", "content": p}, {"role": "assistant", "content": json.dumps(ans)}]
+    th = a.threads or 8
+
+    def call(prompt):
+        body = dict(model=model, messages=msgs0 + [{"role": "user", "content": prompt}], stream=False, format="json",
+                    keep_alive="30m", options=dict(temperature=0, num_gpu=0, num_thread=th, num_ctx=4096,
+                                                   num_predict=200, seed=0))
+        req = urllib.request.Request(f"{host}/api/chat", data=json.dumps(body).encode(),
+                                     headers={"Content-Type": "application/json"})
+        t0 = time.perf_counter()
+        r = json.load(urllib.request.urlopen(req, timeout=900))
+        return time.perf_counter() - t0, r
+    prompts = all_prompts()
+    cold_s, cold = call(prompts[0])  # loads the model (load_duration) and fills the prompt cache
+    for i in range(2):
+        call(prompts[1 + i])
+    wall, tot, pe, ev, ntok, nprompt = [], [], [], [], [], []
+    t_start = time.perf_counter()
+    k = 0
+    while k < a.n_runs and (k < a.min_runs or time.perf_counter() - t_start < a.budget):
+        w, r = call(prompts[(3 + k) % len(prompts)])
+        wall.append(w * 1000); tot.append(r.get("total_duration", 0) / 1e6)
+        pe.append(r.get("prompt_eval_duration", 0) / 1e6); ev.append(r.get("eval_duration", 0) / 1e6)
+        ntok.append(r.get("eval_count", 0)); nprompt.append(r.get("prompt_eval_count", 0))
+        k += 1
+    e = dict(env_info(), model=model, params_B=3.09, component=None)
+    common = dict(system=f"llm-{model}", device="cpu", threads=th, set_name="prompts",
+                  source_file="steer/paper/speed.py llm")
+    rows = [row("llm_wall_ms", wall, notes="client wall time per prompt (warm model, few-shot chat, JSON format)",
+                **common, **dict(e, component="end_to_end")),
+            row("llm_ms", tot, notes="ollama total_duration", **common, **dict(e, component="total")),
+            row("llm_ms", pe, notes="ollama prompt_eval_duration (system + 4 shots + prompt; prefix cache may apply)",
+                **common, **dict(e, component="prompt_eval")),
+            row("llm_ms", ev, notes="ollama eval_duration (JSON generation)", **common, **dict(e, component="generate")),
+            row("llm_tokens", ntok, notes="generated tokens (eval_count)", **common, **dict(e, component="generate")),
+            row("llm_tokens", nprompt, notes="prompt tokens evaluated (prompt_eval_count)", **common,
+                **dict(e, component="prompt_eval")),
+            row("llm_cold_ms", [cold_s * 1000], notes=f"first call incl. model load "
+                f"(load_duration {cold.get('load_duration', 0) / 1e6:.0f} ms)", **common, **dict(e, component="cold"))]
+    save_rows(rows, a.out)
+    print(f"[llm {model} thr={th}] wall {np.median(wall):.0f} ms (p10 {_q(wall, 10):.0f}, p90 {_q(wall, 90):.0f}); "
+          f"prompt_eval {np.median(pe):.0f} ms / {np.median(nprompt):.0f} tok; gen {np.median(ev):.0f} ms / "
+          f"{np.median(ntok):.0f} tok; cold {cold_s * 1000:.0f} ms; n={len(wall)} load {e['loadavg_1m']}", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["steer", "scaling", "flops", "stream", "ext", "hifigan"])
+    ap.add_argument("cmd", choices=["steer", "scaling", "flops", "stream", "ext", "hifigan", "llm"])
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--threads", type=int, default=None)
     ap.add_argument("--n_runs", type=int, default=20)
@@ -991,7 +1062,7 @@ def main():
     if a.device == "cpu":
         os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
     t0 = time.time()
-    dict(steer=bench_steer, scaling=bench_scaling, flops=bench_flops, stream=bench_stream, ext=bench_ext, hifigan=bench_hifigan)[a.cmd](a)
+    dict(steer=bench_steer, scaling=bench_scaling, flops=bench_flops, stream=bench_stream, ext=bench_ext, hifigan=bench_hifigan, llm=bench_llm)[a.cmd](a)
     print(f"done {a.cmd} in {time.time() - t0:.0f}s", flush=True)
 
 

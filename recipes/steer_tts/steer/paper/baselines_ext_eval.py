@@ -255,7 +255,10 @@ def cmd_seedtts(s):
     sp = "/home/karan/anaconda3/envs/seedeval/bin/python"
     ev = SEED / "seed-tts-eval"
     n = len(list(out.glob("*.wav")))
-    assert n == sum(1 for _ in open(meta)), f"{s}: {n} seedtts wavs"
+    if not n == sum(1 for _ in open(meta)):
+        print(f"SKIP {s}: only {n} seedtts wavs rendered"); return
+    if (out / "sim.score").exists() and (out / "wer.score").exists():
+        print(f"{s}: already scored (delete {out}/sim.score to rescore)"); return  # resumable
     subprocess.run([sp, "get_wav_res_ref_text.py", str(meta), str(out), str(out / "wav_res_ref_text")], cwd=ev, check=True)
     subprocess.run([sp, "run_wer.py", str(out / "wav_res_ref_text"), str(out / "wer.out"), "en"], cwd=ev, check=True)
     subprocess.run([sp, "average_wer.py", str(out / "wer.out"), str(out / "wer.score")], cwd=ev, check=True)

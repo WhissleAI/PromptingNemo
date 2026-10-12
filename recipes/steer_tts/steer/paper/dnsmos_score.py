@@ -56,7 +56,7 @@ def main():
     with Pool(procs) as pool:
         for i, (p, r) in enumerate(pool.imap_unordered(one, todo, chunksize=8)):
             res[p] = r
-            if i % 1000 == 999:
+            if i % 200 == 199:
                 json.dump(res, open(cache, "w"))
                 print(f"  {i + 1}/{len(todo)}", flush=True)
     json.dump(res, open(cache, "w"))

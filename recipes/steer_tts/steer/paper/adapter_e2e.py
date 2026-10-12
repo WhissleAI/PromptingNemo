@@ -28,6 +28,10 @@ OUT = C.WORK / "adapter_e2e"
 VIDS = ["H01", "H02", "H09", "H10"]
 TXT = [0, 2]
 ORACLE = 1.5
+OUT_JSON, THREADS = "adapter_e2e.json", 12
+# extra mappers (round-2 R2-W1/W2): condition -> LLM cache in runs/paper/
+LLM_EXTRA = {"llm_cal": "llm_qwen2.5_3b_cal.json", "llm7b": "llm_qwen2.5_7b-instruct.json",
+             "llm7b_cal": "llm_qwen2.5_7b-instruct_cal.json"}
 
 
 def prompts():
@@ -51,11 +55,27 @@ def requests(items):
         if it["prompt"] in llm:
             l = llm[it["prompt"]]
             R[(it["id"], "llm")] = (l["tags"][0], {k: float(np.clip(v, -5, 5)) for k, v in l["controls"].items()})
+    for cond, fn in LLM_EXTRA.items():
+        lf = C.WORK / fn
+        L = json.load(open(lf)) if lf.exists() else {}
+        for it in items:
+            if it["prompt"] in L:
+                l = L[it["prompt"]]
+                R[(it["id"], cond)] = (l["tags"][0], {k: float(np.clip(v, -5, 5)) for k, v in l["controls"].items()})
+    # 10-NN caption retrieval (adapter_hand predict stage; training-split captions), same spec>0.5 rule as the adapter
+    hp = C.WORK / "hand_preds.json"
+    if hp.exists():
+        K = json.load(open(hp))["preds"]["knn10"]
+        for it in items:
+            if it["prompt"] in K:
+                q = K[it["prompt"]]
+                R[(it["id"], "knn10")] = (q["top3"][0], {d: float(q["val"][j]) for j, d in enumerate(CONTROL_DIMS)
+                                                          if q["spec"][j] > 0.5})
     return R
 
 
 def render(items, R):
-    torch.set_num_threads(12)
+    torch.set_num_threads(THREADS)
     V = {v["vid"]: v for v in C.heldout_voices(16)}
     s = C.make_synth(C.BASE, device="cpu")
     (OUT / "wav").mkdir(parents=True, exist_ok=True)
@@ -127,16 +147,24 @@ def analyze(items, R):
             hit_when_not_requested=round(float(np.nanmean(h_unreq)), 4) if h_unreq else None, n_not_requested=len(h_unreq))
         res["per_prompt"][cond] = per
         print(cond, res["conditions"][cond], flush=True)
-    json.dump(res, open(C.RES / "adapter_e2e.json", "w"), indent=1)
+    json.dump(res, open(C.RES / OUT_JSON, "w"), indent=1)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", default="all")
+    ap.add_argument("--only", default="", help="comma list of conditions to render/analyze (default: all available)")
+    ap.add_argument("--out", default="adapter_e2e.json")
+    ap.add_argument("--threads", type=int, default=12)
     a = ap.parse_args()
+    global OUT_JSON, THREADS
+    OUT_JSON, THREADS = a.out, a.threads
     items = prompts()
     R = requests(items)
     print(len(items), "prompts;", len(R), "requests", flush=True)
+    if a.only:
+        keep = set(a.only.split(",")) | {"base"}
+        R = {k: v for k, v in R.items() if k[1] in keep}
     if a.stage in ("render", "all"):
         render(items, R)
     if a.stage in ("analyze", "all"):

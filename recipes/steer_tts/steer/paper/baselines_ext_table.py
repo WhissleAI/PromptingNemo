@@ -17,12 +17,8 @@ CLOSEST = [("fastpitch", "FastPitch~\\citep{lancucki2021fastpitch}", (45.8, 13.9
            ("kokoro", "Kokoro-82M~\\citep{kokoro82m}", (82.0, None), "K"),
            ("paradee", "Paradee-8M~\\citep{mahendrakar2026paradee}", (8.1, None), "K"),
            ("kitten", "Kitten TTS nano~\\citep{kittentts}", (15.0, None), "K"),
-           ("styletts2", "StyleTTS\\,2~\\citep{li2023styletts2}", (135.8, None), "C"),
            ("parastyle", "ParaStyleTTS~\\citep{lou2025parastyletts}", (52.5, None), "P,K")]
-ADVANCED = [("parler_mini", "Parler-TTS mini~\\citep{lyth2024parler}", (880.0, None), "P"),
-            ("f5", "F5-TTS~\\citep{chen2024f5tts}", (337.1, 13.5), "K,C"),
-            ("cosyvoice2", "CosyVoice\\,2~\\citep{du2024cosyvoice2}", (618.4, 20.8), "P,K,C"),
-            ("xtts", "XTTS-v2~\\citep{casanova2024xtts}", (441.0, 25.9), "K,C")]
+ADVANCED = [("parler_mini", "Parler-TTS mini~\\citep{lyth2024parler}", (880.0, None), "P")]  # StyleTTS 2, F5, CosyVoice 2, XTTS dropped (DEADLINE_PLAN)
 OURS = [("ours_base", "\\sys{} (L1)", (9.6, 13.5), "P,K,T,E,C", "spk_enc_v3@305k (L1)"),
         ("ours_flow", "\\sys{} (+flow)", (27.2, 13.5), "P,K,T,E,C", "spk_enc_v3@305k + flow_v3@100k")]
 NOTE = {"parastyle": "\\textsuperscript{a}", "ours_base": "\\textsuperscript{c}", "ours_flow": "\\textsuperscript{c}"}

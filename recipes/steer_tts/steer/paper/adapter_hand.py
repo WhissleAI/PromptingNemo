@@ -24,7 +24,8 @@ from .common import RES, WORK
 N = len(CONTROL_DIMS)
 DI = {d: i for i, d in enumerate(CONTROL_DIMS)}
 PRED_F = WORK / "hand_preds.json"
-LLMS = {"llm_qwen2.5_3b.json": "qwen2.5-3b"}
+LLMS = {"llm_qwen2.5_3b.json": "qwen2.5-3b", "llm_qwen2.5_3b_cal.json": "qwen2.5-3b-cal",
+        "llm_qwen2.5_7b-instruct.json": "qwen2.5-7b", "llm_qwen2.5_7b-instruct_cal.json": "qwen2.5-7b-cal"}
 
 
 def load_gold():
@@ -180,7 +181,7 @@ def score():
     res["items_v2"] = [dict(id=it["id"], cat=it["cat"], prompt=it["prompt"], gold=it["spec"], tags=it["tags"],
                             **{n: dict(ctrl={CONTROL_DIMS[k]: round(p[it["prompt"]]["val"][k], 2) for k in range(N)
                                              if p[it["prompt"]]["spec"][k] > 0.5}, top3=p[it["prompt"]]["top3"])
-                               for n, p in P.items() if n in ("prod", "heldout", "knn10", "qwen2.5-3b") and it["prompt"] in p})
+                               for n, p in P.items() if n in ("prod", "heldout", "knn10", "qwen2.5-3b", "qwen2.5-3b-cal", "qwen2.5-7b", "qwen2.5-7b-cal") and it["prompt"] in p})
                        for it in items if it["set"] == "v2"]
     json.dump(res, open(RES / "adapter_hand.json", "w"), indent=1)
 
