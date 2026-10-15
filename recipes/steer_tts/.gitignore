@@ -1,0 +1,12 @@
+# data and experiment outputs live under $STEER_TTS_ROOT (defaults to this directory)
+data/raw/
+data/wav24/
+data/feats/
+data/meta/
+data/.hf_curlrc
+runs/
+logs/
+emotion_study/out/
+emotion_study/viz/audio/
+emotion_study/viz/viz_data.js
+emotion_study/viz/emotion_in_the_voice.html

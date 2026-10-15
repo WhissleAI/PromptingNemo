@@ -1,0 +1,21 @@
+# steer_tts (tested versions in comments)
+torch>=2.4            # 2.11.0+cu128
+tensorboard           # 2.21.0
+vocos                 # 0.1.0  (charactr/vocos-mel-24khz vocoder)
+praat-parselmouth     # 0.4.7
+soxr                  # 1.1.0
+soundfile             # 0.14.0
+numpy                 # 2.4.6
+scipy                 # 1.17.1
+pandas                # 3.0.6
+pyarrow               # 25.0.1
+numba                 # 0.68.0
+g2p-en                # 2.1.0
+inflect               # 7.5.0
+transformers          # 5.19.0  (Whisper intelligibility guard, WavLM / wav2vec2 in emotion_study)
+sentence-transformers # 6.1.0  (prompt adapter, all-MiniLM-L6-v2)
+huggingface_hub
+safetensors
+scikit-learn          # 1.9.1
+tqdm
+umap-learn            # emotion_study only

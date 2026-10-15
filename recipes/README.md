@@ -13,6 +13,7 @@ supporting utilities for a specific task.
 | [`data_prep/`](data_prep/) | Manifest normalization and validation | `normalize_manifest.py` |
 | [`espnet_asr/`](espnet_asr/) | ESPnet-W bridge for Meta-ASR | (see README) |
 | [`text_tagger/`](text_tagger/) | Text-only CTC tagger configs | `conf/default.yaml` |
+| [`steer_tts/`](steer_tts/) | Small prompt-steerable expressive TTS (SteerTTS) | `run.sh` |
 
 ## meta_asr/ -- Meta-ASR Training
 

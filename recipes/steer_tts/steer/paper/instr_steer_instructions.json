@@ -1,0 +1,76 @@
+{
+ "_doc": "Graded natural-language instructions for the instruction-steerability probe (steer.paper.instr_steer). Fixed 2026-10-11 16:30 PDT BEFORE any render. Requested z -> intensity: -2 = much less, -1 = slightly less, +1 = slightly more, +2 = much more (sign follows the SteerTTS control dim, see steer/config.py). Each phrase completes both '<Name> speaks ...' (Parler-TTS description) and 'Speak ...' (CosyVoice2 instruct2).",
+ "levels": {"-2": "much less", "-1": "slightly less", "1": "slightly more", "2": "much more"},
+ "phrases": {
+  "rate": {
+   "-2": "much more slowly than usual",
+   "-1": "slightly more slowly than usual",
+   "1": "slightly faster than usual",
+   "2": "much faster than usual"},
+  "loud": {
+   "-2": "much more quietly than usual, almost softly",
+   "-1": "slightly more quietly than usual",
+   "1": "slightly louder than usual",
+   "2": "much louder than usual, projecting the voice"},
+  "f0_med": {
+   "-2": "in a much lower-pitched voice than usual",
+   "-1": "in a slightly lower-pitched voice than usual",
+   "1": "in a slightly higher-pitched voice than usual",
+   "2": "in a much higher-pitched voice than usual"},
+  "f0_iqr": {
+   "-2": "in a very monotone, flat intonation",
+   "-1": "in a slightly more monotone intonation",
+   "1": "slightly more expressively, with a bit more pitch variation",
+   "2": "in a very expressive and animated way, with a wide pitch range"},
+  "f0_end": {
+   "-2": "ending the sentence with a strongly falling pitch, like a firm statement",
+   "-1": "ending the sentence with a slightly falling pitch",
+   "1": "ending the sentence with a slightly rising pitch",
+   "2": "ending the sentence with a strongly rising pitch, like a question"},
+  "pause": {
+   "-2": "without any pauses, in one continuous flow",
+   "-1": "with slightly fewer pauses than usual",
+   "1": "with a few more pauses between phrases than usual",
+   "2": "with many long pauses between words and phrases"},
+  "tilt": {
+   "-2": "with a much darker, warmer, bass-heavy voice",
+   "-1": "with a slightly darker, warmer voice",
+   "1": "with a slightly brighter voice",
+   "2": "with a much brighter, sharper, treble-heavy voice"},
+  "voiced": {
+   "-2": "in a whisper",
+   "-1": "in a slightly whispery voice",
+   "1": "with a slightly fuller, more fully voiced sound",
+   "2": "with a full, fully voiced, resonant sound and no whispering at all"},
+  "flat": {
+   "-2": "with a very pure, clean tone and no airiness at all",
+   "-1": "with a slightly purer, cleaner tone",
+   "1": "with a slightly airier, hissier voice",
+   "2": "with a very airy, hissy, noisy voice"},
+  "centroid": {
+   "-2": "with very muffled, mumbled articulation",
+   "-1": "with slightly softer, more muffled articulation",
+   "1": "with slightly crisper articulation",
+   "2": "with very crisp, sharp, precise articulation"},
+  "cpps": {
+   "-2": "with a very rough, hoarse voice",
+   "-1": "with a slightly rougher, hoarser voice",
+   "1": "with a slightly clearer, more resonant voice",
+   "2": "with a very clear, ringing, resonant voice"},
+  "h1h2": {
+   "-2": "with a very pressed, tense, strained voice",
+   "-1": "with a slightly more pressed, tense voice",
+   "1": "with a slightly breathier voice",
+   "2": "with a very breathy voice"}
+ },
+ "templates": {
+  "parler_mini": {
+   "baseline": "{name} speaks in a very clean, close-sounding recording with almost no background noise.",
+   "directed": "{name} speaks {phrase}, in a very clean, close-sounding recording with almost no background noise."},
+  "cosyvoice2": {
+   "baseline": "Speak in a natural, neutral way.",
+   "directed": "Speak {phrase}."}
+ },
+ "parler_speakers": {"P01": ["Laura", "F"], "P02": ["Lea", "F"], "P03": ["Jenna", "F"], "P04": ["Emily", "F"],
+                     "P05": ["Jon", "M"], "P06": ["Gary", "M"], "P07": ["Mike", "M"], "P08": ["Rick", "M"]}
+}
