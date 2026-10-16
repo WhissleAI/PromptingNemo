@@ -1,0 +1,61 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: annotate-vitw-zh-gpu
+  namespace: dataprep
+spec:
+  activeDeadlineSeconds: 604800
+  backoffLimit: 2
+  template:
+    spec:
+      containers:
+      - name: annotate
+        image: us-central1-docker.pkg.dev/deepvoice-468015/cloud-run-source-deploy/dataprep:gpu
+        command: ["bash", "-c"]
+        args:
+        - |
+          set -e
+          echo "=== GPU check ==="
+          python -c "import torch; print(f'CUDA: {torch.cuda.is_available()}, GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"none\"}')"
+
+          echo "=== Annotating Voices-in-the-Wild ZH with AGE, GENDER, EMOTION ==="
+
+          TRAIN="/mnt/nfs/data/vitw_zh/train.json"
+          VALID="/mnt/nfs/data/vitw_zh/valid.json"
+
+          echo "  train: $(wc -l < "$TRAIN") entries"
+          echo "  valid: $(wc -l < "$VALID") entries"
+
+          cp "$TRAIN" "${TRAIN}.pre_annotate.bak"
+          cp "$VALID" "${VALID}.pre_annotate.bak"
+
+          python /app/scripts/annotate_audio_tags.py \
+            --data-root /mnt/nfs/data/vitw_zh \
+            --in-place \
+            --resume
+
+          echo "=== GPU annotation done ==="
+          head -2 "$TRAIN"
+        resources:
+          requests:
+            cpu: "4"
+            memory: 16Gi
+            nvidia.com/gpu: "1"
+          limits:
+            cpu: "8"
+            memory: 32Gi
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: nfs-data
+          mountPath: /mnt/nfs
+      restartPolicy: Never
+      nodeSelector:
+        cloud.google.com/gke-nodepool: gpu-pool
+      tolerations:
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
+      volumes:
+      - name: nfs-data
+        persistentVolumeClaim:
+          claimName: nfs-training-pvc
